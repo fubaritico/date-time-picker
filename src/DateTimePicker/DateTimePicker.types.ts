@@ -58,7 +58,7 @@ export interface BasicPickerProps extends BasicPanelProps {
   /* Locale language in international ISO-8601  */
   locale?: string
   /* Called on date click if component is controlled */
-  onDateChange?: (date?: number) => void
+  onChange?: (date?: number) => void
 }
 
 export interface PickerProps extends BasicPickerProps {

@@ -43,7 +43,7 @@ const DateTimePicker: FC<DateTimePickerProps> = ({
   minDate,
   pickerMode,
   noDefault = false,
-  onDateChange,
+  onChange,
   placement = 'bottom-start',
   size = 'medium',
   timezone,
@@ -96,7 +96,7 @@ const DateTimePicker: FC<DateTimePickerProps> = ({
     <CalendarProvider
       date={date}
       inputOffset={inputOutputOffsets.inputOffset}
-      isControlled={!!onDateChange}
+      isControlled={!!onChange}
       hasLabel={!!textInputProps.label}
       loading={loading}
       locale={locale}
@@ -109,7 +109,7 @@ const DateTimePicker: FC<DateTimePickerProps> = ({
       <div className="relative">
         <div ref={triggerRef} className="relative">
           <DateTimeInput
-            onDateChange={onDateChange}
+            onDateChange={onChange}
             onIconClick={handleTogglePanelVisibility}
             size={size}
             errors={errors}
@@ -133,7 +133,7 @@ const DateTimePicker: FC<DateTimePickerProps> = ({
         </div>
         <Panel
           enablePortal={enablePortal}
-          onDateChange={onDateChange}
+          onChange={onChange}
           loading={loading}
           open={isOpen}
           onClickOutside={closePanel}

@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Roboto mono (same kerning letters) used for DateTimePicker component */
+
+@font-face {
+    font-family: 'RobotoMono';
+    src: url('fonts/RobotoMono/RobotoMono-SemiBold.woff2') format('woff2'),
+    url('fonts/RobotoMono/RobotoMono-SemiBold.woff') format('woff'),
+    url('fonts/RobotoMono/RobotoMono-SemiBold.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RobotoMono';
+    src: url('fonts/RobotoMono/RobotoMono-SemiBold.woff2') format('woff2'),
+    url('fonts/RobotoMono/RobotoMono-SemiBold.woff') format('woff'),
+    url('fonts/RobotoMono/RobotoMono-SemiBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RobotoMono';
+    src: url('fonts/RobotoMono/RobotoMono-SemiBold.woff2') format('woff2'),
+    url('fonts/RobotoMono/RobotoMono-SemiBold.woff') format('woff'),
+    url('fonts/RobotoMono/RobotoMono-SemiBold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}

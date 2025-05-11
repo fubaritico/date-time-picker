@@ -79,7 +79,7 @@ const setupAsControlled = (
             <DateTimePicker
               {...props}
               date={currentValue}
-              onDateChange={setCurrentValue}
+              onChange={setCurrentValue}
             />
             {!!currentValue && (
               <span data-test={dateSpanTestId}>

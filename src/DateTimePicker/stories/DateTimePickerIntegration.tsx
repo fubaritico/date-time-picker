@@ -188,7 +188,7 @@ const DateTimePickerIntegration: FC<DateTimePickerIntegrationProps> = ({
           <DateTimePicker
             {...props}
             date={date}
-            onDateChange={handleDateChange}
+            onChange={handleDateChange}
             locale={locale}
             timezone={timezone}
           />

@@ -7,12 +7,20 @@ import postcss from 'rollup-plugin-postcss'
 import dts from 'rollup-plugin-dts'
 import { visualizer } from 'rollup-plugin-visualizer'
 
+import pkg from './package.json' with { type: 'json' }
+
 export default [
   {
     input: 'src/DateTimePicker/index.ts',
     output: [
       {
-        file: 'dist/index.js',
+        file: pkg.main,
+        format: 'cjs',
+        sourcemap: true,
+        name: 'react-date-time-picker',
+      },
+      {
+        file: pkg.module,
         format: 'esm',
         sourcemap: true,
       },

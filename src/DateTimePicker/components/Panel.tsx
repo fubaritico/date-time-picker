@@ -54,7 +54,7 @@ const INPUT_LABEL_HEIGHT = 24
  */
 const Panel: FC<PanelProps> = ({
   enablePortal,
-  onDateChange,
+  onChange,
   onClickOutside,
   onClose,
   open,
@@ -187,7 +187,7 @@ const Panel: FC<PanelProps> = ({
     if (from !== PanelView.TIME) setPanelView(PanelView.DAYS)
 
     if (isControlled) {
-      onDateChange?.(date - inputOffset)
+      onChange?.(date - inputOffset)
     } else {
       setInnerDate(date)
     }

@@ -124,6 +124,7 @@ const DateTimeInput: FC<DateTimeInputProps> = ({
    */
   const loadMaskClass = useCallback(async () => {
     const maskClass = (await import(
+      /* @vite-ignore */
       `../formats/masks/${locale.toUpperCase()}InputMask`
     )) as MaskClassType
 

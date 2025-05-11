@@ -18,7 +18,7 @@ import {
   getStartOfDayTs,
 } from '../DateTimePicker.utils'
 
-export type DaysGridProps = Omit<BasicPickerProps, 'onDateChange'> & {
+export type DaysGridProps = Omit<BasicPickerProps, 'onChange'> & {
   /* Date formatted in a Unix timestamp format */
   date: number
   /* Function called on date change */

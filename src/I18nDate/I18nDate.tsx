@@ -24,7 +24,7 @@ export interface I18nDateProps {
   /* Moment Timezone list member */
   timezone?: Timezone
   /* Unix time stamp (10 or 13 digits number) */
-  value: number
+  value?: number
 }
 
 /**
@@ -209,7 +209,7 @@ const I18nDate: FC<I18nDateProps> = ({
 }) => {
   return (
     <>
-      {isNaN(value)
+      {!value || isNaN(value)
         ? 'Value is not a number'
         : formatToLocaleAwareFormat(value, locale, localeAwareFormat, timezone)}
     </>
