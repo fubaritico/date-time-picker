@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "esNext",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "declaration": true,
+    "declarationDir": "types",
+    "sourceMap": true,
+    "outDir": "dist",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "emitDeclarationOnly": true,
+    "resolveJsonModule": true,
+    "types": ["@testing-library/jest-dom", "node"]
+  },
+  "include": ["src/**/*", "global.d.ts", "declarations.d.ts"],
+  "exclude": [
+    ".storybook",
+    "node_modules",
+    "dist",
+  ]
+}

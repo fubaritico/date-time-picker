@@ -1,0 +1,37 @@
+# Source files
+src/
+dev/
+
+# Configuration files
+.eslintrc
+.prettierrc
+jest.config.ts
+jest.setup.js
+rollup.config.js
+tsconfig.json
+vite.config.ts
+postcss.config.js
+tailwind.config.js
+
+# Development files
+__mocks__/
+coverage/
+node_modules/
+.idea/
+.vscode/
+
+# Build files
+dist-dev/
+
+# Misc
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.npmrc

@@ -1,0 +1,21 @@
+/*
+ * Classes for menu-in/menu-out animation of calendar panel.
+ * Used with CSSTransition component.
+ */
+.menu-enter {
+  opacity: 0.01;
+}
+
+.menu-enter-active {
+  opacity: 1;
+  transition: opacity 150ms linear;
+}
+
+.menu-exit {
+  opacity: 1;
+}
+
+.menu-exit-active {
+  opacity: 0.01;
+  transition: opacity 150ms linear;
+}

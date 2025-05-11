@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Classes for dtp-in/dtp-out animation of calendar panel.
+ * Used with CSSTransition component.
+ */
+.dtp-enter {
+  opacity: 0.01;
+}
+
+.dtp-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.dtp-exit {
+  opacity: 1;
+}
+
+.dtp-exit-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}

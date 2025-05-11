@@ -1,0 +1,216 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DropdownMenu Selectable should render 1`] = `
+<div>
+  <div
+    class="w-[200px]"
+  >
+    <div
+      class="flex flex-col gap-1 max-w-[210px]"
+    >
+      <div
+        class="relative w-full"
+      >
+        <div
+          class="w-auto"
+        >
+          <button
+            aria-label="Select a value"
+            class="flex justify-between flex-wrap font-normal items-center gap-2 rounded transition-all duration-300 text-base py-0 px-5 bg-gray-900 border border-gray-900 hover:bg-gray-800 hover:border-gray-800 text-gray-50"
+          >
+            <span
+              class="truncate flex-shrink"
+              data-test="dropdown-value"
+            >
+              Select a value
+            </span>
+            <div
+              class="w-5 mt-0.5"
+            >
+              <svg
+                aria-hidden="true"
+                class="text-gray-900 size-6 size-5"
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DropdownMenu Selectable should render menu on label/button click 1`] = `
+<div>
+  <div
+    class="w-[200px]"
+  >
+    <div
+      class="flex flex-col gap-1 max-w-[210px]"
+    >
+      <div
+        class="relative w-full"
+      >
+        <div
+          class="w-auto"
+        >
+          <button
+            aria-label="Select a value"
+            class="flex justify-between flex-wrap font-normal items-center gap-2 rounded transition-all duration-300 text-base py-0 px-5 bg-gray-900 border border-gray-900 hover:bg-gray-800 hover:border-gray-800 text-gray-50"
+          >
+            <span
+              class="truncate flex-shrink"
+              data-test="dropdown-value"
+            >
+              Select a value
+            </span>
+            <div
+              class="w-5 mb-0.5"
+            >
+              <svg
+                aria-hidden="true"
+                class="text-gray-900 size-6 size-5"
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M11.47 7.72a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06L12 9.31l-6.97 6.97a.75.75 0 0 1-1.06-1.06l7.5-7.5Z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </div>
+          </button>
+        </div>
+        <div
+          data-test="click-away-listener"
+        >
+          <div
+            class="bg-white shadow rounded-sm absolute z-[999] overflow-hidden !rounded-md menu-enter menu-enter-active"
+            data-test="dropdown-menu"
+            style="position: absolute; top: 0px; left: 0px; visibility: hidden;"
+          >
+            <ul
+              class="flex flex-col"
+            >
+              <li
+                class="w-full"
+              >
+                <button
+                  aria-current="false"
+                  aria-disabled="false"
+                  aria-label="Quick save "
+                  class="flex justify-between flex-wrap font-normal items-center gap-2 rounded transition-all duration-300 text-base py-0 px-5 bg-gray-900 border border-gray-900 hover:bg-gray-800 hover:border-gray-800 text-gray-50 !flex !justify-start !items-center !gap-2 !text-left !truncate !w-full !relative !border-0 !px-4 !h-10"
+                  color="white"
+                  style="height: 52px;"
+                >
+                  <span
+                    class="truncate flex-shrink"
+                    id="item-Quick save"
+                  >
+                    Quick save 
+                  </span>
+                </button>
+              </li>
+              <li
+                class="w-full"
+              >
+                <button
+                  aria-current="false"
+                  aria-disabled="false"
+                  aria-label="Save"
+                  class="flex justify-between flex-wrap font-normal items-center gap-2 rounded transition-all duration-300 text-base py-0 px-5 bg-gray-900 border border-gray-900 hover:bg-gray-800 hover:border-gray-800 text-gray-50 !flex !justify-start !items-center !gap-2 !text-left !truncate !w-full !relative !border-0 !px-4 !h-10"
+                  color="white"
+                  style="height: 52px;"
+                >
+                  <span
+                    class="truncate flex-shrink"
+                    id="item-Save"
+                  >
+                    Save
+                  </span>
+                </button>
+              </li>
+              <li
+                class="w-full"
+              >
+                <button
+                  aria-current="false"
+                  aria-disabled="false"
+                  aria-label="Reassign"
+                  class="flex justify-between flex-wrap font-normal items-center gap-2 rounded transition-all duration-300 text-base py-0 px-5 bg-gray-900 border border-gray-900 hover:bg-gray-800 hover:border-gray-800 text-gray-50 !flex !justify-start !items-center !gap-2 !text-left !truncate !w-full !relative !border-0 !px-4 !h-10"
+                  color="white"
+                  style="height: 52px;"
+                >
+                  <span
+                    class="truncate flex-shrink"
+                    id="item-Reassign"
+                  >
+                    Reassign
+                  </span>
+                </button>
+              </li>
+              <li
+                class="w-full"
+              >
+                <button
+                  aria-current="false"
+                  aria-disabled="false"
+                  aria-label="Edit"
+                  class="flex justify-between flex-wrap font-normal items-center gap-2 rounded transition-all duration-300 text-base py-0 px-5 bg-gray-900 border border-gray-900 hover:bg-gray-800 hover:border-gray-800 text-gray-50 !flex !justify-start !items-center !gap-2 !text-left !truncate !w-full !relative !border-0 !px-4 !h-10"
+                  color="white"
+                  style="height: 52px;"
+                >
+                  <span
+                    class="truncate flex-shrink"
+                    id="item-Edit"
+                  >
+                    Edit
+                  </span>
+                </button>
+              </li>
+              <li
+                class="w-full"
+              >
+                <button
+                  aria-current="false"
+                  aria-disabled="false"
+                  aria-label="Delete"
+                  class="flex justify-between flex-wrap font-normal items-center gap-2 rounded transition-all duration-300 text-base py-0 px-5 bg-gray-900 border border-gray-900 hover:bg-gray-800 hover:border-gray-800 text-gray-50 !flex !justify-start !items-center !gap-2 !text-left !truncate !w-full !relative !border-0 !px-4 !h-10"
+                  color="white"
+                  style="height: 52px;"
+                >
+                  <span
+                    class="truncate flex-shrink"
+                    id="item-Delete"
+                  >
+                    Delete
+                  </span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
