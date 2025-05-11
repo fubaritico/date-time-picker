@@ -1,5 +1,4 @@
 import clsx from 'clsx'
-import { twMerge } from 'tailwind-merge'
 
 import type { FC, PropsWithChildren } from 'react'
 
@@ -24,7 +23,7 @@ const HelperText: FC<PropsWithChildren<HelperTextProps>> = ({
   const filteredErrors = errors?.filter(Boolean)
 
   return (
-    <div className={twMerge(clsx('flex flex-col gap-1', className))}>
+    <div className={clsx('flex flex-col gap-1', className)}>
       {children}
       {helperText && (
         <p

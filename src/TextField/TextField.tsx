@@ -1,7 +1,9 @@
 import clsx from 'clsx'
 import { forwardRef, useState } from 'react'
 
-import { HelperText, Icon, Label } from '..'
+import HelperText from '../HelperText'
+import Icon from '../Icon'
+import Label from '../Label'
 import { handleKeyDown } from '../utils'
 
 import type { Hi2UiIconNames } from '..'

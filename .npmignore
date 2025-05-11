@@ -3,10 +3,11 @@ src/
 dev/
 
 # Configuration files
-.eslintrc
+eslintrc.config.js
 .prettierrc
 jest.config.ts
 jest.setup.js
+jest.setup.afterEnv.ts
 rollup.config.js
 tsconfig.json
 vite.config.ts
@@ -20,9 +21,6 @@ node_modules/
 .idea/
 .vscode/
 
-# Build files
-dist-dev/
-
 # Misc
 .DS_Store
 .env
@@ -35,3 +33,6 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 .npmrc
+
+# report files
+bundle-analysis.html

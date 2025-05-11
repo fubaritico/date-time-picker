@@ -10,8 +10,9 @@ import {
 } from 'react'
 import { CSSTransition } from 'react-transition-group'
 
-import { ConditionalWrapper, Portal } from '../..'
+import ConditionalWrapper from '../../ConditionalWrapper'
 import { FADE_ANIMATION_DURATION } from '../../constants'
+import Portal from '../../Portal'
 import { useCalendar } from '../DateTimePicker.context'
 import { PanelView, PickerMode } from '../DateTimePicker.types'
 

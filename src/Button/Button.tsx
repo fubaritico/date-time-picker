@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 
-import { ConditionalWrapper } from '..'
+import ConditionalWrapper from '../ConditionalWrapper'
 
 import type { ButtonHTMLAttributes, FC, ReactNode, RefObject } from 'react'
 

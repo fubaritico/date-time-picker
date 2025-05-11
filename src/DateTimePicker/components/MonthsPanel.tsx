@@ -8,7 +8,7 @@ import {
   useState,
 } from 'react'
 
-import { Icon } from '../..'
+import Icon from '../../Icon'
 import { useCalendar } from '../DateTimePicker.context'
 import {
   addYears,

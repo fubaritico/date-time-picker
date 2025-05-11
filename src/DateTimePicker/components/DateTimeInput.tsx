@@ -1,7 +1,7 @@
 import InputMask from '@mona-health/react-input-mask'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
-import { TextField } from '../..'
+import TextField from '../../TextField'
 import { useCalendar } from '../DateTimePicker.context'
 import { PickerMode } from '../DateTimePicker.types'
 import {

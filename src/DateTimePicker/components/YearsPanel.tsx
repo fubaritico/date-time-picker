@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import { useCallback, useEffect, useState } from 'react'
 
-import { Icon } from '../..'
+import Icon from '../../Icon'
 import { useCalendar } from '../DateTimePicker.context'
 import { addYears, getYearFromTs, subtractYears } from '../DateTimePicker.utils'
 import usePanelDomRect from '../hooks/usePanelDomRect'

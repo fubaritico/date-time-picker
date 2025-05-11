@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import DateTimePicker from '..'
+import { DateTimePicker } from '..'
 import { Button, DropdownMenu, I18nDate, languages } from '../..'
 
 import type { LocaleAwareFormat, MenuItemConfig } from '../..'

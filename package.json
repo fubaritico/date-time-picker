@@ -18,12 +18,13 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "rollup -c",
+    "build": "rm -rf dist && rollup -c rollup.config.js",
     "test": "TZ=UTC jest",
     "lint": "eslint .",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
     "type-check": "tsc -p ./ --noEmit",
-    "prepare": "husky"
+    "prepare": "husky",
+    "build:debug": "rollup -c --debug"
   },
   "packageManager": "pnpm@10.0.0",
   "keywords": [
@@ -37,7 +38,12 @@
   "license": "MIT",
   "peerDependencies": {
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-transition-group": "^4.4.5",
+    "@mona-health/react-input-mask": "^3.0.3",
+    "clsx": "^2.1.1",
+    "react-icons": "^5.5.0"
+
   },
   "engines": {
     "node": ">=22.11.0",
@@ -46,11 +52,13 @@
   "devDependencies": {
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
+    "@mona-health/react-input-mask": "^3.0.3",
     "@eslint/js": "^9.21.0",
-    "@rollup/plugin-commonjs": "^28.0.3",
-    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-alias": "^5.1.1",
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
     "@rollup/plugin-terser": "^0.4.4",
-    "@rollup/plugin-typescript": "^12.1.2",
+    "@rollup/plugin-typescript": "^11.1.6",
     "@storybook/addon-designs": "^8.2.1",
     "@storybook/addon-essentials": "^8.6.12",
     "@storybook/addon-interactions": "^8.6.12",
@@ -72,6 +80,7 @@
     "@types/react-transition-group": "^4.4.12",
     "@vitejs/plugin-react": "^4.0.0",
     "autoprefixer": "^10.4.0",
+    "clsx": "^2.1.1",
     "eslint": "^9.21.0",
     "eslint-config-prettier": "^10.1.2",
     "eslint-config-react": "^1.1.7",
@@ -89,11 +98,13 @@
     "mockdate": "^3.0.5",
     "postcss": "^8.4.0",
     "prettier": "^3.5.3",
+    "react-icons": "^5.5.0",
+    "react-transition-group": "^4.4.5",
     "rollup": "^4.40.2",
     "rollup-plugin-dts": "^6.2.1",
-    "rollup-plugin-peer-deps-external": "^2.2.0",
-    "rollup-plugin-postcss": "^4.0.0",
-    "tailwind-merge": "^3.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-visualizer": "^5.14.0",
     "tailwindcss": "^3.3.0",
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.2",
@@ -101,11 +112,5 @@
     "typescript-eslint": "^8.24.1",
     "vite": "^6.3.5"
   },
-  "dependencies": {
-    "@heroicons/react": "^2.2.0",
-    "@mona-health/react-input-mask": "^3.0.3",
-    "clsx": "^2.1.1",
-    "react-icons": "^5.5.0",
-    "react-transition-group": "^4.4.5"
-  }
+  "dependencies": {}
 }

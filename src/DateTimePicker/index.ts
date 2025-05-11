@@ -1,6 +1,6 @@
 export * from './DateTimePicker.utils'
 
-export { default } from './DateTimePicker'
+export { default as DateTimePicker } from './DateTimePicker'
 
 export * from './DateTimePicker.types'
 

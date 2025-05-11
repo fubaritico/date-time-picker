@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 
-import DateTimePicker, { DateTimePickerProps, PickerMode } from '..'
+import { DateTimePicker, DateTimePickerProps, PickerMode } from '..'
 import { timezones } from '../..'
 import { withDateTimePicker } from '../../../.storybook/decorators/withDateTimePicker'
 
