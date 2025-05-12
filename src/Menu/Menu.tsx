@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { CSSTransition } from 'react-transition-group'
 
 import { Button, ClickAwayListener, ConditionalWrapper, Portal } from '..'
@@ -180,10 +180,10 @@ const Menu: FC<MenuProps> = ({
    *
    * On first opening, the visibility of the menu needs to be set to 'hidden'.
    */
-  const updateMenuPlacement = useCallback(debounce(computePlacement, 200), [
-    computePlacement,
-    debounce,
-  ])
+  const updateMenuPlacement = useMemo(
+    () => debounce(computePlacement, 200),
+    [computePlacement]
+  )
 
   /**
    * Update the menu placement on resize

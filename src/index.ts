@@ -3,12 +3,7 @@ export { default as ClickAwayListener } from './ClickAwayListener'
 export { default as ConditionalWrapper } from './ConditionalWrapper'
 export { DateTimePicker } from './DateTimePicker'
 export { default as DropdownMenu } from './DropdownMenu'
-export {
-  default as I18nDate,
-  languages,
-  timezones,
-  formatToLocaleAwareFormat,
-} from './I18nDate'
+export { default as I18nDate, languages, timezones } from './I18nDate'
 export { default as Icon } from './Icon'
 export { default as Label } from './Label'
 export { default as Menu } from './Menu'

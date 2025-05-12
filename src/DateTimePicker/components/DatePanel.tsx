@@ -1,8 +1,7 @@
 import clsx from 'clsx'
-import { FC, useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 import Icon from '../../Icon'
-import { useCalendar } from '../DateTimePicker.context'
 import { PanelView } from '../DateTimePicker.types'
 import {
   addMonths,
@@ -10,9 +9,12 @@ import {
   getYearFromTs,
   subtractMonths,
 } from '../DateTimePicker.utils'
+import useDateTimePicker from '../hooks/useDateTimePicker'
 import usePanelDomRect from '../hooks/usePanelDomRect'
 
 import DaysGrid from './DaysGrid'
+
+import type { FC } from 'react'
 
 export interface DatePanelProps {
   /* Extra CSS styles (tailwind) */
@@ -45,7 +47,7 @@ export interface DatePanelProps {
  */
 const DatePanel: FC<DatePanelProps> = ({ className, onDateChange, size }) => {
   // SHARED STATE
-  const { innerDate, setPanelView, inputOffset, locale } = useCalendar()
+  const { innerDate, setPanelView, inputOffset, locale } = useDateTimePicker()
   // STATE: Unix timestamp representing the given date
   const [date, setDate] = useState<number>(
     innerDate ?? Date.now() + inputOffset

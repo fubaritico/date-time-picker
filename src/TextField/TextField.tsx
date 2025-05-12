@@ -4,7 +4,7 @@ import { forwardRef, useState } from 'react'
 import HelperText from '../HelperText'
 import Icon from '../Icon'
 import Label from '../Label'
-import { handleKeyDown } from '../utils'
+import { createCustomChangeEvent, handleKeyDown } from '../utils'
 
 import type { Hi2UiIconNames } from '..'
 import type { ChangeEvent, FC, ForwardedRef, HTMLProps, RefObject } from 'react'
@@ -65,24 +65,6 @@ const sizeHeights: Record<UISize, number> = {
   large: 52,
   medium: 42,
   small: 37,
-}
-
-/**
- * Function to create a custom change event.
- * @param eventValue
- */
-export const createCustomChangeEvent = (
-  eventValue: string
-): ChangeEvent<HTMLInputElement> => {
-  const event = new Event('change', {
-    bubbles: true,
-    cancelable: true,
-  }) as unknown as ChangeEvent<HTMLInputElement>
-  Object.defineProperty(event, 'target', {
-    writable: true,
-    value: { value: eventValue } as HTMLInputElement,
-  })
-  return event
 }
 
 const TextField: FC<TextFieldProps> = forwardRef<

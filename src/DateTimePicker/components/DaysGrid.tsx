@@ -1,14 +1,6 @@
 import clsx from 'clsx'
-import {
-  FC,
-  KeyboardEvent,
-  MouseEvent,
-  useCallback,
-  useEffect,
-  useState,
-} from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
-import { useCalendar } from '../DateTimePicker.context'
 import { BasicPickerProps } from '../DateTimePicker.types'
 import {
   getAllWeekDaysNamesFromTs,
@@ -17,6 +9,9 @@ import {
   getStartDayOfWeekOfCurrentMonth,
   getStartOfDayTs,
 } from '../DateTimePicker.utils'
+import useDateTimePicker from '../hooks/useDateTimePicker'
+
+import type { FC, KeyboardEvent, MouseEvent } from 'react'
 
 export type DaysGridProps = Omit<BasicPickerProps, 'onChange'> & {
   /* Date formatted in a Unix timestamp format */
@@ -43,7 +38,8 @@ const DaysGrid: FC<DaysGridProps> = ({
   // State: Array of dates in Unix timestamp format
   const [arrayOfDates, setArrayOfDates] = useState<number[]>([])
 
-  const { innerDate, minDate, maxDate, inputOffset, locale } = useCalendar()
+  const { innerDate, minDate, maxDate, inputOffset, locale } =
+    useDateTimePicker()
   /**
    * Will check if the time stamp is within the range of the min & max dates
    */

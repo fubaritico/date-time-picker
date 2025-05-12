@@ -1,7 +1,6 @@
 import clsx from 'clsx'
-import { FC, useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
-import { useCalendar } from '../DateTimePicker.context'
 import { PanelView, PickerMode } from '../DateTimePicker.types'
 import {
   addHours,
@@ -16,9 +15,12 @@ import {
   subtractHours,
   subtractMinutes,
 } from '../DateTimePicker.utils'
+import useDateTimePicker from '../hooks/useDateTimePicker'
 import usePanelDomRect from '../hooks/usePanelDomRect'
 
 import TimePanelSetter from './TimePanelSetter'
+
+import type { FC } from 'react'
 
 export interface TimePanelProps {
   /* Tailwind CSS classes overrides or extensions for more flexibility */
@@ -41,7 +43,7 @@ export interface TimePanelProps {
  */
 const TimePanel: FC<TimePanelProps> = ({ className, onDateChange, size }) => {
   // COMPONENT STATE
-  const { innerDate, inputOffset, locale, pickerMode } = useCalendar()
+  const { innerDate, inputOffset, locale, pickerMode } = useDateTimePicker()
   const [date, setDate] = useState<number>(
     innerDate ?? Date.now() + inputOffset
   )

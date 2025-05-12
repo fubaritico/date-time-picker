@@ -1,4 +1,4 @@
-import { PickerMode } from '../../DateTimePicker'
+import { PickerMode } from '../../DateTimePicker.types'
 import { getDaysInMonth } from '../../DateTimePicker.utils'
 
 import AbstractInputMask from './AbstractInputMask'

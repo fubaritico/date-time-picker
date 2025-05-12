@@ -18,7 +18,7 @@ date-time-picker/
 │       ├── formats/        # Date formatting utilities
 │       ├── hooks/          # Custom React hooks
 │       ├── stories/        # Component stories
-│       ├── DateTimePicker.context.tsx  # Context provider
+│       ├── DateTimePickerProvider.tsx  # Context provider
 │       ├── DateTimePicker.test.tsx     # Component tests
 │       ├── DateTimePicker.tsx          # Main component
 │       ├── DateTimePicker.types.ts     # TypeScript types

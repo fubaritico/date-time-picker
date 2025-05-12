@@ -2,8 +2,8 @@ import clsx from 'clsx'
 import { forwardRef } from 'react'
 
 import Icon from '../../Icon/Icon'
-import { useCalendar } from '../DateTimePicker.context'
 import { PanelView } from '../DateTimePicker.types'
+import useDateTimePicker from '../hooks/useDateTimePicker'
 
 interface DataTimeSwitcherProps {
   /* Type of view currently displayed: 'DAYS' or 'TIME' */
@@ -14,7 +14,7 @@ interface DataTimeSwitcherProps {
 
 const DateTimeSwitcher = forwardRef<HTMLDivElement, DataTimeSwitcherProps>(
   ({ panelView, size }, ref) => {
-    const { setPanelView } = useCalendar()
+    const { setPanelView } = useDateTimePicker()
 
     return (
       <div

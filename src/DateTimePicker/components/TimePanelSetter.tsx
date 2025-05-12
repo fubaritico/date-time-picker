@@ -1,6 +1,6 @@
-import { FC } from 'react'
-
 import Icon from '../../Icon/Icon'
+
+import type { FC } from 'react'
 
 interface TimePanelSetterProps {
   date: string

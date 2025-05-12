@@ -2,7 +2,6 @@ import InputMask from '@mona-health/react-input-mask'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 import TextField from '../../TextField'
-import { useCalendar } from '../DateTimePicker.context'
 import { PickerMode } from '../DateTimePicker.types'
 import {
   convertFormattedDateToTimestamp,
@@ -11,6 +10,7 @@ import {
 } from '../DateTimePicker.utils'
 import { DATE_FORMAT, DATE_TIME_FORMAT, TIME_FORMAT } from '../formats'
 import AbstractInputMask from '../formats/masks/AbstractInputMask'
+import useDateTimePicker from '../hooks/useDateTimePicker'
 
 import type { DateTimeInputProps } from '../DateTimePicker.types'
 import type { ChangeEvent, FC } from 'react'
@@ -59,7 +59,7 @@ const DateTimeInput: FC<DateTimeInputProps> = ({
     maxDate,
     setInnerDate,
     setIgnoreClickAwayRef,
-  } = useCalendar()
+  } = useDateTimePicker()
 
   // Value as a string formatted for display
   const [inputValue, setInputValue] = useState<string | undefined>()

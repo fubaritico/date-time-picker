@@ -4,8 +4,8 @@ import './styles.css'
 
 import DateTimeInput from './components/DateTimeInput'
 import Panel from './components/Panel'
-import { CalendarProvider } from './DateTimePicker.context'
 import { getOffsetFromTimezone } from './DateTimePicker.utils'
+import DateTimePickerProvider from './DateTimePickerProvider'
 
 import type { DateTimePickerProps } from './DateTimePicker.types'
 import type { FC } from 'react'
@@ -93,7 +93,7 @@ const DateTimePicker: FC<DateTimePickerProps> = ({
   }, [timezone])
 
   return (
-    <CalendarProvider
+    <DateTimePickerProvider
       date={date}
       inputOffset={inputOutputOffsets.inputOffset}
       isControlled={!!onChange}
@@ -143,10 +143,8 @@ const DateTimePicker: FC<DateTimePickerProps> = ({
           triggerRef={triggerRef}
         />
       </div>
-    </CalendarProvider>
+    </DateTimePickerProvider>
   )
 }
 
 export default DateTimePicker
-
-export * from './DateTimePicker.types'

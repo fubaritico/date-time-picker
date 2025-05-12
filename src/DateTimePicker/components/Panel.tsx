@@ -1,22 +1,14 @@
 import clsx from 'clsx'
-import {
-  FC,
-  RefObject,
-  memo,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from 'react'
+import { memo, useCallback, useEffect, useRef, useState } from 'react'
 import { CSSTransition } from 'react-transition-group'
 
+import ClickAwayListener from '../../ClickAwayListener'
 import ConditionalWrapper from '../../ConditionalWrapper'
 import { FADE_ANIMATION_DURATION } from '../../constants'
 import Portal from '../../Portal'
-import { useCalendar } from '../DateTimePicker.context'
 import { PanelView, PickerMode } from '../DateTimePicker.types'
+import useDateTimePicker from '../hooks/useDateTimePicker'
 
-import ClickAwayListener from './ClickAwayListener'
 import DatePanel from './DatePanel'
 import DateTimeSwitcher from './DateTimeSwitcher'
 import MonthsPanel from './MonthsPanel'
@@ -24,6 +16,7 @@ import TimePanel from './TimePanel'
 import YearsPanel from './YearsPanel'
 
 import type { PickerProps } from '..'
+import type { FC, RefObject } from 'react'
 
 interface PanelProps extends PickerProps {
   /* Callback called when clicking outside the panel  */
@@ -72,7 +65,7 @@ const Panel: FC<PanelProps> = ({
     setPanelView,
     setInnerDate,
     ignoreClickAwayRef,
-  } = useCalendar()
+  } = useDateTimePicker()
 
   const [position, setPosition] = useState({ top: 0, left: 0 })
   const dateTimeSwitcherRef = useRef<HTMLDivElement>(null)

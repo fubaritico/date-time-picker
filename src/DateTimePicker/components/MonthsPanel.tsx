@@ -1,15 +1,7 @@
 import clsx from 'clsx'
-import {
-  FC,
-  MouseEvent,
-  useCallback,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 
 import Icon from '../../Icon'
-import { useCalendar } from '../DateTimePicker.context'
 import {
   addYears,
   formatToYYYYMMDD,
@@ -18,7 +10,10 @@ import {
   getTimestampsForEachMonth,
   subtractYears,
 } from '../DateTimePicker.utils'
+import useDateTimePicker from '../hooks/useDateTimePicker'
 import usePanelDomRect from '../hooks/usePanelDomRect'
+
+import type { FC, MouseEvent } from 'react'
 
 export interface MonthsPanelProps {
   /* Tailwind CSS classes overrides or extensions for more flexibility */
@@ -42,7 +37,7 @@ const MonthsPanel: FC<MonthsPanelProps> = ({
   onDateChange,
   size,
 }) => {
-  const { innerDate, inputOffset, locale } = useCalendar()
+  const { innerDate, inputOffset, locale } = useDateTimePicker()
   const [date, setDate] = useState<number>(
     innerDate ?? Date.now() + inputOffset
   )

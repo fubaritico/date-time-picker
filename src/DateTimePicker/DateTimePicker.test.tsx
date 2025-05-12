@@ -2,10 +2,12 @@ import { act, render, screen, waitFor } from '@testing-library/react'
 import user from '@testing-library/user-event'
 import MockDate from 'mockdate'
 
-import { I18nDate, formatToLocaleAwareFormat } from '..'
+import { I18nDate } from '..'
+import { formatToLocaleAwareFormat } from '../utils'
 
-import DateTimePicker, { PickerMode } from './DateTimePicker'
+import DateTimePicker from './DateTimePicker'
 import Integration from './DateTimePicker.integration'
+import { PickerMode } from './DateTimePicker.types'
 import { DATE_FORMAT, DATE_TIME_FORMAT, TIME_FORMAT } from './formats'
 
 import {

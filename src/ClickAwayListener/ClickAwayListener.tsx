@@ -41,11 +41,7 @@ const ClickAwayListener: FC<PropsWithChildren<ClickAwayListenerProps>> = ({
     }
   }, [onClickAway, ignoreClickAwayRef])
 
-  return (
-    <div ref={wrapperRef} data-test="click-away-listener">
-      {children}
-    </div>
-  )
+  return <div ref={wrapperRef}>{children}</div>
 }
 
 export default ClickAwayListener

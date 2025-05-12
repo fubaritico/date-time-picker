@@ -1,34 +1,11 @@
-import {
-  FC,
-  PropsWithChildren,
-  RefObject,
-  createContext,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 import { PanelView, PickerMode } from './DateTimePicker.types'
-import { DATE_TIME_FORMAT, ISO8601_FORMAT } from './formats'
+import DateTimePickerContext from './DateTimePickerContext'
+import { ISO8601_FORMAT } from './formats'
 
 import type { PickerProviderProps, PickerState } from './DateTimePicker.types'
-
-const CalendarContext = createContext<PickerState>({
-  inputOffset: 0,
-  outputOffset: 0,
-  ignoreClickAwayRef: { current: null },
-  innerDate: new Date().getTime(), // Data
-  isControlled: false,
-  locale: 'en', // Display
-  panelRect: new DOMRectReadOnly(),
-  panelView: PanelView.DAYS,
-  pickerFormat: DATE_TIME_FORMAT.en, // Display
-  setIgnoreClickAwayRef: () => {},
-  setInnerDate: () => {},
-  setPanelRect: () => {},
-  setPanelView: () => {},
-})
+import type { FC, PropsWithChildren, RefObject } from 'react'
 
 /**
  * Provides simple state with essential data as date, panel mode, calendar mode and date, panel mode setters.
@@ -37,7 +14,7 @@ const CalendarContext = createContext<PickerState>({
  * @param calendarMode Defines the behavior of the component (date, date and time, time)
  * @param children Component rendered in the provider scope
  */
-const CalendarProvider: FC<PropsWithChildren<PickerProviderProps>> = ({
+const DateTimePickerProvider: FC<PropsWithChildren<PickerProviderProps>> = ({
   children,
   date: p_date, // Data
   inputOffset = 0,
@@ -115,18 +92,10 @@ const CalendarProvider: FC<PropsWithChildren<PickerProviderProps>> = ({
   ])
 
   return (
-    <CalendarContext.Provider value={value}>
+    <DateTimePickerContext.Provider value={value}>
       {children}
-    </CalendarContext.Provider>
+    </DateTimePickerContext.Provider>
   )
 }
 
-const useCalendar = (): PickerState => {
-  const context = useContext(CalendarContext)
-  if (typeof context === 'undefined') {
-    throw new Error('useCalendar must be used within a CalendarProvider')
-  }
-  return context
-}
-
-export { CalendarProvider, useCalendar }
+export default DateTimePickerProvider

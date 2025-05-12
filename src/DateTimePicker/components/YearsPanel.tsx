@@ -2,8 +2,8 @@ import clsx from 'clsx'
 import { useCallback, useEffect, useState } from 'react'
 
 import Icon from '../../Icon'
-import { useCalendar } from '../DateTimePicker.context'
 import { addYears, getYearFromTs, subtractYears } from '../DateTimePicker.utils'
+import useDateTimePicker from '../hooks/useDateTimePicker'
 import usePanelDomRect from '../hooks/usePanelDomRect'
 
 import type { FC, MouseEvent } from 'react'
@@ -26,7 +26,7 @@ export interface YearsPanelProps {
  * @constructor
  */
 const YearsPanel: FC<YearsPanelProps> = ({ className, onDateChange, size }) => {
-  const { innerDate, inputOffset } = useCalendar()
+  const { innerDate, inputOffset } = useDateTimePicker()
   const [year, setYear] = useState<number>(
     innerDate ?? Date.now() + inputOffset
   )

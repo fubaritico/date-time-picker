@@ -1,4 +1,4 @@
-import { InputMask, PickerMode } from '../../DateTimePicker'
+import { InputMask, PickerMode } from '../../DateTimePicker.types'
 
 /**
  * Abstract class for the input mask

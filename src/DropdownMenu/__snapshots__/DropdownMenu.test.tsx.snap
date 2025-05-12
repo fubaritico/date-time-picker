@@ -100,9 +100,7 @@ exports[`DropdownMenu Selectable should render menu on label/button click 1`] = 
             </div>
           </button>
         </div>
-        <div
-          data-test="click-away-listener"
-        >
+        <div>
           <div
             class="bg-white shadow rounded-sm absolute z-[999] overflow-hidden !rounded-md menu-enter menu-enter-active"
             data-test="dropdown-menu"

@@ -1,4 +1,4 @@
-export { default, createCustomChangeEvent } from './TextField'
+export { default } from './TextField'
 
 /* Types */
 export type { TextFieldProps } from './TextField'

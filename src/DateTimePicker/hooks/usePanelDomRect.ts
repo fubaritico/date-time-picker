@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react'
 
-import { useCalendar } from '../DateTimePicker.context'
+import useDateTimePicker from './useDateTimePicker'
 
 export default function usePanelDomRect() {
-  const { setPanelRect } = useCalendar()
+  const { setPanelRect } = useDateTimePicker()
   const panelRef = useRef(null)
 
   useEffect(() => {
