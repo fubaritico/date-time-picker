@@ -2,43 +2,6 @@
 
 A React 19 date and time picker component with Tailwind CSS styling.
 
-## Installation
-
-```bash
-npm install @your-scope/date-time-picker
-# or
-yarn add @your-scope/date-time-picker
-# or
-pnpm add @your-scope/date-time-picker
-```
-
-> **Note:** Replace `@your-scope` with your actual npm scope or username.
-
-## Usage
-
-```jsx
-import React, { useState } from 'react';
-import { DateTimePicker } from '@your-scope/date-time-picker';
-
-// Import the styles (optional if you're using a CSS loader in your project)
-import '@your-scope/date-time-picker/dist/index.css';
-
-function App() {
-  const [value, setValue] = useState(new Date());
-
-  return (
-    <div>
-      <h1>Date Time Picker Example</h1>
-      <DateTimePicker 
-        value={value} 
-        onChange={setValue} 
-      />
-      <p>Selected value: {value.toString()}</p>
-    </div>
-  );
-}
-```
-
 ## Props
 
 | Prop | Type | Default | Description |
