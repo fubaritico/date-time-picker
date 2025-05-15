@@ -244,6 +244,34 @@ When you're done testing:
    yalc installations clean
    ```
 
+### NPM Token Configuration
+
+When working with private packages or publishing, you might encounter issues with the NPM_TOKEN. Here's how to handle it:
+
+#### For Local Development
+
+If you see warnings about NPM_TOKEN not being set, you have two options:
+
+1. **Simple Solution (Recommended for Local Development)**
+   - Delete the `.npmrc` file locally (it's gitignored anyway)
+   - Or create a basic `.npmrc` with just:
+     ```
+     registry=https://registry.npmjs.org/
+     ```
+
+2. **For Publishing and CI/CD**
+   - Create a `.npmrc` file with:
+     ```
+     //registry.npmjs.org/:_authToken=${NPM_TOKEN}
+     registry=https://registry.npmjs.org/
+     ```
+   - Set the NPM_TOKEN in your environment:
+     ```bash
+     export NPM_TOKEN=your_token_value
+     ```
+
+Note: The `.npmrc` file is git-ignored for security reasons. For local development, you typically don't need the NPM_TOKEN unless you're publishing or accessing private packages.
+
 ## License
 
 MIT
