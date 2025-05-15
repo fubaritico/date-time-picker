@@ -1,31 +1,25 @@
 import clsx from 'clsx'
-import {
-  type FC,
-  type ReactNode,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 import { Button, Icon, Label, Menu } from '..'
 
 import { isString } from './DropdownMenu.utils'
 
-import type { ButtonProps, MenuItemConfig, MenuPlacement } from '..'
+import type { ButtonProps, MenuItemConfig } from '..'
+import type { FC, ReactNode } from 'react'
 
 export interface DropdownMenuProps {
   /* Extra CSS classes for the button (tailwind) */
   buttonClassName?: string
-  /* The version of button use in place of SimpleButton, with or without inactivity reset time (use for menu items) */
+  /* The version of the button used in place of SimpleButton, with or without inactivity reset time (use for menu items) */
   buttonComponent?: typeof Button
-  /* Default label displayed in the opener button */
+  /* Default label displayed in the open button */
   buttonLabel?: ReactNode
   /* Button type */
   buttonType?: 'button' | 'submit' | 'reset'
   /* Button color */
   color?: UIColor
-  /* Deprecated: Value on init (preselection in the case of controlled component */
+  /* Deprecated: Value on init (preselection in the case of a controlled component) */
   defaultValue?: string
   /* Dropdown is disabled */
   disabled?: boolean
@@ -49,67 +43,57 @@ export interface DropdownMenuProps {
   onValueChange?: (value: string) => void
   /* The open state can be controlled */
   open?: boolean
-  /* Menu placement: 'bottom-start' | 'bottom-end'  */
-  position?: MenuPlacement
+  /* Menu placement: 'bottom-start' | 'bottom-end' */
+  placement?: Extract<Placement, 'bottom-start' | 'bottom-end'>
   /* Dropdown is required */
   required?: boolean
   /* Extra CSS classes for the root element (tailwind) */
   rootClassName?: string
-  /* Button shape 'rounded' | 'square' */
-  shape?: 'rounded' | 'square'
   /*
    * Will show the selected value instead of the button label, defaults to false.
    * Use this if you want a selectable menu item to be highlighted when selected.
    */
   showSelectedValue?: boolean
-  /* Dropdown button size 'small' | 'medium' | 'large' */
+  /* Dropdown button size 'sm' | 'md' | 'lg' */
   size?: UISize
-  /* Placement of the tooltip displayed on menu item hovering */
-  Placement?: Placement
   /* Component used instead of the button, defaults to null */
   triggerComponent?: ReactNode
   /* Extra CSS classes for the trigger component element (tailwind) */
   triggerComponentClassName?: string
   /* Value passed to the component when controlled */
   value?: string
-  /* Menu button style 'primary' | 'secondary' */
+  /* Menu button style 'primary' | 'secondary' | 'ghost' */
   variant?: ButtonProps['variant']
   /* Width of the dropdown button in pixels */
   width?: number
 }
 
-const labelSizes: Record<UISize, UISize> = {
-  small: 'small',
-  medium: 'medium',
-  large: 'medium',
-}
-
 const DropdownMenu: FC<DropdownMenuProps> = ({
-  variant = 'primary',
   buttonComponent,
   buttonLabel,
   buttonType,
+  color = 'stone',
   disabled,
   enablePortal = false,
   items,
   label,
   labelInfo,
+  loading,
   menuWidth,
   menuFullWidth,
+  placement = 'bottom-start',
   dropdownFullWidth = false,
   onValueChange,
   open,
-  position = 'bottom-end',
   required,
   rootClassName,
-  shape = 'rounded',
   showSelectedValue,
-  size = 'large',
+  size = 'lg',
   triggerComponent = null,
   triggerComponentClassName,
   value,
+  variant = 'primary',
   width,
-  loading,
 }) => {
   const [isOpen, setIsOpen] = useState(open ?? false)
   const buttonContainerRef = useRef<HTMLDivElement>(null)
@@ -172,7 +156,7 @@ const DropdownMenu: FC<DropdownMenuProps> = ({
           label={label}
           labelInfo={labelInfo}
           required={required}
-          size={labelSizes[size]}
+          size={size}
           disabled={disabled}
         />
       )}
@@ -202,6 +186,7 @@ const DropdownMenu: FC<DropdownMenuProps> = ({
               aria-label={
                 isString(buttonLabel) ? buttonLabel : 'Select an option'
               }
+              className="w-full flex-nowrap"
               label={
                 <>
                   <span
@@ -211,14 +196,19 @@ const DropdownMenu: FC<DropdownMenuProps> = ({
                     {currentLabel}
                   </span>
                   <div
-                    className={clsx('w-5', {
+                    className={clsx('w-5 justify-self-end', {
                       'mt-0.5': !isOpen,
                       'mb-0.5': isOpen,
                     })}
                   >
                     <Icon
-                      name={isOpen ? 'HiChevronUp' : 'HiChevronDown'}
-                      className="size-5"
+                      name="HiChevronDown"
+                      className={clsx('text-white transition-transform', {
+                        'size-4': size === 'sm',
+                        'size-4.5': size === 'md',
+                        'size-5': size === 'lg',
+                        'rotate-180': isOpen,
+                      })}
                     />
                   </div>
                 </>
@@ -228,24 +218,25 @@ const DropdownMenu: FC<DropdownMenuProps> = ({
                 setIsOpen(!isOpen)
               }}
               size={size}
+              color={color}
               style={{ width }}
               type={buttonType}
               variant={variant}
-            ></Button>
+            />
           )}
         </div>
         <Menu
           buttonComponent={buttonComponent}
           className={clsx({ 'w-full': menuFullWidth })}
+          color={color}
           enablePortal={enablePortal}
           items={items ?? []}
           menuWidth={menuWidth} // Don't really know what to do with that, to be settled.
           onClose={closeMenu}
           onMenuItemClick={handleMenuItemClick}
           open={isOpen}
-          placement={position}
+          placement={placement}
           selectedValue={value}
-          shape={shape}
           showSelectedValue={showSelectedValue}
           size={size}
           triggerRef={buttonContainerRef}

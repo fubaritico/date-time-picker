@@ -12,15 +12,15 @@ export interface DateTimePickerIntegrationProps extends DateTimePickerProps {
   controls?: boolean
   /* Locale Aware Format for easy formatting  */
   outputFormat?: LocaleAwareFormat
-  /* Fake content placement */
-  placement?: 'bottom-start' | 'bottom-end'
+  /* Fake content placement: 'bottom-start' | 'bottom-end' */
+  placement?: Extract<Placement, 'bottom-start' | 'bottom-end'>
   /* Moment Timezone list member */
   timezone?: Timezone
 }
 
 const FakeContent: FC = () => {
   return (
-    <div className="flex flex-col items-center p-4 bg-white/50 text-blue-900 rounded gap-4 my-4">
+    <div className="flex flex-col items-center p-4 bg-white/50 text-gray-900 rounded gap-4 my-4">
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dapibus mi
         eget quam semper blandit. Nullam vel ullamcorper lacus. Nam in quam
@@ -156,26 +156,24 @@ const DateTimePickerIntegration: FC<DateTimePickerIntegrationProps> = ({
         {controls && (
           <div className="flex gap-4">
             <DropdownMenu
-              size="medium"
+              size="md"
               buttonComponent={Button}
               variant="primary"
               label="Language"
-              position="bottom-start"
+              placement="bottom-start"
               items={languages}
-              shape="rounded"
               onValueChange={handleActionSelection}
               showSelectedValue
               value={locale}
               width={200}
             />
             <DropdownMenu
-              size="medium"
+              size="md"
               buttonComponent={Button}
               variant="primary"
               label="Locale aware format"
-              position="bottom-start"
+              placement="bottom-start"
               items={localeAwareFormatItems}
-              shape="rounded"
               onValueChange={handleFormatSelection}
               showSelectedValue
               value={localeAwareFormat}

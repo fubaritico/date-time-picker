@@ -8,7 +8,7 @@ import useDateTimePicker from '../hooks/useDateTimePicker'
 interface DataTimeSwitcherProps {
   /* Type of view currently displayed: 'DAYS' or 'TIME' */
   panelView: PanelView
-  /* Panel size: 'small' | 'medium' | 'large'  */
+  /* Panel size: 'sm' | 'md' | 'lg'  */
   size?: UISize
 }
 
@@ -21,8 +21,8 @@ const DateTimeSwitcher = forwardRef<HTMLDivElement, DataTimeSwitcherProps>(
         className={clsx(
           'flex justify-between items-stretch border-b border-b-gray-100',
           {
-            'h-[36px]': size === 'small',
-            'h-[46px]': size !== 'small',
+            'h-[36px]': size === 'sm',
+            'h-[46px]': size !== 'sm',
           }
         )}
         ref={ref}
@@ -46,8 +46,8 @@ const DateTimeSwitcher = forwardRef<HTMLDivElement, DataTimeSwitcherProps>(
         >
           <Icon
             aria-hidden
-            className={size === 'small' ? 'h-5 w-5' : 'h-6 w-6'}
-            name={size === 'small' ? 'HiMiniCalendarDays' : 'HiCalendarDays'}
+            className={size === 'sm' ? 'h-5 w-5' : 'h-6 w-6'}
+            name={size === 'sm' ? 'HiMiniCalendarDays' : 'HiCalendarDays'}
           />
         </button>
         <button
@@ -69,8 +69,8 @@ const DateTimeSwitcher = forwardRef<HTMLDivElement, DataTimeSwitcherProps>(
         >
           <Icon
             aria-hidden
-            className={size === 'small' ? 'h-5 w-5' : 'h-6 w-6'}
-            name={size === 'small' ? 'HiMiniClock' : 'HiClock'}
+            className={size === 'sm' ? 'h-5 w-5' : 'h-6 w-6'}
+            name={size === 'sm' ? 'HiMiniClock' : 'HiClock'}
           />
         </button>
       </div>

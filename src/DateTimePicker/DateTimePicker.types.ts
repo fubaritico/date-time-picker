@@ -127,8 +127,8 @@ export interface DateTimeTextInputProps {
   /* If true, text input is required */
   required?: boolean
   /* Text input severity, translated into colors: 'success' | 'error' | 'warning' | 'info' */
-  severity?: 'success' | 'error' | 'warning' | 'info'
-  /* Text input size:'small' | 'medium' | 'large'  */
+  severity?: Severity
+  /* Text input size:'sm' | 'md' | 'lg'  */
   size?: UISize
   /* Moment Timezone list member */
   timezone?: Timezone

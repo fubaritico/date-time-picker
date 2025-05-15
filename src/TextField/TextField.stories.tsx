@@ -38,7 +38,7 @@ const meta: Meta<typeof TextField> = {
     },
     size: {
       control: 'select',
-      options: ['small', 'medium', 'large'],
+      options: ['sm', 'md', 'lg'],
       description: 'Size of the input."Medium" is the default value',
       table: {
         type: { summary: 'string' },
@@ -117,7 +117,7 @@ export const Default: Story = {
 }
 
 //////////////////////////////////////////////////////////
-//  BUTTONS BOARD
+//  TEXTFIELD BOARD
 //////////////////////////////////////////////////////////
 
 const IntegrationBoard: FC = () => {
@@ -134,27 +134,27 @@ const IntegrationBoard: FC = () => {
             <Integration
               label="First name"
               initialValue={''}
-              size="small"
+              size="sm"
               canClear
             />
             <Integration
               label="First name with label info"
               labelInfo={'(Optional)'}
               initialValue={''}
-              size="small"
+              size="sm"
               canClear
             />
             <Integration
               label="Required first name"
               initialValue={''}
-              size="small"
+              size="sm"
               canClear
               required
             />
             <Integration
               label="First name disabled"
               initialValue={''}
-              size="small"
+              size="sm"
               canClear
               disabled
             />
@@ -162,43 +162,43 @@ const IntegrationBoard: FC = () => {
               label="First name disabled with label info"
               labelInfo={'(Optional)'}
               initialValue={''}
-              size="small"
+              size="sm"
               canClear
               disabled
             />
             <Integration
               label="First name disabled /w value"
-              size="small"
+              size="sm"
               canClear
               disabled
-              initialValue="Oda Nobunaga"
+              initialValue="John Doe"
             />
             <Integration
               label="First name success /w value"
-              size="small"
+              size="sm"
               canClear
-              initialValue="Oda Nobunaga"
+              initialValue="John Doe"
               severity="success"
             />
             <Integration
               label="First name error /w value"
-              size="small"
+              size="sm"
               canClear
-              initialValue="Oda Nobunaga"
+              initialValue="John Doe"
               severity="error"
               errors={['This is an error message']}
             />
             <Integration
               label="First name /w icon"
               initialValue={''}
-              size="small"
+              size="sm"
               canClear
               iconName="HiMiniUser"
             />
             <Integration
               label="First name /w clickable icon and no clear icon"
               initialValue={''}
-              size="small"
+              size="sm"
               iconName="HiCalendar"
               onIconClick={() => {
                 alert('Icon clicked')
@@ -207,7 +207,7 @@ const IntegrationBoard: FC = () => {
             <Integration
               label="Required first name /w icon"
               initialValue={''}
-              size="small"
+              size="sm"
               canClear
               iconName="HiMiniUser"
               required
@@ -215,59 +215,59 @@ const IntegrationBoard: FC = () => {
             <Integration
               label="First name disabled /w icon"
               initialValue={''}
-              size="small"
+              size="sm"
               canClear
               iconName="HiMiniUser"
               disabled
             />
             <Integration
               label="First name success /w icon"
-              initialValue="Oda Nobunaga"
+              initialValue="John Doe"
               severity="success"
-              size="small"
+              size="sm"
               canClear
               iconName="HiMiniUser"
             />
             <Integration
               label="Required success first name /w icon"
-              initialValue="Oda Nobunaga"
+              initialValue="John Doe"
               severity="success"
-              size="small"
+              size="sm"
               canClear
               iconName="HiMiniUser"
               required
             />
             <Integration
               label="First name success disabled /w icon"
-              initialValue="Oda Nobunaga"
+              initialValue="John Doe"
               severity="success"
-              size="small"
+              size="sm"
               canClear
               iconName="HiMiniUser"
               disabled
             />
             <Integration
               label="First name error /w icon"
-              initialValue="Oda Nobunaga"
+              initialValue="John Doe"
               severity="error"
-              size="small"
+              size="sm"
               canClear
               iconName="HiMiniUser"
             />
             <Integration
               label="Required error first name /w icon"
-              initialValue="Oda Nobunaga"
+              initialValue="John Doe"
               severity="error"
-              size="small"
+              size="sm"
               canClear
               iconName="HiMiniUser"
               required
             />
             <Integration
               label="First name error disabled /w icon"
-              initialValue="Oda Nobunaga"
+              initialValue="John Doe"
               severity="error"
-              size="small"
+              size="sm"
               canClear
               iconName="HiMiniUser"
               disabled
@@ -306,18 +306,18 @@ const IntegrationBoard: FC = () => {
               label="First name disabled /w value"
               canClear
               disabled
-              initialValue="Oda Nobunaga"
+              initialValue="John Doe"
             />
             <Integration
               label="First name success /w value"
               canClear
-              initialValue="Oda Nobunaga"
+              initialValue="John Doe"
               severity="success"
             />
             <Integration
               label="First name error /w value"
               canClear
-              initialValue="Oda Nobunaga"
+              initialValue="John Doe"
               severity="error"
               errors={['This is an error message']}
             />
@@ -351,14 +351,14 @@ const IntegrationBoard: FC = () => {
             />
             <Integration
               label="First name success /w icon"
-              initialValue="Oda Nobunaga"
+              initialValue="John Doe"
               severity="success"
               canClear
               iconName="HiMiniUser"
             />
             <Integration
               label="Required success first name /w icon"
-              initialValue="Oda Nobunaga"
+              initialValue="John Doe"
               severity="success"
               canClear
               iconName="HiMiniUser"
@@ -366,7 +366,7 @@ const IntegrationBoard: FC = () => {
             />
             <Integration
               label="First name success disabled /w icon"
-              initialValue="Oda Nobunaga"
+              initialValue="John Doe"
               severity="success"
               canClear
               iconName="HiMiniUser"
@@ -374,14 +374,14 @@ const IntegrationBoard: FC = () => {
             />
             <Integration
               label="First name error /w icon"
-              initialValue="Oda Nobunaga"
+              initialValue="John Doe"
               severity="error"
               canClear
               iconName="HiMiniUser"
             />
             <Integration
               label="Required error first name /w icon"
-              initialValue="Oda Nobunaga"
+              initialValue="John Doe"
               severity="error"
               canClear
               iconName="HiMiniUser"
@@ -389,7 +389,7 @@ const IntegrationBoard: FC = () => {
             />
             <Integration
               label="First name error disabled /w icon"
-              initialValue="Oda Nobunaga"
+              initialValue="John Doe"
               severity="error"
               canClear
               iconName="HiMiniUser"
@@ -402,27 +402,27 @@ const IntegrationBoard: FC = () => {
             <Integration
               label="First name"
               initialValue={''}
-              size="large"
+              size="lg"
               canClear
             />
             <Integration
               label="First name with label info"
               labelInfo={'(Optional)'}
               initialValue={''}
-              size="large"
+              size="lg"
               canClear
             />
             <Integration
               label="Required first name"
               initialValue={''}
-              size="large"
+              size="lg"
               canClear
               required
             />
             <Integration
               label="First name disabled"
               initialValue={''}
-              size="large"
+              size="lg"
               canClear
               disabled
             />
@@ -430,43 +430,43 @@ const IntegrationBoard: FC = () => {
               label="First name disabled with label info"
               labelInfo={'(Optional)'}
               initialValue={''}
-              size="large"
+              size="lg"
               canClear
               disabled
             />
             <Integration
               label="First name disabled /w value"
-              size="large"
+              size="lg"
               canClear
               disabled
-              initialValue="Oda Nobunaga"
+              initialValue="John Doe"
             />
             <Integration
               label="First name success /w value"
-              size="large"
+              size="lg"
               canClear
-              initialValue="Oda Nobunaga"
+              initialValue="John Doe"
               severity="success"
             />
             <Integration
               label="First name error /w value"
-              size="large"
+              size="lg"
               canClear
-              initialValue="Oda Nobunaga"
+              initialValue="John Doe"
               severity="error"
               errors={['This is an error message']}
             />
             <Integration
               label="First name /w icon"
               initialValue={''}
-              size="large"
+              size="lg"
               canClear
               iconName="HiMiniUser"
             />
             <Integration
               label="First name /w clickable icon and no clear icon"
               initialValue={''}
-              size="large"
+              size="lg"
               iconName="HiCalendar"
               onIconClick={() => {
                 alert('Icon clicked')
@@ -475,7 +475,7 @@ const IntegrationBoard: FC = () => {
             <Integration
               label="Required first name /w icon"
               initialValue={''}
-              size="large"
+              size="lg"
               canClear
               iconName="HiMiniUser"
               required
@@ -483,59 +483,59 @@ const IntegrationBoard: FC = () => {
             <Integration
               label="First name disabled /w icon"
               initialValue={''}
-              size="large"
+              size="lg"
               canClear
               iconName="HiMiniUser"
               disabled
             />
             <Integration
               label="First name success /w icon"
-              initialValue="Oda Nobunaga"
+              initialValue="John Doe"
               severity="success"
-              size="large"
+              size="lg"
               canClear
               iconName="HiMiniUser"
             />
             <Integration
               label="Required success first name /w icon"
-              initialValue="Oda Nobunaga"
+              initialValue="John Doe"
               severity="success"
-              size="large"
+              size="lg"
               canClear
               iconName="HiMiniUser"
               required
             />
             <Integration
               label="First name success disabled /w icon"
-              initialValue="Oda Nobunaga"
+              initialValue="John Doe"
               severity="success"
-              size="large"
+              size="lg"
               canClear
               iconName="HiMiniUser"
               disabled
             />
             <Integration
               label="First name error /w icon"
-              initialValue="Oda Nobunaga"
+              initialValue="John Doe"
               severity="error"
-              size="large"
+              size="lg"
               canClear
               iconName="HiMiniUser"
             />
             <Integration
               label="Required error first name /w icon"
-              initialValue="Oda Nobunaga"
+              initialValue="John Doe"
               severity="error"
-              size="large"
+              size="lg"
               canClear
               iconName="HiMiniUser"
               required
             />
             <Integration
               label="First name error disabled /w icon"
-              initialValue="Oda Nobunaga"
+              initialValue="John Doe"
               severity="error"
-              size="large"
+              size="lg"
               canClear
               iconName="HiMiniUser"
               disabled

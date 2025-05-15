@@ -13,7 +13,7 @@ export interface LabelProps {
   label: string
   /* Information displayed on hovering the exclamation mark in a tooltip */
   labelInfo?: string
-  /* Text input size: 'small' | 'medium' | 'large'  */
+  /* Text input size: 'sm' | 'md' | 'lg'  */
   size?: UISize
   /* Parent input is required */
   required?: boolean
@@ -33,9 +33,9 @@ const Label: FC<LabelProps> = ({
         'flex items-center text-gray-900 font-medium w-full',
         {
           'text-gray-400': disabled,
-          '!text-md': size === 'large',
-          '!text-sm': size === 'medium',
-          '!text-xs': size === 'small',
+          '!text-md': size === 'lg',
+          '!text-sm': size === 'md',
+          '!text-xs': size === 'sm',
         },
         className
       )}

@@ -20,7 +20,7 @@ export interface MonthsPanelProps {
   className?: string
   /* Callback function called when a date is selected */
   onDateChange?: (date: number) => void
-  /* Panel size: 'small' | 'medium' | 'large'  */
+  /* Panel size: 'sm' | 'md' | 'lg'  */
   size?: UISize
 }
 
@@ -29,7 +29,7 @@ export interface MonthsPanelProps {
  *
  * @param className Tailwind CSS classes overrides or extensions for more flexibility
  * @param onDateChange Callback function called when a date is selected
- * @param size Panel size: 'small' | 'medium' | 'large'
+ * @param size Panel size: 'sm' | 'md' | 'lg'
  * @constructor
  */
 const MonthsPanel: FC<MonthsPanelProps> = ({
@@ -109,8 +109,8 @@ const MonthsPanel: FC<MonthsPanelProps> = ({
     >
       <div
         className={clsx('flex gap-4 text-gray-600 justify-between', {
-          'px-6 pt-6 pb-3': size === 'large',
-          'px-4 pt-4 pb-2': size === 'medium' || size === 'small',
+          'px-6 pt-6 pb-3': size === 'lg',
+          'px-4 pt-4 pb-2': size === 'md' || size === 'sm',
         })}
       >
         <button
@@ -124,8 +124,8 @@ const MonthsPanel: FC<MonthsPanelProps> = ({
         </button>
         <div
           className={clsx('font-bold', {
-            'text-sm': size === 'medium',
-            'text-xs': size === 'small',
+            'text-sm': size === 'md',
+            'text-xs': size === 'sm',
           })}
         >
           {formatToYYYYMMDD(date).split('-')[0]}
@@ -153,8 +153,8 @@ const MonthsPanel: FC<MonthsPanelProps> = ({
                     allMonthNames[i] !== getLongMonthNameFromTs(date, locale),
                   'border-blue-600 bg-blue-600 text-white hover:text-white hover:border-blue-600 hover:bg-blue-600':
                     allMonthNames[i] === getLongMonthNameFromTs(date, locale),
-                  'text-sm': size === 'medium',
-                  'text-xs': size === 'small',
+                  'text-sm': size === 'md',
+                  'text-xs': size === 'sm',
                 }
               )}
               data-date={monthsTimestamps[i]}

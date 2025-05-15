@@ -41,13 +41,13 @@ const meta: Meta<typeof DropdownWrapper> = {
     },
     size: {
       control: 'select',
-      options: ['small', 'medium', 'large'],
+      options: ['sm', 'md', 'lg'],
       description: 'The size of the dropdown',
     },
-    position: {
+    placement: {
       control: 'select',
       options: ['bottom-start', 'bottom-end'],
-      description: 'The position of the dropdown menu',
+      description: 'The placement of the dropdown menu',
     },
     defaultValue: {
       control: 'text',
@@ -62,13 +62,12 @@ export default meta
 type Story = StoryObj<typeof DropdownWrapper>
 
 export const DropdownLeftAlignment: Story = {
-  name: 'White with bottom-start placement',
+  name: 'Blue with bottom-start placement',
   args: {
-    color: 'white',
+    color: 'blue',
     variant: 'primary',
-    size: 'large',
-    shape: 'rounded',
-    position: 'bottom-start',
+    size: 'lg',
+    placement: 'bottom-start',
     items: menuItems,
     menuWidth: 300,
     buttonLabel: 'Select an action',
@@ -79,9 +78,8 @@ export const Primary: Story = {
   name: 'Primary with bottom-end placement',
   args: {
     variant: 'primary',
-    size: 'large',
-    shape: 'rounded',
-    position: 'bottom-end',
+    size: 'lg',
+    placement: 'bottom-end',
     items: menuItems,
     menuWidth: 280,
     buttonLabel: 'Select an action',
@@ -92,9 +90,8 @@ export const WithLongItems: Story = {
   name: 'With long items',
   args: {
     variant: 'primary',
-    size: 'large',
-    shape: 'rounded',
-    position: 'bottom-end',
+    size: 'lg',
+    placement: 'bottom-end',
     items: longMenuItems,
     menuWidth: 280,
     buttonLabel: 'Select an action',
@@ -106,9 +103,8 @@ export const WithManyItems: Story = {
   name: 'Menu with many items',
   args: {
     variant: 'primary',
-    size: 'large',
-    shape: 'rounded',
-    position: 'bottom-end',
+    size: 'lg',
+    placement: 'bottom-end',
     items: [...menuItems, ...extraMenuItems],
     menuWidth: 280,
     buttonLabel: 'Select an action',
@@ -119,9 +115,8 @@ export const PrimaryWithColoredItemAndIcons: Story = {
   name: 'Colored menu items with icons',
   args: {
     variant: 'primary',
-    size: 'large',
-    shape: 'rounded',
-    position: 'bottom-start',
+    size: 'lg',
+    placement: 'bottom-start',
     items: coloredMenuItems,
     menuWidth: 280,
     buttonLabel: 'Select an action',
@@ -132,10 +127,9 @@ export const Selected: Story = {
   name: 'Primary with selected value',
   args: {
     variant: 'primary',
-    size: 'large',
-    shape: 'rounded',
+    size: 'lg',
     defaultValue: 'Reassign',
-    position: 'bottom-end',
+    placement: 'bottom-end',
     items: menuItems,
     menuWidth: 280,
     buttonLabel: 'Select an action',
@@ -146,10 +140,9 @@ export const SelectedShown: Story = {
   name: 'Primary with shown selected value',
   args: {
     variant: 'primary',
-    size: 'large',
-    shape: 'rounded',
+    size: 'lg',
     defaultValue: 'Reassign',
-    position: 'bottom-end',
+    placement: 'bottom-end',
     items: menuItems,
     menuWidth: 280,
     buttonLabel: 'Select an action',
@@ -161,9 +154,8 @@ export const WithEmailAndName: Story = {
   name: 'Primary with name and email',
   args: {
     variant: 'primary',
-    size: 'large',
-    shape: 'rounded',
-    position: 'bottom-end',
+    size: 'lg',
+    placement: 'bottom-end',
     items: [
       {
         label: (
@@ -188,7 +180,7 @@ export const IconButtonWithMenuToTheLeft: Story = {
   name: 'Icon button with menu to the left',
   args: {
     variant: 'secondary',
-    position: 'bottom-start',
+    placement: 'bottom-start',
     items: menuItems,
     menuWidth: 200,
     triggerComponent: (
@@ -205,6 +197,6 @@ export const IconButtonWithMenuToTheRight: Story = {
   name: 'Icon button with menu to the right',
   args: {
     ...IconButtonWithMenuToTheLeft.args,
-    position: 'bottom-end',
+    placement: 'bottom-end',
   },
 }

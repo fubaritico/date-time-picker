@@ -45,7 +45,7 @@ const DateTimePicker: FC<DateTimePickerProps> = ({
   noDefault = false,
   onChange,
   placement = 'bottom-start',
-  size = 'medium',
+  size = 'md',
   timezone,
   ...textInputProps
 }) => {

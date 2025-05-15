@@ -14,12 +14,7 @@ export type { ButtonProps } from './Button'
 export type { ConditionalWrapperProps } from './ConditionalWrapper'
 export type { IconProps, Hi2UiIconNames } from './Icon'
 export type { I18nDateProps, LocaleAwareFormat } from './I18nDate'
-export type {
-  MenuProps,
-  MenuPlacement,
-  MenuItemConfig,
-  MenuItemColor,
-} from './Menu'
+export type { MenuProps, MenuItemConfig } from './Menu'
 
-/**/
+/* Exports */
 export * from './DateTimePicker'

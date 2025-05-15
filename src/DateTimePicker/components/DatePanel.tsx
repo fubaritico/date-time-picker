@@ -21,7 +21,7 @@ export interface DatePanelProps {
   className?: string
   /* Function called on date change */
   onDateChange?: (date: number) => void
-  /* Panel size: 'small' | 'medium' | 'large'  */
+  /* Panel size: 'sm' | 'md' | 'lg'  */
   size?: UISize
 }
 
@@ -94,8 +94,8 @@ const DatePanel: FC<DatePanelProps> = ({ className, onDateChange, size }) => {
     >
       <div
         className={clsx('flex gap-4 text-gray-600 justify-between', {
-          'px-6 pt-6 pb-3': size === 'large',
-          'px-4 pt-4 pb-2': size === 'medium' || size === 'small',
+          'px-6 pt-6 pb-3': size === 'lg',
+          'px-4 pt-4 pb-2': size === 'md' || size === 'sm',
         })}
       >
         <button
@@ -113,8 +113,8 @@ const DatePanel: FC<DatePanelProps> = ({ className, onDateChange, size }) => {
             className={clsx(
               'hover:text-blue-700 transition-colors duration-500',
               {
-                'text-sm': size === 'medium',
-                'text-xs': size === 'small',
+                'text-sm': size === 'md',
+                'text-xs': size === 'sm',
               }
             )}
             onClick={() => {
@@ -128,8 +128,8 @@ const DatePanel: FC<DatePanelProps> = ({ className, onDateChange, size }) => {
             className={clsx(
               'hover:text-blue-700 transition-colors duration-500',
               {
-                'text-sm': size === 'medium',
-                'text-xs': size === 'small',
+                'text-sm': size === 'md',
+                'text-xs': size === 'sm',
               }
             )}
             onClick={() => {

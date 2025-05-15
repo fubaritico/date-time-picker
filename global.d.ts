@@ -1,25 +1,29 @@
-import type { FC, PropsWithRef, SVGProps } from 'react'
-
 declare global {
-  // DYNAMICALLY DISPLAYED ICONS
-  export type LazyIconProps = PropsWithRef<SVGProps<SVGSVGElement>>
-  export type LazyIcon = FC<LazyIconProps>
-  export type LazyIconsGroup<IconType extends string> = Record<
-    IconType,
-    LazyIcon
-  >
-  export interface IconID {
-    iconGroupName: string
-    iconName: string
-  }
-  export type UISize = 'small' | 'medium' | 'large'
+  export type UISize = 'sm' | 'md' | 'lg'
+
   export type UIColor =
-    | 'white'
-    | 'gray'
-    | 'lightgray'
-    | 'darkgray'
-    | 'green'
     | 'red'
+    | 'orange'
+    | 'amber'
+    | 'yellow'
+    | 'lime'
+    | 'green'
+    | 'emerald'
+    | 'teal'
+    | 'cyan'
+    | 'sky'
+    | 'blue'
+    | 'indigo'
+    | 'violet'
+    | 'purple'
+    | 'fuchsia'
+    | 'pink'
+    | 'rose'
+    | 'slate'
+    | 'gray'
+    | 'zinc'
+    | 'neutral'
+    | 'stone'
 
   export type Placement =
     | 'bottom'
@@ -34,6 +38,8 @@ declare global {
     | 'top'
     | 'top-end'
     | 'top-start'
+
+  export type Severity = 'success' | 'error' | 'warning' | 'info'
 
   export type Timezone =
     | 'GMT'

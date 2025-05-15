@@ -1,5 +1,9 @@
+import clsx from 'clsx'
+import { twMerge } from 'tailwind-merge'
+
 import { LocaleAwareFormat } from './I18nDate'
 
+import type { ClassValue } from 'clsx'
 import type { ChangeEvent, KeyboardEvent } from 'react'
 
 /**
@@ -233,3 +237,8 @@ export const formatToLocaleAwareFormat = (
       })
   )
 }
+
+/**
+ * Utility function to apply CSS classes by merging them together
+ */
+export const cx = (...classes: ClassValue[]) => twMerge(clsx(...classes))

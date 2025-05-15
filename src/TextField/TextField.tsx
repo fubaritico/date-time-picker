@@ -15,11 +15,11 @@ export type TextFieldProps = Omit<
 > & {
   /* Extra CSS styles (tailwind) */
   className?: string
-  /* Extra CSS styles (tailwind) for root element (container) */
+  /* Extra CSS styles (tailwind) for the root element (container) */
   containerClassName?: string
-  /* If true, an icon button will show on hovering the input and will allow to clear the content of the text input on click */
+  /* If true, an icon button will show on hovering the input and will allow clearing the content of the text input on click */
   canClear?: boolean
-  /* Error messages displayed on error under the input text */
+  /* Error messages displayed under the input text when an error occurs */
   errors?: string[]
   /* Information message displayed under the input text */
   helperText?: string
@@ -41,8 +41,8 @@ export type TextFieldProps = Omit<
   onIconClick?: (ref?: ForwardedRef<HTMLInputElement>) => void
   preserveIconClick?: boolean
   /* Text input severity, translated into colors: 'success' | 'error' | 'warning' | 'info' */
-  severity?: 'success' | 'error' | 'warning' | 'info'
-  /* Text input size: 'small' | 'medium' | 'large'  */
+  severity?: Severity
+  /* Text input size: 'sm' | 'md' | 'lg'  */
   size?: UISize
   /* Text input type */
   type?:
@@ -62,9 +62,9 @@ export type TextFieldProps = Omit<
 }
 
 const sizeHeights: Record<UISize, number> = {
-  large: 52,
-  medium: 42,
-  small: 37,
+  lg: 52,
+  md: 42,
+  sm: 37,
 }
 
 const TextField: FC<TextFieldProps> = forwardRef<
@@ -91,7 +91,7 @@ const TextField: FC<TextFieldProps> = forwardRef<
       placeholder,
       required,
       severity,
-      size = 'medium',
+      size = 'md',
       type = 'text',
       value,
       ...rest
@@ -139,24 +139,24 @@ const TextField: FC<TextFieldProps> = forwardRef<
               'border appearance-none truncate outline-0 w-full rounded-lg',
               'shadow-none pl-4 pr-4 transition-all duration-300',
               {
-                '!text-md': size === 'large',
-                '!text-sm': size === 'medium',
-                '!text-xs': size === 'small',
+                '!text-md': size === 'lg',
+                '!text-sm': size === 'md',
+                '!text-xs': size === 'sm',
                 ...(!!iconName &&
                   iconPosition === 'left' && {
-                    'pl-[52px]': size === 'large',
-                    'pl-[42px]': size === 'medium',
-                    'pl-[30px]': size === 'small',
+                    'pl-[52px]': size === 'lg',
+                    'pl-[42px]': size === 'md',
+                    'pl-[30px]': size === 'sm',
                   }),
                 ...(!!iconName &&
                   iconPosition === 'right' && {
-                    'pr-[52px]': size === 'large',
-                    'pr-[42px]': size === 'medium',
-                    'pr-[30px]': size === 'small',
+                    'pr-[52px]': size === 'lg',
+                    'pr-[42px]': size === 'md',
+                    'pr-[30px]': size === 'sm',
                   }),
-                '!pr-[52px]': size === 'large' && showCross,
-                '!pr-[42px]': size === 'medium' && showCross,
-                '!pr-[30px]': size === 'small' && showCross,
+                '!pr-[52px]': size === 'lg' && showCross,
+                '!pr-[42px]': size === 'md' && showCross,
+                '!pr-[30px]': size === 'sm' && showCross,
                 '!border-gray-300 !bg-gray-50 !text-gray-500': !severity,
                 'focus:!border-blue-600 focus:!text-gray-900': !severity,
                 'placeholder:!text-gray-400 !text-gray-500': !disabled,
@@ -195,9 +195,9 @@ const TextField: FC<TextFieldProps> = forwardRef<
               className={clsx(
                 'absolute top-1/2 -translate-y-1/2 text-gray-500 cursor-pointer transition-all duration-300',
                 {
-                  'w-6 h-6 right-[17px]': size === 'large',
-                  'w-5 h-5 right-[14px]': size === 'medium',
-                  'w-4 h-4 right-[10px]': size === 'small',
+                  'w-6 h-6 right-[17px]': size === 'lg',
+                  'w-5 h-5 right-[14px]': size === 'md',
+                  'w-4 h-4 right-[10px]': size === 'sm',
                 }
               )}
               onClick={() => {
@@ -207,9 +207,9 @@ const TextField: FC<TextFieldProps> = forwardRef<
               <Icon
                 name="HiXMark"
                 className={clsx('text-gray-600 transition-all duration-300', {
-                  'w-6 h-6': size === 'large',
-                  'w-5 h-5': size === 'medium',
-                  'w-4 h-4': size === 'small',
+                  'w-6 h-6': size === 'lg',
+                  'w-5 h-5': size === 'md',
+                  'w-4 h-4': size === 'sm',
                   '!text-red-600': severity === 'error',
                   '!text-yellow-600': severity === 'warning',
                   '!text-green-600': severity === 'success',
@@ -228,19 +228,19 @@ const TextField: FC<TextFieldProps> = forwardRef<
                   'opacity-50': disabled,
                   '!cursor-default': !onIconClick,
                   // Sizing
-                  'w-6 h-6': size === 'large',
-                  'w-5 h-5': size === 'medium',
-                  'w-4 h-4': size === 'small',
+                  'w-6 h-6': size === 'lg',
+                  'w-5 h-5': size === 'md',
+                  'w-4 h-4': size === 'sm',
                   // Positioning
                   ...(iconPosition === 'left' && {
-                    'left-[17px]': size === 'large',
-                    'left-[10px]': size === 'small',
-                    'left-[14px]': size === 'medium',
+                    'left-[17px]': size === 'lg',
+                    'left-[10px]': size === 'sm',
+                    'left-[14px]': size === 'md',
                   }),
                   ...(iconPosition === 'right' && {
-                    'right-[17px]': size === 'large',
-                    'right-[10px]': size === 'small',
-                    'right-[14px]': size === 'medium',
+                    'right-[17px]': size === 'lg',
+                    'right-[10px]': size === 'sm',
+                    'right-[14px]': size === 'md',
                   }),
                 }
               )}
@@ -258,9 +258,9 @@ const TextField: FC<TextFieldProps> = forwardRef<
                 aria-hidden
                 name={iconName}
                 className={clsx('text-gray-500 transition-all duration-300', {
-                  'w-6 h-6': size === 'large',
-                  'w-5 h-5': size === 'medium',
-                  'w-4 h-4': size === 'small',
+                  'w-6 h-6': size === 'lg',
+                  'w-5 h-5': size === 'md',
+                  'w-4 h-4': size === 'sm',
                   '!text-red-600': severity === 'error',
                   '!text-yellow-600': severity === 'warning',
                   '!text-green-600': severity === 'success',

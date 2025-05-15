@@ -18,7 +18,7 @@ A React 19 date and time picker component with Tailwind CSS styling.
 | noDefault | boolean | false | Whether to use a default date |
 | onDateChange | function | null | Callback when the date changes |
 | placement | string | 'bottom-start' | The placement of the panel |
-| size | 'small' \| 'medium' \| 'large' | 'medium' | The size of the component |
+| size | 'sm' \| 'md' \| 'lg' | 'md' | The size of the component |
 | timezone | string | null | The timezone to use |
 
 ## Development

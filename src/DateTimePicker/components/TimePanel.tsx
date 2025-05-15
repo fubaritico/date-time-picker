@@ -27,7 +27,7 @@ export interface TimePanelProps {
   className?: string
   /* Callback function called when a innerDate is selected */
   onDateChange?: (innerDate: number, from: PanelView) => void
-  /* Panel size: 'small' | 'medium' | 'large' */
+  /* Panel size: 'sm' | 'md' | 'lg' */
   size?: UISize
 }
 
@@ -234,8 +234,8 @@ const TimePanel: FC<TimePanelProps> = ({ className, onDateChange, size }) => {
               {
                 'hover:bg-gray-100': getCurrentAMPM(date) !== 'AM',
                 'bg-blue-600 text-white': getCurrentAMPM(date) === 'AM',
-                'text-sm': size === 'medium',
-                'text-xs': size === 'small',
+                'text-sm': size === 'md',
+                'text-xs': size === 'sm',
               }
             )}
             onClick={() => {
@@ -251,8 +251,8 @@ const TimePanel: FC<TimePanelProps> = ({ className, onDateChange, size }) => {
               {
                 'hover:bg-gray-100': getCurrentAMPM(date) !== 'PM',
                 'bg-blue-600 text-white': getCurrentAMPM(date) === 'PM',
-                'text-sm': size === 'medium',
-                'text-xs': size === 'small',
+                'text-sm': size === 'md',
+                'text-xs': size === 'sm',
               }
             )}
             onClick={() => {

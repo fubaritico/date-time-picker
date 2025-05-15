@@ -22,10 +22,12 @@ import type {
 export type MenuPlacement = 'bottom-start' | 'bottom-end'
 
 export type MenuProps = HTMLAttributes<HTMLDivElement> & {
-  /* The version of button use in place of SimpleButton, with or without inactivity reset time */
+  /* The version of button used in place of 'Button component', must extend Button interface */
   buttonComponent?: typeof Button
   /* Extra CSS styles (tailwind) */
   className?: string
+  /* Menu items color, overrides default color */
+  color?: UIColor
   /* If true will render the menu in a portal */
   enablePortal?: boolean
   /* List of menu items */
@@ -41,28 +43,29 @@ export type MenuProps = HTMLAttributes<HTMLDivElement> & {
   /* If true, will trigger display and positioning of the menu  */
   open: boolean
   /* Menu placement: 'bottom-start' | 'bottom-end'  */
-  placement?: MenuPlacement
+  placement?: Extract<Placement, 'bottom-start' | 'bottom-end'>
   /* Menu shape 'rounded' | 'square' */
   shape?: 'rounded' | 'square'
   /* Selected value to highlight */
   selectedValue?: string
-  /* Menu items size 'small' | 'medium' | 'large', defaults to "large" */
+  /* Menu items size 'sm' | 'md' | 'lg', defaults to "lg" */
   size?: UISize
-  /* Will allow the selected value to be displayed combined with selectedValue property */
+  /* Will allow the selected value to be displayed combined with the 'selectedValue' property */
   showSelectedValue?: boolean
   /* Reference of the element that triggers opening */
   triggerRef: RefObject<HTMLElement | null>
 }
 
 const maxMenuHeights: Record<UISize, number> = {
-  small: 30,
-  medium: 36,
-  large: 40,
+  sm: 30,
+  md: 36,
+  lg: 40,
 }
 
 const Menu: FC<MenuProps> = ({
   buttonComponent,
   className,
+  color,
   enablePortal = false,
   items,
   menuWidth,
@@ -74,7 +77,7 @@ const Menu: FC<MenuProps> = ({
   selectedValue,
   shape,
   showSelectedValue,
-  size = 'large',
+  size = 'lg',
   triggerRef,
   ...rest
 }) => {
@@ -261,6 +264,7 @@ const Menu: FC<MenuProps> = ({
                   }
                   item={item}
                   onMenuItemClick={onMenuItemClick}
+                  color={color}
                   size={size}
                   selected={
                     item.value === selectedValue &&

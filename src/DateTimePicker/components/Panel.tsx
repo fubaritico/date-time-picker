@@ -23,7 +23,7 @@ interface PanelProps extends PickerProps {
   onClickOutside: () => void
   /* Panel placement: 'bottom-start' | 'bottom-end'  */
   placement?: 'bottom-start' | 'bottom-end'
-  /* Panel size: 'small' | 'medium' | 'large'  */
+  /* Panel size: 'sm' | 'md' | 'lg'  */
   size?: UISize
   /* Reference to the HTML element triggering the opening of the panel  */
   triggerRef: RefObject<HTMLElement | null>
@@ -40,7 +40,7 @@ const INPUT_LABEL_HEIGHT = 24
  * @param onClose Callback function called when closing the panel
  * @param open If true, the panel is shown
  * @param placement Panel placement: 'bottom-start' | 'bottom-end'
- * @param size Panel size: 'small' | 'medium' | 'large'
+ * @param size Panel size: 'sm' | 'md' | 'lg'
  * @param triggerRef Reference to the HTML element triggering the opening of the panel
  *
  * @constructor
@@ -216,9 +216,9 @@ const Panel: FC<PanelProps> = ({
               'rounded-lg shadow-elevation-1 absolute left-0 top-[54px]',
               {
                 'z-[999]': enablePortal,
-                'w-[400px]': size === 'large',
-                'w-[308px]': size === 'medium',
-                'w-[272px]': size === 'small',
+                'w-[400px]': size === 'lg',
+                'w-[308px]': size === 'md',
+                'w-[272px]': size === 'sm',
               }
             )}
             ref={nodeRef}

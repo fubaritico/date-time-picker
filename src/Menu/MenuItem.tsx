@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 
 import { Button, Icon } from '..'
+import { cx } from '../utils'
 
 import { isString } from './Menu.utils'
 
@@ -8,11 +9,10 @@ import type { Hi2UiIconNames } from '..'
 import type { FC, ReactElement } from 'react'
 
 export type MenuItemType = 'selectable' | 'separator' | 'action' | 'element'
-export type MenuItemColor = 'yellow' | 'blue' | 'green' | 'red'
 
 export interface MenuItemConfig {
   /* Menu item color, overrides default color */
-  color?: MenuItemColor
+  color?: UIColor
   /* Disabled state for a menu item */
   disabled?: boolean
   /* Icon name for a menu item (hi2) */
@@ -29,7 +29,7 @@ export interface MenuItemConfig {
   value?: string
   /* the type of the button */
   buttonType?: 'button' | 'submit' | 'reset'
-  /* If provided, will take precedence on the fact that tooltip is shown when item label is truncated */
+  /* If provided, will take precedence on the fact that the tooltip is shown when the item label is truncated */
   showTooltip?: boolean
   /* If provided, will take precedence on the item label */
   tooltipMessage?: string
@@ -40,13 +40,15 @@ export interface MenuItemConfig {
 interface MenuItemProps {
   /* The version of button use in place of Button, with or without inactivity reset time */
   buttonComponent?: typeof Button
+  /* Menu item color, overrides default color */
+  color?: UIColor
   /* Menu item properties */
   item: MenuItemConfig
   /* Callback called on menu item click */
   onMenuItemClick?: (item: MenuItemConfig) => void
   /* The menu item is selected or not */
   selected?: boolean
-  /* Menu items size 'small' | 'medium' | 'large' */
+  /* Menu items size 'sm' | 'md' | 'lg' */
   size?: UISize
 }
 
@@ -54,6 +56,7 @@ const MenuItem: FC<MenuItemProps> = ({
   buttonComponent: ButtonComponent = Button,
   item: menuItem,
   onMenuItemClick,
+  color,
   selected,
   size,
 }) => {
@@ -70,24 +73,21 @@ const MenuItem: FC<MenuItemProps> = ({
         type={item.buttonType}
         aria-hidden={item.separator}
         aria-label={isString(item.label) ? item.label : undefined}
-        className={clsx(
-          '!flex !justify-start !items-center !gap-2 !text-left',
-          '!truncate !w-full !relative !border-0',
-          {
-            '!px-4 !h-10': size === 'large' && !item.separator,
-            '!px-3 !h-[36px] !text-sm':
-              size === 'medium' && !item.separator && item.type !== 'element',
-            '!px-2.5 !h-[30px] !text-xs':
-              size === 'small' && !item.separator && item.type !== 'element',
-            '!p-0 !border-0 !h-auto': item.separator,
-            '!text-gray-300 [&_svg]: !stroke-gray-300': item.disabled,
-            '!bg-blue-100 hover:!bg-blue-200 !text-blue-500':
-              !item.disabled && selected,
-            '!h-[63px]': item.type === 'element',
-          }
-        )}
+        className={cx('truncate text-left w-full flex-nowrap justify-start', {
+          '!px-4 !h-10': size === 'lg' && !item.separator,
+          '!px-3 !h-[36px] !text-sm':
+            size === 'md' && !item.separator && item.type !== 'element',
+          '!px-2.5 !h-[30px] !text-xs':
+            size === 'sm' && !item.separator && item.type !== 'element',
+          '!p-0 !border-0 !h-auto': item.separator,
+          '!text-gray-300 [&_svg]: !stroke-gray-300': item.disabled,
+          '!bg-blue-100 hover:!bg-blue-200 !text-blue-500':
+            !item.disabled && selected,
+          '!h-[63px]': item.type === 'element',
+        })}
         aria-current={selected}
         aria-disabled={item.disabled ?? typeof item.label !== 'string'}
+        color={color}
         disabled={item.disabled ?? typeof item.label !== 'string'}
         onClick={() => {
           if (item.type === 'action') {
@@ -96,9 +96,8 @@ const MenuItem: FC<MenuItemProps> = ({
 
           onMenuItemClick?.(item)
         }}
-        variant="primary"
-        size={size ?? 'medium'}
-        color="white"
+        variant="ghost"
+        size={size ?? 'md'}
         label={
           item.separator ? (
             <hr className="w-full" />
@@ -109,9 +108,9 @@ const MenuItem: FC<MenuItemProps> = ({
                 <Icon
                   name={item.icon}
                   className={clsx({
-                    'h-6 w-6 mr-3': size === 'large',
-                    'h-5 w-5 mr-2': size === 'medium',
-                    'h-3 w-3 mr-1.5': size === 'small',
+                    'h-6 w-6': size === 'lg',
+                    'h-5 w-5': size === 'md',
+                    'h-3 w-3': size === 'sm',
                   })}
                 />
               )}

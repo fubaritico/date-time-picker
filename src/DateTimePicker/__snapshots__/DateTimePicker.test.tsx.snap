@@ -179,7 +179,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
                 >
                   <svg
                     aria-hidden="true"
-                    class="text-gray-900 size-6 text-gray-500 transition-all duration-300 w-5 h-5"
+                    class="text-gray-500 transition-all duration-300 w-5 h-5"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"
@@ -221,7 +221,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               >
                 <svg
                   aria-hidden="true"
-                  class="text-gray-900 size-6 w-6"
+                  class="w-6"
                   fill="currentColor"
                   height="1em"
                   stroke="currentColor"
@@ -259,7 +259,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               >
                 <svg
                   aria-hidden="true"
-                  class="text-gray-900 size-6 w-6"
+                  class="w-6"
                   fill="currentColor"
                   height="1em"
                   stroke="currentColor"
@@ -663,7 +663,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
                 >
                   <svg
                     aria-hidden="true"
-                    class="text-gray-900 size-6 text-gray-500 transition-all duration-300 w-5 h-5"
+                    class="text-gray-500 transition-all duration-300 w-5 h-5"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"
@@ -705,7 +705,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               >
                 <svg
                   aria-hidden="true"
-                  class="text-gray-900 size-6 w-6"
+                  class="w-6"
                   fill="currentColor"
                   height="1em"
                   stroke="currentColor"
@@ -743,7 +743,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               >
                 <svg
                   aria-hidden="true"
-                  class="text-gray-900 size-6 w-6"
+                  class="w-6"
                   fill="currentColor"
                   height="1em"
                   stroke="currentColor"
@@ -1169,7 +1169,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should sho
                 >
                   <svg
                     aria-hidden="true"
-                    class="text-gray-900 size-6 text-gray-500 transition-all duration-300 w-5 h-5"
+                    class="text-gray-500 transition-all duration-300 w-5 h-5"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"
@@ -1211,7 +1211,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should sho
               >
                 <svg
                   aria-hidden="true"
-                  class="text-gray-900 size-6 size-6"
+                  class="size-6"
                   fill="currentColor"
                   height="1em"
                   stroke="currentColor"
@@ -1248,7 +1248,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should sho
               >
                 <svg
                   aria-hidden="true"
-                  class="text-gray-900 size-6 size-6"
+                  class="size-6"
                   fill="currentColor"
                   height="1em"
                   stroke="currentColor"
@@ -1397,7 +1397,7 @@ exports[`DateTimePicker with timezone Controlled Date Picker - Date/Time mode sh
                 >
                   <svg
                     aria-hidden="true"
-                    class="text-gray-900 size-6 text-gray-500 transition-all duration-300 w-5 h-5"
+                    class="text-gray-500 transition-all duration-300 w-5 h-5"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"
@@ -1466,7 +1466,7 @@ exports[`DateTimePicker with timezone Controlled Time Picker - (en) should rende
                 >
                   <svg
                     aria-hidden="true"
-                    class="text-gray-900 size-6 text-gray-500 transition-all duration-300 w-5 h-5"
+                    class="text-gray-500 transition-all duration-300 w-5 h-5"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"
@@ -1532,7 +1532,7 @@ exports[`DateTimePicker with timezone Controlled Time Picker - (fr) should rende
                 >
                   <svg
                     aria-hidden="true"
-                    class="text-gray-900 size-6 text-gray-500 transition-all duration-300 w-5 h-5"
+                    class="text-gray-500 transition-all duration-300 w-5 h-5"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"
@@ -1599,7 +1599,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                   >
                     <svg
                       aria-hidden="true"
-                      class="text-gray-900 size-6 text-gray-500 transition-all duration-300 w-5 h-5"
+                      class="text-gray-500 transition-all duration-300 w-5 h-5"
                       fill="currentColor"
                       height="1em"
                       stroke="currentColor"
@@ -1641,7 +1641,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 >
                   <svg
                     aria-hidden="true"
-                    class="text-gray-900 size-6 w-6"
+                    class="w-6"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"
@@ -1679,7 +1679,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 >
                   <svg
                     aria-hidden="true"
-                    class="text-gray-900 size-6 w-6"
+                    class="w-6"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"

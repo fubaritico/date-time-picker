@@ -18,7 +18,7 @@ export type DaysGridProps = Omit<BasicPickerProps, 'onChange'> & {
   date: number
   /* Function called on date change */
   onDateChange?: (date: number) => void
-  /* Panel size: 'small' | 'medium' | 'large'  */
+  /* Panel size: 'sm' | 'md' | 'lg'  */
   size?: UISize
 }
 
@@ -29,11 +29,7 @@ export type DaysGridProps = Omit<BasicPickerProps, 'onChange'> & {
  * @param size
  * @constructor
  */
-const DaysGrid: FC<DaysGridProps> = ({
-  date,
-  onDateChange,
-  size = 'medium',
-}) => {
+const DaysGrid: FC<DaysGridProps> = ({ date, onDateChange, size = 'md' }) => {
   const [startIndex, setStartIndex] = useState(0)
   // State: Array of dates in Unix timestamp format
   const [arrayOfDates, setArrayOfDates] = useState<number[]>([])
@@ -98,9 +94,9 @@ const DaysGrid: FC<DaysGridProps> = ({
   return (
     <div
       className={clsx('grid grid-cols-7 h-full', {
-        'gap-2 p-5': size === 'large',
-        'gap-1 p-4': size === 'medium',
-        'gap-1 p-3': size === 'small',
+        'gap-2 p-5': size === 'lg',
+        'gap-1 p-4': size === 'md',
+        'gap-1 p-3': size === 'sm',
       })}
       data-test="days-grid"
       role="grid"
@@ -112,9 +108,9 @@ const DaysGrid: FC<DaysGridProps> = ({
             className={clsx(
               'flex justify-center items-center font-bold text-gray-500',
               {
-                'h-10 w-10': size === 'large',
-                'h-9 w-9 text-sm': size === 'medium',
-                'h-[30px] w-8 text-xs': size === 'small',
+                'h-10 w-10': size === 'lg',
+                'h-9 w-9 text-sm': size === 'md',
+                'h-[30px] w-8 text-xs': size === 'sm',
               }
             )}
           >
@@ -147,9 +143,9 @@ const DaysGrid: FC<DaysGridProps> = ({
               'font-bold flex justify-center items-center transition duration-500 rounded-lg',
               'focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1',
               {
-                'h-10 w-10': size === 'large',
-                'h-9 w-9 text-sm': size === 'medium',
-                'h-[30px] w-8 text-xs': size === 'small',
+                'h-10 w-10': size === 'lg',
+                'h-9 w-9 text-sm': size === 'md',
+                'h-[30px] w-8 text-xs': size === 'sm',
                 'bg-white text-gray-900 hover:bg-gray-100':
                   getStartOfDayTs(Date.now() + inputOffset) !==
                     getStartOfDayTs(value) &&

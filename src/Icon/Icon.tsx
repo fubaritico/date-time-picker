@@ -1,4 +1,3 @@
-import clsx from 'clsx'
 import { createElement } from 'react'
 import * as hi2 from 'react-icons/hi2'
 
@@ -13,7 +12,7 @@ export type IconProps = SVGProps<SVGSVGElement> & {
 
 const Icon: FC<IconProps> = ({ name, className, ...rest }) => {
   return createElement(hi2[name], {
-    className: clsx('text-gray-900 size-6', className),
+    className,
     ...rest,
   })
 }
