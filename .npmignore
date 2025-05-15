@@ -36,3 +36,6 @@ yarn-error.log*
 
 # report files
 bundle-analysis.html
+
+# Publish
+publish.sh

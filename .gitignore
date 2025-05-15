@@ -50,3 +50,7 @@ yarn-error.log*
 
 # report files
 bundle-analysis.html
+
+# NPM
+NPM.md
+.npmrc
