@@ -39,3 +39,9 @@ bundle-analysis.html
 
 # Publish
 publish.sh
+
+# Yalc
+.yalc/
+yalc.lock
+yalc-dev.sh
+

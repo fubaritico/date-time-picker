@@ -136,7 +136,7 @@ pnpm build
 
 Before publishing, make sure to update the following fields in `package.json`:
 
-1. `name`: Replace `@your-scope/date-time-picker` with your actual npm scope or username
+1. `name`: Replace `@<fubaratico or your scope>/date-time-picker` with your actual npm scope or username
 2. `author`: Add your name, email, and website
 3. `repository.url`: Update with your actual GitHub repository URL
 
@@ -170,11 +170,79 @@ The GitHub Actions workflow will:
 
 Before you can publish, make sure:
 
-1. You have an npm account and are logged in
+1. You have a npm account and are logged in
 2. You have added an NPM_TOKEN secret to your GitHub repository:
    - Generate a token from your npm account settings
    - Go to your GitHub repository settings → Secrets → Actions
    - Add a new secret named NPM_TOKEN with your npm token value
+
+- ### Local Development with Yalc
+
+To test the package locally before publishing to npm, you can use `yalc`. This allows you to simulate installing and using the package in other local projects.
+
+#### Setup Yalc
+
+1. Install yalc globally:
+   ```bash
+   pnpm add -g yalc
+   ```
+   Note: If you encounter any global installation issues, run `pnpm setup` first.
+
+#### Publishing Locally
+
+In the date-time-picker directory:
+
+1. Build and publish to a local 'yalc' store:
+   ```bash
+   pnpm build
+   yalc publish
+   ```
+
+#### Using in Another Project
+
+In your test project directory:
+
+1. Add the package from yalc:
+   ```bash
+   yalc add @<fubaratico or your scope>/date-time-picker
+   pnpm install
+   ```
+
+2. Import and use the component as if it were installed from npm:
+   ```typescript
+   import { DateTimePicker } from '@<fubaratico or your scope>/date-time-picker';
+   ```
+
+#### Development Workflow
+
+For active development:
+
+1. In the date-time-picker directory, use watch mode to automatically update changes:
+   ```bash
+   pnpm build --watch
+   ```
+
+2. In another terminal, push changes to linked projects:
+   ```bash
+   yalc push
+   ```
+
+   Or use `yalc push --watch` to automatically push changes.
+
+#### Cleanup
+
+When you're done testing:
+
+1. In your test project:
+   ```bash
+   yalc remove @<fubaratico or your scope>/date-time-picker
+   pnpm install
+   ```
+
+2. Optional - remove all yalc links globally:
+   ```bash
+   yalc installations clean
+   ```
 
 ## License
 

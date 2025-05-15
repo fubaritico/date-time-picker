@@ -54,3 +54,11 @@ bundle-analysis.html
 # NPM
 NPM.md
 .npmrc
+
+# Yalc
+.yalc/
+yalc.lock
+
+# Publish
+publish.sh
+

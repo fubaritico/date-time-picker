@@ -24,6 +24,10 @@
     "lint": "eslint .",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
     "type-check": "tsc -p ./ --noEmit",
+    "yalc:publish": "./yalc-dev.sh publish",
+    "yalc:watch": "./yalc-dev.sh watch",
+    "yalc:push": "./yalc-dev.sh push",
+    "yalc:remove": "./yalc-dev.sh remove",
     "prepare": "husky",
     "prerelease": "pnpm lint && pnpm type-check && pnpm test && pnpm build",
     "release": "pnpm prerelease && pnpm build && pnpm publish --access public"
