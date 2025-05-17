@@ -27,6 +27,6 @@ describe('formatToLocaleAwareFormat', () => {
       timezone
     )
 
-    expect(formattedDate).toBe('Saturday, March 15, 2025 3:28 PM')
+    expect(formattedDate).toBe('Sunday, March 16, 2025 4:28 AM')
   })
 })

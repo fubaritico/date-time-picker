@@ -1,8 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { DateTimePicker } from '../src/DateTimePicker'
+
 import './styles.css'
-import { I18nDate } from '../src'
+
+import ControlledExample from './controlled-example'
+import UncontrolledExample from './uncontrolled-example'
+
+import { PickerMode } from '../src'
 
 const App = () => {
   const [value, setValue] = React.useState<number | undefined>(Date.now())
@@ -11,25 +15,53 @@ const App = () => {
     <div className="p-8 max-w-4xl mx-auto">
       <h1 className="text-3xl font-bold mb-6">DateTimePicker Preview</h1>
 
-      <div className="mb-8">
-        <h2 className="text-xl font-semibold mb-4">Basic Usage</h2>
-        <div className="p-4 border rounded-lg">
-          <DateTimePicker date={value} onChange={setValue} enablePortal />
-        </div>
-      </div>
+      <UncontrolledExample title="Basic usage (uncontrolled)" />
 
-      <div className="mb-8">
-        <h2 className="text-xl font-semibold mb-4">Custom Format</h2>
-        <div className="p-4 border rounded-lg">
-          <DateTimePicker date={value} onChange={setValue} enablePortal />
-          <div className="mt-4 flex">
-            <p>
-              Selected value: {value ? value.toString() : 'None'}&nbsp;|&nbsp;
-              <I18nDate localeAwareFormat="L LT" value={value} />
-            </p>
-          </div>
-        </div>
-      </div>
+      <ControlledExample
+        date={value}
+        onChange={setValue}
+        title="Basic Usage (controlled) - default timezone (locale)"
+      />
+
+      <ControlledExample
+        date={value}
+        onChange={setValue}
+        timezone="America/New_York"
+        locale="en_US"
+        title="Date Picker (controlled) New York timezone"
+      />
+
+      <ControlledExample
+        date={value}
+        onChange={setValue}
+        timezone="Europe/London"
+        locale="en_US"
+        title="Date Picker (controlled) London timezone"
+      />
+
+      <ControlledExample
+        date={value}
+        onChange={setValue}
+        timezone="Europe/Paris"
+        locale="en_US"
+        title="Date Picker (controlled) Paris timezone"
+      />
+
+      <ControlledExample
+        date={value}
+        onChange={setValue}
+        timezone="Asia/Tokyo"
+        locale="en_US"
+        title="Date Picker (controlled) Tokyo timezone"
+      />
+
+      <ControlledExample
+        date={value}
+        onChange={setValue}
+        locale="en_US"
+        pickerMode={PickerMode.DATETIME}
+        title="Date Time Picker (controlled) - default timezone (locale)"
+      />
     </div>
   )
 }

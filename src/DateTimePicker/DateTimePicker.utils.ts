@@ -596,12 +596,14 @@ export const getTimestampsForEachMonth = (ts: number): number[] => {
 /**
  * Gets the offset in milliseconds from the given timezone.
  *
+ * @see: https://stackoverflow.com/questions/1091372/getting-the-clients-time-zone-and-offset-in-javascript
+ *
  * @param {Date} date - The local date for which to get the offset for display in the text input.
  * @param {string} timeZone - The IANA timezone string (e.g., 'America/New_York').
  *
  * @returns {number} - The offset in milliseconds from local timezone.
  */
-export const getOffsetFromTimezone = (
+export const getOffsetInMsFromTimezone = (
   date: Date,
   timeZone?: Timezone
 ): number => {
@@ -615,14 +617,14 @@ export const getOffsetFromTimezone = (
 
     const sign = matches[2] === '-' ? -1 : 1
 
-    const hours = parseInt(matches[3], 10) / 100
+    const hourOffset = parseInt(matches[3], 10) / 100
 
-    return hours * 60 * 60 * 1000 * sign
+    return hourOffset * 60 * 60 * 1000 * sign
   }
 
   const formatter = new Intl.DateTimeFormat([], {
     timeZone,
-    timeZoneName: 'short',
+    timeZoneName: 'longOffset',
   })
   const parts = formatter.formatToParts(date)
   const timeZoneName = parts.find((part) => part.type === 'timeZoneName')?.value
@@ -631,24 +633,17 @@ export const getOffsetFromTimezone = (
     throw new Error('Invalid timezone')
   }
 
-  const matches = /^(GMT|UTC|CES?T)(-|−|\+)?(\d+)?/.exec(timeZoneName)
+  const matches = /^(GMT|UTC)(-|−|\+)?(\d+)?/.exec(timeZoneName)
 
   if (!matches) {
     throw new Error('Unable to parse timezone offset')
   }
 
-  const sign = matches[2] !== '+' ? -1 : 1
+  const sign = matches[2] === '-' ? -1 : 1
 
-  const hours = ((m) => {
-    if (m[1] === 'CEST') return 1
-    if (m[1] === 'CET') return 1
-    if (m[1] === 'UTC' && typeof m[3] === 'undefined') return 0 // Windows
-    if (m[1] === 'GMT' && typeof m[3] === 'undefined') return 0 // Mac/linux
+  const hourOffset = parseInt(matches[3], 10)
 
-    return parseInt(m[3], 10)
-  })(matches)
-
-  return hours * 60 * 60 * 1000 * sign
+  return hourOffset * 60 * 60 * 1000 * sign
 }
 
 /**
@@ -656,17 +651,22 @@ export const getOffsetFromTimezone = (
  *
  * @param {number} ts - number representing a unix timestamp
  * @param {string} format - the desired format ('YYYY-MM-DD', 'hh:mm A', 'YYYY-MM-DD hh:mm A')
+ * @param {number} offset - the offset in milliseconds from GMT time zone (daylight taken into account)
  *
  * @throws {Error} if the timestamp is invalid or format is not supported
  *
  * @returns {string} formatted date string
  */
-export const formatTimestamp = (ts: number, format: string): string => {
+export const formatTimestampForTextInput = (
+  ts: number,
+  format: string,
+  offset: number
+): string => {
   if (!ts || !checkTsValidity(ts)) {
     throw new Error('[formatTimestamp] Invalid timestamp')
   }
 
-  const date = new Date(ts)
+  const date = new Date(ts - offset)
 
   const year = date.getFullYear().toString()
   const month = String(date.getMonth() + 1).padStart(2, '0')
@@ -709,8 +709,8 @@ export const formatTimestamp = (ts: number, format: string): string => {
  */
 export const convertFormattedDateToTimestamp = (
   dateStr: string
-): number | false => {
-  if (dateStr === '') return false
+): number | undefined => {
+  if (dateStr === '') return
 
   const frDateTimeFormat = /(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2})/
   const enDateTimeFormat = /(\d{4})\/(\d{2})\/(\d{2}) (\d{2}):(\d{2}) (AM|PM)/
@@ -799,7 +799,7 @@ export const formatTimestampToISO = (ts: number): string => {
  */
 export const getStartOfDayTs = (ts: number): number => {
   const date = new Date(ts)
-  const offset = getOffsetFromTimezone(date)
+  const offset = getOffsetInMsFromTimezone(date)
   const dateWithOffset = new Date(date.getTime() - offset)
   dateWithOffset.setHours(0, 0, 0, 0) // Set time components to zero
 
@@ -816,7 +816,7 @@ export const getStartOfDayTs = (ts: number): number => {
  */
 export const getEndOfDayTs = (ts?: number): number => {
   const date = new Date(ts ?? Date.now())
-  const offset = getOffsetFromTimezone(date)
+  const offset = getOffsetInMsFromTimezone(date)
   const dateWithOffset = new Date(date.getTime() - offset)
   dateWithOffset.setHours(23, 59, 59, 0) // Set time components to 23:59:59
 

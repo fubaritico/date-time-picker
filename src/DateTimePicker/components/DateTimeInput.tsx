@@ -5,7 +5,7 @@ import TextField from '../../TextField'
 import { PickerMode } from '../DateTimePicker.types'
 import {
   convertFormattedDateToTimestamp,
-  formatTimestamp,
+  formatTimestampForTextInput,
   formatTimestampToDate,
 } from '../DateTimePicker.utils'
 import { DATE_FORMAT, DATE_TIME_FORMAT, TIME_FORMAT } from '../formats'
@@ -50,13 +50,14 @@ const DateTimeInput: FC<DateTimeInputProps> = ({
   ...inputTextProps
 }) => {
   const {
-    outputOffset,
-    pickerMode,
+    gmtMsOffset,
     innerDate,
     isControlled,
     locale,
-    minDate,
     maxDate,
+    minDate,
+    msOffset,
+    pickerMode,
     setInnerDate,
     setIgnoreClickAwayRef,
   } = useDateTimePicker()
@@ -94,16 +95,28 @@ const DateTimeInput: FC<DateTimeInputProps> = ({
 
       switch (pickerMode) {
         case PickerMode.TIME:
-          return formatTimestamp(innerDate, TIME_FORMAT[locale])
+          return formatTimestampForTextInput(
+            innerDate,
+            TIME_FORMAT[locale],
+            gmtMsOffset
+          )
         case PickerMode.DATE:
-          return formatTimestamp(innerDate, DATE_FORMAT[locale])
+          return formatTimestampForTextInput(
+            innerDate,
+            DATE_FORMAT[locale],
+            gmtMsOffset
+          )
         case PickerMode.DATETIME:
-          return formatTimestamp(innerDate, DATE_TIME_FORMAT[locale])
+          return formatTimestampForTextInput(
+            innerDate,
+            DATE_TIME_FORMAT[locale],
+            gmtMsOffset
+          )
         default:
           return undefined
       }
     })
-  }, [pickerMode, innerDate, locale, errors])
+  }, [pickerMode, innerDate, locale, errors, gmtMsOffset])
 
   /**
    * Set the input errors when anything from upper components happens
@@ -125,7 +138,7 @@ const DateTimeInput: FC<DateTimeInputProps> = ({
   const loadMaskClass = useCallback(async () => {
     const maskClass = (await import(
       /* @vite-ignore */
-      `../formats/masks/${locale.toUpperCase()}InputMask`
+      `../formats/masks/${locale.toUpperCase()}InputMask.ts`
     )) as MaskClassType
 
     return new maskClass.default(innerDate, pickerMode)
@@ -146,19 +159,17 @@ const DateTimeInput: FC<DateTimeInputProps> = ({
   }, [loadMaskClass])
 
   /**
-   * Reformats the new input value to a unix timestamp.
+   * Reformats the new input value to an unix timestamp.
    * Only when the input value is completed and valid.
    * If the input value is not valid, the function will return false.
    *
    * @param newInputValue
    */
   const formatNewInputValue = useCallback(
-    (newInputValue: string): number | false => {
-      return (
-        !newInputValue.includes('_') &&
-        convertFormattedDateToTimestamp(newInputValue)
-      )
-    },
+    (newInputValue: string): number | undefined =>
+      !newInputValue.includes('_')
+        ? convertFormattedDateToTimestamp(newInputValue)
+        : undefined,
     []
   )
 
@@ -171,40 +182,38 @@ const DateTimeInput: FC<DateTimeInputProps> = ({
     async (e: ChangeEvent<HTMLInputElement>) => {
       const rawInputValue = e.target.value
 
+      // It never happens, just here for correct inference
       const instance = inputMaskInstance ?? (await loadMaskClass())
 
       // Validate and format the input
-      const newInputValue =
+      const validatedInputValue =
         (rawInputValue !== '' && instance.validate(rawInputValue)) ||
         rawInputValue
 
-      setInputValue(newInputValue)
+      setInputValue(validatedInputValue)
 
       // Always attempt to parse, even with potentially invalid input
       const formattedNewInputValue =
         pickerMode === PickerMode.TIME && !!innerDate
           ? formatNewInputValue(
-              formatTimestampToDate(innerDate, locale) + ' ' + newInputValue
+              formatTimestampToDate(innerDate, locale) +
+                ' ' +
+                validatedInputValue
             )
-          : formatNewInputValue(newInputValue)
+          : formatNewInputValue(validatedInputValue)
 
-      // Check if date is valid and within bounds
-      if (
-        formattedNewInputValue &&
-        typeof formattedNewInputValue === 'number'
-      ) {
-        const newDate = formattedNewInputValue
-
-        const isAfterMin = !minDate || newDate >= minDate
-        const isBeforeMax = !maxDate || newDate <= maxDate
+      // Check if the date is valid and within bounds
+      if (formattedNewInputValue) {
+        const isAfterMin = !minDate || formattedNewInputValue >= minDate
+        const isBeforeMax = !maxDate || formattedNewInputValue <= maxDate
 
         if (isAfterMin && isBeforeMax) {
           setInnerErrors(undefined)
 
           if (isControlled) {
-            onDateChange?.(newDate - outputOffset)
+            onDateChange?.(formattedNewInputValue - msOffset)
           } else {
-            setInnerDate(newDate)
+            setInnerDate(formattedNewInputValue)
           }
         } else {
           setInnerErrors(['Selected date is out of bounds.'])
@@ -226,7 +235,7 @@ const DateTimeInput: FC<DateTimeInputProps> = ({
       maxDate,
       isControlled,
       onDateChange,
-      outputOffset,
+      msOffset,
       setInnerDate,
     ]
   )
@@ -235,6 +244,8 @@ const DateTimeInput: FC<DateTimeInputProps> = ({
     <div className="flex flex-col">
       <div className="flex flex-col relative">
         <InputMask
+          alwaysShowMask
+          maskPlaceholder="_"
           mask={inputMaskInstance?.getMask()}
           value={inputValue ?? ''}
           disabled={inputTextProps.disabled}

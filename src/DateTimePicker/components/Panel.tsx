@@ -56,7 +56,7 @@ const Panel: FC<PanelProps> = ({
   triggerRef,
 }) => {
   const {
-    inputOffset,
+    msOffset,
     pickerMode,
     isControlled,
     hasLabel,
@@ -180,7 +180,7 @@ const Panel: FC<PanelProps> = ({
     if (from !== PanelView.TIME) setPanelView(PanelView.DAYS)
 
     if (isControlled) {
-      onChange?.(date - inputOffset)
+      onChange?.(date - msOffset)
     } else {
       setInnerDate(date)
     }

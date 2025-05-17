@@ -26,16 +26,14 @@ export interface YearsPanelProps {
  * @constructor
  */
 const YearsPanel: FC<YearsPanelProps> = ({ className, onDateChange, size }) => {
-  const { innerDate, inputOffset } = useDateTimePicker()
-  const [year, setYear] = useState<number>(
-    innerDate ?? Date.now() + inputOffset
-  )
+  const { innerDate, msOffset } = useDateTimePicker()
+  const [year, setYear] = useState<number>(innerDate ?? Date.now() + msOffset)
 
   const panelRef = usePanelDomRect()
 
   useEffect(() => {
-    setYear(innerDate ?? Date.now() + inputOffset)
-  }, [innerDate, inputOffset])
+    setYear(innerDate ?? Date.now() + msOffset)
+  }, [innerDate, msOffset])
 
   /**
    * Function to go to the previous years range.
@@ -128,9 +126,7 @@ const YearsPanel: FC<YearsPanelProps> = ({ className, onDateChange, size }) => {
         {Array.from({ length: 12 }, (_, i) => i).map((offset) => {
           const yearWithOffset = getYearFromTs(addYears(year, offset))
 
-          const selectedYear = getYearFromTs(
-            innerDate ?? Date.now() + inputOffset
-          )
+          const selectedYear = getYearFromTs(innerDate ?? Date.now() + msOffset)
 
           return (
             <button

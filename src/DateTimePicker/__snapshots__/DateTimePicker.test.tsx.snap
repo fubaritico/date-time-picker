@@ -1425,7 +1425,7 @@ exports[`DateTimePicker with timezone Controlled Date Picker - Date/Time mode sh
     <span
       data-test="current-value"
     >
-      8/9/2024, 4:28 PM
+      8/9/2024, 1:28 PM
     </span>
   </div>
 </div>
@@ -1491,7 +1491,7 @@ exports[`DateTimePicker with timezone Controlled Time Picker - (en) should rende
     <span
       data-test="current-value"
     >
-      8/9/2024, 11:02 AM
+      8/9/2024, 8:02 AM
     </span>
   </div>
 </div>
@@ -1557,7 +1557,7 @@ exports[`DateTimePicker with timezone Controlled Time Picker - (fr) should rende
     <span
       data-test="current-value"
     >
-      09/08/2024 11:02
+      09/08/2024 08:02
     </span>
   </div>
 </div>

@@ -9,7 +9,7 @@ import type { FC, PropsWithChildren, RefObject } from 'react'
 
 /**
  * Provides simple state with essential data as date, panel mode, calendar mode and date, panel mode setters.
- * The setters are used when component is uncontrolled (for preview).
+ * The setters are used when the component is uncontrolled (for preview).
  *
  * @param calendarMode Defines the behavior of the component (date, date and time, time)
  * @param children Component rendered in the provider scope
@@ -17,13 +17,13 @@ import type { FC, PropsWithChildren, RefObject } from 'react'
 const DateTimePickerProvider: FC<PropsWithChildren<PickerProviderProps>> = ({
   children,
   date: p_date, // Data
-  inputOffset = 0,
-  outputOffset = 0,
+  msOffset = 0,
+  gmtMsOffset = 0,
   minDate: p_minDate, // Data
   maxDate: p_maxDate, // Data
   isControlled,
   hasLabel,
-  locale = 'en_GB',
+  locale = 'en_US',
   noDefault,
   pickerMode = PickerMode.DATE,
 }) => {
@@ -39,7 +39,7 @@ const DateTimePickerProvider: FC<PropsWithChildren<PickerProviderProps>> = ({
 
   // DATE_TIME_FORMAT also includes time to be extracted
   const [innerDate, setInnerDate] = useState<number | undefined>(
-    !p_date && !noDefault ? Date.now() + inputOffset : undefined
+    !p_date && !noDefault ? Date.now() + msOffset : undefined
   )
 
   const [panelRect, setPanelRect] = useState<DOMRectReadOnly>(
@@ -52,38 +52,38 @@ const DateTimePickerProvider: FC<PropsWithChildren<PickerProviderProps>> = ({
 
   useEffect(() => {
     if (isControlled && p_date) {
-      setInnerDate(p_date + inputOffset)
+      setInnerDate(p_date + msOffset)
     }
-  }, [inputOffset, isControlled, p_date])
+  }, [msOffset, isControlled, p_date])
 
   const value = useMemo<PickerState>(() => {
     return {
+      gmtMsOffset,
+      hasLabel,
       ignoreClickAwayRef,
       innerDate,
       isControlled,
-      hasLabel,
       locale: innerLocale,
-      inputOffset,
-      outputOffset,
+      maxDate: p_maxDate ? p_maxDate + msOffset : undefined,
+      minDate: p_minDate ? p_minDate + msOffset : undefined,
+      msOffset,
       panelRect,
       panelView,
       pickerFormat: ISO8601_FORMAT,
       pickerMode: pickerMode,
-      minDate: p_minDate ? p_minDate + inputOffset : undefined, // Use updated state for minDate
-      maxDate: p_maxDate ? p_maxDate + inputOffset : undefined, // Use
       setIgnoreClickAwayRef,
       setInnerDate,
       setPanelRect,
       setPanelView,
     }
   }, [
-    inputOffset,
-    outputOffset,
+    gmtMsOffset,
+    hasLabel,
     ignoreClickAwayRef,
     innerDate,
     innerLocale,
     isControlled,
-    hasLabel,
+    msOffset,
     panelRect,
     panelView,
     pickerMode,

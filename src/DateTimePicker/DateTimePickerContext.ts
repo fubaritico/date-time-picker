@@ -6,8 +6,8 @@ import { DATE_TIME_FORMAT } from './formats'
 import type { PickerState } from './DateTimePicker.types'
 
 const DateTimePickerContext = createContext<PickerState>({
-  inputOffset: 0,
-  outputOffset: 0,
+  gmtMsOffset: 0,
+  msOffset: 0,
   ignoreClickAwayRef: { current: null },
   innerDate: new Date().getTime(),
   isControlled: false,

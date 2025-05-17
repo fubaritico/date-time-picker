@@ -15,12 +15,12 @@ import {
   addMinutes,
   addMonths,
   addYears,
-  formatTimestamp,
+  formatTimestampForTextInput,
   getAllMonthNames,
   getDayOfCurrentMonthTs,
   getFirstDayOfCurrentMonthTs,
   getLongMonthNameFromTs,
-  getOffsetFromTimezone,
+  getOffsetInMsFromTimezone,
   getYearFromTs,
   setNewUtcTimestamp,
   subtractHours,
@@ -37,11 +37,11 @@ import type { LocaleAwareFormat } from '..'
  * @param {DateTimePickerProps} props - The props to pass to the component.
  * @param {Number} pFixedDate - The fixed date to use for the tests. Here 2025-03-15T15:28:13.000Z as a timestamp.
  *
- * @returns {Object} - The dateTimestamp, the offset and the render function.
+ * @returns The dateTimestamp, the offset and the render function.
  */
 const setup = (pFixedDate: number, props?: DateTimePickerProps) => {
   const today = new Date(pFixedDate)
-  const offset = getOffsetFromTimezone(today, props?.timezone)
+  const offset = getOffsetInMsFromTimezone(today, props?.timezone)
   const dateTimestamp = today.getTime() + offset
 
   return {
@@ -68,12 +68,13 @@ const setupAsControlled = (
   pFixedDate: number
 ) => {
   const today = new Date(pFixedDate)
-  const offset = getOffsetFromTimezone(today, componentProps.timezone)
-  const dateTimestamp = today.getTime() + offset
+  const msOffset = getOffsetInMsFromTimezone(today, componentProps.timezone)
+
+  const dateTimestamp = today.getTime() + msOffset
 
   return {
     dateTimestamp,
-    offset,
+    offset: msOffset,
     render: render(
       <Integration {...componentProps} spyOnDateChange={spyOnDateChangeFn}>
         {({ props, currentValue, setCurrentValue }) => (
@@ -126,7 +127,11 @@ const runTests = (timezone?: Timezone) => {
    */
   describe('Basic behavior - Date/Time mode', () => {
     it('should pass the date of today as a formatted value to the masked input', async () => {
-      const expectedValue = formatTimestamp(Date.now(), DATE_FORMAT.en)
+      const expectedValue = formatTimestampForTextInput(
+        Date.now(),
+        DATE_FORMAT.en,
+        0
+      )
 
       setup(fixedDate)
 
@@ -477,9 +482,10 @@ const runTests = (timezone?: Timezone) => {
 
       await waitFor(() => {
         expect(screen.getByRole('textbox')).toHaveValue(
-          formatTimestamp(
+          formatTimestampForTextInput(
             innerDate, // Reproducing the addition of offset in the component
-            DATE_TIME_FORMAT[defaultProperties.locale?.split('_')[0] ?? 'en']
+            DATE_TIME_FORMAT[defaultProperties.locale?.split('_')[0] ?? 'en'],
+            0
           )
         )
       })
@@ -798,7 +804,7 @@ const runTests = (timezone?: Timezone) => {
 
       await waitFor(() => {
         expect(screen.getByRole('textbox')).toHaveValue(
-          formatTimestamp(innerDate, TIME_FORMAT[locale ?? 'en'])
+          formatTimestampForTextInput(innerDate, TIME_FORMAT[locale ?? 'en'], 0)
         )
       })
     })
@@ -828,7 +834,7 @@ const runTests = (timezone?: Timezone) => {
 
       await waitFor(() => {
         expect(screen.getByRole('textbox')).toHaveValue(
-          formatTimestamp(innerDate, TIME_FORMAT[locale ?? 'en'])
+          formatTimestampForTextInput(innerDate, TIME_FORMAT[locale ?? 'en'], 0)
         )
       })
     })
@@ -863,9 +869,10 @@ const runTests = (timezone?: Timezone) => {
 
         await waitFor(() => {
           expect(screen.getByRole('textbox')).toHaveValue(
-            formatTimestamp(
+            formatTimestampForTextInput(
               firstDayOfCurrentMonthTs,
-              DATE_TIME_FORMAT[pLocale.split('_')[0]]
+              DATE_TIME_FORMAT[pLocale.split('_')[0]],
+              0
             ).replace(/-/g, '/')
           )
         })
@@ -891,7 +898,7 @@ const runTests = (timezone?: Timezone) => {
 
       await waitFor(() => {
         expect(textInput).toHaveValue(
-          formatTimestamp(fixedDate, DATE_FORMAT[intl ?? 'en'])
+          formatTimestampForTextInput(fixedDate, DATE_FORMAT[intl ?? 'en'], 0)
         )
       })
 

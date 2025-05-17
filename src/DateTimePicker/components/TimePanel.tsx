@@ -43,14 +43,12 @@ export interface TimePanelProps {
  */
 const TimePanel: FC<TimePanelProps> = ({ className, onDateChange, size }) => {
   // COMPONENT STATE
-  const { innerDate, inputOffset, locale, pickerMode } = useDateTimePicker()
-  const [date, setDate] = useState<number>(
-    innerDate ?? Date.now() + inputOffset
-  )
+  const { innerDate, msOffset, locale, pickerMode } = useDateTimePicker()
+  const [date, setDate] = useState<number>(innerDate ?? Date.now() + msOffset)
 
   useEffect(() => {
-    setDate(innerDate ?? Date.now() + inputOffset)
-  }, [innerDate, inputOffset])
+    setDate(innerDate ?? Date.now() + msOffset)
+  }, [innerDate, msOffset])
 
   // Use of an ante meridian/post meridian system
   const dateUsesAMPM = locale !== 'fr'

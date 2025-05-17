@@ -37,16 +37,14 @@ const MonthsPanel: FC<MonthsPanelProps> = ({
   onDateChange,
   size,
 }) => {
-  const { innerDate, inputOffset, locale } = useDateTimePicker()
-  const [date, setDate] = useState<number>(
-    innerDate ?? Date.now() + inputOffset
-  )
+  const { innerDate, msOffset, locale } = useDateTimePicker()
+  const [date, setDate] = useState<number>(innerDate ?? Date.now() + msOffset)
 
   const panelRef = usePanelDomRect()
 
   useEffect(() => {
-    setDate(innerDate ?? Date.now() + inputOffset)
-  }, [innerDate, inputOffset])
+    setDate(innerDate ?? Date.now() + msOffset)
+  }, [innerDate, msOffset])
 
   /**
    * Memoized array of Unix timestamps for each month of the year.

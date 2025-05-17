@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 import { twMerge } from 'tailwind-merge'
 
+import { getOffsetInMsFromTimezone } from './DateTimePicker'
 import { LocaleAwareFormat } from './I18nDate'
 
 import type { ClassValue } from 'clsx'
@@ -222,11 +223,16 @@ export const formatToLocaleAwareFormat = (
   pLocaleAwareFormat: LocaleAwareFormat,
   pTimezone?: Timezone
 ): string => {
+  const date = new Date(pValue)
+  const gmtMsOffset = getOffsetInMsFromTimezone(date)
+  const msOffset = getOffsetInMsFromTimezone(date, pTimezone)
+  const utc = new Date(date.getTime() + msOffset - gmtMsOffset)
+
   return (
     new Intl.DateTimeFormat(pLocale.replace('_', '-'), {
       ...getLocaleAwareFormat(pLocaleAwareFormat, pTimezone),
     })
-      .format(new Date(pValue))
+      .format(utc)
       // Removing à/at from the formatted date
       .replace(/\s(at|à)/, () => {
         return pLocaleAwareFormat === 'lll • t' ? ' •' : ''

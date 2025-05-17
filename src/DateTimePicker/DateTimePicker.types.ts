@@ -38,10 +38,11 @@ export interface BasicPanelProps {
 export interface PickerProviderProps extends BasicPanelProps {
   /* Date as an UTC timestamp. It will default to now if not provided */
   date?: number
-  /* Offset in milliseconds to be added to the date value (as a timestamp) on input. */
-  inputOffset: number
-  /* Offset in milliseconds to be removed from the resulting date on output */
-  outputOffset: number
+  /* Offset in milliseconds to be added the date value (as a timestamp) on input
+  and to be removed from the resulting date on output. */
+  msOffset: number
+  /* Offset in milliseconds from the GMT time zone */
+  gmtMsOffset: number
   /* If true, the input text is disabled and a loading animation is displayed on the right */
   loading?: boolean
   /* When defining a valid/enabled range of dates, it will be the min/start date */
@@ -57,14 +58,14 @@ export interface PickerProviderProps extends BasicPanelProps {
 export interface BasicPickerProps extends BasicPanelProps {
   /* Locale language in international ISO-8601  */
   locale?: string
-  /* Called on date click if component is controlled */
+  /* Called on date click if the component is controlled */
   onChange?: (date?: number) => void
 }
 
 export interface PickerProps extends BasicPickerProps {
   /* If true, Will place the panel in a portal, defaults to false */
   enablePortal?: boolean
-  /* When provided, will add an icon on the right, useful when wanting to express some state for instance */
+  /* When provided, will add an icon on the right, useful when wanting to express some state, for instance */
   extraIcon?: ReactElement
   /* If true the input text is disabled and a loading animation is displayed on the right */
   loading?: boolean

@@ -34,8 +34,7 @@ const DaysGrid: FC<DaysGridProps> = ({ date, onDateChange, size = 'md' }) => {
   // State: Array of dates in Unix timestamp format
   const [arrayOfDates, setArrayOfDates] = useState<number[]>([])
 
-  const { innerDate, minDate, maxDate, inputOffset, locale } =
-    useDateTimePicker()
+  const { innerDate, minDate, maxDate, msOffset, locale } = useDateTimePicker()
   /**
    * Will check if the time stamp is within the range of the min & max dates
    */
@@ -147,7 +146,7 @@ const DaysGrid: FC<DaysGridProps> = ({ date, onDateChange, size = 'md' }) => {
                 'h-9 w-9 text-sm': size === 'md',
                 'h-[30px] w-8 text-xs': size === 'sm',
                 'bg-white text-gray-900 hover:bg-gray-100':
-                  getStartOfDayTs(Date.now() + inputOffset) !==
+                  getStartOfDayTs(Date.now() + msOffset) !==
                     getStartOfDayTs(value) &&
                   innerDate !== value &&
                   isValid,
@@ -155,7 +154,7 @@ const DaysGrid: FC<DaysGridProps> = ({ date, onDateChange, size = 'md' }) => {
                 '!text-white !bg-blue-700 hover:!bg-blue-800':
                   innerDate === value && isValid,
                 'bg-white shadow-border shadow-blue-600 text-blue-600 hover:!text-white hover:!bg-blue-600':
-                  getStartOfDayTs(Date.now() + inputOffset) ===
+                  getStartOfDayTs(Date.now() + msOffset) ===
                     getStartOfDayTs(value) && isValid,
               }
             )}

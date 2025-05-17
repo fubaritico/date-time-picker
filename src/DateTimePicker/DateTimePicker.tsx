@@ -4,33 +4,32 @@ import './styles.css'
 
 import DateTimeInput from './components/DateTimeInput'
 import Panel from './components/Panel'
-import { getOffsetFromTimezone } from './DateTimePicker.utils'
+import { getOffsetInMsFromTimezone } from './DateTimePicker.utils'
 import DateTimePickerProvider from './DateTimePickerProvider'
 
 import type { DateTimePickerProps } from './DateTimePicker.types'
 import type { FC } from 'react'
 
-// IMPORTANT: BASED ON ENGLISH LANGUAGE
-
-// SPECS FOR FURTHER TESTING
+// SPECS
 // -----------------------------------------------------------------------------
-// [X] 1. a component panel to contains either date or time
-// [X]  1a. Click away for panel
+// [X] 1. a component panel to contain either date or time
+// [X]  1a. Click away to hide the panel
 // [X]  1b. Have the choice between date & time when date picker mode
 // [X] 2. a component to display days in a month
 // [X]  2a. a component for going backward/forward (months)
-// [X]  2b. draw a seven column grid based on week
-// [ ]  2c. keep necessary days for previous and next month
-// [X]  2d. get first month day, the week day of the first month day for the previous current and next month
+// [X]  2b. draw a seven-column grid based on week
+// [ ]  2c. keep the necessary days for previous and next month
+// [X]  2d. get the first month day, the week day of the first month day for the previous current and next month
 // [X] 3. assign click event for days of the currently selected month of the currently selected year
-// [-] 4. a component to display and edit datetime value (use an input mask) - missing time panel alone
+// [X] 4. a component to display and edit datetime value (use an input mask) - missing time panel alone
 // [X] 5. an onChange handler to emit the value
 // [X] 6. have the component being controlled (display the value properly if passed)
-// [ ]  6a. have some locale labels and input masks (FR, EN)
+// [X]  6a. have some locale labels and input masks (FR, EN)
 // [X]  6b. type a masked value and populate state and children components
 // [X] 7. Fill in the masked input when selecting values with the children components
 // [X]  7a. validate and correct user input while typing (years, months, days according to months)
 // [X] 8. Manage panel placement according to the position of the input field in the viewport
+// [ ] 9. Add range selection for date
 
 const DateTimePicker: FC<DateTimePickerProps> = ({
   date,
@@ -52,7 +51,6 @@ const DateTimePicker: FC<DateTimePickerProps> = ({
   const [isOpen, setIsOpen] = useState(false)
   const triggerRef = useRef<HTMLDivElement>(null)
 
-  // rklfelkgfle
   /**
    * Function to handle toggling the visibility of the panel.
    *
@@ -72,7 +70,7 @@ const DateTimePicker: FC<DateTimePickerProps> = ({
   /**
    * Will pass the proper time offset from the timezone (in milliseconds)
    */
-  const inputOutputOffsets = useMemo(() => {
+  const offsets = useMemo(() => {
     const d = new Date(Date.now())
     const utc = new Date(
       Date.UTC(
@@ -85,25 +83,25 @@ const DateTimePicker: FC<DateTimePickerProps> = ({
         d.getUTCMilliseconds()
       )
     )
+
     return {
-      inputOffset: getOffsetFromTimezone(utc, timezone),
-      outputOffset:
-        getOffsetFromTimezone(utc, timezone) + getOffsetFromTimezone(utc),
+      gmtMsOffset: getOffsetInMsFromTimezone(utc),
+      msOffset: getOffsetInMsFromTimezone(utc, timezone),
     }
   }, [timezone])
 
   return (
     <DateTimePickerProvider
       date={date}
-      inputOffset={inputOutputOffsets.inputOffset}
       isControlled={!!onChange}
+      gmtMsOffset={offsets.gmtMsOffset}
       hasLabel={!!textInputProps.label}
       loading={loading}
       locale={locale}
       maxDate={maxDate}
       minDate={minDate}
       noDefault={noDefault}
-      outputOffset={inputOutputOffsets.outputOffset}
+      msOffset={offsets.msOffset}
       pickerMode={pickerMode}
     >
       <div className="relative">

@@ -150,6 +150,7 @@ export default class ENInputMask extends AbstractInputMask {
       this.pickerMode === PickerMode.DATE
     ) {
       newInputValue = this.validateYear(value)
+
       newInputValue = this.validateMonth(newInputValue)
       newInputValue = this.validateDay(newInputValue)
     }

@@ -47,17 +47,15 @@ export interface DatePanelProps {
  */
 const DatePanel: FC<DatePanelProps> = ({ className, onDateChange, size }) => {
   // SHARED STATE
-  const { innerDate, setPanelView, inputOffset, locale } = useDateTimePicker()
+  const { innerDate, setPanelView, msOffset, locale } = useDateTimePicker()
   // STATE: Unix timestamp representing the given date
-  const [date, setDate] = useState<number>(
-    innerDate ?? Date.now() + inputOffset
-  )
+  const [date, setDate] = useState<number>(innerDate ?? Date.now() + msOffset)
 
   const panelRef = usePanelDomRect()
 
   useEffect(() => {
-    setDate(innerDate ?? Date.now() + inputOffset)
-  }, [innerDate, inputOffset])
+    setDate(innerDate ?? Date.now() + msOffset)
+  }, [innerDate, msOffset])
 
   /**
    * Function to go to the previous month.

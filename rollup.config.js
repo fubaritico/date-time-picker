@@ -6,31 +6,27 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import postcss from 'rollup-plugin-postcss'
 import dts from 'rollup-plugin-dts'
 import { visualizer } from 'rollup-plugin-visualizer'
+import dynamicImportVars from '@rollup/plugin-dynamic-import-vars'
 
-import pkg from './package.json' with { type: 'json' }
+//import pkg from './package.json' with { type: 'json' }
 
 export default [
   {
     input: 'src/DateTimePicker/index.ts',
     output: [
       {
-        file: pkg.main,
-        format: 'cjs',
-        sourcemap: true,
-        name: 'react-date-time-picker',
-      },
-      {
-        file: pkg.module,
+        dir: 'dist',
         format: 'esm',
         sourcemap: true,
       },
     ],
     plugins: [
-      peerDepsExternal({
-        includeDependencies: true,
-      }),
+      peerDepsExternal(),
       resolve({
         extensions: ['.ts', '.tsx'],
+      }),
+      dynamicImportVars({
+        exclude: ['src/DateTimePicker/styles.css'],
       }),
       commonjs(),
       typescript({
@@ -57,16 +53,28 @@ export default [
     external: [
       'react',
       'react-dom',
-      'react-transition-group',
-      'react-icons',
       '@mona-health/react-input-mask',
       'clsx',
+      'react-icons',
+      'react-transition-group',
+      'tailwind-merge',
+      'tailwindcss',
     ],
   },
   {
-    input: 'src/DateTimePicker/DateTimePicker.types.ts',
+    input: 'src/DateTimePicker/index.ts',
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
     plugins: [dts()],
-    external: [/\.css$/, 'react', 'react-dom'],
+    external: [
+      /\.css$/,
+      'react',
+      'react-dom',
+      '@mona-health/react-input-mask',
+      'clsx',
+      'react-icons',
+      'react-transition-group',
+      'tailwind-merge',
+      'tailwindcss',
+    ],
   },
 ]
