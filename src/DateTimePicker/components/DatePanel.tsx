@@ -1,17 +1,10 @@
 import clsx from 'clsx'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useMemo } from 'react'
 
-import Icon from '../../Icon'
-import { PanelView } from '../DateTimePicker.types'
-import {
-  addMonths,
-  getMonthNameFromTs,
-  getYearFromTs,
-  subtractMonths,
-} from '../DateTimePicker.utils'
-import useDateTimePicker from '../hooks/useDateTimePicker'
-import usePanelDomRect from '../hooks/usePanelDomRect'
+import { addMonths, subtractMonths } from '../DateTimePicker.utils'
+import { useDateTimePicker, usePanelDomRect } from '../hooks'
 
+import DateBrowser from './DateBrowser'
 import DaysGrid from './DaysGrid'
 
 import type { FC } from 'react'
@@ -41,20 +34,23 @@ export interface DatePanelProps {
  *
  * @param className
  * @param onDateChange
+ * @param range
  * @param size
  *
  * @constructor
  */
 const DatePanel: FC<DatePanelProps> = ({ className, onDateChange, size }) => {
   // SHARED STATE
-  const { innerDate, setPanelView, msOffset, locale } = useDateTimePicker()
-  // STATE: Unix timestamp representing the given date
-  const [date, setDate] = useState<number>(innerDate ?? Date.now() + msOffset)
+  const { innerDate, msOffset, setInnerDate } = useDateTimePicker()
 
   const panelRef = usePanelDomRect()
 
-  useEffect(() => {
-    setDate(innerDate ?? Date.now() + msOffset)
+  /**
+   * Store and refresh the date for the panel based on picker mode and provider state.
+   */
+  const panelDate = useMemo(() => {
+    const now = Date.now() + msOffset
+    return innerDate ?? now
   }, [innerDate, msOffset])
 
   /**
@@ -66,10 +62,11 @@ const DatePanel: FC<DatePanelProps> = ({ className, onDateChange, size }) => {
    * @returns {void}
    */
   const gotoPrevMonth = useCallback(() => {
-    setDate((prev) => {
+    setInnerDate((prev) => {
+      if (prev === undefined) return prev
       return subtractMonths(prev, 1)
     })
-  }, [])
+  }, [setInnerDate])
 
   /**
    * A callback function that advances the date to the next month.
@@ -78,76 +75,25 @@ const DatePanel: FC<DatePanelProps> = ({ className, onDateChange, size }) => {
    * @returns {void}
    */
   const gotoNextMonth = useCallback(() => {
-    setDate((prev) => {
+    setInnerDate((prev) => {
+      if (prev === undefined) return prev
       return addMonths(prev, 1)
     })
-  }, [])
+  }, [setInnerDate])
 
-  // 400, 280(4), 250(4)
   return (
     <div
       className={clsx('flex flex-col', className)}
       data-test="date-panel"
       ref={panelRef}
     >
-      <div
-        className={clsx('flex gap-4 text-gray-600 justify-between', {
-          'px-6 pt-6 pb-3': size === 'lg',
-          'px-4 pt-4 pb-2': size === 'md' || size === 'sm',
-        })}
-      >
-        <button
-          aria-label="Previous Month"
-          className={clsx(
-            'appearance-none border-none bg-transparent cursor-pointer w-6'
-          )}
-          onClick={gotoPrevMonth}
-        >
-          <Icon aria-hidden name="HiChevronLeft" className="w-6" />
-        </button>
-        <div className="flex font-bold gap-1">
-          <button
-            aria-label={getMonthNameFromTs(date, locale)}
-            className={clsx(
-              'hover:text-blue-700 transition-colors duration-500',
-              {
-                'text-sm': size === 'md',
-                'text-xs': size === 'sm',
-              }
-            )}
-            onClick={() => {
-              setPanelView(PanelView.MONTHS)
-            }}
-          >
-            {getMonthNameFromTs(date, locale)}
-          </button>
-          <button
-            aria-label={getYearFromTs(date).toString()}
-            className={clsx(
-              'hover:text-blue-700 transition-colors duration-500',
-              {
-                'text-sm': size === 'md',
-                'text-xs': size === 'sm',
-              }
-            )}
-            onClick={() => {
-              setPanelView(PanelView.YEARS)
-            }}
-          >
-            {getYearFromTs(date)}
-          </button>
-        </div>
-        <button
-          aria-label="Next Month"
-          className={clsx(
-            'appearance-none border-none bg-transparent cursor-pointer w-6'
-          )}
-          onClick={gotoNextMonth}
-        >
-          <Icon aria-hidden name="HiChevronRight" className="w-6" />
-        </button>
-      </div>
-      <DaysGrid date={date} size={size} onDateChange={onDateChange} />
+      <DateBrowser
+        date={panelDate}
+        size={size}
+        onNextMonthClick={gotoNextMonth}
+        onPrevMonthClick={gotoPrevMonth}
+      />
+      <DaysGrid date={panelDate} size={size} onDateChange={onDateChange} />
     </div>
   )
 }

@@ -13,7 +13,7 @@ export { default as Portal } from './Portal'
 export type { ButtonProps } from './Button'
 export type { ConditionalWrapperProps } from './ConditionalWrapper'
 export type { IconProps, Hi2UiIconNames } from './Icon'
-export type { I18nDateProps, LocaleAwareFormat } from './I18nDate'
+export type { I18nDateProps } from './I18nDate'
 export type { MenuProps, MenuItemConfig } from './Menu'
 
 /* Exports */

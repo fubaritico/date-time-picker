@@ -4,10 +4,10 @@ import './styles.css'
 
 import DateTimeInput from './components/DateTimeInput'
 import Panel from './components/Panel'
+import { DateTimePickerProvider } from './context'
 import { getOffsetInMsFromTimezone } from './DateTimePicker.utils'
-import DateTimePickerProvider from './DateTimePickerProvider'
 
-import type { DateTimePickerProps } from './DateTimePicker.types'
+import type { DateTimePickerProps } from '@types'
 import type { FC } from 'react'
 
 // SPECS
@@ -43,7 +43,9 @@ const DateTimePicker: FC<DateTimePickerProps> = ({
   pickerMode,
   noDefault = false,
   onChange,
+  onDateRangeChange,
   placement = 'bottom-start',
+  dateRange,
   size = 'md',
   timezone,
   ...textInputProps
@@ -103,6 +105,7 @@ const DateTimePicker: FC<DateTimePickerProps> = ({
       noDefault={noDefault}
       msOffset={offsets.msOffset}
       pickerMode={pickerMode}
+      dateRange={dateRange}
     >
       <div className="relative">
         <div ref={triggerRef} className="relative">
@@ -132,6 +135,7 @@ const DateTimePicker: FC<DateTimePickerProps> = ({
         <Panel
           enablePortal={enablePortal}
           onChange={onChange}
+          onDateRangeChange={onDateRangeChange}
           loading={loading}
           open={isOpen}
           onClickOutside={closePanel}

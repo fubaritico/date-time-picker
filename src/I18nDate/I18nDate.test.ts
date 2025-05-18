@@ -2,8 +2,6 @@ import MockDate from 'mockdate'
 
 import { formatToLocaleAwareFormat } from '../utils'
 
-import { LocaleAwareFormat } from './I18nDate'
-
 describe('formatToLocaleAwareFormat', () => {
   const fixedDate = 1742052493000
   const locale = 'en-US'

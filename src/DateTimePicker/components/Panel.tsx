@@ -2,20 +2,23 @@ import clsx from 'clsx'
 import { memo, useCallback, useEffect, useRef, useState } from 'react'
 import { CSSTransition } from 'react-transition-group'
 
+import { PanelView, PickerMode } from '@enums'
+
 import ClickAwayListener from '../../ClickAwayListener'
 import ConditionalWrapper from '../../ConditionalWrapper'
 import { FADE_ANIMATION_DURATION } from '../../constants'
 import Portal from '../../Portal'
-import { PanelView, PickerMode } from '../DateTimePicker.types'
+import { DateRangePanelProvider } from '../context'
 import useDateTimePicker from '../hooks/useDateTimePicker'
 
 import DatePanel from './DatePanel'
+import DateRangePanel from './DateRangePanel'
 import DateTimeSwitcher from './DateTimeSwitcher'
 import MonthsPanel from './MonthsPanel'
 import TimePanel from './TimePanel'
 import YearsPanel from './YearsPanel'
 
-import type { PickerProps } from '..'
+import type { DateRange, PickerProps } from '@types'
 import type { FC, RefObject } from 'react'
 
 interface PanelProps extends PickerProps {
@@ -48,6 +51,7 @@ const INPUT_LABEL_HEIGHT = 24
 const Panel: FC<PanelProps> = ({
   enablePortal,
   onChange,
+  onDateRangeChange,
   onClickOutside,
   onClose,
   open,
@@ -60,16 +64,19 @@ const Panel: FC<PanelProps> = ({
     pickerMode,
     isControlled,
     hasLabel,
+    innerDateRange,
     panelRect,
     panelView,
     setPanelView,
     setInnerDate,
+    setInnerDateRange,
     ignoreClickAwayRef,
   } = useDateTimePicker()
 
   const [position, setPosition] = useState({ top: 0, left: 0 })
   const dateTimeSwitcherRef = useRef<HTMLDivElement>(null)
   const nodeRef = useRef(null)
+  const isNotDateRangePicker = pickerMode !== PickerMode.DATERANGE
 
   /**
    * Update the panel placement based on the trigger position.
@@ -187,6 +194,32 @@ const Panel: FC<PanelProps> = ({
     if (panelView === PanelView.DAYS) onClose?.()
   }
 
+  /**
+   * On date range selection, the calendar is closed when conditions are met:
+   * the end date is greater than the start date.
+   *
+   * If the component is controlled, the passed callback is called.
+   * Otherwise, the date range will be updated in the state.
+   *
+   * @param dateRange
+   *   onDateRangeChange?: (date: DateRange) => void
+   */
+  const handleOnDateRangeChange = (dateRange: DateRange) => {
+    if (isControlled) {
+      onDateRangeChange?.(dateRange)
+    } else {
+      setInnerDateRange(dateRange)
+    }
+
+    // Close the panel only if the date range is valid
+    if (
+      dateRange[0] !== undefined &&
+      dateRange[1] !== undefined &&
+      dateRange[0] < dateRange[1]
+    )
+      onClose?.()
+  }
+
   return (
     <ConditionalWrapper
       condition={enablePortal ?? false}
@@ -216,9 +249,10 @@ const Panel: FC<PanelProps> = ({
               'rounded-lg shadow-elevation-1 absolute left-0 top-[54px]',
               {
                 'z-[999]': enablePortal,
-                'w-[400px]': size === 'lg',
-                'w-[308px]': size === 'md',
-                'w-[272px]': size === 'sm',
+                'w-max': !enablePortal && !isNotDateRangePicker,
+                'w-[400px]': isNotDateRangePicker && size === 'lg',
+                'w-[308px]': isNotDateRangePicker && size === 'md',
+                'w-[272px]': isNotDateRangePicker && size === 'sm',
               }
             )}
             ref={nodeRef}
@@ -228,6 +262,17 @@ const Panel: FC<PanelProps> = ({
               left: `${position.left.toString()}px`,
             }}
           >
+            {pickerMode === PickerMode.DATERANGE && (
+              <DateRangePanelProvider
+                dateRange={innerDateRange}
+                msOffset={msOffset}
+              >
+                <DateRangePanel
+                  size={size}
+                  onDateRangeChange={handleOnDateRangeChange}
+                />
+              </DateRangePanelProvider>
+            )}
             {pickerMode === PickerMode.DATETIME && (
               <DateTimeSwitcher
                 panelView={panelView}
@@ -235,18 +280,22 @@ const Panel: FC<PanelProps> = ({
                 size={size}
               />
             )}
-            {panelView === PanelView.DAYS && (
-              <DatePanel size={size} onDateChange={handleOnDateChange} />
-            )}
-            {panelView === PanelView.MONTHS && (
-              <MonthsPanel size={size} onDateChange={handleOnDateChange} />
-            )}
-            {panelView === PanelView.YEARS && (
-              <YearsPanel size={size} onDateChange={handleOnDateChange} />
-            )}
-            {panelView === PanelView.TIME && (
-              <TimePanel size={size} onDateChange={handleOnDateChange} />
-            )}
+            {pickerMode !== PickerMode.DATERANGE &&
+              panelView === PanelView.DAYS && (
+                <DatePanel size={size} onDateChange={handleOnDateChange} />
+              )}
+            {pickerMode !== PickerMode.DATERANGE &&
+              panelView === PanelView.MONTHS && (
+                <MonthsPanel size={size} onDateChange={handleOnDateChange} />
+              )}
+            {pickerMode !== PickerMode.DATERANGE &&
+              panelView === PanelView.YEARS && (
+                <YearsPanel size={size} onDateChange={handleOnDateChange} />
+              )}
+            {pickerMode !== PickerMode.DATERANGE &&
+              panelView === PanelView.TIME && (
+                <TimePanel size={size} onDateChange={handleOnDateChange} />
+              )}
           </div>
         </ClickAwayListener>
       </CSSTransition>

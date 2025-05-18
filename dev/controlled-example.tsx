@@ -1,7 +1,8 @@
-import { DateTimePicker, PickerMode, I18nDate } from '../src'
+import { DateTimePicker, I18nDate } from '@components'
+import { PickerMode } from '@enums'
 
 import type { FC, ReactNode } from 'react'
-import type { DateTimePickerProps } from '../src'
+import type { DateTimePickerProps } from '@types'
 
 const ControlledExample: FC<DateTimePickerProps & { title: ReactNode }> = ({
   date,

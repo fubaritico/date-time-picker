@@ -2,13 +2,12 @@ import clsx from 'clsx'
 import { twMerge } from 'tailwind-merge'
 
 import { getOffsetInMsFromTimezone } from './DateTimePicker'
-import { LocaleAwareFormat } from './I18nDate'
 
 import type { ClassValue } from 'clsx'
 import type { ChangeEvent, KeyboardEvent } from 'react'
 
 /**
- * Debounce function that will delay the execution of the passed function
+ * Debounce-function that will delay the execution of the passed function
  *
  * @param func - any function
  * @param {number} wait - delay applied to the function

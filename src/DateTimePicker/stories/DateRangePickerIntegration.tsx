@@ -1,18 +1,13 @@
 import { useState } from 'react'
 
-import {
-  Button,
-  DateTimePicker,
-  DropdownMenu,
-  I18nDate,
-  languages,
-} from '@components'
+import { DateTimePicker } from '..'
+import { Button, DropdownMenu, I18nDate, languages } from '../..'
 
-import type { MenuItemConfig } from '@components'
-import type { DateTimePickerProps } from '@types'
+import type { MenuItemConfig } from '../..'
+import type { DateRange, DateTimePickerProps } from '@types'
 import type { FC } from 'react'
 
-export interface DateTimePickerIntegrationProps extends DateTimePickerProps {
+export interface DateRangePickerIntegrationProps extends DateTimePickerProps {
   /* Time setting controls will be displayed, defaults to true */
   controls?: boolean
   /* Locale Aware Format for easy formatting  */
@@ -128,7 +123,7 @@ const localeAwareFormatItems: MenuItemConfig[] = [
  * It displays the selected date in a formatted string.
  *
  */
-const DateTimePickerIntegration: FC<DateTimePickerIntegrationProps> = ({
+const DateRangePickerIntegration: FC<DateRangePickerIntegrationProps> = ({
   controls = true,
   placement,
   timezone = 'America/New_York',
@@ -136,7 +131,9 @@ const DateTimePickerIntegration: FC<DateTimePickerIntegrationProps> = ({
   outputFormat,
   ...props
 }) => {
-  const [date, setDate] = useState<number | undefined>(props.date)
+  const [dateRange, setDateRange] = useState<DateRange | undefined>(
+    props.dateRange
+  )
   const [locale, setLocale] = useState(l ?? 'fr_FR')
   const [localeAwareFormat, setLocaleAwareFormat] = useState<LocaleAwareFormat>(
     outputFormat ?? (localeAwareFormatItems[0].value as LocaleAwareFormat)
@@ -150,8 +147,8 @@ const DateTimePickerIntegration: FC<DateTimePickerIntegrationProps> = ({
     setLocaleAwareFormat(p_value as LocaleAwareFormat)
   }
 
-  const handleDateChange = (p_date?: number) => {
-    setDate(p_date)
+  const handleDateRangeChange = (p_dateRange?: DateRange) => {
+    setDateRange(p_dateRange)
   }
 
   return (
@@ -190,19 +187,29 @@ const DateTimePickerIntegration: FC<DateTimePickerIntegrationProps> = ({
         <div className="flex gap-4">
           <DateTimePicker
             {...props}
-            date={date}
-            onChange={handleDateChange}
+            dateRange={dateRange}
+            onDateRangeChange={handleDateRangeChange}
             locale={locale}
             timezone={timezone}
           />
-          <div className="flex items-center px-4 font-bold bg-white/50 text-blue-900 rounded">
-            {date && (
-              <I18nDate
-                locale={locale}
-                localeAwareFormat={localeAwareFormat}
-                value={date}
-                timezone={timezone}
-              />
+          <div className="flex items-center gap-0.5 px-4 font-bold bg-white/50 text-blue-900 rounded">
+            {dateRange && (
+              <>
+                <span>From</span>
+                <I18nDate
+                  locale={locale}
+                  localeAwareFormat={localeAwareFormat}
+                  value={dateRange[0]}
+                  timezone={timezone}
+                />
+                <span>to</span>
+                <I18nDate
+                  locale={locale}
+                  localeAwareFormat={localeAwareFormat}
+                  value={dateRange[1]}
+                  timezone={timezone}
+                />
+              </>
             )}
           </div>
         </div>
@@ -212,4 +219,4 @@ const DateTimePickerIntegration: FC<DateTimePickerIntegrationProps> = ({
   )
 }
 
-export default DateTimePickerIntegration
+export default DateRangePickerIntegration

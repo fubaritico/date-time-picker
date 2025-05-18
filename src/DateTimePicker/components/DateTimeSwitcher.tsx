@@ -1,8 +1,9 @@
 import clsx from 'clsx'
 import { forwardRef } from 'react'
 
+import { PanelView } from '@enums'
+
 import Icon from '../../Icon/Icon'
-import { PanelView } from '../DateTimePicker.types'
 import useDateTimePicker from '../hooks/useDateTimePicker'
 
 interface DataTimeSwitcherProps {

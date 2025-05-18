@@ -1,7 +1,9 @@
 import clsx from 'clsx'
 import { useCallback, useEffect, useState } from 'react'
 
-import { BasicPickerProps } from '../DateTimePicker.types'
+import { PickerMode } from '@enums'
+
+import { cx } from '../../utils'
 import {
   getAllWeekDaysNamesFromTs,
   getFirstDayOfCurrentMonthTs,
@@ -9,32 +11,60 @@ import {
   getStartDayOfWeekOfCurrentMonth,
   getStartOfDayTs,
 } from '../DateTimePicker.utils'
-import useDateTimePicker from '../hooks/useDateTimePicker'
+import { useDateRangePanel, useDateTimePicker } from '../hooks'
 
+import type { BasicPickerProps } from '@types'
 import type { FC, KeyboardEvent, MouseEvent } from 'react'
 
 export type DaysGridProps = Omit<BasicPickerProps, 'onChange'> & {
   /* Date formatted in a Unix timestamp format */
-  date: number
+  date?: number
   /* Function called on date change */
   onDateChange?: (date: number) => void
+  /* In DATE_RANGE picker mode, called on start date change */
+  onStartDateChangeHandler?: (date: number) => void
+  /* In DATE_RANGE picker mode, called on end date change */
+  onEndDateChangeHandler?: (date: number) => void
+  /* In DATE_RANGE .... */
+  panelRole?: 'left' | 'right'
   /* Panel size: 'sm' | 'md' | 'lg'  */
   size?: UISize
 }
 
 /**
  * The DaysGrid component displays the days of the month in a grid.
+ *
  * @param date - date formatted in a ISO8601 format.
- * @param onDateChange
- * @param size
+ * @param onDateChange - Function called on date change, will receive a date in Unix timestamp format.
+ * @param onStartDateChangeHandler - In DATE_RANGE picker mode, called on start date change.
+ * @param onEndDateChangeHandler - In DATE_RANGE picker mode, called on end date change.
+ * @param size - Panel size: 'sm' | 'md' | 'lg'.
+ *
  * @constructor
  */
-const DaysGrid: FC<DaysGridProps> = ({ date, onDateChange, size = 'md' }) => {
+const DaysGrid: FC<DaysGridProps> = ({
+  date = Date.now(),
+  onDateChange,
+  onStartDateChangeHandler,
+  onEndDateChangeHandler,
+  size = 'md',
+}) => {
   const [startIndex, setStartIndex] = useState(0)
   // State: Array of dates in Unix timestamp format
   const [arrayOfDates, setArrayOfDates] = useState<number[]>([])
+  // Shared state from the DateTimePicker context
+  const { innerDate, minDate, maxDate, msOffset, locale, pickerMode } =
+    useDateTimePicker()
+  // Shared state from the DateRangePanel context
+  const {
+    dateRange,
+    tempStartDate,
+    tempEndDate,
+    setTempStartDate,
+    setTempEndDate,
+    isSelectingRange,
+  } = useDateRangePanel()
 
-  const { innerDate, minDate, maxDate, msOffset, locale } = useDateTimePicker()
   /**
    * Will check if the time stamp is within the range of the min & max dates
    */
@@ -47,6 +77,9 @@ const DaysGrid: FC<DaysGridProps> = ({ date, onDateChange, size = 'md' }) => {
     [minDate, maxDate]
   )
 
+  /**
+   * Will set all the necessary math to display the grid of dates.
+   */
   useEffect(() => {
     const firstDayOfMonth = getStartDayOfWeekOfCurrentMonth(date)
     setStartIndex((firstDayOfMonth + 6) % 7) // Adjust to make Monday the first day
@@ -72,11 +105,36 @@ const DaysGrid: FC<DaysGridProps> = ({ date, onDateChange, size = 'md' }) => {
     (event: MouseEvent<HTMLDivElement>) => {
       const clickedDate = event.currentTarget.dataset.date
 
-      if (clickedDate) {
-        onDateChange?.(Number(clickedDate))
+      if (!clickedDate) {
+        console.warn('The clicked date is undefined.')
+      }
+
+      const clickedTs = Number(clickedDate)
+
+      if (pickerMode !== PickerMode.DATERANGE) {
+        onDateChange?.(clickedTs)
+
+        return
+      }
+
+      if (tempStartDate === undefined) {
+        setTempStartDate(clickedTs)
+        onStartDateChangeHandler?.(clickedTs)
+        return
+      }
+
+      if (clickedTs >= tempStartDate) {
+        onEndDateChangeHandler?.(clickedTs)
       }
     },
-    [onDateChange]
+    [
+      onDateChange,
+      setTempStartDate,
+      tempStartDate,
+      pickerMode,
+      onStartDateChangeHandler,
+      onEndDateChangeHandler,
+    ]
   )
 
   /**
@@ -90,9 +148,56 @@ const DaysGrid: FC<DaysGridProps> = ({ date, onDateChange, size = 'md' }) => {
     }
   }
 
+  /**
+   * Will set a temporary value for the end date when hovering over a date.
+   * It is meant to manage display when selecting only.
+   *
+   * @param event
+   */
+  const handleDateMouseEnter = useCallback(
+    (event: MouseEvent<HTMLDivElement>) => {
+      if (isSelectingRange) {
+        const hoveredDate = event.currentTarget.dataset.date
+        if (hoveredDate) {
+          const dateValue = Number(hoveredDate)
+          if (tempStartDate && dateValue >= tempStartDate) {
+            setTempEndDate(dateValue)
+          }
+        }
+      }
+    },
+    [isSelectingRange, tempStartDate, setTempEndDate]
+  )
+
+  /**
+   * On init/mount, it will check if the date is in the range of the date range prop start and end dates.
+   *
+   * On selecting a range, it will check if the date is in the range of the temporary start and end dates.
+   * It will then not use the date range prop, but the temporary values set while selecting a range.
+   */
+  const dateIsInRange = useCallback(
+    (value: number) => {
+      const inRangeOnInit =
+        tempStartDate === undefined &&
+        dateRange[0] !== undefined &&
+        dateRange[1] !== undefined &&
+        value >= dateRange[0] &&
+        value <= dateRange[1]
+
+      const temporaryInRange =
+        tempStartDate !== undefined &&
+        tempEndDate !== undefined &&
+        value > tempStartDate &&
+        value <= tempEndDate
+
+      return inRangeOnInit || temporaryInRange
+    },
+    [tempStartDate, tempEndDate, dateRange]
+  )
+
   return (
     <div
-      className={clsx('grid grid-cols-7 h-full', {
+      className={clsx('grid grid-cols-7', 'group', {
         'gap-2 p-5': size === 'lg',
         'gap-1 p-4': size === 'md',
         'gap-1 p-3': size === 'sm',
@@ -113,7 +218,7 @@ const DaysGrid: FC<DaysGridProps> = ({ date, onDateChange, size = 'md' }) => {
               }
             )}
           >
-            {name}
+            {name.replace(/\.$/, '')}
           </div>
         )
       )}
@@ -127,35 +232,59 @@ const DaysGrid: FC<DaysGridProps> = ({ date, onDateChange, size = 'md' }) => {
       )}
       {arrayOfDates.map((value: number, index: number) => {
         const isValid = isDateValid(value)
+        const isToday =
+          getStartOfDayTs(Date.now() + msOffset) === getStartOfDayTs(value) &&
+          !isSelectingRange
+        const startDateIsSelected =
+          tempStartDate === value || dateRange[0] === value
+        const endDateIsSelected =
+          tempEndDate === value || dateRange[1] === value
+        const isSelected =
+          (isValid && innerDate === value) ||
+          startDateIsSelected ||
+          endDateIsSelected
+        const isInRange = dateIsInRange(value)
 
         return (
           <div
             key={value}
             tabIndex={isValid ? 0 : -1}
-            role={'button'}
-            aria-current={innerDate === value}
+            role="button"
+            aria-current={isSelected}
             data-date={value}
             data-test={value}
             onClick={isValid ? handleDateClick : undefined}
             onKeyDown={isValid ? handleKeyDown : undefined}
-            className={clsx(
-              'font-bold flex justify-center items-center transition duration-500 rounded-lg',
+            onMouseEnter={
+              isValid && isSelectingRange ? handleDateMouseEnter : undefined
+            }
+            className={cx(
+              'font-bold flex justify-center items-center rounded-lg',
               'focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1',
               {
+                'transition duration-500': pickerMode !== PickerMode.DATERANGE,
                 'h-10 w-10': size === 'lg',
                 'h-9 w-9 text-sm': size === 'md',
                 'h-[30px] w-8 text-xs': size === 'sm',
+                'h-10 w-10.5': size === 'lg' && isInRange,
+                'h-9 w-10 text-sm -mx-0.5 border-r border-r-white last:border-r-0':
+                  size === 'md' && isInRange,
+                'h-[30px] w-8.5 text-xs': size === 'sm' && isInRange,
                 'bg-white text-gray-900 hover:bg-gray-100':
                   getStartOfDayTs(Date.now() + msOffset) !==
                     getStartOfDayTs(value) &&
                   innerDate !== value &&
                   isValid,
                 'text-gray-300 cursor-not-allowed': !isValid,
-                '!text-white !bg-blue-700 hover:!bg-blue-800':
-                  innerDate === value && isValid,
-                'bg-white shadow-border shadow-blue-600 text-blue-600 hover:!text-white hover:!bg-blue-600':
-                  getStartOfDayTs(Date.now() + msOffset) ===
-                    getStartOfDayTs(value) && isValid,
+                'text-white bg-blue-700 hover:bg-blue-800': isSelected,
+                'text-blue-800 bg-blue-100 hover:blue-800 hover:bg-blue-100 rounded-none':
+                  isInRange,
+                'rounded-l-md text-white bg-blue-700 hover:bg-blue-700 rounded-r-none w-10 -mx-0.5 border-r border-r-white':
+                  startDateIsSelected,
+                'rounded-r-md text-white bg-blue-700 hover:bg-blue-700':
+                  endDateIsSelected,
+                'bg-white shadow-border shadow-blue-600 text-blue-600 hover:text-white hover:bg-blue-600':
+                  isToday,
               }
             )}
           >

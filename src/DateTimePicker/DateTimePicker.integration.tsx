@@ -1,6 +1,7 @@
-import { Dispatch, FC, ReactNode, SetStateAction, useState } from 'react'
+import { useState } from 'react'
 
-import { DateTimePickerProps } from './DateTimePicker.types'
+import type { DateTimePickerProps } from '@types'
+import type { Dispatch, FC, ReactNode, SetStateAction } from 'react'
 
 interface IntegrationProps extends DateTimePickerProps {
   spyOnDateChange?: (date: number) => void

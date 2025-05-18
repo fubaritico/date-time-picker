@@ -2,22 +2,6 @@ import { formatToLocaleAwareFormat } from '../utils'
 
 import type { FC } from 'react'
 
-export type LocaleAwareFormat =
-  | 'l'
-  | 'll'
-  | 'll LT'
-  | 'lll'
-  | 'llll'
-  | 'lll • t'
-  | 'L'
-  | 'LL'
-  | 'LLL'
-  | 'LLLL'
-  | 'L LT'
-  | 'L LT Z'
-  | 'LT'
-  | 'LTS'
-
 export interface I18nDateProps {
   /* Locale as a string under the shape of 'en_US', defaults to 'en_US' */
   locale?: string

@@ -1,23 +1,24 @@
+import { PanelView, PickerMode } from './enums'
+
 import type { Dispatch, ReactElement, RefObject, SetStateAction } from 'react'
 
 /**
- * Lists the behaviours of the component
+ * Represents a range of dates, consisting of a start and end UNIX timestamp in milliseconds, or undefined.
+ *
+ * The `DateRange` type can be used to specify an optional period with:
+ * - A defined start timestamp (inclusive)
+ * - A defined end timestamp (inclusive)
+ * - An open-ended start or end by using undefined
+ *
+ * Example configurations:
+ * - `[timestamp1, timestamp2]`: Represents a date range between two specific points in time.
+ * - `[timestamp1, undefined]`: Represents a date range starting from a specific time without an end.
+ * - `[undefined, timestamp2]`: Represents a date range ending at a specific time without a defined start.
+ * - `undefined`: Represents no date range at all (undefined range).
+ *
+ * This type is typically used to handle date filtering or temporal constraints where both finite and infinite boundaries may be necessary.
  */
-export enum PickerMode {
-  DATE = 'DATE',
-  TIME = 'TIME',
-  DATETIME = 'DATETIME',
-}
-
-/**
- * Lists the types of panel content to show
- */
-export enum PanelView {
-  DAYS = 'DAYS',
-  MONTHS = 'MONTHS',
-  YEARS = 'YEARS',
-  TIME = 'TIME',
-}
+export type DateRange = [number | undefined, number | undefined]
 
 /**
  * Input masks used according to locale
@@ -38,6 +39,8 @@ export interface BasicPanelProps {
 export interface PickerProviderProps extends BasicPanelProps {
   /* Date as an UTC timestamp. It will default to now if not provided */
   date?: number
+  /* Range date as a tuple of two Unix timestamps */
+  dateRange?: DateRange
   /* Offset in milliseconds to be added the date value (as a timestamp) on input
   and to be removed from the resulting date on output. */
   msOffset: number
@@ -58,16 +61,18 @@ export interface PickerProviderProps extends BasicPanelProps {
 export interface BasicPickerProps extends BasicPanelProps {
   /* Locale language in international ISO-8601  */
   locale?: string
-  /* Called on date click if the component is controlled */
-  onChange?: (date?: number) => void
+  /* When picker mode is not set on 'DATE_RANGE', this function is called on date click if the component is controlled */
+  onChange?: (value?: number) => void
+  /* When picker mode is set on 'DATE_RANGE', this function is called on date range change */
+  onDateRangeChange?: (date: DateRange) => void
 }
 
 export interface PickerProps extends BasicPickerProps {
   /* If true, Will place the panel in a portal, defaults to false */
   enablePortal?: boolean
-  /* When provided, will add an icon on the right, useful when wanting to express some state, for instance */
+  /* When provided, will add an icon on the right, useful when wanting to express some state, for instance. */
   extraIcon?: ReactElement
-  /* If true the input text is disabled and a loading animation is displayed on the right */
+  /* If true, the input text is disabled and a loading animation is displayed on the right */
   loading?: boolean
   /* If true, the panel is shown, defaults to false */
   open?: boolean
@@ -78,24 +83,28 @@ export interface PickerProps extends BasicPickerProps {
 export interface DateTimePickerProps
   extends DateTimeTextInputProps,
     PickerProps {
-  /* Date as a unix timestamp will default to "now" if not provided */
+  /* Date as a value of unix timestamp, the date will default to "now" if not provided */
   date?: number
+  /* Date range as a tuple of two Unix timestamps */
+  dateRange?: DateRange
 }
 
 /**
  * Picker state properties passed to children component through context
  */
 export interface PickerState extends PickerProviderProps {
-  /* Reference to the format used according to the Picker mode */
-  pickerFormat: string
   /* Date used for component inner mechanics as a Unix timestamp */
   innerDate?: number
+  /* Range date as a tuple of two Unix timestamps */
+  innerDateRange?: DateRange
   /* Ignored element by the click outside component */
   ignoreClickAwayRef: RefObject<HTMLButtonElement | null>
   /* Locale language in international ISO-8601  */
   locale: string
   /* Setter for the date (provider state) */
   setInnerDate: Dispatch<SetStateAction<number | undefined>>
+  /* Setter for the date range as a tuple of two Unix timestamps */
+  setInnerDateRange: Dispatch<SetStateAction<DateRange>>
   /* View mode for the calendar panel (provider state) */
   panelView: PanelView
   /* Setter for the ignored element by the click outside component */

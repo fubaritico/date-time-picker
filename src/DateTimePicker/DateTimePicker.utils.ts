@@ -155,6 +155,39 @@ export const addHours = (ts?: number, hours = 1): number => {
 }
 
 /**
+ * Will return the timestamp corresponding to the first instant of the month
+ * @param ts
+ */
+export const getFirstInstantOfMonth = (ts?: number): number => {
+  if (!ts || !checkTsValidity(ts)) {
+    throw new Error('[getFirstInstantOfMonth] Invalid timestamp')
+  }
+
+  const date = new Date(ts)
+  date.setDate(1) // Set to the first day of the month
+  date.setHours(0, 0, 0, 0) // Set to the start of the day
+
+  return date.getTime()
+}
+
+/**
+ * Will return the timestamp corresponding to the last instant of the month
+ * @param ts
+ */
+export const getLastInstantOfMonth = (ts?: number): number => {
+  if (!ts || !checkTsValidity(ts)) {
+    throw new Error('[getLastInstantOfMonth] Invalid timestamp')
+  }
+
+  const date = new Date(ts)
+  date.setMonth(date.getMonth() + 1) // Move to the next month
+  date.setDate(0) // Set to the last day of the previous month (current month)
+  date.setHours(23, 59, 59, 999) // Set to the end of the day
+
+  return date.getTime()
+}
+
+/**
  * Will return the timestamp corresponding to the minimum time of the day (00:00:00) for the given timestamp
  *
  * @param {number} ts - number representing a unix timestamp
@@ -309,10 +342,6 @@ export const getDaysInMonth = (year: number, month: number): number => {
  * @returns {number} timestamp of the first day of the previous month
  */
 export const getDayOfCurrentMonthTs = (ts: number, day: number): number => {
-  if (!checkTsValidity(ts)) {
-    throw new Error('[getFirstDayOfCurrentMonthTs] Invalid timestamp')
-  }
-
   if (!checkTsValidity(ts)) {
     throw new Error('[getFirstDayOfCurrentMonthTs] Invalid timestamp')
   }

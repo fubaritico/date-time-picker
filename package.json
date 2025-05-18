@@ -37,6 +37,7 @@
     "date-picker",
     "time-picker",
     "date-time-picker",
+    "date-range-picker",
     "component"
   ],
   "author": "Fubaratico <contact@fubaratico.com>",
@@ -56,6 +57,7 @@
     "pnpm": ">=10.0.0"
   },
   "devDependencies": {
+    "@babel/traverse": "^7.27.4",
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
     "@eslint/js": "^9.21.0",
@@ -126,6 +128,5 @@
     "typescript-eslint": "^8.24.1",
     "vite": "^6.3.5",
     "vite-tsconfig-paths": "^5.1.4"
-  },
-  "dependencies": {}
+  }
 }

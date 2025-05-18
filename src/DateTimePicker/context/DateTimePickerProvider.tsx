@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useState } from 'react'
 
-import { PanelView, PickerMode } from './DateTimePicker.types'
-import DateTimePickerContext from './DateTimePickerContext'
-import { ISO8601_FORMAT } from './formats'
+import { PanelView, PickerMode } from '@enums'
 
-import type { PickerProviderProps, PickerState } from './DateTimePicker.types'
+import DateTimePickerContext from './DateTimePickerContext'
+
+import type { DateRange, PickerProviderProps, PickerState } from '@types'
 import type { FC, PropsWithChildren, RefObject } from 'react'
 
 /**
@@ -16,11 +16,12 @@ import type { FC, PropsWithChildren, RefObject } from 'react'
  */
 const DateTimePickerProvider: FC<PropsWithChildren<PickerProviderProps>> = ({
   children,
-  date: p_date, // Data
+  dateRange: p_dateRange,
+  date: p_date,
   msOffset = 0,
   gmtMsOffset = 0,
-  minDate: p_minDate, // Data
-  maxDate: p_maxDate, // Data
+  minDate: p_minDate,
+  maxDate: p_maxDate,
   isControlled,
   hasLabel,
   locale = 'en_US',
@@ -40,6 +41,11 @@ const DateTimePickerProvider: FC<PropsWithChildren<PickerProviderProps>> = ({
   // DATE_TIME_FORMAT also includes time to be extracted
   const [innerDate, setInnerDate] = useState<number | undefined>(
     !p_date && !noDefault ? Date.now() + msOffset : undefined
+  )
+
+  // DATE_RANGE_FORMAT
+  const [innerDateRange, setInnerDateRange] = useState<DateRange>(
+    p_dateRange ?? [undefined, undefined]
   )
 
   const [panelRect, setPanelRect] = useState<DOMRectReadOnly>(
@@ -62,6 +68,7 @@ const DateTimePickerProvider: FC<PropsWithChildren<PickerProviderProps>> = ({
       hasLabel,
       ignoreClickAwayRef,
       innerDate,
+      innerDateRange,
       isControlled,
       locale: innerLocale,
       maxDate: p_maxDate ? p_maxDate + msOffset : undefined,
@@ -69,10 +76,10 @@ const DateTimePickerProvider: FC<PropsWithChildren<PickerProviderProps>> = ({
       msOffset,
       panelRect,
       panelView,
-      pickerFormat: ISO8601_FORMAT,
-      pickerMode: pickerMode,
+      pickerMode,
       setIgnoreClickAwayRef,
       setInnerDate,
+      setInnerDateRange,
       setPanelRect,
       setPanelView,
     }
@@ -81,6 +88,7 @@ const DateTimePickerProvider: FC<PropsWithChildren<PickerProviderProps>> = ({
     hasLabel,
     ignoreClickAwayRef,
     innerDate,
+    innerDateRange,
     innerLocale,
     isControlled,
     msOffset,

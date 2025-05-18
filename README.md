@@ -2,6 +2,12 @@
 
 A React 19 date and time picker component with Tailwind CSS styling.
 
+### WIP
+
+Currently adding features and improving the component. Working on date range selection.
+
+It is just completed for the date range panel; No work has been done for the text field yet.
+
 ## Props
 
 | Prop | Type | Default | Description |

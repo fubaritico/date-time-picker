@@ -20,8 +20,13 @@
     "allowUnreachableCode": false,
     "types": ["@testing-library/jest-dom", "node"],
     "baseUrl": ".",
+    "paths": {
+      "@components": ["src/index.ts"],
+      "@enums": ["src/DateTimePicker/types/enums.ts"],
+      "@types": ["src/DateTimePicker/types/index.ts"],
+    },
   },
-  "include": ["src/**/*", "global.d.ts", "declarations.d.ts"],
+  "include": ["src/**/*", "dev/**/*", "global.d.ts", "declarations.d.ts"],
   "exclude": [
     ".storybook",
     "node_modules",

@@ -1,7 +1,8 @@
 import clsx from 'clsx'
 import { useCallback, useEffect, useState } from 'react'
 
-import { PanelView, PickerMode } from '../DateTimePicker.types'
+import { PanelView, PickerMode } from '@enums'
+
 import {
   addHours,
   addMinutes,

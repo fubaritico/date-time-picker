@@ -244,13 +244,17 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
                   aria-label="April"
                   class="hover:text-blue-700 transition-colors duration-500 text-sm"
                 >
-                  April
+                  <span>
+                    April
+                  </span>
                 </button>
                 <button
                   aria-label="2025"
                   class="hover:text-blue-700 transition-colors duration-500 text-sm"
                 >
-                  2025
+                  <span>
+                    2025
+                  </span>
                 </button>
               </div>
               <button
@@ -277,7 +281,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </button>
             </div>
             <div
-              class="grid grid-cols-7 h-full gap-1 p-4"
+              class="grid grid-cols-7 group gap-1 p-4"
               data-test="days-grid"
               role="grid"
             >
@@ -321,7 +325,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               />
               <div
                 aria-current="true"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm !text-white !bg-blue-700 hover:!bg-blue-800"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-white bg-blue-700 hover:bg-blue-800"
                 data-date="1743510493000"
                 data-test="1743510493000"
                 role="button"
@@ -331,7 +335,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1743596893000"
                 data-test="1743596893000"
                 role="button"
@@ -341,7 +345,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1743683293000"
                 data-test="1743683293000"
                 role="button"
@@ -351,7 +355,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1743769693000"
                 data-test="1743769693000"
                 role="button"
@@ -361,7 +365,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1743856093000"
                 data-test="1743856093000"
                 role="button"
@@ -371,7 +375,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1743942493000"
                 data-test="1743942493000"
                 role="button"
@@ -381,7 +385,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1744028893000"
                 data-test="1744028893000"
                 role="button"
@@ -391,7 +395,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1744115293000"
                 data-test="1744115293000"
                 role="button"
@@ -401,7 +405,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1744201693000"
                 data-test="1744201693000"
                 role="button"
@@ -411,7 +415,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1744288093000"
                 data-test="1744288093000"
                 role="button"
@@ -421,7 +425,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1744374493000"
                 data-test="1744374493000"
                 role="button"
@@ -431,7 +435,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1744460893000"
                 data-test="1744460893000"
                 role="button"
@@ -441,7 +445,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1744547293000"
                 data-test="1744547293000"
                 role="button"
@@ -451,7 +455,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1744633693000"
                 data-test="1744633693000"
                 role="button"
@@ -461,7 +465,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1744720093000"
                 data-test="1744720093000"
                 role="button"
@@ -471,7 +475,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1744806493000"
                 data-test="1744806493000"
                 role="button"
@@ -481,7 +485,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1744892893000"
                 data-test="1744892893000"
                 role="button"
@@ -491,7 +495,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1744979293000"
                 data-test="1744979293000"
                 role="button"
@@ -501,7 +505,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1745065693000"
                 data-test="1745065693000"
                 role="button"
@@ -511,7 +515,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1745152093000"
                 data-test="1745152093000"
                 role="button"
@@ -521,7 +525,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1745238493000"
                 data-test="1745238493000"
                 role="button"
@@ -531,7 +535,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1745324893000"
                 data-test="1745324893000"
                 role="button"
@@ -541,7 +545,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1745411293000"
                 data-test="1745411293000"
                 role="button"
@@ -551,7 +555,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1745497693000"
                 data-test="1745497693000"
                 role="button"
@@ -561,7 +565,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1745584093000"
                 data-test="1745584093000"
                 role="button"
@@ -571,7 +575,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1745670493000"
                 data-test="1745670493000"
                 role="button"
@@ -581,7 +585,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1745756893000"
                 data-test="1745756893000"
                 role="button"
@@ -591,7 +595,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1745843293000"
                 data-test="1745843293000"
                 role="button"
@@ -601,7 +605,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1745929693000"
                 data-test="1745929693000"
                 role="button"
@@ -611,7 +615,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1746016093000"
                 data-test="1746016093000"
                 role="button"
@@ -728,13 +732,17 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
                   aria-label="March"
                   class="hover:text-blue-700 transition-colors duration-500 text-sm"
                 >
-                  March
+                  <span>
+                    March
+                  </span>
                 </button>
                 <button
                   aria-label="2025"
                   class="hover:text-blue-700 transition-colors duration-500 text-sm"
                 >
-                  2025
+                  <span>
+                    2025
+                  </span>
                 </button>
               </div>
               <button
@@ -761,7 +769,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </button>
             </div>
             <div
-              class="grid grid-cols-7 h-full gap-1 p-4"
+              class="grid grid-cols-7 group gap-1 p-4"
               data-test="days-grid"
               role="grid"
             >
@@ -817,7 +825,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               />
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1740832093000"
                 data-test="1740832093000"
                 role="button"
@@ -827,7 +835,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1740918493000"
                 data-test="1740918493000"
                 role="button"
@@ -837,7 +845,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1741004893000"
                 data-test="1741004893000"
                 role="button"
@@ -847,7 +855,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1741091293000"
                 data-test="1741091293000"
                 role="button"
@@ -857,7 +865,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1741177693000"
                 data-test="1741177693000"
                 role="button"
@@ -867,7 +875,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1741264093000"
                 data-test="1741264093000"
                 role="button"
@@ -877,7 +885,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1741350493000"
                 data-test="1741350493000"
                 role="button"
@@ -887,7 +895,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1741436893000"
                 data-test="1741436893000"
                 role="button"
@@ -897,7 +905,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1741523293000"
                 data-test="1741523293000"
                 role="button"
@@ -907,7 +915,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1741609693000"
                 data-test="1741609693000"
                 role="button"
@@ -917,7 +925,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1741696093000"
                 data-test="1741696093000"
                 role="button"
@@ -927,7 +935,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1741782493000"
                 data-test="1741782493000"
                 role="button"
@@ -937,7 +945,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1741868893000"
                 data-test="1741868893000"
                 role="button"
@@ -947,7 +955,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1741955293000"
                 data-test="1741955293000"
                 role="button"
@@ -957,7 +965,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="true"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm !text-white !bg-blue-700 hover:!bg-blue-800 bg-white shadow-border shadow-blue-600 text-blue-600 hover:!text-white hover:!bg-blue-600"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white shadow-blue-600 text-blue-600 hover:text-white hover:bg-blue-600"
                 data-date="1742041693000"
                 data-test="1742041693000"
                 role="button"
@@ -967,7 +975,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1742128093000"
                 data-test="1742128093000"
                 role="button"
@@ -977,7 +985,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1742214493000"
                 data-test="1742214493000"
                 role="button"
@@ -987,7 +995,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1742300893000"
                 data-test="1742300893000"
                 role="button"
@@ -997,7 +1005,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1742387293000"
                 data-test="1742387293000"
                 role="button"
@@ -1007,7 +1015,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1742473693000"
                 data-test="1742473693000"
                 role="button"
@@ -1017,7 +1025,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1742560093000"
                 data-test="1742560093000"
                 role="button"
@@ -1027,7 +1035,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1742646493000"
                 data-test="1742646493000"
                 role="button"
@@ -1037,7 +1045,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1742732893000"
                 data-test="1742732893000"
                 role="button"
@@ -1047,7 +1055,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1742819293000"
                 data-test="1742819293000"
                 role="button"
@@ -1057,7 +1065,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1742905693000"
                 data-test="1742905693000"
                 role="button"
@@ -1067,7 +1075,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1742992093000"
                 data-test="1742992093000"
                 role="button"
@@ -1077,7 +1085,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1743078493000"
                 data-test="1743078493000"
                 role="button"
@@ -1087,7 +1095,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1743164893000"
                 data-test="1743164893000"
                 role="button"
@@ -1097,7 +1105,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1743251293000"
                 data-test="1743251293000"
                 role="button"
@@ -1107,7 +1115,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1743337693000"
                 data-test="1743337693000"
                 role="button"
@@ -1117,7 +1125,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1743424093000"
                 data-test="1743424093000"
                 role="button"
@@ -1664,13 +1672,17 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                     aria-label="March"
                     class="hover:text-blue-700 transition-colors duration-500 text-sm"
                   >
-                    March
+                    <span>
+                      March
+                    </span>
                   </button>
                   <button
                     aria-label="2025"
                     class="hover:text-blue-700 transition-colors duration-500 text-sm"
                   >
-                    2025
+                    <span>
+                      2025
+                    </span>
                   </button>
                 </div>
                 <button
@@ -1697,7 +1709,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </button>
               </div>
               <div
-                class="grid grid-cols-7 h-full gap-1 p-4"
+                class="grid grid-cols-7 group gap-1 p-4"
                 data-test="days-grid"
                 role="grid"
               >
@@ -1753,7 +1765,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 />
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1740832093000"
                   data-test="1740832093000"
                   role="button"
@@ -1763,7 +1775,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1740918493000"
                   data-test="1740918493000"
                   role="button"
@@ -1773,7 +1785,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1741004893000"
                   data-test="1741004893000"
                   role="button"
@@ -1783,7 +1795,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1741091293000"
                   data-test="1741091293000"
                   role="button"
@@ -1793,7 +1805,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1741177693000"
                   data-test="1741177693000"
                   role="button"
@@ -1803,7 +1815,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1741264093000"
                   data-test="1741264093000"
                   role="button"
@@ -1813,7 +1825,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1741350493000"
                   data-test="1741350493000"
                   role="button"
@@ -1823,7 +1835,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1741436893000"
                   data-test="1741436893000"
                   role="button"
@@ -1833,7 +1845,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1741523293000"
                   data-test="1741523293000"
                   role="button"
@@ -1843,7 +1855,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1741609693000"
                   data-test="1741609693000"
                   role="button"
@@ -1853,7 +1865,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1741696093000"
                   data-test="1741696093000"
                   role="button"
@@ -1863,7 +1875,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1741782493000"
                   data-test="1741782493000"
                   role="button"
@@ -1873,7 +1885,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1741868893000"
                   data-test="1741868893000"
                   role="button"
@@ -1883,7 +1895,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1741955293000"
                   data-test="1741955293000"
                   role="button"
@@ -1892,8 +1904,8 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                   14
                 </div>
                 <div
-                  aria-current="true"
-                  class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  aria-current="false"
+                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm cursor-not-allowed bg-white shadow-blue-600 text-blue-600 hover:text-white hover:bg-blue-600"
                   data-date="1742041693000"
                   data-test="1742041693000"
                   role="button"
@@ -1903,7 +1915,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1742128093000"
                   data-test="1742128093000"
                   role="button"
@@ -1913,7 +1925,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1742214493000"
                   data-test="1742214493000"
                   role="button"
@@ -1923,7 +1935,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1742300893000"
                   data-test="1742300893000"
                   role="button"
@@ -1933,7 +1945,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1742387293000"
                   data-test="1742387293000"
                   role="button"
@@ -1943,7 +1955,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1742473693000"
                   data-test="1742473693000"
                   role="button"
@@ -1953,7 +1965,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1742560093000"
                   data-test="1742560093000"
                   role="button"
@@ -1963,7 +1975,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1742646493000"
                   data-test="1742646493000"
                   role="button"
@@ -1973,7 +1985,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1742732893000"
                   data-test="1742732893000"
                   role="button"
@@ -1983,7 +1995,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1742819293000"
                   data-test="1742819293000"
                   role="button"
@@ -1993,7 +2005,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1742905693000"
                   data-test="1742905693000"
                   role="button"
@@ -2003,7 +2015,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1742992093000"
                   data-test="1742992093000"
                   role="button"
@@ -2013,7 +2025,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1743078493000"
                   data-test="1743078493000"
                   role="button"
@@ -2023,7 +2035,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1743164893000"
                   data-test="1743164893000"
                   role="button"
@@ -2033,7 +2045,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1743251293000"
                   data-test="1743251293000"
                   role="button"
@@ -2043,7 +2055,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1743337693000"
                   data-test="1743337693000"
                   role="button"
@@ -2053,7 +2065,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center transition duration-500 rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1743424093000"
                   data-test="1743424093000"
                   role="button"

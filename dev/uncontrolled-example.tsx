@@ -1,7 +1,7 @@
 import { DateTimePicker } from '../src'
 
 import type { FC, ReactNode } from 'react'
-import type { DateTimePickerProps } from '../src'
+import type { DateTimePickerProps } from '@types'
 
 const UncontrolledExample: FC<DateTimePickerProps & { title: ReactNode }> = ({
   locale = 'en_US',

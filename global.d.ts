@@ -41,6 +41,22 @@ declare global {
 
   export type Severity = 'success' | 'error' | 'warning' | 'info'
 
+  export type LocaleAwareFormat =
+    | 'l'
+    | 'll'
+    | 'll LT'
+    | 'lll'
+    | 'llll'
+    | 'lll • t'
+    | 'L'
+    | 'LL'
+    | 'LLL'
+    | 'LLLL'
+    | 'L LT'
+    | 'L LT Z'
+    | 'LT'
+    | 'LTS'
+
   export type Timezone =
     | 'GMT'
     | 'Asia/Dubai'

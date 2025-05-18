@@ -1,6 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react'
 
-import { DateTimePicker, DateTimePickerProps, PickerMode } from '..'
+import { PickerMode } from '@enums'
+
+import { DateTimePicker } from '..'
 import { timezones } from '../..'
 import { withDateTimePicker } from '../../../.storybook/decorators/withDateTimePicker'
 
@@ -8,15 +10,12 @@ import DateTimePickerIntegration, {
   DateTimePickerIntegrationProps,
 } from './DateTimePickerIntegration'
 
+import type { DateTimePickerProps } from '@types'
+
 const meta: Meta<typeof DateTimePicker> = {
   title: 'DateTimePicker',
   parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/yHs1g5COcTsdobcRenIZxl/Odaseva---Design-Guide?node-id=3283-20285&t=mw4Hs3OlG9nCOhn3-1',
-    },
   },
   argTypes: {
     timezone: {
@@ -241,8 +240,8 @@ export const DateWithMaxAndMin: Story = {
   args: {
     pickerMode: PickerMode.DATE,
     date: 1696629600000,
-    minDate: 1696370400000, // Current timestamp (now)
-    maxDate: 1697752800000, // Timestamp for one week from now
+    minDate: 1696370400000,
+    maxDate: 1697752800000,
     noDefault: true,
     required: true,
     label: 'Select a Date (within next week)',
@@ -260,6 +259,17 @@ export const Loading: Story = {
     label: 'Select a Date ',
     loading: true,
     disabled: true,
+  },
+  argTypes: disabledControls,
+}
+
+export const DateRange: Story = {
+  ...DateUncontrolled,
+  name: 'Date Range',
+  args: {
+    pickerMode: PickerMode.DATERANGE,
+    dateRange: [1696629600000, 1750369730000],
+    label: 'Select a Date ',
   },
   argTypes: disabledControls,
 }

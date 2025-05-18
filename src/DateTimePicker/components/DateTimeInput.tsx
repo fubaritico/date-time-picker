@@ -1,8 +1,9 @@
 import InputMask from '@mona-health/react-input-mask'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
+import { PickerMode } from '@enums'
+
 import TextField from '../../TextField'
-import { PickerMode } from '../DateTimePicker.types'
 import {
   convertFormattedDateToTimestamp,
   formatTimestampForTextInput,
@@ -12,7 +13,7 @@ import { DATE_FORMAT, DATE_TIME_FORMAT, TIME_FORMAT } from '../formats'
 import AbstractInputMask from '../formats/masks/AbstractInputMask'
 import useDateTimePicker from '../hooks/useDateTimePicker'
 
-import type { DateTimeInputProps } from '../DateTimePicker.types'
+import type { DateTimeInputProps } from '@types'
 import type { ChangeEvent, FC } from 'react'
 
 interface MaskClassType {

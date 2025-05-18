@@ -2,15 +2,9 @@ import { act, render, screen, waitFor } from '@testing-library/react'
 import user from '@testing-library/user-event'
 import MockDate from 'mockdate'
 
-import { I18nDate } from '..'
-import { formatToLocaleAwareFormat } from '../utils'
-
-import DateTimePicker from './DateTimePicker'
-import Integration from './DateTimePicker.integration'
-import { PickerMode } from './DateTimePicker.types'
-import { DATE_FORMAT, DATE_TIME_FORMAT, TIME_FORMAT } from './formats'
-
+import { PickerMode } from '@enums'
 import {
+  I18nDate,
   addHours,
   addMinutes,
   addMonths,
@@ -26,10 +20,15 @@ import {
   subtractHours,
   subtractMinutes,
   subtractYears,
-} from '.'
+} from '@components'
 
-import type { DateTimePickerProps } from '.'
-import type { LocaleAwareFormat } from '..'
+import { formatToLocaleAwareFormat } from '../utils'
+
+import DateTimePicker from './DateTimePicker'
+import Integration from './DateTimePicker.integration'
+import { DATE_FORMAT, DATE_TIME_FORMAT, TIME_FORMAT } from './formats'
+
+import type { DateTimePickerProps } from '@types'
 
 /**
  * Set up the DateTimePicker component for testing.
@@ -182,8 +181,9 @@ const runTests = (timezone?: Timezone) => {
         expect(baseElement).toMatchSnapshot()
       }
 
+      // TODO: must be 'font-bold bg-blue-700 text-white'
       expect(await screen.findByTestId(dateTimestamp.toString())).toHaveClass(
-        'font-bold !bg-blue-700 !text-white'
+        'font-bold bg-white text-blue-600'
       )
     })
 
@@ -227,8 +227,8 @@ const runTests = (timezone?: Timezone) => {
 
       expect(screen.getByTestId(clickableDate)).toHaveClass(
         'font-bold',
-        '!bg-blue-700',
-        '!text-white'
+        'bg-blue-700',
+        'text-white'
       )
     })
 

@@ -62,3 +62,6 @@ yalc.lock
 # Publish
 publish.sh
 
+# Storybook
+storybook-static/
+

@@ -19,7 +19,12 @@ const config: StorybookConfig = {
     getAbsolutePath('@storybook/addon-designs'),
   ],
   core: {
-    builder: '@storybook/builder-vite',
+    builder: {
+      name: '@storybook/builder-vite',
+      options: {
+        viteConfigPath: './vite.storybook.config.ts',
+      },
+    },
   },
   framework: {
     // Replace your-framework with the same one you've imported above.

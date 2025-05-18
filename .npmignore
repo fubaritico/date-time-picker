@@ -11,6 +11,7 @@ jest.setup.afterEnv.ts
 rollup.config.js
 tsconfig.json
 vite.config.ts
+vite.storybook.config.ts
 postcss.config.js
 tailwind.config.js
 
@@ -45,3 +46,5 @@ publish.sh
 yalc.lock
 yalc-dev.sh
 
+# Storybook
+storybook-static/
