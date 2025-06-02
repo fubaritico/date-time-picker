@@ -2,6 +2,9 @@ import { useMemo, useRef, useState } from 'react'
 
 import './styles.css'
 
+import { PickerMode } from '@enums'
+
+import DateRangeInput from './components/DateRangeInput'
 import DateTimeInput from './components/DateTimeInput'
 import Panel from './components/Panel'
 import { DateTimePickerProvider } from './context'
@@ -109,28 +112,39 @@ const DateTimePicker: FC<DateTimePickerProps> = ({
     >
       <div className="relative">
         <div ref={triggerRef} className="relative">
-          <DateTimeInput
-            onDateChange={onChange}
-            onIconClick={handleTogglePanelVisibility}
-            size={size}
-            errors={errors}
-            timezone={timezone}
-            {...textInputProps}
-            stateIcon={
-              <>
-                {loading && (
-                  <span className="absolute top-1/2 -translate-y-1/2 right-[10px]">
-                    <div className="button-loader button-loader-sm border-gray-400/75 border-l-gray-400/25" />
-                  </span>
-                )}
-                {extraIcon && (
-                  <span className="absolute tw flew items-center justify-center top-1/2 -translate-y-1/2 right-[10px]">
-                    {extraIcon}
-                  </span>
-                )}
-              </>
-            }
-          />
+          {pickerMode === PickerMode.DATERANGE ? (
+            <DateRangeInput
+              onDateRangeChange={onDateRangeChange}
+              onIconClick={handleTogglePanelVisibility}
+              size={size}
+              errors={errors}
+              timezone={timezone}
+              {...textInputProps}
+            />
+          ) : (
+            <DateTimeInput
+              onDateChange={onChange}
+              onIconClick={handleTogglePanelVisibility}
+              size={size}
+              errors={errors}
+              timezone={timezone}
+              {...textInputProps}
+              stateIcon={
+                <>
+                  {loading && (
+                    <span className="absolute top-1/2 -translate-y-1/2 right-[10px]">
+                      <div className="button-loader button-loader-sm border-gray-400/75 border-l-gray-400/25" />
+                    </span>
+                  )}
+                  {extraIcon && (
+                    <span className="absolute tw flew items-center justify-center top-1/2 -translate-y-1/2 right-[10px]">
+                      {extraIcon}
+                    </span>
+                  )}
+                </>
+              }
+            />
+          )}
         </div>
         <Panel
           enablePortal={enablePortal}

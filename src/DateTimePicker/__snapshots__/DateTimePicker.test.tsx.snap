@@ -154,49 +154,53 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
         class="relative"
       >
         <div
-          class="flex flex-col"
+          class="flex"
         >
           <div
-            class="flex flex-col relative"
+            class="flex flex-col"
           >
             <div
-              class="flex flex-col gap-1"
+              class="flex flex-col relative"
             >
               <div
-                class="relative w-full"
+                class="flex flex-col gap-1"
               >
-                <input
-                  class="border appearance-none truncate outline-0 w-full rounded-lg shadow-none pl-4 pr-4 transition-all duration-300 !text-sm pl-[42px] !border-gray-300 !bg-gray-50 !text-gray-500 focus:!border-blue-600 focus:!text-gray-900 placeholder:!text-gray-400 !text-gray-500 font-roboto"
-                  style="height: 42px;"
-                  type="text"
-                  value="2025/04/01"
-                />
                 <div
-                  aria-label="Open calendar panel"
-                  class="absolute top-1/2 -translate-y-1/2 transition-all duration-300 !cursor-pointer w-5 h-5 left-[14px]"
-                  role="button"
-                  tabindex="0"
+                  class="relative w-full"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="text-gray-500 transition-all duration-300 w-5 h-5"
-                    fill="currentColor"
-                    height="1em"
-                    stroke="currentColor"
-                    stroke-width="0"
-                    viewBox="0 0 20 20"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <input
+                    class="border appearance-none truncate outline-0 w-full rounded-lg shadow-none pl-4 pr-4 transition-all duration-300 !text-sm pl-[42px] !border-gray-300 !bg-gray-50 !text-gray-500 focus:!border-blue-600 focus:!text-gray-900 placeholder:!text-gray-400 !text-gray-500 font-roboto"
+                    style="height: 42px;"
+                    type="text"
+                    value="2025/04/01"
+                  />
+                  <div
+                    aria-label="Open calendar panel"
+                    class="absolute top-1/2 -translate-y-1/2 transition-all duration-300 !cursor-pointer w-5 h-5 left-[14px]"
+                    role="button"
+                    tabindex="0"
                   >
-                    <path
-                      d="M5.25 12a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H6a.75.75 0 0 1-.75-.75V12ZM6 13.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V14a.75.75 0 0 0-.75-.75H6ZM7.25 12a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H8a.75.75 0 0 1-.75-.75V12ZM8 13.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V14a.75.75 0 0 0-.75-.75H8ZM9.25 10a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H10a.75.75 0 0 1-.75-.75V10ZM10 11.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V12a.75.75 0 0 0-.75-.75H10ZM9.25 14a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H10a.75.75 0 0 1-.75-.75V14ZM12 9.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V10a.75.75 0 0 0-.75-.75H12ZM11.25 12a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H12a.75.75 0 0 1-.75-.75V12ZM12 13.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V14a.75.75 0 0 0-.75-.75H12ZM13.25 10a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H14a.75.75 0 0 1-.75-.75V10ZM14 11.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V12a.75.75 0 0 0-.75-.75H14Z"
-                    />
-                    <path
-                      clip-rule="evenodd"
-                      d="M5.75 2a.75.75 0 0 1 .75.75V4h7V2.75a.75.75 0 0 1 1.5 0V4h.25A2.75 2.75 0 0 1 18 6.75v8.5A2.75 2.75 0 0 1 15.25 18H4.75A2.75 2.75 0 0 1 2 15.25v-8.5A2.75 2.75 0 0 1 4.75 4H5V2.75A.75.75 0 0 1 5.75 2Zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75Z"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
+                    <svg
+                      aria-hidden="true"
+                      class="text-gray-500 transition-all duration-300 w-5 h-5"
+                      fill="currentColor"
+                      height="1em"
+                      stroke="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 20 20"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5.25 12a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H6a.75.75 0 0 1-.75-.75V12ZM6 13.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V14a.75.75 0 0 0-.75-.75H6ZM7.25 12a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H8a.75.75 0 0 1-.75-.75V12ZM8 13.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V14a.75.75 0 0 0-.75-.75H8ZM9.25 10a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H10a.75.75 0 0 1-.75-.75V10ZM10 11.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V12a.75.75 0 0 0-.75-.75H10ZM9.25 14a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H10a.75.75 0 0 1-.75-.75V14ZM12 9.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V10a.75.75 0 0 0-.75-.75H12ZM11.25 12a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H12a.75.75 0 0 1-.75-.75V12ZM12 13.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V14a.75.75 0 0 0-.75-.75H12ZM13.25 10a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H14a.75.75 0 0 1-.75-.75V10ZM14 11.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V12a.75.75 0 0 0-.75-.75H14Z"
+                      />
+                      <path
+                        clip-rule="evenodd"
+                        d="M5.75 2a.75.75 0 0 1 .75.75V4h7V2.75a.75.75 0 0 1 1.5 0V4h.25A2.75 2.75 0 0 1 18 6.75v8.5A2.75 2.75 0 0 1 15.25 18H4.75A2.75 2.75 0 0 1 2 15.25v-8.5A2.75 2.75 0 0 1 4.75 4H5V2.75A.75.75 0 0 1 5.75 2Zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75Z"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -325,7 +329,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               />
               <div
                 aria-current="true"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-white bg-blue-700 hover:bg-blue-800"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm text-white bg-blue-700 hover:bg-blue-800"
                 data-date="1743510493000"
                 data-test="1743510493000"
                 role="button"
@@ -335,7 +339,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1743596893000"
                 data-test="1743596893000"
                 role="button"
@@ -345,7 +349,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1743683293000"
                 data-test="1743683293000"
                 role="button"
@@ -355,7 +359,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1743769693000"
                 data-test="1743769693000"
                 role="button"
@@ -365,7 +369,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1743856093000"
                 data-test="1743856093000"
                 role="button"
@@ -375,7 +379,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1743942493000"
                 data-test="1743942493000"
                 role="button"
@@ -385,7 +389,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1744028893000"
                 data-test="1744028893000"
                 role="button"
@@ -395,7 +399,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1744115293000"
                 data-test="1744115293000"
                 role="button"
@@ -405,7 +409,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1744201693000"
                 data-test="1744201693000"
                 role="button"
@@ -415,7 +419,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1744288093000"
                 data-test="1744288093000"
                 role="button"
@@ -425,7 +429,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1744374493000"
                 data-test="1744374493000"
                 role="button"
@@ -435,7 +439,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1744460893000"
                 data-test="1744460893000"
                 role="button"
@@ -445,7 +449,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1744547293000"
                 data-test="1744547293000"
                 role="button"
@@ -455,7 +459,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1744633693000"
                 data-test="1744633693000"
                 role="button"
@@ -465,7 +469,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1744720093000"
                 data-test="1744720093000"
                 role="button"
@@ -475,7 +479,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1744806493000"
                 data-test="1744806493000"
                 role="button"
@@ -485,7 +489,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1744892893000"
                 data-test="1744892893000"
                 role="button"
@@ -495,7 +499,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1744979293000"
                 data-test="1744979293000"
                 role="button"
@@ -505,7 +509,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1745065693000"
                 data-test="1745065693000"
                 role="button"
@@ -515,7 +519,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1745152093000"
                 data-test="1745152093000"
                 role="button"
@@ -525,7 +529,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1745238493000"
                 data-test="1745238493000"
                 role="button"
@@ -535,7 +539,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1745324893000"
                 data-test="1745324893000"
                 role="button"
@@ -545,7 +549,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1745411293000"
                 data-test="1745411293000"
                 role="button"
@@ -555,7 +559,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1745497693000"
                 data-test="1745497693000"
                 role="button"
@@ -565,7 +569,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1745584093000"
                 data-test="1745584093000"
                 role="button"
@@ -575,7 +579,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1745670493000"
                 data-test="1745670493000"
                 role="button"
@@ -585,7 +589,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1745756893000"
                 data-test="1745756893000"
                 role="button"
@@ -595,7 +599,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1745843293000"
                 data-test="1745843293000"
                 role="button"
@@ -605,7 +609,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1745929693000"
                 data-test="1745929693000"
                 role="button"
@@ -615,7 +619,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1746016093000"
                 data-test="1746016093000"
                 role="button"
@@ -642,49 +646,53 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
         class="relative"
       >
         <div
-          class="flex flex-col"
+          class="flex"
         >
           <div
-            class="flex flex-col relative"
+            class="flex flex-col"
           >
             <div
-              class="flex flex-col gap-1"
+              class="flex flex-col relative"
             >
               <div
-                class="relative w-full"
+                class="flex flex-col gap-1"
               >
-                <input
-                  class="border appearance-none truncate outline-0 w-full rounded-lg shadow-none pl-4 pr-4 transition-all duration-300 !text-sm pl-[42px] !border-gray-300 !bg-gray-50 !text-gray-500 focus:!border-blue-600 focus:!text-gray-900 placeholder:!text-gray-400 !text-gray-500 font-roboto"
-                  style="height: 42px;"
-                  type="text"
-                  value="2025/03/15"
-                />
                 <div
-                  aria-label="Open calendar panel"
-                  class="absolute top-1/2 -translate-y-1/2 transition-all duration-300 !cursor-pointer w-5 h-5 left-[14px]"
-                  role="button"
-                  tabindex="0"
+                  class="relative w-full"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="text-gray-500 transition-all duration-300 w-5 h-5"
-                    fill="currentColor"
-                    height="1em"
-                    stroke="currentColor"
-                    stroke-width="0"
-                    viewBox="0 0 20 20"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <input
+                    class="border appearance-none truncate outline-0 w-full rounded-lg shadow-none pl-4 pr-4 transition-all duration-300 !text-sm pl-[42px] !border-gray-300 !bg-gray-50 !text-gray-500 focus:!border-blue-600 focus:!text-gray-900 placeholder:!text-gray-400 !text-gray-500 font-roboto"
+                    style="height: 42px;"
+                    type="text"
+                    value="2025/03/15"
+                  />
+                  <div
+                    aria-label="Open calendar panel"
+                    class="absolute top-1/2 -translate-y-1/2 transition-all duration-300 !cursor-pointer w-5 h-5 left-[14px]"
+                    role="button"
+                    tabindex="0"
                   >
-                    <path
-                      d="M5.25 12a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H6a.75.75 0 0 1-.75-.75V12ZM6 13.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V14a.75.75 0 0 0-.75-.75H6ZM7.25 12a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H8a.75.75 0 0 1-.75-.75V12ZM8 13.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V14a.75.75 0 0 0-.75-.75H8ZM9.25 10a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H10a.75.75 0 0 1-.75-.75V10ZM10 11.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V12a.75.75 0 0 0-.75-.75H10ZM9.25 14a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H10a.75.75 0 0 1-.75-.75V14ZM12 9.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V10a.75.75 0 0 0-.75-.75H12ZM11.25 12a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H12a.75.75 0 0 1-.75-.75V12ZM12 13.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V14a.75.75 0 0 0-.75-.75H12ZM13.25 10a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H14a.75.75 0 0 1-.75-.75V10ZM14 11.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V12a.75.75 0 0 0-.75-.75H14Z"
-                    />
-                    <path
-                      clip-rule="evenodd"
-                      d="M5.75 2a.75.75 0 0 1 .75.75V4h7V2.75a.75.75 0 0 1 1.5 0V4h.25A2.75 2.75 0 0 1 18 6.75v8.5A2.75 2.75 0 0 1 15.25 18H4.75A2.75 2.75 0 0 1 2 15.25v-8.5A2.75 2.75 0 0 1 4.75 4H5V2.75A.75.75 0 0 1 5.75 2Zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75Z"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
+                    <svg
+                      aria-hidden="true"
+                      class="text-gray-500 transition-all duration-300 w-5 h-5"
+                      fill="currentColor"
+                      height="1em"
+                      stroke="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 20 20"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5.25 12a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H6a.75.75 0 0 1-.75-.75V12ZM6 13.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V14a.75.75 0 0 0-.75-.75H6ZM7.25 12a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H8a.75.75 0 0 1-.75-.75V12ZM8 13.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V14a.75.75 0 0 0-.75-.75H8ZM9.25 10a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H10a.75.75 0 0 1-.75-.75V10ZM10 11.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V12a.75.75 0 0 0-.75-.75H10ZM9.25 14a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H10a.75.75 0 0 1-.75-.75V14ZM12 9.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V10a.75.75 0 0 0-.75-.75H12ZM11.25 12a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H12a.75.75 0 0 1-.75-.75V12ZM12 13.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V14a.75.75 0 0 0-.75-.75H12ZM13.25 10a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H14a.75.75 0 0 1-.75-.75V10ZM14 11.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V12a.75.75 0 0 0-.75-.75H14Z"
+                      />
+                      <path
+                        clip-rule="evenodd"
+                        d="M5.75 2a.75.75 0 0 1 .75.75V4h7V2.75a.75.75 0 0 1 1.5 0V4h.25A2.75 2.75 0 0 1 18 6.75v8.5A2.75 2.75 0 0 1 15.25 18H4.75A2.75 2.75 0 0 1 2 15.25v-8.5A2.75 2.75 0 0 1 4.75 4H5V2.75A.75.75 0 0 1 5.75 2Zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75Z"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -825,7 +833,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               />
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1740832093000"
                 data-test="1740832093000"
                 role="button"
@@ -835,7 +843,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1740918493000"
                 data-test="1740918493000"
                 role="button"
@@ -845,7 +853,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1741004893000"
                 data-test="1741004893000"
                 role="button"
@@ -855,7 +863,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1741091293000"
                 data-test="1741091293000"
                 role="button"
@@ -865,7 +873,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1741177693000"
                 data-test="1741177693000"
                 role="button"
@@ -875,7 +883,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1741264093000"
                 data-test="1741264093000"
                 role="button"
@@ -885,7 +893,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1741350493000"
                 data-test="1741350493000"
                 role="button"
@@ -895,7 +903,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1741436893000"
                 data-test="1741436893000"
                 role="button"
@@ -905,7 +913,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1741523293000"
                 data-test="1741523293000"
                 role="button"
@@ -915,7 +923,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1741609693000"
                 data-test="1741609693000"
                 role="button"
@@ -925,7 +933,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1741696093000"
                 data-test="1741696093000"
                 role="button"
@@ -935,7 +943,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1741782493000"
                 data-test="1741782493000"
                 role="button"
@@ -945,7 +953,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1741868893000"
                 data-test="1741868893000"
                 role="button"
@@ -955,7 +963,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1741955293000"
                 data-test="1741955293000"
                 role="button"
@@ -965,7 +973,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="true"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white shadow-blue-600 text-blue-600 hover:text-white hover:bg-blue-600"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white shadow-blue-600 text-blue-600 hover:text-white hover:bg-blue-600"
                 data-date="1742041693000"
                 data-test="1742041693000"
                 role="button"
@@ -975,7 +983,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1742128093000"
                 data-test="1742128093000"
                 role="button"
@@ -985,7 +993,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1742214493000"
                 data-test="1742214493000"
                 role="button"
@@ -995,7 +1003,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1742300893000"
                 data-test="1742300893000"
                 role="button"
@@ -1005,7 +1013,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1742387293000"
                 data-test="1742387293000"
                 role="button"
@@ -1015,7 +1023,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1742473693000"
                 data-test="1742473693000"
                 role="button"
@@ -1025,7 +1033,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1742560093000"
                 data-test="1742560093000"
                 role="button"
@@ -1035,7 +1043,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1742646493000"
                 data-test="1742646493000"
                 role="button"
@@ -1045,7 +1053,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1742732893000"
                 data-test="1742732893000"
                 role="button"
@@ -1055,7 +1063,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1742819293000"
                 data-test="1742819293000"
                 role="button"
@@ -1065,7 +1073,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1742905693000"
                 data-test="1742905693000"
                 role="button"
@@ -1075,7 +1083,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1742992093000"
                 data-test="1742992093000"
                 role="button"
@@ -1085,7 +1093,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1743078493000"
                 data-test="1743078493000"
                 role="button"
@@ -1095,7 +1103,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1743164893000"
                 data-test="1743164893000"
                 role="button"
@@ -1105,7 +1113,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1743251293000"
                 data-test="1743251293000"
                 role="button"
@@ -1115,7 +1123,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1743337693000"
                 data-test="1743337693000"
                 role="button"
@@ -1125,7 +1133,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="false"
-                class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white text-gray-900 hover:bg-gray-100"
                 data-date="1743424093000"
                 data-test="1743424093000"
                 role="button"
@@ -1152,49 +1160,53 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should sho
         class="relative"
       >
         <div
-          class="flex flex-col"
+          class="flex"
         >
           <div
-            class="flex flex-col relative"
+            class="flex flex-col"
           >
             <div
-              class="flex flex-col gap-1"
+              class="flex flex-col relative"
             >
               <div
-                class="relative w-full"
+                class="flex flex-col gap-1"
               >
-                <input
-                  class="border appearance-none truncate outline-0 w-full rounded-lg shadow-none pl-4 pr-4 transition-all duration-300 !text-sm pl-[42px] !border-gray-300 !bg-gray-50 !text-gray-500 focus:!border-blue-600 focus:!text-gray-900 placeholder:!text-gray-400 !text-gray-500 font-roboto"
-                  style="height: 42px;"
-                  type="text"
-                  value="2025/03/15"
-                />
                 <div
-                  aria-label="Open calendar panel"
-                  class="absolute top-1/2 -translate-y-1/2 transition-all duration-300 !cursor-pointer w-5 h-5 left-[14px]"
-                  role="button"
-                  tabindex="0"
+                  class="relative w-full"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="text-gray-500 transition-all duration-300 w-5 h-5"
-                    fill="currentColor"
-                    height="1em"
-                    stroke="currentColor"
-                    stroke-width="0"
-                    viewBox="0 0 20 20"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <input
+                    class="border appearance-none truncate outline-0 w-full rounded-lg shadow-none pl-4 pr-4 transition-all duration-300 !text-sm pl-[42px] !border-gray-300 !bg-gray-50 !text-gray-500 focus:!border-blue-600 focus:!text-gray-900 placeholder:!text-gray-400 !text-gray-500 font-roboto"
+                    style="height: 42px;"
+                    type="text"
+                    value="2025/03/15"
+                  />
+                  <div
+                    aria-label="Open calendar panel"
+                    class="absolute top-1/2 -translate-y-1/2 transition-all duration-300 !cursor-pointer w-5 h-5 left-[14px]"
+                    role="button"
+                    tabindex="0"
                   >
-                    <path
-                      d="M5.25 12a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H6a.75.75 0 0 1-.75-.75V12ZM6 13.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V14a.75.75 0 0 0-.75-.75H6ZM7.25 12a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H8a.75.75 0 0 1-.75-.75V12ZM8 13.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V14a.75.75 0 0 0-.75-.75H8ZM9.25 10a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H10a.75.75 0 0 1-.75-.75V10ZM10 11.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V12a.75.75 0 0 0-.75-.75H10ZM9.25 14a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H10a.75.75 0 0 1-.75-.75V14ZM12 9.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V10a.75.75 0 0 0-.75-.75H12ZM11.25 12a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H12a.75.75 0 0 1-.75-.75V12ZM12 13.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V14a.75.75 0 0 0-.75-.75H12ZM13.25 10a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H14a.75.75 0 0 1-.75-.75V10ZM14 11.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V12a.75.75 0 0 0-.75-.75H14Z"
-                    />
-                    <path
-                      clip-rule="evenodd"
-                      d="M5.75 2a.75.75 0 0 1 .75.75V4h7V2.75a.75.75 0 0 1 1.5 0V4h.25A2.75 2.75 0 0 1 18 6.75v8.5A2.75 2.75 0 0 1 15.25 18H4.75A2.75 2.75 0 0 1 2 15.25v-8.5A2.75 2.75 0 0 1 4.75 4H5V2.75A.75.75 0 0 1 5.75 2Zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75Z"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
+                    <svg
+                      aria-hidden="true"
+                      class="text-gray-500 transition-all duration-300 w-5 h-5"
+                      fill="currentColor"
+                      height="1em"
+                      stroke="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 20 20"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5.25 12a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H6a.75.75 0 0 1-.75-.75V12ZM6 13.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V14a.75.75 0 0 0-.75-.75H6ZM7.25 12a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H8a.75.75 0 0 1-.75-.75V12ZM8 13.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V14a.75.75 0 0 0-.75-.75H8ZM9.25 10a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H10a.75.75 0 0 1-.75-.75V10ZM10 11.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V12a.75.75 0 0 0-.75-.75H10ZM9.25 14a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H10a.75.75 0 0 1-.75-.75V14ZM12 9.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V10a.75.75 0 0 0-.75-.75H12ZM11.25 12a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H12a.75.75 0 0 1-.75-.75V12ZM12 13.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V14a.75.75 0 0 0-.75-.75H12ZM13.25 10a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H14a.75.75 0 0 1-.75-.75V10ZM14 11.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V12a.75.75 0 0 0-.75-.75H14Z"
+                      />
+                      <path
+                        clip-rule="evenodd"
+                        d="M5.75 2a.75.75 0 0 1 .75.75V4h7V2.75a.75.75 0 0 1 1.5 0V4h.25A2.75 2.75 0 0 1 18 6.75v8.5A2.75 2.75 0 0 1 15.25 18H4.75A2.75 2.75 0 0 1 2 15.25v-8.5A2.75 2.75 0 0 1 4.75 4H5V2.75A.75.75 0 0 1 5.75 2Zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75Z"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1380,206 +1392,7 @@ exports[`DateTimePicker with timezone Controlled Date Picker - Date/Time mode sh
         class="relative"
       >
         <div
-          class="flex flex-col"
-        >
-          <div
-            class="flex flex-col relative"
-          >
-            <div
-              class="flex flex-col gap-1"
-            >
-              <div
-                class="relative w-full"
-              >
-                <input
-                  class="border appearance-none truncate outline-0 w-full rounded-lg shadow-none pl-4 pr-4 transition-all duration-300 !text-sm pl-[42px] !border-gray-300 !bg-gray-50 !text-gray-500 focus:!border-blue-600 focus:!text-gray-900 placeholder:!text-gray-400 !text-gray-500 font-roboto"
-                  style="height: 42px;"
-                  type="text"
-                  value="2024-08-09 01:28 PM"
-                />
-                <div
-                  aria-label="Open calendar panel"
-                  class="absolute top-1/2 -translate-y-1/2 transition-all duration-300 !cursor-pointer w-5 h-5 left-[14px]"
-                  role="button"
-                  tabindex="0"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="text-gray-500 transition-all duration-300 w-5 h-5"
-                    fill="currentColor"
-                    height="1em"
-                    stroke="currentColor"
-                    stroke-width="0"
-                    viewBox="0 0 20 20"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M5.25 12a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H6a.75.75 0 0 1-.75-.75V12ZM6 13.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V14a.75.75 0 0 0-.75-.75H6ZM7.25 12a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H8a.75.75 0 0 1-.75-.75V12ZM8 13.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V14a.75.75 0 0 0-.75-.75H8ZM9.25 10a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H10a.75.75 0 0 1-.75-.75V10ZM10 11.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V12a.75.75 0 0 0-.75-.75H10ZM9.25 14a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H10a.75.75 0 0 1-.75-.75V14ZM12 9.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V10a.75.75 0 0 0-.75-.75H12ZM11.25 12a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H12a.75.75 0 0 1-.75-.75V12ZM12 13.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V14a.75.75 0 0 0-.75-.75H12ZM13.25 10a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H14a.75.75 0 0 1-.75-.75V10ZM14 11.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V12a.75.75 0 0 0-.75-.75H14Z"
-                    />
-                    <path
-                      clip-rule="evenodd"
-                      d="M5.75 2a.75.75 0 0 1 .75.75V4h7V2.75a.75.75 0 0 1 1.5 0V4h.25A2.75 2.75 0 0 1 18 6.75v8.5A2.75 2.75 0 0 1 15.25 18H4.75A2.75 2.75 0 0 1 2 15.25v-8.5A2.75 2.75 0 0 1 4.75 4H5V2.75A.75.75 0 0 1 5.75 2Zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75Z"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <span
-      data-test="current-value"
-    >
-      8/9/2024, 1:28 PM
-    </span>
-  </div>
-</div>
-`;
-
-exports[`DateTimePicker with timezone Controlled Time Picker - (en) should render w/ the provided date in the text field 1`] = `
-<div>
-  <div>
-    <div
-      class="relative"
-    >
-      <div
-        class="relative"
-      >
-        <div
-          class="flex flex-col"
-        >
-          <div
-            class="flex flex-col relative"
-          >
-            <div
-              class="flex flex-col gap-1"
-            >
-              <div
-                class="relative w-full"
-              >
-                <input
-                  class="border appearance-none truncate outline-0 w-full rounded-lg shadow-none pl-4 pr-4 transition-all duration-300 !text-sm pl-[42px] !border-gray-300 !bg-gray-50 !text-gray-500 focus:!border-blue-600 focus:!text-gray-900 placeholder:!text-gray-400 !text-gray-500 font-roboto"
-                  style="height: 42px;"
-                  type="text"
-                  value="08:02 AM"
-                />
-                <div
-                  aria-label="Open calendar panel"
-                  class="absolute top-1/2 -translate-y-1/2 transition-all duration-300 !cursor-pointer w-5 h-5 left-[14px]"
-                  role="button"
-                  tabindex="0"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="text-gray-500 transition-all duration-300 w-5 h-5"
-                    fill="currentColor"
-                    height="1em"
-                    stroke="currentColor"
-                    stroke-width="0"
-                    viewBox="0 0 24 24"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      clip-rule="evenodd"
-                      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <span
-      data-test="current-value"
-    >
-      8/9/2024, 8:02 AM
-    </span>
-  </div>
-</div>
-`;
-
-exports[`DateTimePicker with timezone Controlled Time Picker - (fr) should render w/ the provided date in the text field 1`] = `
-<div>
-  <div>
-    <div
-      class="relative"
-    >
-      <div
-        class="relative"
-      >
-        <div
-          class="flex flex-col"
-        >
-          <div
-            class="flex flex-col relative"
-          >
-            <div
-              class="flex flex-col gap-1"
-            >
-              <div
-                class="relative w-full"
-              >
-                <input
-                  class="border appearance-none truncate outline-0 w-full rounded-lg shadow-none pl-4 pr-4 transition-all duration-300 !text-sm pl-[42px] !border-gray-300 !bg-gray-50 !text-gray-500 focus:!border-blue-600 focus:!text-gray-900 placeholder:!text-gray-400 !text-gray-500 font-roboto"
-                  style="height: 42px;"
-                  type="text"
-                  value="08:02"
-                />
-                <div
-                  aria-label="Open calendar panel"
-                  class="absolute top-1/2 -translate-y-1/2 transition-all duration-300 !cursor-pointer w-5 h-5 left-[14px]"
-                  role="button"
-                  tabindex="0"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="text-gray-500 transition-all duration-300 w-5 h-5"
-                    fill="currentColor"
-                    height="1em"
-                    stroke="currentColor"
-                    stroke-width="0"
-                    viewBox="0 0 24 24"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      clip-rule="evenodd"
-                      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <span
-      data-test="current-value"
-    >
-      09/08/2024 08:02
-    </span>
-  </div>
-</div>
-`;
-
-exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functionality does not allow clicking on a disabled date 1`] = `
-<body>
-  <div>
-    <div>
-      <div
-        class="relative"
-      >
-        <div
-          class="relative"
+          class="flex"
         >
           <div
             class="flex flex-col"
@@ -1597,7 +1410,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                     class="border appearance-none truncate outline-0 w-full rounded-lg shadow-none pl-4 pr-4 transition-all duration-300 !text-sm pl-[42px] !border-gray-300 !bg-gray-50 !text-gray-500 focus:!border-blue-600 focus:!text-gray-900 placeholder:!text-gray-400 !text-gray-500 font-roboto"
                     style="height: 42px;"
                     type="text"
-                    value="2025/03/15"
+                    value="2024-08-09 01:28 PM"
                   />
                   <div
                     aria-label="Open calendar panel"
@@ -1625,6 +1438,221 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                         fill-rule="evenodd"
                       />
                     </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span
+      data-test="current-value"
+    >
+      8/9/2024, 1:28 PM
+    </span>
+  </div>
+</div>
+`;
+
+exports[`DateTimePicker with timezone Controlled Time Picker - (en) should render w/ the provided date in the text field 1`] = `
+<div>
+  <div>
+    <div
+      class="relative"
+    >
+      <div
+        class="relative"
+      >
+        <div
+          class="flex"
+        >
+          <div
+            class="flex flex-col"
+          >
+            <div
+              class="flex flex-col relative"
+            >
+              <div
+                class="flex flex-col gap-1"
+              >
+                <div
+                  class="relative w-full"
+                >
+                  <input
+                    class="border appearance-none truncate outline-0 w-full rounded-lg shadow-none pl-4 pr-4 transition-all duration-300 !text-sm pl-[42px] !border-gray-300 !bg-gray-50 !text-gray-500 focus:!border-blue-600 focus:!text-gray-900 placeholder:!text-gray-400 !text-gray-500 font-roboto"
+                    style="height: 42px;"
+                    type="text"
+                    value="08:02 AM"
+                  />
+                  <div
+                    aria-label="Open calendar panel"
+                    class="absolute top-1/2 -translate-y-1/2 transition-all duration-300 !cursor-pointer w-5 h-5 left-[14px]"
+                    role="button"
+                    tabindex="0"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="text-gray-500 transition-all duration-300 w-5 h-5"
+                      fill="currentColor"
+                      height="1em"
+                      stroke="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 24 24"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        clip-rule="evenodd"
+                        d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span
+      data-test="current-value"
+    >
+      8/9/2024, 8:02 AM
+    </span>
+  </div>
+</div>
+`;
+
+exports[`DateTimePicker with timezone Controlled Time Picker - (fr) should render w/ the provided date in the text field 1`] = `
+<div>
+  <div>
+    <div
+      class="relative"
+    >
+      <div
+        class="relative"
+      >
+        <div
+          class="flex"
+        >
+          <div
+            class="flex flex-col"
+          >
+            <div
+              class="flex flex-col relative"
+            >
+              <div
+                class="flex flex-col gap-1"
+              >
+                <div
+                  class="relative w-full"
+                >
+                  <input
+                    class="border appearance-none truncate outline-0 w-full rounded-lg shadow-none pl-4 pr-4 transition-all duration-300 !text-sm pl-[42px] !border-gray-300 !bg-gray-50 !text-gray-500 focus:!border-blue-600 focus:!text-gray-900 placeholder:!text-gray-400 !text-gray-500 font-roboto"
+                    style="height: 42px;"
+                    type="text"
+                    value="08:02"
+                  />
+                  <div
+                    aria-label="Open calendar panel"
+                    class="absolute top-1/2 -translate-y-1/2 transition-all duration-300 !cursor-pointer w-5 h-5 left-[14px]"
+                    role="button"
+                    tabindex="0"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="text-gray-500 transition-all duration-300 w-5 h-5"
+                      fill="currentColor"
+                      height="1em"
+                      stroke="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 24 24"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        clip-rule="evenodd"
+                        d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span
+      data-test="current-value"
+    >
+      09/08/2024 08:02
+    </span>
+  </div>
+</div>
+`;
+
+exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functionality does not allow clicking on a disabled date 1`] = `
+<body>
+  <div>
+    <div>
+      <div
+        class="relative"
+      >
+        <div
+          class="relative"
+        >
+          <div
+            class="flex"
+          >
+            <div
+              class="flex flex-col"
+            >
+              <div
+                class="flex flex-col relative"
+              >
+                <div
+                  class="flex flex-col gap-1"
+                >
+                  <div
+                    class="relative w-full"
+                  >
+                    <input
+                      class="border appearance-none truncate outline-0 w-full rounded-lg shadow-none pl-4 pr-4 transition-all duration-300 !text-sm pl-[42px] !border-gray-300 !bg-gray-50 !text-gray-500 focus:!border-blue-600 focus:!text-gray-900 placeholder:!text-gray-400 !text-gray-500 font-roboto"
+                      style="height: 42px;"
+                      type="text"
+                      value="2025/03/15"
+                    />
+                    <div
+                      aria-label="Open calendar panel"
+                      class="absolute top-1/2 -translate-y-1/2 transition-all duration-300 !cursor-pointer w-5 h-5 left-[14px]"
+                      role="button"
+                      tabindex="0"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="text-gray-500 transition-all duration-300 w-5 h-5"
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 20 20"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M5.25 12a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H6a.75.75 0 0 1-.75-.75V12ZM6 13.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V14a.75.75 0 0 0-.75-.75H6ZM7.25 12a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H8a.75.75 0 0 1-.75-.75V12ZM8 13.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V14a.75.75 0 0 0-.75-.75H8ZM9.25 10a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H10a.75.75 0 0 1-.75-.75V10ZM10 11.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V12a.75.75 0 0 0-.75-.75H10ZM9.25 14a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H10a.75.75 0 0 1-.75-.75V14ZM12 9.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V10a.75.75 0 0 0-.75-.75H12ZM11.25 12a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H12a.75.75 0 0 1-.75-.75V12ZM12 13.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V14a.75.75 0 0 0-.75-.75H12ZM13.25 10a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H14a.75.75 0 0 1-.75-.75V10ZM14 11.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V12a.75.75 0 0 0-.75-.75H14Z"
+                        />
+                        <path
+                          clip-rule="evenodd"
+                          d="M5.75 2a.75.75 0 0 1 .75.75V4h7V2.75a.75.75 0 0 1 1.5 0V4h.25A2.75 2.75 0 0 1 18 6.75v8.5A2.75 2.75 0 0 1 15.25 18H4.75A2.75 2.75 0 0 1 2 15.25v-8.5A2.75 2.75 0 0 1 4.75 4H5V2.75A.75.75 0 0 1 5.75 2Zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75Z"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1765,7 +1793,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 />
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1740832093000"
                   data-test="1740832093000"
                   role="button"
@@ -1775,7 +1803,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1740918493000"
                   data-test="1740918493000"
                   role="button"
@@ -1785,7 +1813,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1741004893000"
                   data-test="1741004893000"
                   role="button"
@@ -1795,7 +1823,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1741091293000"
                   data-test="1741091293000"
                   role="button"
@@ -1805,7 +1833,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1741177693000"
                   data-test="1741177693000"
                   role="button"
@@ -1815,7 +1843,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1741264093000"
                   data-test="1741264093000"
                   role="button"
@@ -1825,7 +1853,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1741350493000"
                   data-test="1741350493000"
                   role="button"
@@ -1835,7 +1863,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1741436893000"
                   data-test="1741436893000"
                   role="button"
@@ -1845,7 +1873,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1741523293000"
                   data-test="1741523293000"
                   role="button"
@@ -1855,7 +1883,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1741609693000"
                   data-test="1741609693000"
                   role="button"
@@ -1865,7 +1893,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1741696093000"
                   data-test="1741696093000"
                   role="button"
@@ -1875,7 +1903,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1741782493000"
                   data-test="1741782493000"
                   role="button"
@@ -1885,7 +1913,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1741868893000"
                   data-test="1741868893000"
                   role="button"
@@ -1895,7 +1923,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1741955293000"
                   data-test="1741955293000"
                   role="button"
@@ -1905,7 +1933,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm cursor-not-allowed bg-white shadow-blue-600 text-blue-600 hover:text-white hover:bg-blue-600"
+                  class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm cursor-not-allowed bg-white shadow-blue-600 text-blue-600 hover:text-white hover:bg-blue-600"
                   data-date="1742041693000"
                   data-test="1742041693000"
                   role="button"
@@ -1915,7 +1943,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1742128093000"
                   data-test="1742128093000"
                   role="button"
@@ -1925,7 +1953,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1742214493000"
                   data-test="1742214493000"
                   role="button"
@@ -1935,7 +1963,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1742300893000"
                   data-test="1742300893000"
                   role="button"
@@ -1945,7 +1973,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1742387293000"
                   data-test="1742387293000"
                   role="button"
@@ -1955,7 +1983,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1742473693000"
                   data-test="1742473693000"
                   role="button"
@@ -1965,7 +1993,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1742560093000"
                   data-test="1742560093000"
                   role="button"
@@ -1975,7 +2003,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1742646493000"
                   data-test="1742646493000"
                   role="button"
@@ -1985,7 +2013,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1742732893000"
                   data-test="1742732893000"
                   role="button"
@@ -1995,7 +2023,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1742819293000"
                   data-test="1742819293000"
                   role="button"
@@ -2005,7 +2033,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1742905693000"
                   data-test="1742905693000"
                   role="button"
@@ -2015,7 +2043,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1742992093000"
                   data-test="1742992093000"
                   role="button"
@@ -2025,7 +2053,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1743078493000"
                   data-test="1743078493000"
                   role="button"
@@ -2035,7 +2063,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1743164893000"
                   data-test="1743164893000"
                   role="button"
@@ -2045,7 +2073,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1743251293000"
                   data-test="1743251293000"
                   role="button"
@@ -2055,7 +2083,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1743337693000"
                   data-test="1743337693000"
                   role="button"
@@ -2065,7 +2093,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 transition duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
+                  class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm text-gray-300 cursor-not-allowed"
                   data-date="1743424093000"
                   data-test="1743424093000"
                   role="button"

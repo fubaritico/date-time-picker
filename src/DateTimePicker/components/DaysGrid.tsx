@@ -259,17 +259,18 @@ const DaysGrid: FC<DaysGridProps> = ({
               isValid && isSelectingRange ? handleDateMouseEnter : undefined
             }
             className={cx(
-              'font-bold flex justify-center items-center rounded-lg',
+              'font-bold flex justify-center items-center transition rounded-lg',
               'focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1',
               {
-                'transition duration-500': pickerMode !== PickerMode.DATERANGE,
+                'duration-500': pickerMode !== PickerMode.DATERANGE,
+                'duration-200': pickerMode === PickerMode.DATERANGE,
                 'h-10 w-10': size === 'lg',
                 'h-9 w-9 text-sm': size === 'md',
-                'h-[30px] w-8 text-xs': size === 'sm',
-                'h-10 w-10.5': size === 'lg' && isInRange,
-                'h-9 w-10 text-sm -mx-0.5 border-r border-r-white last:border-r-0':
-                  size === 'md' && isInRange,
-                'h-[30px] w-8.5 text-xs': size === 'sm' && isInRange,
+                'h-[30px] w-8': size === 'sm',
+                'border-r border-r-white last:border-r-0 -mx-0.5': isInRange,
+                'w-11': size === 'lg' && isInRange,
+                'w-10': size === 'md' && isInRange,
+                'h-[30px] w-8.5': size === 'sm' && isInRange,
                 'bg-white text-gray-900 hover:bg-gray-100':
                   getStartOfDayTs(Date.now() + msOffset) !==
                     getStartOfDayTs(value) &&

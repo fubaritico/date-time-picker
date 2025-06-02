@@ -37,11 +37,11 @@ export interface BasicPanelProps {
 }
 
 export interface PickerProviderProps extends BasicPanelProps {
-  /* Date as an UTC timestamp. It will default to now if not provided */
+  /* Date as a UTC timestamp. It will default to now if not provided */
   date?: number
   /* Range date as a tuple of two Unix timestamps */
   dateRange?: DateRange
-  /* Offset in milliseconds to be added the date value (as a timestamp) on input
+  /* Offset in milliseconds to be added to the date value (as a timestamp) on input
   and to be removed from the resulting date on output. */
   msOffset: number
   /* Offset in milliseconds from the GMT time zone */
@@ -148,9 +148,11 @@ export interface DateTimeTextInputProps {
   maxDate?: number
 }
 
-export interface DateTimeInputProps extends DateTimeTextInputProps {
+export interface DateInputProps extends DateTimeTextInputProps {
   /* Callback called on input change */
   onDateChange?: (value?: number) => void
+  /* When picker mode is set on 'DATE_RANGE', this function is called on date range change */
+  onDateRangeChange?: (date: DateRange) => void
   /* Callback called on icon click if present */
   onIconClick?: () => void
   /* Icon to be displayed on the right (loading indicator, valid value...) */

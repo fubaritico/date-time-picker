@@ -1,9 +1,7 @@
-import InputMask from '@mona-health/react-input-mask'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 import { PickerMode } from '@enums'
 
-import TextField from '../../TextField'
 import {
   convertFormattedDateToTimestamp,
   formatTimestampForTextInput,
@@ -13,7 +11,9 @@ import { DATE_FORMAT, DATE_TIME_FORMAT, TIME_FORMAT } from '../formats'
 import AbstractInputMask from '../formats/masks/AbstractInputMask'
 import useDateTimePicker from '../hooks/useDateTimePicker'
 
-import type { DateTimeInputProps } from '@types'
+import InputWithMask from './InputWithMask'
+
+import type { DateInputProps } from '@types'
 import type { ChangeEvent, FC } from 'react'
 
 interface MaskClassType {
@@ -44,7 +44,7 @@ interface MaskClassType {
  * again and corrected if needed. then it's reformated to be stored in the context.
  *
  */
-const DateTimeInput: FC<DateTimeInputProps> = ({
+const DateTimeInput: FC<DateInputProps> = ({
   onDateChange,
   onIconClick,
   errors,
@@ -242,34 +242,24 @@ const DateTimeInput: FC<DateTimeInputProps> = ({
   )
 
   return (
-    <div className="flex flex-col">
-      <div className="flex flex-col relative">
-        <InputMask
-          alwaysShowMask
-          maskPlaceholder="_"
-          mask={inputMaskInstance?.getMask()}
-          value={inputValue ?? ''}
-          disabled={inputTextProps.disabled}
-          required={inputTextProps.required}
-          severity={innerErrors ? 'error' : undefined}
-          errors={innerErrors}
-          onChange={async (e: ChangeEvent<HTMLInputElement>) => {
-            await handleChange(e)
-          }}
-        >
-          {/* Find a way to forward the reference and handle the onChange property properly */}
-          <TextField
-            className="font-roboto"
-            iconAriaLabel="Open calendar panel"
-            iconName={
-              pickerMode === PickerMode.TIME ? 'HiClock' : 'HiMiniCalendarDays'
-            }
-            iconRef={clickAwayIgnoreRef}
-            onIconClick={onIconClick}
-            {...textInputOnlyProperties(inputTextProps)}
-          />
-        </InputMask>
-      </div>
+    <div className="flex">
+      <InputWithMask
+        className="font-roboto"
+        alwaysShowMask
+        mask={inputMaskInstance?.getMask()}
+        value={inputValue ?? ''}
+        disabled={inputTextProps.disabled}
+        required={inputTextProps.required}
+        severity={innerErrors ? 'error' : undefined}
+        errors={innerErrors}
+        onChange={async (e: ChangeEvent<HTMLInputElement>) => {
+          await handleChange(e)
+        }}
+        iconRef={clickAwayIgnoreRef}
+        onIconClick={onIconClick}
+        pickerMode={pickerMode}
+        {...textInputOnlyProperties(inputTextProps)}
+      />
     </div>
   )
 }

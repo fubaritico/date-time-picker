@@ -8,6 +8,7 @@ export { default as Icon } from './Icon'
 export { default as Label } from './Label'
 export { default as Menu } from './Menu'
 export { default as Portal } from './Portal'
+export { default as TextField } from './TextField'
 
 /* Types */
 export type { ButtonProps } from './Button'
