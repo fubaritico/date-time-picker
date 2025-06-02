@@ -140,11 +140,11 @@ export interface DateTimeTextInputProps {
   severity?: Severity
   /* Text input size:'sm' | 'md' | 'lg'  */
   size?: UISize
-  /* Moment Timezone list member */
+  /* Timezone list member based on moment.js */
   timezone?: Timezone
-  /* timestamp to have min date on input*/
+  /* timestamp to have min date on input */
   minDate?: number
-  /* timestamp to have max date on input*/
+  /* timestamp to have max date on input */
   maxDate?: number
 }
 

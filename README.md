@@ -1,8 +1,8 @@
 # DateTimePicker Component
 
-A React 19 date and time picker component with Tailwind CSS styling.
+A React 19 date-time picker component, using native JS, styled with Tailwind CSS styling.
 
-### WIP
+### Work in progress
 
 Currently adding features and improving the component. Working on date range selection.
 
@@ -10,22 +10,24 @@ It is just completed for the date range panel; No work has been done for the tex
 
 ## Props
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| date | Date | null | The selected date |
-| extraIcon | ReactNode | null | Additional icon to display |
-| enablePortal | boolean | false | Whether to render the panel in a portal |
-| errors | string[] | [] | Error messages to display |
-| loading | boolean | false | Whether the component is in a loading state |
-| locale | string | 'en' | The locale to use for formatting |
-| maxDate | Date | null | The maximum selectable date |
-| minDate | Date | null | The minimum selectable date |
-| pickerMode | 'date' \| 'time' \| 'datetime' | 'datetime' | The mode of the picker |
-| noDefault | boolean | false | Whether to use a default date |
-| onDateChange | function | null | Callback when the date changes |
-| placement | string | 'bottom-start' | The placement of the panel |
-| size | 'sm' \| 'md' \| 'lg' | 'md' | The size of the component |
-| timezone | string | null | The timezone to use |
+| Prop | Type                           | Default             | Description                                                                                            |
+|------|--------------------------------|---------------------|--------------------------------------------------------------------------------------------------------|
+| date | number                         | undefined                | Date as an UTC timestamp. It will default to now if not provided                                       |
+| dateRange | [number, number]                     | [undefined, undefined] | Range date as a tuple of two Unix timestamps                                                           |
+| extraIcon | ReactElement                      | undefined                | When provided, will add an icon on the right, useful when wanting to express some state, for instance. |
+| enablePortal | boolean                        | false               | Whether to render the panel in a portal                                                                |
+| errors | string[]                       | []                  | Error messages to display                                                                              |
+| loading | boolean                        | false               | If true, the input text is disabled and a loading animation is displayed on the right                                                          |
+| locale | string                         | 'en'                | Locale language in international ISO-8601                                                                       |
+| maxDate | Date                           | undefined                | When defining a valid/enabled range of dates, it will be the max/end date                                                                            |
+| minDate | Date                           | undefined                | When defining a valid/enabled range of dates, it will be the min/start date                                                                             |
+| pickerMode | 'DATE' \| 'TIME' \| 'DATETIME' \| 'DATERANGE' | 'DATE'          | The mode of the picker                                                                                 |
+| noDefault | boolean                        | false               | If true, no default date (today) will be displayed                                                                     |
+| onDateChange | (value?: number) => void                       | undefined                | When picker mode is not set on 'DATE_RANGE', this function is called on date click if the component is controlled                                                                         |
+| onDateRangeChange | (date: [number, number]) => void                       | undefined                |  When picker mode is set on 'DATE_RANGE', this function is called on date range change                                                                        |
+| placement | 'bottom-start' \| 'bottom-end'                         | 'bottom-start'      | The placement of the panel                                                                             |
+| size | 'sm' \| 'md' \| 'lg'           | 'md'                | The size of the component                                                                              |
+| timezone | string                         | undefined                | Timezone list member based on moment.js                                                                                    |
 
 ## Development
 
