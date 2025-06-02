@@ -1,9 +1,9 @@
-import InputMask from '@mona-health/react-input-mask'
+import MonaHealthInputMask from '@mona-health/react-input-mask'
 
 import { PickerMode } from '@enums'
 import { TextField } from '@components'
 
-import type { DateInputProps } from '@types'
+import type { DateInputProps, InputMask } from '@types'
 import type { ChangeEvent, FC, RefObject } from 'react'
 
 export interface InputWithMaskProps extends DateInputProps {
@@ -14,7 +14,7 @@ export interface InputWithMaskProps extends DateInputProps {
   /* Reference to pass to ignore an element */
   iconRef?: RefObject<HTMLButtonElement | null>
   /* The I18n input mask instance */
-  mask: typeof InputMask
+  mask?: InputMask
   /* On value change handler */
   onChange: (e: ChangeEvent<HTMLInputElement>) => Promise<void>
   /* Defines the behavior of the component */
@@ -41,7 +41,7 @@ const InputWithMask: FC<InputWithMaskProps> = ({
   return (
     <div className="flex flex-col">
       <div className="flex flex-col relative">
-        <InputMask
+        <MonaHealthInputMask
           alwaysShowMask={alwaysShowMask}
           className={className}
           maskPlaceholder="_"
@@ -65,7 +65,7 @@ const InputWithMask: FC<InputWithMaskProps> = ({
             onIconClick={onIconClick}
             {...rest}
           />
-        </InputMask>
+        </MonaHealthInputMask>
       </div>
     </div>
   )

@@ -171,7 +171,9 @@ export default function useDateRangeInput({
       }
     },
     [
+      innerDateRange,
       inputMaskInstance,
+      inputRole,
       loadMaskClass,
       pickerMode,
       formatNewInputValue,
