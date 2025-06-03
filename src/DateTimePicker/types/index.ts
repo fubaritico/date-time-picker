@@ -18,7 +18,7 @@ import type { Dispatch, ReactElement, RefObject, SetStateAction } from 'react'
  *
  * This type is typically used to handle date filtering or temporal constraints where both finite and infinite boundaries may be necessary.
  */
-export type DateRange = [number | undefined, number | undefined]
+export type DateRange = (number | undefined)[]
 
 /**
  * Input masks used according to locale

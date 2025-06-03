@@ -136,7 +136,7 @@ const TextField: FC<TextFieldProps> = forwardRef<
         >
           <input
             className={clsx(
-              'border appearance-none truncate outline-0 w-full rounded-lg',
+              'border appearance-none truncate outline-0 w-full rounded-md',
               'shadow-none pl-4 pr-4 transition-all duration-300',
               {
                 '!text-md': size === 'lg',

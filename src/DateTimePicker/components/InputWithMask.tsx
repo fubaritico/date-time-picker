@@ -21,6 +21,8 @@ export interface InputWithMaskProps extends DateInputProps {
   pickerMode?: PickerMode
   /* Value passed to the input */
   value?: string
+  /* If false, no icon will be displayed to open the panel. Default to 'true' */
+  withPanel?: boolean
 }
 
 const InputWithMask: FC<InputWithMaskProps> = ({
@@ -36,38 +38,39 @@ const InputWithMask: FC<InputWithMaskProps> = ({
   severity,
   errors,
   onChange,
+  withPanel = true,
   ...rest
 }) => {
   return (
-    <div className="flex flex-col">
-      <div className="flex flex-col relative">
-        <MonaHealthInputMask
-          alwaysShowMask={alwaysShowMask}
-          className={className}
-          maskPlaceholder="_"
-          mask={mask}
-          value={value ?? ''}
-          disabled={disabled}
-          required={required}
-          severity={severity}
-          errors={errors}
-          onChange={async (e: ChangeEvent<HTMLInputElement>) => {
-            await onChange(e)
-          }}
-        >
-          <TextField
-            className="font-roboto"
-            iconAriaLabel="Open calendar panel"
-            iconName={
-              pickerMode === PickerMode.TIME ? 'HiClock' : 'HiMiniCalendarDays'
-            }
-            iconRef={iconRef}
-            onIconClick={onIconClick}
-            {...rest}
-          />
-        </MonaHealthInputMask>
-      </div>
-    </div>
+    <MonaHealthInputMask
+      alwaysShowMask={alwaysShowMask}
+      className={className}
+      maskPlaceholder="_"
+      mask={mask}
+      value={value ?? ''}
+      disabled={disabled}
+      required={required}
+      severity={severity}
+      errors={errors}
+      onChange={async (e: ChangeEvent<HTMLInputElement>) => {
+        await onChange(e)
+      }}
+    >
+      <TextField
+        className="font-roboto"
+        iconAriaLabel="Open calendar panel"
+        iconName={
+          withPanel
+            ? pickerMode === PickerMode.TIME
+              ? 'HiClock'
+              : 'HiMiniCalendarDays'
+            : undefined
+        }
+        iconRef={iconRef}
+        onIconClick={onIconClick}
+        {...rest}
+      />
+    </MonaHealthInputMask>
   )
 }
 

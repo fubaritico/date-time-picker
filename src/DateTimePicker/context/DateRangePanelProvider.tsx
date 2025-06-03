@@ -1,16 +1,20 @@
 import { useEffect, useMemo, useState } from 'react'
 
-import {
-  addMonths,
-  getFirstInstantOfMonth,
-  getLastInstantOfMonth,
-} from '@components'
+import { addMonths, getFirstInstantOfMonth } from '@components'
 
 import DateTimePickerContext from './DateRangePanelContext'
 
 import type { DateRangePanelState } from './DateRangePanelContext'
 import type { PickerProviderProps } from '@types'
 import type { FC, PropsWithChildren } from 'react'
+
+const getMonthNameFromTimestamp = (
+  timestamp: number,
+  locale = 'en-US'
+): string => {
+  const date = new Date(timestamp)
+  return new Intl.DateTimeFormat(locale, { month: 'long' }).format(date)
+}
 
 /**
  * Provides simple state with essential data as date, panel mode, calendar mode and date, panel mode setters.
@@ -27,40 +31,40 @@ const DateRangePanelProvider: FC<
   const [tempStartDate, setTempStartDate] = useState<number>()
   const [tempEndDate, setTempEndDate] = useState<number>()
   const [leftGridMonth, setLeftGridMonth] = useState<number>(() => {
-    const defaultDate = Date.now() + msOffset
-
-    if (!dateRange[0]) return getFirstInstantOfMonth(defaultDate)
+    const currentMonth = Date.now() + msOffset
 
     if (dateRange[0] && dateRange[1]) {
-      const firstDayOfCurrentMonthTs = getFirstInstantOfMonth(defaultDate)
-      const lastDayOfCurrentMonthTs = getLastInstantOfMonth(defaultDate)
+      // Months to work with
+      const defaultMonth = getMonthNameFromTimestamp(currentMonth)
+      const startDateMonth = getMonthNameFromTimestamp(dateRange[0])
 
-      if (dateRange[0] > firstDayOfCurrentMonthTs) {
-        if (dateRange[0] > lastDayOfCurrentMonthTs) {
-          return getFirstInstantOfMonth(defaultDate)
-        }
-        return firstDayOfCurrentMonthTs
+      // If the start date is not selected in the current month
+      if (defaultMonth !== startDateMonth) {
+        return getFirstInstantOfMonth(dateRange[0])
       }
     }
 
-    return getFirstInstantOfMonth(dateRange[0])
+    return getFirstInstantOfMonth(currentMonth)
   })
   const [rightGridMonth, setRightGridMonth] = useState<number>(() => {
-    const defaultDate = addMonths(Date.now() + msOffset, 1)
+    const nextMont = addMonths(Date.now() + msOffset, 1)
 
     if (dateRange[0] && dateRange[1]) {
-      const firstDayOfCurrentMonthTs = getFirstInstantOfMonth(defaultDate)
-      const lastDayOfCurrentMonthTs = getLastInstantOfMonth(defaultDate)
+      // Months to work with
+      const startDateMonth = getMonthNameFromTimestamp(dateRange[0])
+      const endDateMonth = getMonthNameFromTimestamp(dateRange[1])
 
-      if (dateRange[1] > firstDayOfCurrentMonthTs) {
-        if (dateRange[1] > lastDayOfCurrentMonthTs) {
-          return getFirstInstantOfMonth(dateRange[1])
-        }
-        return firstDayOfCurrentMonthTs
+      if (startDateMonth === endDateMonth) {
+        return getFirstInstantOfMonth(addMonths(dateRange[0], 1))
+      }
+
+      // If the start date is not selected in the current month
+      if (startDateMonth !== endDateMonth) {
+        return getFirstInstantOfMonth(dateRange[1])
       }
     }
 
-    return defaultDate
+    return getFirstInstantOfMonth(nextMont)
   })
 
   /**

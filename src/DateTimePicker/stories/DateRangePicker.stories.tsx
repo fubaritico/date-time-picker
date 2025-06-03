@@ -143,6 +143,7 @@ export const DateRangeUncontrolled: Story = {
   render: (args: DateTimePickerProps) => <DateTimePicker {...args} />,
   name: 'Uncontrolled',
   args: {
+    timezone: 'Europe/Paris',
     pickerMode: PickerMode.DATERANGE,
   },
 }
@@ -163,6 +164,7 @@ export const Controlled: IntegrationStory = {
   ),
   name: 'Controlled',
   args: {
+    timezone: 'Europe/Paris',
     pickerMode: PickerMode.DATERANGE,
     dateRange: [1744137767000, 1745520167000],
   },

@@ -60,7 +60,11 @@ const DateTimePickerProvider: FC<PropsWithChildren<PickerProviderProps>> = ({
     if (isControlled && p_date) {
       setInnerDate(p_date + msOffset)
     }
-  }, [msOffset, isControlled, p_date])
+
+    if (isControlled && p_dateRange) {
+      setInnerDateRange(p_dateRange.map((i) => (i ? i + msOffset : undefined)))
+    }
+  }, [msOffset, isControlled, p_date, p_dateRange])
 
   const value = useMemo<PickerState>(() => {
     return {

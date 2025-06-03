@@ -165,7 +165,6 @@ export const getFirstInstantOfMonth = (ts?: number): number => {
 
   const date = new Date(ts)
   date.setDate(1) // Set to the first day of the month
-  date.setHours(0, 0, 0, 0) // Set to the start of the day
 
   return date.getTime()
 }
