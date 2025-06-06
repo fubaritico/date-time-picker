@@ -36,17 +36,18 @@ export const padNumber = (num: number): string => {
  * Will return the amount of minutes from the given timestamp
  *
  * @param {number} ts - number representing an unix timestamp
+ * @param {number} msOffset - because in this utility method, time is in locale time, it has to be reset to initial time zone time
  *
  * @throws {Error} if the timestamp is invalid
  *
  * @returns {number} minutes
  */
-export const getMinutes = (ts?: number): number => {
+export const getMinutes = (ts?: number, msOffset = 0): number => {
   if (!ts || !checkTsValidity(ts)) {
     throw new Error('[getMinutes] Invalid timestamp')
   }
 
-  const date = new Date(ts)
+  const date = new Date(ts - msOffset)
 
   return date.getMinutes()
 }
@@ -97,17 +98,18 @@ export const addMinutes = (ts?: number, minutes = 1): number => {
  * Will return the amount of hours from the given timestamp
  *
  * @param {number} ts - number representing an unix timestamp
+ * @param {number} msOffset - because in this utility method, time is in locale time, it has to be reset to initial time zone time
  *
  * @throws {Error} if the timestamp is invalid
  *
  * @returns {number} hours
  */
-export const getHours = (ts?: number): number => {
+export const getHours = (ts?: number, msOffset = 0): number => {
   if (!ts || !checkTsValidity(ts)) {
     throw new Error('[getHours] Invalid timestamp')
   }
 
-  const date = new Date(ts)
+  const date = new Date(ts - msOffset)
 
   return date.getHours()
 }

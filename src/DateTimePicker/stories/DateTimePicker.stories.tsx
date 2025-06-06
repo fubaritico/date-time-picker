@@ -2,7 +2,7 @@ import { withDateTimePicker } from '@storybook-decorators/withDateTimePicker'
 
 import { timezones } from '@components'
 
-import DatePicker, { DatePickerProps } from '../DatePicker'
+import DateTimePicker, { DateTimePickerProps } from '../DateTimePicker'
 
 import disabledControls from './disabledControls'
 import PickerIntegration, { PickerIntegrationProps } from './PickerIntegration'
@@ -10,8 +10,8 @@ import PickerIntegration, { PickerIntegrationProps } from './PickerIntegration'
 import type { Meta, StoryObj } from '@storybook/react'
 import type { AnyPickerComponent } from '@types'
 
-const meta: Meta<typeof DatePicker> = {
-  title: 'DatePicker',
+const meta: Meta<typeof DateTimePicker> = {
+  title: 'DateTimePicker',
   parameters: {
     layout: 'fullscreen',
   },
@@ -30,17 +30,17 @@ const meta: Meta<typeof DatePicker> = {
     },
   },
   tags: ['autodocs'],
-  component: DatePicker,
+  component: DateTimePicker,
   decorators: [withDateTimePicker],
 }
 
 export default meta
 
-type Story = StoryObj<typeof DatePicker>
+type Story = StoryObj<typeof DateTimePicker>
 type IntegrationStory = StoryObj<typeof PickerIntegration>
 
 export const Uncontrolled: Story = {
-  render: (args: DatePickerProps) => <DatePicker {...args} />,
+  render: (args: DateTimePickerProps) => <DateTimePicker {...args} />,
   name: 'Uncontrolled',
 }
 
@@ -48,7 +48,7 @@ export const Controlled: IntegrationStory = {
   render: (args: PickerIntegrationProps) => <PickerIntegration {...args} />,
   name: 'Controlled',
   args: {
-    PickerComponent: DatePicker as AnyPickerComponent,
+    PickerComponent: DateTimePicker as AnyPickerComponent,
   },
   argTypes: disabledControls,
 }

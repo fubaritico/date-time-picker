@@ -43,6 +43,7 @@ export const Uncontrolled: Story = {
   render: (args: DateRangePickerProps) => <DateRangePicker {...args} />,
   name: 'Uncontrolled',
   args: {
+    pickerMode: 'DATERANGE',
     timezone: 'Europe/Paris',
   },
 }
@@ -65,14 +66,16 @@ export const WithPortal: Story = {
   name: 'With Portal',
   args: {
     enablePortal: true,
+    pickerMode: 'DATERANGE',
     dateRange: [1744137767000, 1745520167000],
   },
 }
 
 export const WithMaxAndMin: Story = {
   ...Uncontrolled,
-  name: 'with min & max values for date',
+  name: 'With max and min dates',
   args: {
+    ...Uncontrolled.args,
     dateRange: [1744137767000, 1745520167000],
     minDate: 1741718567000,
     maxDate: 1750272167000,
@@ -83,23 +86,11 @@ export const WithMaxAndMin: Story = {
   argTypes: disabledControls,
 }
 
-export const Loading: Story = {
-  ...Uncontrolled,
-  name: 'Loading',
-  args: {
-    dateRange: [1744137767000, 1745520167000],
-    noDefault: true,
-    label: 'Select a Date',
-    loading: true,
-    disabled: true,
-  },
-  argTypes: disabledControls,
-}
-
 export const DateRangeWithDates: Story = {
   ...Uncontrolled,
-  name: 'Date Range picker with dates',
+  name: 'Uncontrolled with dates',
   args: {
+    ...Uncontrolled.args,
     dateRange: [1744137767000, 1745520167000],
     label: 'Select a Date',
   },

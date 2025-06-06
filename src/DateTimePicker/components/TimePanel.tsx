@@ -44,7 +44,8 @@ export interface TimePanelProps {
  */
 const TimePanel: FC<TimePanelProps> = ({ className, onDateChange, size }) => {
   // COMPONENT STATE
-  const { innerDate, msOffset, locale, pickerMode } = useDateTimePicker()
+  const { gmtMsOffset, innerDate, msOffset, locale, pickerMode, isControlled } =
+    useDateTimePicker()
   const [date, setDate] = useState<number>(innerDate ?? Date.now() + msOffset)
 
   useEffect(() => {
@@ -207,8 +208,18 @@ const TimePanel: FC<TimePanelProps> = ({ className, onDateChange, size }) => {
         <TimePanelSetter
           date={
             dateUsesAMPM && getCurrentAMPM(date) === 'PM'
-              ? padNumber(getHours(date) - 12)
-              : padNumber(getHours(date))
+              ? padNumber(
+                  getHours(
+                    date -
+                      (isControlled ? -(gmtMsOffset + msOffset) : msOffset) -
+                      12
+                  )
+                )
+              : padNumber(
+                  getHours(
+                    date - (isControlled ? -(gmtMsOffset + msOffset) : msOffset)
+                  )
+                )
           }
           onBottomButtonClick={gotoPrevHour}
           onTopButtonClick={gotoNextHour}
@@ -218,7 +229,11 @@ const TimePanel: FC<TimePanelProps> = ({ className, onDateChange, size }) => {
           :
         </div>
         <TimePanelSetter
-          date={padNumber(getMinutes(date)).toString()}
+          date={padNumber(
+            getMinutes(
+              date - (isControlled ? -(gmtMsOffset + msOffset) : msOffset)
+            )
+          ).toString()}
           onBottomButtonClick={gotoPrevMinute}
           onTopButtonClick={gotoNextMinute}
           unit="minute"
