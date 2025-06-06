@@ -1,35 +1,40 @@
 # DateTimePicker Component
 
-A React 19 date-time picker component, using native JS, styled with Tailwind CSS styling.
+A React 19.x date-time picker component, using TypeScript 5.x, styled with Tailwind 3.x CSS styling.
 
 ### Work in progress
 
-Currently adding features and improving the component. Working on date range selection.
+Creation of `DatePicker`, `DateTimePicker`, `TimePicker` and `DateRangePicker` as separated components.
 
-It is just completed for the date range panel; No work has been done for the text field yet.
+Tests have to be written for `DateRangePicker`.
+
+A migration to Tailwind 4.x is planned.
+
+Theme coloring has to be implemented. It will be based on Tailwind CSS colors. A color property will be added to the components. It will work with `cva` under the hood.
 
 ## Props
 
-| Prop | Type                           | Default             | Description                                                                                            |
-|------|--------------------------------|---------------------|--------------------------------------------------------------------------------------------------------|
-| date | number                         | undefined                | Date as an UTC timestamp. It will default to now if not provided                                       |
-| dateRange | [number, number]                     | [undefined, undefined] | Range date as a tuple of two Unix timestamps                                                           |
-| extraIcon | ReactElement                      | undefined                | When provided, will add an icon on the right, useful when wanting to express some state, for instance. |
-| enablePortal | boolean                        | false               | Whether to render the panel in a portal                                                                |
-| errors | string[]                       | []                  | Error messages to display                                                                              |
-| loading | boolean                        | false               | If true, the input text is disabled and a loading animation is displayed on the right                                                          |
-| locale | string                         | 'en'                | Locale language in international ISO-8601                                                                       |
-| maxDate | Date                           | undefined                | When defining a valid/enabled range of dates, it will be the max/end date                                                                            |
-| minDate | Date                           | undefined                | When defining a valid/enabled range of dates, it will be the min/start date                                                                             |
-| pickerMode | 'DATE' \| 'TIME' \| 'DATETIME' \| 'DATERANGE' | 'DATE'          | The mode of the picker                                                                                 |
-| noDefault | boolean                        | false               | If true, no default date (today) will be displayed                                                                     |
-| onDateChange | (value?: number) => void                       | undefined                | When picker mode is not set on 'DATE_RANGE', this function is called on date click if the component is controlled                                                                         |
-| onDateRangeChange | (date: [number, number]) => void                       | undefined                |  When picker mode is set on 'DATE_RANGE', this function is called on date range change                                                                        |
-| placement | 'bottom-start' \| 'bottom-end'                         | 'bottom-start'      | The placement of the panel                                                                             |
-| size | 'sm' \| 'md' \| 'lg'           | 'md'                | The size of the component                                                                              |
-| timezone | string                         | undefined                | Timezone list member based on moment.js                                                                                    |
+| Prop | Type                           | Default             | Description                                                                                                               |
+|------|--------------------------------|---------------------|---------------------------------------------------------------------------------------------------------------------------|
+| date | number                         | undefined                | When using `DatePicker`, `DateTimePicker` or `TimePicker`, date as an UTC timestamp. It will default to now if not provided     |
+| dateRange | [number, number]                     | [undefined, undefined] | When using `DateRangePicker`, range date as a tuple of two Unix timestamps                                                  |
+| enablePortal | boolean                        | false               | Whether to render the panel in a portal                                                                                   |
+| errors | string[]                       | []                  | Error messages to display                                                                                                 |
+| loading | boolean                        | false               | If true, the input text is disabled and a loading animation is displayed on the right                                     |
+| locale | string                         | 'en'                | Locale language in international ISO-8601                                                                                 |
+| maxDate | Date                           | undefined                | When defining a valid/enabled range of dates, it will be the max/end date                                                 |
+| minDate | Date                           | undefined                | When defining a valid/enabled range of dates, it will be the min/start date                                               |
+| pickerMode | 'DATE' \| 'TIME' \| 'DATETIME' \| 'DATERANGE' | 'DATE'          | (dev and integration tests only) The mode of the picker                                                                   |
+| noDefault | boolean                        | false               | If true, no default date (today) will be displayed                                                                        |
+| onDateChange | (value?: number) => void                       | undefined                | When using `DatePicker`, `DateTimePicker` or `TimePicker`, this function is called on date click if the component is controlled |
+| onDateRangeChange | (date: [number, number]) => void                       | undefined                | When using `DateRangePicker`, this function is called on date range change                                                  |
+| placement | 'bottom-start' \| 'bottom-end'                         | 'bottom-start'      | The placement of the panel                                                                                                |
+| size | 'sm' \| 'md' \| 'lg'           | 'md'                | The size of the component                                                                                                 |
+| timezone | string                         | undefined                | Timezone list member based on moment.js                                                                                   |
 
 ## Development
+
+Components in this project are visible in a storybook instance and a vite dev server.
 
 ### Setup
 
@@ -43,9 +48,21 @@ It is just completed for the date range panel; No work has been done for the tex
    pnpm install
    ```
 
+### Storybook
+
+Run the storybook instance to preview the components:
+
+```bash
+npm run storybook
+# or
+yarn storybook
+# or
+pnpm storybook
+```
+
 ### Development Server
 
-Run the development server to preview the component:
+Run the development server to preview the components:
 
 ```bash
 npm run dev
@@ -71,7 +88,7 @@ pnpm test
 
 ### Linting and Formatting
 
-The project uses ESLint for linting and Prettier for code formatting.
+The project uses ESLint 9.x for linting and Prettier 3.x for code formatting.
 
 Run the linter:
 
@@ -109,7 +126,7 @@ This project follows the [Conventional Commits](https://www.conventionalcommits.
 
 Format: `<type>(<scope>): <subject>`
 
-Examples:
+Recommended examples:
 - `feat: add new date format option`
 - `fix: correct time zone calculation`
 - `docs: update API documentation`
