@@ -8,9 +8,30 @@ module.exports = {
         'elevation-2':
           '0 4px 6px 0 rgba(0, 0, 0, 0.05), 0 10px 15px 0 rgba(0, 0, 0, 0.1)',
       },
+      backgroundImage: {
+        storybook: `radial-gradient(
+          ellipse at 33%,
+          var(--tw-background-gradient-ellipse-1),
+          transparent
+        ),
+        radial-gradient(
+          ellipse at 33% 100%,
+          var(--tw-background-gradient-ellipse-2) 0%,
+          transparent 50%
+        ),
+        radial-gradient(
+          circle at 100% 50%,
+          var(--tw-background-gradient-circle-1),
+          transparent 50%
+        ),
+        radial-gradient(
+          ellipse at center,
+          var(--tw-background-color),
+          var(--tw-background-color)
+        )`,
+      },
     },
     fontFamily: {
-      //body: ['Poppins', 'sans-serif'],
       roboto: ['Roboto', 'sans-serif'],
       robotoMono: ['RobotoMono', 'sans-serif'],
     },

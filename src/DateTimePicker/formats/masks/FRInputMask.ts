@@ -258,7 +258,7 @@ export default class FRInputMask extends AbstractInputMask {
   }
 
   validateHours(input: string): string {
-    if (this.pickerMode === PickerMode.TIME) {
+    if (this.pickerMode === 'TIME') {
       return this.validateHoursFromIndex(input, 0)
     }
 
@@ -272,19 +272,13 @@ export default class FRInputMask extends AbstractInputMask {
   validate(value: string): string {
     let newInputValue = ''
 
-    if (
-      this.pickerMode === PickerMode.DATETIME ||
-      this.pickerMode === PickerMode.DATE
-    ) {
+    if (this.pickerMode === 'DATETIME' || this.pickerMode === 'DATE') {
       newInputValue = this.validateDay(value)
       newInputValue = this.validateMonth(newInputValue)
       newInputValue = this.validateYear(newInputValue)
     }
 
-    if (
-      this.pickerMode === PickerMode.DATETIME ||
-      this.pickerMode === PickerMode.TIME
-    ) {
+    if (this.pickerMode === 'DATETIME' || this.pickerMode === 'TIME') {
       newInputValue = this.validateHours(value)
     }
 

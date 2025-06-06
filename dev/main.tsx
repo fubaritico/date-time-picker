@@ -3,9 +3,8 @@ import ReactDOM from 'react-dom/client'
 
 import './styles.css'
 
-import ControlledExample from './controlled-example'
-import UncontrolledExample from './uncontrolled-example'
-import { PickerMode } from '@enums'
+import ControlledDateTimePicker from './controlled-date-time-picker'
+import UncontrolledDateTimePicker from './uncontrolled-date-time-picker'
 
 const App = () => {
   const [value, setValue] = useState<number | undefined>(Date.now())
@@ -14,57 +13,62 @@ const App = () => {
     <div className="p-8 max-w-4xl mx-auto">
       <h1 className="text-3xl font-bold mb-6">DateTimePicker Preview</h1>
 
-      <UncontrolledExample key={1} title="Basic usage (uncontrolled)" />
+      <UncontrolledDateTimePicker key={1} title="Basic usage (uncontrolled)" />
 
-      <ControlledExample
+      <ControlledDateTimePicker
+        pickerMode="DATETIME"
         date={value as number}
         key={2}
         onChange={setValue}
         title="Basic Usage (controlled) - default timezone (locale)"
       />
 
-      <ControlledExample
+      <ControlledDateTimePicker
         date={value as number}
         key={3}
         onChange={setValue}
+        pickerMode="DATETIME"
         timezone="America/New_York"
         locale="en_US"
         title="Date Picker (controlled) New York timezone"
       />
 
-      <ControlledExample
+      <ControlledDateTimePicker
         date={value as number}
         key={4}
         onChange={setValue}
+        pickerMode="DATETIME"
         timezone="Europe/London"
         locale="en_US"
         title="Date Picker (controlled) London timezone"
       />
 
-      <ControlledExample
+      <ControlledDateTimePicker
         date={value as number}
         key={5}
         onChange={setValue}
+        pickerMode="DATETIME"
         timezone="Europe/Paris"
         locale="en_US"
         title="Date Picker (controlled) Paris timezone"
       />
 
-      <ControlledExample
+      <ControlledDateTimePicker
         date={value as number}
         key={6}
         onChange={setValue}
+        pickerMode="DATETIME"
         timezone="Asia/Tokyo"
         locale="en_US"
         title="Date Picker (controlled) Tokyo timezone"
       />
 
-      <ControlledExample
+      <ControlledDateTimePicker
         date={value as number}
         key={7}
         onChange={setValue}
         locale="en_US"
-        pickerMode={PickerMode.DATETIME}
+        pickerMode="DATETIME"
         title="Date Time Picker (controlled) - default timezone (locale)"
       />
     </div>

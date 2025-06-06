@@ -1,18 +1,16 @@
 import { Meta, StoryObj } from '@storybook/react'
+import { withDateTimePicker } from '@storybook-decorators/withDateTimePicker'
 
-import { PickerMode } from '@enums'
+import { timezones } from '@components'
 
-import { DateTimePicker } from '..'
-import { timezones } from '../..'
-import { withDateTimePicker } from '../../../.storybook/decorators/withDateTimePicker'
+import DateRangePicker, { DateRangePickerProps } from '../DateRangePicker'
 
 import DateRangePickerIntegration, {
   DateRangePickerIntegrationProps,
 } from './DateRangePickerIntegration'
+import disabledControls from './disabledControls'
 
-import type { DateTimePickerProps } from '@types'
-
-const meta: Meta<typeof DateTimePicker> = {
+const meta: Meta<typeof DateRangePicker> = {
   title: 'DateRangePicker',
   parameters: {
     layout: 'fullscreen',
@@ -32,129 +30,20 @@ const meta: Meta<typeof DateTimePicker> = {
     },
   },
   tags: ['autodocs'],
-  component: DateTimePicker,
+  component: DateRangePicker,
   decorators: [withDateTimePicker],
 }
 
 export default meta
 
-const disabledControls = {
-  pickerMode: {
-    table: {
-      disable: true,
-    },
-  },
-  disabled: {
-    table: {
-      disable: true,
-    },
-  },
-  errorMessage: {
-    table: {
-      disable: true,
-    },
-  },
-  helperText: {
-    table: {
-      disable: true,
-    },
-  },
-  label: {
-    table: {
-      disable: true,
-    },
-  },
-  labelInfo: {
-    table: {
-      disable: true,
-    },
-  },
-  required: {
-    table: {
-      disable: true,
-    },
-  },
-  severity: {
-    table: {
-      disable: true,
-    },
-  },
-  size: {
-    table: {
-      disable: true,
-    },
-  },
-  noDefault: {
-    table: {
-      disable: true,
-    },
-  },
-  isControlled: {
-    table: {
-      disable: true,
-    },
-  },
-  onClose: {
-    table: {
-      disable: true,
-    },
-  },
-  locale: {
-    table: {
-      disable: true,
-    },
-  },
-  onDateChange: {
-    table: {
-      disable: true,
-    },
-  },
-  onDateRangeChange: {
-    table: {
-      disable: true,
-    },
-  },
-  enablePortal: {
-    table: {
-      disable: true,
-    },
-  },
-  open: {
-    table: {
-      disable: true,
-    },
-  },
-  placement: {
-    table: {
-      disable: true,
-    },
-  },
-  date: {
-    table: {
-      disable: true,
-    },
-  },
-}
-
-type Story = StoryObj<typeof DateTimePicker>
+type Story = StoryObj<typeof DateRangePicker>
 type IntegrationStory = StoryObj<typeof DateRangePickerIntegration>
 
-export const DateRangeUncontrolled: Story = {
-  render: (args: DateTimePickerProps) => <DateTimePicker {...args} />,
+export const Uncontrolled: Story = {
+  render: (args: DateRangePickerProps) => <DateRangePicker {...args} />,
   name: 'Uncontrolled',
   args: {
     timezone: 'Europe/Paris',
-    pickerMode: PickerMode.DATERANGE,
-  },
-}
-
-export const WithPortal: Story = {
-  render: (args: DateTimePickerProps) => <DateTimePicker {...args} />,
-  name: 'With Portal',
-  args: {
-    enablePortal: true,
-    pickerMode: PickerMode.DATERANGE,
-    dateRange: [1744137767000, 1745520167000],
   },
 }
 
@@ -165,17 +54,25 @@ export const Controlled: IntegrationStory = {
   name: 'Controlled',
   args: {
     timezone: 'Europe/Paris',
-    pickerMode: PickerMode.DATERANGE,
+    pickerMode: 'DATERANGE',
     dateRange: [1744137767000, 1745520167000],
   },
   argTypes: disabledControls,
 }
 
-export const DateWithMaxAndMin: Story = {
-  ...DateRangeUncontrolled,
+export const WithPortal: Story = {
+  render: (args: DateRangePickerProps) => <DateRangePicker {...args} />,
+  name: 'With Portal',
+  args: {
+    enablePortal: true,
+    dateRange: [1744137767000, 1745520167000],
+  },
+}
+
+export const WithMaxAndMin: Story = {
+  ...Uncontrolled,
   name: 'with min & max values for date',
   args: {
-    pickerMode: PickerMode.DATERANGE,
     dateRange: [1744137767000, 1745520167000],
     minDate: 1741718567000,
     maxDate: 1750272167000,
@@ -187,7 +84,7 @@ export const DateWithMaxAndMin: Story = {
 }
 
 export const Loading: Story = {
-  ...DateRangeUncontrolled,
+  ...Uncontrolled,
   name: 'Loading',
   args: {
     dateRange: [1744137767000, 1745520167000],
@@ -200,7 +97,7 @@ export const Loading: Story = {
 }
 
 export const DateRangeWithDates: Story = {
-  ...DateRangeUncontrolled,
+  ...Uncontrolled,
   name: 'Date Range picker with dates',
   args: {
     dateRange: [1744137767000, 1745520167000],

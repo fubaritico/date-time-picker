@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 
-import { PanelView, PickerMode } from '@enums'
+import { PanelView } from '@enums'
 
 import DateTimePickerContext from './DateTimePickerContext'
 
@@ -26,10 +26,10 @@ const DateTimePickerProvider: FC<PropsWithChildren<PickerProviderProps>> = ({
   hasLabel,
   locale = 'en_US',
   noDefault,
-  pickerMode = PickerMode.DATE,
+  pickerMode = 'DATE',
 }) => {
   const [panelView, setPanelView] = useState(
-    pickerMode === PickerMode.TIME ? PanelView.TIME : PanelView.DAYS
+    pickerMode === 'TIME' ? PanelView.TIME : PanelView.DAYS
   )
 
   const innerLocale = useMemo(() => {

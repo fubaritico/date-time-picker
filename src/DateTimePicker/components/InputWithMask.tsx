@@ -61,7 +61,7 @@ const InputWithMask: FC<InputWithMaskProps> = ({
         iconAriaLabel="Open calendar panel"
         iconName={
           withPanel
-            ? pickerMode === PickerMode.TIME
+            ? pickerMode === 'TIME'
               ? 'HiClock'
               : 'HiMiniCalendarDays'
             : undefined

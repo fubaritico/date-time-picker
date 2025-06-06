@@ -1,12 +1,12 @@
+import { AnyPickerProps } from '@types'
 import { useState } from 'react'
 
-import type { DateTimePickerProps } from '@types'
 import type { Dispatch, FC, ReactNode, SetStateAction } from 'react'
 
-interface IntegrationProps extends DateTimePickerProps {
+type IntegrationProps = AnyPickerProps & {
   spyOnDateChange?: (date: number) => void
   children: (props: {
-    props: DateTimePickerProps
+    props: AnyPickerProps
     currentValue?: number
     setCurrentValue: Dispatch<SetStateAction<number | undefined>>
   }) => ReactNode

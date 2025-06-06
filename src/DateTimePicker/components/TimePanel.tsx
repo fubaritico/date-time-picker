@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import { useCallback, useEffect, useState } from 'react'
 
-import { PanelView, PickerMode } from '@enums'
+import { PanelView } from '@enums'
 
 import {
   addHours,
@@ -67,9 +67,9 @@ const TimePanel: FC<TimePanelProps> = ({ className, onDateChange, size }) => {
    */
   const gotoPrevHour = useCallback((): void => {
     // In DATETIME mode, the entire innerDate is taken into account
-    if (pickerMode === PickerMode.DATETIME) {
+    if (pickerMode === 'DATETIME') {
       onDateChange?.(subtractHours(date, 1), PanelView.TIME)
-    } else if (pickerMode === PickerMode.TIME) {
+    } else if (pickerMode === 'TIME') {
       // Here we don't change the date part, only the time part,
       // so we can loop between 00:00 AM and 11:59 PM
       const oldTime = date
@@ -98,9 +98,9 @@ const TimePanel: FC<TimePanelProps> = ({ className, onDateChange, size }) => {
    */
   const gotoNextHour = useCallback((): void => {
     // In DATETIME mode, the entire date is taken into account
-    if (pickerMode === PickerMode.DATETIME) {
+    if (pickerMode === 'DATETIME') {
       onDateChange?.(addHours(date, 1), PanelView.TIME)
-    } else if (pickerMode === PickerMode.TIME) {
+    } else if (pickerMode === 'TIME') {
       // Here we don't change the date part, only the time part,
       // so we can loop between 00:00 AM and 11:59 PM
       const oldTime = date
@@ -129,9 +129,9 @@ const TimePanel: FC<TimePanelProps> = ({ className, onDateChange, size }) => {
    */
   const gotoPrevMinute = useCallback((): void => {
     // In DATETIME mode, the entire date is taken into account
-    if (pickerMode === PickerMode.DATETIME) {
+    if (pickerMode === 'DATETIME') {
       onDateChange?.(subtractMinutes(date, 1), PanelView.TIME)
-    } else if (pickerMode === PickerMode.TIME) {
+    } else if (pickerMode === 'TIME') {
       // Here we don't change the date part, only the time part,
       // so we can loop between 00:00 AM and 11:59 PM
       const oldTime = date
@@ -160,9 +160,9 @@ const TimePanel: FC<TimePanelProps> = ({ className, onDateChange, size }) => {
    */
   const gotoNextMinute = useCallback((): void => {
     // In DATETIME mode, the entire date is taken into account
-    if (pickerMode === PickerMode.DATETIME) {
+    if (pickerMode === 'DATETIME') {
       onDateChange?.(addMinutes(date), PanelView.TIME)
-    } else if (pickerMode === PickerMode.TIME) {
+    } else if (pickerMode === 'TIME') {
       // Here we don't change the date part, only the time part,
       // so we can loop between 00:00 AM and 11:59 PM
       const oldTime = date

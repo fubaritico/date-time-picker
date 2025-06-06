@@ -166,7 +166,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
                 class="border appearance-none truncate outline-0 w-full rounded-md shadow-none pl-4 pr-4 transition-all duration-300 !text-sm pl-[42px] !border-gray-300 !bg-gray-50 !text-gray-500 focus:!border-blue-600 focus:!text-gray-900 placeholder:!text-gray-400 !text-gray-500 font-roboto"
                 style="height: 42px;"
                 type="text"
-                value="2025/04/01"
+                value="2025/04/01 12:28 PM"
               />
               <div
                 aria-label="Open calendar panel"
@@ -204,6 +204,57 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
           class="flex flex-col bg-white font-roboto rounded-lg shadow-elevation-1 absolute left-0 top-[54px] w-[308px] dtp-exit dtp-exit-active"
           style="position: absolute; top: 5px; left: 0px;"
         >
+          <div
+            class="flex justify-between items-stretch border-b border-b-gray-100 h-[46px]"
+          >
+            <button
+              aria-label="Switch to days view"
+              class="flex justify-center items-center rounded-tl-lg transition duration-500 grow bg-blue-illustration text-blue-700"
+            >
+              <svg
+                aria-hidden="true"
+                class="h-6 w-6"
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12.75 12.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM7.5 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM8.25 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM9.75 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM10.5 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM12.75 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM14.25 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM15 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM16.5 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM15 12.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM16.5 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                />
+                <path
+                  clip-rule="evenodd"
+                  d="M6.75 2.25A.75.75 0 0 1 7.5 3v1.5h9V3A.75.75 0 0 1 18 3v1.5h.75a3 3 0 0 1 3 3v11.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V7.5a3 3 0 0 1 3-3H6V3a.75.75 0 0 1 .75-.75Zm13.5 9a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5Z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </button>
+            <button
+              aria-label="Switch to time view"
+              class="flex justify-center items-center rounded-tr-lg transition duration-500 grow hover:bg-gray-100 hover:gray-red-800 text-gray-500"
+            >
+              <svg
+                aria-hidden="true"
+                class="h-6 w-6"
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
           <div
             class="flex flex-col"
             data-test="date-panel"
@@ -650,7 +701,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
                 class="border appearance-none truncate outline-0 w-full rounded-md shadow-none pl-4 pr-4 transition-all duration-300 !text-sm pl-[42px] !border-gray-300 !bg-gray-50 !text-gray-500 focus:!border-blue-600 focus:!text-gray-900 placeholder:!text-gray-400 !text-gray-500 font-roboto"
                 style="height: 42px;"
                 type="text"
-                value="2025/03/15"
+                value="2025/03/15 12:28 PM"
               />
               <div
                 aria-label="Open calendar panel"
@@ -688,6 +739,57 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
           class="flex flex-col bg-white font-roboto rounded-lg shadow-elevation-1 absolute left-0 top-[54px] w-[308px] dtp-enter dtp-enter-active"
           style="position: absolute; top: 5px; left: 0px;"
         >
+          <div
+            class="flex justify-between items-stretch border-b border-b-gray-100 h-[46px]"
+          >
+            <button
+              aria-label="Switch to days view"
+              class="flex justify-center items-center rounded-tl-lg transition duration-500 grow bg-blue-illustration text-blue-700"
+            >
+              <svg
+                aria-hidden="true"
+                class="h-6 w-6"
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12.75 12.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM7.5 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM8.25 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM9.75 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM10.5 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM12.75 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM14.25 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM15 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM16.5 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM15 12.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM16.5 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                />
+                <path
+                  clip-rule="evenodd"
+                  d="M6.75 2.25A.75.75 0 0 1 7.5 3v1.5h9V3A.75.75 0 0 1 18 3v1.5h.75a3 3 0 0 1 3 3v11.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V7.5a3 3 0 0 1 3-3H6V3a.75.75 0 0 1 .75-.75Zm13.5 9a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5Z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </button>
+            <button
+              aria-label="Switch to time view"
+              class="flex justify-center items-center rounded-tr-lg transition duration-500 grow hover:bg-gray-100 hover:gray-red-800 text-gray-500"
+            >
+              <svg
+                aria-hidden="true"
+                class="h-6 w-6"
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
           <div
             class="flex flex-col"
             data-test="date-panel"
@@ -957,7 +1059,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <div
                 aria-current="true"
-                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white shadow-blue-600 text-blue-600 hover:text-white hover:bg-blue-600"
+                class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm bg-white shadow-border border-2 border-blue-600 text-blue-600 hover:text-white hover:bg-blue-600"
                 data-date="1742041693000"
                 data-test="1742041693000"
                 role="button"
@@ -1156,7 +1258,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should sho
                 class="border appearance-none truncate outline-0 w-full rounded-md shadow-none pl-4 pr-4 transition-all duration-300 !text-sm pl-[42px] !border-gray-300 !bg-gray-50 !text-gray-500 focus:!border-blue-600 focus:!text-gray-900 placeholder:!text-gray-400 !text-gray-500 font-roboto"
                 style="height: 42px;"
                 type="text"
-                value="2025/03/15"
+                value="2025/03/15 12:28 PM"
               />
               <div
                 aria-label="Open calendar panel"
@@ -1194,6 +1296,57 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should sho
           class="flex flex-col bg-white font-roboto rounded-lg shadow-elevation-1 absolute left-0 top-[54px] w-[308px] dtp-enter dtp-enter-active"
           style="position: absolute; top: 5px; left: 0px;"
         >
+          <div
+            class="flex justify-between items-stretch border-b border-b-gray-100 h-[46px]"
+          >
+            <button
+              aria-label="Switch to days view"
+              class="flex justify-center items-center rounded-tl-lg transition duration-500 grow bg-blue-illustration text-blue-700"
+            >
+              <svg
+                aria-hidden="true"
+                class="h-6 w-6"
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12.75 12.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM7.5 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM8.25 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM9.75 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM10.5 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM12.75 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM14.25 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM15 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM16.5 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM15 12.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM16.5 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                />
+                <path
+                  clip-rule="evenodd"
+                  d="M6.75 2.25A.75.75 0 0 1 7.5 3v1.5h9V3A.75.75 0 0 1 18 3v1.5h.75a3 3 0 0 1 3 3v11.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V7.5a3 3 0 0 1 3-3H6V3a.75.75 0 0 1 .75-.75Zm13.5 9a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5Z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </button>
+            <button
+              aria-label="Switch to time view"
+              class="flex justify-center items-center rounded-tr-lg transition duration-500 grow hover:bg-gray-100 hover:gray-red-800 text-gray-500"
+            >
+              <svg
+                aria-hidden="true"
+                class="h-6 w-6"
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
           <div
             class="flex flex-col"
             data-test="year-panel"
@@ -1570,7 +1723,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                   class="border appearance-none truncate outline-0 w-full rounded-md shadow-none pl-4 pr-4 transition-all duration-300 !text-sm pl-[42px] !border-gray-300 !bg-gray-50 !text-gray-500 focus:!border-blue-600 focus:!text-gray-900 placeholder:!text-gray-400 !text-gray-500 font-roboto"
                   style="height: 42px;"
                   type="text"
-                  value="2025/03/15"
+                  value="2025/03/15 12:28 PM"
                 />
                 <div
                   aria-label="Open calendar panel"
@@ -1608,6 +1761,57 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
             class="flex flex-col bg-white font-roboto rounded-lg shadow-elevation-1 absolute left-0 top-[54px] w-[308px] dtp-enter dtp-enter-active"
             style="position: absolute; top: 5px; left: 0px;"
           >
+            <div
+              class="flex justify-between items-stretch border-b border-b-gray-100 h-[46px]"
+            >
+              <button
+                aria-label="Switch to days view"
+                class="flex justify-center items-center rounded-tl-lg transition duration-500 grow bg-blue-illustration text-blue-700"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="h-6 w-6"
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.75 12.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM7.5 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM8.25 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM9.75 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM10.5 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM12.75 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM14.25 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM15 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM16.5 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM15 12.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM16.5 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                  />
+                  <path
+                    clip-rule="evenodd"
+                    d="M6.75 2.25A.75.75 0 0 1 7.5 3v1.5h9V3A.75.75 0 0 1 18 3v1.5h.75a3 3 0 0 1 3 3v11.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V7.5a3 3 0 0 1 3-3H6V3a.75.75 0 0 1 .75-.75Zm13.5 9a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5Z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </button>
+              <button
+                aria-label="Switch to time view"
+                class="flex justify-center items-center rounded-tr-lg transition duration-500 grow hover:bg-gray-100 hover:gray-red-800 text-gray-500"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="h-6 w-6"
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
             <div
               class="flex flex-col"
               data-test="date-panel"
@@ -1877,7 +2081,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <div
                   aria-current="false"
-                  class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm cursor-not-allowed bg-white shadow-blue-600 text-blue-600 hover:text-white hover:bg-blue-600"
+                  class="font-bold flex justify-center items-center transition rounded-lg focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1 duration-500 h-9 w-9 text-sm cursor-not-allowed bg-white shadow-border border-2 border-blue-600 text-blue-600 hover:text-white hover:bg-blue-600"
                   data-date="1742041693000"
                   data-test="1742041693000"
                   role="button"

@@ -37,7 +37,6 @@ yarn-error.log*
 
 # Build
 /dist/
-/dev/
 /coverage/
 /.nyc_output/
 

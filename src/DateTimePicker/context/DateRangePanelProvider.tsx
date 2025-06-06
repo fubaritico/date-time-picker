@@ -34,14 +34,7 @@ const DateRangePanelProvider: FC<
     const currentMonth = Date.now() + msOffset
 
     if (dateRange[0] && dateRange[1]) {
-      // Months to work with
-      const defaultMonth = getMonthNameFromTimestamp(currentMonth)
-      const startDateMonth = getMonthNameFromTimestamp(dateRange[0])
-
-      // If the start date is not selected in the current month
-      if (defaultMonth !== startDateMonth) {
-        return getFirstInstantOfMonth(dateRange[0])
-      }
+      return getFirstInstantOfMonth(dateRange[0])
     }
 
     return getFirstInstantOfMonth(currentMonth)

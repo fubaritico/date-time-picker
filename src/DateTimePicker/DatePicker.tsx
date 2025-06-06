@@ -4,9 +4,9 @@ import Picker from './components/Picker'
 
 import type { FC } from 'react'
 
-export type DateTimePickerProps = CommonPickerProps<'DATETIME'>
+export type DatePickerProps = CommonPickerProps<'DATE'>
 
-const DateTimePicker: FC<DateTimePickerProps> = ({
+const DatePicker: FC<DatePickerProps> = ({
   date,
   onChange,
   locale,
@@ -14,15 +14,15 @@ const DateTimePicker: FC<DateTimePickerProps> = ({
   ...rest
 }) => {
   return (
-    <Picker
+    <Picker<'DATE'>
       {...rest}
       date={date}
       onChange={onChange}
       locale={locale}
-      pickerMode="DATETIME"
+      pickerMode="DATE"
       timezone={timezone}
     />
   )
 }
 
-export default DateTimePicker
+export default DatePicker

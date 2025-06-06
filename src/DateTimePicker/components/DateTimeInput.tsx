@@ -95,19 +95,19 @@ const DateTimeInput: FC<DateInputProps> = ({
       if (!errors) setInnerErrors(undefined)
 
       switch (pickerMode) {
-        case PickerMode.TIME:
+        case 'TIME':
           return formatTimestampForTextInput(
             innerDate,
             TIME_FORMAT[locale],
             gmtMsOffset
           )
-        case PickerMode.DATE:
+        case 'DATE':
           return formatTimestampForTextInput(
             innerDate,
             DATE_FORMAT[locale],
             gmtMsOffset
           )
-        case PickerMode.DATETIME:
+        case 'DATETIME':
           return formatTimestampForTextInput(
             innerDate,
             DATE_TIME_FORMAT[locale],
@@ -195,7 +195,7 @@ const DateTimeInput: FC<DateInputProps> = ({
 
       // Always attempt to parse, even with potentially invalid input
       const formattedNewInputValue =
-        pickerMode === PickerMode.TIME && !!innerDate
+        pickerMode === 'TIME' && !!innerDate
           ? formatNewInputValue(
               formatTimestampToDate(innerDate, locale) +
                 ' ' +

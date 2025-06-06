@@ -126,7 +126,7 @@ export default function useDateRangeInput({
 
       // Always attempt to parse, even with potentially invalid input
       const formattedNewInputValue =
-        pickerMode === PickerMode.TIME && !!date
+        pickerMode === 'TIME' && !!date
           ? formatNewInputValue(
               formatTimestampToDate(date, locale) + ' ' + validatedInputValue
             )

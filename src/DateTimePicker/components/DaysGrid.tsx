@@ -1,16 +1,15 @@
 import clsx from 'clsx'
 import { useCallback, useEffect, useState } from 'react'
 
-import { PickerMode } from '@enums'
-
-import { cx } from '../../utils'
 import {
   getAllWeekDaysNamesFromTs,
   getFirstDayOfCurrentMonthTs,
   getLastDayOfCurrentMonthTs,
   getStartDayOfWeekOfCurrentMonth,
   getStartOfDayTs,
-} from '../DateTimePicker.utils'
+} from '@components'
+
+import { cx } from '../../utils'
 import { useDateRangePanel, useDateTimePicker } from '../hooks'
 
 import type { BasicPickerProps } from '@types'
@@ -66,9 +65,10 @@ const DaysGrid: FC<DaysGridProps> = ({
   } = useDateRangePanel()
 
   /**
-   * Will check if the time stamp is within the range of the min & max dates
+   * Will check if the date timestamp is within the range of the min and max authorized dates.
+   * If not, the date cell won't be clickable.
    */
-  const isDateValid = useCallback(
+  const isDateClickable = useCallback(
     (ts: number) => {
       const isAfterMin = !minDate || ts >= minDate
       const isBeforeMax = !maxDate || ts <= maxDate
@@ -111,7 +111,7 @@ const DaysGrid: FC<DaysGridProps> = ({
 
       const clickedTs = Number(clickedDate)
 
-      if (pickerMode !== PickerMode.DATERANGE) {
+      if (pickerMode !== 'DATERANGE') {
         onDateChange?.(clickedTs)
 
         return
@@ -231,7 +231,7 @@ const DaysGrid: FC<DaysGridProps> = ({
         )
       )}
       {arrayOfDates.map((value: number, index: number) => {
-        const isValid = isDateValid(value)
+        const isClickable = isDateClickable(value)
         const isToday =
           getStartOfDayTs(Date.now() + msOffset) === getStartOfDayTs(value) &&
           !isSelectingRange
@@ -240,7 +240,7 @@ const DaysGrid: FC<DaysGridProps> = ({
         const endDateIsSelected =
           tempEndDate === value || dateRange[1] === value
         const isSelected =
-          (isValid && innerDate === value) ||
+          (isClickable && innerDate === value) ||
           startDateIsSelected ||
           endDateIsSelected
         const isInRange = dateIsInRange(value)
@@ -248,44 +248,44 @@ const DaysGrid: FC<DaysGridProps> = ({
         return (
           <div
             key={value}
-            tabIndex={isValid ? 0 : -1}
+            tabIndex={isClickable ? 0 : -1}
             role="button"
             aria-current={isSelected}
             data-date={value}
             data-test={value}
-            onClick={isValid ? handleDateClick : undefined}
-            onKeyDown={isValid ? handleKeyDown : undefined}
+            onClick={isClickable ? handleDateClick : undefined}
+            onKeyDown={isClickable ? handleKeyDown : undefined}
             onMouseEnter={
-              isValid && isSelectingRange ? handleDateMouseEnter : undefined
+              isClickable && isSelectingRange ? handleDateMouseEnter : undefined
             }
             className={cx(
               'font-bold flex justify-center items-center transition rounded-lg',
               'focus:outline-none focus-visible:outline-blue-illustration focus-visible:outline-1',
               {
-                'duration-500': pickerMode !== PickerMode.DATERANGE,
-                'duration-200': pickerMode === PickerMode.DATERANGE,
+                'duration-500': pickerMode !== 'DATERANGE',
+                'duration-200': pickerMode === 'DATERANGE',
                 'h-10 w-10': size === 'lg',
                 'h-9 w-9 text-sm': size === 'md',
                 'h-[30px] w-8': size === 'sm',
-                'border-r border-r-white last:border-r-0 -mx-0.5': isInRange,
-                'w-11': size === 'lg' && isInRange,
-                'w-10': size === 'md' && isInRange,
-                'h-[30px] w-8.5': size === 'sm' && isInRange,
                 'bg-white text-gray-900 hover:bg-gray-100':
                   getStartOfDayTs(Date.now() + msOffset) !==
                     getStartOfDayTs(value) &&
                   innerDate !== value &&
-                  isValid,
-                'text-gray-300 cursor-not-allowed': !isValid,
+                  isClickable,
+                'text-gray-300 cursor-not-allowed': !isClickable,
                 'text-white bg-blue-700 hover:bg-blue-800': isSelected,
+                'border-r border-r-white last:border-r-0 -mx-0.5': isInRange,
+                'w-11': size === 'lg' && isInRange,
+                'w-10': size === 'md' && isInRange,
+                'h-[30px] w-8.5': size === 'sm' && isInRange,
                 'text-blue-800 bg-blue-100 hover:blue-800 hover:bg-blue-100 rounded-none':
                   isInRange,
                 'rounded-l-md text-white bg-blue-700 hover:bg-blue-700 rounded-r-none w-10 -mx-0.5 border-r border-r-white':
                   startDateIsSelected,
                 'rounded-r-md text-white bg-blue-700 hover:bg-blue-700':
                   endDateIsSelected,
-                'bg-white shadow-border shadow-blue-600 text-blue-600 hover:text-white hover:bg-blue-600':
-                  isToday,
+                'bg-white shadow-border border-2 border-blue-600 text-blue-600 hover:text-white hover:bg-blue-600':
+                  isToday && !isInRange,
               }
             )}
           >

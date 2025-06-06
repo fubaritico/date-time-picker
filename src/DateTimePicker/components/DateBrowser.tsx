@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 
-import { PanelView, PickerMode } from '@enums'
+import { PanelView } from '@enums'
 import {
   ConditionalWrapper,
   Icon,
@@ -55,7 +55,7 @@ const DateBrowser: FC<DateBrowserProps> = ({
       </button>
       <div className="flex font-bold gap-1">
         <ConditionalWrapper
-          condition={pickerMode !== PickerMode.DATERANGE}
+          condition={pickerMode !== 'DATERANGE'}
           wrapper={(children: ReactNode) => (
             <button
               aria-label={getMonthNameFromTs(date + msOffset, locale)}
@@ -77,7 +77,7 @@ const DateBrowser: FC<DateBrowserProps> = ({
           <span>{getMonthNameFromTs(date + msOffset, locale)}</span>
         </ConditionalWrapper>
         <ConditionalWrapper
-          condition={pickerMode !== PickerMode.DATERANGE}
+          condition={pickerMode !== 'DATERANGE'}
           wrapper={(children: ReactNode) => (
             <button
               aria-label={getYearFromTs(date).toString()}

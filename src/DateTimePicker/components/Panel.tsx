@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import { memo, useCallback, useEffect, useRef, useState } from 'react'
 import { CSSTransition } from 'react-transition-group'
 
-import { PanelView, PickerMode } from '@enums'
+import { PanelView } from '@enums'
 
 import ClickAwayListener from '../../ClickAwayListener'
 import ConditionalWrapper from '../../ConditionalWrapper'
@@ -76,7 +76,7 @@ const Panel: FC<PanelProps> = ({
   const [position, setPosition] = useState({ top: 0, left: 0 })
   const dateTimeSwitcherRef = useRef<HTMLDivElement>(null)
   const nodeRef = useRef(null)
-  const isNotDateRangePicker = pickerMode !== PickerMode.DATERANGE
+  const isNotDateRangePicker = pickerMode !== 'DATERANGE'
 
   /**
    * Update the panel placement based on the trigger position.
@@ -236,7 +236,7 @@ const Panel: FC<PanelProps> = ({
           onClickAway={() => {
             setTimeout(() => {
               setPanelView(
-                pickerMode === PickerMode.TIME ? PanelView.TIME : PanelView.DAYS
+                pickerMode === 'TIME' ? PanelView.TIME : PanelView.DAYS
               )
             }, FADE_ANIMATION_DURATION)
             onClickOutside()
@@ -262,7 +262,7 @@ const Panel: FC<PanelProps> = ({
               left: `${position.left.toString()}px`,
             }}
           >
-            {pickerMode === PickerMode.DATERANGE && (
+            {pickerMode === 'DATERANGE' && (
               <DateRangePanelProvider
                 dateRange={innerDateRange}
                 msOffset={msOffset}
@@ -273,29 +273,25 @@ const Panel: FC<PanelProps> = ({
                 />
               </DateRangePanelProvider>
             )}
-            {pickerMode === PickerMode.DATETIME && (
+            {pickerMode === 'DATETIME' && (
               <DateTimeSwitcher
                 panelView={panelView}
                 ref={dateTimeSwitcherRef}
                 size={size}
               />
             )}
-            {pickerMode !== PickerMode.DATERANGE &&
-              panelView === PanelView.DAYS && (
-                <DatePanel size={size} onDateChange={handleOnDateChange} />
-              )}
-            {pickerMode !== PickerMode.DATERANGE &&
-              panelView === PanelView.MONTHS && (
-                <MonthsPanel size={size} onDateChange={handleOnDateChange} />
-              )}
-            {pickerMode !== PickerMode.DATERANGE &&
-              panelView === PanelView.YEARS && (
-                <YearsPanel size={size} onDateChange={handleOnDateChange} />
-              )}
-            {pickerMode !== PickerMode.DATERANGE &&
-              panelView === PanelView.TIME && (
-                <TimePanel size={size} onDateChange={handleOnDateChange} />
-              )}
+            {pickerMode !== 'DATERANGE' && panelView === PanelView.DAYS && (
+              <DatePanel size={size} onDateChange={handleOnDateChange} />
+            )}
+            {pickerMode !== 'DATERANGE' && panelView === PanelView.MONTHS && (
+              <MonthsPanel size={size} onDateChange={handleOnDateChange} />
+            )}
+            {pickerMode !== 'DATERANGE' && panelView === PanelView.YEARS && (
+              <YearsPanel size={size} onDateChange={handleOnDateChange} />
+            )}
+            {pickerMode !== 'DATERANGE' && panelView === PanelView.TIME && (
+              <TimePanel size={size} onDateChange={handleOnDateChange} />
+            )}
           </div>
         </ClickAwayListener>
       </CSSTransition>

@@ -1,6 +1,12 @@
-import { PanelView, PickerMode } from './enums'
+import { PanelView, PickerMode, PickerType } from './enums'
 
-import type { Dispatch, ReactElement, RefObject, SetStateAction } from 'react'
+import type {
+  Dispatch,
+  FC,
+  ReactElement,
+  RefObject,
+  SetStateAction,
+} from 'react'
 
 /**
  * Represents a range of dates, consisting of a start and end UNIX timestamp in milliseconds, or undefined.
@@ -80,14 +86,9 @@ export interface PickerProps extends BasicPickerProps {
   placement?: 'bottom-start' | 'bottom-end'
 }
 
-export interface DateTimePickerProps
+interface InternalDateTimePickerProps
   extends DateTimeTextInputProps,
-    PickerProps {
-  /* Date as a value of unix timestamp, the date will default to "now" if not provided */
-  date?: number
-  /* Date range as a tuple of two Unix timestamps */
-  dateRange?: DateRange
-}
+    PickerProps {}
 
 /**
  * Picker state properties passed to children component through context
@@ -148,6 +149,11 @@ export interface DateTimeTextInputProps {
   maxDate?: number
 }
 
+/**
+ * Date input properties
+ * To remove once a solution will be found to forward the component ref properly
+ *
+ */
 export interface DateInputProps extends DateTimeTextInputProps {
   /* Callback called on input change */
   onDateChange?: (value?: number) => void
@@ -158,3 +164,35 @@ export interface DateInputProps extends DateTimeTextInputProps {
   /* Icon to be displayed on the right (loading indicator, valid value...) */
   stateIcon?: ReactElement
 }
+
+/**
+ * Given a picker mode, returns the corresponding props
+ * @param T Picker mode
+ * @returns
+ */
+export type CommonPickerProps<T extends PickerMode> =
+  InternalDateTimePickerProps & {
+    pickerMode?: T
+  } & (T extends 'DATERANGE'
+      ? {
+          dateRange?: DateRange
+          onDateRangeChange?: (date: DateRange) => void
+          date?: never
+          onChange?: never
+        }
+      : {
+          date?: number
+          onChange?: (value?: number) => void
+          dateRange?: never[]
+          onDateRangeChange?: never
+        })
+
+/**
+ * Wrapper type for all picker properties
+ */
+export type AnyPickerProps = CommonPickerProps<PickerType>
+
+/**
+ * Wrapper type for all pickers
+ */
+export type AnyPickerComponent = FC<AnyPickerProps>

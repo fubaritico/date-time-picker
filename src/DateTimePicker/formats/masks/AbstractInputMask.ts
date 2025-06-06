@@ -70,9 +70,9 @@ abstract class AbstractInputMask {
    * @returns {InputMask} - The mask to be used. Defaults to date mask.
    */
   public getMask(): InputMask {
-    if (this.pickerMode === PickerMode.DATETIME) {
+    if (this.pickerMode === 'DATETIME') {
       return this.dateTimeMask
-    } else if (this.pickerMode === PickerMode.TIME) {
+    } else if (this.pickerMode === 'TIME') {
       return this.timeMask
     } else {
       return this.dateMask

@@ -1,15 +1,11 @@
 import { DateTimePicker } from '../src'
 
 import type { FC, ReactNode } from 'react'
-import type { DateTimePickerProps } from '@types'
+import type { CommonPickerProps } from '@types'
 
-const UncontrolledExample: FC<DateTimePickerProps & { title: ReactNode }> = ({
-  locale = 'en_US',
-  pickerMode,
-  title,
-  timezone,
-  ...rest
-}) => {
+const UncontrolledDateTimePicker: FC<
+  CommonPickerProps<'DATETIME'> & { title: ReactNode }
+> = ({ locale = 'en_US', pickerMode, title, timezone, ...rest }) => {
   return (
     <div className="mb-8">
       <h2 className="text-xl font-semibold mb-4">{title}</h2>
@@ -17,7 +13,6 @@ const UncontrolledExample: FC<DateTimePickerProps & { title: ReactNode }> = ({
         <DateTimePicker
           enablePortal
           locale={locale}
-          pickerMode={pickerMode}
           timezone={timezone}
           {...rest}
         />
@@ -26,4 +21,4 @@ const UncontrolledExample: FC<DateTimePickerProps & { title: ReactNode }> = ({
   )
 }
 
-export default UncontrolledExample
+export default UncontrolledDateTimePicker

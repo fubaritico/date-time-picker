@@ -26,7 +26,7 @@ export default [
         extensions: ['.ts', '.tsx'],
       }),
       dynamicImportVars({
-        exclude: ['src/DateTimePicker/styles.css'],
+        exclude: ['src/DateTimePicker/Picker.styles.css'],
       }),
       commonjs(),
       typescript({

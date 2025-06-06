@@ -1,12 +1,8 @@
 /**
- * Lists the behaviours of the component
+ * Lists the types of picker components
  */
-export enum PickerMode {
-  DATE = 'DATE',
-  TIME = 'TIME',
-  DATETIME = 'DATETIME',
-  DATERANGE = 'DATERANGE',
-}
+export type PickerType = 'DATE' | 'TIME' | 'DATETIME'
+export type PickerMode = PickerType | 'DATERANGE'
 
 /**
  * Lists the types of panel content to show

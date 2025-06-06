@@ -22,6 +22,7 @@
     "baseUrl": ".",
     "paths": {
       "@components": ["src/index.ts"],
+      "@storybook-decorators/*": [".storybook/decorators/*"],
       "@enums": ["src/DateTimePicker/types/enums.ts"],
       "@types": ["src/DateTimePicker/types/index.ts"],
     },
