@@ -1,8 +1,9 @@
 import ConditionalWrapper from '../ConditionalWrapper'
 import { cx } from '../utils'
 
-import buttonStyles, { type VariantButtonProps } from './Button.styles'
+import buttonStyles from './Button.styles'
 
+import type { VariantButtonProps } from './Button.styles'
 import type { ButtonHTMLAttributes, FC, ReactNode, RefObject } from 'react'
 
 export interface ButtonProps
