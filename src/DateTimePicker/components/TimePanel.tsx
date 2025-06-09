@@ -2,7 +2,6 @@ import clsx from 'clsx'
 import { useCallback, useEffect, useState } from 'react'
 
 import { PanelView } from '@enums'
-
 import {
   addHours,
   addMinutes,
@@ -15,7 +14,8 @@ import {
   padNumber,
   subtractHours,
   subtractMinutes,
-} from '../DateTimePicker.utils'
+} from '@components'
+
 import useDateTimePicker from '../hooks/useDateTimePicker'
 import usePanelDomRect from '../hooks/usePanelDomRect'
 

@@ -27,7 +27,7 @@ export type DaysGridProps = Omit<BasicPickerProps, 'onChange'> & {
   onEndDateChangeHandler?: (date: number) => void
   /* In DATE_RANGE .... */
   panelRole?: 'left' | 'right'
-  /* Panel size: 'sm' | 'md' | 'lg'  */
+  /* Panel size: 'sm' | 'md' | 'lg' */
   size?: UISize
 }
 
@@ -64,20 +64,6 @@ const DaysGrid: FC<DaysGridProps> = ({
     setTempEndDate,
     isSelectingRange,
   } = useDateRangePanel()
-
-  /**
-   * Will check if the date timestamp is within the range of the min and max authorized dates.
-   * If not, the date cell won't be clickable.
-   */
-  const isDateClickable = useCallback(
-    (ts: number) => {
-      const isAfterMin = !minDate || ts >= minDate
-      const isBeforeMax = !maxDate || ts <= maxDate
-      return isAfterMin && isBeforeMax
-    },
-    [minDate, maxDate]
-  )
-
   /**
    * Will set all the necessary math to display the grid of dates.
    */
@@ -172,6 +158,19 @@ const DaysGrid: FC<DaysGridProps> = ({
   )
 
   /**
+   * Will check if the date timestamp is within the range of the min and max authorized dates.
+   * If not, the date cell won't be clickable.
+   */
+  const isDateClickable = useCallback(
+    (ts: number) => {
+      const isAfterMin = !minDate || ts >= minDate
+      const isBeforeMax = !maxDate || ts <= maxDate
+      return isAfterMin && isBeforeMax
+    },
+    [minDate, maxDate]
+  )
+
+  /**
    * On init/mount, it will check if the date is in the range of the date range prop start and end dates.
    *
    * On selecting a range, it will check if the date is in the range of the temporary start and end dates.
@@ -195,6 +194,49 @@ const DaysGrid: FC<DaysGridProps> = ({
       return inRangeOnInit || temporaryInRange
     },
     [tempStartDate, tempEndDate, dateRange]
+  )
+
+  /**
+   * Will set the state of the grid cell based on the date and its properties.
+   * It will be used to determine if the cell is clickable, selected, in range, etc.
+   */
+  const setDaysGridState = useCallback(
+    (ts: number) => {
+      const isClickable = isDateClickable(ts)
+      const isToday =
+        getStartOfDayTs(Date.now() + msOffset) === getStartOfDayTs(ts)
+      const startDateIsSelected = tempStartDate === ts || dateRange[0] === ts
+      const endDateIsSelected = tempEndDate === ts || dateRange[1] === ts
+      const isSelected = isClickable && innerDate === ts
+      const isInRange = dateIsInRange(ts)
+      const defaultBehavior =
+        getStartOfDayTs(Date.now() + msOffset) !== getStartOfDayTs(ts) &&
+        innerDate !== ts &&
+        isClickable &&
+        !startDateIsSelected &&
+        !endDateIsSelected &&
+        !isInRange &&
+        !isToday
+
+      return {
+        isClickable,
+        isToday,
+        startDateIsSelected,
+        endDateIsSelected,
+        isSelected,
+        isInRange,
+        defaultBehavior,
+      }
+    },
+    [
+      innerDate,
+      msOffset,
+      isDateClickable,
+      tempStartDate,
+      tempEndDate,
+      dateRange,
+      dateIsInRange,
+    ]
   )
 
   return (
@@ -233,35 +275,15 @@ const DaysGrid: FC<DaysGridProps> = ({
         )
       )}
       {arrayOfDates.map((value: number, index: number) => {
-        const isClickable = isDateClickable(value)
-        const isToday =
-          getStartOfDayTs(Date.now() + msOffset) === getStartOfDayTs(value) &&
-          !isSelectingRange
-        const startDateIsSelected =
-          tempStartDate === value || dateRange[0] === value
-        const endDateIsSelected =
-          tempEndDate === value || dateRange[1] === value
-        const isSelected =
-          (isClickable && innerDate === value) ||
-          startDateIsSelected ||
-          endDateIsSelected
-        const isInRange = dateIsInRange(value)
-
         return (
           <DaysGridCell
+            {...setDaysGridState(value)}
+            key={value}
             handleDateClick={handleDateClick}
             handleKeyDown={handleKeyDown}
             handleDateMouseEnter={handleDateMouseEnter}
-            isClickable={isClickable}
-            isSelected={isSelected}
-            isToday={isToday}
-            isInRange={isInRange}
+            hasDateRangeMode={pickerMode === 'DATERANGE'}
             isSelectingRange={isSelectingRange}
-            msOffset={msOffset}
-            pickerMode={pickerMode}
-            startDateIsSelected={startDateIsSelected}
-            innerDate={innerDate}
-            endDateIsSelected={endDateIsSelected}
             size={size}
             value={value}
           >

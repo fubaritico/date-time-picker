@@ -193,9 +193,8 @@ const runTests = (timezone?: Timezone) => {
         expect(baseElement).toMatchSnapshot()
       }
 
-      // TODO: must be 'font-bold bg-blue-700 text-white'
       expect(await screen.findByTestId(dateTimestamp.toString())).toHaveClass(
-        'font-bold bg-white text-blue-600'
+        'font-bold bg-blue-700 text-white'
       )
     })
 
