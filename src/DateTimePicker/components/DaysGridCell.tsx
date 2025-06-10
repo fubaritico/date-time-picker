@@ -1,4 +1,4 @@
-import { cx } from '../../utils'
+import { cx } from '@utils'
 
 import daysGridCellStyles from './DaysGridCell.styles'
 

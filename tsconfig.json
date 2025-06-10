@@ -25,7 +25,8 @@
       "@constants": ["src/constants.ts"],
       "@enums": ["src/DateTimePicker/types/enums.ts"],
       "@storybook-decorators/*": [".storybook/decorators/*"],
-      "@types": ["src/DateTimePicker/types/index.ts"]
+      "@types": ["src/DateTimePicker/types/index.ts"],
+      "@utils": ["src/utils.ts"]
     },
   },
   "include": ["src/**/*", "dev/**/*", "global.d.ts", "declarations.d.ts"],

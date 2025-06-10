@@ -29,6 +29,7 @@ const customJestConfig: JestConfigWithTsJest = {
     '^@constants$': '<rootDir>/src/constants.ts',
     '^@enums$': '<rootDir>/src/DateTimePicker/types/enums.ts',
     '^@types$': '<rootDir>/src/DateTimePicker/types/index.ts',
+    '^@utils$': '<rootDir>/src/utils.ts',
   },
   setupFilesAfterEnv: [
     '<rootDir>/jest.setup.ts',

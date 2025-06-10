@@ -128,6 +128,11 @@ export default tseslint.config(
               group: 'internal',
               position: 'before',
             },
+            {
+              pattern: '@utils',
+              group: 'internal',
+              position: 'before',
+            },
           ],
           pathGroupsExcludedImportTypes: ['type'],
           distinctGroup: false,
