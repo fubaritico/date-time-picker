@@ -1,6 +1,6 @@
 # DateTimePicker Component
 
-A React 19.x date-time picker component, using TypeScript 5.x, styled with Tailwind 3.x CSS styling.
+A React 19.x date-time picker component, using TypeScript 5.x, styled with Tailwind 3.x and CVA for styling.
 
 ### Work in progress
 
@@ -10,27 +10,32 @@ Tests have to be written for `DateRangePicker`.
 
 A migration to Tailwind 4.x is planned.
 
-Theme coloring has to be implemented. It will be based on Tailwind CSS colors. A color property will be added to the components. It will work with `cva` under the hood.
+Dark mode will be added soon.
 
-## Props
+## Properties
 
-| Prop | Type                           | Default             | Description                                                                                                               |
-|------|--------------------------------|---------------------|---------------------------------------------------------------------------------------------------------------------------|
-| date | number                         | undefined                | When using `DatePicker`, `DateTimePicker` or `TimePicker`, date as an UTC timestamp. It will default to now if not provided     |
-| dateRange | [number, number]                     | [undefined, undefined] | When using `DateRangePicker`, range date as a tuple of two Unix timestamps                                                  |
-| enablePortal | boolean                        | false               | Whether to render the panel in a portal                                                                                   |
-| errors | string[]                       | []                  | Error messages to display                                                                                                 |
-| loading | boolean                        | false               | If true, the input text is disabled and a loading animation is displayed on the right                                     |
-| locale | string                         | 'en'                | Locale language in international ISO-8601                                                                                 |
-| maxDate | Date                           | undefined                | When defining a valid/enabled range of dates, it will be the max/end date                                                 |
-| minDate | Date                           | undefined                | When defining a valid/enabled range of dates, it will be the min/start date                                               |
-| pickerMode | 'DATE' \| 'TIME' \| 'DATETIME' \| 'DATERANGE' | 'DATE'          | (dev and integration tests only) The mode of the picker                                                                   |
-| noDefault | boolean                        | false               | If true, no default date (today) will be displayed                                                                        |
-| onDateChange | (value?: number) => void                       | undefined                | When using `DatePicker`, `DateTimePicker` or `TimePicker`, this function is called on date click if the component is controlled |
-| onDateRangeChange | (date: [number, number]) => void                       | undefined                | When using `DateRangePicker`, this function is called on date range change                                                  |
-| placement | 'bottom-start' \| 'bottom-end'                         | 'bottom-start'      | The placement of the panel                                                                                                |
-| size | 'sm' \| 'md' \| 'lg'           | 'md'                | The size of the component                                                                                                 |
-| timezone | string                         | undefined                | Timezone list member based on moment.js                                                                                   |
+| Properties        | Type                                          | Default             | Description                                                                                                                     |
+|-------------------|-----------------------------------------------|---------------------|---------------------------------------------------------------------------------------------------------------------------------|
+| color             | string                                        | undefined                | Based on Tailwind palette names.                                                                                                |
+| date              | number                                        | undefined                | When using `DatePicker`, `DateTimePicker` or `TimePicker`, date as an UTC timestamp. It will default to now if not provided     |
+| dateRange         | [number, number]                              | [undefined, undefined] | When using `DateRangePicker`, range date as a tuple of two Unix timestamps                                                      |
+| enablePortal      | boolean                                       | false               | Whether to render the panel in a portal                                                                                         |
+| errors            | string[]                                      | []                  | Error messages to display                                                                                                       |
+| loading           | boolean                                       | false               | If true, the input text is disabled and a loading animation is displayed on the right                                           |
+| locale            | string                                        | 'en'                | Locale language in international ISO-8601                                                                                       |
+| maxDate           | Date                                          | undefined                | When defining a valid/enabled range of dates, it will be the max/end date                                                       |
+| minDate           | Date                                          | undefined                | When defining a valid/enabled range of dates, it will be the min/start date                                                     |
+| pickerMode        | 'DATE' \| 'TIME' \| 'DATETIME' \| 'DATERANGE' | 'DATE'          | (dev and integration tests only) The mode of the picker                                                                         |
+| noDefault         | boolean                                       | false               | If true, no default date (today) will be displayed                                                                              |
+| onDateChange      | (value?: number) => void                      | undefined                | When using `DatePicker`, `DateTimePicker` or `TimePicker`, this function is called on date click if the component is controlled |
+| onDateRangeChange | (date: [number, number]) => void              | undefined                | When using `DateRangePicker`, this function is called on date range change                                                      |
+| placement         | 'bottom-start' \| 'bottom-end'                | 'bottom-start'      | The placement of the panel                                                                                                      |
+| size              | 'sm' \| 'md' \| 'lg'                          | 'md'                | The size of the component                                                                                                       |
+| timezone          | string                                        | undefined                | Timezone list member based on moment.js                                                                                         |
+
+### Color themes
+
+Theme coloring is now implemented. It is based on Tailwind CSS colors. It works with `cva` under the hood.
 
 ## Development
 
