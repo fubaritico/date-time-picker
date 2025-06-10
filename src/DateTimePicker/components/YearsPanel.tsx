@@ -8,7 +8,7 @@ import Icon from '../../Icon'
 import useDateTimePicker from '../hooks/useDateTimePicker'
 import usePanelDomRect from '../hooks/usePanelDomRect'
 
-import panelButtonStyles from './PanelButton.styles'
+import panelButtonStyles from './styles/PanelButton.styles'
 
 import type { FC, MouseEvent } from 'react'
 

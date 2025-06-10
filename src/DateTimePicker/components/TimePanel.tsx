@@ -20,7 +20,7 @@ import {
 import useDateTimePicker from '../hooks/useDateTimePicker'
 import usePanelDomRect from '../hooks/usePanelDomRect'
 
-import panelButtonStyles from './PanelButton.styles'
+import panelButtonStyles from './styles/PanelButton.styles'
 import TimePanelSetter from './TimePanelSetter'
 
 import type { FC } from 'react'
@@ -28,7 +28,7 @@ import type { FC } from 'react'
 export interface TimePanelProps {
   /* Tailwind CSS classes overrides or extensions for more flexibility */
   className?: string
-  /* Callback function called when a innerDate is selected */
+  /* Callback function called when a date is selected */
   onDateChange?: (innerDate: number, from: PanelView) => void
   /* Panel size: 'sm' | 'md' | 'lg' */
   size?: UISize
@@ -270,6 +270,7 @@ const TimePanel: FC<TimePanelProps> = ({ className, onDateChange, size }) => {
             className={cx(
               panelButtonStyles({
                 isSelected: getCurrentAMPM(date) === 'PM',
+                color,
                 size,
               })
             )}

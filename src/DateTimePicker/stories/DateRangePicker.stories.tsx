@@ -1,14 +1,16 @@
-import { Meta, StoryObj } from '@storybook/react'
 import { withDateTimePicker } from '@storybook-decorators/withDateTimePicker'
 
+import { COLORS } from '@constants'
 import { timezones } from '@components'
 
-import DateRangePicker, { DateRangePickerProps } from '../DateRangePicker'
+import DateRangePicker from '../DateRangePicker'
 
-import DateRangePickerIntegration, {
-  DateRangePickerIntegrationProps,
-} from './DateRangePickerIntegration'
+import DateRangePickerIntegration from './DateRangePickerIntegration'
 import disabledControls from './disabledControls'
+
+import type { DateRangePickerIntegrationProps } from './DateRangePickerIntegration'
+import type { DateRangePickerProps } from '../DateRangePicker'
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof DateRangePicker> = {
   title: 'DateRangePicker',
@@ -26,6 +28,20 @@ const meta: Meta<typeof DateRangePicker> = {
           }
           return acc
         }, {}),
+      },
+    },
+    color: {
+      options: COLORS,
+      control: {
+        type: 'select',
+        labels: COLORS.reduce<Record<UIColor, string>>(
+          (acc, color) => {
+            acc[color] = color
+
+            return acc
+          },
+          {} as Record<UIColor, string>
+        ),
       },
     },
   },
@@ -95,4 +111,31 @@ export const DateRangeWithDates: Story = {
     label: 'Select a Date',
   },
   argTypes: disabledControls,
+}
+
+export const Colored: Story = {
+  ...Uncontrolled,
+  name: 'With theme colors',
+  args: {
+    ...Uncontrolled.args,
+    dateRange: [1744137767000, 1745520167000],
+    color: 'orange',
+  },
+  argTypes: {
+    ...disabledControls,
+    color: {
+      options: COLORS,
+      control: {
+        type: 'select',
+        labels: COLORS.reduce<Record<UIColor, string>>(
+          (acc, color) => {
+            acc[color] = color
+
+            return acc
+          },
+          {} as Record<UIColor, string>
+        ),
+      },
+    },
+  },
 }

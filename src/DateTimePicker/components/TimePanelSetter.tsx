@@ -3,9 +3,13 @@ import Icon from '../../Icon/Icon'
 import type { FC } from 'react'
 
 interface TimePanelSetterProps {
+  /*  */
   date: string
+  /*  */
   onBottomButtonClick: () => void
+  /*  */
   onTopButtonClick: () => void
+  /*  */
   unit: string
 }
 

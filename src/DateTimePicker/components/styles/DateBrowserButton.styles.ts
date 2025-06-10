@@ -16,7 +16,6 @@ const buildThemeColorClasses = (color: UIColor) => ({
 
 const dateBrowserButtonStyles = cva(
   [
-    'hover:text-blue-700',
     'transition-colors',
     'duration-500',
     'focus:outline-none',

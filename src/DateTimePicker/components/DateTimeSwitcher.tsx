@@ -7,7 +7,7 @@ import { Icon } from '@components'
 
 import useDateTimePicker from '../hooks/useDateTimePicker'
 
-import dateTimeSwitcherStyles from './DateTimeSwitcher.styles'
+import dateTimeSwitcherStyles from './styles/DateTimeSwitcher.styles'
 
 interface DataTimeSwitcherProps {
   /* Type of view currently displayed: 'DAYS' or 'TIME' */

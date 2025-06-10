@@ -1,5 +1,6 @@
 import { withDateTimePicker } from '@storybook-decorators/withDateTimePicker'
 
+import { COLORS } from '@constants'
 import { timezones } from '@components'
 
 import DateTimePicker, { DateTimePickerProps } from '../DateTimePicker'
@@ -95,4 +96,31 @@ export const WithMaxAndMin: Story = {
     label: 'Select a Date (within next week)',
   },
   argTypes: disabledControls,
+}
+
+export const Colored: Story = {
+  ...Uncontrolled,
+  name: 'With theme colors',
+  args: {
+    ...Uncontrolled.args,
+    date: 1696629600000,
+    color: 'orange',
+  },
+  argTypes: {
+    ...disabledControls,
+    color: {
+      options: COLORS,
+      control: {
+        type: 'select',
+        labels: COLORS.reduce<Record<UIColor, string>>(
+          (acc, color) => {
+            acc[color] = color
+
+            return acc
+          },
+          {} as Record<UIColor, string>
+        ),
+      },
+    },
+  },
 }

@@ -1,8 +1,8 @@
 import { cx } from '@utils'
 
-import daysGridCellStyles from './DaysGridCell.styles'
+import daysGridCellStyles from './styles/DaysGridCell.styles'
 
-import type { VariantDaysGridCellProps } from './DaysGridCell.styles'
+import type { VariantDaysGridCellProps } from './styles/DaysGridCell.styles'
 import type {
   ComponentProps,
   FC,
