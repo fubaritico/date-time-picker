@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 
-import Icon from '../../Icon'
+import { cx } from '@utils'
 import {
   addYears,
   formatToYYYYMMDD,
@@ -9,9 +9,13 @@ import {
   getLongMonthNameFromTs,
   getTimestampsForEachMonth,
   subtractYears,
-} from '../DateTimePicker.utils'
+} from '@components'
+
+import Icon from '../../Icon'
 import useDateTimePicker from '../hooks/useDateTimePicker'
 import usePanelDomRect from '../hooks/usePanelDomRect'
+
+import panelButtonStyles from './PanelButton.styles'
 
 import type { FC, MouseEvent } from 'react'
 
@@ -37,7 +41,7 @@ const MonthsPanel: FC<MonthsPanelProps> = ({
   onDateChange,
   size,
 }) => {
-  const { innerDate, msOffset, locale } = useDateTimePicker()
+  const { color, innerDate, msOffset, locale } = useDateTimePicker()
   const [date, setDate] = useState<number>(innerDate ?? Date.now() + msOffset)
 
   const panelRef = usePanelDomRect()
@@ -143,17 +147,13 @@ const MonthsPanel: FC<MonthsPanelProps> = ({
           return (
             <button
               aria-label={`Choose ${allMonthNames[i]}`}
-              className={clsx(
-                'p-2 rounded-lg truncate',
-                'transition duration-200 ease-in-out',
-                {
-                  'text-gray-900 hover:bg-gray-100':
-                    allMonthNames[i] !== getLongMonthNameFromTs(date, locale),
-                  'border-blue-600 bg-blue-600 text-white hover:text-white hover:border-blue-600 hover:bg-blue-600':
+              className={cx(
+                panelButtonStyles({
+                  isSelected:
                     allMonthNames[i] === getLongMonthNameFromTs(date, locale),
-                  'text-sm': size === 'md',
-                  'text-xs': size === 'sm',
-                }
+                  color,
+                  size,
+                })
               )}
               data-date={monthsTimestamps[i]}
               key={monthName}

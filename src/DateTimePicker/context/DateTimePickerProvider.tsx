@@ -16,6 +16,7 @@ import type { FC, PropsWithChildren, RefObject } from 'react'
  */
 const DateTimePickerProvider: FC<PropsWithChildren<PickerProviderProps>> = ({
   children,
+  color = 'blue',
   dateRange: p_dateRange,
   date: p_date,
   msOffset = 0,
@@ -68,6 +69,7 @@ const DateTimePickerProvider: FC<PropsWithChildren<PickerProviderProps>> = ({
 
   const value = useMemo<PickerState>(() => {
     return {
+      color,
       gmtMsOffset,
       hasLabel,
       ignoreClickAwayRef,
@@ -88,6 +90,7 @@ const DateTimePickerProvider: FC<PropsWithChildren<PickerProviderProps>> = ({
       setPanelView,
     }
   }, [
+    color,
     gmtMsOffset,
     hasLabel,
     ignoreClickAwayRef,

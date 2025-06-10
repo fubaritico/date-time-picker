@@ -1,6 +1,5 @@
+import { cx } from '@utils'
 import { ConditionalWrapper } from '@components'
-
-import { cx } from '../../utils'
 
 import dateBrowserButtonStyles from './DateBrowserButton.styles'
 

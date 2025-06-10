@@ -3,6 +3,9 @@
  */
 export const FADE_ANIMATION_DURATION = 300
 
+/**
+ * Tailwind color palette names
+ */
 export const COLORS: UIColor[] = [
   'red',
   'orange',

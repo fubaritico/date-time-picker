@@ -30,7 +30,8 @@ const DateBrowser: FC<DateBrowserProps> = ({
   size,
 }) => {
   // SHARED STATE FROM DATE TIME PICKER CONTEXT
-  const { locale, msOffset, pickerMode, setPanelView } = useDateTimePicker()
+  const { color, locale, msOffset, pickerMode, setPanelView } =
+    useDateTimePicker()
 
   return (
     <div
@@ -53,6 +54,7 @@ const DateBrowser: FC<DateBrowserProps> = ({
       <div className="flex font-bold gap-1">
         <DateBrowserButton
           aria-label={getMonthNameFromTs(date + msOffset, locale)}
+          color={color}
           hasDatePickerMode={pickerMode !== 'DATERANGE'}
           label={getMonthNameFromTs(date + msOffset, locale)}
           onClick={() => {
@@ -61,6 +63,7 @@ const DateBrowser: FC<DateBrowserProps> = ({
         />
         <DateBrowserButton
           aria-label={getYearFromTs(date).toString()}
+          color={color}
           hasDatePickerMode={pickerMode !== 'DATERANGE'}
           label={getYearFromTs(date)}
           onClick={() => {

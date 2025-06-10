@@ -10,8 +10,6 @@ import useDateTimePicker from '../hooks/useDateTimePicker'
 import dateTimeSwitcherStyles from './DateTimeSwitcher.styles'
 
 interface DataTimeSwitcherProps {
-  /* Tailwind color palette name for theming */
-  color?: UIColor
   /* Type of view currently displayed: 'DAYS' or 'TIME' */
   panelView: PanelView
   /* Panel size: 'sm' | 'md' | 'lg'  */
@@ -19,8 +17,8 @@ interface DataTimeSwitcherProps {
 }
 
 const DateTimeSwitcher = forwardRef<HTMLDivElement, DataTimeSwitcherProps>(
-  ({ color, panelView, size }, ref) => {
-    const { setPanelView } = useDateTimePicker()
+  ({ panelView, size }, ref) => {
+    const { color, setPanelView } = useDateTimePicker()
 
     return (
       <div

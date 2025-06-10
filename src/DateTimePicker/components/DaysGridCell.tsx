@@ -28,6 +28,7 @@ export interface DaysGridCellProps
 
 const DaysGridCell: FC<PropsWithChildren<DaysGridCellProps>> = ({
   children,
+  color,
   defaultBehavior,
   handleDateClick,
   handleKeyDown,
@@ -57,6 +58,7 @@ const DaysGridCell: FC<PropsWithChildren<DaysGridCellProps>> = ({
     }
     className={cx(
       daysGridCellStyles({
+        color,
         defaultBehavior,
         isToday,
         isInRange,

@@ -32,6 +32,8 @@ export type DateRange = (number | undefined)[]
 export type InputMask = (string | RegExp)[]
 
 export interface BasicPanelProps {
+  /* Tailwind color palette name for theming, defaults to 'blue' */
+  color?: UIColor
   /* If true, no default date (today) will be displayed */
   noDefault?: boolean
   /* Defines the behaviour of the component */

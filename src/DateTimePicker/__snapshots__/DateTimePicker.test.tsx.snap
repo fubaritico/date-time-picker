@@ -1481,84 +1481,84 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should sho
             >
               <button
                 aria-label="Choose 2013"
-                class="p-2 rounded-lg truncate transition duration-200 ease-in-out text-gray-900 hover:bg-gray-100 text-sm"
+                class="p-2 rounded-lg truncate transition duration-200 ease-in-out grow hover:bg-gray-100 text-gray-900 text-sm h-[36px]"
                 data-date="1363350493000"
               >
                 2013
               </button>
               <button
                 aria-label="Choose 2014"
-                class="p-2 rounded-lg truncate transition duration-200 ease-in-out text-gray-900 hover:bg-gray-100 text-sm"
+                class="p-2 rounded-lg truncate transition duration-200 ease-in-out grow hover:bg-gray-100 text-gray-900 text-sm h-[36px]"
                 data-date="1394886493000"
               >
                 2014
               </button>
               <button
                 aria-label="Choose 2015"
-                class="p-2 rounded-lg truncate transition duration-200 ease-in-out text-gray-900 hover:bg-gray-100 text-sm"
+                class="p-2 rounded-lg truncate transition duration-200 ease-in-out grow hover:bg-gray-100 text-gray-900 text-sm h-[36px]"
                 data-date="1426422493000"
               >
                 2015
               </button>
               <button
                 aria-label="Choose 2016"
-                class="p-2 rounded-lg truncate transition duration-200 ease-in-out text-gray-900 hover:bg-gray-100 text-sm"
+                class="p-2 rounded-lg truncate transition duration-200 ease-in-out grow hover:bg-gray-100 text-gray-900 text-sm h-[36px]"
                 data-date="1458044893000"
               >
                 2016
               </button>
               <button
                 aria-label="Choose 2017"
-                class="p-2 rounded-lg truncate transition duration-200 ease-in-out text-gray-900 hover:bg-gray-100 text-sm"
+                class="p-2 rounded-lg truncate transition duration-200 ease-in-out grow hover:bg-gray-100 text-gray-900 text-sm h-[36px]"
                 data-date="1489580893000"
               >
                 2017
               </button>
               <button
                 aria-label="Choose 2018"
-                class="p-2 rounded-lg truncate transition duration-200 ease-in-out text-gray-900 hover:bg-gray-100 text-sm"
+                class="p-2 rounded-lg truncate transition duration-200 ease-in-out grow hover:bg-gray-100 text-gray-900 text-sm h-[36px]"
                 data-date="1521116893000"
               >
                 2018
               </button>
               <button
                 aria-label="Choose 2019"
-                class="p-2 rounded-lg truncate transition duration-200 ease-in-out text-gray-900 hover:bg-gray-100 text-sm"
+                class="p-2 rounded-lg truncate transition duration-200 ease-in-out grow hover:bg-gray-100 text-gray-900 text-sm h-[36px]"
                 data-date="1552652893000"
               >
                 2019
               </button>
               <button
                 aria-label="Choose 2020"
-                class="p-2 rounded-lg truncate transition duration-200 ease-in-out text-gray-900 hover:bg-gray-100 text-sm"
+                class="p-2 rounded-lg truncate transition duration-200 ease-in-out grow hover:bg-gray-100 text-gray-900 text-sm h-[36px]"
                 data-date="1584275293000"
               >
                 2020
               </button>
               <button
                 aria-label="Choose 2021"
-                class="p-2 rounded-lg truncate transition duration-200 ease-in-out text-gray-900 hover:bg-gray-100 text-sm"
+                class="p-2 rounded-lg truncate transition duration-200 ease-in-out grow hover:bg-gray-100 text-gray-900 text-sm h-[36px]"
                 data-date="1615811293000"
               >
                 2021
               </button>
               <button
                 aria-label="Choose 2022"
-                class="p-2 rounded-lg truncate transition duration-200 ease-in-out text-gray-900 hover:bg-gray-100 text-sm"
+                class="p-2 rounded-lg truncate transition duration-200 ease-in-out grow hover:bg-gray-100 text-gray-900 text-sm h-[36px]"
                 data-date="1647347293000"
               >
                 2022
               </button>
               <button
                 aria-label="Choose 2023"
-                class="p-2 rounded-lg truncate transition duration-200 ease-in-out text-gray-900 hover:bg-gray-100 text-sm"
+                class="p-2 rounded-lg truncate transition duration-200 ease-in-out grow hover:bg-gray-100 text-gray-900 text-sm h-[36px]"
                 data-date="1678883293000"
               >
                 2023
               </button>
               <button
                 aria-label="Choose 2024"
-                class="p-2 rounded-lg truncate transition duration-200 ease-in-out text-gray-900 hover:bg-gray-100 text-sm"
+                class="p-2 rounded-lg truncate transition duration-200 ease-in-out grow hover:bg-gray-100 text-gray-900 text-sm h-[36px]"
                 data-date="1710505693000"
               >
                 2024

@@ -15,6 +15,7 @@ import type { CommonPickerProps } from '@types'
 
 // Create a function component type that accepts either set of props
 const Picker = <T extends PickerMode>({
+  color,
   date,
   extraIcon,
   enablePortal,
@@ -91,6 +92,7 @@ const Picker = <T extends PickerMode>({
 
   return (
     <DateTimePickerProvider
+      color={color}
       date={date}
       isControlled={!!onChange}
       gmtMsOffset={offsets.gmtMsOffset}

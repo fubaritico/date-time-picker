@@ -53,7 +53,7 @@ const DaysGrid: FC<DaysGridProps> = ({
   // State: Array of dates in Unix timestamp format
   const [arrayOfDates, setArrayOfDates] = useState<number[]>([])
   // Shared state from the DateTimePicker context
-  const { innerDate, minDate, maxDate, msOffset, locale, pickerMode } =
+  const { color, innerDate, minDate, maxDate, msOffset, locale, pickerMode } =
     useDateTimePicker()
   // Shared state from the DateRangePanel context
   const {
@@ -279,6 +279,7 @@ const DaysGrid: FC<DaysGridProps> = ({
           <DaysGridCell
             {...setDaysGridState(value)}
             key={value}
+            color={color}
             handleDateClick={handleDateClick}
             handleKeyDown={handleKeyDown}
             handleDateMouseEnter={handleDateMouseEnter}

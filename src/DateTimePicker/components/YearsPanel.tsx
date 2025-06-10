@@ -1,10 +1,14 @@
 import clsx from 'clsx'
 import { useCallback, useEffect, useState } from 'react'
 
+import { cx } from '@utils'
+import { addYears, getYearFromTs, subtractYears } from '@components'
+
 import Icon from '../../Icon'
-import { addYears, getYearFromTs, subtractYears } from '../DateTimePicker.utils'
 import useDateTimePicker from '../hooks/useDateTimePicker'
 import usePanelDomRect from '../hooks/usePanelDomRect'
+
+import panelButtonStyles from './PanelButton.styles'
 
 import type { FC, MouseEvent } from 'react'
 
@@ -26,7 +30,7 @@ export interface YearsPanelProps {
  * @constructor
  */
 const YearsPanel: FC<YearsPanelProps> = ({ className, onDateChange, size }) => {
-  const { innerDate, msOffset } = useDateTimePicker()
+  const { color, innerDate, msOffset } = useDateTimePicker()
   const [year, setYear] = useState<number>(innerDate ?? Date.now() + msOffset)
 
   const panelRef = usePanelDomRect()
@@ -131,17 +135,12 @@ const YearsPanel: FC<YearsPanelProps> = ({ className, onDateChange, size }) => {
           return (
             <button
               aria-label={`Choose ${yearWithOffset.toString()}`}
-              className={clsx(
-                'p-2 rounded-lg truncate',
-                'transition duration-200 ease-in-out',
-                {
-                  'text-gray-900 hover:bg-gray-100':
-                    yearWithOffset !== selectedYear,
-                  'border-blue-600 bg-blue-600 text-white hover:text-white hover:border-blue-600 hover:bg-blue-600':
-                    yearWithOffset === selectedYear,
-                  'text-sm': size === 'md',
-                  'text-xs': size === 'sm',
-                }
+              className={cx(
+                panelButtonStyles({
+                  isSelected: yearWithOffset === selectedYear,
+                  color,
+                  size,
+                })
               )}
               key={yearWithOffset}
               data-date={addYears(year, offset).toString()}

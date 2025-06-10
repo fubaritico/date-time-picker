@@ -2,6 +2,7 @@ import clsx from 'clsx'
 import { useCallback, useEffect, useState } from 'react'
 
 import { PanelView } from '@enums'
+import { cx } from '@utils'
 import {
   addHours,
   addMinutes,
@@ -19,6 +20,7 @@ import {
 import useDateTimePicker from '../hooks/useDateTimePicker'
 import usePanelDomRect from '../hooks/usePanelDomRect'
 
+import panelButtonStyles from './PanelButton.styles'
 import TimePanelSetter from './TimePanelSetter'
 
 import type { FC } from 'react'
@@ -44,8 +46,15 @@ export interface TimePanelProps {
  */
 const TimePanel: FC<TimePanelProps> = ({ className, onDateChange, size }) => {
   // COMPONENT STATE
-  const { gmtMsOffset, innerDate, msOffset, locale, pickerMode, isControlled } =
-    useDateTimePicker()
+  const {
+    color,
+    gmtMsOffset,
+    innerDate,
+    msOffset,
+    locale,
+    pickerMode,
+    isControlled,
+  } = useDateTimePicker()
   const [date, setDate] = useState<number>(innerDate ?? Date.now() + msOffset)
 
   useEffect(() => {
@@ -243,14 +252,12 @@ const TimePanel: FC<TimePanelProps> = ({ className, onDateChange, size }) => {
         <div className="flex gap-3 p-3">
           <button
             aria-label="Choose AM"
-            className={clsx(
-              'p-2 rounded-lg truncate grow transition duration-200 ease-in-out',
-              {
-                'hover:bg-gray-100': getCurrentAMPM(date) !== 'AM',
-                'bg-blue-600 text-white': getCurrentAMPM(date) === 'AM',
-                'text-sm': size === 'md',
-                'text-xs': size === 'sm',
-              }
+            className={cx(
+              panelButtonStyles({
+                isSelected: getCurrentAMPM(date) === 'AM',
+                color,
+                size,
+              })
             )}
             onClick={() => {
               if (getCurrentAMPM(date) !== 'AM') toggleAMPM()
@@ -260,14 +267,11 @@ const TimePanel: FC<TimePanelProps> = ({ className, onDateChange, size }) => {
           </button>
           <button
             aria-label="Choose PM"
-            className={clsx(
-              'p-2 rounded-lg truncate grow transition duration-200 ease-in-out',
-              {
-                'hover:bg-gray-100': getCurrentAMPM(date) !== 'PM',
-                'bg-blue-600 text-white': getCurrentAMPM(date) === 'PM',
-                'text-sm': size === 'md',
-                'text-xs': size === 'sm',
-              }
+            className={cx(
+              panelButtonStyles({
+                isSelected: getCurrentAMPM(date) === 'PM',
+                size,
+              })
             )}
             onClick={() => {
               if (getCurrentAMPM(date) !== 'PM') toggleAMPM()
