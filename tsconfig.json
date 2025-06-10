@@ -22,9 +22,10 @@
     "baseUrl": ".",
     "paths": {
       "@components": ["src/index.ts"],
-      "@storybook-decorators/*": [".storybook/decorators/*"],
+      "@constants": ["src/constants.ts"],
       "@enums": ["src/DateTimePicker/types/enums.ts"],
-      "@types": ["src/DateTimePicker/types/index.ts"],
+      "@storybook-decorators/*": [".storybook/decorators/*"],
+      "@types": ["src/DateTimePicker/types/index.ts"]
     },
   },
   "include": ["src/**/*", "dev/**/*", "global.d.ts", "declarations.d.ts"],

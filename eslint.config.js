@@ -119,6 +119,11 @@ export default tseslint.config(
               position: 'after',
             },
             {
+              pattern: '@constants',
+              group: 'internal',
+              position: 'before',
+            },
+            {
               pattern: '@enums',
               group: 'internal',
               position: 'before',

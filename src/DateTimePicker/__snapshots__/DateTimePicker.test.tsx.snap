@@ -289,7 +289,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               >
                 <button
                   aria-label="April"
-                  class="hover:text-blue-700 transition-colors duration-500 text-sm"
+                  class="transition-colors duration-500 focus:outline-none focus-visible:outline-1 text-sm hover:text-blue-700 focus-visible:outline-blue-700"
                 >
                   <span>
                     April
@@ -297,7 +297,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
                 </button>
                 <button
                   aria-label="2025"
-                  class="hover:text-blue-700 transition-colors duration-500 text-sm"
+                  class="transition-colors duration-500 focus:outline-none focus-visible:outline-1 text-sm hover:text-blue-700 focus-visible:outline-blue-700"
                 >
                   <span>
                     2025
@@ -854,7 +854,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               >
                 <button
                   aria-label="March"
-                  class="hover:text-blue-700 transition-colors duration-500 text-sm"
+                  class="transition-colors duration-500 focus:outline-none focus-visible:outline-1 text-sm hover:text-blue-700 focus-visible:outline-blue-700"
                 >
                   <span>
                     March
@@ -862,7 +862,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
                 </button>
                 <button
                   aria-label="2025"
-                  class="hover:text-blue-700 transition-colors duration-500 text-sm"
+                  class="transition-colors duration-500 focus:outline-none focus-visible:outline-1 text-sm hover:text-blue-700 focus-visible:outline-blue-700"
                 >
                   <span>
                     2025
@@ -1907,7 +1907,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 >
                   <button
                     aria-label="March"
-                    class="hover:text-blue-700 transition-colors duration-500 text-sm"
+                    class="transition-colors duration-500 focus:outline-none focus-visible:outline-1 text-sm hover:text-blue-700 focus-visible:outline-blue-700"
                   >
                     <span>
                       March
@@ -1915,7 +1915,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                   </button>
                   <button
                     aria-label="2025"
-                    class="hover:text-blue-700 transition-colors duration-500 text-sm"
+                    class="transition-colors duration-500 focus:outline-none focus-visible:outline-1 text-sm hover:text-blue-700 focus-visible:outline-blue-700"
                   >
                     <span>
                       2025

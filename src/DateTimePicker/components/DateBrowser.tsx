@@ -1,16 +1,13 @@
 import clsx from 'clsx'
 
 import { PanelView } from '@enums'
-import {
-  ConditionalWrapper,
-  Icon,
-  getMonthNameFromTs,
-  getYearFromTs,
-} from '@components'
+import { Icon, getMonthNameFromTs, getYearFromTs } from '@components'
 
 import { useDateTimePicker } from '../hooks'
 
-import type { FC, ReactNode } from 'react'
+import DateBrowserButton from './DateBrowserButton'
+
+import type { FC } from 'react'
 
 export interface DateBrowserProps {
   /* Extra CSS styles (tailwind) */
@@ -54,50 +51,22 @@ const DateBrowser: FC<DateBrowserProps> = ({
         <Icon aria-hidden name="HiChevronLeft" className="w-6" />
       </button>
       <div className="flex font-bold gap-1">
-        <ConditionalWrapper
-          condition={pickerMode !== 'DATERANGE'}
-          wrapper={(children: ReactNode) => (
-            <button
-              aria-label={getMonthNameFromTs(date + msOffset, locale)}
-              className={clsx(
-                'hover:text-blue-700 transition-colors duration-500',
-                {
-                  'text-sm': size === 'md',
-                  'text-xs': size === 'sm',
-                }
-              )}
-              onClick={() => {
-                setPanelView(PanelView.MONTHS)
-              }}
-            >
-              {children}
-            </button>
-          )}
-        >
-          <span>{getMonthNameFromTs(date + msOffset, locale)}</span>
-        </ConditionalWrapper>
-        <ConditionalWrapper
-          condition={pickerMode !== 'DATERANGE'}
-          wrapper={(children: ReactNode) => (
-            <button
-              aria-label={getYearFromTs(date).toString()}
-              className={clsx(
-                'hover:text-blue-700 transition-colors duration-500',
-                {
-                  'text-sm': size === 'md',
-                  'text-xs': size === 'sm',
-                }
-              )}
-              onClick={() => {
-                setPanelView(PanelView.YEARS)
-              }}
-            >
-              {children}
-            </button>
-          )}
-        >
-          <span>{getYearFromTs(date)}</span>
-        </ConditionalWrapper>
+        <DateBrowserButton
+          aria-label={getMonthNameFromTs(date + msOffset, locale)}
+          hasDatePickerMode={pickerMode !== 'DATERANGE'}
+          label={getMonthNameFromTs(date + msOffset, locale)}
+          onClick={() => {
+            setPanelView(PanelView.MONTHS)
+          }}
+        />
+        <DateBrowserButton
+          aria-label={getYearFromTs(date).toString()}
+          hasDatePickerMode={pickerMode !== 'DATERANGE'}
+          label={getYearFromTs(date)}
+          onClick={() => {
+            setPanelView(PanelView.YEARS)
+          }}
+        />
       </div>
       <button
         aria-label="Next Month"

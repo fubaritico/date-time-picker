@@ -1,5 +1,7 @@
 import { cva } from 'class-variance-authority'
 
+import { COLORS } from '@constants'
+
 import type { VariantProps } from 'class-variance-authority'
 
 /**
@@ -53,30 +55,13 @@ const daysGridCellStyles = cva(
   ],
   {
     variants: {
-      color: {
-        red: '',
-        orange: '',
-        amber: '',
-        yellow: '',
-        lime: '',
-        green: '',
-        emerald: '',
-        teal: '',
-        cyan: '',
-        sky: '',
-        blue: '',
-        indigo: '',
-        violet: '',
-        purple: '',
-        fuchsia: '',
-        pink: '',
-        rose: '',
-        slate: '',
-        gray: '',
-        zinc: '',
-        neutral: '',
-        stone: '',
-      },
+      color: COLORS.reduce<Record<UIColor, string>>(
+        (acc, color) => {
+          acc[color] = ''
+          return acc
+        },
+        {} as Record<UIColor, string>
+      ),
       defaultBehavior: {
         true: 'text-gray-900 hover:bg-gray-100',
       },
