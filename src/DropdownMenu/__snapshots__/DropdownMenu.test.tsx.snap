@@ -3,33 +3,33 @@
 exports[`DropdownMenu Selectable should render 1`] = `
 <div>
   <div
-    class="w-[200px]"
+    class="dp-w-[200px]"
   >
     <div
-      class="flex flex-col gap-1 max-w-[210px]"
+      class="dp-flex dp-flex-col dp-gap-1 dp-max-w-[210px]"
     >
       <div
-        class="relative w-full"
+        class="dp-relative dp-w-full"
       >
         <div
           class="w-auto"
         >
           <button
             aria-label="Select a value"
-            class="flex justify-between items-center font-normal border transition-all duration-300 outline-none active:enabled:outline-4 disabled:cursor-not-allowed disabled:opacity-50 text-base py-0 px-5 gap-3 h-[52px] rounded-lg text-white/85 bg-stone-500 border-stone-500 hover:enabled:bg-stone-600 hover:enabled:border-stone-600 active:enabled:outline-stone-200 [&_#spinner]:border-white/75 [&_#spinner]:border-r-white/25 w-full flex-nowrap"
+            class="dp-flex dp-flex-wrap dp-justify-between dp-items-center dp-font-normal dp-border dp-transition-all dp-duration-300 dp-outline-none active:enabled:dp-outline active:enabled:dp-outline-4 disabled:dp-cursor-not-allowed disabled:dp-opacity-50 dp-text-base dp-py-0 dp-px-5 dp-gap-3 dp-h-[52px] dp-rounded-lg dp-text-white/85 dp-bg-stone-500 dp-border-stone-500 hover:enabled:dp-bg-stone-600 hover:enabled:dp-border-stone-600 active:enabled:dp-outline-stone-200 [&_#spinner]:dp-border-white/75 [&_#spinner]:dp-border-r-white/25 dp-w-full dp-flex-nowrap"
           >
             <span
-              class="truncate flex-shrink"
+              class="dp-truncate dp-flex-shrink"
               data-test="dropdown-value"
             >
               Select a value
             </span>
             <div
-              class="w-5 justify-self-end mt-0.5"
+              class="dp-w-5 dp-justify-self-end dp-mt-0.5"
             >
               <svg
                 aria-hidden="true"
-                class="text-white transition-transform size-5"
+                class="dp-text-white dp-transition-transform dp-size-5"
                 fill="currentColor"
                 height="1em"
                 stroke="currentColor"
@@ -56,33 +56,33 @@ exports[`DropdownMenu Selectable should render 1`] = `
 exports[`DropdownMenu Selectable should render menu on label/button click 1`] = `
 <div>
   <div
-    class="w-[200px]"
+    class="dp-w-[200px]"
   >
     <div
-      class="flex flex-col gap-1 max-w-[210px]"
+      class="dp-flex dp-flex-col dp-gap-1 dp-max-w-[210px]"
     >
       <div
-        class="relative w-full"
+        class="dp-relative dp-w-full"
       >
         <div
           class="w-auto"
         >
           <button
             aria-label="Select a value"
-            class="flex justify-between items-center font-normal border transition-all duration-300 outline-none active:enabled:outline-4 disabled:cursor-not-allowed disabled:opacity-50 text-base py-0 px-5 gap-3 h-[52px] rounded-lg text-white/85 bg-stone-500 border-stone-500 hover:enabled:bg-stone-600 hover:enabled:border-stone-600 active:enabled:outline-stone-200 [&_#spinner]:border-white/75 [&_#spinner]:border-r-white/25 w-full flex-nowrap"
+            class="dp-flex dp-flex-wrap dp-justify-between dp-items-center dp-font-normal dp-border dp-transition-all dp-duration-300 dp-outline-none active:enabled:dp-outline active:enabled:dp-outline-4 disabled:dp-cursor-not-allowed disabled:dp-opacity-50 dp-text-base dp-py-0 dp-px-5 dp-gap-3 dp-h-[52px] dp-rounded-lg dp-text-white/85 dp-bg-stone-500 dp-border-stone-500 hover:enabled:dp-bg-stone-600 hover:enabled:dp-border-stone-600 active:enabled:dp-outline-stone-200 [&_#spinner]:dp-border-white/75 [&_#spinner]:dp-border-r-white/25 dp-w-full dp-flex-nowrap"
           >
             <span
-              class="truncate flex-shrink"
+              class="dp-truncate dp-flex-shrink"
               data-test="dropdown-value"
             >
               Select a value
             </span>
             <div
-              class="w-5 justify-self-end mb-0.5"
+              class="dp-w-5 dp-justify-self-end dp-mb-0.5"
             >
               <svg
                 aria-hidden="true"
-                class="text-white transition-transform size-5 rotate-180"
+                class="dp-text-white dp-transition-transform dp-size-5 dp-rotate-180"
                 fill="currentColor"
                 height="1em"
                 stroke="currentColor"
@@ -102,24 +102,24 @@ exports[`DropdownMenu Selectable should render menu on label/button click 1`] = 
         </div>
         <div>
           <div
-            class="bg-white shadow rounded-sm absolute z-[999] overflow-hidden menu-enter menu-enter-active"
+            class="dp-bg-white dp-shadow dp-rounded-sm dp-absolute dp-z-[999] dp-overflow-hidden menu-enter menu-enter-active"
             data-test="dropdown-menu"
             style="position: absolute; top: 0px; left: 0px; visibility: hidden;"
           >
             <ul
-              class="flex flex-col"
+              class="dp-flex dp-flex-col"
             >
               <li
-                class="w-full"
+                class="dp-w-full"
               >
                 <button
                   aria-current="false"
                   aria-disabled="false"
                   aria-label="Quick save "
-                  class="flex items-center font-normal transition-all duration-300 outline-none active:enabled:outline-4 disabled:cursor-not-allowed disabled:opacity-50 text-base py-0 px-5 gap-3 h-[52px] bg-transparent border-0 active:enabled:outline-none rounded-none text-stone-500 truncate text-left w-full flex-nowrap justify-start !px-4 !h-10"
+                  class="dp-flex dp-flex-wrap dp-justify-between dp-items-center dp-font-normal dp-border dp-transition-all dp-duration-300 dp-outline-none active:enabled:dp-outline active:enabled:dp-outline-4 disabled:dp-cursor-not-allowed disabled:dp-opacity-50 dp-text-base dp-py-0 dp-px-5 dp-gap-3 dp-h-[52px] dp-rounded-lg dp-bg-transparent dp-border-0 active:enabled:dp-outline-none dp-rounded-none text-stone-500 dp-truncate dp-text-left dp-w-full dp-flex-nowrap dp-justify-start !dp-px-4 !dp-h-10"
                 >
                   <span
-                    class="truncate flex-shrink"
+                    class="dp-truncate dp-flex-shrink"
                     id="item-Quick save"
                   >
                     Quick save 
@@ -127,16 +127,16 @@ exports[`DropdownMenu Selectable should render menu on label/button click 1`] = 
                 </button>
               </li>
               <li
-                class="w-full"
+                class="dp-w-full"
               >
                 <button
                   aria-current="false"
                   aria-disabled="false"
                   aria-label="Save"
-                  class="flex items-center font-normal transition-all duration-300 outline-none active:enabled:outline-4 disabled:cursor-not-allowed disabled:opacity-50 text-base py-0 px-5 gap-3 h-[52px] bg-transparent border-0 active:enabled:outline-none rounded-none text-stone-500 truncate text-left w-full flex-nowrap justify-start !px-4 !h-10"
+                  class="dp-flex dp-flex-wrap dp-justify-between dp-items-center dp-font-normal dp-border dp-transition-all dp-duration-300 dp-outline-none active:enabled:dp-outline active:enabled:dp-outline-4 disabled:dp-cursor-not-allowed disabled:dp-opacity-50 dp-text-base dp-py-0 dp-px-5 dp-gap-3 dp-h-[52px] dp-rounded-lg dp-bg-transparent dp-border-0 active:enabled:dp-outline-none dp-rounded-none text-stone-500 dp-truncate dp-text-left dp-w-full dp-flex-nowrap dp-justify-start !dp-px-4 !dp-h-10"
                 >
                   <span
-                    class="truncate flex-shrink"
+                    class="dp-truncate dp-flex-shrink"
                     id="item-Save"
                   >
                     Save
@@ -144,16 +144,16 @@ exports[`DropdownMenu Selectable should render menu on label/button click 1`] = 
                 </button>
               </li>
               <li
-                class="w-full"
+                class="dp-w-full"
               >
                 <button
                   aria-current="false"
                   aria-disabled="false"
                   aria-label="Reassign"
-                  class="flex items-center font-normal transition-all duration-300 outline-none active:enabled:outline-4 disabled:cursor-not-allowed disabled:opacity-50 text-base py-0 px-5 gap-3 h-[52px] bg-transparent border-0 active:enabled:outline-none rounded-none text-stone-500 truncate text-left w-full flex-nowrap justify-start !px-4 !h-10"
+                  class="dp-flex dp-flex-wrap dp-justify-between dp-items-center dp-font-normal dp-border dp-transition-all dp-duration-300 dp-outline-none active:enabled:dp-outline active:enabled:dp-outline-4 disabled:dp-cursor-not-allowed disabled:dp-opacity-50 dp-text-base dp-py-0 dp-px-5 dp-gap-3 dp-h-[52px] dp-rounded-lg dp-bg-transparent dp-border-0 active:enabled:dp-outline-none dp-rounded-none text-stone-500 dp-truncate dp-text-left dp-w-full dp-flex-nowrap dp-justify-start !dp-px-4 !dp-h-10"
                 >
                   <span
-                    class="truncate flex-shrink"
+                    class="dp-truncate dp-flex-shrink"
                     id="item-Reassign"
                   >
                     Reassign
@@ -161,16 +161,16 @@ exports[`DropdownMenu Selectable should render menu on label/button click 1`] = 
                 </button>
               </li>
               <li
-                class="w-full"
+                class="dp-w-full"
               >
                 <button
                   aria-current="false"
                   aria-disabled="false"
                   aria-label="Edit"
-                  class="flex items-center font-normal transition-all duration-300 outline-none active:enabled:outline-4 disabled:cursor-not-allowed disabled:opacity-50 text-base py-0 px-5 gap-3 h-[52px] bg-transparent border-0 active:enabled:outline-none rounded-none text-stone-500 truncate text-left w-full flex-nowrap justify-start !px-4 !h-10"
+                  class="dp-flex dp-flex-wrap dp-justify-between dp-items-center dp-font-normal dp-border dp-transition-all dp-duration-300 dp-outline-none active:enabled:dp-outline active:enabled:dp-outline-4 disabled:dp-cursor-not-allowed disabled:dp-opacity-50 dp-text-base dp-py-0 dp-px-5 dp-gap-3 dp-h-[52px] dp-rounded-lg dp-bg-transparent dp-border-0 active:enabled:dp-outline-none dp-rounded-none text-stone-500 dp-truncate dp-text-left dp-w-full dp-flex-nowrap dp-justify-start !dp-px-4 !dp-h-10"
                 >
                   <span
-                    class="truncate flex-shrink"
+                    class="dp-truncate dp-flex-shrink"
                     id="item-Edit"
                   >
                     Edit
@@ -178,16 +178,16 @@ exports[`DropdownMenu Selectable should render menu on label/button click 1`] = 
                 </button>
               </li>
               <li
-                class="w-full"
+                class="dp-w-full"
               >
                 <button
                   aria-current="false"
                   aria-disabled="false"
                   aria-label="Delete"
-                  class="flex items-center font-normal transition-all duration-300 outline-none active:enabled:outline-4 disabled:cursor-not-allowed disabled:opacity-50 text-base py-0 px-5 gap-3 h-[52px] bg-transparent border-0 active:enabled:outline-none rounded-none text-stone-500 truncate text-left w-full flex-nowrap justify-start !px-4 !h-10"
+                  class="dp-flex dp-flex-wrap dp-justify-between dp-items-center dp-font-normal dp-border dp-transition-all dp-duration-300 dp-outline-none active:enabled:dp-outline active:enabled:dp-outline-4 disabled:dp-cursor-not-allowed disabled:dp-opacity-50 dp-text-base dp-py-0 dp-px-5 dp-gap-3 dp-h-[52px] dp-rounded-lg dp-bg-transparent dp-border-0 active:enabled:dp-outline-none dp-rounded-none text-stone-500 dp-truncate dp-text-left dp-w-full dp-flex-nowrap dp-justify-start !dp-px-4 !dp-h-10"
                 >
                   <span
-                    class="truncate flex-shrink"
+                    class="dp-truncate dp-flex-shrink"
                     id="item-Delete"
                   >
                     Delete

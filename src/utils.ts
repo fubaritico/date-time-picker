@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import { extendTailwindMerge } from 'tailwind-merge'
 
 import { getOffsetInMsFromTimezone } from './DateTimePicker'
 
@@ -243,7 +243,11 @@ export const formatToLocaleAwareFormat = (
   )
 }
 
+const twMerge = extendTailwindMerge({
+  prefix: 'dp-',
+})
+
 /**
- * Utility function to apply CSS classes by merging them together
+ * Utility function to apply CSS classes by merging them
  */
 export const cx = (...classes: ClassValue[]) => twMerge(clsx(...classes))

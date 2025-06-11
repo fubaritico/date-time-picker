@@ -56,11 +56,11 @@ const DateRangePickerIntegration: FC<DateRangePickerIntegrationProps> = ({
   }
 
   return (
-    <div className="flex flex-col min-h-screen w-full">
+    <div className="dp-flex dp-flex-col dp-min-h-screen dp-w-full">
       {placement === 'bottom-start' && <FakeContent />}
-      <div className="flex flex-col gap-4">
+      <div className="dp-flex dp-flex-col dp-gap-4">
         {controls && (
-          <div className="flex gap-4">
+          <div className="dp-flex dp-gap-4">
             <DropdownMenu
               size="md"
               buttonComponent={Button}
@@ -88,7 +88,7 @@ const DateRangePickerIntegration: FC<DateRangePickerIntegrationProps> = ({
             />
           </div>
         )}
-        <div className="flex gap-4">
+        <div className="dp-flex dp-gap-4">
           <DateRangePicker
             {...props}
             dateRange={dateRange}
@@ -96,7 +96,7 @@ const DateRangePickerIntegration: FC<DateRangePickerIntegrationProps> = ({
             locale={locale}
             timezone={timezone}
           />
-          <div className="flex items-center gap-0.5 px-4 font-bold bg-white/50 text-blue-900 rounded">
+          <div className="dp-flex dp-items-center dp-gap-0.dp-5 dp-px-4 dp-font-bold dp-bg-white/50 dp-text-blue-900 dp-rounded">
             {dateRange && (
               <>
                 <span>From</span>

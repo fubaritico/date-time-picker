@@ -64,27 +64,30 @@ const MenuItem: FC<MenuItemProps> = ({
 
   return (
     <li
-      className={clsx('w-full', {
-        'text-gray-500 p-0.5': typeof item.label !== 'string',
-        '!p-0': item.separator,
+      className={clsx('dp-w-full', {
+        'dp-text-gray-500 dp-p-0.5': typeof item.label !== 'string',
+        '!dp-p-0': item.separator,
       })}
     >
       <ButtonComponent
         type={item.buttonType}
         aria-hidden={item.separator}
         aria-label={isString(item.label) ? item.label : undefined}
-        className={cx('truncate text-left w-full flex-nowrap justify-start', {
-          '!px-4 !h-10': size === 'lg' && !item.separator,
-          '!px-3 !h-[36px] !text-sm':
-            size === 'md' && !item.separator && item.type !== 'element',
-          '!px-2.5 !h-[30px] !text-xs':
-            size === 'sm' && !item.separator && item.type !== 'element',
-          '!p-0 !border-0 !h-auto': item.separator,
-          '!text-gray-300 [&_svg]: !stroke-gray-300': item.disabled,
-          '!bg-blue-100 hover:!bg-blue-200 !text-blue-500':
-            !item.disabled && selected,
-          '!h-[63px]': item.type === 'element',
-        })}
+        className={cx(
+          'dp-truncate dp-text-left dp-w-full dp-flex-nowrap dp-justify-start',
+          {
+            '!dp-px-4 !dp-h-10': size === 'lg' && !item.separator,
+            '!dp-px-3 !dp-h-[36px] !text-sm':
+              size === 'md' && !item.separator && item.type !== 'element',
+            '!dp-px-2.5 !dp-h-[30px] !text-xs':
+              size === 'sm' && !item.separator && item.type !== 'element',
+            '!dp-p-0 !dp-border-0 !dp-h-auto': item.separator,
+            '!dp-text-gray-300 [&_svg]:!dp-stroke-gray-300': item.disabled,
+            '!dp-bg-blue-100 hover:!dp-bg-blue-200 !dp-text-blue-500':
+              !item.disabled && selected,
+            '!dp-h-[63px]': item.type === 'element',
+          }
+        )}
         aria-current={selected}
         aria-disabled={item.disabled ?? typeof item.label !== 'string'}
         color={color}
@@ -100,7 +103,7 @@ const MenuItem: FC<MenuItemProps> = ({
         size={size ?? 'md'}
         label={
           item.separator ? (
-            <hr className="w-full" />
+            <hr className="dp-w-full" />
           ) : (
             <>
               {/* If the item displays an icon on the left */}
@@ -108,9 +111,9 @@ const MenuItem: FC<MenuItemProps> = ({
                 <Icon
                   name={item.icon}
                   className={clsx({
-                    'h-6 w-6': size === 'lg',
-                    'h-5 w-5': size === 'md',
-                    'h-3 w-3': size === 'sm',
+                    'dp-h-6 dp-w-6': size === 'lg',
+                    'dp-h-5 dp-w-5': size === 'md',
+                    'dp-h-3 dp-w-3': size === 'sm',
                   })}
                 />
               )}
@@ -118,7 +121,7 @@ const MenuItem: FC<MenuItemProps> = ({
               {isString(item.label) && (
                 <span
                   id={`item-${item.value ?? item.label}`}
-                  className="truncate flex-shrink"
+                  className="dp-truncate dp-flex-shrink"
                 >
                   {item.label}
                 </span>

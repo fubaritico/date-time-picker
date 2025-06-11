@@ -39,17 +39,17 @@ const Button: FC<ButtonProps> = ({
     >
       <ConditionalWrapper
         condition={loading ?? false}
-        wrapper={(c) => <span className="opacity-0">{c}</span>}
+        wrapper={(c) => <span className="dp-opacity-0">{c}</span>}
       >
         {label}
       </ConditionalWrapper>
       {loading && (
-        <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <span className="dp-absolute dp-top-1/2 dp-left-1/2 -dp-translate-x-1/2 -dp-translate-y-1/2">
           <div
             id="spinner"
-            className={cx('button-loader button-loader-sm', {
-              'size-5': size === 'md',
-              'size-4': size === 'sm',
+            className={cx('dp-button-loader dp-button-loader-sm', {
+              'dp-size-5': size === 'md',
+              'dp-size-4': size === 'sm',
             })}
           />
         </span>

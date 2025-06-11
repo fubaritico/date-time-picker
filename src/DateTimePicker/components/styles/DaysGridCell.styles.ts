@@ -12,46 +12,46 @@ import type { VariantProps } from 'class-variance-authority'
 const buildThemeColorClasses = (color: UIColor) => [
   {
     color: color,
-    class: `focus-visible:outline-${color}-100`,
+    class: `focus-visible:dp-outline-${color}-100`,
   },
   {
     isInRange: true,
     color: color,
-    class: `text-${color}-800 bg-${color}-100 hover:text-${color}-800 hover:bg-${color}-100`,
+    class: `dp-text-${color}-800 dp-bg-${color}-100 hover:dp-text-${color}-800 hover:dp-bg-${color}-100`,
   },
   {
     startDateIsSelected: true,
     color: color,
-    class: `bg-${color}-700 hover:bg-${color}-700 text-white hover:text-white`,
+    class: `!dp-border-r-white dp-bg-${color}-700 hover:dp-bg-${color}-700 dp-text-white hover:dp-text-white`,
   },
   {
     endDateIsSelected: true,
     color: color,
-    class: `bg-${color}-700 hover:bg-${color}-700 text-white hover:text-white`,
+    class: `dp-bg-${color}-700 hover:dp-bg-${color}-700 dp-text-white hover:dp-text-white`,
   },
   {
     isToday: true,
     isInRange: false,
     color: color,
-    class: `border-${color}-600 text-${color}-600 hover:text-white hover:bg-${color}-600`,
+    class: `dp-border-2 dp-border-${color}-600 dp-text-${color}-600 hover:dp-text-white hover:dp-bg-${color}-600`,
   },
   {
     isSelected: true,
     color: color,
-    class: `bg-${color}-700 text-white hover:bg-${color}-800`,
+    class: `dp-bg-${color}-700 dp-text-white hover:dp-bg-${color}-800`,
   },
 ]
 
 const daysGridCellStyles = cva(
   [
-    'font-bold',
-    'flex',
-    'justify-center',
-    'items-center',
-    'transition',
-    'rounded-lg',
-    'focus:outline-none',
-    'focus-visible:outline-1',
+    'dp-font-bold',
+    'dp-flex',
+    'dp-justify-center',
+    'dp-items-center',
+    'dp-transition',
+    'dp-rounded-lg',
+    'dp-focus:outline-none',
+    'dp-focus-visible:outline-1',
   ],
   {
     variants: {
@@ -63,52 +63,52 @@ const daysGridCellStyles = cva(
         {} as Record<UIColor, string>
       ),
       defaultBehavior: {
-        true: 'text-gray-900 hover:bg-gray-100',
+        true: 'dp-text-gray-900 hover:dp-bg-gray-100',
       },
       hasDateRangeMode: {
-        true: 'duration-200',
-        false: 'duration-500',
+        true: 'dp-duration-200',
+        false: 'dp-duration-500',
       },
       isClickable: {
-        true: 'cursor-pointer',
-        false: 'text-gray-300 cursor-not-allowed',
+        true: 'dp-cursor-pointer',
+        false: 'dp-text-gray-300 dp-cursor-not-allowed',
       },
       isSelected: {
-        true: 'text-white',
+        true: 'dp-text-white',
       },
       isInRange: {
-        true: 'border-r border-r-white last:border-r-0 -mx-0.5 rounded-none',
+        true: 'dp-border-r-[1px] dp-border-r-white last:dp-border-r-0 -dp-mx-0.5 dp-rounded-none',
       },
       isToday: {
-        true: 'shadow-border border-2',
+        true: 'dp-shadow-border',
       },
       size: {
-        sm: 'h-[30px] w-8',
-        md: 'h-9 w-9 text-sm',
-        lg: 'h-10 w-10',
+        sm: 'dp-h-[30px] dp-w-8',
+        md: 'dp-h-9 dp-w-9 dp-text-sm',
+        lg: 'dp-h-10 dp-w-10',
       },
       endDateIsSelected: {
-        true: 'rounded-r-md rounded-l-none text-white',
+        true: 'dp-rounded-r-md dp-rounded-l-none dp-text-white !dp-w-10 -dp-mx-0.5',
       },
       startDateIsSelected: {
-        true: 'rounded-r-none text-white rounded-l-md w-10 -mx-0.5 border-r',
+        true: 'dp-rounded-r-none dp-rounded-l-md dp-text-white !dp-w-10 -dp-mx-0.5',
       },
     },
     compoundVariants: [
       {
         isInRange: true,
         size: 'lg',
-        class: 'w-11',
+        class: '!dp-w-11',
       },
       {
         isInRange: true,
         size: 'md',
-        class: 'w-10',
+        class: '!dp-w-10',
       },
       {
         isInRange: true,
         size: 'sm',
-        class: 'h-[30px] w-8.5',
+        class: '!dp-h-[30px] !dp-w-8.5',
       },
       ...buildThemeColorClasses('red'),
       ...buildThemeColorClasses('orange'),

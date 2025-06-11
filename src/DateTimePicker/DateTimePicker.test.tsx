@@ -194,7 +194,7 @@ const runTests = (timezone?: Timezone) => {
       }
 
       expect(await screen.findByTestId(dateTimestamp.toString())).toHaveClass(
-        'font-bold bg-blue-700 text-white'
+        'dp-font-bold dp-bg-blue-700 dp-text-white'
       )
     })
 
@@ -237,9 +237,9 @@ const runTests = (timezone?: Timezone) => {
       }
 
       expect(screen.getByTestId(clickableDate)).toHaveClass(
-        'font-bold',
-        'bg-blue-700',
-        'text-white'
+        'dp-font-bold',
+        'dp-bg-blue-700',
+        'dp-text-white'
       )
     })
 
@@ -324,9 +324,9 @@ const runTests = (timezone?: Timezone) => {
       )
 
       expect(screen.getByLabelText(`Choose ${currentMonth}`)).toHaveClass(
-        'border-blue-600',
-        'bg-blue-600',
-        'text-white'
+        'dp-border-blue-600',
+        'dp-bg-blue-600',
+        'dp-text-white'
       )
     })
 
@@ -361,9 +361,9 @@ const runTests = (timezone?: Timezone) => {
       )
 
       expect(screen.getByLabelText(`Choose ${monthToBeClicked}`)).toHaveClass(
-        'border-blue-600',
-        'bg-blue-600',
-        'text-white'
+        'dp-border-blue-600',
+        'dp-bg-blue-600',
+        'dp-text-white'
       )
     })
 
@@ -383,9 +383,9 @@ const runTests = (timezone?: Timezone) => {
       await user.click(screen.getByRole('button', { name: currentYear }))
 
       expect(screen.getByLabelText(`Choose ${currentYear}`)).toHaveClass(
-        'border-blue-600',
-        'bg-blue-600',
-        'text-white'
+        'dp-border-blue-600',
+        'dp-bg-blue-600',
+        'dp-text-white'
       )
     })
 
@@ -418,9 +418,9 @@ const runTests = (timezone?: Timezone) => {
       )
 
       expect(screen.getByLabelText(`Choose ${yearToBeClicked}`)).toHaveClass(
-        'border-blue-600',
-        'bg-blue-600',
-        'text-white'
+        'dp-border-blue-600',
+        'dp-bg-blue-600',
+        'dp-text-white'
       )
     })
 
@@ -1032,8 +1032,8 @@ const runTests = (timezone?: Timezone) => {
       }
 
       expect(screen.getByTestId(disabledDate)).toHaveClass(
-        'text-gray-300',
-        'cursor-not-allowed'
+        'dp-text-gray-300',
+        'dp-cursor-not-allowed'
       )
     })
 

@@ -122,15 +122,15 @@ export const Default: Story = {
 
 const IntegrationBoard: FC = () => {
   return (
-    <div className="flex flex-col relative w-full pt-[70px]">
-      <div className="grid grid-cols-3 gap-6 w-full fixed top-0 left-0 z-10 p-4 bg-gray-100 border-b border-b-gray-200">
-        <h3 className="text-xl font-semibold">Small</h3>
-        <h3 className="text-xl font-semibold">Medium</h3>
-        <h3 className="text-xl font-semibold">Large</h3>
+    <div className="dp-flex dp-flex-col dp-relative dp-w-full dp-pt-[dp-70px]">
+      <div className="dp-grid dp-grid-cols-3 dp-gap-6 dp-w-full dp-fixed dp-top-0 dp-left-0 dp-z-10 dp-p-4 dp-bg-gray-100 dp-border-b dp-border-b-gray-200">
+        <h3 className="dp-text-xl dp-font-semibold">Small</h3>
+        <h3 className="dp-text-xl dp-font-semibold">Medium</h3>
+        <h3 className="dp-text-xl dp-font-semibold">Large</h3>
       </div>
-      <div className="grid grid-cols-3 gap-6 w-full">
-        <div className="flex flex-col w-full">
-          <div className="flex flex-col gap-4">
+      <div className="dp-grid dp-grid-cols-3 dp-gap-6 dp-w-full">
+        <div className="dp-flex dp-flex-col dp-w-full">
+          <div className="dp-flex dp-flex-col dp-gap-4">
             <Integration
               label="First name"
               initialValue={''}
@@ -274,8 +274,8 @@ const IntegrationBoard: FC = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col w-full">
-          <div className="flex flex-col gap-4">
+        <div className="dp-flex dp-flex-col dp-w-full">
+          <div className="dp-flex dp-flex-col dp-gap-4">
             <Integration label="First name" initialValue={''} canClear />
             <Integration
               label="Required first name"
@@ -397,8 +397,8 @@ const IntegrationBoard: FC = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col w-full">
-          <div className="flex flex-col gap-4">
+        <div className="dp-flex dp-flex-col dp-w-full">
+          <div className="dp-flex dp-flex-col dp-gap-4">
             <Integration
               label="First name"
               initialValue={''}

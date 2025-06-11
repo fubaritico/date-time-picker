@@ -242,9 +242,9 @@ const DateTimeInput: FC<DateInputProps> = ({
   )
 
   return (
-    <div className="flex">
+    <div className="dp-flex">
       <InputWithMask
-        className="font-roboto"
+        className="dp-font-roboto"
         alwaysShowMask
         mask={inputMaskInstance?.getMask()}
         value={inputValue ?? ''}

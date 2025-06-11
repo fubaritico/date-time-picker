@@ -12,18 +12,18 @@ import type { VariantProps } from 'class-variance-authority'
 const buildThemeColorClasses = (color: UIColor) => ({
   color: color,
   isSelected: true,
-  class: `border-${color}-600 bg-${color}-600 text-white hover:text-white hover:border-${color}-600 hover:bg-${color}-600 text-white`,
+  class: `dp-border-${color}-600 dp-bg-${color}-600 dp-text-white hover:dp-text-white hover:dp-border-${color}-600 hover:dp-bg-${color}-600 dp-text-white`,
 })
 
 const panelButtonStyles = cva(
   [
-    'p-2',
-    'rounded-lg',
-    'truncate',
-    'transition',
-    'duration-200',
-    'ease-in-out',
-    'grow',
+    'dp-p-2',
+    'dp-rounded-lg',
+    'dp-truncate',
+    'dp-transition',
+    'dp-duration-200',
+    'dp-ease-in-out',
+    'dp-grow',
   ],
   {
     variants: {
@@ -35,13 +35,13 @@ const panelButtonStyles = cva(
         {} as Record<UIColor, string>
       ),
       isSelected: {
-        false: 'hover:bg-gray-100 text-gray-900',
-        true: 'text-white',
+        false: 'hover:dp-bg-gray-100 dp-text-gray-900',
+        true: 'dp-text-white',
       },
       size: {
-        sm: 'text-xs h-[30px]',
-        md: 'text-sm h-[36px]',
-        lg: 'text-sm h-[36px]',
+        sm: 'dp-text-xs dp-h-[30px]',
+        md: 'dp-text-sm dp-h-[36px]',
+        lg: 'dp-text-sm dp-h-[36px]',
       },
     },
     defaultVariants: {

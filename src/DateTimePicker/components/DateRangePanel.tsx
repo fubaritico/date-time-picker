@@ -104,9 +104,9 @@ const DateRangePanel: FC<DateRangePanelProps> = ({
   )
 
   return (
-    <div className={clsx('flex flex-nowrap gap-2', className)}>
+    <div className={clsx('dp-flex dp-flex-nowrap dp-gap-2', className)}>
       <div
-        className={clsx('flex flex-col', className)}
+        className={clsx('dp-flex dp-flex-col', className)}
         data-test="date-panel-start"
       >
         <DateBrowser
@@ -122,9 +122,9 @@ const DateRangePanel: FC<DateRangePanelProps> = ({
           onEndDateChangeHandler={onEndDateChangeHandler}
         />
       </div>
-      <div className="w-auto border-r border-r-gray-100" />
+      <div className="dp-w-auto dp-border-r dp-border-r-gray-100" />
       <div
-        className={clsx('flex flex-col', className)}
+        className={clsx('dp-flex dp-flex-col', className)}
         data-test="date-panel-end"
       >
         <DateBrowser

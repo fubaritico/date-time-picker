@@ -10,8 +10,8 @@ const App = () => {
   const [value, setValue] = useState<number | undefined>(Date.now())
 
   return (
-    <div className="p-8 max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6">DateTimePicker Preview</h1>
+    <div className="dp-p-8 dp-max-w-4xl dp-mx-auto">
+      <h1 className="dp-text-3xl dp-font-bold dp-mb-6">DateTimePicker Preview</h1>
 
       <UncontrolledDateTimePicker key={1} title="Basic usage (uncontrolled)" />
 

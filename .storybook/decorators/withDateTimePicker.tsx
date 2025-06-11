@@ -9,7 +9,7 @@ import { Decorator } from '@storybook/react'
  * @returns Element
  */
 export const withDateTimePicker: Decorator = (Story) => (
-  <div className="flex min-h-[450px] w-full flex-col items-start p-8 justify-start bg-storybook bg-fixed">
+  <div className="dp-flex dp-min-h-[450px] dp-w-full dp-flex-col dp-items-start dp-p-8 dp-justify-start dp-bg-storybook dp-bg-fixed">
     {Story()}
   </div>
 )

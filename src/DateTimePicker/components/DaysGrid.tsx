@@ -241,10 +241,10 @@ const DaysGrid: FC<DaysGridProps> = ({
 
   return (
     <div
-      className={clsx('grid grid-cols-7', 'group', {
-        'gap-2 p-5': size === 'lg',
-        'gap-1 p-4': size === 'md',
-        'gap-1 p-3': size === 'sm',
+      className={clsx('dp-grid dp-grid-cols-7', {
+        'dp-gap-2 dp-p-5': size === 'lg',
+        'dp-gap-1 dp-p-4': size === 'md',
+        'dp-gap-1 dp-p-3': size === 'sm',
       })}
       data-test="days-grid"
       role="grid"
@@ -254,11 +254,11 @@ const DaysGrid: FC<DaysGridProps> = ({
           <div
             key={`${name}-${index.toString()}`}
             className={clsx(
-              'flex justify-center items-center font-bold text-gray-500',
+              'dp-flex dp-justify-center dp-items-center dp-font-bold dp-text-gray-500',
               {
-                'h-10 w-10': size === 'lg',
-                'h-9 w-9 text-sm': size === 'md',
-                'h-[30px] w-8 text-xs': size === 'sm',
+                'dp-h-10 dp-w-10': size === 'lg',
+                'dp-h-9 dp-w-9 dp-text-sm': size === 'md',
+                'dp-h-[30px] dp-w-8 dp-text-xs': size === 'sm',
               }
             )}
           >

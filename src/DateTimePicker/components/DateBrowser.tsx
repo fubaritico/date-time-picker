@@ -36,22 +36,22 @@ const DateBrowser: FC<DateBrowserProps> = ({
   return (
     <div
       className={clsx(
-        'flex gap-4 text-gray-600 justify-between',
+        'dp-flex dp-gap-4 dp-text-gray-600 dp-justify-between',
         {
-          'px-6 pt-6 pb-3': size === 'lg',
-          'px-4 pt-4 pb-2': size === 'md' || size === 'sm',
+          'dp-px-6 dp-pt-6 dp-pb-3': size === 'lg',
+          'dp-px-4 dp-pt-4 dp-pb-2': size === 'md' || size === 'sm',
         },
         className
       )}
     >
       <button
         aria-label="Previous Month"
-        className="appearance-none border-none bg-transparent cursor-pointer w-6"
+        className="dp-appearance-none dp-border-none dp-bg-transparent dp-cursor-pointer dp-w-6"
         onClick={onPrevMonthClick}
       >
         <Icon aria-hidden name="HiChevronLeft" className="w-6" />
       </button>
-      <div className="flex font-bold gap-1">
+      <div className="dp-flex dp-font-bold dp-gap-1">
         <DateBrowserButton
           aria-label={getMonthNameFromTs(date + msOffset, locale)}
           color={color}
@@ -73,7 +73,7 @@ const DateBrowser: FC<DateBrowserProps> = ({
       </div>
       <button
         aria-label="Next Month"
-        className="appearance-none border-none bg-transparent cursor-pointer w-6"
+        className="dp-appearance-none dp-border-none dp-bg-transparent dp-cursor-pointer dp-w-6"
         onClick={onNextMonthClick}
       >
         <Icon aria-hidden name="HiChevronRight" className="w-6" />

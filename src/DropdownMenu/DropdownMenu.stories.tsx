@@ -159,9 +159,9 @@ export const WithEmailAndName: Story = {
     items: [
       {
         label: (
-          <div className="flex flex-col">
-            <span className="text-sm font-bold">John Doe</span>
-            <span className="text-xs">j.doe@odaseva.com</span>
+          <div className="dp-flex dp-flex-col">
+            <span className="dp-text-sm dp-font-bold">John Doe</span>
+            <span className="dp-text-xs">j.doe@odaseva.com</span>
           </div>
         ),
       },
@@ -184,8 +184,8 @@ export const IconButtonWithMenuToTheLeft: Story = {
     items: menuItems,
     menuWidth: 200,
     triggerComponent: (
-      <div className="flex justify-center items-center w-10 h-10 bg-white">
-        <Icon name="HiEllipsisVertical" className="size-8" />
+      <div className="dp-flex dp-justify-center dp-items-center dp-w-10 dp-h-10 dp-bg-white">
+        <Icon name="HiEllipsisVertical" className="dp-size-8" />
       </div>
     ),
     showSelectedValue: true,

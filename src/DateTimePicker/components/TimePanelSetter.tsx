@@ -28,23 +28,23 @@ const TimePanelSetter: FC<TimePanelSetterProps> = ({
   unit,
 }) => {
   return (
-    <div className="flex flex-col justiy-center gap-5 w-[85px]">
+    <div className="dp-flex dp-flex-col dp-justiy-center dp-gap-5 dp-w-[85px]">
       <button
         aria-label={`Add one ${unit}`}
-        className="flex justify-center items-center h-8 rounded-lg hover:bg-gray-100 appearance-none transition duration-500 border-none text-gray-oda-800"
+        className="dp-flex dp-justify-center dp-items-center dp-h-8 dp-rounded-lg dp-hover:bg-gray-100 dp-appearance-none dp-transition dp-duration-500 dp-border-none dp-text-gray-oda-800"
         onClick={onTopButtonClick}
       >
-        <Icon aria-hidden name="HiChevronUp" className="size-4" />
+        <Icon aria-hidden name="HiChevronUp" className="dp-size-4" />
       </button>
-      <div className="font-robotoMono font-bold text-gray-800 text-[64px] font-bold leading-[64px] text-center">
+      <div className="dp-font-robotoMono dp-text-gray-800 dp-text-[dp-64px] dp-font-bold dp-leading-[dp-64px] dp-text-center">
         {date}
       </div>
       <button
         aria-label={`Remove one ${unit}`}
-        className="flex justify-center items-center h-8 rounded-lg hover:bg-gray-100 appearance-none transition duration-500 border-none text-gray-oda-800"
+        className="dp-flex dp-justify-center dp-items-center dp-h-8 dp-rounded-lg dp-hover:bg-gray-100 dp-appearance-none dp-transition dp-duration-500 dp-border-none dp-text-gray-oda-800"
         onClick={onBottomButtonClick}
       >
-        <Icon aria-hidden name="HiChevronDown" className="size-4" />
+        <Icon aria-hidden name="HiChevronDown" className="dp-size-4" />
       </button>
     </div>
   )

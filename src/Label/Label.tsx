@@ -30,19 +30,19 @@ const Label: FC<LabelProps> = ({
   return (
     <label
       className={clsx(
-        'flex items-center text-gray-900 font-medium w-full',
+        'dp-flex dp-items-center dp-text-gray-900 dp-font-medium dp-w-full',
         {
-          'text-gray-400': disabled,
-          '!text-md': size === 'lg',
-          '!text-sm': size === 'md',
-          '!text-xs': size === 'sm',
+          'dp-text-gray-400': disabled,
+          'dp-!text-md': size === 'lg',
+          'dp-!text-sm': size === 'md',
+          'dp-!text-xs': size === 'sm',
         },
         className
       )}
       htmlFor={label.replace(/\s/g, '')}
     >
-      <span className="inline-flex items-start">
-        {required && <span className="text-red-500 mr-0.5">*</span>}
+      <span className="dp-inline-flex dp-items-start">
+        {required && <span className="dp-text-red-500 dp-mr-0.dp-5">*</span>}
         {label}
       </span>
       {labelInfo && (

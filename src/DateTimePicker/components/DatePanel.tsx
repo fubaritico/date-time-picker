@@ -83,7 +83,7 @@ const DatePanel: FC<DatePanelProps> = ({ className, onDateChange, size }) => {
 
   return (
     <div
-      className={clsx('flex flex-col', className)}
+      className={clsx('dp-flex dp-flex-col', className)}
       data-test="date-panel"
       ref={panelRef}
     >

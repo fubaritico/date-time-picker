@@ -59,9 +59,9 @@ export const Default = {
 
 const IntegrationBoard: FC = () => {
   return (
-    <div className="flex flex-col relative w-full gap-12 m-10">
-      <div className="flex flex-wrap gap-4">
-        <h3 className="text-xl font-semibold w-full">Primary large</h3>
+    <div className="dp-flex dp-flex-col dp-relative dp-w-full dp-gap-12 dp-m-10">
+      <div className="dp-flex dp-flex-wrap dp-gap-4">
+        <h3 className="dp-text-xl dp-font-semibold dp-w-full">Primary large</h3>
         <Button
           variant="primary"
           label="Primary Button"
@@ -83,8 +83,10 @@ const IntegrationBoard: FC = () => {
           loading
         />
       </div>
-      <div className="flex flex-wrap gap-4">
-        <h3 className="text-xl font-semibold w-full">Primary medium</h3>
+      <div className="dp-flex dp-flex-wrap dp-gap-4">
+        <h3 className="dp-text-xl dp-font-semibold dp-w-full">
+          Primary medium
+        </h3>
         <Button
           variant="primary"
           label="Primary Button"
@@ -106,8 +108,8 @@ const IntegrationBoard: FC = () => {
           loading
         />
       </div>
-      <div className="flex flex-wrap gap-4">
-        <h3 className="text-xl font-semibold w-full">Primary small</h3>
+      <div className="dp-flex dp-flex-wrap dp-gap-4">
+        <h3 className="dp-text-xl dp-font-semibold dp-w-full">Primary small</h3>
         <Button
           variant="primary"
           label="Primary Button"
@@ -129,8 +131,10 @@ const IntegrationBoard: FC = () => {
           loading
         />
       </div>
-      <div className="flex flex-wrap gap-4">
-        <h3 className="text-xl font-semibold w-full">Secondary large</h3>
+      <div className="dp-flex dp-flex-wrap dp-gap-4">
+        <h3 className="dp-text-xl dp-font-semibold dp-w-full">
+          Secondary large
+        </h3>
         <Button
           variant="secondary"
           label="Primary Button"
@@ -152,8 +156,10 @@ const IntegrationBoard: FC = () => {
           loading
         />
       </div>
-      <div className="flex flex-wrap gap-4">
-        <h3 className="text-xl font-semibold w-full">Secondary medium</h3>
+      <div className="dp-flex dp-flex-wrap dp-gap-4">
+        <h3 className="dp-text-xl dp-font-semibold dp-w-full">
+          Secondary medium
+        </h3>
         <Button
           variant="secondary"
           label="Primary Button"
@@ -175,8 +181,10 @@ const IntegrationBoard: FC = () => {
           loading
         />
       </div>
-      <div className="flex flex-wrap gap-4">
-        <h3 className="text-xl font-semibold w-full">Secondary small</h3>
+      <div className="dp-flex dp-flex-wrap dp-gap-4">
+        <h3 className="dp-text-xl dp-font-semibold dp-w-full">
+          Secondary small
+        </h3>
         <Button
           variant="secondary"
           label="Primary Button"

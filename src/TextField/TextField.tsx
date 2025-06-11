@@ -1,10 +1,11 @@
 import clsx from 'clsx'
 import { forwardRef, useState } from 'react'
 
+import { createCustomChangeEvent, handleKeyDown } from '@utils'
+
 import HelperText from '../HelperText'
 import Icon from '../Icon'
 import Label from '../Label'
-import { createCustomChangeEvent, handleKeyDown } from '../utils'
 
 import type { Hi2UiIconNames } from '..'
 import type { ChangeEvent, FC, ForwardedRef, HTMLProps, RefObject } from 'react'
@@ -113,7 +114,7 @@ const TextField: FC<TextFieldProps> = forwardRef<
       >
         {label && (
           <Label
-            className="mb-1"
+            className="dp-mb-1"
             disabled={disabled}
             label={label}
             labelInfo={labelInfo}
@@ -122,7 +123,7 @@ const TextField: FC<TextFieldProps> = forwardRef<
           />
         )}
         <div
-          className={clsx('relative w-full')}
+          className={clsx('dp-relative dp-w-full')}
           onMouseEnter={() => {
             if (canClear) {
               setShowCross(true)
@@ -136,39 +137,41 @@ const TextField: FC<TextFieldProps> = forwardRef<
         >
           <input
             className={clsx(
-              'border appearance-none truncate outline-0 w-full rounded-md',
-              'shadow-none pl-4 pr-4 transition-all duration-300',
+              'dp-border dp-appearance-none dp-truncate dp-outline-0 dp-w-full dp-rounded-md',
+              'dp-shadow-none dp-pl-4 dp-pr-4 dp-transition-all dp-duration-300',
               {
-                '!text-md': size === 'lg',
-                '!text-sm': size === 'md',
-                '!text-xs': size === 'sm',
+                '!dp-text-md': size === 'lg',
+                '!dp-text-sm': size === 'md',
+                '!dp-text-xs': size === 'sm',
                 ...(!!iconName &&
                   iconPosition === 'left' && {
-                    'pl-[52px]': size === 'lg',
-                    'pl-[42px]': size === 'md',
-                    'pl-[30px]': size === 'sm',
+                    'dp-pl-[52px]': size === 'lg',
+                    'dp-pl-[42px]': size === 'md',
+                    'dp-pl-[30px]': size === 'sm',
                   }),
                 ...(!!iconName &&
                   iconPosition === 'right' && {
-                    'pr-[52px]': size === 'lg',
-                    'pr-[42px]': size === 'md',
-                    'pr-[30px]': size === 'sm',
+                    'dp-pr-[52px]': size === 'lg',
+                    'dp-pr-[42px]': size === 'md',
+                    'dp-pr-[30px]': size === 'sm',
                   }),
-                '!pr-[52px]': size === 'lg' && showCross,
-                '!pr-[42px]': size === 'md' && showCross,
-                '!pr-[30px]': size === 'sm' && showCross,
-                '!border-gray-300 !bg-gray-50 !text-gray-500': !severity,
-                'focus:!border-blue-600 focus:!text-gray-900': !severity,
-                'placeholder:!text-gray-400 !text-gray-500': !disabled,
-                'placeholder:!text-gray-300 !text-gray-400': disabled,
-                'cursor-not-allowed !text-gray-300': disabled && !severity,
-                '!border-red-500 !bg-red-50 !text-red-700':
+                '!dp-pr-[52px]': size === 'lg' && showCross,
+                '!dp-pr-[42px]': size === 'md' && showCross,
+                '!dp-pr-[30px]': size === 'sm' && showCross,
+                '!dp-border-gray-300 !dp-bg-gray-50 !dp-text-gray-500':
+                  !severity,
+                'focus:!dp-border-blue-600 focus:!dp-text-gray-900': !severity,
+                'placeholder:!dp-text-gray-400 !dp-text-gray-500': !disabled,
+                'placeholder:!dp-text-gray-300 !dp-text-gray-400': disabled,
+                'dp-cursor-not-allowed !dp-text-gray-300':
+                  disabled && !severity,
+                '!dp-border-red-500 !dp-bg-red-50 !dp-text-red-700':
                   severity === 'error',
-                '!border-yellow-500 !bg-yellow-50 !text-yellow-700':
+                '!dp-border-yellow-500 !dp-bg-yellow-50 !dp-text-yellow-700':
                   severity === 'warning',
-                '!border-green-500 !bg-green-50 !text-green-700':
+                '!dp-border-green-500 !dp-bg-green-50 !dp-text-green-700':
                   severity === 'success',
-                '!border-blue-500 !bg-blue-50 !text-blue-700':
+                '!dp-border-blue-500 !dp-bg-blue-50 !dp-text-blue-700':
                   severity === 'info',
               },
               className
@@ -193,11 +196,11 @@ const TextField: FC<TextFieldProps> = forwardRef<
                 onReset()
               })}
               className={clsx(
-                'absolute top-1/2 -translate-y-1/2 text-gray-500 cursor-pointer transition-all duration-300',
+                'dp-absolute dp-top-1/2 -dp-translate-y-1/2 dp-text-gray-500 dp-cursor-pointer dp-transition-all dp-duration-300',
                 {
-                  'w-6 h-6 right-[17px]': size === 'lg',
-                  'w-5 h-5 right-[14px]': size === 'md',
-                  'w-4 h-4 right-[10px]': size === 'sm',
+                  'dp-w-6 dp-h-6 dp-right-[17px]': size === 'lg',
+                  'dp-w-5 dp-h-5 dp-right-[14px]': size === 'md',
+                  'dp-w-4 dp-h-4 dp-right-[10px]': size === 'sm',
                 }
               )}
               onClick={() => {
@@ -206,15 +209,18 @@ const TextField: FC<TextFieldProps> = forwardRef<
             >
               <Icon
                 name="HiXMark"
-                className={clsx('text-gray-600 transition-all duration-300', {
-                  'w-6 h-6': size === 'lg',
-                  'w-5 h-5': size === 'md',
-                  'w-4 h-4': size === 'sm',
-                  '!text-red-600': severity === 'error',
-                  '!text-yellow-600': severity === 'warning',
-                  '!text-green-600': severity === 'success',
-                  '!text-blue-600': severity === 'info',
-                })}
+                className={clsx(
+                  'dp-text-gray-600 dp-transition-all dp-duration-300',
+                  {
+                    'dp-w-6 dp-h-6': size === 'lg',
+                    'dp-w-5 dp-h-5': size === 'md',
+                    'dp-w-4 dp-h-4': size === 'sm',
+                    '!dp-text-red-600': severity === 'error',
+                    '!dp-text-yellow-600': severity === 'warning',
+                    '!dp-text-green-600': severity === 'success',
+                    '!dp-text-blue-600': severity === 'info',
+                  }
+                )}
               />
             </div>
           )}
@@ -222,25 +228,25 @@ const TextField: FC<TextFieldProps> = forwardRef<
             <div
               aria-label={onIconClick ? iconAriaLabel : undefined}
               className={clsx(
-                'absolute top-1/2 -translate-y-1/2 transition-all duration-300',
+                'dp-absolute dp-top-1/2 -dp-translate-y-1/2 dp-transition-all dp-duration-300',
                 {
-                  '!cursor-pointer': !disabled && !!onIconClick,
-                  'opacity-50': disabled,
-                  '!cursor-default': !onIconClick,
+                  '!dp-cursor-pointer': !disabled && !!onIconClick,
+                  'dp-opacity-50': disabled,
+                  '!dp-cursor-default': !onIconClick,
                   // Sizing
-                  'w-6 h-6': size === 'lg',
-                  'w-5 h-5': size === 'md',
-                  'w-4 h-4': size === 'sm',
+                  'dp-w-6 dp-h-6': size === 'lg',
+                  'dp-w-5 dp-h-5': size === 'md',
+                  'dp-w-4 dp-h-4': size === 'sm',
                   // Positioning
                   ...(iconPosition === 'left' && {
-                    'left-[17px]': size === 'lg',
-                    'left-[10px]': size === 'sm',
-                    'left-[14px]': size === 'md',
+                    'dp-left-[17px]': size === 'lg',
+                    'dp-left-[10px]': size === 'sm',
+                    'dp-left-[14px]': size === 'md',
                   }),
                   ...(iconPosition === 'right' && {
-                    'right-[17px]': size === 'lg',
-                    'right-[10px]': size === 'sm',
-                    'right-[14px]': size === 'md',
+                    'dp-right-[17px]': size === 'lg',
+                    'dp-right-[10px]': size === 'sm',
+                    'dp-right-[14px]': size === 'md',
                   }),
                 }
               )}
@@ -257,15 +263,18 @@ const TextField: FC<TextFieldProps> = forwardRef<
               <Icon
                 aria-hidden
                 name={iconName}
-                className={clsx('text-gray-500 transition-all duration-300', {
-                  'w-6 h-6': size === 'lg',
-                  'w-5 h-5': size === 'md',
-                  'w-4 h-4': size === 'sm',
-                  '!text-red-600': severity === 'error',
-                  '!text-yellow-600': severity === 'warning',
-                  '!text-green-600': severity === 'success',
-                  '!text-blue-600': severity === 'info',
-                })}
+                className={clsx(
+                  'dp-text-gray-500 dp-transition-all dp-duration-300',
+                  {
+                    'dp-w-6 dp-h-6': size === 'lg',
+                    'dp-w-5 dp-h-5': size === 'md',
+                    'dp-w-4 dp-h-4': size === 'sm',
+                    '!dp-text-red-600': severity === 'error',
+                    '!dp-text-yellow-600': severity === 'warning',
+                    '!dp-text-green-600': severity === 'success',
+                    '!dp-text-blue-600': severity === 'info',
+                  }
+                )}
               />
             </div>
           )}

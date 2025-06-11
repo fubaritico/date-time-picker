@@ -2,7 +2,7 @@ import type { FC } from 'react'
 
 const FakeContent: FC = () => {
   return (
-    <div className="flex flex-col items-center p-4 bg-white/50 text-gray-900 rounded gap-4 my-4">
+    <div className="dp-flex dp-flex-col dp-items-center dp-p-4 dp-bg-white/50 dp-text-gray-900 dp-rounded dp-gap-4 dp-my-4">
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dapibus mi
         eget quam semper blandit. Nullam vel ullamcorper lacus. Nam in quam

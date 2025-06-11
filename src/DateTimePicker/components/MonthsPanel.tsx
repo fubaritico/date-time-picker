@@ -105,29 +105,29 @@ const MonthsPanel: FC<MonthsPanelProps> = ({
 
   return (
     <div
-      className={clsx('flex flex-col', className)}
+      className={clsx('dp-flex dp-flex-col', className)}
       data-test="month-panel"
       ref={panelRef}
     >
       <div
-        className={clsx('flex gap-4 text-gray-600 justify-between', {
-          'px-6 pt-6 pb-3': size === 'lg',
-          'px-4 pt-4 pb-2': size === 'md' || size === 'sm',
+        className={clsx('dp-flex gap-4 dp-text-gray-600 dp-justify-between', {
+          'dp-px-6 dp-pt-6 dp-pb-3': size === 'lg',
+          'dp-px-4 dp-pt-4 dp-pb-2': size === 'md' || size === 'sm',
         })}
       >
         <button
           aria-label="Previous Year"
           className={clsx(
-            'appearance-none border-none bg-transparent cursor-pointer w-6'
+            'dp-appearance-none dp-border-none dp-bg-transparent dp-cursor-pointer dp-w-6'
           )}
           onClick={gotoPrevYear}
         >
-          <Icon aria-hidden name="HiChevronLeft" className="w-6" />
+          <Icon aria-hidden name="HiChevronLeft" className="dp-w-6" />
         </button>
         <div
-          className={clsx('font-bold', {
-            'text-sm': size === 'md',
-            'text-xs': size === 'sm',
+          className={clsx('dp-font-bold', {
+            'dp-text-sm': size === 'md',
+            'dp-text-xs': size === 'sm',
           })}
         >
           {formatToYYYYMMDD(date).split('-')[0]}
@@ -135,14 +135,14 @@ const MonthsPanel: FC<MonthsPanelProps> = ({
         <button
           aria-label="Next Year"
           className={clsx(
-            'appearance-none border-none bg-transparent cursor-pointer w-6'
+            'dp-appearance-none dp-border-none dp-bg-transparent dp-cursor-pointer dp-w-6'
           )}
           onClick={gotoNextYear}
         >
-          <Icon aria-hidden name="HiChevronRight" className="w-6" />
+          <Icon aria-hidden name="HiChevronRight" className="dp-w-6" />
         </button>
       </div>
-      <div role="grid" className="grid grid-cols-3 gap-4 p-4">
+      <div role="grid" className="dp-grid dp-grid-cols-3 dp-gap-4 dp-p-4">
         {getAllMonthNames('long', locale).map((monthName, i, allMonthNames) => {
           return (
             <button

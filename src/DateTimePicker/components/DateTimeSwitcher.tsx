@@ -23,10 +23,10 @@ const DateTimeSwitcher = forwardRef<HTMLDivElement, DataTimeSwitcherProps>(
     return (
       <div
         className={clsx(
-          'flex justify-between items-stretch border-b border-b-gray-100',
+          'dp-flex dp-justify-between dp-items-stretch dp-border-b dp-border-b-gray-100',
           {
-            'h-[36px]': size === 'sm',
-            'h-[46px]': size !== 'sm',
+            'dp-h-[36px]': size === 'sm',
+            'dp-h-[46px]': size !== 'sm',
           }
         )}
         ref={ref}
@@ -38,7 +38,7 @@ const DateTimeSwitcher = forwardRef<HTMLDivElement, DataTimeSwitcherProps>(
               isSelected: panelView !== PanelView.TIME,
               color,
               size,
-              className: 'rounded-tl-lg',
+              className: 'dp-rounded-tl-lg',
             })
           )}
           onClick={() => {
@@ -47,7 +47,7 @@ const DateTimeSwitcher = forwardRef<HTMLDivElement, DataTimeSwitcherProps>(
         >
           <Icon
             aria-hidden
-            className={size === 'sm' ? 'h-5 w-5' : 'h-6 w-6'}
+            className={size === 'sm' ? 'dp-h-5 dp-w-5' : 'dp-h-6 dp-w-6'}
             name={size === 'sm' ? 'HiMiniCalendarDays' : 'HiCalendarDays'}
           />
         </button>
@@ -58,7 +58,7 @@ const DateTimeSwitcher = forwardRef<HTMLDivElement, DataTimeSwitcherProps>(
               isSelected: panelView === PanelView.TIME,
               color,
               size,
-              className: 'rounded-tr-lg',
+              className: 'dp-rounded-tr-lg',
             })
           )}
           onClick={() => {
@@ -67,7 +67,7 @@ const DateTimeSwitcher = forwardRef<HTMLDivElement, DataTimeSwitcherProps>(
         >
           <Icon
             aria-hidden
-            className={size === 'sm' ? 'h-5 w-5' : 'h-6 w-6'}
+            className={size === 'sm' ? 'dp-h-5 dp-w-5' : 'dp-h-6 dp-w-6'}
             name={size === 'sm' ? 'HiMiniClock' : 'HiClock'}
           />
         </button>

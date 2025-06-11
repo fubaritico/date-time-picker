@@ -145,14 +145,14 @@ const DropdownMenu: FC<DropdownMenuProps> = ({
 
   return (
     <div
-      className={clsx('flex flex-col gap-1', rootClassName, {
-        'max-w-[210px]': !dropdownFullWidth,
-        'pointer-events-none': disabled ?? loading,
+      className={clsx('dp-flex dp-flex-col dp-gap-1', rootClassName, {
+        'dp-max-w-[210px]': !dropdownFullWidth,
+        'dp-pointer-events-none': disabled ?? loading,
       })}
     >
       {label && (
         <Label
-          className="mb-1"
+          className="dp-mb-1"
           label={label}
           labelInfo={labelInfo}
           required={required}
@@ -160,7 +160,7 @@ const DropdownMenu: FC<DropdownMenuProps> = ({
           disabled={disabled}
         />
       )}
-      <div className="relative w-full">
+      <div className="dp-relative dp-w-full">
         <div
           className={clsx(
             'w-auto',
@@ -173,7 +173,7 @@ const DropdownMenu: FC<DropdownMenuProps> = ({
         >
           {triggerComponent ? (
             <button
-              className="appearance-none border-0 bg-transparent p-0"
+              className="dp-appearance-none dp-border-0 dp-bg-transparent dp-p-0"
               onClick={() => {
                 setIsOpen(!isOpen)
               }}
@@ -186,28 +186,28 @@ const DropdownMenu: FC<DropdownMenuProps> = ({
               aria-label={
                 isString(buttonLabel) ? buttonLabel : 'Select an option'
               }
-              className="w-full flex-nowrap"
+              className="dp-w-full dp-flex-nowrap"
               label={
                 <>
                   <span
                     data-test="dropdown-value"
-                    className="truncate flex-shrink"
+                    className="dp-truncate dp-flex-shrink"
                   >
                     {currentLabel}
                   </span>
                   <div
-                    className={clsx('w-5 justify-self-end', {
-                      'mt-0.5': !isOpen,
-                      'mb-0.5': isOpen,
+                    className={clsx('dp-w-5 dp-justify-self-end', {
+                      'dp-mt-0.5': !isOpen,
+                      'dp-mb-0.5': isOpen,
                     })}
                   >
                     <Icon
                       name="HiChevronDown"
-                      className={clsx('text-white transition-transform', {
-                        'size-4': size === 'sm',
-                        'size-4.5': size === 'md',
-                        'size-5': size === 'lg',
-                        'rotate-180': isOpen,
+                      className={clsx('dp-text-white dp-transition-transform', {
+                        'dp-size-4': size === 'sm',
+                        'dp-size-4.5': size === 'md',
+                        'dp-size-5': size === 'lg',
+                        'dp-rotate-180': isOpen,
                       })}
                     />
                   </div>
@@ -227,7 +227,7 @@ const DropdownMenu: FC<DropdownMenuProps> = ({
         </div>
         <Menu
           buttonComponent={buttonComponent}
-          className={clsx({ 'w-full': menuFullWidth })}
+          className={clsx({ 'dp-w-full': menuFullWidth })}
           color={color}
           enablePortal={enablePortal}
           items={items ?? []}

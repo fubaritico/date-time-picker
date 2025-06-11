@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  prefix: 'dp-',
   content: ['./src/**/*.{js,jsx,ts,tsx}', './dev/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
@@ -39,7 +40,7 @@ module.exports = {
   safelist: [
     {
       pattern:
-        /(bg|text|border|outline)-(red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose|slate|gray|zinc|neutral|stone)-(100|500|600|700|800)/,
+        /dp-(bg|text|border|outline)-(red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose|slate|gray|zinc|neutral|stone)-(100|500|600|700|800)/,
       variants: ['hover', 'focus'],
     },
   ],

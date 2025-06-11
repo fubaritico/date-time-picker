@@ -7,9 +7,9 @@ const UncontrolledDateTimePicker: FC<
   CommonPickerProps<'DATETIME'> & { title: ReactNode }
 > = ({ locale = 'en_US', pickerMode, title, timezone, ...rest }) => {
   return (
-    <div className="mb-8">
-      <h2 className="text-xl font-semibold mb-4">{title}</h2>
-      <div className="p-4 border rounded-lg">
+    <div className="dp-mb-8">
+      <h2 className="dp-text-xl dp-font-semibold dp-mb-4">{title}</h2>
+      <div className="dp-p-4 dp-border dp-rounded-lg">
         <DateTimePicker
           enablePortal
           locale={locale}

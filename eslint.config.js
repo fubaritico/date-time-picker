@@ -41,6 +41,7 @@ export default tseslint.config(
       'storybook-static',
       'eslint.config.js',
       'commitlint.config.js',
+      'add-tailwind-prefix.ts',
     ],
   },
 

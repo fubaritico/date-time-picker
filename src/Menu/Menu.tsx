@@ -231,10 +231,10 @@ const Menu: FC<MenuProps> = ({
         >
           <div
             className={clsx(
-              'bg-white shadow rounded-sm absolute z-[999] overflow-hidden',
+              'dp-bg-white dp-shadow dp-rounded-sm dp-absolute dp-z-[999] dp-overflow-hidden',
               {
-                '!overflow-y-scroll': items.length > maxMenuItems,
-                '!rounded-md': shape === 'rounded',
+                '!dp-overflow-y-scroll': items.length > maxMenuItems,
+                '!dp-rounded-md': shape === 'rounded',
               },
               className
             )}
@@ -253,7 +253,7 @@ const Menu: FC<MenuProps> = ({
             }}
             {...rest}
           >
-            <ul className="flex flex-col">
+            <ul className="dp-flex dp-flex-col">
               {items.map((item: MenuItemConfig, index) => (
                 <MenuItem
                   buttonComponent={buttonComponent}

@@ -221,7 +221,7 @@ describe('DropdownMenu', () => {
         within(screen.getByTestId('dropdown-menu')).getAllByRole('button', {
           hidden: true,
         })[0]
-      ).toHaveClass('!bg-blue-100 hover:!bg-blue-200 !text-blue-500')
+      ).toHaveClass('!dp-bg-blue-100 hover:!dp-bg-blue-200 !dp-text-blue-500')
 
       expect(
         within(screen.getByTestId('dropdown-menu')).getAllByRole('button', {
@@ -255,7 +255,7 @@ describe('DropdownMenu', () => {
         within(screen.getByTestId('dropdown-menu')).getAllByRole('button', {
           hidden: true,
         })[1]
-      ).toHaveClass('!bg-blue-100 hover:!bg-blue-200 !text-blue-500')
+      ).toHaveClass('!dp-bg-blue-100 hover:!dp-bg-blue-200 !dp-text-blue-500')
 
       expect(
         within(screen.getByTestId('dropdown-menu')).getAllByRole('button', {

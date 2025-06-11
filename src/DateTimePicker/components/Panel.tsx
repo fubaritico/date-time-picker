@@ -245,14 +245,14 @@ const Panel: FC<PanelProps> = ({
         >
           <div
             className={clsx(
-              'flex flex-col bg-white font-roboto',
-              'rounded-lg shadow-elevation-1 absolute left-0 top-[54px]',
+              'dp-flex dp-flex-col dp-bg-white dp-font-roboto',
+              'dp-rounded-lg dp-shadow-elevation-1 dp-absolute dp-left-0 dp-top-[54px]',
               {
-                'z-[999]': enablePortal,
-                'w-max': !enablePortal && !isNotDateRangePicker,
-                'w-[400px]': isNotDateRangePicker && size === 'lg',
-                'w-[308px]': isNotDateRangePicker && size === 'md',
-                'w-[272px]': isNotDateRangePicker && size === 'sm',
+                'dp-z-[999]': enablePortal,
+                'dp-w-max': !enablePortal && !isNotDateRangePicker,
+                'dp-w-[400px]': isNotDateRangePicker && size === 'lg',
+                'dp-w-[308px]': isNotDateRangePicker && size === 'md',
+                'dp-w-[272px]': isNotDateRangePicker && size === 'sm',
               }
             )}
             ref={nodeRef}

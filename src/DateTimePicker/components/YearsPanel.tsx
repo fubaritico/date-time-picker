@@ -83,29 +83,32 @@ const YearsPanel: FC<YearsPanelProps> = ({ className, onDateChange, size }) => {
 
   return (
     <div
-      className={clsx('flex flex-col', className)}
+      className={clsx('dp-flex dp-flex-col', className)}
       data-test="year-panel"
       ref={panelRef}
     >
       <div
-        className={clsx('flex gap-4 text-gray-600 justify-between', {
-          'px-6 pt-6 pb-3': size === 'lg',
-          'px-4 pt-4 pb-2': size === 'md' || size === 'sm',
-        })}
+        className={clsx(
+          'dp-flex dp-gap-4 dp-text-gray-600 dp-justify-between',
+          {
+            'dp-px-6 dp-pt-6 dp-pb-3': size === 'lg',
+            'dp-px-4 dp-pt-4 dp-pb-2': size === 'md' || size === 'sm',
+          }
+        )}
       >
         <button
           aria-label="Previous 12 years"
           className={clsx(
-            'appearance-none border-none bg-transparent cursor-pointer w-6'
+            'dp-appearance-none dp-border-none dp-bg-transparent dp-cursor-pointer dp-w-6'
           )}
           onClick={gotoPrevYearsRange}
         >
-          <Icon aria-hidden name="HiChevronLeft" className="size-6" />
+          <Icon aria-hidden name="HiChevronLeft" className="dp-size-6" />
         </button>
         <div
-          className={clsx('flex font-bold gap-1', {
-            'text-sm': size === 'md',
-            'text-xs': size === 'sm',
+          className={clsx('dp-flex dp-font-bold dp-gap-1', {
+            'dp-text-sm': size === 'md',
+            'dp-text-xs': size === 'sm',
           })}
         >
           <span aria-label={getYearFromTs(year).toString()}>
@@ -119,14 +122,14 @@ const YearsPanel: FC<YearsPanelProps> = ({ className, onDateChange, size }) => {
         <button
           aria-label="Next 12 years"
           className={clsx(
-            'appearance-none border-none bg-transparent cursor-pointer w-6'
+            'dp-appearance-none dp-border-none dp-bg-transparent dp-cursor-pointer dp-w-6'
           )}
           onClick={gotoNextYearsRange}
         >
-          <Icon aria-hidden name="HiChevronRight" className="size-6" />
+          <Icon aria-hidden name="HiChevronRight" className="dp-size-6" />
         </button>
       </div>
-      <div role="grid" className="grid grid-cols-3 gap-4 p-4">
+      <div role="grid" className="dp-grid dp-grid-cols-3 dp-gap-4 dp-p-4">
         {Array.from({ length: 12 }, (_, i) => i).map((offset) => {
           const yearWithOffset = getYearFromTs(addYears(year, offset))
 

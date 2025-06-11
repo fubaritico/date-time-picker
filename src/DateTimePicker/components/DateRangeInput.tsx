@@ -54,9 +54,9 @@ const DateRangeInput: FC<DateInputProps> = ({
   }, [setIgnoreClickAwayRef])
 
   return (
-    <div className="flex rounded-md border border-gray-300">
+    <div className="dp-flex dp-rounded-md dp-border dp-border-gray-300">
       <InputWithMask
-        className="font-roboto border-0 rounded-r-none border-r border-r-gray-200 bordder-r-dotter"
+        className="dp-font-roboto dp-border-0 dp-rounded-r-none dp-border-r dp-border-r-gray-200 dp-bordder-r-dotter"
         key="start-input"
         alwaysShowMask
         mask={startInputMaskInstance?.getMask()}
@@ -74,7 +74,7 @@ const DateRangeInput: FC<DateInputProps> = ({
         {...textInputOnlyProperties(inputTextProps)}
       />
       <InputWithMask
-        className="font-roboto border-0 rounded-l-none"
+        className="dp-font-roboto dp-border-0 dp-rounded-l-none"
         key="end-input"
         alwaysShowMask
         mask={endInputMaskInstance?.getMask()}
