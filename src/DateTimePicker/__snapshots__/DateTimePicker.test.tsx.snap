@@ -163,7 +163,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               class="dp-relative dp-w-full"
             >
               <input
-                class="dp-border dp-appearance-none dp-truncate dp-outline-0 dp-w-full dp-rounded-md dp-shadow-none dp-pl-4 dp-pr-4 dp-transition-all dp-duration-300 !dp-text-sm dp-pl-[42px] !dp-border-gray-300 !dp-bg-gray-50 !dp-text-gray-500 focus:!dp-border-blue-600 focus:!dp-text-gray-900 placeholder:!dp-text-gray-400 !dp-text-gray-500 dp-font-roboto"
+                class="dp-border dp-appearance-none dp-truncate dp-outline-0 dp-w-full dp-rounded-md dp-shadow-none dp-pl-4 dp-pr-4 dp-transition-all dp-duration-300 !dp-text-sm dp-pl-[42px] dp-border-gray-300 dp-bg-gray-50 dp-text-gray-500 focus:dp-text-gray-800 dark:dp-border-gray-600 dark:dp-bg-gray-800 dark:dp-text-gray-300 dark:focus:dp-text-white placeholder:!dp-text-gray-400 dp-font-roboto"
                 style="height: 42px;"
                 type="text"
                 value="2025/04/01 12:28 PM"
@@ -176,7 +176,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               >
                 <svg
                   aria-hidden="true"
-                  class="dp-text-gray-500 dp-transition-all dp-duration-300 dp-w-5 dp-h-5"
+                  class="dp-text-gray-500 dark:dp-text-gray-400 dp-transition-all dp-duration-300 dp-w-5 dp-h-5"
                   fill="currentColor"
                   height="1em"
                   stroke="currentColor"
@@ -201,7 +201,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
       </div>
       <div>
         <div
-          class="dp-flex dp-flex-col dp-bg-white dp-font-roboto dp-rounded-lg dp-shadow-elevation-1 dp-absolute dp-left-0 dp-top-[54px] dark:dp-bg-gray-900 dp-w-[308px] dtp-exit dtp-exit-active"
+          class="dp-flex dp-flex-col dp-bg-white dp-font-roboto dp-rounded-lg dp-shadow-elevation-1 dp-absolute dp-left-0 dp-top-[54px] dark:dp-bg-gray-800 dp-w-[308px] dtp-exit dtp-exit-active"
           style="position: absolute; top: 5px; left: 0px;"
         >
           <div
@@ -728,7 +728,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               class="dp-relative dp-w-full"
             >
               <input
-                class="dp-border dp-appearance-none dp-truncate dp-outline-0 dp-w-full dp-rounded-md dp-shadow-none dp-pl-4 dp-pr-4 dp-transition-all dp-duration-300 !dp-text-sm dp-pl-[42px] !dp-border-gray-300 !dp-bg-gray-50 !dp-text-gray-500 focus:!dp-border-blue-600 focus:!dp-text-gray-900 placeholder:!dp-text-gray-400 !dp-text-gray-500 dp-font-roboto"
+                class="dp-border dp-appearance-none dp-truncate dp-outline-0 dp-w-full dp-rounded-md dp-shadow-none dp-pl-4 dp-pr-4 dp-transition-all dp-duration-300 !dp-text-sm dp-pl-[42px] dp-border-gray-300 dp-bg-gray-50 dp-text-gray-500 focus:dp-text-gray-800 dark:dp-border-gray-600 dark:dp-bg-gray-800 dark:dp-text-gray-300 dark:focus:dp-text-white placeholder:!dp-text-gray-400 dp-font-roboto"
                 style="height: 42px;"
                 type="text"
                 value="2025/03/15 12:28 PM"
@@ -741,7 +741,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               >
                 <svg
                   aria-hidden="true"
-                  class="dp-text-gray-500 dp-transition-all dp-duration-300 dp-w-5 dp-h-5"
+                  class="dp-text-gray-500 dark:dp-text-gray-400 dp-transition-all dp-duration-300 dp-w-5 dp-h-5"
                   fill="currentColor"
                   height="1em"
                   stroke="currentColor"
@@ -766,7 +766,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
       </div>
       <div>
         <div
-          class="dp-flex dp-flex-col dp-bg-white dp-font-roboto dp-rounded-lg dp-shadow-elevation-1 dp-absolute dp-left-0 dp-top-[54px] dark:dp-bg-gray-900 dp-w-[308px] dtp-enter dtp-enter-active"
+          class="dp-flex dp-flex-col dp-bg-white dp-font-roboto dp-rounded-lg dp-shadow-elevation-1 dp-absolute dp-left-0 dp-top-[54px] dark:dp-bg-gray-800 dp-w-[308px] dtp-enter dtp-enter-active"
           style="position: absolute; top: 5px; left: 0px;"
         >
           <div
@@ -1316,7 +1316,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should sho
               class="dp-relative dp-w-full"
             >
               <input
-                class="dp-border dp-appearance-none dp-truncate dp-outline-0 dp-w-full dp-rounded-md dp-shadow-none dp-pl-4 dp-pr-4 dp-transition-all dp-duration-300 !dp-text-sm dp-pl-[42px] !dp-border-gray-300 !dp-bg-gray-50 !dp-text-gray-500 focus:!dp-border-blue-600 focus:!dp-text-gray-900 placeholder:!dp-text-gray-400 !dp-text-gray-500 dp-font-roboto"
+                class="dp-border dp-appearance-none dp-truncate dp-outline-0 dp-w-full dp-rounded-md dp-shadow-none dp-pl-4 dp-pr-4 dp-transition-all dp-duration-300 !dp-text-sm dp-pl-[42px] dp-border-gray-300 dp-bg-gray-50 dp-text-gray-500 focus:dp-text-gray-800 dark:dp-border-gray-600 dark:dp-bg-gray-800 dark:dp-text-gray-300 dark:focus:dp-text-white placeholder:!dp-text-gray-400 dp-font-roboto"
                 style="height: 42px;"
                 type="text"
                 value="2025/03/15 12:28 PM"
@@ -1329,7 +1329,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should sho
               >
                 <svg
                   aria-hidden="true"
-                  class="dp-text-gray-500 dp-transition-all dp-duration-300 dp-w-5 dp-h-5"
+                  class="dp-text-gray-500 dark:dp-text-gray-400 dp-transition-all dp-duration-300 dp-w-5 dp-h-5"
                   fill="currentColor"
                   height="1em"
                   stroke="currentColor"
@@ -1354,7 +1354,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should sho
       </div>
       <div>
         <div
-          class="dp-flex dp-flex-col dp-bg-white dp-font-roboto dp-rounded-lg dp-shadow-elevation-1 dp-absolute dp-left-0 dp-top-[54px] dark:dp-bg-gray-900 dp-w-[308px] dtp-enter dtp-enter-active"
+          class="dp-flex dp-flex-col dp-bg-white dp-font-roboto dp-rounded-lg dp-shadow-elevation-1 dp-absolute dp-left-0 dp-top-[54px] dark:dp-bg-gray-800 dp-w-[308px] dtp-enter dtp-enter-active"
           style="position: absolute; top: 5px; left: 0px;"
         >
           <div
@@ -1591,7 +1591,7 @@ exports[`DateTimePicker with timezone Controlled Date Picker - Date/Time mode sh
               class="dp-relative dp-w-full"
             >
               <input
-                class="dp-border dp-appearance-none dp-truncate dp-outline-0 dp-w-full dp-rounded-md dp-shadow-none dp-pl-4 dp-pr-4 dp-transition-all dp-duration-300 !dp-text-sm dp-pl-[42px] !dp-border-gray-300 !dp-bg-gray-50 !dp-text-gray-500 focus:!dp-border-blue-600 focus:!dp-text-gray-900 placeholder:!dp-text-gray-400 !dp-text-gray-500 dp-font-roboto"
+                class="dp-border dp-appearance-none dp-truncate dp-outline-0 dp-w-full dp-rounded-md dp-shadow-none dp-pl-4 dp-pr-4 dp-transition-all dp-duration-300 !dp-text-sm dp-pl-[42px] dp-border-gray-300 dp-bg-gray-50 dp-text-gray-500 focus:dp-text-gray-800 dark:dp-border-gray-600 dark:dp-bg-gray-800 dark:dp-text-gray-300 dark:focus:dp-text-white placeholder:!dp-text-gray-400 dp-font-roboto"
                 style="height: 42px;"
                 type="text"
                 value="2024-08-09 01:28 PM"
@@ -1604,7 +1604,7 @@ exports[`DateTimePicker with timezone Controlled Date Picker - Date/Time mode sh
               >
                 <svg
                   aria-hidden="true"
-                  class="dp-text-gray-500 dp-transition-all dp-duration-300 dp-w-5 dp-h-5"
+                  class="dp-text-gray-500 dark:dp-text-gray-400 dp-transition-all dp-duration-300 dp-w-5 dp-h-5"
                   fill="currentColor"
                   height="1em"
                   stroke="currentColor"
@@ -1656,7 +1656,7 @@ exports[`DateTimePicker with timezone Controlled Time Picker - (en) should rende
               class="dp-relative dp-w-full"
             >
               <input
-                class="dp-border dp-appearance-none dp-truncate dp-outline-0 dp-w-full dp-rounded-md dp-shadow-none dp-pl-4 dp-pr-4 dp-transition-all dp-duration-300 !dp-text-sm dp-pl-[42px] !dp-border-gray-300 !dp-bg-gray-50 !dp-text-gray-500 focus:!dp-border-blue-600 focus:!dp-text-gray-900 placeholder:!dp-text-gray-400 !dp-text-gray-500 dp-font-roboto"
+                class="dp-border dp-appearance-none dp-truncate dp-outline-0 dp-w-full dp-rounded-md dp-shadow-none dp-pl-4 dp-pr-4 dp-transition-all dp-duration-300 !dp-text-sm dp-pl-[42px] dp-border-gray-300 dp-bg-gray-50 dp-text-gray-500 focus:dp-text-gray-800 dark:dp-border-gray-600 dark:dp-bg-gray-800 dark:dp-text-gray-300 dark:focus:dp-text-white placeholder:!dp-text-gray-400 dp-font-roboto"
                 style="height: 42px;"
                 type="text"
                 value="08:02 AM"
@@ -1669,7 +1669,7 @@ exports[`DateTimePicker with timezone Controlled Time Picker - (en) should rende
               >
                 <svg
                   aria-hidden="true"
-                  class="dp-text-gray-500 dp-transition-all dp-duration-300 dp-w-5 dp-h-5"
+                  class="dp-text-gray-500 dark:dp-text-gray-400 dp-transition-all dp-duration-300 dp-w-5 dp-h-5"
                   fill="currentColor"
                   height="1em"
                   stroke="currentColor"
@@ -1718,7 +1718,7 @@ exports[`DateTimePicker with timezone Controlled Time Picker - (fr) should rende
               class="dp-relative dp-w-full"
             >
               <input
-                class="dp-border dp-appearance-none dp-truncate dp-outline-0 dp-w-full dp-rounded-md dp-shadow-none dp-pl-4 dp-pr-4 dp-transition-all dp-duration-300 !dp-text-sm dp-pl-[42px] !dp-border-gray-300 !dp-bg-gray-50 !dp-text-gray-500 focus:!dp-border-blue-600 focus:!dp-text-gray-900 placeholder:!dp-text-gray-400 !dp-text-gray-500 dp-font-roboto"
+                class="dp-border dp-appearance-none dp-truncate dp-outline-0 dp-w-full dp-rounded-md dp-shadow-none dp-pl-4 dp-pr-4 dp-transition-all dp-duration-300 !dp-text-sm dp-pl-[42px] dp-border-gray-300 dp-bg-gray-50 dp-text-gray-500 focus:dp-text-gray-800 dark:dp-border-gray-600 dark:dp-bg-gray-800 dark:dp-text-gray-300 dark:focus:dp-text-white placeholder:!dp-text-gray-400 dp-font-roboto"
                 style="height: 42px;"
                 type="text"
                 value="08:02"
@@ -1731,7 +1731,7 @@ exports[`DateTimePicker with timezone Controlled Time Picker - (fr) should rende
               >
                 <svg
                   aria-hidden="true"
-                  class="dp-text-gray-500 dp-transition-all dp-duration-300 dp-w-5 dp-h-5"
+                  class="dp-text-gray-500 dark:dp-text-gray-400 dp-transition-all dp-duration-300 dp-w-5 dp-h-5"
                   fill="currentColor"
                   height="1em"
                   stroke="currentColor"
@@ -1781,7 +1781,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 class="dp-relative dp-w-full"
               >
                 <input
-                  class="dp-border dp-appearance-none dp-truncate dp-outline-0 dp-w-full dp-rounded-md dp-shadow-none dp-pl-4 dp-pr-4 dp-transition-all dp-duration-300 !dp-text-sm dp-pl-[42px] !dp-border-gray-300 !dp-bg-gray-50 !dp-text-gray-500 focus:!dp-border-blue-600 focus:!dp-text-gray-900 placeholder:!dp-text-gray-400 !dp-text-gray-500 dp-font-roboto"
+                  class="dp-border dp-appearance-none dp-truncate dp-outline-0 dp-w-full dp-rounded-md dp-shadow-none dp-pl-4 dp-pr-4 dp-transition-all dp-duration-300 !dp-text-sm dp-pl-[42px] dp-border-gray-300 dp-bg-gray-50 dp-text-gray-500 focus:dp-text-gray-800 dark:dp-border-gray-600 dark:dp-bg-gray-800 dark:dp-text-gray-300 dark:focus:dp-text-white placeholder:!dp-text-gray-400 dp-font-roboto"
                   style="height: 42px;"
                   type="text"
                   value="2025/03/15 12:28 PM"
@@ -1794,7 +1794,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 >
                   <svg
                     aria-hidden="true"
-                    class="dp-text-gray-500 dp-transition-all dp-duration-300 dp-w-5 dp-h-5"
+                    class="dp-text-gray-500 dark:dp-text-gray-400 dp-transition-all dp-duration-300 dp-w-5 dp-h-5"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"
@@ -1819,7 +1819,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
         </div>
         <div>
           <div
-            class="dp-flex dp-flex-col dp-bg-white dp-font-roboto dp-rounded-lg dp-shadow-elevation-1 dp-absolute dp-left-0 dp-top-[54px] dark:dp-bg-gray-900 dp-w-[308px] dtp-enter dtp-enter-active"
+            class="dp-flex dp-flex-col dp-bg-white dp-font-roboto dp-rounded-lg dp-shadow-elevation-1 dp-absolute dp-left-0 dp-top-[54px] dark:dp-bg-gray-800 dp-w-[308px] dtp-enter dtp-enter-active"
             style="position: absolute; top: 5px; left: 0px;"
           >
             <div

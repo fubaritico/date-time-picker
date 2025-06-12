@@ -21,21 +21,21 @@ const buildThemeColorClasses = (color: UIColor) => [
     color: color,
     class:
       `dp-text-${color}-800 dp-bg-${color}-100 hover:dp-text-${color}-800 hover:dp-bg-${color}-100 ` +
-      `dark:dp-text-gray-800 dark:dp-bg-${color}-800 dark:hover:dp-text-gray-800 dark:hover:dp-bg-${color}-800`,
+      `dark:dp-text-${color}-200 dark:dp-bg-${color}-800 dark:hover:dp-text-${color}-200 dark:hover:dp-bg-${color}-800`,
   },
   {
     startDateIsSelected: true,
     color: color,
     class:
       `dp-border-r-[1px] dp-border-r-white dp-bg-${color}-700 dp-text-white hover:dp-bg-${color}-700 hover:dp-text-white ` +
-      `dark:dp-border-r-gray-800 dark:dp-bg-${color}-700 dark:dp-text-gray-800 dark:hover:dp-bg-${color}-700 dark:hover:dp-text-gray-800`,
+      `dark:dp-border-r-gray-800 dark:dp-bg-${color}-700 dark:dp-text-white dark:hover:dp-bg-${color}-700 dark:hover:dp-text-white`,
   },
   {
     endDateIsSelected: true,
     color: color,
     class:
       `dp-bg-${color}-700 hover:dp-bg-${color}-700 dp-text-white hover:dp-text-white ` +
-      `dark:dp-bg-${color}-700 dark:dp-text-gray-800 dark:hover:dp-bg-${color}-700 dark:hover:dp-text-gray-800`,
+      `dark:dp-bg-${color}-700 dark:dp-text-white dark:hover:dp-bg-${color}-700 dark:hover:dp-text-white`,
   },
   {
     isToday: true,

@@ -1,25 +1,23 @@
 import { Meta, StoryObj } from '@storybook/react'
+import { withDarkModeForBackground } from '@storybook-decorators/withDarkModeForBackground'
 import { FC, useState } from 'react'
-
-import { withPadding } from '../../.storybook/decorators/withLayout'
 
 import TextField, { TextFieldProps } from './TextField'
 
 const meta: Meta<typeof TextField> = {
   title: 'Components/TextField',
-  // decorators: [withDesign],
+  decorators: [withDarkModeForBackground],
   component: TextField,
+  tags: ['autodocs'],
   parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    layout: 'centered',
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/yHs1g5COcTsdobcRenIZxl/Odaseva---Design-Guide-2023?type=design&node-id=3279-34619&mode=design&t=fPou3ctT7V1YH8ZF-4',
+    layout: 'fullscreen',
+    docs: {
+      description: {
+        component:
+          'TextField is a component that allows users to input text. It can be used for various purposes such as entering names, emails, passwords, etc.',
+      },
     },
   },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-  tags: ['autodocs'],
-  // General parameters
   argTypes: {
     label: {
       control: 'text',
@@ -553,7 +551,7 @@ const boardStoryRenderer = (args: TextFieldProps) => (
 
 export const Board: Story = {
   render: boardStoryRenderer,
-  decorators: [withPadding],
+  decorators: [withDarkModeForBackground],
   parameters: {
     layout: 'fullscreen',
   },

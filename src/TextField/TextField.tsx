@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 import { forwardRef, useState } from 'react'
 
+import { cx } from '@utils'
 import { createCustomChangeEvent, handleKeyDown } from '@utils'
 
 import HelperText from '../HelperText'
@@ -123,7 +124,7 @@ const TextField: FC<TextFieldProps> = forwardRef<
           />
         )}
         <div
-          className={clsx('dp-relative dp-w-full')}
+          className="dp-relative dp-w-full"
           onMouseEnter={() => {
             if (canClear) {
               setShowCross(true)
@@ -136,7 +137,7 @@ const TextField: FC<TextFieldProps> = forwardRef<
           }}
         >
           <input
-            className={clsx(
+            className={cx(
               'dp-border dp-appearance-none dp-truncate dp-outline-0 dp-w-full dp-rounded-md',
               'dp-shadow-none dp-pl-4 dp-pr-4 dp-transition-all dp-duration-300',
               {
@@ -158,20 +159,22 @@ const TextField: FC<TextFieldProps> = forwardRef<
                 '!dp-pr-[52px]': size === 'lg' && showCross,
                 '!dp-pr-[42px]': size === 'md' && showCross,
                 '!dp-pr-[30px]': size === 'sm' && showCross,
-                '!dp-border-gray-300 !dp-bg-gray-50 !dp-text-gray-500':
+                'dp-border-gray-300 dp-bg-gray-50 dp-text-gray-500 focus:dp-text-gray-800':
                   !severity,
-                'focus:!dp-border-blue-600 focus:!dp-text-gray-900': !severity,
-                'placeholder:!dp-text-gray-400 !dp-text-gray-500': !disabled,
-                'placeholder:!dp-text-gray-300 !dp-text-gray-400': disabled,
+                'dark:dp-border-gray-600 dark:dp-bg-gray-800 dark:dp-text-gray-300 dark:focus:dp-text-white':
+                  !severity,
+                'placeholder:!dp-text-gray-400': !disabled,
+                'placeholder:!dp-text-gray-300 dp-text-gray-400 dark:dp-text-gray-500':
+                  disabled,
                 'dp-cursor-not-allowed !dp-text-gray-300':
                   disabled && !severity,
-                '!dp-border-red-500 !dp-bg-red-50 !dp-text-red-700':
+                'dp-border-red-500 dp-bg-red-50 dp-text-red-700 dark:dp-bg-gray-800 dark:dp-red-green-600':
                   severity === 'error',
-                '!dp-border-yellow-500 !dp-bg-yellow-50 !dp-text-yellow-700':
+                '!dp-border-yellow-500 !dp-bg-yellow-50 !dp-text-yellow-700 dark:dp-bg-gray-800':
                   severity === 'warning',
-                '!dp-border-green-500 !dp-bg-green-50 !dp-text-green-700':
+                'dp-border-green-500 dp-bg-green-50 dp-text-green-700 dark:dp-bg-gray-800 dark:dp-text-green-600':
                   severity === 'success',
-                '!dp-border-blue-500 !dp-bg-blue-50 !dp-text-blue-700':
+                'focus:dp-border-blue-600  !dp-border-blue-500 !dp-bg-blue-50 !dp-text-blue-700 dark:dp-bg-gray-800':
                   severity === 'info',
               },
               className
@@ -264,7 +267,7 @@ const TextField: FC<TextFieldProps> = forwardRef<
                 aria-hidden
                 name={iconName}
                 className={clsx(
-                  'dp-text-gray-500 dp-transition-all dp-duration-300',
+                  'dp-text-gray-500 dark:dp-text-gray-400 dp-transition-all dp-duration-300',
                   {
                     'dp-w-6 dp-h-6': size === 'lg',
                     'dp-w-5 dp-h-5': size === 'md',

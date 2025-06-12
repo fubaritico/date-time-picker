@@ -247,7 +247,7 @@ const Panel: FC<PanelProps> = ({
             className={clsx(
               'dp-flex dp-flex-col dp-bg-white dp-font-roboto',
               'dp-rounded-lg dp-shadow-elevation-1 dp-absolute dp-left-0 dp-top-[54px]',
-              'dark:dp-bg-gray-900',
+              'dark:dp-bg-gray-800',
               {
                 'dp-z-[999]': enablePortal,
                 'dp-w-max': !enablePortal && !isNotDateRangePicker,

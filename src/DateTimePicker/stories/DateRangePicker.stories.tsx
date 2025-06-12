@@ -1,4 +1,4 @@
-import { withDateTimePicker } from '@storybook-decorators/withDateTimePicker'
+import { withDarkModeForBackground } from '@storybook-decorators/withDarkModeForBackground'
 
 import { COLORS } from '@constants'
 import { timezones } from '@components'
@@ -47,7 +47,7 @@ const meta: Meta<typeof DateRangePicker> = {
   },
   tags: ['autodocs'],
   component: DateRangePicker,
-  decorators: [withDateTimePicker],
+  decorators: [withDarkModeForBackground],
 }
 
 export default meta
@@ -59,6 +59,7 @@ export const Uncontrolled: Story = {
   render: (args: DateRangePickerProps) => <DateRangePicker {...args} />,
   name: 'Uncontrolled',
   args: {
+    label: 'Select a range of dates',
     pickerMode: 'DATERANGE',
     timezone: 'Europe/Paris',
   },
@@ -108,7 +109,6 @@ export const DateRangeWithDates: Story = {
   args: {
     ...Uncontrolled.args,
     dateRange: [1744137767000, 1745520167000],
-    label: 'Select a Date',
   },
   argTypes: disabledControls,
 }
