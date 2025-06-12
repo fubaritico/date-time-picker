@@ -36,7 +36,8 @@ const DateBrowser: FC<DateBrowserProps> = ({
   return (
     <div
       className={clsx(
-        'dp-flex dp-gap-4 dp-text-gray-600 dp-justify-between',
+        'dp-flex dp-gap-4 dp-justify-between',
+        'dp-text-gray-600 dark:dp-text-gray-300',
         {
           'dp-px-6 dp-pt-6 dp-pb-3': size === 'lg',
           'dp-px-4 dp-pt-4 dp-pb-2': size === 'md' || size === 'sm',
@@ -49,7 +50,11 @@ const DateBrowser: FC<DateBrowserProps> = ({
         className="dp-appearance-none dp-border-none dp-bg-transparent dp-cursor-pointer dp-w-6"
         onClick={onPrevMonthClick}
       >
-        <Icon aria-hidden name="HiChevronLeft" className="w-6" />
+        <Icon
+          aria-hidden
+          name="HiChevronLeft"
+          className="dp-w-6 dark:dp-text-white"
+        />
       </button>
       <div className="dp-flex dp-font-bold dp-gap-1">
         <DateBrowserButton
@@ -76,7 +81,11 @@ const DateBrowser: FC<DateBrowserProps> = ({
         className="dp-appearance-none dp-border-none dp-bg-transparent dp-cursor-pointer dp-w-6"
         onClick={onNextMonthClick}
       >
-        <Icon aria-hidden name="HiChevronRight" className="w-6" />
+        <Icon
+          aria-hidden
+          name="HiChevronRight"
+          className="dp-w-6 dark:dp-text-white"
+        />
       </button>
     </div>
   )

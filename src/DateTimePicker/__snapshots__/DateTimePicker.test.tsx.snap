@@ -201,7 +201,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
       </div>
       <div>
         <div
-          class="dp-flex dp-flex-col dp-bg-white dp-font-roboto dp-rounded-lg dp-shadow-elevation-1 dp-absolute dp-left-0 dp-top-[54px] dp-w-[308px] dtp-exit dtp-exit-active"
+          class="dp-flex dp-flex-col dp-bg-white dp-font-roboto dp-rounded-lg dp-shadow-elevation-1 dp-absolute dp-left-0 dp-top-[54px] dark:dp-bg-gray-900 dp-w-[308px] dtp-exit dtp-exit-active"
           style="position: absolute; top: 5px; left: 0px;"
         >
           <div
@@ -260,7 +260,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
             data-test="date-panel"
           >
             <div
-              class="dp-flex dp-gap-4 dp-text-gray-600 dp-justify-between dp-px-4 dp-pt-4 dp-pb-2"
+              class="dp-flex dp-gap-4 dp-justify-between dp-text-gray-600 dark:dp-text-gray-300 dp-px-4 dp-pt-4 dp-pb-2"
             >
               <button
                 aria-label="Previous Month"
@@ -268,7 +268,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               >
                 <svg
                   aria-hidden="true"
-                  class="w-6"
+                  class="dp-w-6 dark:dp-text-white"
                   fill="currentColor"
                   height="1em"
                   stroke="currentColor"
@@ -289,7 +289,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               >
                 <button
                   aria-label="April"
-                  class="dp-transition-colors dp-duration-500 dp-focus:outline-none dp-focus-visible:outline-1 dp-text-sm dp-hover:text-bluedp--700 dp-focus-visible:outline-bluedp--700"
+                  class="dp-transition-colors dp-duration-500 focus:dp-outline-none focus-visible:dp-outline-1 dp-text-sm hover:dp-text-blue-700 focus-visible:dp-outline-blue-700"
                 >
                   <span>
                     April
@@ -297,7 +297,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
                 </button>
                 <button
                   aria-label="2025"
-                  class="dp-transition-colors dp-duration-500 dp-focus:outline-none dp-focus-visible:outline-1 dp-text-sm dp-hover:text-bluedp--700 dp-focus-visible:outline-bluedp--700"
+                  class="dp-transition-colors dp-duration-500 focus:dp-outline-none focus-visible:dp-outline-1 dp-text-sm hover:dp-text-blue-700 focus-visible:dp-outline-blue-700"
                 >
                   <span>
                     2025
@@ -310,7 +310,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               >
                 <svg
                   aria-hidden="true"
-                  class="w-6"
+                  class="dp-w-6 dark:dp-text-white"
                   fill="currentColor"
                   height="1em"
                   stroke="currentColor"
@@ -373,7 +373,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="true"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-cursor-pointer dp-text-white dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dp-bg-blue-700 dp-text-white hover:dp-bg-blue-800"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-cursor-pointer dp-text-white dark:dp-text-gray-900 dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700 dp-bg-blue-700 dp-text-white hover:dp-bg-blue-800 dark:hover:dp-bg-blue-600"
                 data-date="1743510493000"
                 data-test="1743510493000"
                 role="button"
@@ -384,7 +384,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1743596893000"
                 data-test="1743596893000"
                 role="button"
@@ -395,7 +395,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1743683293000"
                 data-test="1743683293000"
                 role="button"
@@ -406,7 +406,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1743769693000"
                 data-test="1743769693000"
                 role="button"
@@ -417,7 +417,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1743856093000"
                 data-test="1743856093000"
                 role="button"
@@ -428,7 +428,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1743942493000"
                 data-test="1743942493000"
                 role="button"
@@ -439,7 +439,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1744028893000"
                 data-test="1744028893000"
                 role="button"
@@ -450,7 +450,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1744115293000"
                 data-test="1744115293000"
                 role="button"
@@ -461,7 +461,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1744201693000"
                 data-test="1744201693000"
                 role="button"
@@ -472,7 +472,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1744288093000"
                 data-test="1744288093000"
                 role="button"
@@ -483,7 +483,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1744374493000"
                 data-test="1744374493000"
                 role="button"
@@ -494,7 +494,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1744460893000"
                 data-test="1744460893000"
                 role="button"
@@ -505,7 +505,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1744547293000"
                 data-test="1744547293000"
                 role="button"
@@ -516,7 +516,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1744633693000"
                 data-test="1744633693000"
                 role="button"
@@ -527,7 +527,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1744720093000"
                 data-test="1744720093000"
                 role="button"
@@ -538,7 +538,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1744806493000"
                 data-test="1744806493000"
                 role="button"
@@ -549,7 +549,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1744892893000"
                 data-test="1744892893000"
                 role="button"
@@ -560,7 +560,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1744979293000"
                 data-test="1744979293000"
                 role="button"
@@ -571,7 +571,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1745065693000"
                 data-test="1745065693000"
                 role="button"
@@ -582,7 +582,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1745152093000"
                 data-test="1745152093000"
                 role="button"
@@ -593,7 +593,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1745238493000"
                 data-test="1745238493000"
                 role="button"
@@ -604,7 +604,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1745324893000"
                 data-test="1745324893000"
                 role="button"
@@ -615,7 +615,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1745411293000"
                 data-test="1745411293000"
                 role="button"
@@ -626,7 +626,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1745497693000"
                 data-test="1745497693000"
                 role="button"
@@ -637,7 +637,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1745584093000"
                 data-test="1745584093000"
                 role="button"
@@ -648,7 +648,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1745670493000"
                 data-test="1745670493000"
                 role="button"
@@ -659,7 +659,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1745756893000"
                 data-test="1745756893000"
                 role="button"
@@ -670,7 +670,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1745843293000"
                 data-test="1745843293000"
                 role="button"
@@ -681,7 +681,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1745929693000"
                 data-test="1745929693000"
                 role="button"
@@ -692,7 +692,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1746016093000"
                 data-test="1746016093000"
                 role="button"
@@ -766,7 +766,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
       </div>
       <div>
         <div
-          class="dp-flex dp-flex-col dp-bg-white dp-font-roboto dp-rounded-lg dp-shadow-elevation-1 dp-absolute dp-left-0 dp-top-[54px] dp-w-[308px] dtp-enter dtp-enter-active"
+          class="dp-flex dp-flex-col dp-bg-white dp-font-roboto dp-rounded-lg dp-shadow-elevation-1 dp-absolute dp-left-0 dp-top-[54px] dark:dp-bg-gray-900 dp-w-[308px] dtp-enter dtp-enter-active"
           style="position: absolute; top: 5px; left: 0px;"
         >
           <div
@@ -825,7 +825,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
             data-test="date-panel"
           >
             <div
-              class="dp-flex dp-gap-4 dp-text-gray-600 dp-justify-between dp-px-4 dp-pt-4 dp-pb-2"
+              class="dp-flex dp-gap-4 dp-justify-between dp-text-gray-600 dark:dp-text-gray-300 dp-px-4 dp-pt-4 dp-pb-2"
             >
               <button
                 aria-label="Previous Month"
@@ -833,7 +833,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               >
                 <svg
                   aria-hidden="true"
-                  class="w-6"
+                  class="dp-w-6 dark:dp-text-white"
                   fill="currentColor"
                   height="1em"
                   stroke="currentColor"
@@ -854,7 +854,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               >
                 <button
                   aria-label="March"
-                  class="dp-transition-colors dp-duration-500 dp-focus:outline-none dp-focus-visible:outline-1 dp-text-sm dp-hover:text-bluedp--700 dp-focus-visible:outline-bluedp--700"
+                  class="dp-transition-colors dp-duration-500 focus:dp-outline-none focus-visible:dp-outline-1 dp-text-sm hover:dp-text-blue-700 focus-visible:dp-outline-blue-700"
                 >
                   <span>
                     March
@@ -862,7 +862,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
                 </button>
                 <button
                   aria-label="2025"
-                  class="dp-transition-colors dp-duration-500 dp-focus:outline-none dp-focus-visible:outline-1 dp-text-sm dp-hover:text-bluedp--700 dp-focus-visible:outline-bluedp--700"
+                  class="dp-transition-colors dp-duration-500 focus:dp-outline-none focus-visible:dp-outline-1 dp-text-sm hover:dp-text-blue-700 focus-visible:dp-outline-blue-700"
                 >
                   <span>
                     2025
@@ -875,7 +875,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               >
                 <svg
                   aria-hidden="true"
-                  class="w-6"
+                  class="dp-w-6 dark:dp-text-white"
                   fill="currentColor"
                   height="1em"
                   stroke="currentColor"
@@ -950,7 +950,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1740832093000"
                 data-test="1740832093000"
                 role="button"
@@ -961,7 +961,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1740918493000"
                 data-test="1740918493000"
                 role="button"
@@ -972,7 +972,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1741004893000"
                 data-test="1741004893000"
                 role="button"
@@ -983,7 +983,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1741091293000"
                 data-test="1741091293000"
                 role="button"
@@ -994,7 +994,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1741177693000"
                 data-test="1741177693000"
                 role="button"
@@ -1005,7 +1005,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1741264093000"
                 data-test="1741264093000"
                 role="button"
@@ -1016,7 +1016,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1741350493000"
                 data-test="1741350493000"
                 role="button"
@@ -1027,7 +1027,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1741436893000"
                 data-test="1741436893000"
                 role="button"
@@ -1038,7 +1038,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1741523293000"
                 data-test="1741523293000"
                 role="button"
@@ -1049,7 +1049,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1741609693000"
                 data-test="1741609693000"
                 role="button"
@@ -1060,7 +1060,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1741696093000"
                 data-test="1741696093000"
                 role="button"
@@ -1071,7 +1071,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1741782493000"
                 data-test="1741782493000"
                 role="button"
@@ -1082,7 +1082,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1741868893000"
                 data-test="1741868893000"
                 role="button"
@@ -1093,7 +1093,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1741955293000"
                 data-test="1741955293000"
                 role="button"
@@ -1104,7 +1104,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="true"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-cursor-pointer dp-text-white dp-shadow-border dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dp-border-2 dp-border-blue-600 dp-text-blue-600 hover:dp-text-white hover:dp-bg-blue-600 dp-bg-blue-700 dp-text-white hover:dp-bg-blue-800"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-cursor-pointer dp-text-white dark:dp-text-gray-900 dp-shadow-border dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700 dp-bg-blue-700 dp-text-white hover:dp-bg-blue-800 dark:hover:dp-bg-blue-600"
                 data-date="1742041693000"
                 data-test="1742041693000"
                 role="button"
@@ -1115,7 +1115,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1742128093000"
                 data-test="1742128093000"
                 role="button"
@@ -1126,7 +1126,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1742214493000"
                 data-test="1742214493000"
                 role="button"
@@ -1137,7 +1137,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1742300893000"
                 data-test="1742300893000"
                 role="button"
@@ -1148,7 +1148,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1742387293000"
                 data-test="1742387293000"
                 role="button"
@@ -1159,7 +1159,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1742473693000"
                 data-test="1742473693000"
                 role="button"
@@ -1170,7 +1170,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1742560093000"
                 data-test="1742560093000"
                 role="button"
@@ -1181,7 +1181,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1742646493000"
                 data-test="1742646493000"
                 role="button"
@@ -1192,7 +1192,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1742732893000"
                 data-test="1742732893000"
                 role="button"
@@ -1203,7 +1203,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1742819293000"
                 data-test="1742819293000"
                 role="button"
@@ -1214,7 +1214,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1742905693000"
                 data-test="1742905693000"
                 role="button"
@@ -1225,7 +1225,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1742992093000"
                 data-test="1742992093000"
                 role="button"
@@ -1236,7 +1236,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1743078493000"
                 data-test="1743078493000"
                 role="button"
@@ -1247,7 +1247,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1743164893000"
                 data-test="1743164893000"
                 role="button"
@@ -1258,7 +1258,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1743251293000"
                 data-test="1743251293000"
                 role="button"
@@ -1269,7 +1269,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1743337693000"
                 data-test="1743337693000"
                 role="button"
@@ -1280,7 +1280,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="false"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700 dp-duration-500 dp-cursor-pointer dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                 data-date="1743424093000"
                 data-test="1743424093000"
                 role="button"
@@ -1354,7 +1354,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should sho
       </div>
       <div>
         <div
-          class="dp-flex dp-flex-col dp-bg-white dp-font-roboto dp-rounded-lg dp-shadow-elevation-1 dp-absolute dp-left-0 dp-top-[54px] dp-w-[308px] dtp-enter dtp-enter-active"
+          class="dp-flex dp-flex-col dp-bg-white dp-font-roboto dp-rounded-lg dp-shadow-elevation-1 dp-absolute dp-left-0 dp-top-[54px] dark:dp-bg-gray-900 dp-w-[308px] dtp-enter dtp-enter-active"
           style="position: absolute; top: 5px; left: 0px;"
         >
           <div
@@ -1819,7 +1819,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
         </div>
         <div>
           <div
-            class="dp-flex dp-flex-col dp-bg-white dp-font-roboto dp-rounded-lg dp-shadow-elevation-1 dp-absolute dp-left-0 dp-top-[54px] dp-w-[308px] dtp-enter dtp-enter-active"
+            class="dp-flex dp-flex-col dp-bg-white dp-font-roboto dp-rounded-lg dp-shadow-elevation-1 dp-absolute dp-left-0 dp-top-[54px] dark:dp-bg-gray-900 dp-w-[308px] dtp-enter dtp-enter-active"
             style="position: absolute; top: 5px; left: 0px;"
           >
             <div
@@ -1878,7 +1878,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
               data-test="date-panel"
             >
               <div
-                class="dp-flex dp-gap-4 dp-text-gray-600 dp-justify-between dp-px-4 dp-pt-4 dp-pb-2"
+                class="dp-flex dp-gap-4 dp-justify-between dp-text-gray-600 dark:dp-text-gray-300 dp-px-4 dp-pt-4 dp-pb-2"
               >
                 <button
                   aria-label="Previous Month"
@@ -1886,7 +1886,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 >
                   <svg
                     aria-hidden="true"
-                    class="w-6"
+                    class="dp-w-6 dark:dp-text-white"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"
@@ -1907,7 +1907,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 >
                   <button
                     aria-label="March"
-                    class="dp-transition-colors dp-duration-500 dp-focus:outline-none dp-focus-visible:outline-1 dp-text-sm dp-hover:text-bluedp--700 dp-focus-visible:outline-bluedp--700"
+                    class="dp-transition-colors dp-duration-500 focus:dp-outline-none focus-visible:dp-outline-1 dp-text-sm hover:dp-text-blue-700 focus-visible:dp-outline-blue-700"
                   >
                     <span>
                       March
@@ -1915,7 +1915,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                   </button>
                   <button
                     aria-label="2025"
-                    class="dp-transition-colors dp-duration-500 dp-focus:outline-none dp-focus-visible:outline-1 dp-text-sm dp-hover:text-bluedp--700 dp-focus-visible:outline-bluedp--700"
+                    class="dp-transition-colors dp-duration-500 focus:dp-outline-none focus-visible:dp-outline-1 dp-text-sm hover:dp-text-blue-700 focus-visible:dp-outline-blue-700"
                   >
                     <span>
                       2025
@@ -1928,7 +1928,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 >
                   <svg
                     aria-hidden="true"
-                    class="w-6"
+                    class="dp-w-6 dark:dp-text-white"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"
@@ -2003,7 +2003,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 <div
                   aria-current="false"
                   aria-disabled="true"
-                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                   data-date="1740832093000"
                   data-test="1740832093000"
                   role="button"
@@ -2014,7 +2014,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 <div
                   aria-current="false"
                   aria-disabled="true"
-                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                   data-date="1740918493000"
                   data-test="1740918493000"
                   role="button"
@@ -2025,7 +2025,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 <div
                   aria-current="false"
                   aria-disabled="true"
-                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                   data-date="1741004893000"
                   data-test="1741004893000"
                   role="button"
@@ -2036,7 +2036,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 <div
                   aria-current="false"
                   aria-disabled="true"
-                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                   data-date="1741091293000"
                   data-test="1741091293000"
                   role="button"
@@ -2047,7 +2047,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 <div
                   aria-current="false"
                   aria-disabled="true"
-                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                   data-date="1741177693000"
                   data-test="1741177693000"
                   role="button"
@@ -2058,7 +2058,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 <div
                   aria-current="false"
                   aria-disabled="true"
-                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                   data-date="1741264093000"
                   data-test="1741264093000"
                   role="button"
@@ -2069,7 +2069,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 <div
                   aria-current="false"
                   aria-disabled="true"
-                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                   data-date="1741350493000"
                   data-test="1741350493000"
                   role="button"
@@ -2080,7 +2080,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 <div
                   aria-current="false"
                   aria-disabled="true"
-                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                   data-date="1741436893000"
                   data-test="1741436893000"
                   role="button"
@@ -2091,7 +2091,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 <div
                   aria-current="false"
                   aria-disabled="true"
-                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                   data-date="1741523293000"
                   data-test="1741523293000"
                   role="button"
@@ -2102,7 +2102,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 <div
                   aria-current="false"
                   aria-disabled="true"
-                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                   data-date="1741609693000"
                   data-test="1741609693000"
                   role="button"
@@ -2113,7 +2113,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 <div
                   aria-current="false"
                   aria-disabled="true"
-                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                   data-date="1741696093000"
                   data-test="1741696093000"
                   role="button"
@@ -2124,7 +2124,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 <div
                   aria-current="false"
                   aria-disabled="true"
-                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                   data-date="1741782493000"
                   data-test="1741782493000"
                   role="button"
@@ -2135,7 +2135,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 <div
                   aria-current="false"
                   aria-disabled="true"
-                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                   data-date="1741868893000"
                   data-test="1741868893000"
                   role="button"
@@ -2146,7 +2146,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 <div
                   aria-current="false"
                   aria-disabled="true"
-                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                   data-date="1741955293000"
                   data-test="1741955293000"
                   role="button"
@@ -2157,7 +2157,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 <div
                   aria-current="false"
                   aria-disabled="true"
-                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dp-cursor-not-allowed dp-shadow-border dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dp-border-2 dp-border-blue-600 dp-text-blue-600 hover:dp-text-white hover:dp-bg-blue-600"
+                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed dp-shadow-border dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700 dp-border-2 dp-bg-transparent dp-border-blue-600 !dp-text-blue-600 hover:!dp-border-blue-500 hover:!dp-text-blue-500"
                   data-date="1742041693000"
                   data-test="1742041693000"
                   role="button"
@@ -2168,7 +2168,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 <div
                   aria-current="false"
                   aria-disabled="true"
-                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                   data-date="1742128093000"
                   data-test="1742128093000"
                   role="button"
@@ -2179,7 +2179,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 <div
                   aria-current="false"
                   aria-disabled="true"
-                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                   data-date="1742214493000"
                   data-test="1742214493000"
                   role="button"
@@ -2190,7 +2190,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 <div
                   aria-current="false"
                   aria-disabled="true"
-                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                   data-date="1742300893000"
                   data-test="1742300893000"
                   role="button"
@@ -2201,7 +2201,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 <div
                   aria-current="false"
                   aria-disabled="true"
-                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                   data-date="1742387293000"
                   data-test="1742387293000"
                   role="button"
@@ -2212,7 +2212,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 <div
                   aria-current="false"
                   aria-disabled="true"
-                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                   data-date="1742473693000"
                   data-test="1742473693000"
                   role="button"
@@ -2223,7 +2223,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 <div
                   aria-current="false"
                   aria-disabled="true"
-                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                   data-date="1742560093000"
                   data-test="1742560093000"
                   role="button"
@@ -2234,7 +2234,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 <div
                   aria-current="false"
                   aria-disabled="true"
-                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                   data-date="1742646493000"
                   data-test="1742646493000"
                   role="button"
@@ -2245,7 +2245,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 <div
                   aria-current="false"
                   aria-disabled="true"
-                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                   data-date="1742732893000"
                   data-test="1742732893000"
                   role="button"
@@ -2256,7 +2256,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 <div
                   aria-current="false"
                   aria-disabled="true"
-                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                   data-date="1742819293000"
                   data-test="1742819293000"
                   role="button"
@@ -2267,7 +2267,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 <div
                   aria-current="false"
                   aria-disabled="true"
-                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                   data-date="1742905693000"
                   data-test="1742905693000"
                   role="button"
@@ -2278,7 +2278,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 <div
                   aria-current="false"
                   aria-disabled="true"
-                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                   data-date="1742992093000"
                   data-test="1742992093000"
                   role="button"
@@ -2289,7 +2289,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 <div
                   aria-current="false"
                   aria-disabled="true"
-                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                   data-date="1743078493000"
                   data-test="1743078493000"
                   role="button"
@@ -2300,7 +2300,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 <div
                   aria-current="false"
                   aria-disabled="true"
-                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                   data-date="1743164893000"
                   data-test="1743164893000"
                   role="button"
@@ -2311,7 +2311,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 <div
                   aria-current="false"
                   aria-disabled="true"
-                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                   data-date="1743251293000"
                   data-test="1743251293000"
                   role="button"
@@ -2322,7 +2322,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 <div
                   aria-current="false"
                   aria-disabled="true"
-                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                   data-date="1743337693000"
                   data-test="1743337693000"
                   role="button"
@@ -2333,7 +2333,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 <div
                   aria-current="false"
                   aria-disabled="true"
-                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100"
+                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700"
                   data-date="1743424093000"
                   data-test="1743424093000"
                   role="button"

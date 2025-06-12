@@ -1,4 +1,5 @@
 import { withDateTimePicker } from '@storybook-decorators/withDateTimePicker'
+import withToggleDarkMode from '@storybook-decorators/withToggleDarkMode'
 
 import TimePicker, { TimePickerProps } from '../TimePicker'
 
@@ -15,7 +16,7 @@ const meta: Meta<typeof TimePicker> = {
   },
   tags: ['autodocs'],
   component: TimePicker,
-  decorators: [withDateTimePicker],
+  decorators: [withDateTimePicker, withToggleDarkMode],
 }
 
 export default meta

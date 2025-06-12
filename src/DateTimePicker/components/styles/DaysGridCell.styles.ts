@@ -12,33 +12,42 @@ import type { VariantProps } from 'class-variance-authority'
 const buildThemeColorClasses = (color: UIColor) => [
   {
     color: color,
-    class: `focus-visible:dp-outline-${color}-100`,
+    class: `focus-visible:dp-outline-${color}-100 dark:focus-visible:dp-outline-${color}-700`,
   },
   {
     isInRange: true,
+    startDateIsSelected: false,
+    endDateIsSelected: false,
     color: color,
-    class: `dp-text-${color}-800 dp-bg-${color}-100 hover:dp-text-${color}-800 hover:dp-bg-${color}-100`,
+    class:
+      `dp-text-${color}-800 dp-bg-${color}-100 hover:dp-text-${color}-800 hover:dp-bg-${color}-100 ` +
+      `dark:dp-text-gray-800 dark:dp-bg-${color}-800 dark:hover:dp-text-gray-800 dark:hover:dp-bg-${color}-800`,
   },
   {
     startDateIsSelected: true,
     color: color,
-    class: `!dp-border-r-white dp-bg-${color}-700 hover:dp-bg-${color}-700 dp-text-white hover:dp-text-white`,
+    class:
+      `!dp-border-r-white dp-bg-${color}-700 dp-text-white hover:dp-bg-${color}-700 hover:dp-text-white ` +
+      `dark:!dp-border-r-gray-800 dark:dp-bg-${color}-700 dark:dp-text-gray-800 dark:hover:dp-bg-${color}-700 dark:hover:dp-text-gray-800`,
   },
   {
     endDateIsSelected: true,
     color: color,
-    class: `dp-bg-${color}-700 hover:dp-bg-${color}-700 dp-text-white hover:dp-text-white`,
+    class:
+      `dp-bg-${color}-700 hover:dp-bg-${color}-700 dp-text-white hover:dp-text-white ` +
+      `dark:dp-bg-${color}-700 dark:dp-text-gray-800 dark:hover:dp-bg-${color}-700 dark:hover:dp-text-gray-800`,
   },
   {
     isToday: true,
     isInRange: false,
+    isSelected: false,
     color: color,
-    class: `dp-border-2 dp-border-${color}-600 dp-text-${color}-600 hover:dp-text-white hover:dp-bg-${color}-600`,
+    class: `dp-border-2 dp-bg-transparent dp-border-${color}-600 !dp-text-${color}-600 hover:!dp-border-${color}-500 hover:!dp-text-${color}-500`,
   },
   {
     isSelected: true,
     color: color,
-    class: `dp-bg-${color}-700 dp-text-white hover:dp-bg-${color}-800`,
+    class: `dp-bg-${color}-700 dp-text-white hover:dp-bg-${color}-800 dark:hover:dp-bg-${color}-600`,
   },
 ]
 
@@ -63,7 +72,7 @@ const daysGridCellStyles = cva(
         {} as Record<UIColor, string>
       ),
       defaultBehavior: {
-        true: 'dp-text-gray-900 hover:dp-bg-gray-100',
+        true: 'dp-text-gray-900 hover:dp-bg-gray-100 dark:dp-text-gray-200 dark:hover:dp-bg-gray-700',
       },
       hasDateRangeMode: {
         true: 'dp-duration-200',
@@ -71,13 +80,13 @@ const daysGridCellStyles = cva(
       },
       isClickable: {
         true: 'dp-cursor-pointer',
-        false: 'dp-text-gray-300 dp-cursor-not-allowed',
+        false: 'dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed',
       },
       isSelected: {
-        true: 'dp-text-white',
+        true: 'dp-text-white dark:dp-text-gray-900',
       },
       isInRange: {
-        true: 'dp-border-r-[1px] dp-border-r-white last:dp-border-r-0 -dp-mx-0.5 dp-rounded-none',
+        true: 'dp-border-r-[1px] dp-border-r-white dark:dp-border-r-gray-900 last:dp-border-r-0 -dp-mx-0.5 dp-rounded-none',
       },
       isToday: {
         true: 'dp-shadow-border',
@@ -88,10 +97,10 @@ const daysGridCellStyles = cva(
         lg: 'dp-h-10 dp-w-10',
       },
       endDateIsSelected: {
-        true: 'dp-rounded-r-md dp-rounded-l-none dp-text-white !dp-w-10 -dp-mx-0.5',
+        true: 'dp-rounded-r-md dp-rounded-l-none dp-text-white dark:dp-text-gray-800 !dp-w-10 -dp-mx-0.5',
       },
       startDateIsSelected: {
-        true: 'dp-rounded-r-none dp-rounded-l-md dp-text-white !dp-w-10 -dp-mx-0.5',
+        true: 'dp-rounded-r-none dp-rounded-l-md dp-text-white dark:dp-text-gray-800 !dp-w-10 -dp-mx-0.5',
       },
     },
     compoundVariants: [

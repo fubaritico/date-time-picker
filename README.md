@@ -10,7 +10,7 @@ Tests have to be written for `DateRangePicker`.
 
 A migration to Tailwind 4.x is planned.
 
-Dark mode will be added soon.
+Currently adding dark mode to panels and inputs.
 
 ## Properties
 

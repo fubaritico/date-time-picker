@@ -122,7 +122,7 @@ const DateRangePanel: FC<DateRangePanelProps> = ({
           onEndDateChangeHandler={onEndDateChangeHandler}
         />
       </div>
-      <div className="dp-w-auto dp-border-r dp-border-r-gray-100" />
+      <div className="dp-w-auto dp-border-r dp-border-r-gray-100 dark:dp-border-r-gray-700" />
       <div
         className={clsx('dp-flex dp-flex-col', className)}
         data-test="date-panel-end"

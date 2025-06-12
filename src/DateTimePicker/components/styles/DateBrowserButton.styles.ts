@@ -11,15 +11,15 @@ import type { VariantProps } from 'class-variance-authority'
  */
 const buildThemeColorClasses = (color: UIColor) => ({
   color: color,
-  class: `dp-hover:text-${color}dp--700 dp-focus-visible:outline-${color}dp--700`,
+  class: `hover:dp-text-${color}-700 focus-visible:dp-outline-${color}-700`,
 })
 
 const dateBrowserButtonStyles = cva(
   [
     'dp-transition-colors',
     'dp-duration-500',
-    'dp-focus:outline-none',
-    'dp-focus-visible:outline-1',
+    'focus:dp-outline-none',
+    'focus-visible:dp-outline-1',
   ],
   {
     variants: {
