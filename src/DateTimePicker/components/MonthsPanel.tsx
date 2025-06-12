@@ -122,10 +122,14 @@ const MonthsPanel: FC<MonthsPanelProps> = ({
           )}
           onClick={gotoPrevYear}
         >
-          <Icon aria-hidden name="HiChevronLeft" className="dp-w-6" />
+          <Icon
+            aria-hidden
+            name="HiChevronLeft"
+            className="dp-w-6 dark:dp-text-gray-200"
+          />
         </button>
         <div
-          className={clsx('dp-font-bold', {
+          className={clsx('dp-font-bold dark:dp-text-gray-100', {
             'dp-text-sm': size === 'md',
             'dp-text-xs': size === 'sm',
           })}
@@ -139,7 +143,11 @@ const MonthsPanel: FC<MonthsPanelProps> = ({
           )}
           onClick={gotoNextYear}
         >
-          <Icon aria-hidden name="HiChevronRight" className="dp-w-6" />
+          <Icon
+            aria-hidden
+            name="HiChevronRight"
+            className="dp-w-6 dark:dp-text-gray-200"
+          />
         </button>
       </div>
       <div role="grid" className="dp-grid dp-grid-cols-3 dp-gap-4 dp-p-4">

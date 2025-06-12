@@ -35,7 +35,8 @@ const panelButtonStyles = cva(
         {} as Record<UIColor, string>
       ),
       isSelected: {
-        false: 'hover:dp-bg-gray-100 dp-text-gray-900',
+        false:
+          'hover:dp-bg-gray-100 dp-text-gray-900 dark:hover:dp-bg-gray-700 dark:dp-text-gray-300',
         true: 'dp-text-white',
       },
       size: {

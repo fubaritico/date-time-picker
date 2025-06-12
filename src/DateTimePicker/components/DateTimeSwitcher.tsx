@@ -22,13 +22,10 @@ const DateTimeSwitcher = forwardRef<HTMLDivElement, DataTimeSwitcherProps>(
 
     return (
       <div
-        className={clsx(
-          'dp-flex dp-justify-between dp-items-stretch dp-border-b dp-border-b-gray-100',
-          {
-            'dp-h-[36px]': size === 'sm',
-            'dp-h-[46px]': size !== 'sm',
-          }
-        )}
+        className={clsx('dp-flex dp-justify-between dp-items-stretch', {
+          'dp-h-[36px]': size === 'sm',
+          'dp-h-[46px]': size !== 'sm',
+        })}
         ref={ref}
       >
         <button

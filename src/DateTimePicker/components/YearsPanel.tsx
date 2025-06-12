@@ -103,13 +103,20 @@ const YearsPanel: FC<YearsPanelProps> = ({ className, onDateChange, size }) => {
           )}
           onClick={gotoPrevYearsRange}
         >
-          <Icon aria-hidden name="HiChevronLeft" className="dp-size-6" />
+          <Icon
+            aria-hidden
+            name="HiChevronLeft"
+            className="dp-w-6 dark:dp-text-gray-200"
+          />
         </button>
         <div
-          className={clsx('dp-flex dp-font-bold dp-gap-1', {
-            'dp-text-sm': size === 'md',
-            'dp-text-xs': size === 'sm',
-          })}
+          className={clsx(
+            'dp-flex dp-font-bold dp-gap-1 dark:dp-text-gray-100',
+            {
+              'dp-text-sm': size === 'md',
+              'dp-text-xs': size === 'sm',
+            }
+          )}
         >
           <span aria-label={getYearFromTs(year).toString()}>
             {getYearFromTs(year).toString()}
@@ -126,7 +133,11 @@ const YearsPanel: FC<YearsPanelProps> = ({ className, onDateChange, size }) => {
           )}
           onClick={gotoNextYearsRange}
         >
-          <Icon aria-hidden name="HiChevronRight" className="dp-size-6" />
+          <Icon
+            aria-hidden
+            name="HiChevronRight"
+            className="dp-w-6 dark:dp-text-gray-200"
+          />
         </button>
       </div>
       <div role="grid" className="dp-grid dp-grid-cols-3 dp-gap-4 dp-p-4">

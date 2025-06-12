@@ -205,11 +205,11 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
           style="position: absolute; top: 5px; left: 0px;"
         >
           <div
-            class="dp-flex dp-justify-between dp-items-stretch dp-border-b dp-border-b-gray-100 dp-h-[46px]"
+            class="dp-flex dp-justify-between dp-items-stretch dp-h-[46px]"
           >
             <button
               aria-label="Switch to days view"
-              class="dp-flex dp-justify-center dp-items-center dp-transition dp-duration-500 dp-grow dp-h-[46px] dp-bg-blue-100 dp-text-blue-700 dp-rounded-tl-lg"
+              class="dp-flex dp-justify-center dp-items-center dp-transition dp-duration-500 dp-grow dp-border-b dp-border-b-gray-100 dark:dp-border-b-gray-700 dp-h-[46px] dp-bg-blue-100 dp-text-blue-700 dark:dp-bg-blue-800/50 dark:dp-text-blue-500 dp-rounded-tl-lg"
             >
               <svg
                 aria-hidden="true"
@@ -234,7 +234,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
             </button>
             <button
               aria-label="Switch to time view"
-              class="dp-flex dp-justify-center dp-items-center dp-transition dp-duration-500 dp-grow hover:dp-bg-gray-100 hover:dp-gray-red-800 dp-text-gray-500 dp-h-[46px] dp-rounded-tr-lg"
+              class="dp-flex dp-justify-center dp-items-center dp-transition dp-duration-500 dp-grow dp-border-b dp-border-b-gray-100 dark:dp-border-b-gray-700 hover:dp-bg-gray-100 dp-text-gray-500 dark:hover:dp-bg-gray-700 dp-h-[46px] dp-rounded-tr-lg"
             >
               <svg
                 aria-hidden="true"
@@ -770,11 +770,11 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
           style="position: absolute; top: 5px; left: 0px;"
         >
           <div
-            class="dp-flex dp-justify-between dp-items-stretch dp-border-b dp-border-b-gray-100 dp-h-[46px]"
+            class="dp-flex dp-justify-between dp-items-stretch dp-h-[46px]"
           >
             <button
               aria-label="Switch to days view"
-              class="dp-flex dp-justify-center dp-items-center dp-transition dp-duration-500 dp-grow dp-h-[46px] dp-bg-blue-100 dp-text-blue-700 dp-rounded-tl-lg"
+              class="dp-flex dp-justify-center dp-items-center dp-transition dp-duration-500 dp-grow dp-border-b dp-border-b-gray-100 dark:dp-border-b-gray-700 dp-h-[46px] dp-bg-blue-100 dp-text-blue-700 dark:dp-bg-blue-800/50 dark:dp-text-blue-500 dp-rounded-tl-lg"
             >
               <svg
                 aria-hidden="true"
@@ -799,7 +799,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
             </button>
             <button
               aria-label="Switch to time view"
-              class="dp-flex dp-justify-center dp-items-center dp-transition dp-duration-500 dp-grow hover:dp-bg-gray-100 hover:dp-gray-red-800 dp-text-gray-500 dp-h-[46px] dp-rounded-tr-lg"
+              class="dp-flex dp-justify-center dp-items-center dp-transition dp-duration-500 dp-grow dp-border-b dp-border-b-gray-100 dark:dp-border-b-gray-700 hover:dp-bg-gray-100 dp-text-gray-500 dark:hover:dp-bg-gray-700 dp-h-[46px] dp-rounded-tr-lg"
             >
               <svg
                 aria-hidden="true"
@@ -1358,11 +1358,11 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should sho
           style="position: absolute; top: 5px; left: 0px;"
         >
           <div
-            class="dp-flex dp-justify-between dp-items-stretch dp-border-b dp-border-b-gray-100 dp-h-[46px]"
+            class="dp-flex dp-justify-between dp-items-stretch dp-h-[46px]"
           >
             <button
               aria-label="Switch to days view"
-              class="dp-flex dp-justify-center dp-items-center dp-transition dp-duration-500 dp-grow dp-h-[46px] dp-bg-blue-100 dp-text-blue-700 dp-rounded-tl-lg"
+              class="dp-flex dp-justify-center dp-items-center dp-transition dp-duration-500 dp-grow dp-border-b dp-border-b-gray-100 dark:dp-border-b-gray-700 dp-h-[46px] dp-bg-blue-100 dp-text-blue-700 dark:dp-bg-blue-800/50 dark:dp-text-blue-500 dp-rounded-tl-lg"
             >
               <svg
                 aria-hidden="true"
@@ -1387,7 +1387,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should sho
             </button>
             <button
               aria-label="Switch to time view"
-              class="dp-flex dp-justify-center dp-items-center dp-transition dp-duration-500 dp-grow hover:dp-bg-gray-100 hover:dp-gray-red-800 dp-text-gray-500 dp-h-[46px] dp-rounded-tr-lg"
+              class="dp-flex dp-justify-center dp-items-center dp-transition dp-duration-500 dp-grow dp-border-b dp-border-b-gray-100 dark:dp-border-b-gray-700 hover:dp-bg-gray-100 dp-text-gray-500 dark:hover:dp-bg-gray-700 dp-h-[46px] dp-rounded-tr-lg"
             >
               <svg
                 aria-hidden="true"
@@ -1421,7 +1421,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should sho
               >
                 <svg
                   aria-hidden="true"
-                  class="dp-size-6"
+                  class="dp-w-6 dark:dp-text-gray-200"
                   fill="currentColor"
                   height="1em"
                   stroke="currentColor"
@@ -1438,7 +1438,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should sho
                 </svg>
               </button>
               <div
-                class="dp-flex dp-font-bold dp-gap-1 dp-text-sm"
+                class="dp-flex dp-font-bold dp-gap-1 dark:dp-text-gray-100 dp-text-sm"
               >
                 <span
                   aria-label="2013"
@@ -1458,7 +1458,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should sho
               >
                 <svg
                   aria-hidden="true"
-                  class="dp-size-6"
+                  class="dp-w-6 dark:dp-text-gray-200"
                   fill="currentColor"
                   height="1em"
                   stroke="currentColor"
@@ -1481,84 +1481,84 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should sho
             >
               <button
                 aria-label="Choose 2013"
-                class="dp-p-2 dp-rounded-lg dp-truncate dp-transition dp-duration-200 dp-ease-in-out dp-grow hover:dp-bg-gray-100 dp-text-gray-900 dp-text-sm dp-h-[36px]"
+                class="dp-p-2 dp-rounded-lg dp-truncate dp-transition dp-duration-200 dp-ease-in-out dp-grow hover:dp-bg-gray-100 dp-text-gray-900 dark:hover:dp-bg-gray-700 dark:dp-text-gray-300 dp-text-sm dp-h-[36px]"
                 data-date="1363350493000"
               >
                 2013
               </button>
               <button
                 aria-label="Choose 2014"
-                class="dp-p-2 dp-rounded-lg dp-truncate dp-transition dp-duration-200 dp-ease-in-out dp-grow hover:dp-bg-gray-100 dp-text-gray-900 dp-text-sm dp-h-[36px]"
+                class="dp-p-2 dp-rounded-lg dp-truncate dp-transition dp-duration-200 dp-ease-in-out dp-grow hover:dp-bg-gray-100 dp-text-gray-900 dark:hover:dp-bg-gray-700 dark:dp-text-gray-300 dp-text-sm dp-h-[36px]"
                 data-date="1394886493000"
               >
                 2014
               </button>
               <button
                 aria-label="Choose 2015"
-                class="dp-p-2 dp-rounded-lg dp-truncate dp-transition dp-duration-200 dp-ease-in-out dp-grow hover:dp-bg-gray-100 dp-text-gray-900 dp-text-sm dp-h-[36px]"
+                class="dp-p-2 dp-rounded-lg dp-truncate dp-transition dp-duration-200 dp-ease-in-out dp-grow hover:dp-bg-gray-100 dp-text-gray-900 dark:hover:dp-bg-gray-700 dark:dp-text-gray-300 dp-text-sm dp-h-[36px]"
                 data-date="1426422493000"
               >
                 2015
               </button>
               <button
                 aria-label="Choose 2016"
-                class="dp-p-2 dp-rounded-lg dp-truncate dp-transition dp-duration-200 dp-ease-in-out dp-grow hover:dp-bg-gray-100 dp-text-gray-900 dp-text-sm dp-h-[36px]"
+                class="dp-p-2 dp-rounded-lg dp-truncate dp-transition dp-duration-200 dp-ease-in-out dp-grow hover:dp-bg-gray-100 dp-text-gray-900 dark:hover:dp-bg-gray-700 dark:dp-text-gray-300 dp-text-sm dp-h-[36px]"
                 data-date="1458044893000"
               >
                 2016
               </button>
               <button
                 aria-label="Choose 2017"
-                class="dp-p-2 dp-rounded-lg dp-truncate dp-transition dp-duration-200 dp-ease-in-out dp-grow hover:dp-bg-gray-100 dp-text-gray-900 dp-text-sm dp-h-[36px]"
+                class="dp-p-2 dp-rounded-lg dp-truncate dp-transition dp-duration-200 dp-ease-in-out dp-grow hover:dp-bg-gray-100 dp-text-gray-900 dark:hover:dp-bg-gray-700 dark:dp-text-gray-300 dp-text-sm dp-h-[36px]"
                 data-date="1489580893000"
               >
                 2017
               </button>
               <button
                 aria-label="Choose 2018"
-                class="dp-p-2 dp-rounded-lg dp-truncate dp-transition dp-duration-200 dp-ease-in-out dp-grow hover:dp-bg-gray-100 dp-text-gray-900 dp-text-sm dp-h-[36px]"
+                class="dp-p-2 dp-rounded-lg dp-truncate dp-transition dp-duration-200 dp-ease-in-out dp-grow hover:dp-bg-gray-100 dp-text-gray-900 dark:hover:dp-bg-gray-700 dark:dp-text-gray-300 dp-text-sm dp-h-[36px]"
                 data-date="1521116893000"
               >
                 2018
               </button>
               <button
                 aria-label="Choose 2019"
-                class="dp-p-2 dp-rounded-lg dp-truncate dp-transition dp-duration-200 dp-ease-in-out dp-grow hover:dp-bg-gray-100 dp-text-gray-900 dp-text-sm dp-h-[36px]"
+                class="dp-p-2 dp-rounded-lg dp-truncate dp-transition dp-duration-200 dp-ease-in-out dp-grow hover:dp-bg-gray-100 dp-text-gray-900 dark:hover:dp-bg-gray-700 dark:dp-text-gray-300 dp-text-sm dp-h-[36px]"
                 data-date="1552652893000"
               >
                 2019
               </button>
               <button
                 aria-label="Choose 2020"
-                class="dp-p-2 dp-rounded-lg dp-truncate dp-transition dp-duration-200 dp-ease-in-out dp-grow hover:dp-bg-gray-100 dp-text-gray-900 dp-text-sm dp-h-[36px]"
+                class="dp-p-2 dp-rounded-lg dp-truncate dp-transition dp-duration-200 dp-ease-in-out dp-grow hover:dp-bg-gray-100 dp-text-gray-900 dark:hover:dp-bg-gray-700 dark:dp-text-gray-300 dp-text-sm dp-h-[36px]"
                 data-date="1584275293000"
               >
                 2020
               </button>
               <button
                 aria-label="Choose 2021"
-                class="dp-p-2 dp-rounded-lg dp-truncate dp-transition dp-duration-200 dp-ease-in-out dp-grow hover:dp-bg-gray-100 dp-text-gray-900 dp-text-sm dp-h-[36px]"
+                class="dp-p-2 dp-rounded-lg dp-truncate dp-transition dp-duration-200 dp-ease-in-out dp-grow hover:dp-bg-gray-100 dp-text-gray-900 dark:hover:dp-bg-gray-700 dark:dp-text-gray-300 dp-text-sm dp-h-[36px]"
                 data-date="1615811293000"
               >
                 2021
               </button>
               <button
                 aria-label="Choose 2022"
-                class="dp-p-2 dp-rounded-lg dp-truncate dp-transition dp-duration-200 dp-ease-in-out dp-grow hover:dp-bg-gray-100 dp-text-gray-900 dp-text-sm dp-h-[36px]"
+                class="dp-p-2 dp-rounded-lg dp-truncate dp-transition dp-duration-200 dp-ease-in-out dp-grow hover:dp-bg-gray-100 dp-text-gray-900 dark:hover:dp-bg-gray-700 dark:dp-text-gray-300 dp-text-sm dp-h-[36px]"
                 data-date="1647347293000"
               >
                 2022
               </button>
               <button
                 aria-label="Choose 2023"
-                class="dp-p-2 dp-rounded-lg dp-truncate dp-transition dp-duration-200 dp-ease-in-out dp-grow hover:dp-bg-gray-100 dp-text-gray-900 dp-text-sm dp-h-[36px]"
+                class="dp-p-2 dp-rounded-lg dp-truncate dp-transition dp-duration-200 dp-ease-in-out dp-grow hover:dp-bg-gray-100 dp-text-gray-900 dark:hover:dp-bg-gray-700 dark:dp-text-gray-300 dp-text-sm dp-h-[36px]"
                 data-date="1678883293000"
               >
                 2023
               </button>
               <button
                 aria-label="Choose 2024"
-                class="dp-p-2 dp-rounded-lg dp-truncate dp-transition dp-duration-200 dp-ease-in-out dp-grow hover:dp-bg-gray-100 dp-text-gray-900 dp-text-sm dp-h-[36px]"
+                class="dp-p-2 dp-rounded-lg dp-truncate dp-transition dp-duration-200 dp-ease-in-out dp-grow hover:dp-bg-gray-100 dp-text-gray-900 dark:hover:dp-bg-gray-700 dark:dp-text-gray-300 dp-text-sm dp-h-[36px]"
                 data-date="1710505693000"
               >
                 2024
@@ -1823,11 +1823,11 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
             style="position: absolute; top: 5px; left: 0px;"
           >
             <div
-              class="dp-flex dp-justify-between dp-items-stretch dp-border-b dp-border-b-gray-100 dp-h-[46px]"
+              class="dp-flex dp-justify-between dp-items-stretch dp-h-[46px]"
             >
               <button
                 aria-label="Switch to days view"
-                class="dp-flex dp-justify-center dp-items-center dp-transition dp-duration-500 dp-grow dp-h-[46px] dp-bg-blue-100 dp-text-blue-700 dp-rounded-tl-lg"
+                class="dp-flex dp-justify-center dp-items-center dp-transition dp-duration-500 dp-grow dp-border-b dp-border-b-gray-100 dark:dp-border-b-gray-700 dp-h-[46px] dp-bg-blue-100 dp-text-blue-700 dark:dp-bg-blue-800/50 dark:dp-text-blue-500 dp-rounded-tl-lg"
               >
                 <svg
                   aria-hidden="true"
@@ -1852,7 +1852,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
               </button>
               <button
                 aria-label="Switch to time view"
-                class="dp-flex dp-justify-center dp-items-center dp-transition dp-duration-500 dp-grow hover:dp-bg-gray-100 hover:dp-gray-red-800 dp-text-gray-500 dp-h-[46px] dp-rounded-tr-lg"
+                class="dp-flex dp-justify-center dp-items-center dp-transition dp-duration-500 dp-grow dp-border-b dp-border-b-gray-100 dark:dp-border-b-gray-700 hover:dp-bg-gray-100 dp-text-gray-500 dark:hover:dp-bg-gray-700 dp-h-[46px] dp-rounded-tr-lg"
               >
                 <svg
                   aria-hidden="true"

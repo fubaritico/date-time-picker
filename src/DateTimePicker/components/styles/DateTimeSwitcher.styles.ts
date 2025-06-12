@@ -12,7 +12,7 @@ import type { VariantProps } from 'class-variance-authority'
 const buildThemeColorClasses = (color: UIColor) => ({
   color: color,
   isSelected: true,
-  class: `dp-bg-${color}-100 dp-text-${color}-700`,
+  class: `dp-bg-${color}-100 dp-text-${color}-700 dark:dp-bg-${color}-800/50 dark:dp-text-${color}-500`,
 })
 
 const dateTimeSwitcherStyles = cva(
@@ -23,6 +23,9 @@ const dateTimeSwitcherStyles = cva(
     'dp-transition',
     'dp-duration-500',
     'dp-grow',
+    'dp-border-b',
+    'dp-border-b-gray-100',
+    'dark:dp-border-b-gray-700',
   ],
   {
     variants: {
@@ -34,7 +37,8 @@ const dateTimeSwitcherStyles = cva(
         {} as Record<UIColor, string>
       ),
       isSelected: {
-        false: 'hover:dp-bg-gray-100 hover:dp-gray-red-800 dp-text-gray-500',
+        false:
+          'hover:dp-bg-gray-100 dp-text-gray-500 dark:hover:dp-bg-gray-700',
       },
       size: {
         sm: 'dp-h-[36px]',
