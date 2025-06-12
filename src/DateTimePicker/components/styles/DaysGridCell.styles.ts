@@ -48,7 +48,7 @@ const buildThemeColorClasses = (color: UIColor) => [
   {
     isSelected: true,
     color: color,
-    class: `dp-bg-${color}-700 dp-text-white hover:dp-bg-${color}-800 dark:hover:dp-bg-${color}-600`,
+    class: `dp-bg-${color}-700 dp-text-white dark:dp-text-white hover:dp-bg-${color}-800 dark:hover:dp-bg-${color}-600`,
   },
 ]
 

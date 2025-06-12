@@ -120,8 +120,8 @@ export const Default: Story = {
 
 const IntegrationBoard: FC = () => {
   return (
-    <div className="dp-flex dp-flex-col dp-relative dp-w-full dp-pt-[dp-70px]">
-      <div className="dp-grid dp-grid-cols-3 dp-gap-6 dp-w-full dp-fixed dp-top-0 dp-left-0 dp-z-10 dp-p-4 dp-bg-gray-100 dp-border-b dp-border-b-gray-200">
+    <div className="dp-flex dp-flex-col dp-relative dp-w-full dp-pt-[70px]">
+      <div className="dp-grid dp-grid-cols-3 dp-gap-6 dp-w-full dp-fixed dp-top-0 dp-left-0 dp-z-10 dp-p-4 dp-bg-gray-100 dp-border-b dp-border-b-gray-200 dark:dp-bg-gray-900 dark:dp-border-b-gray-800 dark:dp-text-gray-300">
         <h3 className="dp-text-xl dp-font-semibold">Small</h3>
         <h3 className="dp-text-xl dp-font-semibold">Medium</h3>
         <h3 className="dp-text-xl dp-font-semibold">Large</h3>
@@ -551,7 +551,6 @@ const boardStoryRenderer = (args: TextFieldProps) => (
 
 export const Board: Story = {
   render: boardStoryRenderer,
-  decorators: [withDarkModeForBackground],
   parameters: {
     layout: 'fullscreen',
   },

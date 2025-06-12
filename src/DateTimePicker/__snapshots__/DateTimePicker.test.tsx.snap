@@ -289,7 +289,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               >
                 <button
                   aria-label="April"
-                  class="dp-transition-colors dp-duration-500 focus:dp-outline-none focus-visible:dp-outline-1 dp-text-sm hover:dp-text-blue-700 focus-visible:dp-outline-blue-700"
+                  class="dp-transition-colors dp-duration-500 focus:dp-outline-none focus-visible:dp-outline-1 dp-text-sm hover:dp-text-blue-700 focus-visible:dp-outline-blue-700 dark:hover:dp-text-blue-600 dark:focus-visible:dp-outline-blue-600"
                 >
                   <span>
                     April
@@ -297,7 +297,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
                 </button>
                 <button
                   aria-label="2025"
-                  class="dp-transition-colors dp-duration-500 focus:dp-outline-none focus-visible:dp-outline-1 dp-text-sm hover:dp-text-blue-700 focus-visible:dp-outline-blue-700"
+                  class="dp-transition-colors dp-duration-500 focus:dp-outline-none focus-visible:dp-outline-1 dp-text-sm hover:dp-text-blue-700 focus-visible:dp-outline-blue-700 dark:hover:dp-text-blue-600 dark:focus-visible:dp-outline-blue-600"
                 >
                   <span>
                     2025
@@ -373,7 +373,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="true"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-cursor-pointer dp-text-white dark:dp-text-gray-900 dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700 dp-bg-blue-700 dp-text-white hover:dp-bg-blue-800 dark:hover:dp-bg-blue-600"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-cursor-pointer dp-text-white dark:dp-text-gray-900 dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700 dp-bg-blue-700 dp-text-white dark:dp-text-white hover:dp-bg-blue-800 dark:hover:dp-bg-blue-600"
                 data-date="1743510493000"
                 data-test="1743510493000"
                 role="button"
@@ -854,7 +854,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               >
                 <button
                   aria-label="March"
-                  class="dp-transition-colors dp-duration-500 focus:dp-outline-none focus-visible:dp-outline-1 dp-text-sm hover:dp-text-blue-700 focus-visible:dp-outline-blue-700"
+                  class="dp-transition-colors dp-duration-500 focus:dp-outline-none focus-visible:dp-outline-1 dp-text-sm hover:dp-text-blue-700 focus-visible:dp-outline-blue-700 dark:hover:dp-text-blue-600 dark:focus-visible:dp-outline-blue-600"
                 >
                   <span>
                     March
@@ -862,7 +862,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
                 </button>
                 <button
                   aria-label="2025"
-                  class="dp-transition-colors dp-duration-500 focus:dp-outline-none focus-visible:dp-outline-1 dp-text-sm hover:dp-text-blue-700 focus-visible:dp-outline-blue-700"
+                  class="dp-transition-colors dp-duration-500 focus:dp-outline-none focus-visible:dp-outline-1 dp-text-sm hover:dp-text-blue-700 focus-visible:dp-outline-blue-700 dark:hover:dp-text-blue-600 dark:focus-visible:dp-outline-blue-600"
                 >
                   <span>
                     2025
@@ -1104,7 +1104,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               <div
                 aria-current="true"
                 aria-disabled="false"
-                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-cursor-pointer dp-text-white dark:dp-text-gray-900 dp-shadow-border dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700 dp-bg-blue-700 dp-text-white hover:dp-bg-blue-800 dark:hover:dp-bg-blue-600"
+                class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-cursor-pointer dp-text-white dark:dp-text-gray-900 dp-shadow-border dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700 dp-bg-blue-700 dp-text-white dark:dp-text-white hover:dp-bg-blue-800 dark:hover:dp-bg-blue-600"
                 data-date="1742041693000"
                 data-test="1742041693000"
                 role="button"
@@ -1907,7 +1907,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 >
                   <button
                     aria-label="March"
-                    class="dp-transition-colors dp-duration-500 focus:dp-outline-none focus-visible:dp-outline-1 dp-text-sm hover:dp-text-blue-700 focus-visible:dp-outline-blue-700"
+                    class="dp-transition-colors dp-duration-500 focus:dp-outline-none focus-visible:dp-outline-1 dp-text-sm hover:dp-text-blue-700 focus-visible:dp-outline-blue-700 dark:hover:dp-text-blue-600 dark:focus-visible:dp-outline-blue-600"
                   >
                     <span>
                       March
@@ -1915,7 +1915,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                   </button>
                   <button
                     aria-label="2025"
-                    class="dp-transition-colors dp-duration-500 focus:dp-outline-none focus-visible:dp-outline-1 dp-text-sm hover:dp-text-blue-700 focus-visible:dp-outline-blue-700"
+                    class="dp-transition-colors dp-duration-500 focus:dp-outline-none focus-visible:dp-outline-1 dp-text-sm hover:dp-text-blue-700 focus-visible:dp-outline-blue-700 dark:hover:dp-text-blue-600 dark:focus-visible:dp-outline-blue-600"
                   >
                     <span>
                       2025

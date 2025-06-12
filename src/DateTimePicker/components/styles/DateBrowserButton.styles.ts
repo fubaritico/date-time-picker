@@ -11,7 +11,7 @@ import type { VariantProps } from 'class-variance-authority'
  */
 const buildThemeColorClasses = (color: UIColor) => ({
   color: color,
-  class: `hover:dp-text-${color}-700 focus-visible:dp-outline-${color}-700`,
+  class: `hover:dp-text-${color}-700 focus-visible:dp-outline-${color}-700 dark:hover:dp-text-${color}-600 dark:focus-visible:dp-outline-${color}-600`,
 })
 
 const dateBrowserButtonStyles = cva(

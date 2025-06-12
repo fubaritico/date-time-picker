@@ -30,7 +30,7 @@ const DateBrowserButton: FC<DateBrowserButtonProps> = ({
       condition={hasDatePickerMode}
       wrapper={(children: ReactNode) => (
         <button
-          aria-label={rest['aria-label'] ?? 'Select Date'}
+          aria-label={rest['aria-label'] ?? 'Select'}
           className={cx(dateBrowserButtonStyles({ color, size }))}
           onClick={onClick}
         >

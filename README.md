@@ -10,13 +10,13 @@ Tests have to be written for `DateRangePicker`.
 
 A migration to Tailwind 4.x is planned.
 
-Currently adding dark mode to panels and inputs.
+A complete rework of the package generation and publication will be done soon.
 
 ## Properties
 
 | Properties        | Type                                          | Default             | Description                                                                                                                     |
 |-------------------|-----------------------------------------------|---------------------|---------------------------------------------------------------------------------------------------------------------------------|
-| color             | string                                        | undefined                | Based on Tailwind palette names.                                                                                                |
+| color             | string                                        | undefined                | Color theme based on Tailwind palette names.                                                                                    |
 | date              | number                                        | undefined                | When using `DatePicker`, `DateTimePicker` or `TimePicker`, date as an UTC timestamp. It will default to now if not provided     |
 | dateRange         | [number, number]                              | [undefined, undefined] | When using `DateRangePicker`, range date as a tuple of two Unix timestamps                                                      |
 | enablePortal      | boolean                                       | false               | Whether to render the panel in a portal                                                                                         |
@@ -33,9 +33,20 @@ Currently adding dark mode to panels and inputs.
 | size              | 'sm' \| 'md' \| 'lg'                          | 'md'                | The size of the component                                                                                                       |
 | timezone          | string                                        | undefined                | Timezone list member based on moment.js                                                                                         |
 
-### Color themes
+## Color themes
 
 Theme coloring is now implemented. It is based on Tailwind CSS colors. It works with `cva` under the hood.
+
+## Features
+
+- **DatePicker**: Select a date from a calendar.
+- **DateTimePicker**: Select a date and time from a calendar and time picker.
+- **TimePicker**: Select a time from a time picker.
+- **DateRangePicker**: Select a range of dates from a calendar.
+- **Dark Mode**: Supports dark mode styling for all components.
+- **Accessibility**: Fully accessible with ARIA attributes.
+- **Localization**: Supports multiple locales for internationalization.
+- **Timezone**: Supports timezone selection and display.
 
 ## Development
 
