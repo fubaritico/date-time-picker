@@ -27,8 +27,8 @@ const buildThemeColorClasses = (color: UIColor) => [
     startDateIsSelected: true,
     color: color,
     class:
-      `!dp-border-r-white dp-bg-${color}-700 dp-text-white hover:dp-bg-${color}-700 hover:dp-text-white ` +
-      `dark:!dp-border-r-gray-800 dark:dp-bg-${color}-700 dark:dp-text-gray-800 dark:hover:dp-bg-${color}-700 dark:hover:dp-text-gray-800`,
+      `dp-border-r-[1px] dp-border-r-white dp-bg-${color}-700 dp-text-white hover:dp-bg-${color}-700 hover:dp-text-white ` +
+      `dark:dp-border-r-gray-800 dark:dp-bg-${color}-700 dark:dp-text-gray-800 dark:hover:dp-bg-${color}-700 dark:hover:dp-text-gray-800`,
   },
   {
     endDateIsSelected: true,
@@ -41,8 +41,9 @@ const buildThemeColorClasses = (color: UIColor) => [
     isToday: true,
     isInRange: false,
     isSelected: false,
+    startDateIsSelected: false,
     color: color,
-    class: `dp-border-2 dp-bg-transparent dp-border-${color}-600 !dp-text-${color}-600 hover:!dp-border-${color}-500 hover:!dp-text-${color}-500`,
+    class: `dp-border-2 dp-bg-transparent dp-border-${color}-600 dp-text-${color}-600 hover:dp-border-${color}-500 hover:dp-text-${color}-500`,
   },
   {
     isSelected: true,
@@ -97,7 +98,7 @@ const daysGridCellStyles = cva(
         lg: 'dp-h-10 dp-w-10',
       },
       endDateIsSelected: {
-        true: 'dp-rounded-r-md dp-rounded-l-none dp-text-white dark:dp-text-gray-800 !dp-w-10 -dp-mx-0.5',
+        true: 'dp-border-r-[1px] dp-rounded-r-md dp-rounded-l-none dp-text-white dark:dp-text-gray-800 !dp-w-10 -dp-mx-0.5',
       },
       startDateIsSelected: {
         true: 'dp-rounded-r-none dp-rounded-l-md dp-text-white dark:dp-text-gray-800 !dp-w-10 -dp-mx-0.5',

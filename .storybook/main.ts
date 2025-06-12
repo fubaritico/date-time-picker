@@ -17,6 +17,7 @@ const config: StorybookConfig = {
     getAbsolutePath('@storybook/addon-interactions'),
     getAbsolutePath('@storybook/addon-styling-webpack'),
     getAbsolutePath('@storybook/addon-designs'),
+    getAbsolutePath('storybook-dark-mode'),
   ],
   core: {
     builder: {

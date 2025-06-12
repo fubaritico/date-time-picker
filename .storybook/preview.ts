@@ -1,4 +1,6 @@
-import '../src/index.css'
+import { themes } from '@storybook/theming'
+
+import '../src/storybook.css'
 
 /** @type { import('@storybook/react').Preview } */
 const preview = {
@@ -10,6 +12,14 @@ const preview = {
         color: /(background|color)$/i,
         date: /Date$/i,
       },
+    },
+    darkMode: {
+      dark: { ...themes.dark, appBg: '#111827' },
+      light: { ...themes.normal, appBg: '#f3f4f6' },
+      current: 'light',
+      darkClass: ['dark', 'dp-dark'],
+      lightClass: ['light', 'dp-light'],
+      stylePreview: true,
     },
     options: {
       storySort: {

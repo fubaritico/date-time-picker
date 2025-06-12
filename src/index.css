@@ -55,10 +55,16 @@
 :root {
     /* Basic theme external to tailwind */
 
-    /* Storybook background */
+    /* Storybook background (system) */
     --tw-background-color: light-dark(#d6d6d6ff, #1a1a1a);
     --tw-background-gradient-circle-1: light-dark(#8b0c9f33, #4d9f0c33);
     --tw-background-gradient-ellipse-1: light-dark(#64d3e621, #e6646522);
     --tw-background-gradient-ellipse-2: light-dark(#64e6e633, #e6646533);
     --tw-background-gradient-ellipse-3: light-dark(#64e6c822, #e6646522);
+    /* Storybook background (forcing dark) */
+    --tw-background-color-dark: #1a1a1a;
+    --tw-background-gradient-circle-1-dark: #4d9f0c33;
+    --tw-background-gradient-ellipse-1-dark: #e6646522;
+    --tw-background-gradient-ellipse-2-dark: #e6646533;
+    --tw-background-gradient-ellipse-3-dark: #e6646522;
 }

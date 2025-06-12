@@ -63,6 +63,7 @@ publish.sh
 
 # Storybook
 storybook-static/
+src/storybook.css
 
 # Tailwind prefix script (not that OK but did the trick)
 add-tailwind-prefix.ts

@@ -2157,7 +2157,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 <div
                   aria-current="false"
                   aria-disabled="true"
-                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed dp-shadow-border dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700 dp-border-2 dp-bg-transparent dp-border-blue-600 !dp-text-blue-600 hover:!dp-border-blue-500 hover:!dp-text-blue-500"
+                  class="dp-font-bold dp-flex dp-justify-center dp-items-center dp-transition dp-rounded-lg dp-focus:outline-none dp-focus-visible:outline-1 dp-duration-500 dp-text-gray-300 dark:dp-text-gray-600 dp-cursor-not-allowed dp-shadow-border dp-h-9 dp-w-9 dp-text-sm focus-visible:dp-outline-blue-100 dark:focus-visible:dp-outline-blue-700 dp-border-2 dp-bg-transparent dp-border-blue-600 dp-text-blue-600 hover:dp-border-blue-500 hover:dp-text-blue-500"
                   data-date="1742041693000"
                   data-test="1742041693000"
                   role="button"
