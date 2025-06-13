@@ -149,6 +149,7 @@ const DropdownMenu: FC<DropdownMenuProps> = ({
         'dp-max-w-[210px]': !dropdownFullWidth,
         'dp-pointer-events-none': disabled ?? loading,
       })}
+      style={{ width }}
     >
       {label && (
         <Label
@@ -170,6 +171,7 @@ const DropdownMenu: FC<DropdownMenuProps> = ({
             triggerComponentClassName
           )}
           ref={buttonContainerRef}
+          style={{ width }}
         >
           {triggerComponent ? (
             <button

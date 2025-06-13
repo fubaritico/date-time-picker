@@ -12,6 +12,10 @@ A migration to Tailwind 4.x is planned.
 
 A complete rework of the package generation and publication will be done soon.
 
+### Issues
+
+Wrong output offset after selecting a date range. 
+
 ## Properties
 
 | Properties        | Type                                          | Default             | Description                                                                                                                     |

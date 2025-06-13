@@ -94,7 +94,7 @@ const Picker = <T extends PickerMode>({
     <DateTimePickerProvider
       color={color}
       date={date}
-      isControlled={!!onChange}
+      isControlled={!!onChange || !!onDateRangeChange}
       gmtMsOffset={offsets.gmtMsOffset}
       hasLabel={!!textInputProps.label}
       loading={loading}

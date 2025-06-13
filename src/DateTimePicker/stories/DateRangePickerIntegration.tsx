@@ -56,67 +56,65 @@ const DateRangePickerIntegration: FC<DateRangePickerIntegrationProps> = ({
   }
 
   return (
-    <div className="dp-flex dp-flex-col dp-min-h-screen dp-w-full">
+    <div className="dp-flex dp-flex-col dp-min-h-screen dp-w-full dp-pt-[120px]">
       {placement === 'bottom-start' && <FakeContent />}
-      <div className="dp-flex dp-flex-col dp-gap-4">
-        {controls && (
-          <div className="dp-flex dp-gap-4">
-            <DropdownMenu
-              size="md"
-              buttonComponent={Button}
-              variant="primary"
-              label="Language"
-              placement="bottom-start"
-              items={languages}
-              onValueChange={handleActionSelection}
-              showSelectedValue
-              value={locale}
-              width={200}
-            />
-            <DropdownMenu
-              size="md"
-              buttonComponent={Button}
-              variant="primary"
-              label="Locale aware format"
-              placement="bottom-start"
-              items={localeAwareFormatItems}
-              onValueChange={handleFormatSelection}
-              showSelectedValue
-              value={localeAwareFormat}
-              width={200}
-              menuWidth={400}
-            />
-          </div>
-        )}
-        <div className="dp-flex dp-gap-4">
-          <DateRangePicker
-            {...props}
-            dateRange={dateRange}
-            onDateRangeChange={handleDateRangeChange}
-            locale={locale}
-            timezone={timezone}
+      {controls && (
+        <div className="dp-flex dp-gap-4 dp-flex-start dp-items-end dp-border-bdp-border-l-gray-200 dp-border-b-gray-200 dark:dp-border-b-gray-700 dp-bg-white dark:dp-bg-gray-800 dp-fixed dp-p-6 dp-w-full dp-top-0 dp-left-0">
+          <DropdownMenu
+            size="md"
+            buttonComponent={Button}
+            dropdownFullWidth
+            variant="primary"
+            label="Language"
+            placement="bottom-start"
+            items={languages}
+            onValueChange={handleActionSelection}
+            showSelectedValue
+            value={locale}
+            width={200}
           />
-          <div className="dp-flex dp-items-center dp-gap-0.dp-5 dp-px-4 dp-font-bold dp-bg-white/50 dp-text-blue-900 dp-rounded">
-            {dateRange && (
-              <>
-                <span>From</span>
-                <I18nDate
-                  locale={locale}
-                  localeAwareFormat={localeAwareFormat}
-                  value={dateRange[0]}
-                  timezone={timezone}
-                />
-                <span>to</span>
-                <I18nDate
-                  locale={locale}
-                  localeAwareFormat={localeAwareFormat}
-                  value={dateRange[1]}
-                  timezone={timezone}
-                />
-              </>
-            )}
-          </div>
+          <DropdownMenu
+            size="md"
+            buttonComponent={Button}
+            dropdownFullWidth
+            variant="primary"
+            label="Locale aware format"
+            placement="bottom-start"
+            items={localeAwareFormatItems}
+            onValueChange={handleFormatSelection}
+            showSelectedValue
+            value={localeAwareFormat}
+            width={400}
+            menuWidth={400}
+          />
+          {dateRange && (
+            <div className="dp-flex dp-items-end dp-gap-1 dp-px-4 dp-self-stretch dp-grow dp-text-gray-900 dp-border-l dp-border-l-gray-200 dark:dp-text-white dark:dp-border-l-gray-700">
+              <span>From</span>
+              <I18nDate
+                locale={locale}
+                localeAwareFormat={localeAwareFormat}
+                value={dateRange[0]}
+                timezone={timezone}
+              />
+              <span>to</span>
+              <I18nDate
+                locale={locale}
+                localeAwareFormat={localeAwareFormat}
+                value={dateRange[1]}
+                timezone={timezone}
+              />
+            </div>
+          )}
         </div>
+      )}
+      <div className="dp-flex dp-gap-4">
+        <DateRangePicker
+          {...props}
+          dateRange={dateRange}
+          onDateRangeChange={handleDateRangeChange}
+          locale={locale}
+          timezone={timezone}
+        />
       </div>
       {placement === 'bottom-end' && <FakeContent />}
     </div>
