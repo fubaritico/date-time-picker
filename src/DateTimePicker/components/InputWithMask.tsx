@@ -4,19 +4,25 @@ import { PickerMode } from '@enums'
 import { TextField } from '@components'
 
 import type { DateInputProps, InputMask } from '@types'
-import type { ChangeEvent, FC, RefObject } from 'react'
+import type { ChangeEvent, FC, FocusEventHandler, RefObject } from 'react'
 
 export interface InputWithMaskProps extends DateInputProps {
   /* Will display the mask with underscores as placeholders */
   alwaysShowMask?: boolean
+  /* Theme color, defaults to 'blue' */
+  color?: UIColor
   /* Extra CSS styles (tailwind) */
   className?: string
+  /* If true, the outline around the text field will not be shown on focus */
+  hideFocus?: boolean
   /* Reference to pass to ignore an element */
   iconRef?: RefObject<HTMLButtonElement | null>
   /* The I18n input mask instance */
   mask?: InputMask
   /* On value change handler */
   onChange: (e: ChangeEvent<HTMLInputElement>) => Promise<void>
+  /* Called on text field Focus */
+  onFocus?: FocusEventHandler<HTMLInputElement> | undefined
   /* Defines the behavior of the component */
   pickerMode?: PickerMode
   /* Value passed to the input */
@@ -38,6 +44,7 @@ const InputWithMask: FC<InputWithMaskProps> = ({
   severity,
   errors,
   onChange,
+  onFocus,
   withPanel = true,
   ...rest
 }) => {
@@ -55,6 +62,7 @@ const InputWithMask: FC<InputWithMaskProps> = ({
       onChange={async (e: ChangeEvent<HTMLInputElement>) => {
         await onChange(e)
       }}
+      onFocus={onFocus}
     >
       <TextField
         className="dp-font-roboto"

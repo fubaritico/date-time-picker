@@ -51,6 +51,7 @@ const DateTimeInput: FC<DateInputProps> = ({
   ...inputTextProps
 }) => {
   const {
+    color,
     gmtMsOffset,
     innerDate,
     isControlled,
@@ -244,8 +245,9 @@ const DateTimeInput: FC<DateInputProps> = ({
   return (
     <div className="dp-flex">
       <InputWithMask
-        className="dp-font-roboto"
         alwaysShowMask
+        className="dp-font-roboto"
+        color={color}
         mask={inputMaskInstance?.getMask()}
         value={inputValue ?? ''}
         disabled={inputTextProps.disabled}

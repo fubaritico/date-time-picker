@@ -134,6 +134,7 @@ const IntegrationBoard: FC = () => {
               initialValue={''}
               size="sm"
               canClear
+              hideFocus
             />
             <Integration
               label="First name with label info"

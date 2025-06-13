@@ -50,5 +50,24 @@ module.exports = {
         /dp-(bg|text|border|outline)-(red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose|slate|gray|zinc|neutral|stone)-(100|200|500|600|700|800)/,
       variants: ['hover', 'focus', 'dark', 'dark:hover', 'dark:focus'],
     },
+    {
+      pattern:
+        /dp-ring-(red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose|slate|gray|zinc|neutral|stone)-500/,
+      variants: [
+        'focus',
+        'dark',
+        'focus-visible',
+        'dark:focus',
+        'dark:focus-visible',
+      ],
+    },
+    'dp-bg-gray-50',
+    'dp-border-gray-300',
+    'dark:dp-text-gray-300',
+    'dp-ring-2',
+    'focus:dp-ring-0',
+    'focus-visible:dp-ring-0',
+    'focus:dp-ring-2',
+    'focus-visible:dp-ring-2',
   ],
 }

@@ -8,13 +8,23 @@ import HelperText from '../HelperText'
 import Icon from '../Icon'
 import Label from '../Label'
 
-import type { Hi2UiIconNames } from '..'
-import type { ChangeEvent, FC, ForwardedRef, HTMLProps, RefObject } from 'react'
+import textFieldStyles, { VariantTextFieldProps } from './TextField.styles'
 
-export type TextFieldProps = Omit<
-  HTMLProps<HTMLInputElement>,
-  'onChange' | 'size'
-> & {
+import type { Hi2UiIconNames } from '..'
+import type {
+  ChangeEvent,
+  ComponentProps,
+  FC,
+  ForwardedRef,
+  RefObject,
+} from 'react'
+
+export interface TextFieldProps
+  extends Omit<
+      ComponentProps<'input'>,
+      'onChange' | 'size' | 'color' | 'disabled'
+    >,
+    VariantTextFieldProps {
   /* Extra CSS styles (tailwind) */
   className?: string
   /* Extra CSS styles (tailwind) for the root element (container) */
@@ -41,9 +51,8 @@ export type TextFieldProps = Omit<
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void
   /* Callback called on icon click if present */
   onIconClick?: (ref?: ForwardedRef<HTMLInputElement>) => void
+  /* If true, the icon click will not be prevented by the disabled state of the input */
   preserveIconClick?: boolean
-  /* Text input severity, translated into colors: 'success' | 'error' | 'warning' | 'info' */
-  severity?: Severity
   /* Text input size: 'sm' | 'md' | 'lg'  */
   size?: UISize
   /* Text input type */
@@ -76,11 +85,13 @@ const TextField: FC<TextFieldProps> = forwardRef<
   (
     {
       className,
+      color,
       containerClassName,
       canClear = false,
       disabled,
       errors,
       helperText,
+      hideFocus,
       iconAriaLabel,
       iconName,
       iconPosition = 'left',
@@ -89,6 +100,7 @@ const TextField: FC<TextFieldProps> = forwardRef<
       labelInfo,
       onChange,
       onIconClick,
+      onFocus,
       preserveIconClick = false,
       placeholder,
       required,
@@ -116,7 +128,7 @@ const TextField: FC<TextFieldProps> = forwardRef<
         {label && (
           <Label
             className="dp-mb-1"
-            disabled={disabled}
+            disabled={disabled as boolean | undefined}
             label={label}
             labelInfo={labelInfo}
             required={required}
@@ -138,50 +150,21 @@ const TextField: FC<TextFieldProps> = forwardRef<
         >
           <input
             className={cx(
-              'dp-border dp-appearance-none dp-truncate dp-outline-0 dp-w-full dp-rounded-md',
-              'dp-shadow-none dp-pl-4 dp-pr-4 dp-transition-all dp-duration-300',
-              {
-                '!dp-text-md': size === 'lg',
-                '!dp-text-sm': size === 'md',
-                '!dp-text-xs': size === 'sm',
-                ...(!!iconName &&
-                  iconPosition === 'left' && {
-                    'dp-pl-[52px]': size === 'lg',
-                    'dp-pl-[42px]': size === 'md',
-                    'dp-pl-[30px]': size === 'sm',
-                  }),
-                ...(!!iconName &&
-                  iconPosition === 'right' && {
-                    'dp-pr-[52px]': size === 'lg',
-                    'dp-pr-[42px]': size === 'md',
-                    'dp-pr-[30px]': size === 'sm',
-                  }),
-                '!dp-pr-[52px]': size === 'lg' && showCross,
-                '!dp-pr-[42px]': size === 'md' && showCross,
-                '!dp-pr-[30px]': size === 'sm' && showCross,
-                'dp-border-gray-300 dp-bg-gray-50 dp-text-gray-500 focus:dp-text-gray-800':
-                  !severity,
-                'dark:dp-border-gray-600 dark:dp-bg-gray-800 dark:dp-text-gray-300 dark:focus:dp-text-white':
-                  !severity,
-                'placeholder:!dp-text-gray-400': !disabled,
-                'placeholder:!dp-text-gray-300 dp-text-gray-400 dark:dp-text-gray-500':
-                  disabled,
-                'dp-cursor-not-allowed !dp-text-gray-300':
-                  disabled && !severity,
-                'dp-border-red-500 dp-bg-red-50 dp-text-red-700 dark:dp-bg-gray-800 dark:dp-red-green-600':
-                  severity === 'error',
-                '!dp-border-yellow-500 !dp-bg-yellow-50 !dp-text-yellow-700 dark:dp-bg-gray-800':
-                  severity === 'warning',
-                'dp-border-green-500 dp-bg-green-50 dp-text-green-700 dark:dp-bg-gray-800 dark:dp-text-green-600':
-                  severity === 'success',
-                'focus:dp-border-blue-600  !dp-border-blue-500 !dp-bg-blue-50 !dp-text-blue-700 dark:dp-bg-gray-800':
-                  severity === 'info',
-              },
-              className
+              textFieldStyles({
+                color,
+                disabled,
+                hideFocus,
+                iconName,
+                iconPosition,
+                severity,
+                size,
+                className,
+              })
             )}
-            disabled={disabled}
+            disabled={disabled as boolean | undefined}
             {...(label && { id: label.replace(/\s/g, '') })}
             onChange={onChange}
+            onFocus={onFocus}
             placeholder={placeholder}
             type={type}
             value={value}
@@ -221,7 +204,6 @@ const TextField: FC<TextFieldProps> = forwardRef<
                     '!dp-text-red-600': severity === 'error',
                     '!dp-text-yellow-600': severity === 'warning',
                     '!dp-text-green-600': severity === 'success',
-                    '!dp-text-blue-600': severity === 'info',
                   }
                 )}
               />
@@ -275,7 +257,6 @@ const TextField: FC<TextFieldProps> = forwardRef<
                     '!dp-text-red-600': severity === 'error',
                     '!dp-text-yellow-600': severity === 'warning',
                     '!dp-text-green-600': severity === 'success',
-                    '!dp-text-blue-600': severity === 'info',
                   }
                 )}
               />
