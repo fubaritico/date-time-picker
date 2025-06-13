@@ -14,6 +14,10 @@ export interface DateBrowserProps {
   className?: string
   /* The date passed by the parent: DatePanel or DateRangePanel */
   date?: number
+  /* If true, the next month button is disabled */
+  disableNextMonth?: boolean
+  /* If true, the previous month button is disabled */
+  disablePrevMonth?: boolean
   /* Function called when clicking on the previous month button */
   onPrevMonthClick?: () => void
   /* Function called when clicking on the next month button */
@@ -24,6 +28,8 @@ export interface DateBrowserProps {
 
 const DateBrowser: FC<DateBrowserProps> = ({
   className,
+  disableNextMonth = false,
+  disablePrevMonth = false,
   date = Date.now(),
   onPrevMonthClick,
   onNextMonthClick,
@@ -47,8 +53,9 @@ const DateBrowser: FC<DateBrowserProps> = ({
     >
       <button
         aria-label="Previous Month"
-        className="dp-appearance-none dp-border-none dp-bg-transparent dp-cursor-pointer dp-w-6"
+        className="dp-appearance-none dp-border-none dp-bg-transparent dp-cursor-pointer dp-w-6 disabled:dp-opacity-50 disabled:dp-cursor-default"
         onClick={onPrevMonthClick}
+        disabled={disablePrevMonth}
       >
         <Icon
           aria-hidden
@@ -78,8 +85,9 @@ const DateBrowser: FC<DateBrowserProps> = ({
       </div>
       <button
         aria-label="Next Month"
-        className="dp-appearance-none dp-border-none dp-bg-transparent dp-cursor-pointer dp-w-6"
+        className="dp-appearance-none dp-border-none dp-bg-transparent dp-cursor-pointer dp-w-6 disabled:dp-opacity-50 disabled:dp-cursor-default"
         onClick={onNextMonthClick}
+        disabled={disableNextMonth}
       >
         <Icon
           aria-hidden

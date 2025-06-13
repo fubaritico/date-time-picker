@@ -163,7 +163,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               class="dp-relative dp-w-full"
             >
               <input
-                class="dp-border dp-appearance-none dp-truncate dp-relative dp-outline-0 dp-w-full dp-rounded-md dp-shadow-none dp-px-4 dp-transition-all dp-duration-300 focus:dp-ring-2 focus-visible:dp-ring-2 dp-bg-gray-50 dp-border-gray-300 dp-text-gray-500 focus:dp-text-gray-800 dark:dp-bg-gray-800 dark:dp-border-gray-600 dark:dp-text-gray-300 dark:focus:dp-text-white placeholder:dp-text-gray-400 dp-text-base dp-px-3 dp-pl-[42px] focus:dp-ring-blue-500 focus-visible:dp-ring-blue-500 dark:focus:dp-ring-blue-500 dark:focus-visible:dp-ring-blue-500 dp-font-roboto"
+                class="dp-border dp-appearance-none dp-truncate dp-relative dp-outline-0 dp-w-full dp-rounded-md dp-shadow-none dp-px-4 dp-transition-all dp-duration-300 focus:dp-ring-2 focus-visible:dp-ring-2 dp-bg-gray-50 dp-border-gray-300 dp-text-gray-500 focus:dp-text-gray-800 dark:dp-bg-gray-800 dark:dp-border-gray-600 dark:dp-text-gray-300 dark:focus:dp-text-white placeholder:dp-text-gray-400 dp-text-sm dp-px-3 dp-pl-[42px] focus:dp-ring-blue-500 focus-visible:dp-ring-blue-500 dark:focus:dp-ring-blue-500 dark:focus-visible:dp-ring-blue-500 dp-font-roboto"
                 style="height: 42px;"
                 type="text"
                 value="2025/04/01 12:28 PM"
@@ -264,7 +264,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
             >
               <button
                 aria-label="Previous Month"
-                class="dp-appearance-none dp-border-none dp-bg-transparent dp-cursor-pointer dp-w-6"
+                class="dp-appearance-none dp-border-none dp-bg-transparent dp-cursor-pointer dp-w-6 disabled:dp-opacity-50 disabled:dp-cursor-default"
               >
                 <svg
                   aria-hidden="true"
@@ -306,7 +306,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <button
                 aria-label="Next Month"
-                class="dp-appearance-none dp-border-none dp-bg-transparent dp-cursor-pointer dp-w-6"
+                class="dp-appearance-none dp-border-none dp-bg-transparent dp-cursor-pointer dp-w-6 disabled:dp-opacity-50 disabled:dp-cursor-default"
               >
                 <svg
                   aria-hidden="true"
@@ -728,7 +728,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               class="dp-relative dp-w-full"
             >
               <input
-                class="dp-border dp-appearance-none dp-truncate dp-relative dp-outline-0 dp-w-full dp-rounded-md dp-shadow-none dp-px-4 dp-transition-all dp-duration-300 focus:dp-ring-2 focus-visible:dp-ring-2 dp-bg-gray-50 dp-border-gray-300 dp-text-gray-500 focus:dp-text-gray-800 dark:dp-bg-gray-800 dark:dp-border-gray-600 dark:dp-text-gray-300 dark:focus:dp-text-white placeholder:dp-text-gray-400 dp-text-base dp-px-3 dp-pl-[42px] focus:dp-ring-blue-500 focus-visible:dp-ring-blue-500 dark:focus:dp-ring-blue-500 dark:focus-visible:dp-ring-blue-500 dp-font-roboto"
+                class="dp-border dp-appearance-none dp-truncate dp-relative dp-outline-0 dp-w-full dp-rounded-md dp-shadow-none dp-px-4 dp-transition-all dp-duration-300 focus:dp-ring-2 focus-visible:dp-ring-2 dp-bg-gray-50 dp-border-gray-300 dp-text-gray-500 focus:dp-text-gray-800 dark:dp-bg-gray-800 dark:dp-border-gray-600 dark:dp-text-gray-300 dark:focus:dp-text-white placeholder:dp-text-gray-400 dp-text-sm dp-px-3 dp-pl-[42px] focus:dp-ring-blue-500 focus-visible:dp-ring-blue-500 dark:focus:dp-ring-blue-500 dark:focus-visible:dp-ring-blue-500 dp-font-roboto"
                 style="height: 42px;"
                 type="text"
                 value="2025/03/15 12:28 PM"
@@ -829,7 +829,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
             >
               <button
                 aria-label="Previous Month"
-                class="dp-appearance-none dp-border-none dp-bg-transparent dp-cursor-pointer dp-w-6"
+                class="dp-appearance-none dp-border-none dp-bg-transparent dp-cursor-pointer dp-w-6 disabled:dp-opacity-50 disabled:dp-cursor-default"
               >
                 <svg
                   aria-hidden="true"
@@ -871,7 +871,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               </div>
               <button
                 aria-label="Next Month"
-                class="dp-appearance-none dp-border-none dp-bg-transparent dp-cursor-pointer dp-w-6"
+                class="dp-appearance-none dp-border-none dp-bg-transparent dp-cursor-pointer dp-w-6 disabled:dp-opacity-50 disabled:dp-cursor-default"
               >
                 <svg
                   aria-hidden="true"
@@ -1316,7 +1316,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should sho
               class="dp-relative dp-w-full"
             >
               <input
-                class="dp-border dp-appearance-none dp-truncate dp-relative dp-outline-0 dp-w-full dp-rounded-md dp-shadow-none dp-px-4 dp-transition-all dp-duration-300 focus:dp-ring-2 focus-visible:dp-ring-2 dp-bg-gray-50 dp-border-gray-300 dp-text-gray-500 focus:dp-text-gray-800 dark:dp-bg-gray-800 dark:dp-border-gray-600 dark:dp-text-gray-300 dark:focus:dp-text-white placeholder:dp-text-gray-400 dp-text-base dp-px-3 dp-pl-[42px] focus:dp-ring-blue-500 focus-visible:dp-ring-blue-500 dark:focus:dp-ring-blue-500 dark:focus-visible:dp-ring-blue-500 dp-font-roboto"
+                class="dp-border dp-appearance-none dp-truncate dp-relative dp-outline-0 dp-w-full dp-rounded-md dp-shadow-none dp-px-4 dp-transition-all dp-duration-300 focus:dp-ring-2 focus-visible:dp-ring-2 dp-bg-gray-50 dp-border-gray-300 dp-text-gray-500 focus:dp-text-gray-800 dark:dp-bg-gray-800 dark:dp-border-gray-600 dark:dp-text-gray-300 dark:focus:dp-text-white placeholder:dp-text-gray-400 dp-text-sm dp-px-3 dp-pl-[42px] focus:dp-ring-blue-500 focus-visible:dp-ring-blue-500 dark:focus:dp-ring-blue-500 dark:focus-visible:dp-ring-blue-500 dp-font-roboto"
                 style="height: 42px;"
                 type="text"
                 value="2025/03/15 12:28 PM"
@@ -1591,7 +1591,7 @@ exports[`DateTimePicker with timezone Controlled Date Picker - Date/Time mode sh
               class="dp-relative dp-w-full"
             >
               <input
-                class="dp-border dp-appearance-none dp-truncate dp-relative dp-outline-0 dp-w-full dp-rounded-md dp-shadow-none dp-px-4 dp-transition-all dp-duration-300 focus:dp-ring-2 focus-visible:dp-ring-2 dp-bg-gray-50 dp-border-gray-300 dp-text-gray-500 focus:dp-text-gray-800 dark:dp-bg-gray-800 dark:dp-border-gray-600 dark:dp-text-gray-300 dark:focus:dp-text-white placeholder:dp-text-gray-400 dp-text-base dp-px-3 dp-pl-[42px] focus:dp-ring-blue-500 focus-visible:dp-ring-blue-500 dark:focus:dp-ring-blue-500 dark:focus-visible:dp-ring-blue-500 dp-font-roboto"
+                class="dp-border dp-appearance-none dp-truncate dp-relative dp-outline-0 dp-w-full dp-rounded-md dp-shadow-none dp-px-4 dp-transition-all dp-duration-300 focus:dp-ring-2 focus-visible:dp-ring-2 dp-bg-gray-50 dp-border-gray-300 dp-text-gray-500 focus:dp-text-gray-800 dark:dp-bg-gray-800 dark:dp-border-gray-600 dark:dp-text-gray-300 dark:focus:dp-text-white placeholder:dp-text-gray-400 dp-text-sm dp-px-3 dp-pl-[42px] focus:dp-ring-blue-500 focus-visible:dp-ring-blue-500 dark:focus:dp-ring-blue-500 dark:focus-visible:dp-ring-blue-500 dp-font-roboto"
                 style="height: 42px;"
                 type="text"
                 value="2024-08-09 01:28 PM"
@@ -1656,7 +1656,7 @@ exports[`DateTimePicker with timezone Controlled Time Picker - (en) should rende
               class="dp-relative dp-w-full"
             >
               <input
-                class="dp-border dp-appearance-none dp-truncate dp-relative dp-outline-0 dp-w-full dp-rounded-md dp-shadow-none dp-px-4 dp-transition-all dp-duration-300 focus:dp-ring-2 focus-visible:dp-ring-2 dp-bg-gray-50 dp-border-gray-300 dp-text-gray-500 focus:dp-text-gray-800 dark:dp-bg-gray-800 dark:dp-border-gray-600 dark:dp-text-gray-300 dark:focus:dp-text-white placeholder:dp-text-gray-400 dp-text-base dp-px-3 dp-pl-[42px] focus:dp-ring-blue-500 focus-visible:dp-ring-blue-500 dark:focus:dp-ring-blue-500 dark:focus-visible:dp-ring-blue-500 dp-font-roboto"
+                class="dp-border dp-appearance-none dp-truncate dp-relative dp-outline-0 dp-w-full dp-rounded-md dp-shadow-none dp-px-4 dp-transition-all dp-duration-300 focus:dp-ring-2 focus-visible:dp-ring-2 dp-bg-gray-50 dp-border-gray-300 dp-text-gray-500 focus:dp-text-gray-800 dark:dp-bg-gray-800 dark:dp-border-gray-600 dark:dp-text-gray-300 dark:focus:dp-text-white placeholder:dp-text-gray-400 dp-text-sm dp-px-3 dp-pl-[42px] focus:dp-ring-blue-500 focus-visible:dp-ring-blue-500 dark:focus:dp-ring-blue-500 dark:focus-visible:dp-ring-blue-500 dp-font-roboto"
                 style="height: 42px;"
                 type="text"
                 value="08:02 AM"
@@ -1718,7 +1718,7 @@ exports[`DateTimePicker with timezone Controlled Time Picker - (fr) should rende
               class="dp-relative dp-w-full"
             >
               <input
-                class="dp-border dp-appearance-none dp-truncate dp-relative dp-outline-0 dp-w-full dp-rounded-md dp-shadow-none dp-px-4 dp-transition-all dp-duration-300 focus:dp-ring-2 focus-visible:dp-ring-2 dp-bg-gray-50 dp-border-gray-300 dp-text-gray-500 focus:dp-text-gray-800 dark:dp-bg-gray-800 dark:dp-border-gray-600 dark:dp-text-gray-300 dark:focus:dp-text-white placeholder:dp-text-gray-400 dp-text-base dp-px-3 dp-pl-[42px] focus:dp-ring-blue-500 focus-visible:dp-ring-blue-500 dark:focus:dp-ring-blue-500 dark:focus-visible:dp-ring-blue-500 dp-font-roboto"
+                class="dp-border dp-appearance-none dp-truncate dp-relative dp-outline-0 dp-w-full dp-rounded-md dp-shadow-none dp-px-4 dp-transition-all dp-duration-300 focus:dp-ring-2 focus-visible:dp-ring-2 dp-bg-gray-50 dp-border-gray-300 dp-text-gray-500 focus:dp-text-gray-800 dark:dp-bg-gray-800 dark:dp-border-gray-600 dark:dp-text-gray-300 dark:focus:dp-text-white placeholder:dp-text-gray-400 dp-text-sm dp-px-3 dp-pl-[42px] focus:dp-ring-blue-500 focus-visible:dp-ring-blue-500 dark:focus:dp-ring-blue-500 dark:focus-visible:dp-ring-blue-500 dp-font-roboto"
                 style="height: 42px;"
                 type="text"
                 value="08:02"
@@ -1781,7 +1781,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 class="dp-relative dp-w-full"
               >
                 <input
-                  class="dp-border dp-appearance-none dp-truncate dp-relative dp-outline-0 dp-w-full dp-rounded-md dp-shadow-none dp-px-4 dp-transition-all dp-duration-300 focus:dp-ring-2 focus-visible:dp-ring-2 dp-bg-gray-50 dp-border-gray-300 dp-text-gray-500 focus:dp-text-gray-800 dark:dp-bg-gray-800 dark:dp-border-gray-600 dark:dp-text-gray-300 dark:focus:dp-text-white placeholder:dp-text-gray-400 dp-text-base dp-px-3 dp-pl-[42px] focus:dp-ring-blue-500 focus-visible:dp-ring-blue-500 dark:focus:dp-ring-blue-500 dark:focus-visible:dp-ring-blue-500 dp-font-roboto"
+                  class="dp-border dp-appearance-none dp-truncate dp-relative dp-outline-0 dp-w-full dp-rounded-md dp-shadow-none dp-px-4 dp-transition-all dp-duration-300 focus:dp-ring-2 focus-visible:dp-ring-2 dp-bg-gray-50 dp-border-gray-300 dp-text-gray-500 focus:dp-text-gray-800 dark:dp-bg-gray-800 dark:dp-border-gray-600 dark:dp-text-gray-300 dark:focus:dp-text-white placeholder:dp-text-gray-400 dp-text-sm dp-px-3 dp-pl-[42px] focus:dp-ring-blue-500 focus-visible:dp-ring-blue-500 dark:focus:dp-ring-blue-500 dark:focus-visible:dp-ring-blue-500 dp-font-roboto"
                   style="height: 42px;"
                   type="text"
                   value="2025/03/15 12:28 PM"
@@ -1882,7 +1882,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
               >
                 <button
                   aria-label="Previous Month"
-                  class="dp-appearance-none dp-border-none dp-bg-transparent dp-cursor-pointer dp-w-6"
+                  class="dp-appearance-none dp-border-none dp-bg-transparent dp-cursor-pointer dp-w-6 disabled:dp-opacity-50 disabled:dp-cursor-default"
                 >
                   <svg
                     aria-hidden="true"
@@ -1924,7 +1924,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 </div>
                 <button
                   aria-label="Next Month"
-                  class="dp-appearance-none dp-border-none dp-bg-transparent dp-cursor-pointer dp-w-6"
+                  class="dp-appearance-none dp-border-none dp-bg-transparent dp-cursor-pointer dp-w-6 disabled:dp-opacity-50 disabled:dp-cursor-default"
                 >
                   <svg
                     aria-hidden="true"

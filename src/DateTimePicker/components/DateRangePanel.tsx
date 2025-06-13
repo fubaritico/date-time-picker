@@ -114,6 +114,7 @@ const DateRangePanel: FC<DateRangePanelProps> = ({
           size={size}
           onNextMonthClick={onNextMonthClickFromLeftGrid}
           onPrevMonthClick={onPrevMonthClickFromLeftGrid}
+          disableNextMonth={addMonths(leftGridMonth, 1) >= rightGridMonth}
         />
         <DaysGrid
           date={leftGridMonth}
@@ -132,6 +133,7 @@ const DateRangePanel: FC<DateRangePanelProps> = ({
           size={size}
           onNextMonthClick={onNextMonthClickFromRightGrid}
           onPrevMonthClick={onPrevMonthClickFromRightGrid}
+          disablePrevMonth={subtractMonths(rightGridMonth, 1) <= leftGridMonth}
         />
         <DaysGrid
           date={rightGridMonth}

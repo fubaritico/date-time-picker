@@ -18,11 +18,11 @@ const buildThemeColorClasses = (color: UIColor) => [
   },
 ]
 
+// Generating a list of icon names from the hi2 icons to keep the TypeScript inference
 const iconNames = Object.keys(hi2) as Hi2UiIconNames[]
-const icons = Object.keys(hi2).reduce<Record<Hi2UiIconNames, string>>(
+const iconNamesList = iconNames.reduce<Record<Hi2UiIconNames, string>>(
   (obj, key) => {
-    const k = key as Hi2UiIconNames
-    obj[k] = ''
+    obj[key] = ''
     return obj
   },
   {} as Record<Hi2UiIconNames, string>
@@ -73,7 +73,7 @@ export const textFieldStyles = cva(
       hideFocus: {
         true: ['focus:!dp-ring-0', 'focus-visible:!dp-ring-0'],
       },
-      iconName: icons,
+      iconName: iconNamesList,
       iconPosition: {
         left: '',
         right: '',
@@ -100,8 +100,8 @@ export const textFieldStyles = cva(
       },
       showCross: { true: '', false: '' },
       size: {
-        sm: ['dp-text-sm', 'dp-px-2'],
-        md: ['dp-text-base', 'dp-px-3'],
+        sm: ['dp-text-xs', 'dp-px-2'],
+        md: ['dp-text-sm', 'dp-px-3'],
         lg: ['dp-text-lg', 'dp-px-4'],
       },
     },
