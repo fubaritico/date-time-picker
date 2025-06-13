@@ -8,32 +8,27 @@ import dts from 'rollup-plugin-dts'
 import { visualizer } from 'rollup-plugin-visualizer'
 import dynamicImportVars from '@rollup/plugin-dynamic-import-vars'
 
-//import pkg from './package.json' with { type: 'json' }
+// import pkg from './package.json' with { type: 'json' }
 
 export default [
   {
-    input: 'src/DateTimePicker/index.ts',
+    input: 'src/index.ts',
     output: [
       {
         dir: 'dist',
         format: 'esm',
-        sourcemap: true,
+        entryFileNames: 'datetime-picker.es.js',
+        chunkFileNames: 'datetime-picker.[hash].js',
+      },
+      {
+        dir: 'dist',
+        format: 'cjs',
+        entryFileNames: 'datetime-picker.cjs.js',
+        chunkFileNames: 'datetime-picker.[hash].js',
       },
     ],
     plugins: [
       peerDepsExternal(),
-      resolve({
-        extensions: ['.ts', '.tsx'],
-      }),
-      dynamicImportVars({
-        exclude: ['src/DateTimePicker/Picker.styles.css'],
-      }),
-      commonjs(),
-      typescript({
-        tsconfig: 'tsconfig.json',
-        exclude: ['**/*.test.*', '**/*.stories.*'],
-        declaration: false,
-      }),
       postcss({
         config: {
           path: './postcss.config.js',
@@ -43,6 +38,20 @@ export default [
         inject: {
           insertAt: 'top',
         },
+      }),
+      resolve({
+        extensions: ['.ts', '.tsx'],
+      }),
+      dynamicImportVars(),
+      commonjs(),
+      typescript({
+        tsconfig: 'tsconfig.json',
+        exclude: [
+          '**/*.test.*',
+          '**/*.stories.*',
+          'src/components/DateTimePicker/stories/*',
+        ],
+        declaration: false,
       }),
       terser(),
       visualizer({
@@ -62,7 +71,7 @@ export default [
     ],
   },
   {
-    input: 'src/DateTimePicker/index.ts',
+    input: 'src/index.ts',
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
     plugins: [dts()],
     external: [

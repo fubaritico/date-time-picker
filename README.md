@@ -8,13 +8,17 @@ Creation of `DatePicker`, `DateTimePicker`, `TimePicker` and `DateRangePicker` a
 
 Tests have to be written for `DateRangePicker`.
 
-A migration to Tailwind 4.x is planned.
-
-A complete rework of the package generation and publication will be done soon.
+Some integration tests will be done in real projects.
 
 ### Issues
 
-Wrong output offset after selecting a date range. 
+Wrong output offset after selecting a date range.
+
+#### CSS issue
+
+Due to the number of safelist CSS classes used, tailwind has to generate potential utility classes at build time. This leads to a large CSS file size. 
+
+To mitigate this, a rework of the CSS strategy will be done. CSS modules will be used to scope styles to the component, and only the necessary classes will be generated.
 
 ## Properties
 

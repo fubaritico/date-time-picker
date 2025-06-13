@@ -8,6 +8,7 @@
     "jsx": "react-jsx",
     "module": "ESNext",
     "sourceMap": true,
+    "rootDir": ".",
     "outDir": "./dist",
     "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true,
@@ -21,11 +22,9 @@
     "types": ["@testing-library/jest-dom", "node"],
     "baseUrl": ".",
     "paths": {
-      "@components": ["src/index.ts"],
+      "@components": ["src/components/index.ts"],
       "@constants": ["src/constants.ts"],
-      "@enums": ["src/DateTimePicker/types/enums.ts"],
       "@storybook-decorators/*": [".storybook/decorators/*"],
-      "@types": ["src/DateTimePicker/types/index.ts"],
       "@utils": ["src/utils.ts"]
     },
   },

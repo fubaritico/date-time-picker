@@ -1,4 +1,8 @@
+import * as hi2 from 'react-icons/hi2'
+
 declare global {
+  export type Hi2UiIconNames = keyof typeof hi2
+
   export type UISize = 'sm' | 'md' | 'lg'
 
   export type UIColor =

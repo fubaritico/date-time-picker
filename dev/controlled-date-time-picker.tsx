@@ -1,7 +1,9 @@
-import { DateTimePicker, I18nDate } from '@components'
+import { I18nDate } from '@components'
+
+import { DateTimePicker } from 'src/components/DateTimePicker'
 
 import type { FC, ReactNode } from 'react'
-import type { CommonPickerProps } from '@types'
+import type { CommonPickerProps } from 'src/components/DateTimePicker/types'
 
 const ControlledDateTimePicker: FC<
   CommonPickerProps<'DATETIME'> & { title: ReactNode }

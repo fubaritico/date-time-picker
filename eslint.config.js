@@ -36,6 +36,7 @@ export default tseslint.config(
       'tailwind.config.js',
       'vite.config.ts',
       'vite.storybook.config.ts',
+      'vite.config.build.js',
       '__mocks__',
       '.storybook',
       'storybook-static',
