@@ -39,6 +39,7 @@ yarn-error.log*
 /dist/
 /coverage/
 /.nyc_output/
+src/date-picker.css
 
 # Environment
 .env

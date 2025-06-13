@@ -15,6 +15,7 @@ A complete rework of the package generation and publication will be done soon.
 ### Issues
 
 Wrong output offset after selecting a date range. 
+In DatePicker, prev/next month buttons don't work in some cases
 
 ## Properties
 
