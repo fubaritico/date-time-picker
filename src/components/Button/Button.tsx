@@ -1,15 +1,17 @@
 import { cx } from '@utils'
 
 import ConditionalWrapper from '../ConditionalWrapper'
+import Icon from '../Icon'
 
-import buttonStyles from './Button.styles'
+import buttonStyles from './Button.native.styles'
 
-import type { VariantButtonProps } from './Button.styles'
+import type { VariantButtonProps } from './Button.native.styles'
 import type { ButtonHTMLAttributes, FC, ReactNode, RefObject } from 'react'
 
 export interface ButtonProps
   extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color'>,
     VariantButtonProps {
+  icon?: Hi2UiIconNames
   label: ReactNode
   ref?: RefObject<HTMLButtonElement | null>
 }
@@ -17,6 +19,7 @@ export interface ButtonProps
 const Button: FC<ButtonProps> = ({
   className,
   disabled,
+  icon,
   label,
   loading,
   onBlur,
@@ -38,6 +41,7 @@ const Button: FC<ButtonProps> = ({
       ref={ref}
       {...rest}
     >
+      {icon && !loading && <Icon name={icon} />}
       <ConditionalWrapper
         condition={loading ?? false}
         wrapper={(c) => <span className="dp-opacity-0">{c}</span>}

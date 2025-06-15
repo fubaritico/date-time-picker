@@ -1,0 +1,836 @@
+@import url('colors.css');
+@import url('animations.css');
+
+/* Default styles */
+.Button {
+  --button-bg-primary: var(--slate-500);
+  --button-text-primary: var(--slate-100);
+  --button-border-primary: var(--slate-500);
+  --button-hover-bg-primary: var(--slate-600);
+  --button-hover-border-primary: var(--slate-600);
+  --button-hover-text-primary: var(--slate-100);
+  --button-bg-secondary: transparent;
+  --button-text-secondary: var(--slate-500);
+  --button-border-secondary: var(--slate-500);
+  --button-hover-bg-secondary: var(--slate-500);
+  --button-hover-border-secondary: var(--slate-500);
+  --button-hover-text-secondary: var(--slate-100);
+  --button-active-outline: var(--slate-200);
+
+  /* base styles */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: normal;
+  border: 1px solid;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+}
+
+.Button.sm svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+}
+
+.Button.md svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+}
+
+.Button.lg svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+}
+
+/* Sizes */
+.Button.sm {
+  padding: 0 0.75rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  gap: 0.75rem;
+  height: 37px;
+  border-radius: 0.25rem;
+}
+
+.Button.md {
+  padding: 0 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  gap: 0.75rem;
+  height: 42px;
+  border-radius: 0.375rem;
+}
+
+.Button.lg {
+  padding: 0 1.25rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  gap: 0.75rem;
+  height: 52px;
+  border-radius: 0.5rem;
+}
+
+/* Default variables */
+.Button.primary {
+  background-color: var(--button-bg-primary);
+  color: var(--button-text-primary);
+  border-color: var(--button-border-primary);
+}
+
+.Button.primary:hover {
+  background-color: var(--button-hover-bg-primary);
+  color: var(--button-hover-text-primary);
+  border-color: var(--button-hover-border-primary);
+}
+
+.Button.secondary {
+  background-color: var(--button-bg-secondary);
+  color: var(--button-text-secondary);
+  border-color: var(--button-border-secondary);
+}
+
+.Button.secondary:hover {
+  background-color: var(--button-hover-bg-secondary);
+  color: var(--button-hover-text-secondary);
+  border-color: var(--button-hover-border-secondary);
+}
+
+.Button.primary:active,
+.Button.secondary:active {
+  outline: 4px solid var(--button-active-outline);
+}
+
+/* Primary variant */
+.Button.primary.slate {
+  --button-bg-primary: var(--slate-500);
+  --button-text-primary: var(--slate-100);
+  --button-border-primary: var(--slate-500);
+}
+
+.Button.primary.gray {
+  --button-bg-primary: var(--gray-500);
+  --button-text-primary: var(--gray-100);
+  --button-border-primary: var(--gray-500);
+}
+
+.Button.primary.zinc {
+  --button-bg-primary: var(--zinc-500);
+  --button-text-primary: var(--zinc-100);
+  --button-border-primary: var(--zinc-500);
+}
+
+.Button.primary.neutral {
+  --button-bg-primary: var(--neutral-500);
+  --button-text-primary: var(--neutral-100);
+  --button-border-primary: var(--neutral-500);
+}
+
+.Button.primary.stone {
+  --button-bg-primary: var(--stone-500);
+  --button-text-primary: var(--stone-100);
+  --button-border-primary: var(--stone-500);
+}
+
+.Button.primary.red {
+  --button-bg-primary: var(--red-500);
+  --button-text-primary: var(--red-100);
+  --button-border-primary: var(--red-500);
+}
+
+.Button.primary.orange {
+  --button-bg-primary: var(--orange-500);
+  --button-text-primary: var(--orange-100);
+  --button-border-primary: var(--orange-500);
+}
+
+.Button.primary.amber {
+  --button-bg-primary: var(--amber-500);
+  --button-text-primary: var(--amber-100);
+  --button-border-primary: var(--amber-500);
+}
+
+.Button.primary.yellow {
+  --button-bg-primary: var(--yellow-500);
+  --button-text-primary: var(--yellow-100);
+  --button-border-primary: var(--yellow-500);
+}
+
+.Button.primary.lime {
+  --button-bg-primary: var(--lime-500);
+  --button-text-primary: var(--lime-100);
+  --button-border-primary: var(--lime-500);
+}
+
+.Button.primary.green {
+  --button-bg-primary: var(--green-500);
+  --button-text-primary: var(--green-100);
+  --button-border-primary: var(--green-500);
+}
+
+.Button.primary.emerald {
+  --button-bg-primary: var(--emerald-500);
+  --button-text-primary: var(--emerald-100);
+  --button-border-primary: var(--emerald-500);
+}
+
+.Button.primary.teal {
+  --button-bg-primary: var(--teal-500);
+  --button-text-primary: var(--teal-100);
+  --button-border-primary: var(--teal-500);
+}
+
+.Button.primary.cyan {
+  --button-bg-primary: var(--cyan-500);
+  --button-text-primary: var(--cyan-100);
+  --button-border-primary: var(--cyan-500);
+}
+
+.Button.primary.sky {
+  --button-bg-primary: var(--sky-500);
+  --button-text-primary: var(--sky-100);
+  --button-border-primary: var(--sky-500);
+}
+
+.Button.primary.blue {
+  --button-bg-primary: var(--blue-500);
+  --button-text-primary: var(--blue-100);
+  --button-border-primary: var(--blue-500);
+}
+
+.Button.primary.indigo {
+  --button-bg-primary: var(--indigo-500);
+  --button-text-primary: var(--indigo-100);
+  --button-border-primary: var(--indigo-500);
+}
+
+.Button.primary.violet {
+  --button-bg-primary: var(--violet-500);
+  --button-text-primary: var(--violet-100);
+  --button-border-primary: var(--violet-500);
+}
+
+.Button.primary.purple {
+  --button-bg-primary: var(--purple-500);
+  --button-text-primary: var(--purple-100);
+  --button-border-primary: var(--purple-500);
+}
+
+.Button.primary.fuchsia {
+  --button-bg-primary: var(--fuchsia-500);
+  --button-text-primary: var(--fuchsia-100);
+  --button-border-primary: var(--fuchsia-500);
+}
+
+.Button.primary.pink {
+  --button-bg-primary: var(--pink-500);
+  --button-text-primary: var(--pink-100);
+  --button-border-primary: var(--pink-500);
+}
+
+.Button.primary.rose {
+  --button-bg-primary: var(--rose-500);
+  --button-text-primary: var(--rose-100);
+  --button-border-primary: var(--rose-500);
+}
+
+/* Secondary variant */
+.Button.secondary.slate {
+  --button-text-secondary: var(--slate-500);
+  --button-border-secondary: var(--slate-500);
+}
+
+.Button.secondary.gray {
+  --button-text-secondary: var(--gray-500);
+  --button-border-secondary: var(--gray-500);
+}
+
+.Button.secondary.zinc {
+  --button-text-secondary: var(--zinc-500);
+  --button-border-secondary: var(--zinc-500);
+}
+
+.Button.secondary.neutral {
+  --button-text-secondary: var(--neutral-500);
+  --button-border-secondary: var(--neutral-500);
+}
+
+.Button.secondary.stone {
+  --button-text-secondary: var(--stone-500);
+  --button-border-secondary: var(--stone-500);
+}
+
+.Button.secondary.red {
+  --button-text-secondary: var(--red-500);
+  --button-border-secondary: var(--red-500);
+}
+
+.Button.secondary.orange {
+  --button-text-secondary: var(--orange-500);
+  --button-border-secondary: var(--orange-500);
+}
+
+.Button.secondary.amber {
+  --button-text-secondary: var(--amber-500);
+  --button-border-secondary: var(--amber-500);
+}
+
+.Button.secondary.yellow {
+  --button-text-secondary: var(--yellow-500);
+  --button-border-secondary: var(--yellow-500);
+}
+
+.Button.secondary.lime {
+  --button-text-secondary: var(--lime-500);
+  --button-border-secondary: var(--lime-500);
+}
+
+.Button.secondary.green {
+  --button-text-secondary: var(--green-500);
+  --button-border-secondary: var(--green-500);
+}
+
+.Button.secondary.emerald {
+  --button-text-secondary: var(--emerald-500);
+  --button-border-secondary: var(--emerald-500);
+}
+
+.Button.secondary.teal {
+  --button-text-secondary: var(--teal-500);
+  --button-border-secondary: var(--teal-500);
+}
+
+.Button.secondary.cyan {
+  --button-text-secondary: var(--cyan-500);
+  --button-border-secondary: var(--cyan-500);
+}
+
+.Button.secondary.sky {
+  --button-text-secondary: var(--sky-500);
+  --button-border-secondary: var(--sky-500);
+}
+
+.Button.secondary.blue {
+  --button-text-secondary: var(--blue-500);
+  --button-border-secondary: var(--blue-500);
+}
+
+.Button.secondary.indigo {
+  --button-text-secondary: var(--indigo-500);
+  --button-border-secondary: var(--indigo-500);
+}
+
+.Button.secondary.violet {
+  --button-text-secondary: var(--violet-500);
+  --button-border-secondary: var(--violet-500);
+}
+
+.Button.secondary.purple {
+  --button-text-secondary: var(--purple-500);
+  --button-border-secondary: var(--purple-500);
+}
+
+.Button.secondary.fuchsia {
+  --button-text-secondary: var(--fuchsia-500);
+  --button-border-secondary: var(--fuchsia-500);
+}
+
+.Button.secondary.pink {
+  --button-text-secondary: var(--pink-500);
+  --button-border-secondary: var(--pink-500);
+}
+
+.Button.secondary.rose {
+  --button-text-secondary: var(--rose-500);
+  --button-border-secondary: var(--rose-500);
+}
+
+.Button.secondary.slate {
+  --button-text-secondary: var(--slate-500);
+  --button-border-secondary: var(--slate-500);
+}
+
+.Button.secondary.gray {
+  --button-text-secondary: var(--gray-500);
+  --button-border-secondary: var(--gray-500);
+}
+
+.Button.secondary.zinc {
+  --button-text-secondary: var(--zinc-500);
+  --button-border-secondary: var(--zinc-500);
+}
+
+.Button.secondary.neutral {
+  --button-text-secondary: var(--neutral-500);
+  --button-border-secondary: var(--neutral-500);
+}
+
+.Button.secondary.stone {
+  --button-text-secondary: var(--stone-500);
+  --button-border-secondary: var(--stone-500);
+}
+
+/* States */
+.Button.primary.red:hover {
+  --button-hover-bg-primary: var(--red-600);
+  --button-hover-border-primary: var(--red-600);
+  --button-hover-text-primary: var(--red-100);
+}
+
+.Button.primary.orange:hover {
+  --button-hover-bg-primary: var(--orange-600);
+  --button-hover-border-primary: var(--orange-600);
+  --button-hover-text-primary: var(--orange-100);
+}
+
+.Button.primary.amber:hover {
+  --button-hover-bg-primary: var(--amber-600);
+  --button-hover-border-primary: var(--amber-600);
+  --button-hover-text-primary: var(--amber-100);
+}
+
+.Button.primary.yellow:hover {
+  --button-hover-bg-primary: var(--yellow-600);
+  --button-hover-border-primary: var(--yellow-600);
+  --button-hover-text-primary: var(--yellow-100);
+}
+
+.Button.primary.lime:hover {
+  --button-hover-bg-primary: var(--lime-600);
+  --button-hover-border-primary: var(--lime-600);
+  --button-hover-text-primary: var(--lime-100);
+}
+
+.Button.primary.green:hover {
+  --button-hover-bg-primary: var(--green-600);
+  --button-hover-border-primary: var(--green-600);
+  --button-hover-text-primary: var(--green-100);
+}
+
+.Button.primary.emerald:hover {
+  --button-hover-bg-primary: var(--emerald-600);
+  --button-hover-border-primary: var(--emerald-600);
+  --button-hover-text-primary: var(--emerald-100);
+}
+
+.Button.primary.teal:hover {
+  --button-hover-bg-primary: var(--teal-600);
+  --button-hover-border-primary: var(--teal-600);
+  --button-hover-text-primary: var(--teal-100);
+}
+
+.Button.primary.cyan:hover {
+  --button-hover-bg-primary: var(--cyan-600);
+  --button-hover-border-primary: var(--cyan-600);
+  --button-hover-text-primary: var(--cyan-100);
+}
+
+.Button.primary.sky:hover {
+  --button-hover-bg-primary: var(--sky-600);
+  --button-hover-border-primary: var(--sky-600);
+  --button-hover-text-primary: var(--sky-100);
+}
+
+.Button.primary.blue:hover {
+  --button-hover-bg-primary: var(--blue-600);
+  --button-hover-border-primary: var(--blue-600);
+  --button-hover-text-primary: var(--blue-100);
+}
+
+.Button.primary.indigo:hover {
+  --button-hover-bg-primary: var(--indigo-600);
+  --button-hover-border-primary: var(--indigo-600);
+  --button-hover-text-primary: var(--indigo-100);
+}
+
+.Button.primary.violet:hover {
+  --button-hover-bg-primary: var(--violet-600);
+  --button-hover-border-primary: var(--violet-600);
+  --button-hover-text-primary: var(--violet-100);
+}
+
+.Button.primary.purple:hover {
+  --button-hover-bg-primary: var(--purple-600);
+  --button-hover-border-primary: var(--purple-600);
+  --button-hover-text-primary: var(--purple-100);
+}
+
+.Button.primary.fuchsia:hover {
+  --button-hover-bg-primary: var(--fuchsia-600);
+  --button-hover-border-primary: var(--fuchsia-600);
+  --button-hover-text-primary: var(--fuchsia-100);
+}
+
+.Button.primary.pink:hover {
+  --button-hover-bg-primary: var(--pink-600);
+  --button-hover-border-primary: var(--pink-600);
+  --button-hover-text-primary: var(--pink-100);
+}
+
+.Button.primary.rose:hover {
+  --button-hover-bg-primary: var(--rose-600);
+  --button-hover-border-primary: var(--rose-600);
+  --button-hover-text-primary: var(--rose-100);
+}
+
+.Button.primary.slate:hover {
+  --button-hover-bg-primary: var(--slate-600);
+  --button-hover-border-primary: var(--slate-600);
+  --button-hover-text-primary: var(--slate-100);
+}
+
+.Button.primary.gray:hover {
+  --button-hover-bg-primary: var(--gray-600);
+  --button-hover-border-primary: var(--gray-600);
+  --button-hover-text-primary: var(--gray-100);
+}
+
+.Button.primary.zinc:hover {
+  --button-hover-bg-primary: var(--zinc-600);
+  --button-hover-border-primary: var(--zinc-600);
+  --button-hover-text-primary: var(--zinc-100);
+}
+
+.Button.primary.neutral:hover {
+  --button-hover-bg-primary: var(--neutral-600);
+  --button-hover-border-primary: var(--neutral-600);
+  --button-hover-text-primary: var(--neutral-100);
+}
+
+.Button.primary.stone:hover {
+  --button-hover-bg-primary: var(--stone-600);
+  --button-hover-border-primary: var(--stone-600);
+  --button-hover-text-primary: var(--stone-100);
+}
+
+.Button.secondary.red:hover {
+  --button-hover-bg-secondary: var(--red-500);
+  --button-hover-border-secondary: var(--red-500);
+  --button-hover-text-secondary: var(--red-100);
+}
+
+.Button.secondary.orange:hover {
+  --button-hover-bg-secondary: var(--orange-500);
+  --button-hover-border-secondary: var(--orange-500);
+  --button-hover-text-secondary: var(--orange-100);
+}
+
+.Button.secondary.amber:hover {
+  --button-hover-bg-secondary: var(--amber-500);
+  --button-hover-border-secondary: var(--amber-500);
+  --button-hover-text-secondary: var(--amber-100);
+}
+
+.Button.secondary.yellow:hover {
+  --button-hover-bg-secondary: var(--yellow-500);
+  --button-hover-border-secondary: var(--yellow-500);
+  --button-hover-text-secondary: var(--yellow-100);
+}
+
+.Button.secondary.lime:hover {
+  --button-hover-bg-secondary: var(--lime-500);
+  --button-hover-border-secondary: var(--lime-500);
+  --button-hover-text-secondary: var(--lime-100);
+}
+
+.Button.secondary.green:hover {
+  --button-hover-bg-secondary: var(--green-500);
+  --button-hover-border-secondary: var(--green-500);
+  --button-hover-text-secondary: var(--green-100);
+}
+
+.Button.secondary.emerald:hover {
+  --button-hover-bg-secondary: var(--emerald-500);
+  --button-hover-border-secondary: var(--emerald-500);
+  --button-hover-text-secondary: var(--emerald-100);
+}
+
+.Button.secondary.teal:hover {
+  --button-hover-bg-secondary: var(--teal-500);
+  --button-hover-border-secondary: var(--teal-500);
+  --button-hover-text-secondary: var(--teal-100);
+}
+
+.Button.secondary.cyan:hover {
+  --button-hover-bg-secondary: var(--cyan-500);
+  --button-hover-border-secondary: var(--cyan-500);
+  --button-hover-text-secondary: var(--cyan-100);
+}
+
+.Button.secondary.sky:hover {
+  --button-hover-bg-secondary: var(--sky-500);
+  --button-hover-border-secondary: var(--sky-500);
+  --button-hover-text-secondary: var(--sky-100);
+}
+
+.Button.secondary.blue:hover {
+  --button-hover-bg-secondary: var(--blue-500);
+  --button-hover-border-secondary: var(--blue-500);
+  --button-hover-text-secondary: var(--blue-100);
+}
+
+.Button.secondary.indigo:hover {
+  --button-hover-bg-secondary: var(--indigo-500);
+  --button-hover-border-secondary: var(--indigo-500);
+  --button-hover-text-secondary: var(--indigo-100);
+}
+
+.Button.secondary.violet:hover {
+  --button-hover-bg-secondary: var(--violet-500);
+  --button-hover-border-secondary: var(--violet-500);
+  --button-hover-text-secondary: var(--violet-100);
+}
+
+.Button.secondary.purple:hover {
+  --button-hover-bg-secondary: var(--purple-500);
+  --button-hover-border-secondary: var(--purple-500);
+  --button-hover-text-secondary: var(--purple-100);
+}
+
+.Button.secondary.fuchsia:hover {
+  --button-hover-bg-secondary: var(--fuchsia-500);
+  --button-hover-border-secondary: var(--fuchsia-500);
+  --button-hover-text-secondary: var(--fuchsia-100);
+}
+
+.Button.secondary.pink:hover {
+  --button-hover-bg-secondary: var(--pink-500);
+  --button-hover-border-secondary: var(--pink-500);
+  --button-hover-text-secondary: var(--pink-100);
+}
+
+.Button.secondary.rose:hover {
+  --button-hover-bg-secondary: var(--rose-500);
+  --button-hover-border-secondary: var(--rose-500);
+  --button-hover-text-secondary: var(--rose-100);
+}
+
+.Button.secondary.slate:hover {
+  --button-hover-bg-secondary: var(--slate-500);
+  --button-hover-border-secondary: var(--slate-500);
+  --button-hover-text-secondary: var(--slate-100);
+}
+
+.Button.secondary.gray:hover {
+  --button-hover-bg-secondary: var(--gray-500);
+  --button-hover-border-secondary: var(--gray-500);
+  --button-hover-text-secondary: var(--gray-100);
+}
+
+.Button.secondary.zinc:hover {
+  --button-hover-bg-secondary: var(--zinc-500);
+  --button-hover-border-secondary: var(--zinc-500);
+  --button-hover-text-secondary: var(--zinc-100);
+}
+
+.Button.secondary.neutral:hover {
+  --button-hover-bg-secondary: var(--neutral-500);
+  --button-hover-border-secondary: var(--neutral-500);
+  --button-hover-text-secondary: var(--neutral-100);
+}
+
+.Button.secondary.stone:hover {
+  --button-hover-bg-secondary: var(--stone-500);
+  --button-hover-border-secondary: var(--stone-500);
+  --button-hover-text-secondary: var(--stone-100);
+}
+
+/* Active state */
+.Button.red:active {
+  --button-active-outline: var(--red-300);
+}
+
+.Button.orange:active {
+  --button-active-outline: var(--orange-300);
+}
+
+.Button.amber:active {
+  --button-active-outline: var(--amber-300);
+}
+
+.Button.yellow:active {
+  --button-active-outline: var(--yellow-300);
+}
+
+.Button.lime:active {
+  --button-active-outline: var(--lime-300);
+}
+
+.Button.green:active {
+  --button-active-outline: var(--green-300);
+}
+
+.Button.emerald:active {
+  --button-active-outline: var(--emerald-300);
+}
+
+.Button.teal:active {
+  --button-active-outline: var(--teal-300);
+}
+
+.Button.cyan:active {
+  --button-active-outline: var(--cyan-300);
+}
+
+.Button.sky:active {
+  --button-active-outline: var(--sky-300);
+}
+
+.Button.blue:active {
+  --button-active-outline: var(--blue-300);
+}
+
+.Button.indigo:active {
+  --button-active-outline: var(--indigo-300);
+}
+
+.Button.violet:active {
+  --button-active-outline: var(--violet-300);
+}
+
+.Button.purple:active {
+  --button-active-outline: var(--purple-300);
+}
+
+.Button.fuchsia:active {
+  --button-active-outline: var(--fuchsia-300);
+}
+
+.Button.pink:active {
+  --button-active-outline: var(--pink-300);
+}
+
+.Button.rose:active {
+  --button-active-outline: var(--rose-300);
+}
+
+.Button.slate:active {
+  --button-active-outline: var(--slate-300);
+}
+
+.Button.gray:active {
+  --button-active-outline: var(--gray-300);
+}
+
+.Button.zinc:active {
+  --button-active-outline: var(--zinc-300);
+}
+
+.Button.neutral:active {
+  --button-active-outline: var(--neutral-300);
+}
+
+.Button.stone:active {
+  --button-active-outline: var(--stone-300);
+}
+
+/* Loading */
+.Button.loading {
+  position: relative;
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.Button.loading #spinner {
+  border: 4px solid;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+
+.Button.primary.loading #spinner {
+  border-right-color: hsl(from var(--button-text-primary) h s l / 0.33);
+}
+
+.Button.secondary.red.loading #spinner {
+  border-right-color: hsl(from var(--red-500) h s l / 0.33);
+}
+
+.Button.secondary.orange.loading #spinner {
+  border-right-color: hsl(from var(--orange-500) h s l / 0.25);
+}
+
+.Button.secondary.amber.loading #spinner {
+  border-right-color: hsl(from var(--amber-500) h s l / 0.25);
+}
+
+.Button.secondary.yellow.loading #spinner {
+  border-right-color: hsl(from var(--yellow-500) h s l / 0.25);
+}
+
+.Button.secondary.lime.loading #spinner {
+  border-right-color: hsl(from var(--lime-500) h s l / 0.25);
+}
+
+.Button.secondary.green.loading #spinner {
+  border-right-color: hsl(from var(--green-500) h s l / 0.25);
+}
+
+.Button.secondary.emerald.loading #spinner {
+  border-right-color: hsl(from var(--emerald-500) h s l / 0.25);
+}
+
+.Button.secondary.teal.loading #spinner {
+  border-right-color: hsl(from var(--teal-500) h s l / 0.25);
+}
+
+.Button.secondary.cyan.loading #spinner {
+  border-right-color: hsl(from var(--cyan-500) h s l / 0.25);
+}
+
+.Button.secondary.sky.loading #spinner {
+  border-right-color: hsl(from var(--sky-500) h s l / 0.25);
+}
+
+.Button.secondary.blue.loading #spinner {
+  border-right-color: hsl(from var(--blue-500) h s l / 0.25);
+}
+
+.Button.secondary.indigo.loading #spinner {
+  border-right-color: hsl(from var(--indigo-500) h s l / 0.25);
+}
+
+.Button.secondary.violet.loading #spinner {
+  border-right-color: hsl(from var(--violet-500) h s l / 0.25);
+}
+
+.Button.secondary.purple.loading #spinner {
+  border-right-color: hsl(from var(--purple-500) h s l / 0.25);
+}
+
+.Button.secondary.fuchsia.loading #spinner {
+  border-right-color: hsl(from var(--fuchsia-500) h s l / 0.25);
+}
+
+.Button.secondary.pink.loading #spinner {
+  border-right-color: hsl(from var(--pink-500) h s l / 0.25);
+}
+
+.Button.secondary.rose.loading #spinner {
+  border-right-color: hsl(from var(--rose-500) h s l / 0.25);
+}
+
+.Button.secondary.slate.loading #spinner {
+  border-right-color: hsl(from var(--slate-500) h s l / 0.25);
+}
+
+.Button.secondary.gray.loading #spinner {
+  border-right-color: hsl(from var(--gray-500) h s l / 0.25);
+}
+
+.Button.secondary.zinc.loading #spinner {
+  border-right-color: hsl(from var(--zinc-500) h s l / 0.25);
+}
+
+.Button.secondary.neutral.loading #spinner {
+  border-right-color: hsl(from var(--neutral-500) h s l / 0.25);
+}
+
+.Button.secondary.stone.loading #spinner {
+  border-right-color: hsl(from var(--stone-500) h s l / 0.25);
+}
