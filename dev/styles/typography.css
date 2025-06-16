@@ -1,0 +1,31 @@
+:root {
+  /* Size */
+  --text-xxs: 0.625rem; /* 10px */
+  --text-xs: 0.75rem; /* 12px */
+  --text-sm: 0.875rem; /* 14px */
+  --text-base: 1rem; /* 16px */
+  --text-lg: 1.125rem; /* 18px */
+  --text-xl: 1.25rem; /* 20px */
+  --text-2xl: 1.375rem; /* 22px */
+  --text-3xl: 1.5rem; /* 24px */
+  --text-4xl: 1.625rem; /* 26px */
+  --text-5xl: 1.75rem; /* 28px */
+  --text-6xl: 1.875rem; /* 30px */
+  --text-7xl: 2rem; /* 32px */
+  /* Line height */
+  --line-height-xxs: 1rem; /* 16px */
+  --line-height-xs: 1.125rem; /* 18px */
+  --line-height-sm: 1.25rem; /* 20px */
+  --line-height-base: 1.5rem; /* 24px */
+  --line-height-lg: 1.125rem; /* 28px */
+  --line-height-xl: 1.25rem; /* 30px */
+  --line-height-2xl: 1.375rem; /* 34px */
+  --line-height-3xl: 1.5rem; /* 36px */
+  --line-height-4xl: 1.625rem; /* 40px */
+  --line-height-5xl: 1.75rem; /* 42px */
+  --line-height-6xl: 1.875rem; /* 44px */
+  --line-height-7xl: 2rem; /* 48px */
+  /* Font family */
+  --font-family-roboto: Roboto, sans-serif;
+  --font-family-robotoMono: RobotoMono, sans-serif;
+}

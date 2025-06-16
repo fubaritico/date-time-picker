@@ -1,0 +1,53 @@
+:root {
+  /* Storybook background (system) */
+  --tw-background-color: light-dark(#d6d6d6ff, #1a1a1a);
+  --tw-background-gradient-circle-1: light-dark(#8b0c9f33, #4d9f0c33);
+  --tw-background-gradient-ellipse-1: light-dark(#64d3e621, #e6646522);
+  --tw-background-gradient-ellipse-2: light-dark(#64e6e633, #e6646533);
+  --tw-background-gradient-ellipse-3: light-dark(#64e6c822, #e6646522);
+  /* Storybook background (forcing dark) */
+  --tw-background-color-dark: #1a1a1a;
+  --tw-background-gradient-circle-1-dark: #4d9f0c33;
+  --tw-background-gradient-ellipse-1-dark: #e6646522;
+  --tw-background-gradient-ellipse-2-dark: #e6646533;
+  --tw-background-gradient-ellipse-3-dark: #e6646522;
+
+  /* box-shadow */
+  --box-shadox-elevation-1: 0 1px 4px 0 rgba(0, 0, 0, 0.08);
+  --box-shadox-elevation-2: 0 4px 6px 0 rgba(0, 0, 0, 0.05), 0 10px 15px 0 rgba(0, 0, 0, 0.1);
+  /* background-image */
+  --bg-storybook-light: radial-gradient(
+    ellipse at 33%,
+    var(--tw-background-gradient-ellipse-1),
+    transparent
+  ),
+  radial-gradient(
+    ellipse at 33% 100%,
+    var(--tw-background-gradient-ellipse-2) 0%,
+    transparent 50%
+  ),
+  radial-gradient(
+    circle at 100% 50%,
+    var(--tw-background-gradient-circle-1),
+    transparent 50%
+  ),
+  radial-gradient(
+    ellipse at center,
+    var(--tw-background-color),
+    var(--tw-background-color)
+  );
+  /* input & button heights */
+  --height-sm: 37px;
+  --height-md: 42px;
+  --height-lg: 52px;
+  /* svg size */
+  --svg-sm: 1.25rem;
+  --svg-md: 1.5rem;
+  --svg-lg: 1.75rem;
+  /* border-radius */
+  --br-none: 0;
+  --br-xs: 0.125rem; /* 2px */
+  --br-sm: 0.25rem; /* 4px */
+  --br-md: 0.375rem; /* 6px */
+  --br-lg: 0.5rem; /* 8px */
+}
