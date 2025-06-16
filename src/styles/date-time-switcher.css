@@ -1,0 +1,19 @@
+@import url('miscellanous.css');
+
+/* base as a monochrome theme */
+.DateTimeSwitcher {
+  /* Basic styles */
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+/* Sizes */
+.DateTimeSwitcher.lg ,
+.DateTimeSwitcher.md {
+  height: var(--date-time-browser-heigh-lg);
+}
+
+.DateTimeSwitcher.sm {
+  height: var(--date-time-browser-heigh-md);
+}

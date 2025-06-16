@@ -62,6 +62,10 @@
   --focus-outline: var(--focus-outline-dark);
 }
 
+.dark * .DateBrowserButton:hover {
+  color: var(--hover-text-light);
+}
+
 /* Force light mode */
 .light * .DateBrowserButton {
   --text: var(--text-light);
@@ -70,10 +74,6 @@
 }
 
 .light * .DateBrowserButton:hover {
-  color: var(--hover-text-light);
-}
-
-.dark * .DateBrowserButton:hover {
   color: var(--hover-text-light);
 }
 
@@ -92,6 +92,7 @@
   line-height: var(--line-height-base);
 }
 
+/*.Colors theme */
 .DateBrowserButton.red {
   --hover-text-light: var(--red-600);
   --hover-text-dark: var(--red-500);

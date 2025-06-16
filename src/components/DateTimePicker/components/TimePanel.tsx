@@ -234,7 +234,7 @@ const TimePanel: FC<TimePanelProps> = ({ className, onDateChange, size }) => {
           onTopButtonClick={gotoNextHour}
           unit="hour"
         />
-        <div className="dp-text-gray-900 dp-text-[dp-64px] dp-font-bold dp-leading-[dp-64px]">
+        <div className="dp-text-gray-900 dark:dp-text-white dp-text-[64px] dp-font-bold dp-leading-[64px]">
           :
         </div>
         <TimePanelSetter

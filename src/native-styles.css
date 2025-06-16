@@ -1,3 +1,5 @@
 @import './styles/button.css';
-@import './styles/date-browser-button.css';
 @import './styles/date-browser.css';
+@import './styles/date-browser-button.css';
+@import './styles/date-time-switcher.css';
+@import './styles/date-time-switcher-button.css';

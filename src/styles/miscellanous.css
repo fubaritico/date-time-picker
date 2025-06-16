@@ -50,4 +50,7 @@
   --br-sm: 0.25rem; /* 4px */
   --br-md: 0.375rem; /* 6px */
   --br-lg: 0.5rem; /* 8px */
+
+  --date-time-browser-heigh-lg: 46px;
+  --date-time-browser-heigh-md: 36px;
 }

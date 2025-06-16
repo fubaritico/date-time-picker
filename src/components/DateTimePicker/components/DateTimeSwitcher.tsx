@@ -7,8 +7,6 @@ import { Icon } from '@components'
 import useDateTimePicker from '../hooks/useDateTimePicker'
 import { PanelView } from '../types'
 
-import dateTimeSwitcherStyles from './styles/DateTimeSwitcher.styles'
-
 interface DataTimeSwitcherProps {
   /* Type of view currently displayed: 'DAYS' or 'TIME' */
   panelView: PanelView
@@ -21,22 +19,17 @@ const DateTimeSwitcher = forwardRef<HTMLDivElement, DataTimeSwitcherProps>(
     const { color, setPanelView } = useDateTimePicker()
 
     return (
-      <div
-        className={clsx('dp-flex dp-justify-between dp-items-stretch', {
-          'dp-h-[36px]': size === 'sm',
-          'dp-h-[46px]': size !== 'sm',
-        })}
-        ref={ref}
-      >
+      <div className={clsx('DateTimeSwitcher', size)} ref={ref}>
         <button
           aria-label="Switch to days view"
           className={cx(
-            dateTimeSwitcherStyles({
-              isSelected: panelView !== PanelView.TIME,
-              color,
-              size,
-              className: 'dp-rounded-tl-lg',
-            })
+            'DateTimeSwitcherButton',
+            color ?? 'blue',
+            size,
+            'dp-rounded-tl-lg',
+            {
+              selected: panelView !== PanelView.TIME,
+            }
           )}
           onClick={() => {
             setPanelView(PanelView.DAYS)
@@ -51,12 +44,13 @@ const DateTimeSwitcher = forwardRef<HTMLDivElement, DataTimeSwitcherProps>(
         <button
           aria-label="Switch to time view"
           className={cx(
-            dateTimeSwitcherStyles({
-              isSelected: panelView === PanelView.TIME,
-              color,
-              size,
-              className: 'dp-rounded-tr-lg',
-            })
+            'DateTimeSwitcherButton',
+            color,
+            size,
+            'dp-rounded-tr-lg',
+            {
+              selected: panelView === PanelView.TIME,
+            }
           )}
           onClick={() => {
             setPanelView(PanelView.TIME)
