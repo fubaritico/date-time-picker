@@ -1,9 +1,9 @@
 import { cx } from '@utils'
 import { ConditionalWrapper } from '@components'
 
-import dateBrowserButtonStyles from './styles/DateBrowserButton.styles'
+import dateBrowserButtonStyles from './styles/DateBrowserButton.native.styles'
 
-import type { VariantDateBrowserButtonProps } from './styles/DateBrowserButton.styles'
+import type { VariantDateBrowserButtonProps } from './styles/DateBrowserButton.native.styles'
 import type { ComponentProps, FC, ReactNode } from 'react'
 
 export interface DateBrowserButtonProps

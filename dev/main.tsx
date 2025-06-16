@@ -21,6 +21,7 @@ const App = () => {
 
       <ControlledDateTimePicker
         pickerMode="DATETIME"
+        color="red"
         date={value as number}
         key={2}
         onChange={setValue}

@@ -6,7 +6,7 @@ const postcssNested = require('postcss-nested')
 const atImport = require('postcss-import')
 
 const sourceFile = 'src/native-styles.css'
-const destFile = 'src/date-picker.css'
+const destFile = 'src/date-browser-button.css'
 
 const css = fs.readFileSync(sourceFile, 'utf8')
 

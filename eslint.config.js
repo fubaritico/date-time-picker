@@ -43,6 +43,7 @@ export default tseslint.config(
       'eslint.config.js',
       'commitlint.config.js',
       'add-tailwind-prefix.ts',
+      'generate-css.cjs',
     ],
   },
 
