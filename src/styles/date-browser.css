@@ -1,0 +1,76 @@
+@import url('colors.css');
+@import url('spacing.css');
+@import url('typography.css');
+@import url('miscellanous.css');
+
+.DateBrowser {
+  /* Colors basic definition for each mode */
+  --text-light: var(--gray-600);
+  --text-dark: var(--gray-300);
+  --arrow-light: var(--gray-900);
+  --arrow-dark: var(--gray-100);
+
+  /* Default values (light mode) */
+  --text: var(--text-light);
+  --arrow: var(--arrow-light);
+
+  /* Basic styles */
+  display: flex;
+  gap: var(--spacing-4);
+  justify-content: space-between;
+  color: var(--text);
+}
+
+/* Dark mode from system */
+@media (prefers-color-scheme: dark) {
+  .DateBrowser:not(.light *) {
+    --text: var(--text-dark);
+    --arrow: var(--arrow-dark);
+  }
+}
+
+/* Force dark mode */
+.dark * .DateBrowser {
+  --text: var(--text-dark);
+  --arrow: var(--arrow-dark);
+}
+
+/* Force light mode */
+.light * .DateBrowser {
+  --text: var(--text-light);
+  --arrow: var(--arrow-light);
+}
+
+/* Sizes */
+.DateBrowser.sm, .DateBrowser.md {
+  padding: var(--spacing-4) var(--spacing-4) var(--spacing-2) var(--spacing-4);
+}
+
+.DateBrowser.lg {
+  padding: var(--spacing-6) var(--spacing-6) var(--spacing-3) var(--spacing-6);
+}
+
+.DateBrowser > button {
+  appearance: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  width: var(--svg-md);
+}
+
+.DateBrowser > button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.DateBrowser > button > svg {
+  width: var(--svg-sm);
+  height: var(--svg-sm);
+  color: var(--arrow);
+}
+
+.DateBrowser > div {
+  display: flex;
+  font-weight: bold;
+  gap: var(--spacing-1);
+}

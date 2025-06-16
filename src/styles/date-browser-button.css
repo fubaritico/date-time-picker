@@ -3,7 +3,7 @@
 
 /* base as a monochrome theme */
 .DateBrowserButton {
-  /* Définition des couleurs de base pour chaque mode */
+  /* Colors basic definition for each mode */
   --text-light: var(--neutral-900);
   --text-dark: var(--neutral-300);
   --hover-text-light: var(--neutral-700);
@@ -11,12 +11,12 @@
   --focus-outline-light: var(--neutral-700);
   --focus-outline-dark: var(--neutral-400);
 
-  /* Valeurs par défaut (mode clair) */
+  /* Default values (light mode) */
   --text: var(--text-light);
   --hover-text: var(--hover-text-light);
   --focus-outline: var(--focus-outline-light);
 
-  /* Styles de base */
+  /* Basic styles */
   color: var(--text);
   transition: color 300ms linear;
 }
@@ -35,7 +35,7 @@
   color: var(--hover-text);
 }
 
-/* Mode sombre système */
+/* Dark mode from system */
 @media (prefers-color-scheme: dark) {
   .DateBrowserButton:not(.light *) {
     --text: var(--text-dark);
@@ -55,14 +55,14 @@
   }
 }
 
-/* Force le mode sombre */
+/* Force dark mode */
 .dark * .DateBrowserButton {
   --text: var(--text-dark);
   --hover-text: var(--hover-text-dark);
   --focus-outline: var(--focus-outline-dark);
 }
 
-/* Force le mode clair */
+/* Force light mode */
 .light * .DateBrowserButton {
   --text: var(--text-light);
   --hover-text: var(--hover-text-light);

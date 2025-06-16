@@ -27,9 +27,9 @@
   "scripts": {
     "dev": "concurrently 'vite -c vite.config.js' 'pnpm dev:postcss' 'pnpm dev:tw:css'",
     "dev:postcss": "postcss ./src/native-styles.css --config ./dev -o ./dev/native-styles.css -w",
-    "dev:tw:css": "rm ./src/storybook.css && tailwindcss -w -i ./src/index.css -o ./dev/styles.css",
-    "storybook": "concurrently 'pnpm storybook:css' 'storybook dev -p 6006'",
-    "storybook:css": "rm ./src/storybook.css && tailwindcss -w -i ./src/index.css -o ./src/storybook.css",
+    "dev:tw:css": "tailwindcss -w -i ./src/index.css -o ./dev/styles.css",
+    "storybook": "storybook dev -p 6006",
+    "storybook:css": "tailwindcss -w -i ./src/index.css -o ./src/storybook.css",
     "build": "rm -rf dist && rollup -c rollup.config.js && pnpm build:css",
     "build:css": "tailwindcss -i ./src/index.css -o ./dist/date-picker.css --minify",
     "build:postcss": "node generate-css.cjs",
