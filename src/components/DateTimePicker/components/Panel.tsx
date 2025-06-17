@@ -46,6 +46,10 @@ const INPUT_LABEL_HEIGHT = 24
  * @param size Panel size: 'sm' | 'md' | 'lg'
  * @param triggerRef Reference to the HTML element triggering the opening of the panel
  *
+ * Issue: hadd vertical placement problems due to not taking scrollY into account.
+ * One issue remains: If the panel is shown in a portal and the date picker is in a scrollable div,
+ * it will sound to not enable the portal and have an absolute positioning.
+ *
  * @constructor
  */
 const Panel: FC<PanelProps> = ({
@@ -99,17 +103,19 @@ const Panel: FC<PanelProps> = ({
     const viewportHeight = window.innerHeight
 
     if (enablePortal) {
-      let newTop = triggerRect.y + triggerRect.height + verticalGap
+      let newTop =
+        triggerRect.y + triggerRect.height + verticalGap + window.scrollY
       let newLeft = triggerRect.x
 
-      // Adjust if panel goes beyond viewport
+      // Adjust if the panel goes beyond the viewport
       if (
         triggerRect.bottom + panelRect.height + verticalGap >
         viewportHeight
       ) {
         newTop =
           triggerRect.y -
-          (panelRect.height + dateTimeSwitcherRect.height + verticalGap)
+          (panelRect.height + dateTimeSwitcherRect.height + verticalGap) +
+          window.scrollY
         if (hasLabel) newTop += INPUT_LABEL_HEIGHT
       }
 
@@ -138,7 +144,7 @@ const Panel: FC<PanelProps> = ({
       let newTop = triggerRect.height + verticalGap
       let newLeft = 0
 
-      // Adjust if panel goes beyond viewport
+      // Adjust if the panel goes beyond the viewport
       if (
         triggerRect.bottom + panelRect.height + verticalGap >
         viewportHeight

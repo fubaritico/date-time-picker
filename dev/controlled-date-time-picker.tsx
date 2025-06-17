@@ -7,13 +7,21 @@ import type { CommonPickerProps } from 'src/components/DateTimePicker/types'
 
 const ControlledDateTimePicker: FC<
   CommonPickerProps<'DATETIME'> & { title: ReactNode }
-> = ({ date, locale = 'en_US', onChange, timezone, title, ...rest }) => {
+> = ({
+  date,
+  locale = 'en_US',
+  enablePortal = true,
+  onChange,
+  timezone,
+  title,
+  ...rest
+}) => {
   return (
     <div className="controlled-date-time-picker">
       <h2>{title}</h2>
       <div>
         <DateTimePicker
-          enablePortal
+          enablePortal={enablePortal}
           date={date}
           onChange={onChange}
           locale={locale}

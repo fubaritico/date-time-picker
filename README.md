@@ -2,7 +2,7 @@
 
 A React 19.x date-time picker component, using TypeScript 5.x, styled with Tailwind 3.x and CVA for styling.
 
-### Work in progress
+## Work in progress
 
 Creation of `DatePicker`, `DateTimePicker`, `TimePicker` and `DateRangePicker` as separated components.
 
@@ -10,11 +10,9 @@ Tests have to be written for `DateRangePicker`.
 
 Some integration tests will be done in real projects.
 
-### Issues
+## Issues
 
-Wrong output offset after selecting a date range.
-
-#### CSS issue
+### CSS
 
 Due to the number of safelist CSS classes used, tailwind has to generate potential utility classes at build time. This leads to a large CSS file size. 
 
