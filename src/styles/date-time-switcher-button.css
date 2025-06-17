@@ -1,7 +1,7 @@
-@import url('colors.css');
-@import url('spacing.css');
-@import url('miscellanous.css');
-@import url('typography.css');
+@import url('common/colors.css');
+@import url('common/spacing.css');
+@import url('common/miscellanous.css');
+@import url('common/typography.css');
 
 /* base as a monochrome theme */
 .DateTimeSwitcherButton {
@@ -314,7 +314,7 @@
   }
 }
 
-/* Force dark mode */
+/* Forced dark mode */
 .dark * .DateTimeSwitcherButton {
   --unselected-bg-color: var(--gray-800);
   --unselected-text-color: var(--selected-text-color-dark);
@@ -341,6 +341,7 @@
   --unselected-text-color: var(--selected-text-color-dark);
 }
 
+/* Forced light mode */
 .light * .DateTimeSwitcherButton {
   --unselected-bg-color: var(--unselected-bg-color-light);
   --unselected-text-color: var(--unselected-text-color-light);

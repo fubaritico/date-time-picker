@@ -1,8 +1,8 @@
-@import url('colors.css');
-@import url('animations.css');
-@import url('spacing.css');
-@import url('typography.css');
-@import url('miscellanous.css');
+@import url('common/colors.css');
+@import url('common/animations.css');
+@import url('common/spacing.css');
+@import url('common/typography.css');
+@import url('common/miscellanous.css');
 
 /* Default styles */
 .Button {

@@ -1,0 +1,268 @@
+@import url('common/colors.css');
+@import url('common/spacing.css');
+@import url('common/miscellanous.css');
+@import url('common/typography.css');
+
+/* color defaultBehavior today inRange hasDateRangeMode enabled isSelected
+selectedStartDate
+selectedEndDate
+size
+*/
+
+/* base as a monochrome theme */
+.DaysGridCell {
+  /* Colors basic definition for each mode */
+
+  /* Default values (light mode) */
+
+  /* Basic styles (enabled) */
+
+}
+
+/* Dark mode from system */
+@media (prefers-color-scheme: dark) {
+  .DaysGridCell:not(.enabled):not(.light *) {
+
+  }
+
+  .DaysGridCell:not(.enabled):not(.light *):hover {
+
+  }
+
+  .DaysGridCell.hasDateRangeMode:not(.light *):hover {
+
+  }
+
+  .DaysGridCell.enabled:not(.light *) {
+
+  }
+
+  .DaysGridCell.enabled:not(.light *):hover {
+
+  }
+
+  .DaysGridCell.selected:not(.light *) {
+
+  }
+
+  .DaysGridCell.selected:not(.light *):hover {
+
+  }
+
+  .DaysGridCell.inRange:not(.light *) {
+
+  }
+
+  .DaysGridCell.inRange:not(.light *):hover {
+
+  }
+
+  .DaysGridCell.today:not(.inRange):not(.light *) {
+
+  }
+
+  .DaysGridCell.today:not(.inRange):not(.light *):hover {
+
+  }
+
+  .DaysGridCell.selectedStartDate:not(.light *) {
+
+  }
+
+  .DaysGridCell.selectedStartDate:not(.light *):hover {
+
+  }
+
+  .DaysGridCell.selectedEndDate:not(.light *) {
+
+  }
+
+  .DaysGridCell.selectedEndDate:not(.light *):hover {
+
+  }
+}
+
+/* Forced dark mode */
+.dark * .DaysGridCell:not(.enabled) {
+
+}
+
+.dark * .DaysGridCell:not(.enabled):hover {
+
+}
+
+.dark * .DaysGridCell.hasDateRangeMode:hover {
+
+}
+
+.dark * .DaysGridCell.enabled {
+
+}
+
+.dark * .DaysGridCell.enabled:hover {
+
+}
+
+.dark * .DaysGridCell.selected {
+
+}
+
+.dark * .DaysGridCell.selected:hover {
+
+}
+
+.dark * .DaysGridCell.inRange {
+
+}
+
+.dark * .DaysGridCell.inRange:hover {
+
+}
+
+.dark * .DaysGridCell.today:not(.inRange) {
+
+}
+
+.dark * .DaysGridCell.today:not(.inRange):hover {
+
+}
+
+.dark * .DaysGridCell.selectedStartDate {
+
+}
+
+.dark * .DaysGridCell.selectedStartDate:hover {
+
+}
+
+.dark * .DaysGridCell.selectedEndDate {
+
+}
+
+.dark * .DaysGridCell.selectedEndDate:hover {
+
+}
+
+/* Forced light mode */
+.light * .DaysGridCell:not(.enabled) {
+
+}
+
+.light * .DaysGridCell:not(.enabled):hover {
+
+}
+
+.light * .DaysGridCell.hasDateRangeMode:hover {
+
+}
+
+.light * .DaysGridCell.enabled {
+
+}
+
+.light * .DaysGridCell.enabled:hover {
+
+}
+
+.light * .DaysGridCell.selected {
+
+}
+
+.light * .DaysGridCell.selected:hover {
+
+}
+
+.light * .DaysGridCell.inRange {
+
+}
+
+.light * .DaysGridCell.inRange:hover {
+
+}
+
+.light * .DaysGridCell.today:not(.inRange) {
+
+}
+
+.light * .DaysGridCell.today:not(.inRange):hover {
+
+}
+
+.light * .DaysGridCell.selectedStartDate {
+
+}
+
+.light * .DaysGridCell.selectedStartDate:hover {
+
+}
+
+.light * .DaysGridCell.selectedEndDate {
+
+}
+
+.light * .DaysGridCell.selectedEndDate:hover {
+
+}
+
+/*.Sizes */
+.DaysGridCell.sm {
+
+}
+
+.DaysGridCell.md{
+
+}
+
+.DaysGridCell.lg {
+
+}
+
+/* States */
+.DaysGridCell:hover {
+
+}
+
+.DaysGridCell.hasDateRangeMode:hover {
+
+}
+
+.DaysGridCell.enabled {
+
+}
+
+.DaysGridCell.enabled:hover {
+
+}
+
+.DaysGridCell.selected {
+
+}
+
+.DaysGridCell.selected:hover {
+
+}
+
+.DaysGridCell.inRange,
+.DaysGridCell.inRange:hover {
+
+}
+
+.DaysGridCell.today:not(.inRange) {
+
+}
+
+.DaysGridCell.today:not(.inRange):hover {
+
+}
+
+.DaysGridCell.selectedStartDate,
+.DaysGridCell.selectedStartDate:hover {
+
+}
+
+.DaysGridCell.selectedEndDate,
+.DaysGridCell.selectedEndDate:hover {
+
+}
+
+/* Colors theme */

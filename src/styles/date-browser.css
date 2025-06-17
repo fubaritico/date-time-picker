@@ -1,6 +1,6 @@
-@import url('colors.css');
-@import url('spacing.css');
-@import url('miscellanous.css');
+@import url('common/colors.css');
+@import url('common/spacing.css');
+@import url('common/miscellanous.css');
 
 .DateBrowser {
   /* Colors basic definition for each mode */
