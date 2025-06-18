@@ -1,8 +1,5 @@
 import { cx } from '@utils'
 
-import daysGridCellStyles from './styles/DaysGridCell.styles'
-
-import type { VariantDaysGridCellProps } from './styles/DaysGridCell.styles'
 import type {
   ComponentProps,
   FC,
@@ -12,8 +9,9 @@ import type {
 } from 'react'
 
 export interface DaysGridCellProps
-  extends Omit<ComponentProps<'div'>, 'color'>,
-    VariantDaysGridCellProps {
+  extends Omit<ComponentProps<'div'>, 'color'> {
+  /*  */
+  color: UIColor
   /*  */
   handleDateClick: (event: MouseEvent<HTMLDivElement>) => void
   /*  */
@@ -23,13 +21,28 @@ export interface DaysGridCellProps
   /*  */
   isSelectingRange: boolean
   /*  */
+  isToday: boolean
+  /*  */
+  isInRange: boolean
+  /*  */
+  hasDateRangeMode: boolean
+  /*  */
+  isClickable: boolean
+  /*  */
+  isSelected?: boolean
+  /*  */
+  startDateIsSelected: boolean
+  /*  */
+  endDateIsSelected: boolean
+  /*  */
+  size: UISize
+  /*  */
   value: number
 }
 
 const DaysGridCell: FC<PropsWithChildren<DaysGridCellProps>> = ({
   children,
   color,
-  defaultBehavior,
   handleDateClick,
   handleKeyDown,
   handleDateMouseEnter,
@@ -57,18 +70,18 @@ const DaysGridCell: FC<PropsWithChildren<DaysGridCellProps>> = ({
       isClickable && isSelectingRange ? handleDateMouseEnter : undefined
     }
     className={cx(
-      daysGridCellStyles({
-        color,
-        defaultBehavior,
-        isToday,
-        isInRange,
-        hasDateRangeMode,
-        isClickable,
-        isSelected,
-        startDateIsSelected,
-        endDateIsSelected,
-        size,
-      })
+      'DaysGridCell',
+      {
+        hasDateRangeMode: hasDateRangeMode,
+        enabled: isClickable,
+        selected: isSelected,
+        inRange: isInRange,
+        today: isToday,
+        selectedStartDate: startDateIsSelected,
+        selectedEndDate: endDateIsSelected,
+      },
+      color,
+      size
     )}
   >
     {children}
