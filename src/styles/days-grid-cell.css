@@ -3,12 +3,6 @@
 @import url('common/miscellanous.css');
 @import url('common/typography.css');
 
-/* color defaultBehavior today inRange hasDateRangeMode enabled isSelected
-selectedStartDate
-selectedEndDate
-size
-*/
-
 /* base as a monochrome theme */
 .DaysGridCell {
   /* Colors basic definition for each mode */

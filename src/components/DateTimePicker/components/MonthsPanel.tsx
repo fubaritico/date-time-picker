@@ -3,7 +3,6 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 
 import {
   addYears,
-  cx,
   formatToYYYYMMDD,
   getAllMonthNames,
   getLongMonthNameFromTs,
@@ -14,8 +13,6 @@ import {
 import Icon from '../../Icon'
 import useDateTimePicker from '../hooks/useDateTimePicker'
 import usePanelDomRect from '../hooks/usePanelDomRect'
-
-import panelButtonStyles from './styles/PanelButton.styles'
 
 import type { FC, MouseEvent } from 'react'
 
@@ -155,14 +152,10 @@ const MonthsPanel: FC<MonthsPanelProps> = ({
           return (
             <button
               aria-label={`Choose ${allMonthNames[i]}`}
-              className={cx(
-                panelButtonStyles({
-                  isSelected:
-                    allMonthNames[i] === getLongMonthNameFromTs(date, locale),
-                  color,
-                  size,
-                })
-              )}
+              className={clsx('PanelButton', color, size, {
+                selected:
+                  allMonthNames[i] === getLongMonthNameFromTs(date, locale),
+              })}
               data-date={monthsTimestamps[i]}
               key={monthName}
               onClick={handleDateClick}

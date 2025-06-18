@@ -11,9 +11,9 @@
 /* Sizes */
 .DateTimeSwitcher.lg ,
 .DateTimeSwitcher.md {
-  height: var(--date-time-browser-heigh-lg);
+  height: var(--date-time-browser-height-lg);
 }
 
 .DateTimeSwitcher.sm {
-  height: var(--date-time-browser-heigh-md);
+  height: var(--date-time-browser-height-md);
 }

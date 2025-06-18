@@ -4,7 +4,6 @@ import { useCallback, useEffect, useState } from 'react'
 import {
   addHours,
   addMinutes,
-  cx,
   getCurrentAMPM,
   getHours,
   getMaxTimeOfDayLessOneHour,
@@ -20,7 +19,6 @@ import useDateTimePicker from '../hooks/useDateTimePicker'
 import usePanelDomRect from '../hooks/usePanelDomRect'
 import { PanelView } from '../types'
 
-import panelButtonStyles from './styles/PanelButton.styles'
 import TimePanelSetter from './TimePanelSetter'
 
 import type { FC } from 'react'
@@ -252,13 +250,9 @@ const TimePanel: FC<TimePanelProps> = ({ className, onDateChange, size }) => {
         <div className="dp-flex dp-gap-3 dp-p-3">
           <button
             aria-label="Choose AM"
-            className={cx(
-              panelButtonStyles({
-                isSelected: getCurrentAMPM(date) === 'AM',
-                color,
-                size,
-              })
-            )}
+            className={clsx('PanelButton', color, size, {
+              selected: getCurrentAMPM(date) === 'AM',
+            })}
             onClick={() => {
               if (getCurrentAMPM(date) !== 'AM') toggleAMPM()
             }}
@@ -267,13 +261,9 @@ const TimePanel: FC<TimePanelProps> = ({ className, onDateChange, size }) => {
           </button>
           <button
             aria-label="Choose PM"
-            className={cx(
-              panelButtonStyles({
-                isSelected: getCurrentAMPM(date) === 'PM',
-                color,
-                size,
-              })
-            )}
+            className={clsx('PanelButton', color, size, {
+              selected: getCurrentAMPM(date) === 'PM',
+            })}
             onClick={() => {
               if (getCurrentAMPM(date) !== 'PM') toggleAMPM()
             }}

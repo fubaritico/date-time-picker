@@ -1,20 +1,21 @@
-import { cx } from '@utils'
+import clsx from 'clsx'
+
 import { ConditionalWrapper } from '@components'
 
-import dateBrowserButtonStyles from './styles/DateBrowserButton.native.styles'
-
-import type { VariantDateBrowserButtonProps } from './styles/DateBrowserButton.native.styles'
 import type { ComponentProps, FC, ReactNode } from 'react'
 
 export interface DateBrowserButtonProps
-  extends Omit<ComponentProps<'button'>, 'color'>,
-    VariantDateBrowserButtonProps {
+  extends Omit<ComponentProps<'button'>, 'color'> {
+  /* Component theme color, overrides default color */
+  color?: UIColor
   /* If true, the component will render a button leading to either the month or year panel */
   hasDatePickerMode: boolean
   /* The button label */
   label: ReactNode
   /* The function called by the button if a button is rendered */
   onClick: () => void
+  /* Component size: 'sm' | 'md' | 'lg' */
+  size?: UISize
 }
 
 const DateBrowserButton: FC<DateBrowserButtonProps> = ({
@@ -31,7 +32,7 @@ const DateBrowserButton: FC<DateBrowserButtonProps> = ({
       wrapper={(children: ReactNode) => (
         <button
           aria-label={rest['aria-label'] ?? 'Select'}
-          className={cx(dateBrowserButtonStyles({ color, size }))}
+          className={clsx('DateBrowserButton', color, size)}
           onClick={onClick}
         >
           {children}

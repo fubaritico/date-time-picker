@@ -324,7 +324,7 @@
   border-bottom-color: var(--border-color);
 }
 
-.dark * .DateTimeSwitcherButton:not(.light *):hover {
+.dark * .DateTimeSwitcherButton:hover {
   --unselected-hover-bg-color: var(--gray-700);
   background: var(--unselected-hover-bg-color);
 }
@@ -348,8 +348,9 @@
   --border-color: var(--border-color-light);
 }
 
-.light * .DateTimeSwitcherButton:not(.light *):hover {
-  --unselected-hover-bg-color: var(--hover-text-light);
+.light * .DateTimeSwitcherButton:hover {
+  --unselected-hover-bg-color: var(--unselected-hover-bg-color-light);
+  background: var(--unselected-hover-bg-color);
 }
 
 .light * .DateTimeSwitcherButton.selected {
@@ -366,12 +367,12 @@
 
 /*.Sizes */
 .DateTimeSwitcherButton.sm {
-  height: var(--date-time-browser-heigh-md);
+  height: var(--date-time-browser-height-md);
 }
 
 .DateTimeSwitcherButton.md,
 .DateTimeSwitcherButton.lg {
-  height: var(--date-time-browser-heigh-lg);
+  height: var(--date-time-browser-height-lg);
 }
 
 /*.Colors theme */
