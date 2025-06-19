@@ -25,12 +25,12 @@ interface MaskClassType {
  * IMPORTANT:
  * ----------
  * The TextField component can't be used by react-input-mask because there's an incompatibility between an input element,
- * the input element included in this component and the properties passed by react-input-mask,
- * even by forwarding the reference of the input, so far no way has been found to use a custom component
+ * the input element included in this component, and the properties passed by react-input-mask,
+ * even by forwarding the reference of the input. So far no way has been found to use a custom component
  * with react-input-mask. So the DateTimeInput component will use its own input tag styled like the TextField component.
  *
  * The issue was due to the definition of the onChange native method.
- * React-input-mask takes all native properties and apply their value to the wrapped input/custom component.
+ * React-input-mask takes all native properties and applies their value to the wrapped input/custom component.
  * The custom component doesn't override any native property.
  * The custom component has to forward a ref of the input tag to see its native values to be reapplied.
  *
@@ -242,26 +242,24 @@ const DateTimeInput: FC<DateInputProps> = ({
   )
 
   return (
-    <div className="dp-flex">
-      <InputWithMask
-        alwaysShowMask
-        className="dp-font-roboto"
-        color={color}
-        mask={inputMaskInstance?.getMask()}
-        value={inputValue ?? ''}
-        disabled={inputTextProps.disabled}
-        required={inputTextProps.required}
-        severity={innerErrors ? 'error' : undefined}
-        errors={innerErrors}
-        onChange={async (e: ChangeEvent<HTMLInputElement>) => {
-          await handleChange(e)
-        }}
-        iconRef={clickAwayIgnoreRef}
-        onIconClick={onIconClick}
-        pickerMode={pickerMode}
-        {...textInputOnlyProperties(inputTextProps)}
-      />
-    </div>
+    <InputWithMask
+      alwaysShowMask
+      className="dp-font-roboto"
+      color={color}
+      mask={inputMaskInstance?.getMask()}
+      value={inputValue ?? ''}
+      disabled={inputTextProps.disabled}
+      required={inputTextProps.required}
+      severity={innerErrors ? 'error' : undefined}
+      errors={innerErrors}
+      onChange={async (e: ChangeEvent<HTMLInputElement>) => {
+        await handleChange(e)
+      }}
+      iconRef={clickAwayIgnoreRef}
+      onIconClick={onIconClick}
+      pickerMode={pickerMode}
+      {...textInputOnlyProperties(inputTextProps)}
+    />
   )
 }
 

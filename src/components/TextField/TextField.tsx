@@ -1,14 +1,11 @@
 import clsx from 'clsx'
 import { forwardRef, useState } from 'react'
 
-import { cx } from '@utils'
 import { createCustomChangeEvent, handleKeyDown } from '@utils'
 
 import HelperText from '../HelperText'
 import Icon from '../Icon'
 import Label from '../Label'
-
-import textFieldStyles, { VariantTextFieldProps } from './TextField.styles'
 
 import type {
   ChangeEvent,
@@ -19,13 +16,11 @@ import type {
 } from 'react'
 
 export interface TextFieldProps
-  extends Omit<
-      ComponentProps<'input'>,
-      'onChange' | 'size' | 'color' | 'disabled'
-    >,
-    VariantTextFieldProps {
+  extends Omit<ComponentProps<'input'>, 'onChange' | 'size' | 'color'> {
   /* Extra CSS styles (tailwind) */
   className?: string
+  /* Theme color, defaults to 'blue' */
+  color?: UIColor
   /* Extra CSS styles (tailwind) for the root element (container) */
   containerClassName?: string
   /* If true, an icon button will show on hovering the input and will allow clearing the content of the text input on click */
@@ -34,6 +29,8 @@ export interface TextFieldProps
   errors?: string[]
   /* Information message displayed under the input text */
   helperText?: string
+  /* If true, no focus state is shown on focus */
+  hideFocus?: boolean
   /* Icon aria label for accessibility and tests*/
   iconAriaLabel?: string
   /* Name of the icon displayed on the left */
@@ -52,6 +49,8 @@ export interface TextFieldProps
   onIconClick?: (ref?: ForwardedRef<HTMLInputElement>) => void
   /* If true, the icon click will not be prevented by the disabled state of the input */
   preserveIconClick?: boolean
+  /* Text input severity, translated into colors: 'success' | 'error' | 'warning' | 'info' */
+  severity?: Severity
   /* Text input size: 'sm' | 'md' | 'lg'  */
   size?: UISize
   /* Text input type */
@@ -71,12 +70,6 @@ export interface TextFieldProps
   value?: string
 }
 
-const sizeHeights: Record<UISize, number> = {
-  lg: 52,
-  md: 42,
-  sm: 37,
-}
-
 const TextField: FC<TextFieldProps> = forwardRef<
   HTMLInputElement,
   TextFieldProps
@@ -84,7 +77,7 @@ const TextField: FC<TextFieldProps> = forwardRef<
   (
     {
       className,
-      color,
+      color = 'blue',
       containerClassName,
       canClear = false,
       disabled,
@@ -127,7 +120,7 @@ const TextField: FC<TextFieldProps> = forwardRef<
         {label && (
           <Label
             className="dp-mb-1"
-            disabled={disabled as boolean | undefined}
+            disabled={disabled}
             label={label}
             labelInfo={labelInfo}
             required={required}
@@ -135,7 +128,7 @@ const TextField: FC<TextFieldProps> = forwardRef<
           />
         )}
         <div
-          className="dp-relative dp-w-full"
+          style={{ position: 'relative', width: '100%' }}
           onMouseEnter={() => {
             if (canClear) {
               setShowCross(true)
@@ -148,19 +141,21 @@ const TextField: FC<TextFieldProps> = forwardRef<
           }}
         >
           <input
-            className={cx(
-              textFieldStyles({
-                color,
-                disabled,
-                hideFocus,
-                iconName,
-                iconPosition,
-                severity,
-                size,
-                className,
-              })
+            className={clsx(
+              'TextField',
+              color,
+              hideFocus,
+              severity,
+              size,
+              `icon-${iconPosition}`,
+              {
+                disabled: disabled,
+                'show-icon': iconName,
+                'show-cross': showCross,
+              },
+              className
             )}
-            disabled={disabled as boolean | undefined}
+            disabled={disabled}
             {...(label && { id: label.replace(/\s/g, '') })}
             onChange={onChange}
             onFocus={onFocus}
@@ -169,9 +164,6 @@ const TextField: FC<TextFieldProps> = forwardRef<
             value={value}
             ref={ref}
             {...rest}
-            style={{
-              height: `${sizeHeights[size].toString()}px`,
-            }}
           />
           {showCross && !disabled && (
             <div
@@ -180,60 +172,20 @@ const TextField: FC<TextFieldProps> = forwardRef<
               onKeyDown={handleKeyDown(() => {
                 onReset()
               })}
-              className={clsx(
-                'dp-absolute dp-top-1/2 -dp-translate-y-1/2 dp-text-gray-500 dp-cursor-pointer dp-transition-all dp-duration-300',
-                {
-                  'dp-w-6 dp-h-6 dp-right-[17px]': size === 'lg',
-                  'dp-w-5 dp-h-5 dp-right-[14px]': size === 'md',
-                  'dp-w-4 dp-h-4 dp-right-[10px]': size === 'sm',
-                }
-              )}
+              className="clear-icon-button"
               onClick={() => {
                 onReset()
               }}
             >
-              <Icon
-                name="HiXMark"
-                className={clsx(
-                  'dp-text-gray-600 dp-transition-all dp-duration-300',
-                  {
-                    'dp-w-6 dp-h-6': size === 'lg',
-                    'dp-w-5 dp-h-5': size === 'md',
-                    'dp-w-4 dp-h-4': size === 'sm',
-                    '!dp-text-red-600': severity === 'error',
-                    '!dp-text-yellow-600': severity === 'warning',
-                    '!dp-text-green-600': severity === 'success',
-                  }
-                )}
-              />
+              <Icon name="HiXMark" className="icon" />
             </div>
           )}
-          {!!iconName && !(iconPosition === 'right' && canClear) && (
+          {!!iconName && (iconPosition === 'left' || !canClear) && (
             <div
               aria-label={onIconClick ? iconAriaLabel : undefined}
-              className={clsx(
-                'dp-absolute dp-top-1/2 -dp-translate-y-1/2 dp-transition-all dp-duration-300',
-                {
-                  '!dp-cursor-pointer': !disabled && !!onIconClick,
-                  'dp-opacity-50': disabled,
-                  '!dp-cursor-default': !onIconClick,
-                  // Sizing
-                  'dp-w-6 dp-h-6': size === 'lg',
-                  'dp-w-5 dp-h-5': size === 'md',
-                  'dp-w-4 dp-h-4': size === 'sm',
-                  // Positioning
-                  ...(iconPosition === 'left' && {
-                    'dp-left-[17px]': size === 'lg',
-                    'dp-left-[10px]': size === 'sm',
-                    'dp-left-[14px]': size === 'md',
-                  }),
-                  ...(iconPosition === 'right' && {
-                    'dp-right-[17px]': size === 'lg',
-                    'dp-right-[10px]': size === 'sm',
-                    'dp-right-[14px]': size === 'md',
-                  }),
-                }
-              )}
+              className={clsx('icon-button', {
+                enabled: !disabled && !!onIconClick,
+              })}
               onClick={() =>
                 (!disabled || preserveIconClick) && onIconClick?.(ref)
               }
@@ -244,21 +196,7 @@ const TextField: FC<TextFieldProps> = forwardRef<
               tabIndex={onIconClick ? 0 : undefined}
               ref={iconRef as RefObject<HTMLDivElement>}
             >
-              <Icon
-                aria-hidden
-                name={iconName}
-                className={clsx(
-                  'dp-text-gray-500 dark:dp-text-gray-400 dp-transition-all dp-duration-300',
-                  {
-                    'dp-w-6 dp-h-6': size === 'lg',
-                    'dp-w-5 dp-h-5': size === 'md',
-                    'dp-w-4 dp-h-4': size === 'sm',
-                    '!dp-text-red-600': severity === 'error',
-                    '!dp-text-yellow-600': severity === 'warning',
-                    '!dp-text-green-600': severity === 'success',
-                  }
-                )}
-              />
+              <Icon aria-hidden name={iconName} className="icon" />
             </div>
           )}
         </div>

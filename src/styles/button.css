@@ -55,7 +55,7 @@
   font-size: var(--text-xs);
   line-height: var(--line-height-xs);
   gap: var(--spacing-3);
-  height: var(--height-sm);
+  height: var(--size-sm);
   border-radius: var(--br-sm);
 }
 
@@ -64,7 +64,7 @@
   font-size: var(--text-sm);
   line-height: var(--line-height-sm);
   gap: var(--spacing-3);
-  height: var(--height-md);
+  height: var(--size-md);
   border-radius: var(--br-md);
 }
 
@@ -73,7 +73,7 @@
   font-size: var(--text-base);
   line-height: var(--line-height-base);
   gap: var(--spacing-3);
-  height: var(--height-lg);
+  height: var(--size-lg);
   border-radius: var(--br-lg);
 }
 
