@@ -24,6 +24,8 @@ export interface InputWithMaskProps extends DateInputProps {
   onFocus?: FocusEventHandler<HTMLInputElement> | undefined
   /* Defines the behavior of the component */
   pickerMode?: PickerMode
+  /* Panel size: 'sm' | 'md' | 'lg' */
+  size?: UISize
   /* Value passed to the input */
   value?: string
   /* If false, no icon will be displayed to open the panel. Default to 'true' */
@@ -64,7 +66,7 @@ const InputWithMask: FC<InputWithMaskProps> = ({
       onFocus={onFocus}
     >
       <TextField
-        className="dp-font-roboto"
+        className="dp-font-roboto-mono"
         iconAriaLabel="Open calendar panel"
         iconName={
           withPanel

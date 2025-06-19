@@ -1,0 +1,405 @@
+@import url('common/colors.css');
+@import url('common/spacing.css');
+@import url('common/miscellanous.css');
+@import url('common/typography.css');
+
+/* base as a monochrome theme */
+.DateRangeInput {
+  /* Colors basic definition for each mode */
+  --focus-outline-light: var(--neutral-500);
+  --focus-outline-dark: var(--neutral-500);
+  --border-light: var(--neutral-300);
+  --border-dark: var(--neutral-600);
+
+  /* Default values (light mode) */
+  --focus-outline: var(--focus-outline-light);
+  --border: var(--border-light);
+
+  /* Basic styles (enabled) */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.DateRangeInput > div[data-focus] {
+  display: flex;
+  flex-wrap: nowrap;
+  border-radius: var(--br-md);
+  border: 1px solid var(--border);
+  transition-property: var(--transition);
+  transition-timing-function: linear;
+  transition-duration: 300ms;
+  outline-offset: var(--focus-outline-offset);
+  outline: var(--focus-outline-width) solid transparent;
+}
+
+.DateRangeInput > div[data-focus="true"] {
+  outline-color: var(--focus-outline);
+}
+
+.DateRangeInput .TextField {
+  font-family: Roboto, sans-serif;
+  border-bottom: 0 none !important;
+  border-top: 0 none !important;
+}
+
+.DateRangeInput > div[data-focus] > div:nth-child(1) > div .TextField {
+  border-bottom-right-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  border-left: 0 none !important;
+}
+
+.DateRangeInput > div[data-focus] > div:nth-child(2) > div .TextField {
+  border-bottom-left-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+  border-left: 0 none !important;
+  border-right: 0 none !important;
+}
+
+/* Dark mode from system */
+@media (prefers-color-scheme: dark) {
+  /* Default values (light mode) */
+  .DateRangeInput:not(.light *) > div[data-focus] {
+    --border: var(--border-dark);
+  }
+
+  .DateRangeInput.red:not(.light *) > div[data-focus="true"] {
+    --focus-outline-dark: var(--red-500);
+    --focus-outline: var(--focus-outline-dark);
+  }
+
+  .DateRangeInput.orange:not(.light *) > div[data-focus="true"] {
+    --focus-outline-dark: var(--orange-500);
+    --focus-outline: var(--focus-outline-dark);
+  }
+
+  .DateRangeInput.amber:not(.light *) > div[data-focus="true"] {
+    --focus-outline-dark: var(--amber-500);
+    --focus-outline: var(--focus-outline-dark);
+  }
+
+  .DateRangeInput.yellow:not(.light *) > div[data-focus="true"] {
+    --focus-outline-dark: var(--yellow-500);
+    --focus-outline: var(--focus-outline-dark);
+  }
+
+  .DateRangeInput.lime:not(.light *) > div[data-focus="true"] {
+    --focus-outline-dark: var(--lime-500);
+    --focus-outline: var(--focus-outline-dark);
+  }
+
+  .DateRangeInput.green:not(.light *) > div[data-focus="true"] {
+    --focus-outline-dark: var(--green-500);
+    --focus-outline: var(--focus-outline-dark);
+  }
+
+  .DateRangeInput.emerald:not(.light *) > div[data-focus="true"] {
+    --focus-outline-dark: var(--emerald-500);
+    --focus-outline: var(--focus-outline-dark);
+  }
+
+  .DateRangeInput.teal:not(.light *) > div[data-focus="true"] {
+    --focus-outline-dark: var(--teal-500);
+    --focus-outline: var(--focus-outline-dark);
+  }
+
+  .DateRangeInput.cyan:not(.light *) > div[data-focus="true"] {
+    --focus-outline-dark: var(--cyan-500);
+    --focus-outline: var(--focus-outline-dark);
+  }
+
+  .DateRangeInput.sky:not(.light *) > div[data-focus="true"] {
+    --focus-outline-dark: var(--sky-500);
+    --focus-outline: var(--focus-outline-dark);
+  }
+
+  .DateRangeInput.blue:not(.light *) > div[data-focus="true"] {
+    --focus-outline-dark: var(--blue-500);
+    --focus-outline: var(--focus-outline-dark);
+  }
+
+  .DateRangeInput.indigo:not(.light *) > div[data-focus="true"] {
+    --focus-outline-dark: var(--indigo-500);
+    --focus-outline: var(--focus-outline-dark);
+  }
+
+  .DateRangeInput.violet:not(.light *) > div[data-focus="true"] {
+    --focus-outline-dark: var(--violet-500);
+    --focus-outline: var(--focus-outline-dark);
+  }
+
+  .DateRangeInput.purple:not(.light *) > div[data-focus="true"] {
+    --focus-outline-dark: var(--purple-500);
+    --focus-outline: var(--focus-outline-dark);
+  }
+
+  .DateRangeInput.fuchsia:not(.light *) > div[data-focus="true"] {
+    --focus-outline-dark: var(--fuchsia-500);
+    --focus-outline: var(--focus-outline-dark);
+  }
+
+  .DateRangeInput.pink:not(.light *) > div[data-focus="true"] {
+    --focus-outline-dark: var(--pink-500);
+    --focus-outline: var(--focus-outline-dark);
+  }
+
+  .DateRangeInput.rose:not(.light *) > div[data-focus="true"] {
+    --focus-outline-dark: var(--rose-500);
+    --focus-outline: var(--focus-outline-dark);
+  }
+
+  .DateRangeInput.slate:not(.light *) > div[data-focus="true"] {
+    --focus-outline-dark: var(--slate-500);
+    --focus-outline: var(--focus-outline-dark);
+  }
+
+  .DateRangeInput.gray:not(.light *) > div[data-focus="true"] {
+    --focus-outline-dark: var(--gray-500);
+    --focus-outline: var(--focus-outline-dark);
+  }
+
+  .DateRangeInput.zinc:not(.light *) > div[data-focus="true"] {
+    --focus-outline-dark: var(--zinc-500);
+    --focus-outline: var(--focus-outline-dark);
+  }
+
+  .DateRangeInput.neutral:not(.light *) > div[data-focus="true"] {
+    --focus-outline-dark: var(--neutral-500);
+    --focus-outline: var(--focus-outline-dark);
+  }
+
+  .DateRangeInput.stone:not(.light *) > div[data-focus="true"] {
+    --focus-outline-dark: var(--stone-500);
+    --focus-outline: var(--focus-outline-dark);
+  }
+}
+
+/* Forced dark mode */
+.dark * .DateRangeInput > div[data-focus] {
+  --border: var(--border-dark);
+}
+
+.dark * .DateRangeInput.red > div[data-focus="true"] {
+  --focus-outline-dark: var(--red-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * .DateRangeInput.orange > div[data-focus="true"] {
+  --focus-outline-dark: var(--orange-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * .DateRangeInput.amber > div[data-focus="true"] {
+  --focus-outline-dark: var(--amber-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * .DateRangeInput.yellow > div[data-focus="true"] {
+  --focus-outline-dark: var(--yellow-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * .DateRangeInput.lime > div[data-focus="true"] {
+  --focus-outline-dark: var(--lime-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * .DateRangeInput.green > div[data-focus="true"] {
+  --focus-outline-dark: var(--green-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * .DateRangeInput.emerald > div[data-focus="true"] {
+  --focus-outline-dark: var(--emerald-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * .DateRangeInput.teal > div[data-focus="true"] {
+  --focus-outline-dark: var(--teal-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * .DateRangeInput.cyan > div[data-focus="true"] {
+  --focus-outline-dark: var(--cyan-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * .DateRangeInput.sky > div[data-focus="true"] {
+  --focus-outline-dark: var(--sky-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * .DateRangeInput.blue > div[data-focus="true"] {
+  --focus-outline-dark: var(--blue-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * .DateRangeInput.indigo > div[data-focus="true"] {
+  --focus-outline-dark: var(--indigo-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * .DateRangeInput.violet > div[data-focus="true"] {
+  --focus-outline-dark: var(--violet-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * .DateRangeInput.purple > div[data-focus="true"] {
+  --focus-outline-dark: var(--purple-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * .DateRangeInput.fuchsia > div[data-focus="true"] {
+  --focus-outline-dark: var(--fuchsia-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * .DateRangeInput.pink > div[data-focus="true"] {
+  --focus-outline-dark: var(--pink-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * .DateRangeInput.rose > div[data-focus="true"] {
+  --focus-outline-dark: var(--rose-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * .DateRangeInput.slate > div[data-focus="true"] {
+  --focus-outline-dark: var(--slate-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * .DateRangeInput.gray > div[data-focus="true"] {
+  --focus-outline-dark: var(--gray-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * .DateRangeInput.zinc > div[data-focus="true"] {
+  --focus-outline-dark: var(--zinc-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * .DateRangeInput.neutral > div[data-focus="true"] {
+  --focus-outline-dark: var(--neutral-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * .DateRangeInput.stone > div[data-focus="true"] {
+  --focus-outline-dark: var(--stone-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+/* Forced light mode */
+.light * .DateRangeInput > div[data-focus] {
+  --border: var(--border-light);
+}
+
+.light * .DateRangeInput.red > div[data-focus="true"] {
+  --focus-outline-light: var(--red-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * .DateRangeInput.orange > div[data-focus="true"] {
+  --focus-outline-light: var(--orange-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * .DateRangeInput.amber > div[data-focus="true"] {
+  --focus-outline-light: var(--amber-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * .DateRangeInput.yellow > div[data-focus="true"] {
+  --focus-outline-light: var(--yellow-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * .DateRangeInput.lime > div[data-focus="true"] {
+  --focus-outline-light: var(--lime-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * .DateRangeInput.green > div[data-focus="true"] {
+  --focus-outline-light: var(--green-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * .DateRangeInput.emerald > div[data-focus="true"] {
+  --focus-outline-light: var(--emerald-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * .DateRangeInput.teal > div[data-focus="true"] {
+  --focus-outline-light: var(--teal-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * .DateRangeInput.cyan > div[data-focus="true"] {
+  --focus-outline-light: var(--cyan-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * .DateRangeInput.sky > div[data-focus="true"] {
+  --focus-outline-light: var(--sky-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * .DateRangeInput.blue > div[data-focus="true"] {
+  --focus-outline-light: var(--blue-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * .DateRangeInput.indigo > div[data-focus="true"] {
+  --focus-outline-light: var(--indigo-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * .DateRangeInput.violet > div[data-focus="true"] {
+  --focus-outline-light: var(--violet-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * .DateRangeInput.purple > div[data-focus="true"] {
+  --focus-outline-light: var(--purple-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * .DateRangeInput.fuchsia > div[data-focus="true"] {
+  --focus-outline-light: var(--fuchsia-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * .DateRangeInput.pink > div[data-focus="true"] {
+  --focus-outline-light: var(--pink-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * .DateRangeInput.rose > div[data-focus="true"] {
+  --focus-outline-light: var(--rose-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * .DateRangeInput.slate > div[data-focus="true"] {
+  --focus-outline-light: var(--slate-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * .DateRangeInput.gray > div[data-focus="true"] {
+  --focus-outline-light: var(--gray-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * .DateRangeInput.zinc > div[data-focus="true"] {
+  --focus-outline-light: var(--zinc-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * .DateRangeInput.neutral > div[data-focus="true"] {
+  --focus-outline-light: var(--neutral-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * .DateRangeInput.stone > div[data-focus="true"] {
+  --focus-outline-light: var(--stone-500);
+  --focus-outline: var(--focus-outline-light);
+}

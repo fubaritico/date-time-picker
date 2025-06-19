@@ -144,7 +144,6 @@ const TextField: FC<TextFieldProps> = forwardRef<
             className={clsx(
               'TextField',
               color,
-              hideFocus,
               severity,
               size,
               `icon-${iconPosition}`,
@@ -152,6 +151,7 @@ const TextField: FC<TextFieldProps> = forwardRef<
                 disabled: disabled,
                 'show-icon': iconName,
                 'show-cross': showCross,
+                'hide-focus': hideFocus,
               },
               className
             )}

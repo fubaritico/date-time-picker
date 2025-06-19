@@ -1,0 +1,30 @@
+@import url('common/colors.css');
+@import url('common/spacing.css');
+@import url('common/miscellanous.css');
+@import url('common/typography.css');
+
+/* base as a monochrome theme */
+.Label {
+  /* Colors basic definition for each mode */
+
+  /* Default values (light mode) */
+
+  /* Basic styles (enabled) */
+
+}
+
+/* States (light by default) */
+
+
+/* Sizes */
+
+
+/* Dark mode from system */
+@media (prefers-color-scheme: dark) {
+  /* Default values (light mode) */
+
+}
+
+/* Forced dark mode */
+
+/* Forced light mode */

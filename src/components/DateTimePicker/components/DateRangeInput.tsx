@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 import { ClickAwayListener } from '@components'
@@ -7,7 +8,6 @@ import useDateRangeInput from '../hooks/useDateRangeInput'
 import useDateTimePicker from '../hooks/useDateTimePicker'
 
 import InputWithMask from './InputWithMask'
-import dateRangeInputStyles from './styles/DateRangeInput.styles'
 
 import type { DateInputProps } from '../types'
 import type { ChangeEvent, FC } from 'react'
@@ -88,13 +88,12 @@ const DateRangeInput: FC<DateInputProps> = ({
         setFocus(false)
       }}
     >
-      <div className="dp-flex dp-flex-col dp-w-full">
+      <div className={clsx('DateRangeInput', color)}>
         {labelOnlyProperties(inputTextProps).label !== '' && (
-          <Label className="dp-mb-1" {...labelOnlyProperties(inputTextProps)} />
+          <Label className="dp-mb-2" {...labelOnlyProperties(inputTextProps)} />
         )}
-        <div className={dateRangeInputStyles({ focus, color })}>
+        <div data-focus={focus}>
           <InputWithMask
-            className="dp-font-roboto dp-border-0 dp-rounded-r-none dp-border-r dp-border-r-gray-200 dp-bordder-r-dotter"
             key="start-input"
             alwaysShowMask
             mask={startInputMaskInstance?.getMask()}
@@ -116,7 +115,6 @@ const DateRangeInput: FC<DateInputProps> = ({
             {...textInputOnlyProperties(inputTextProps)}
           />
           <InputWithMask
-            className="dp-font-roboto dp-border-0 dp-rounded-l-none"
             key="end-input"
             alwaysShowMask
             hideFocus
@@ -133,7 +131,6 @@ const DateRangeInput: FC<DateInputProps> = ({
               setFocus(true)
             }}
             pickerMode={pickerMode}
-            withPanel={false}
             {...textInputOnlyProperties(inputTextProps)}
           />
         </div>

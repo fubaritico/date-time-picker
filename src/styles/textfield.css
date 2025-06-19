@@ -86,6 +86,10 @@
 .TextField:not(.disabled, .hide-focus):focus,
 .TextField:not(.disabled, .hide-focus):focus-visible {
   outline-color: var(--focus-outline);
+}
+
+.TextField:not(.disabled):focus,
+.TextField:not(.disabled):focus-visible {
   color: var(--focus-text);
 }
 
@@ -354,8 +358,8 @@
     --disabled-placeholder: var(--disabled-placeholder-dark);
   }
 
-  .TextField:not(.disabled, .hide-focus, .light *):focus,
-  .TextField:not(.disabled, .hide-focus, .light *):focus-visible {
+  .TextField:not(.disabled, .light *):focus,
+  .TextField:not(.disabled, .light *):focus-visible {
     --focus-text: var(--focus-text-dark);
   }
 
@@ -523,8 +527,8 @@
   --disabled-placeholder: var(--disabled-placeholder-dark);
 }
 
-.dark * .TextField:not(.disabled, .hide-focus):focus,
-.dark * .TextField:not(.disabled, .hide-focus):focus-visible {
+.dark * .TextField:not(.disabled):focus,
+.dark * .TextField:not(.disabled):focus-visible {
   --focus-text: var(--focus-text-dark);
 }
 
@@ -559,8 +563,8 @@
   --disabled-placeholder: var(--disabled-placeholder-light);
 }
 
-.light * .TextField:not(.disabled, .hide-focus):focus,
-.light * .TextField:not(.disabled, .hide-focus):focus-visible {
+.light * .TextField:not(.disabled):focus,
+.light * .TextField:not(.disabled):focus-visible {
   --focus-text: var(--focus-text-light);
 }
 
