@@ -29,32 +29,11 @@ const Label: FC<LabelProps> = ({
 }) => {
   return (
     <label
-      className={clsx(
-        'dp-flex dp-items-start dp-text-gray-900 dark:dp-text-gray-100 dp-font-medium dp-w-full',
-        {
-          'dp-text-gray-400': disabled,
-          'dp-text-sm': size === 'lg',
-          'dp-text-xs': size === 'md' || size === 'sm' || !size,
-        },
-        className
-      )}
+      className={clsx('Label', className, size, { disabled: disabled })}
       htmlFor={label.replace(/\s/g, '')}
     >
-      <span className="dp-inline-flex dp-items-start">
-        {required && <span className="dp-text-red-500 dp-mr-0.5">*</span>}
-        {label}
-      </span>
-      {labelInfo && (
-        <Icon
-          name="HiMiniQuestionMarkCircle"
-          className={clsx('dp-ml-1 dp-inline', {
-            'dp-text-gray-400': disabled,
-            'dp-text-gray-900 dp-cursor-pointer': !disabled,
-            'dp-mt-1': size === 'lg',
-            'dp-mt-0.5': size === 'md' || size === 'sm' || !size,
-          })}
-        />
-      )}
+      <span className={clsx('text', { required: required })}>{label}</span>
+      {labelInfo && <Icon name="HiMiniQuestionMarkCircle" />}
     </label>
   )
 }

@@ -1,30 +1,84 @@
 @import url('common/colors.css');
 @import url('common/spacing.css');
-@import url('common/miscellanous.css');
 @import url('common/typography.css');
 
-/* base as a monochrome theme */
+/* Base as a monochrome theme */
 .Label {
   /* Colors basic definition for each mode */
+  --label-text-light: var(--slate-900);
+  --label-text-dark: var(--slate-100);
 
   /* Default values (light mode) */
+  --label-text: var(--label-text-light);
 
   /* Basic styles (enabled) */
-
+  display: flex;
+  align-items: start;
+  font-weight: 600;
+  width: 100%;
+  color: var(--label-text);
 }
 
 /* States (light by default) */
+.Label.disabled {
+  opacity: 0.5;
+}
 
+.Label .text {
+  display: inline-flex;
+  align-items: start;
+}
+
+.Label .text.required:before {
+  content: '*';
+  color: var(--red-500);
+  margin-right: var(--spacing-0-5);
+}
+
+.Label .text + svg {
+  display: inline;
+  margin-left: var(--spacing-1);
+  cursor: pointer;
+}
+
+.Label.disabled .text + svg {
+  margin-left: var(--spacing-1);
+  cursor: default;
+}
 
 /* Sizes */
+.Label.sm,
+.Label.md {
+  font-size: var(--text-xs);
+}
 
+.Label.sm .text + svg,
+.Label.md .text + svg {
+  margin-top: var(--spacing-0-5);
+}
+
+.Label.lg {
+  font-size: var(--text-sm);
+}
+
+.Label.lg .text + svg {
+  margin-top: var(--spacing-1);
+}
 
 /* Dark mode from system */
 @media (prefers-color-scheme: dark) {
   /* Default values (light mode) */
-
+  .Label:not(.light *) {
+    --label-text: var(--label-text-dark);
+  }
 }
 
 /* Forced dark mode */
+.dark * .Label {
+  --label-text: var(--label-text-dark);
+}
 
 /* Forced light mode */
+.light * .Label {
+  --label-text: var(--label-text-light);
+}
