@@ -1,0 +1,44 @@
+@import url('common/colors.css');
+@import url('common/spacing.css');
+@import url('common/miscellanous.css');
+@import url('common/typography.css');
+
+.HelperText {
+  /* Basic styles */
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  font-size: var(--text-xs);
+}
+
+/* States */
+.HelperText .helper-text {
+  color: var(--gray-500);
+}
+
+.HelperText .error {
+  color: var(--red-500);
+}
+
+/* Sizes */
+.HelperText.sm .helper-text,
+.HelperText.sm .error {
+  margin-top: var(--spacing-0-5);
+  font-size: var(--text-xxs);
+  line-height: var(--line-height-xxs);
+}
+
+.HelperText.md .helper-text,
+.HelperText.md .error {
+  margin-top: var(--spacing-0-5);
+  font-size: var(--text-xs);
+  line-height: var(--line-height-xs);
+}
+
+.HelperText.lg .helper-text,
+.HelperText.lg .error {
+  margin-top: var(--spacing-1);
+  font-size: var(--text-sm);
+  line-height: var(--line-height-sm);
+}
+

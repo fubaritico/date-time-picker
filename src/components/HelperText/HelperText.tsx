@@ -23,28 +23,11 @@ const HelperText: FC<PropsWithChildren<HelperTextProps>> = ({
   const filteredErrors = errors?.filter(Boolean)
 
   return (
-    <div className={clsx('dp-flex dp-flex-col dp-gap-1', className)}>
+    <div className={clsx('HelperText', className)}>
       {children}
-      {helperText && (
-        <p
-          className={clsx('dp-text-gray-500 dp-text-sm dp-mt-1', {
-            '!dp-text': size === 'lg',
-            '!dp-text-sm': size === 'md',
-            '!dp-text-xs': size === 'sm',
-          })}
-        >
-          {helperText}
-        </p>
-      )}
+      {helperText && <p className={clsx('helper-text', size)}>{helperText}</p>}
       {filteredErrors?.map((error) => (
-        <p
-          className={clsx('dp-text-red-500 dp-text-sm mt-1', {
-            '!dp-text': size === 'lg',
-            '!dp-text-sm': size === 'md',
-            '!dp-text-xs': size === 'sm',
-          })}
-          key={error}
-        >
+        <p className={clsx('error', size)} key={error}>
           {error}
         </p>
       ))}

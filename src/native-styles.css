@@ -1,10 +1,11 @@
 @import './styles/button.css';
 @import './styles/date-browser.css';
 @import './styles/date-browser-button.css';
+@import './styles/date-range-input.css';
 @import './styles/date-time-switcher.css';
 @import './styles/date-time-switcher-button.css';
 @import './styles/days-grid-cell.css';
+@import './styles/helper-text.css';
+@import './styles/label.css';
 @import './styles/panel-button.css';
 @import './styles/textfield.css';
-@import './styles/label.css';
-@import './styles/date-range-input.css';
