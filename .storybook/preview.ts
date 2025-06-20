@@ -1,5 +1,6 @@
 import { themes } from '@storybook/theming'
 
+import './stories.css'
 import '../src/storybook.css'
 import '../dev/native-styles.css'
 

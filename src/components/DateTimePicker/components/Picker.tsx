@@ -1,7 +1,5 @@
 import { useMemo, useRef, useState } from 'react'
 
-import './styles/Picker.styles.css'
-
 import { getOffsetInMsFromTimezone } from '@utils'
 
 import { DateTimePickerProvider } from '../context'

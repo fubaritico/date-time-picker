@@ -1,8 +1,20 @@
 import { Meta, StoryObj } from '@storybook/react'
+import * as hi2 from 'react-icons/hi2'
 
-import Button from './Button'
+import { COLORS } from '@constants'
+
+import Button, { ButtonProps } from './Button'
 
 import type { FC } from 'react'
+
+const icons = Object.keys(hi2).reduce<Record<Hi2UiIconNames, string>>(
+  (obj, key) => {
+    const k = key as Hi2UiIconNames
+    obj[k] = ''
+    return obj
+  },
+  {} as Record<Hi2UiIconNames, string>
+)
 
 const meta = {
   title: 'Components/Button',
@@ -11,9 +23,30 @@ const meta = {
   },
   argTypes: {
     color: {
+      options: COLORS,
+      control: {
+        type: 'select',
+        labels: COLORS.reduce<Record<UIColor, string>>(
+          (acc, color) => {
+            acc[color] = color
+
+            return acc
+          },
+          {} as Record<UIColor, string>
+        ),
+      },
+    },
+    icon: {
+      options: Object.keys(hi2),
+      control: {
+        type: 'select',
+        labels: icons,
+      },
+    },
+    iconPosition: {
       control: 'select',
-      options: ['red', 'blue', 'green'],
-      description: 'Color of the button',
+      options: ['left', 'right'],
+      description: 'Position of the icon relative to the label',
     },
     loading: {
       control: 'boolean',
@@ -54,169 +87,168 @@ export const Default = {
 } satisfies Story
 
 //////////////////////////////////////////////////////////
-//  BUTTONS BOARD
+//  BUTTONS BOARD STORY
 //////////////////////////////////////////////////////////
-
-const IntegrationBoard: FC = () => {
-  return (
-    <div className="dp-flex dp-flex-col dp-relative dp-w-full dp-gap-12 dp-m-10">
-      <div className="dp-flex dp-flex-wrap dp-gap-4">
-        <h3 className="dp-text-xl dp-font-semibold dp-w-full">Primary large</h3>
-        <Button
-          variant="primary"
-          label="Primary Button"
-          size="lg"
-          color="stone"
-        />
-        <Button
-          variant="primary"
-          label="Primary Button"
-          size="lg"
-          color="stone"
-          disabled
-        />
-        <Button
-          variant="primary"
-          label="Primary Button"
-          size="lg"
-          color="stone"
-          loading
-        />
-      </div>
-      <div className="dp-flex dp-flex-wrap dp-gap-4">
-        <h3 className="dp-text-xl dp-font-semibold dp-w-full">
-          Primary medium
-        </h3>
-        <Button
-          variant="primary"
-          label="Primary Button"
-          size="md"
-          color="stone"
-        />
-        <Button
-          variant="primary"
-          label="Primary Button"
-          size="md"
-          color="stone"
-          disabled
-        />
-        <Button
-          variant="primary"
-          label="Primary Button"
-          size="md"
-          color="stone"
-          loading
-        />
-      </div>
-      <div className="dp-flex dp-flex-wrap dp-gap-4">
-        <h3 className="dp-text-xl dp-font-semibold dp-w-full">Primary small</h3>
-        <Button
-          variant="primary"
-          label="Primary Button"
-          size="sm"
-          color="stone"
-        />
-        <Button
-          variant="primary"
-          label="Primary Button"
-          size="sm"
-          color="stone"
-          disabled
-        />
-        <Button
-          variant="primary"
-          label="Primary Button"
-          size="sm"
-          color="stone"
-          loading
-        />
-      </div>
-      <div className="dp-flex dp-flex-wrap dp-gap-4">
-        <h3 className="dp-text-xl dp-font-semibold dp-w-full">
-          Secondary large
-        </h3>
-        <Button
-          variant="secondary"
-          label="Primary Button"
-          size="lg"
-          color="stone"
-        />
-        <Button
-          variant="secondary"
-          label="Primary Button"
-          size="lg"
-          color="stone"
-          disabled
-        />
-        <Button
-          variant="secondary"
-          label="Primary Button"
-          size="lg"
-          color="stone"
-          loading
-        />
-      </div>
-      <div className="dp-flex dp-flex-wrap dp-gap-4">
-        <h3 className="dp-text-xl dp-font-semibold dp-w-full">
-          Secondary medium
-        </h3>
-        <Button
-          variant="secondary"
-          label="Primary Button"
-          size="md"
-          color="stone"
-        />
-        <Button
-          variant="secondary"
-          label="Primary Button"
-          size="md"
-          color="stone"
-          disabled
-        />
-        <Button
-          variant="secondary"
-          label="Primary Button"
-          size="md"
-          color="stone"
-          loading
-        />
-      </div>
-      <div className="dp-flex dp-flex-wrap dp-gap-4">
-        <h3 className="dp-text-xl dp-font-semibold dp-w-full">
-          Secondary small
-        </h3>
-        <Button
-          variant="secondary"
-          label="Primary Button"
-          size="sm"
-          color="stone"
-        />
-        <Button
-          variant="secondary"
-          label="Primary Button"
-          size="sm"
-          color="stone"
-          disabled
-        />
-        <Button
-          variant="secondary"
-          label="Primary Button"
-          size="sm"
-          color="stone"
-          loading
-        />
-      </div>
+const IntegrationBoard: FC<ButtonProps> = ({ color }) => (
+  <div className="case-blocks">
+    <div className="case-block">
+      <h3 className="case-title">Primary large</h3>
+      <Button
+        variant="primary"
+        label="Primary Button"
+        size="lg"
+        color={color}
+      />
+      <Button
+        variant="primary"
+        label="Primary Button"
+        size="lg"
+        color={color}
+        disabled
+      />
+      <Button
+        variant="primary"
+        label="Primary Button"
+        size="lg"
+        color={color}
+        loading
+      />
     </div>
-  )
-}
+    <div className="case-block">
+      <h3 className="case-title">Primary medium</h3>
+      <Button
+        variant="primary"
+        label="Primary Button"
+        size="md"
+        color={color}
+      />
+      <Button
+        variant="primary"
+        label="Primary Button"
+        size="md"
+        color={color}
+        disabled
+      />
+      <Button
+        variant="primary"
+        label="Primary Button"
+        size="md"
+        color={color}
+        loading
+      />
+    </div>
+    <div className="case-block">
+      <h3 className="case-title">Primary small</h3>
+      <Button
+        variant="primary"
+        label="Primary Button"
+        size="sm"
+        color={color}
+      />
+      <Button
+        variant="primary"
+        label="Primary Button"
+        size="sm"
+        color={color}
+        disabled
+      />
+      <Button
+        variant="primary"
+        label="Primary Button"
+        size="sm"
+        color={color}
+        loading
+      />
+    </div>
+    <div className="case-block">
+      <h3 className="case-title">Secondary large</h3>
+      <Button
+        variant="secondary"
+        label="Primary Button"
+        size="lg"
+        color={color}
+      />
+      <Button
+        variant="secondary"
+        label="Primary Button"
+        size="lg"
+        color={color}
+        disabled
+      />
+      <Button
+        variant="secondary"
+        label="Primary Button"
+        size="lg"
+        color={color}
+        loading
+      />
+    </div>
+    <div className="case-block">
+      <h3 className="case-title">Secondary medium</h3>
+      <Button
+        variant="secondary"
+        label="Primary Button"
+        size="md"
+        color={color}
+      />
+      <Button
+        variant="secondary"
+        label="Primary Button"
+        size="md"
+        color={color}
+        disabled
+      />
+      <Button
+        variant="secondary"
+        label="Primary Button"
+        size="md"
+        color={color}
+        loading
+      />
+    </div>
+    <div className="case-block">
+      <h3 className="case-title">Secondary small</h3>
+      <Button
+        variant="secondary"
+        label="Primary Button"
+        size="sm"
+        color={color}
+      />
+      <Button
+        variant="secondary"
+        label="Primary Button"
+        size="sm"
+        color={color}
+        disabled
+      />
+      <Button
+        variant="secondary"
+        label="Primary Button"
+        size="sm"
+        color={color}
+        loading
+      />
+    </div>
+  </div>
+)
 
-export const Board = {
-  render: () => <IntegrationBoard />,
+type IntegrationStory = StoryObj<typeof IntegrationBoard>
+
+export const Board: IntegrationStory = {
+  render: (args: ButtonProps) => <IntegrationBoard {...args} />,
   parameters: {
     layout: 'fullscreen',
   },
+  args: {
+    color: 'stone',
+  },
   argTypes: {
-    color: {
+    iconPosition: {
+      table: {
+        disable: true,
+      },
+    },
+    icon: {
       table: {
         disable: true,
       },

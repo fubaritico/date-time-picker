@@ -1,0 +1,26 @@
+@import '../src/styles/common/typography.css';
+@import '../src/styles/common/colors.css';
+@import '../src/styles/common/spacing.css';
+@import '../src/styles/common/miscellaneous.css';
+
+/* Simple hard coded native CSS for stories */
+.case-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-12);
+  margin: var(--spacing-10);
+  width: 100%;
+  position: relative;
+}
+
+.case-block {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-4);
+}
+
+.case-title {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  width: 100%;
+}

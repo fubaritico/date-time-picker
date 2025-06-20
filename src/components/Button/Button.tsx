@@ -1,30 +1,40 @@
-import { cx } from '@utils'
+import clsx from 'clsx'
 
 import ConditionalWrapper from '../ConditionalWrapper'
 import Icon from '../Icon'
 
-import buttonStyles from './Button.native.styles'
-
-import type { VariantButtonProps } from './Button.native.styles'
 import type { ButtonHTMLAttributes, FC, ReactNode, RefObject } from 'react'
 
 export interface ButtonProps
-  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color'>,
-    VariantButtonProps {
+  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color'> {
+  /* Button color */
+  color?: UIColor
+  /* Hero icon names for defining icon to display */
   icon?: Hi2UiIconNames
+  /* Icon set to use */
+  iconPosition?: 'left' | 'right'
+  /* If true, will display a loading animation instead of the label */
+  loading?: boolean
+  /* Button label */
   label: ReactNode
+  /* Button ref for external call */
   ref?: RefObject<HTMLButtonElement | null>
+  /* Panel size: 'sm' | 'md' | 'lg'  */
+  size?: UISize
+  /* Button variants */
+  variant?: 'primary' | 'secondary' | 'ghost'
 }
 
 const Button: FC<ButtonProps> = ({
   className,
   disabled,
   icon,
+  iconPosition = 'left',
   label,
   loading,
   onBlur,
   onClick,
-  size,
+  size = 'md',
   ref,
   variant,
   color,
@@ -32,7 +42,15 @@ const Button: FC<ButtonProps> = ({
 }) => {
   return (
     <button
-      className={cx(buttonStyles({ size, variant, color, loading, className }))}
+      className={clsx(
+        'Button',
+        size,
+        variant,
+        color,
+        iconPosition,
+        { loading: loading },
+        className
+      )}
       disabled={disabled ?? !!loading}
       onClick={(e) => {
         onClick?.(e)
@@ -41,22 +59,18 @@ const Button: FC<ButtonProps> = ({
       ref={ref}
       {...rest}
     >
-      {icon && !loading && <Icon name={icon} />}
       <ConditionalWrapper
         condition={loading ?? false}
-        wrapper={(c) => <span className="dp-opacity-0">{c}</span>}
+        wrapper={(c) => <span className="hidden-content">{c}</span>}
       >
-        {label}
+        <>
+          {icon && <Icon name={icon} />}
+          <span>{label}</span>
+        </>
       </ConditionalWrapper>
       {loading && (
-        <span className="dp-absolute dp-top-1/2 dp-left-1/2 -dp-translate-x-1/2 -dp-translate-y-1/2">
-          <div
-            id="spinner"
-            className={cx('dp-button-loader dp-button-loader-sm', {
-              'dp-size-5': size === 'md',
-              'dp-size-4': size === 'sm',
-            })}
-          />
+        <span className="spinner-container">
+          <div className="spinner" />
         </span>
       )}
     </button>
