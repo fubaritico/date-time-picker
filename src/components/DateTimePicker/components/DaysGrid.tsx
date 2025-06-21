@@ -240,28 +240,10 @@ const DaysGrid: FC<DaysGridProps> = ({
   )
 
   return (
-    <div
-      className={clsx('dp-grid dp-grid-cols-7', {
-        'dp-gap-2 dp-p-5': size === 'lg',
-        'dp-gap-1 dp-p-4': size === 'md',
-        'dp-gap-1 dp-p-3': size === 'sm',
-      })}
-      data-test="days-grid"
-      role="grid"
-    >
+    <div className={clsx('DaysGrid', size)} data-test="days-grid" role="grid">
       {getAllWeekDaysNamesFromTs(date, locale).map(
         (name: string, index: number) => (
-          <div
-            key={`${name}-${index.toString()}`}
-            className={clsx(
-              'dp-flex dp-justify-center dp-items-center dp-font-bold dp-text-gray-500',
-              {
-                'dp-h-10 dp-w-10': size === 'lg',
-                'dp-h-9 dp-w-9 dp-text-sm': size === 'md',
-                'dp-h-[30px] dp-w-8 dp-text-xs': size === 'sm',
-              }
-            )}
-          >
+          <div key={`${name}-${index.toString()}`} className="week-day">
             {name.replace(/\.$/, '')}
           </div>
         )

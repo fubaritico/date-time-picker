@@ -1405,20 +1405,20 @@
 
 /*.Sizes */
 .DaysGridCell.sm {
-  height: 30px;
-  width: 32px;
+  height: var(--day-cell-height-sm);
+  width: var(--day-cell-width-sm);
   font-size: var(--text-xs);
 }
 
 .DaysGridCell.md {
-  height: 36px;
-  width: 36px;
+  height: var(--day-cell-height-md);
+  width: var(--day-cell-width-md);
   font-size: var(--text-sm);
 }
 
 .DaysGridCell.lg {
-  height: 40px;
-  width: 40px;
+  height: var(--day-cell-height-lg);
+  width: var(--day-cell-width-lg);
   font-size: var(--text-sm);
 }
 

@@ -375,6 +375,17 @@
   height: var(--date-time-browser-height-lg);
 }
 
+.DateTimeSwitcherButton.sm svg {
+  width: var(--svg-sm);
+  height: var(--svg-sm);
+}
+
+.DateTimeSwitcherButton.md svg,
+.DateTimeSwitcherButton.lg svg {
+  width: var(--svg-md);
+  height: var(--svg-md);
+}
+
 /*.Colors theme */
 .dark .DateTimeSwitcherButton.selected.red {
   --selected-bg-color-dark: hsl(from var(--red-800) h s l / 0.5);

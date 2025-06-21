@@ -37,7 +37,6 @@ const DateTimeSwitcher = forwardRef<HTMLDivElement, DataTimeSwitcherProps>(
         >
           <Icon
             aria-hidden
-            className={size === 'sm' ? 'dp-h-5 dp-w-5' : 'dp-h-6 dp-w-6'}
             name={size === 'sm' ? 'HiMiniCalendarDays' : 'HiCalendarDays'}
           />
         </button>
@@ -56,11 +55,7 @@ const DateTimeSwitcher = forwardRef<HTMLDivElement, DataTimeSwitcherProps>(
             setPanelView(PanelView.TIME)
           }}
         >
-          <Icon
-            aria-hidden
-            className={size === 'sm' ? 'dp-h-5 dp-w-5' : 'dp-h-6 dp-w-6'}
-            name={size === 'sm' ? 'HiMiniClock' : 'HiClock'}
-          />
+          <Icon aria-hidden name={size === 'sm' ? 'HiMiniClock' : 'HiClock'} />
         </button>
       </div>
     )

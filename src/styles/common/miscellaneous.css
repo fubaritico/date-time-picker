@@ -65,4 +65,11 @@
   --focus-outline-offset: 2px;
 
   --menu-max-items: 5;
+
+  --day-cell-width-lg: 40px;
+  --day-cell-width-md: 36px;
+  --day-cell-width-sm: 32px;
+  --day-cell-height-lg: var(--day-cell-width-lg);
+  --day-cell-height-md: var(--day-cell-width-md);
+  --day-cell-height-sm: 30px;
 }

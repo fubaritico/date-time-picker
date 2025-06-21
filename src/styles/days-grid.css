@@ -1,0 +1,49 @@
+@import url('common/spacing.css');
+@import url('common/miscellaneous.css');
+@import url('common/typography.css');
+
+.DaysGrid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.DaysGrid .week-day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-500);
+}
+
+/* Sizes */
+.DaysGrid.sm {
+  gap: var(--spacing-1);
+  padding: var(--spacing-3);
+}
+
+.DaysGrid.md {
+  gap: var(--spacing-1);
+  padding: var(--spacing-4);
+}
+
+.DaysGrid.lg {
+  gap: var(--spacing-2);
+  padding: var(--spacing-5);
+}
+
+.DaysGrid.sm .week-day {
+  height: var(--day-cell-height-sm);
+  width: var(--day-cell-width-sm);
+  font-size: var(--text-xs);
+}
+
+.DaysGrid.md .week-day {
+  height: var(--day-cell-height-md);
+  width: var(--day-cell-width-md);
+  font-size: var(--text-sm);
+}
+
+.DaysGrid.lg .week-day {
+  height: var(--day-cell-height-lg);
+  width: var(--day-cell-width-lg);
+  font-size: var(--text-sm);
+}
