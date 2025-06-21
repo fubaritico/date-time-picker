@@ -6,29 +6,36 @@
 
 /* Default styles */
 .Button {
-  --button-bg-primary: var(--slate-500);
-  --button-text-primary: var(--slate-100);
-  --button-border-primary: var(--slate-500);
-  --button-hover-bg-primary: var(--slate-600);
-  --button-hover-border-primary: var(--slate-600);
-  --button-hover-text-primary: var(--slate-100);
+  --button-bg-primary: var(--neutral-500);
+  --button-text-primary: var(--neutral-100);
+  --button-border-primary: var(--neutral-500);
+  --button-hover-bg-primary: var(--neutral-600);
+  --button-hover-border-primary: var(--neutral-600);
+  --button-hover-text-primary: var(--neutral-100);
   --button-bg-secondary: transparent;
-  --button-text-secondary: var(--slate-500);
-  --button-border-secondary: var(--slate-500);
-  --button-hover-bg-secondary: var(--slate-500);
-  --button-hover-border-secondary: var(--slate-500);
-  --button-hover-text-secondary: var(--slate-100);
-  --button-active-outline: var(--slate-200);
+  --button-text-secondary: var(--neutral-500);
+  --button-border-secondary: var(--neutral-500);
+  --button-hover-bg-secondary: var(--neutral-500);
+  --button-hover-border-secondary: var(--neutral-500);
+  --button-hover-text-secondary: var(--neutral-100);
+  --button-active-outline: var(--neutral-200);
+  --button-bg-ghost: transparent;
+  --button-text-ghost: var(--neutral-500);
+  --button-hover-bg-ghost: hsl(from var(--neutral-500) h s l / 0.5);
 
   /* base styles */
-  display: flex;
-  flex-wrap: wrap;
+  display: inline-block;
+  text-align: left;
   justify-content: space-between;
   align-items: center;
   font-weight: normal;
   border: 1px solid;
   transition: all 0.2s ease-in-out;
   outline: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
 }
 
 /* Sizes */
@@ -38,6 +45,9 @@
   line-height: var(--line-height-xs);
   gap: var(--spacing-3);
   height: var(--size-sm);
+}
+
+.Button.sm:not(.not-rounded) {
   border-radius: var(--br-sm);
 }
 
@@ -47,6 +57,9 @@
   line-height: var(--line-height-sm);
   gap: var(--spacing-3);
   height: var(--size-md);
+}
+
+.Button.md:not(.not-rounded) {
   border-radius: var(--br-md);
 }
 
@@ -56,7 +69,46 @@
   line-height: var(--line-height-base);
   gap: var(--spacing-3);
   height: var(--size-lg);
+}
+
+.Button.lg:not(.not-rounded) {
   border-radius: var(--br-lg);
+}
+
+.Button.sm.ghost:not(.not-rounded):hover {
+  border-radius: var(--br-sm);
+}
+
+.Button.md.ghost:not(.not-rounded):hover {
+  border-radius: var(--br-md);
+}
+
+.Button.lg.ghost:not(.not-rounded):hover {
+  border-radius: var(--br-lg);
+}
+
+.Button.sm.left.has-icon {
+  padding-left: var(--size-sm);
+}
+
+.Button.md.left.has-icon {
+  padding-left: var(--size-md);
+}
+
+.Button.lg.left.has-icon {
+  padding-left: var(--size-lg);
+}
+
+.Button.sm.right.has-icon {
+  padding-right: var(--size-sm);
+}
+
+.Button.md.right.has-icon {
+  padding-right: var(--size-md);
+}
+
+.Button.lg.right.has-icon {
+  padding-right: var(--size-lg);
 }
 
 .Button.sm svg {
@@ -77,9 +129,43 @@
   flex-shrink: 0;
 }
 
+.Button.sm.left.has-icon svg {
+  left: var(--spacing-2-5);
+}
+
+.Button.md.left.has-icon svg {
+  left: var(--spacing-3);
+}
+
+.Button.lg.left.has-icon svg {
+  left: var(--spacing-3-5);
+}
+
+.Button.sm.right.has-icon svg {
+  right: var(--spacing-2-5);
+}
+
+.Button.md.right.has-icon svg {
+  right: var(--spacing-3);
+}
+
+.Button.lg.right.has-icon svg {
+  right: var(--spacing-3-5);
+}
+
 /* Default variables and states */
-.Button.right {
-  flex-direction: row-reverse;
+.Button.not-rounded {
+  border-radius: 0;
+}
+
+.Button.has-icon {
+  position: relative;
+}
+
+.Button.has-icon svg {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .Button .hidden-content {
@@ -124,6 +210,21 @@
 .Button.primary:active,
 .Button.secondary:active {
   outline: 4px solid var(--button-active-outline);
+}
+
+.Button.ghost {
+  background-color: var(--button-bg-ghost);
+  border: 0;
+  color: var(--button-text-ghost);
+  border-radius: 0;
+}
+
+.Button.ghost:hover {
+  background: var(--button-hover-bg-ghost);
+}
+
+.Button.ghost:active {
+  outline: 0 none;
 }
 
 /* Primary variant */
@@ -749,6 +850,182 @@
   --button-active-outline: var(--stone-300);
 }
 
+.Button.red.ghost {
+  --button-text-ghost: var(--red-500);
+}
+
+.Button.red.ghost:hover {
+  --button-hover-bg-ghost: hsl(from var(--red-500) h s l / 0.25);
+}
+
+.Button.orange.ghost {
+  --button-text-ghost: var(--orange-500);
+}
+
+.Button.orange.ghost:hover {
+  --button-hover-bg-ghost: hsl(from var(--orange-500) h s l / 0.25);
+}
+
+.Button.amber.ghost {
+  --button-text-ghost: var(--amber-500);
+}
+
+.Button.amber.ghost:hover {
+  --button-hover-bg-ghost: hsl(from var(--amber-500) h s l / 0.25);
+}
+
+.Button.yellow.ghost {
+  --button-text-ghost: var(--yellow-500);
+}
+
+.Button.yellow.ghost:hover {
+  --button-hover-bg-ghost: hsl(from var(--yellow-500) h s l / 0.25);
+}
+
+.Button.lime.ghost {
+  --button-text-ghost: var(--lime-500);
+}
+
+.Button.lime.ghost:hover {
+  --button-hover-bg-ghost: hsl(from var(--lime-500) h s l / 0.25);
+}
+
+.Button.green.ghost {
+  --button-text-ghost: var(--green-500);
+}
+
+.Button.green.ghost:hover {
+  --button-hover-bg-ghost: hsl(from var(--green-500) h s l / 0.25);
+}
+
+.Button.emerald.ghost {
+  --button-text-ghost: var(--emerald-500);
+}
+
+.Button.emerald.ghost:hover {
+  --button-hover-bg-ghost: hsl(from var(--emerald-500) h s l / 0.25);
+}
+
+.Button.teal.ghost {
+  --button-text-ghost: var(--teal-500);
+}
+
+.Button.teal.ghost:hover {
+  --button-hover-bg-ghost: hsl(from var(--teal-500) h s l / 0.25);
+}
+
+.Button.cyan.ghost {
+  --button-text-ghost: var(--cyan-500);
+}
+
+.Button.cyan.ghost:hover {
+  --button-hover-bg-ghost: hsl(from var(--cyan-500) h s l / 0.25);
+}
+
+.Button.sky.ghost {
+  --button-text-ghost: var(--sky-500);
+}
+
+.Button.sky.ghost:hover {
+  --button-hover-bg-ghost: hsl(from var(--sky-500) h s l / 0.25);
+}
+
+.Button.blue.ghost {
+  --button-text-ghost: var(--blue-500);
+}
+
+.Button.blue.ghost:hover {
+  --button-hover-bg-ghost: hsl(from var(--blue-500) h s l / 0.25);
+}
+
+.Button.indigo.ghost {
+  --button-text-ghost: var(--indigo-500);
+}
+
+.Button.indigo.ghost:hover {
+  --button-hover-bg-ghost: hsl(from var(--indigo-500) h s l / 0.25);
+}
+
+.Button.violet.ghost {
+  --button-text-ghost: var(--violet-500);
+}
+
+.Button.violet.ghost:hover {
+  --button-hover-bg-ghost: hsl(from var(--violet-500) h s l / 0.25);
+}
+
+.Button.purple.ghost {
+  --button-text-ghost: var(--purple-500);
+}
+
+.Button.purple.ghost:hover {
+  --button-hover-bg-ghost: hsl(from var(--purple-500) h s l / 0.25);
+}
+
+.Button.fuchsia.ghost {
+  --button-text-ghost: var(--fuchsia-500);
+}
+
+.Button.fuchsia.ghost:hover {
+  --button-hover-bg-ghost: hsl(from var(--fuchsia-500) h s l / 0.25);
+}
+
+.Button.pink.ghost {
+  --button-text-ghost: var(--pink-500);
+}
+
+.Button.pink.ghost:hover {
+  --button-hover-bg-ghost: hsl(from var(--pink-500) h s l / 0.25);
+}
+
+.Button.rose.ghost {
+  --button-text-ghost: var(--rose-500);
+}
+
+.Button.rose.ghost:hover {
+  --button-hover-bg-ghost: hsl(from var(--rose-500) h s l / 0.25);
+}
+
+.Button.slate.ghost {
+  --button-text-ghost: var(--slate-500);
+}
+
+.Button.slate.ghost:hover {
+  --button-hover-bg-ghost: hsl(from var(--slate-500) h s l / 0.25);
+}
+
+.Button.gray.ghost {
+  --button-text-ghost: var(--gray-500);
+}
+
+.Button.gray.ghost:hover {
+  --button-hover-bg-ghost: hsl(from var(--gray-500) h s l / 0.25);
+}
+
+.Button.zinc.ghost {
+  --button-text-ghost: var(--zinc-500);
+}
+
+.Button.zinc.ghost:hover {
+  --button-hover-bg-ghost: hsl(from var(--zinc-500) h s l / 0.25);
+}
+
+.Button.neutral.ghost {
+  --button-text-ghost: var(--neutral-500);
+}
+
+.Button.neutral.ghost:hover {
+  --button-hover-bg-ghost: hsl(from var(--neutral-500) h s l / 0.25);
+}
+
+.Button.stone.ghost {
+  --button-text-ghost: var(--stone-500);
+}
+
+.Button.stone.ghost:hover {
+  --button-hover-bg-ghost: hsl(from var(--stone-500) h s l / 0.25);
+}
+
 /* Loading State */
 .Button.loading {
   position: relative;
@@ -761,90 +1038,112 @@
   border-right-color: hsl(from var(--button-text-primary) h s l / 0.33);
 }
 
-.Button.secondary.red.loading .spinner {
+.Button.secondary.red.loading .spinner,
+.Button.ghost.red.loading .spinner  {
   border-right-color: hsl(from var(--red-500) h s l / 0.33);
 }
 
-.Button.secondary.orange.loading .spinner {
+.Button.secondary.orange.loading .spinner,
+.Button.ghost.orange.loading .spinner  {
   border-right-color: hsl(from var(--orange-500) h s l / 0.25);
 }
 
-.Button.secondary.amber.loading .spinner {
+.Button.secondary.amber.loading .spinner,
+.Button.ghost.amber.loading .spinner  {
   border-right-color: hsl(from var(--amber-500) h s l / 0.25);
 }
 
-.Button.secondary.yellow.loading .spinner {
+.Button.secondary.yellow.loading .spinner,
+.Button.ghost.yellow.loading .spinner  {
   border-right-color: hsl(from var(--yellow-500) h s l / 0.25);
 }
 
-.Button.secondary.lime.loading .spinner {
+.Button.secondary.lime.loading .spinner,
+.Button.ghost.lime.loading .spinner  {
   border-right-color: hsl(from var(--lime-500) h s l / 0.25);
 }
 
-.Button.secondary.green.loading .spinner {
+.Button.secondary.green.loading .spinner,
+.Button.ghost.green.loading .spinner  {
   border-right-color: hsl(from var(--green-500) h s l / 0.25);
 }
 
-.Button.secondary.emerald.loading .spinner {
+.Button.secondary.emerald.loading .spinner,
+.Button.ghost.emerald.loading .spinner  {
   border-right-color: hsl(from var(--emerald-500) h s l / 0.25);
 }
 
-.Button.secondary.teal.loading .spinner {
+.Button.secondary.teal.loading .spinner,
+.Button.ghost.teal.loading .spinner  {
   border-right-color: hsl(from var(--teal-500) h s l / 0.25);
 }
 
-.Button.secondary.cyan.loading .spinner {
+.Button.secondary.cyan.loading .spinner,
+.Button.ghost.cyan.loading .spinner  {
   border-right-color: hsl(from var(--cyan-500) h s l / 0.25);
 }
 
-.Button.secondary.sky.loading .spinner {
+.Button.secondary.sky.loading .spinner,
+.Button.ghost.sky.loading .spinner  {
   border-right-color: hsl(from var(--sky-500) h s l / 0.25);
 }
 
-.Button.secondary.blue.loading .spinner {
+.Button.secondary.blue.loading .spinner,
+.Button.ghost.blue.loading .spinner  {
   border-right-color: hsl(from var(--blue-500) h s l / 0.25);
 }
 
-.Button.secondary.indigo.loading .spinner {
+.Button.secondary.indigo.loading .spinner,
+.Button.ghost.indigo.loading .spinner  {
   border-right-color: hsl(from var(--indigo-500) h s l / 0.25);
 }
 
-.Button.secondary.violet.loading .spinner {
+.Button.secondary.violet.loading .spinner,
+.Button.ghost.violet.loading .spinner  {
   border-right-color: hsl(from var(--violet-500) h s l / 0.25);
 }
 
-.Button.secondary.purple.loading .spinner {
+.Button.secondary.purple.loading .spinner,
+.Button.ghost.purple.loading .spinner  {
   border-right-color: hsl(from var(--purple-500) h s l / 0.25);
 }
 
-.Button.secondary.fuchsia.loading .spinner {
+.Button.secondary.fuchsia.loading .spinner,
+.Button.ghost.fuchsia.loading .spinner  {
   border-right-color: hsl(from var(--fuchsia-500) h s l / 0.25);
 }
 
-.Button.secondary.pink.loading .spinner {
+.Button.secondary.pink.loading .spinner,
+.Button.ghost.pink.loading .spinner  {
   border-right-color: hsl(from var(--pink-500) h s l / 0.25);
 }
 
-.Button.secondary.rose.loading .spinner {
+.Button.secondary.rose.loading .spinner,
+.Button.ghost.rose.loading .spinner  {
   border-right-color: hsl(from var(--rose-500) h s l / 0.25);
 }
 
-.Button.secondary.slate.loading .spinner {
+.Button.secondary.slate.loading .spinner,
+.Button.ghost.slate.loading .spinner  {
   border-right-color: hsl(from var(--slate-500) h s l / 0.25);
 }
 
-.Button.secondary.gray.loading .spinner {
+.Button.secondary.gray.loading .spinner,
+.Button.ghost.gray.loading .spinner  {
   border-right-color: hsl(from var(--gray-500) h s l / 0.25);
 }
 
-.Button.secondary.zinc.loading .spinner {
+.Button.secondary.zinc.loading .spinner,
+.Button.ghost.zinc.loading .spinner  {
   border-right-color: hsl(from var(--zinc-500) h s l / 0.25);
 }
 
-.Button.secondary.neutral.loading .spinner {
+.Button.secondary.neutral.loading .spinner,
+.Button.ghost.neutral.loading .spinner  {
   border-right-color: hsl(from var(--neutral-500) h s l / 0.25);
 }
 
-.Button.secondary.stone.loading .spinner {
+.Button.secondary.stone.loading .spinner,
+.Button.ghost.stone.loading .spinner  {
   border-right-color: hsl(from var(--stone-500) h s l / 0.25);
 }

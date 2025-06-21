@@ -17,6 +17,8 @@ export interface ButtonProps
   loading?: boolean
   /* Button label */
   label: ReactNode
+  /* If true, the button, when variant is 'ghost', won't have any border radius. */
+  notRounded?: boolean
   /* Button ref for external call */
   ref?: RefObject<HTMLButtonElement | null>
   /* Panel size: 'sm' | 'md' | 'lg'  */
@@ -32,6 +34,7 @@ const Button: FC<ButtonProps> = ({
   iconPosition = 'left',
   label,
   loading,
+  notRounded,
   onBlur,
   onClick,
   size = 'md',
@@ -48,7 +51,7 @@ const Button: FC<ButtonProps> = ({
         variant,
         color,
         iconPosition,
-        { loading: loading },
+        { loading: loading, 'not-rounded': notRounded, 'has-icon': !!icon },
         className
       )}
       disabled={disabled ?? !!loading}

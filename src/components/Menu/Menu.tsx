@@ -235,7 +235,7 @@ const Menu: FC<MenuProps> = ({
         >
           <div
             className={clsx(
-              'dp-bg-white dp-shadow dp-rounded-sm dp-absolute dp-z-[999] dp-overflow-hidden',
+              'dp-bg-white dp-shadow dp-rounded-md dp-absolute dp-z-[999] dp-overflow-hidden',
               {
                 '!dp-overflow-y-scroll': items.length > maxMenuItems,
                 '!dp-rounded-md': shape === 'rounded',

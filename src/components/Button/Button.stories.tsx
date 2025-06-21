@@ -68,7 +68,7 @@ const meta = {
     },
     variant: {
       control: 'select',
-      options: ['primary', 'secondary'],
+      options: ['primary', 'secondary', 'ghost'],
       description: 'Variant of the button: "primary" or "secondary"',
     },
   },
@@ -224,6 +224,60 @@ const IntegrationBoard: FC<ButtonProps> = ({ color }) => (
       <Button
         variant="secondary"
         label="Primary Button"
+        size="sm"
+        color={color}
+        loading
+      />
+    </div>
+    <div className="case-block">
+      <h3 className="case-title">Ghost large</h3>
+      <Button variant="ghost" label="Ghost Button" size="lg" color={color} />
+      <Button
+        variant="ghost"
+        label="Ghost Button"
+        size="lg"
+        color={color}
+        disabled
+      />
+      <Button
+        variant="ghost"
+        label="Ghost Button"
+        size="lg"
+        color={color}
+        loading
+      />
+    </div>
+    <div className="case-block">
+      <h3 className="case-title">Ghost medium</h3>
+      <Button variant="ghost" label="Ghost Button" size="md" color={color} />
+      <Button
+        variant="ghost"
+        label="Ghost Button"
+        size="md"
+        color={color}
+        disabled
+      />
+      <Button
+        variant="ghost"
+        label="Ghost Button"
+        size="md"
+        color={color}
+        loading
+      />
+    </div>
+    <div className="case-block">
+      <h3 className="case-title">Ghost small</h3>
+      <Button variant="ghost" label="Ghost Button" size="sm" color={color} />
+      <Button
+        variant="ghost"
+        label="Ghost Button"
+        size="sm"
+        color={color}
+        disabled
+      />
+      <Button
+        variant="ghost"
+        label="Ghost Button"
         size="sm"
         color={color}
         loading

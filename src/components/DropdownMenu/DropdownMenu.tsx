@@ -2,7 +2,6 @@ import clsx from 'clsx'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 import Button from '../Button'
-import Icon from '../Icon'
 import Label from '../Label'
 import Menu from '../Menu'
 
@@ -191,33 +190,11 @@ const DropdownMenu: FC<DropdownMenuProps> = ({
               aria-label={
                 isString(buttonLabel) ? buttonLabel : 'Select an option'
               }
+              icon={isOpen ? 'HiChevronDown' : 'HiChevronUp'}
+              iconPosition="right"
               className="dp-w-full dp-flex-nowrap"
-              label={
-                <>
-                  <span
-                    data-test="dropdown-value"
-                    className="dp-truncate dp-flex-shrink"
-                  >
-                    {currentLabel}
-                  </span>
-                  <div
-                    className={clsx('dp-w-5 dp-justify-self-end', {
-                      'dp-mt-0.5': !isOpen,
-                      'dp-mb-0.5': isOpen,
-                    })}
-                  >
-                    <Icon
-                      name="HiChevronDown"
-                      className={clsx('dp-text-white dp-transition-transform', {
-                        'dp-size-4': size === 'sm',
-                        'dp-size-4.5': size === 'md',
-                        'dp-size-5': size === 'lg',
-                        'dp-rotate-180': isOpen,
-                      })}
-                    />
-                  </div>
-                </>
-              }
+              data-test="dropdown-value"
+              label={currentLabel}
               loading={loading}
               onClick={() => {
                 setIsOpen(!isOpen)
