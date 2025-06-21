@@ -18,10 +18,12 @@
   --button-hover-bg-secondary: var(--neutral-500);
   --button-hover-border-secondary: var(--neutral-500);
   --button-hover-text-secondary: var(--neutral-100);
-  --button-active-outline: var(--neutral-200);
   --button-bg-ghost: transparent;
   --button-text-ghost: var(--neutral-500);
   --button-hover-bg-ghost: hsl(from var(--neutral-500) h s l / 0.5);
+
+  /* Default values (light mode) */
+  --button-active-outline: transparent;
 
   /* base styles */
   display: inline-block;
@@ -763,91 +765,91 @@
 
 /* Active state */
 .Button.red:active {
-  --button-active-outline: var(--red-300);
+  --button-active-outline: hsl(from var(--red-500) h s l / 0.5);
 }
 
 .Button.orange:active {
-  --button-active-outline: var(--orange-300);
+  --button-active-outline: hsl(from var(--orange-500) h s l / 0.5);
 }
 
 .Button.amber:active {
-  --button-active-outline: var(--amber-300);
+  --button-active-outline: hsl(from var(--amber-500) h s l / 0.5);
 }
 
 .Button.yellow:active {
-  --button-active-outline: var(--yellow-300);
+  --button-active-outline: hsl(from var(--yellow-500) h s l / 0.5);
 }
 
 .Button.lime:active {
-  --button-active-outline: var(--lime-300);
+  --button-active-outline: hsl(from var(--lime-500) h s l / 0.5);
 }
 
 .Button.green:active {
-  --button-active-outline: var(--green-300);
+  --button-active-outline: hsl(from var(--green-500) h s l / 0.5);
 }
 
 .Button.emerald:active {
-  --button-active-outline: var(--emerald-300);
+  --button-active-outline: hsl(from var(--emerald-500) h s l / 0.5);
 }
 
 .Button.teal:active {
-  --button-active-outline: var(--teal-300);
+  --button-active-outline: hsl(from var(--teal-500) h s l / 0.5);
 }
 
 .Button.cyan:active {
-  --button-active-outline: var(--cyan-300);
+  --button-active-outline: hsl(from var(--cyan-500) h s l / 0.5);
 }
 
 .Button.sky:active {
-  --button-active-outline: var(--sky-300);
+  --button-active-outline: hsl(from var(--sky-500) h s l / 0.5);
 }
 
 .Button.blue:active {
-  --button-active-outline: var(--blue-300);
+  --button-active-outline: hsl(from var(--blue-500) h s l / 0.5);
 }
 
 .Button.indigo:active {
-  --button-active-outline: var(--indigo-300);
+  --button-active-outline: hsl(from var(--indigo-500) h s l / 0.5);
 }
 
 .Button.violet:active {
-  --button-active-outline: var(--violet-300);
+  --button-active-outline: hsl(from var(--violet-500) h s l / 0.5);
 }
 
 .Button.purple:active {
-  --button-active-outline: var(--purple-300);
+  --button-active-outline: hsl(from var(--purple-500) h s l / 0.5);
 }
 
 .Button.fuchsia:active {
-  --button-active-outline: var(--fuchsia-300);
+  --button-active-outline: hsl(from var(--fuchsia-500) h s l / 0.5);
 }
 
 .Button.pink:active {
-  --button-active-outline: var(--pink-300);
+  --button-active-outline: hsl(from var(--pink-500) h s l / 0.5);
 }
 
 .Button.rose:active {
-  --button-active-outline: var(--rose-300);
+  --button-active-outline: hsl(from var(--rose-500) h s l / 0.5);
 }
 
 .Button.slate:active {
-  --button-active-outline: var(--slate-300);
+  --button-active-outline: hsl(from var(--slate-500) h s l / 0.5);
 }
 
 .Button.gray:active {
-  --button-active-outline: var(--gray-300);
+  --button-active-outline: hsl(from var(--gray-500) h s l / 0.5);
 }
 
 .Button.zinc:active {
-  --button-active-outline: var(--zinc-300);
+  --button-active-outline: hsl(from var(--zinc-500) h s l / 0.5);
 }
 
 .Button.neutral:active {
-  --button-active-outline: var(--neutral-300);
+  --button-active-outline: hsl(from var(--neutral-500) h s l / 0.5);
 }
 
 .Button.stone:active {
-  --button-active-outline: var(--stone-300);
+  --button-active-outline: hsl(from var(--stone-500) h s l / 0.5);
 }
 
 .Button.red.ghost {
@@ -1039,111 +1041,111 @@
 }
 
 .Button.secondary.red.loading .spinner,
-.Button.ghost.red.loading .spinner  {
+.Button.ghost.red.loading .spinner {
   border-right-color: hsl(from var(--red-500) h s l / 0.33);
 }
 
 .Button.secondary.orange.loading .spinner,
-.Button.ghost.orange.loading .spinner  {
+.Button.ghost.orange.loading .spinner {
   border-right-color: hsl(from var(--orange-500) h s l / 0.25);
 }
 
 .Button.secondary.amber.loading .spinner,
-.Button.ghost.amber.loading .spinner  {
+.Button.ghost.amber.loading .spinner {
   border-right-color: hsl(from var(--amber-500) h s l / 0.25);
 }
 
 .Button.secondary.yellow.loading .spinner,
-.Button.ghost.yellow.loading .spinner  {
+.Button.ghost.yellow.loading .spinner {
   border-right-color: hsl(from var(--yellow-500) h s l / 0.25);
 }
 
 .Button.secondary.lime.loading .spinner,
-.Button.ghost.lime.loading .spinner  {
+.Button.ghost.lime.loading .spinner {
   border-right-color: hsl(from var(--lime-500) h s l / 0.25);
 }
 
 .Button.secondary.green.loading .spinner,
-.Button.ghost.green.loading .spinner  {
+.Button.ghost.green.loading .spinner {
   border-right-color: hsl(from var(--green-500) h s l / 0.25);
 }
 
 .Button.secondary.emerald.loading .spinner,
-.Button.ghost.emerald.loading .spinner  {
+.Button.ghost.emerald.loading .spinner {
   border-right-color: hsl(from var(--emerald-500) h s l / 0.25);
 }
 
 .Button.secondary.teal.loading .spinner,
-.Button.ghost.teal.loading .spinner  {
+.Button.ghost.teal.loading .spinner {
   border-right-color: hsl(from var(--teal-500) h s l / 0.25);
 }
 
 .Button.secondary.cyan.loading .spinner,
-.Button.ghost.cyan.loading .spinner  {
+.Button.ghost.cyan.loading .spinner {
   border-right-color: hsl(from var(--cyan-500) h s l / 0.25);
 }
 
 .Button.secondary.sky.loading .spinner,
-.Button.ghost.sky.loading .spinner  {
+.Button.ghost.sky.loading .spinner {
   border-right-color: hsl(from var(--sky-500) h s l / 0.25);
 }
 
 .Button.secondary.blue.loading .spinner,
-.Button.ghost.blue.loading .spinner  {
+.Button.ghost.blue.loading .spinner {
   border-right-color: hsl(from var(--blue-500) h s l / 0.25);
 }
 
 .Button.secondary.indigo.loading .spinner,
-.Button.ghost.indigo.loading .spinner  {
+.Button.ghost.indigo.loading .spinner {
   border-right-color: hsl(from var(--indigo-500) h s l / 0.25);
 }
 
 .Button.secondary.violet.loading .spinner,
-.Button.ghost.violet.loading .spinner  {
+.Button.ghost.violet.loading .spinner {
   border-right-color: hsl(from var(--violet-500) h s l / 0.25);
 }
 
 .Button.secondary.purple.loading .spinner,
-.Button.ghost.purple.loading .spinner  {
+.Button.ghost.purple.loading .spinner {
   border-right-color: hsl(from var(--purple-500) h s l / 0.25);
 }
 
 .Button.secondary.fuchsia.loading .spinner,
-.Button.ghost.fuchsia.loading .spinner  {
+.Button.ghost.fuchsia.loading .spinner {
   border-right-color: hsl(from var(--fuchsia-500) h s l / 0.25);
 }
 
 .Button.secondary.pink.loading .spinner,
-.Button.ghost.pink.loading .spinner  {
+.Button.ghost.pink.loading .spinner {
   border-right-color: hsl(from var(--pink-500) h s l / 0.25);
 }
 
 .Button.secondary.rose.loading .spinner,
-.Button.ghost.rose.loading .spinner  {
+.Button.ghost.rose.loading .spinner {
   border-right-color: hsl(from var(--rose-500) h s l / 0.25);
 }
 
 .Button.secondary.slate.loading .spinner,
-.Button.ghost.slate.loading .spinner  {
+.Button.ghost.slate.loading .spinner {
   border-right-color: hsl(from var(--slate-500) h s l / 0.25);
 }
 
 .Button.secondary.gray.loading .spinner,
-.Button.ghost.gray.loading .spinner  {
+.Button.ghost.gray.loading .spinner {
   border-right-color: hsl(from var(--gray-500) h s l / 0.25);
 }
 
 .Button.secondary.zinc.loading .spinner,
-.Button.ghost.zinc.loading .spinner  {
+.Button.ghost.zinc.loading .spinner {
   border-right-color: hsl(from var(--zinc-500) h s l / 0.25);
 }
 
 .Button.secondary.neutral.loading .spinner,
-.Button.ghost.neutral.loading .spinner  {
+.Button.ghost.neutral.loading .spinner {
   border-right-color: hsl(from var(--neutral-500) h s l / 0.25);
 }
 
 .Button.secondary.stone.loading .spinner,
-.Button.ghost.stone.loading .spinner  {
+.Button.ghost.stone.loading .spinner {
   border-right-color: hsl(from var(--stone-500) h s l / 0.25);
 }

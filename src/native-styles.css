@@ -7,6 +7,9 @@
 @import './styles/days-grid-cell.css';
 @import './styles/helper-text.css';
 @import './styles/label.css';
+@import './styles/menu.css';
+@import './styles/menu-animation.css';
+@import './styles/menu-item.css';
 @import './styles/panel-animation.css';
 @import './styles/panel-button.css';
 @import './styles/spinner.css';

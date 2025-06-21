@@ -1,0 +1,106 @@
+@import url('common/colors.css');
+@import url('common/spacing.css');
+@import url('common/miscellaneous.css');
+
+/* Base as a monochrome theme */
+.MenuItem {
+  /* Colors basic definition for each mode */
+  --selected-bg-light: var(--gray-200);
+  --selected-bg-dark: var(--gray-500);
+  --selected-text-light: var(--gray-700);
+  --selected-text-dark: var(--gray-300);
+  --selected-hover-bg-light: var(--gray-200);
+  --selected-hover-bg-dark: var(--gray-500);
+  --selected-hover-text-light: var(--gray-700);
+  --selected-hover-text-dark: var(--gray-300);
+  --hover-text-light: var(--gray-700);
+  --hover-text-dark: var(--gray-300);
+  --text-light: var(--gray-700);
+  --text-dark: var(--gray-400);
+  --separator-light: var(--gray-200);
+  --separator-dark: var(--gray-700);
+
+  /* Default values (light mode) */
+  --selected-bg: var(--selected-bg-light);
+  --selected-hover-bg: var(--selected-bg-light);
+  --selected-text: var(--selected-text-light);
+  --selected-hover-text: var(--selected-text-light);
+  --text: var(--text-light);
+  --hover-text: var(--hover-text-light);
+  --separator: var(--separator-light);
+
+  /* Basic styles (enabled) */
+  width: 100%;
+}
+
+/* States (light by default) */
+.MenuItem .Button {
+  color: var(--text);
+  width: 100%;
+}
+
+.MenuItem .Button:hover {
+  color: var(--hover-text);
+}
+
+.MenuItem.is-separator {
+  padding: 0 !important;
+}
+
+.MenuItem.is-separator hr {
+  border-color: var(--separator);
+  width: 100%;
+}
+
+.MenuItem.is-element:not(.is-separator) {
+  color: var(--gray-500);
+  padding: var(--spacing-0-5);
+}
+
+.MenuItem.selected .Button {
+  width: 100%;
+  background-color: var(--selected-bg);
+  color: var(--selected-text);
+}
+
+.MenuItem.selected .Button:hover {
+  background-color: var(--selected-hover-bg);
+  color: var(--selected-hover-text);
+}
+
+/* Dark mode from system */
+@media (prefers-color-scheme: dark) {
+  /* Default values (light mode) */
+  .MenuItem:not(.light *) {
+    --selected-bg: var(--selected-bg-dark);
+    --selected-text: var(--selected-text-dark);
+    --selected-hover-bg: var(--selected-bg-dark);
+    --selected-hover-text: var(--selected-text-dark);
+    --text: var(--text-dark);
+    --hover-text: var(--hover-text-dark);
+    --separator: var(--separator-dark);
+  }
+}
+
+/* Forced dark mode */
+.dark * .MenuItem {
+  --selected-bg: var(--selected-bg-dark);
+  --selected-text: var(--selected-text-dark);
+  --selected-hover-bg: var(--selected-bg-dark);
+  --selected-hover-text: var(--selected-text-dark);
+  --text: var(--text-dark);
+  --hover-text: var(--hover-text-dark);
+  --separator: var(--separator-dark);
+}
+
+/* Forced light mode */
+.light * .MenuItem {
+  --selected-bg: var(--selected-bg-light);
+  --selected-text: var(--selected-text-light);
+  --selected-hover-bg: var(--selected-bg-light);
+  --selected-hover-text: var(--selected-text-light);
+  --text: var(--text-light);
+  --hover-text: var(--hover-text-light);
+  --separator: var(--separator-light);
+}
+

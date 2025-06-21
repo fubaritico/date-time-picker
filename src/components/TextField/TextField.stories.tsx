@@ -2,6 +2,8 @@ import { Meta, StoryObj } from '@storybook/react'
 import { withDarkModeForBackground } from '@storybook-decorators/withDarkModeForBackground'
 import { FC, useState } from 'react'
 
+import { COLORS } from '@constants'
+
 import TextField, { TextFieldProps } from './TextField'
 
 const meta: Meta<typeof TextField> = {
@@ -19,6 +21,20 @@ const meta: Meta<typeof TextField> = {
     },
   },
   argTypes: {
+    color: {
+      options: COLORS,
+      control: {
+        type: 'select',
+        labels: COLORS.reduce<Record<UIColor, string>>(
+          (acc, color) => {
+            acc[color] = color
+
+            return acc
+          },
+          {} as Record<UIColor, string>
+        ),
+      },
+    },
     label: {
       control: 'text',
       description: 'Label of the input',

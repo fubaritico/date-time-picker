@@ -1,0 +1,73 @@
+@import url('common/colors.css');
+@import url('common/miscellaneous.css');
+
+/* Base as a monochrome theme */
+.Menu {
+  /* Colors basic definition for each mode */
+  --menu-bg-light: var(--white);
+  --menu-bg-dark: var(--gray-800);
+
+  /* Default values (light mode) */
+  --menu-bg: var(--menu-bg-light);
+
+  /* Basic styles (enabled) */
+  background-color: var(--menu-bg);
+  box-shadow: var(--box-shadox-elevation-1);
+  position: absolute;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.Menu > ul {
+  display: flex;
+  flex-direction: column;
+}
+
+/* States (light by default) */
+.Menu.scrollable {
+  overflow-y: scroll;
+}
+
+/* Sizes */
+.Menu.sm {
+  border-radius: var(--br-sm);
+}
+
+.Menu.md {
+  border-radius: var(--br-md);
+}
+
+.Menu.lg {
+  border-radius: var(--br-lg);
+}
+
+.Menu.sm.scrollable {
+  height: calc(var(--size-sm) * var(--menu-max-items));
+}
+
+.Menu.md.scrollable {
+  height: calc(var(--size-md) * var(--menu-max-items));
+}
+
+.Menu.lg.scrollable {
+  height: calc(var(--size-lg) * var(--menu-max-items));
+}
+
+/* Dark mode from system */
+@media (prefers-color-scheme: dark) {
+  /* Default values (light mode) */
+  .Menu:not(.light *) {
+    --menu-bg: var(--menu-bg-dark);
+  }
+}
+
+/* Forced dark mode */
+.dark * .Menu {
+  --menu-bg: var(--menu-bg-dark);
+}
+
+/* Forced light mode */
+.light * .Menu {
+  --menu-bg: var(--menu-bg-light);
+}
+

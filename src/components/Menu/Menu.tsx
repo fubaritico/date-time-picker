@@ -12,8 +12,6 @@ import Portal from '../Portal'
 
 import MenuItem from './MenuItem'
 
-import './Menu.index.css'
-
 import type { MenuItemConfig } from './MenuItem'
 import type {
   CSSProperties,
@@ -48,8 +46,6 @@ export type MenuProps = HTMLAttributes<HTMLDivElement> & {
   open: boolean
   /* Menu placement: 'bottom-start' | 'bottom-end'  */
   placement?: Extract<Placement, 'bottom-start' | 'bottom-end'>
-  /* Menu shape 'rounded' | 'square' */
-  shape?: 'rounded' | 'square'
   /* Selected value to highlight */
   selectedValue?: string
   /* Menu items size 'sm' | 'md' | 'lg', defaults to "lg" */
@@ -58,12 +54,6 @@ export type MenuProps = HTMLAttributes<HTMLDivElement> & {
   showSelectedValue?: boolean
   /* Reference of the element that triggers opening */
   triggerRef: RefObject<HTMLElement | null>
-}
-
-const maxMenuHeights: Record<UISize, number> = {
-  sm: 30,
-  md: 36,
-  lg: 40,
 }
 
 const Menu: FC<MenuProps> = ({
@@ -79,7 +69,6 @@ const Menu: FC<MenuProps> = ({
   open,
   placement,
   selectedValue,
-  shape,
   showSelectedValue,
   size = 'lg',
   triggerRef,
@@ -235,10 +224,10 @@ const Menu: FC<MenuProps> = ({
         >
           <div
             className={clsx(
-              'dp-bg-white dp-shadow dp-rounded-md dp-absolute dp-z-[999] dp-overflow-hidden',
+              'Menu',
+              size,
               {
-                '!dp-overflow-y-scroll': items.length > maxMenuItems,
-                '!dp-rounded-md': shape === 'rounded',
+                scrollable: items.length > maxMenuItems,
               },
               className
             )}
@@ -251,13 +240,10 @@ const Menu: FC<MenuProps> = ({
               visibility:
                 absolutePosition.visibility as CSSProperties['visibility'],
               ...(menuWidth && { width: `${menuWidth.toString()}px` }),
-              ...(items.length > maxMenuItems && {
-                height: `${(maxMenuHeights[size] * maxMenuItems).toString()}px`,
-              }),
             }}
             {...rest}
           >
-            <ul className="dp-flex dp-flex-col">
+            <ul>
               {items.map((item: MenuItemConfig, index) => (
                 <MenuItem
                   buttonComponent={buttonComponent}

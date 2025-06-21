@@ -63,4 +63,6 @@
 
   --focus-outline-width: 2px;
   --focus-outline-offset: 2px;
+
+  --menu-max-items: 5;
 }

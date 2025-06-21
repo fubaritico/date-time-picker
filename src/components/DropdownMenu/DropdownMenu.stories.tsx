@@ -1,5 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
+import { withCenteredLayout } from '@storybook-decorators/withLayout'
 
+import { COLORS } from '@constants'
 import { Icon } from '@components'
 
 import DropdownMenu from './DropdownMenu'
@@ -31,9 +33,23 @@ const DropdownWrapper: FC<DropdownMenuProps> = (args) => {
 const meta: Meta<typeof DropdownWrapper> = {
   title: 'Components/Dropdown',
   parameters: {
-    layout: 'centered',
+    layout: 'fullscreen',
   },
   argTypes: {
+    color: {
+      options: COLORS,
+      control: {
+        type: 'select',
+        labels: COLORS.reduce<Record<UIColor, string>>(
+          (acc, color) => {
+            acc[color] = color
+
+            return acc
+          },
+          {} as Record<UIColor, string>
+        ),
+      },
+    },
     variant: {
       control: 'select',
       options: ['primary', 'secondary'],
@@ -55,6 +71,7 @@ const meta: Meta<typeof DropdownWrapper> = {
     },
   },
   tags: ['autodocs'],
+  decorators: [withCenteredLayout],
   component: DropdownWrapper,
 }
 export default meta

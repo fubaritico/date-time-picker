@@ -19,7 +19,7 @@ export const withLayout: Decorator = (Story) => (
 )
 
 export const withCenteredLayout: Decorator = (Story) => (
-  <div className="dp-flex dp-h-screen dp-w-screen dp-items-center dp-justify-center dp-bg-gray-100 dark:dp-bg-gray-900 dp-bg-fixedr">
+  <div className="dp-flex dp-min-h-screen dp-w-screen dp-items-center dp-justify-center dp-bg-gray-100 dark:dp-bg-gray-900 dp-bg-fixed">
     {Story()}
   </div>
 )

@@ -1,7 +1,5 @@
 import clsx from 'clsx'
 
-import { cx } from '@utils'
-
 import Button from '../Button'
 
 import { isString } from './Menu.utils'
@@ -64,25 +62,19 @@ const MenuItem: FC<MenuItemProps> = ({
 
   return (
     <li
-      className={clsx('dp-w-full', {
-        'dp-text-gray-500 dp-p-0.5': typeof item.label !== 'string',
-        '!dp-p-0': item.separator,
+      className={clsx('MenuItem', {
+        'is-element': typeof item.label !== 'string',
+        'is-separator': item.separator,
+        selected: selected,
       })}
     >
       {item.separator ? (
-        <hr className="dp-w-full" />
+        <hr />
       ) : (
         <ButtonComponent
           type={item.buttonType}
           aria-hidden={item.separator}
           aria-label={isString(item.label) ? item.label : undefined}
-          className={cx(
-            'dp-truncate dp-text-left dp-w-full dp-flex-nowrap dp-justify-start',
-            {
-              '!dp-bg-blue-100 hover:!dp-bg-blue-200 !dp-text-blue-500':
-                !item.disabled && selected,
-            }
-          )}
           aria-current={selected}
           aria-disabled={item.disabled ?? typeof item.label !== 'string'}
           color={color}
@@ -102,10 +94,7 @@ const MenuItem: FC<MenuItemProps> = ({
             <>
               {/* If the label is selectable or is an action */}
               {isString(item.label) && (
-                <span
-                  id={`item-${item.value ?? item.label}`}
-                  className="dp-truncate dp-flex-shrink"
-                >
+                <span id={`item-${item.value ?? item.label}`}>
                   {item.label}
                 </span>
               )}
