@@ -1,0 +1,47 @@
+@import "./common/spacing.css";
+@import "./common/colors.css";
+
+/* Base as a monochrome theme */
+.DateRangePanel {
+  /* Colors basic definition for each mode */
+  --separator-light: var(--gray-100);
+  --separator-dark: var(--gray-700);
+
+  /* Default values (light mode) */
+  --separator: var(--separator-light);
+
+  /* Basic styles (enabled) */
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--spacing-2);
+}
+
+.DateRangePanel .start-date-panel,
+.DateRangePanel .end-date-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.DateRangePanel .separator {
+  width: 1px;
+  background: var(--separator);
+}
+
+/* Dark mode from system */
+@media (prefers-color-scheme: dark) {
+  /* Default values (light mode) */
+  .DateRangePanel:not(.light *) {
+    --separator: var(--separator-dark);
+  }
+}
+
+/* Forced dark mode */
+.dark * .DateRangePanel {
+  --separator: var(--separator-dark);
+}
+
+/* Forced light mode */
+.light * .DateRangePanel {
+  --separator: var(--separator-light);
+}
+

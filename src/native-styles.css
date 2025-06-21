@@ -2,6 +2,7 @@
 @import './styles/date-browser.css';
 @import './styles/date-browser-button.css';
 @import './styles/date-range-input.css';
+@import './styles/date-range-panel.css';
 @import './styles/date-time-switcher.css';
 @import './styles/date-time-switcher-button.css';
 @import './styles/days-grid-cell.css';

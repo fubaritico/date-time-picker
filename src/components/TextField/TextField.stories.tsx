@@ -572,6 +572,16 @@ export const Board: Story = {
     layout: 'fullscreen',
   },
   argTypes: {
+    containerClassName: {
+      table: {
+        disable: true,
+      },
+    },
+    color: {
+      table: {
+        disable: true,
+      },
+    },
     className: {
       table: {
         disable: true,
@@ -587,12 +597,22 @@ export const Board: Story = {
         disable: true,
       },
     },
+    hideFocus: {
+      table: {
+        disable: true,
+      },
+    },
     iconName: {
       table: {
         disable: true,
       },
     },
     iconAriaLabel: {
+      table: {
+        disable: true,
+      },
+    },
+    iconPosition: {
       table: {
         disable: true,
       },
@@ -628,6 +648,11 @@ export const Board: Story = {
       },
     },
     placeholder: {
+      table: {
+        disable: true,
+      },
+    },
+    preserveIconClick: {
       table: {
         disable: true,
       },

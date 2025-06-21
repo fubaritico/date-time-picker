@@ -104,11 +104,8 @@ const DateRangePanel: FC<DateRangePanelProps> = ({
   )
 
   return (
-    <div className={clsx('dp-flex dp-flex-nowrap dp-gap-2', className)}>
-      <div
-        className={clsx('dp-flex dp-flex-col', className)}
-        data-test="date-panel-start"
-      >
+    <div className={clsx('DateRangePanel', className)}>
+      <div className="start-date-panel" data-test="start-date-panel">
         <DateBrowser
           date={leftGridMonth}
           size={size}
@@ -123,11 +120,8 @@ const DateRangePanel: FC<DateRangePanelProps> = ({
           onEndDateChangeHandler={onEndDateChangeHandler}
         />
       </div>
-      <div className="dp-w-auto dp-border-r dp-border-r-gray-100 dark:dp-border-r-gray-700" />
-      <div
-        className={clsx('dp-flex dp-flex-col', className)}
-        data-test="date-panel-end"
-      >
+      <div className="separator" />
+      <div className="end-date-panel" data-test="end-date-panel">
         <DateBrowser
           date={rightGridMonth}
           size={size}

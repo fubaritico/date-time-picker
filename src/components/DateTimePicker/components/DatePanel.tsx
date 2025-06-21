@@ -1,4 +1,3 @@
-import clsx from 'clsx'
 import { useCallback, useMemo } from 'react'
 
 import { addMonths, subtractMonths } from '@utils'
@@ -86,8 +85,9 @@ const DatePanel: FC<DatePanelProps> = ({ className, onDateChange, size }) => {
 
   return (
     <div
-      className={clsx('dp-flex dp-flex-col', className)}
+      className={className}
       data-test="date-panel"
+      style={{ display: 'flex', flexDirection: 'column' }}
       ref={panelRef}
     >
       <DateBrowser
