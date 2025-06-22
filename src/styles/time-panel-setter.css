@@ -1,0 +1,92 @@
+@import url('common/colors.css');
+@import url('common/spacing.css');
+@import url('common/typography.css');
+@import url('common/miscellaneous.css');
+
+.TimePanelSetter {
+  /* Colors basic definition for each mode */
+  --text-light: var(--neutral-900);
+  --text-dark: var(--white);
+  --hover-button-bg-light: var(--gray-100);
+  --hover-button-bg-dark: var(--gray-700);
+  --hover-button-text-light: var(--gray-800);
+  --hover-button-text-dark: var(--white);
+
+  /* Default values (light mode) */
+  --text: var(--text-light);
+  --button-bg: transparent;
+  --button-text: var(--text-light);
+  --button-hover-bg: var(--hover-button-bg-light);
+
+  /* Basic styles (enabled) */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--spacing-5);
+  width: 85px;
+}
+
+.TimePanelSetter > button {
+  appearance: none;
+  transition: var(--transition);
+  transition-duration: 500ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+  border-radius: var(--br-lg);
+  border: 0;
+  background: var(--button-bg);
+  color: var(--button-text);
+}
+
+.TimePanelSetter > button:hover {
+  background: var(--button-hover-bg);
+}
+
+.TimePanelSetter > button > svg {
+  height: var(--svg-sm);
+  width: var(--svg-sm);
+}
+
+.TimePanelSetter > div {
+  font-family: var(--font-family-robotoMono), serif;
+  font-size: var(--time-setter-value);
+  color: var(--text);
+  font-weight: 600;
+  line-height: var(--time-setter-value);
+  text-align: center;
+}
+
+/* Dark mode from system */
+@media (prefers-color-scheme: dark) {
+  /* Default values (light mode) */
+  .TimePanelSetter:not(.light *) {
+    --text: var(--text-dark);
+  }
+
+  .TimePanelSetter:not(.light *) > button {
+    --button-text: var(--text-dark);
+    --button-hover-bg: var(--hover-button-bg-dark);
+  }
+}
+
+/* Forced dark mode */
+.dark * .TimePanelSetter {
+  --text: var(--text-dark);
+}
+
+.dark * .TimePanelSetter > button {
+  --button-text: var(--text-dark);
+  --button-hover-bg: var(--hover-button-bg-dark);
+}
+
+/* Forced light mode */
+.light * .TimePanelSetter {
+  --text: var(--text-light);
+}
+
+.light * .TimePanelSetter > button {
+  --button-text: var(--text-light);
+  --button-hover-bg: var(--hover-button-bg-light);
+}

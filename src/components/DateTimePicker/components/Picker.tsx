@@ -14,7 +14,6 @@ import type { CommonPickerProps, PickerMode } from '../types'
 const Picker = <T extends PickerMode>({
   color,
   date,
-  extraIcon,
   enablePortal,
   errors,
   loading,
@@ -103,8 +102,8 @@ const Picker = <T extends PickerMode>({
       pickerMode={pickerMode}
       dateRange={dateRange}
     >
-      <div className="dp-relative">
-        <div ref={triggerRef} className="dp-relative">
+      <div style={{ position: 'relative' }}>
+        <div ref={triggerRef} style={{ position: 'relative' }}>
           {pickerMode === 'DATERANGE' ? (
             <DateRangeInput
               onDateRangeChange={onDateRangeChange}
@@ -123,18 +122,11 @@ const Picker = <T extends PickerMode>({
               timezone={timezone}
               {...textInputProps}
               stateIcon={
-                <>
-                  {loading && (
-                    <span className="dp-absolute dp-top-1/2 -dp-translate-y-1/2 dp-right-[10px]">
-                      <div className="dp-button-loader dp-button-loader-sm dp-border-gray-400/75 dp-border-l-gray-400/25" />
-                    </span>
-                  )}
-                  {extraIcon && (
-                    <span className="dp-absolute dp-items-center dp-justify-center dp-top-1/2 -dp-translate-y-1/2 dp-right-[10px]">
-                      {extraIcon}
-                    </span>
-                  )}
-                </>
+                loading ? (
+                  <span className="spinner-container">
+                    <div className="spinner" />
+                  </span>
+                ) : undefined
               }
             />
           )}

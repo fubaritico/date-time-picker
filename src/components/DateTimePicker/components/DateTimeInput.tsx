@@ -244,7 +244,6 @@ const DateTimeInput: FC<DateInputProps> = ({
   return (
     <InputWithMask
       alwaysShowMask
-      className="dp-font-roboto"
       color={color}
       mask={inputMaskInstance?.getMask()}
       value={inputValue ?? ''}

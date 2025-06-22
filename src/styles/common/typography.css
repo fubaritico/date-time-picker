@@ -28,4 +28,6 @@
   /* Font family */
   --font-family-roboto: Roboto, sans-serif;
   --font-family-robotoMono: RobotoMono, sans-serif;
+  /* */
+  --time-setter-value: 4rem; /* 64px */
 }
