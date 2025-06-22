@@ -1,0 +1,62 @@
+@import url('common/colors.css');
+@import url('common/spacing.css');
+@import url('common/miscellaneous.css');
+@import url('common/typography.css');
+
+/* base as a monochrome theme */
+.Panel {
+  /* Colors basic definition for each mode */
+  --bg-light: var(--white);
+  --bg-dark: var(--gray-800);
+
+  /* Default values (light mode) */
+  --bg: var(--bg-light);
+
+  /* Basic styles (enabled) */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg);
+  font-family: var(--font-family-roboto);
+  border-radius: var(--br-lg);
+  box-shadow: var(--box-shadox-elevation-1);
+}
+
+.Panel.portal {
+  z-index: 999;
+}
+
+.Panel:not(.not-range-picker) {
+  width: max-content;
+}
+
+/* Sizes */
+.Panel.sm.not-range-picker {
+  width: 272px;
+}
+
+.Panel.md.not-range-picker {
+  width: 308px;
+}
+
+.Panel.lg.not-range-picker {
+  width: 400px;
+}
+
+/* Dark mode from system */
+@media (prefers-color-scheme: dark) {
+  /* Default values (light mode) */
+  .Panel:not(.light *) {
+    --bg: var(--bg-dark);
+  }
+}
+
+/* Forced dark mode */
+.dark * .Panel {
+  --bg: var(--bg-dark);
+}
+
+/* Forced light mode */
+.light * .Panel {
+  --bg: var(--bg-light);
+}

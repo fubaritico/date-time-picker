@@ -244,18 +244,10 @@ const Panel: FC<PanelProps> = ({
           ignoreClickAwayRef={ignoreClickAwayRef}
         >
           <div
-            className={clsx(
-              'dp-flex dp-flex-col dp-bg-white dp-font-roboto',
-              'dp-rounded-lg dp-shadow-elevation-1 dp-absolute dp-left-0 dp-top-[54px]',
-              'dark:dp-bg-gray-800',
-              {
-                'dp-z-[999]': enablePortal,
-                'dp-w-max': !enablePortal && !isNotDateRangePicker,
-                'dp-w-[400px]': isNotDateRangePicker && size === 'lg',
-                'dp-w-[308px]': isNotDateRangePicker && size === 'md',
-                'dp-w-[272px]': isNotDateRangePicker && size === 'sm',
-              }
-            )}
+            className={clsx('Panel', size, {
+              portal: enablePortal,
+              'not-range-picker': isNotDateRangePicker,
+            })}
             ref={nodeRef}
             style={{
               position: 'absolute',

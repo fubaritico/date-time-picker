@@ -185,7 +185,6 @@
 
 }
 
-
 /* Forced dark mode */
 .dark * .PanelButton:not(.selected) {
   --text: var(--text-dark);
@@ -197,86 +196,107 @@
 .PanelButton.selected.red:hover {
   --selected-bg: var(--red-600);
 }
+
 .PanelButton.selected.orange,
 .PanelButton.selected.orange:hover {
   --selected-bg: var(--orange-600);
 }
+
 .PanelButton.selected.amber,
 .PanelButton.selected.amber:hover {
   --selected-bg: var(--amber-600);
 }
+
 .PanelButton.selected.yellow,
 .PanelButton.selected.yellow:hover {
   --selected-bg: var(--yellow-600);
 }
+
 .PanelButton.selected.lime,
 .PanelButton.selected.lime:hover {
   --selected-bg: var(--lime-600);
 }
+
 .PanelButton.selected.green,
 .PanelButton.selected.green:hover {
   --selected-bg: var(--green-600);
 }
+
 .PanelButton.selected.emerald,
 .PanelButton.selected.emerald:hover {
   --selected-bg: var(--emerald-600);
 }
+
 .PanelButton.selected.teal,
 .PanelButton.selected.teal:hover {
   --selected-bg: var(--teal-600);
 }
+
 .PanelButton.selected.cyan,
 .PanelButton.selected.cyan:hover {
   --selected-bg: var(--cyan-600);
 }
+
 .PanelButton.selected.sky,
 .PanelButton.selected.sky:hover {
   --selected-bg: var(--sky-600);
 }
+
 .PanelButton.selected.blue,
 .PanelButton.selected.blue:hover {
   --selected-bg: var(--blue-600);
 }
+
 .PanelButton.selected.indigo,
 .PanelButton.selected.indigo:hover {
   --selected-bg: var(--indigo-600);
 }
+
 .PanelButton.selected.violet,
 .PanelButton.selected.violet:hover {
   --selected-bg: var(--violet-600);
 }
+
 .PanelButton.selected.purple,
 .PanelButton.selected.purple:hover {
   --selected-bg: var(--purple-600);
 }
+
 .PanelButton.selected.fuchsia,
 .PanelButton.selected.fuchsia:hover {
   --selected-bg: var(--fuchsia-600);
 }
+
 .PanelButton.selected.pink,
 .PanelButton.selected.pink:hover {
   --selected-bg: var(--pink-600);
 }
+
 .PanelButton.selected.rose,
 .PanelButton.selected.rose:hover {
   --selected-bg: var(--rose-600);
 }
+
 .PanelButton.selected.slate,
 .PanelButton.selected.slate:hover {
   --selected-bg: var(--slate-600);
 }
+
 .PanelButton.selected.gray,
 .PanelButton.selected.gray:hover {
   --selected-bg: var(--gray-600);
 }
+
 .PanelButton.selected.zinc,
 .PanelButton.selected.zinc:hover {
   --selected-bg: var(--zinc-600);
 }
+
 .PanelButton.selected.neutral,
 .PanelButton.selected.neutral:hover {
   --selected-bg: var(--neutral-600);
 }
+
 .PanelButton.selected.stone,
 .PanelButton.selected.stone:hover {
   --selected-bg: var(--stone-600);
