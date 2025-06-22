@@ -2,7 +2,7 @@
 @import url('common/spacing.css');
 @import url('common/miscellaneous.css');
 
-.DateBrowser {
+.PanelHeader {
   /* Colors basic definition for each mode */
   --text-light: var(--gray-600);
   --text-dark: var(--gray-300);
@@ -20,36 +20,46 @@
   color: var(--text);
 }
 
+/* Sizes */
+.PanelHeader.sm .PanelHeader-content {
+  font-size: var(--text-xs);
+}
+
+.PanelHeader.md .PanelHeader-content,
+.PanelHeader.lg .PanelHeader-content {
+  font-size: var(--text-sm);
+}
+
 /* Dark mode from system */
 @media (prefers-color-scheme: dark) {
-  .DateBrowser:not(.light *) {
+  .PanelHeader:not(.light *) {
     --text: var(--text-dark);
     --arrow: var(--arrow-dark);
   }
 }
 
 /* Force dark mode */
-.dark * .DateBrowser {
+.dark * .PanelHeader {
   --text: var(--text-dark);
   --arrow: var(--arrow-dark);
 }
 
 /* Force light mode */
-.light * .DateBrowser {
+.light * .PanelHeader {
   --text: var(--text-light);
   --arrow: var(--arrow-light);
 }
 
 /* Sizes */
-.DateBrowser.sm, .DateBrowser.md {
+.PanelHeader.sm, .PanelHeader.md {
   padding: var(--spacing-4) var(--spacing-4) var(--spacing-2) var(--spacing-4);
 }
 
-.DateBrowser.lg {
+.PanelHeader.lg {
   padding: var(--spacing-6) var(--spacing-6) var(--spacing-3) var(--spacing-6);
 }
 
-.DateBrowser > button {
+.PanelHeader > button {
   appearance: none;
   border: none;
   background: transparent;
@@ -57,18 +67,18 @@
   width: var(--svg-md);
 }
 
-.DateBrowser > button:disabled {
+.PanelHeader > button:disabled {
   cursor: not-allowed;
   opacity: 0.5;
 }
 
-.DateBrowser > button > svg {
+.PanelHeader > button > svg {
   width: var(--svg-sm);
   height: var(--svg-sm);
   color: var(--arrow);
 }
 
-.DateBrowser > div {
+.PanelHeader > div {
   display: flex;
   font-weight: bold;
   gap: var(--spacing-1);

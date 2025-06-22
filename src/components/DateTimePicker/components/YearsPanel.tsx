@@ -3,9 +3,10 @@ import { useCallback, useEffect, useState } from 'react'
 
 import { addYears, getYearFromTs, subtractYears } from '@utils'
 
-import Icon from '../../Icon'
 import useDateTimePicker from '../hooks/useDateTimePicker'
 import usePanelDomRect from '../hooks/usePanelDomRect'
+
+import PanelHeader from './PanelHeader'
 
 import type { FC, MouseEvent } from 'react'
 
@@ -80,64 +81,26 @@ const YearsPanel: FC<YearsPanelProps> = ({ className, onDateChange, size }) => {
 
   return (
     <div
-      className={clsx('dp-flex dp-flex-col', className)}
+      className={clsx('ChoicePanel', size, className)}
       data-test="year-panel"
       ref={panelRef}
     >
-      <div
-        className={clsx(
-          'dp-flex dp-gap-4 dp-text-gray-600 dp-justify-between',
-          {
-            'dp-px-6 dp-pt-6 dp-pb-3': size === 'lg',
-            'dp-px-4 dp-pt-4 dp-pb-2': size === 'md' || size === 'sm',
-          }
-        )}
+      <PanelHeader
+        size={size}
+        nextButtonAriaLabel="Previous 12 years"
+        onNextButtonClick={gotoNextYearsRange}
+        onPrevButtonClick={gotoPrevYearsRange}
+        prevButtonAriaLabel="Next 12 years"
       >
-        <button
-          aria-label="Previous 12 years"
-          className={clsx(
-            'dp-appearance-none dp-border-none dp-bg-transparent dp-cursor-pointer dp-w-6'
-          )}
-          onClick={gotoPrevYearsRange}
-        >
-          <Icon
-            aria-hidden
-            name="HiChevronLeft"
-            className="dp-w-6 dark:dp-text-gray-200"
-          />
-        </button>
-        <div
-          className={clsx(
-            'dp-flex dp-font-bold dp-gap-1 dark:dp-text-gray-100',
-            {
-              'dp-text-sm': size === 'md',
-              'dp-text-xs': size === 'sm',
-            }
-          )}
-        >
-          <span aria-label={getYearFromTs(year).toString()}>
-            {getYearFromTs(year).toString()}
-          </span>
-          {'-'}
-          <span aria-label={getYearFromTs(addYears(year, 11)).toString()}>
-            {getYearFromTs(addYears(year, 11)).toString()}
-          </span>
-        </div>
-        <button
-          aria-label="Next 12 years"
-          className={clsx(
-            'dp-appearance-none dp-border-none dp-bg-transparent dp-cursor-pointer dp-w-6'
-          )}
-          onClick={gotoNextYearsRange}
-        >
-          <Icon
-            aria-hidden
-            name="HiChevronRight"
-            className="dp-w-6 dark:dp-text-gray-200"
-          />
-        </button>
-      </div>
-      <div role="grid" className="dp-grid dp-grid-cols-3 dp-gap-4 dp-p-4">
+        <span aria-label={getYearFromTs(year).toString()}>
+          {getYearFromTs(year).toString()}
+        </span>
+        {' - '}
+        <span aria-label={getYearFromTs(addYears(year, 11)).toString()}>
+          {getYearFromTs(addYears(year, 11)).toString()}
+        </span>
+      </PanelHeader>
+      <div role="grid" className="panel-grid">
         {Array.from({ length: 12 }, (_, i) => i).map((offset) => {
           const yearWithOffset = getYearFromTs(addYears(year, offset))
 

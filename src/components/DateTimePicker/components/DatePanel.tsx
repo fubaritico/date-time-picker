@@ -1,11 +1,18 @@
 import { useCallback, useMemo } from 'react'
 
-import { addMonths, subtractMonths } from '@utils'
+import {
+  addMonths,
+  getMonthNameFromTs,
+  getYearFromTs,
+  subtractMonths,
+} from '@utils'
 
 import { useDateTimePicker, usePanelDomRect } from '../hooks'
+import { PanelView } from '../types'
 
-import DateBrowser from './DateBrowser'
 import DaysGrid from './DaysGrid'
+import PanelHeader from './PanelHeader'
+import PanelHeaderButton from './PanelHeaderButton'
 
 import type { FC } from 'react'
 
@@ -41,7 +48,8 @@ export interface DatePanelProps {
  */
 const DatePanel: FC<DatePanelProps> = ({ className, onDateChange, size }) => {
   // SHARED STATE
-  const { innerDate, msOffset, setInnerDate } = useDateTimePicker()
+  const { color, locale, msOffset, innerDate, setInnerDate, setPanelView } =
+    useDateTimePicker()
 
   const panelRef = usePanelDomRect()
 
@@ -90,12 +98,32 @@ const DatePanel: FC<DatePanelProps> = ({ className, onDateChange, size }) => {
       style={{ display: 'flex', flexDirection: 'column' }}
       ref={panelRef}
     >
-      <DateBrowser
-        date={panelDate}
+      <PanelHeader
         size={size}
-        onNextMonthClick={gotoNextMonth}
-        onPrevMonthClick={gotoPrevMonth}
-      />
+        nextButtonAriaLabel="Previous Month"
+        onNextButtonClick={gotoNextMonth}
+        onPrevButtonClick={gotoPrevMonth}
+        prevButtonAriaLabel="Next Month"
+      >
+        <PanelHeaderButton
+          aria-label={getMonthNameFromTs(panelDate + msOffset, locale)}
+          color={color}
+          isClickable
+          label={getMonthNameFromTs(panelDate + msOffset, locale)}
+          onClick={() => {
+            setPanelView(PanelView.MONTHS)
+          }}
+        />
+        <PanelHeaderButton
+          aria-label={getYearFromTs(panelDate).toString()}
+          color={color}
+          isClickable
+          label={getYearFromTs(panelDate)}
+          onClick={() => {
+            setPanelView(PanelView.YEARS)
+          }}
+        />
+      </PanelHeader>
       <DaysGrid date={panelDate} size={size} onDateChange={onDateChange} />
     </div>
   )

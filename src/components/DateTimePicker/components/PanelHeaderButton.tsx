@@ -4,22 +4,22 @@ import { ConditionalWrapper } from '@components'
 
 import type { ComponentProps, FC, ReactNode } from 'react'
 
-export interface DateBrowserButtonProps
+export interface PanelHeaderButtonProps
   extends Omit<ComponentProps<'button'>, 'color'> {
   /* Component theme color, overrides default color */
   color?: UIColor
-  /* If true, the component will render a button leading to either the month or year panel */
-  hasDatePickerMode: boolean
+  /* If true, the component will render a clickable button */
+  isClickable?: boolean
   /* The button label */
   label: ReactNode
   /* The function called by the button if a button is rendered */
-  onClick: () => void
+  onClick?: () => void
   /* Component size: 'sm' | 'md' | 'lg' */
   size?: UISize
 }
 
-const DateBrowserButton: FC<DateBrowserButtonProps> = ({
-  hasDatePickerMode,
+const PanelHeaderButton: FC<PanelHeaderButtonProps> = ({
+  isClickable,
   color,
   label,
   onClick,
@@ -28,11 +28,11 @@ const DateBrowserButton: FC<DateBrowserButtonProps> = ({
 }) => {
   return (
     <ConditionalWrapper
-      condition={hasDatePickerMode}
+      condition={isClickable ?? false}
       wrapper={(children: ReactNode) => (
         <button
           aria-label={rest['aria-label'] ?? 'Select'}
-          className={clsx('DateBrowserButton', color, size)}
+          className={clsx('PanelHeaderButton', color, size)}
           onClick={onClick}
         >
           {children}
@@ -44,4 +44,4 @@ const DateBrowserButton: FC<DateBrowserButtonProps> = ({
   )
 }
 
-export default DateBrowserButton
+export default PanelHeaderButton

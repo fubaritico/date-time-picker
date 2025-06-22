@@ -1,14 +1,20 @@
 import clsx from 'clsx'
 import { useCallback } from 'react'
 
-import { addMonths, subtractMonths } from '@utils'
+import {
+  addMonths,
+  getMonthNameFromTs,
+  getYearFromTs,
+  subtractMonths,
+} from '@utils'
 
 import { useDateRangePanel, useDateTimePicker } from '../hooks'
+import { DateRange } from '../types'
 
-import DateBrowser from './DateBrowser'
 import DaysGrid from './DaysGrid'
+import PanelHeader from './PanelHeader'
+import PanelHeaderButton from './PanelHeaderButton'
 
-import type { DateRange } from '../types'
 import type { FC } from 'react'
 
 export interface DateRangePanelProps {
@@ -29,7 +35,8 @@ const DateRangePanel: FC<DateRangePanelProps> = ({
   const { leftGridMonth, rightGridMonth, setLeftGridMonth, setRightGridMonth } =
     useDateRangePanel()
   // SHARED STATE FROM DATE TIME PICKER CONTEXT
-  const { innerDateRange, setInnerDateRange } = useDateTimePicker()
+  const { color, msOffset, innerDateRange, locale, setInnerDateRange } =
+    useDateTimePicker()
 
   /**
    * Function to set the left grid month to the previous month when possible.
@@ -106,13 +113,25 @@ const DateRangePanel: FC<DateRangePanelProps> = ({
   return (
     <div className={clsx('DateRangePanel', className)}>
       <div className="start-date-panel" data-test="start-date-panel">
-        <DateBrowser
-          date={leftGridMonth}
+        <PanelHeader
           size={size}
-          onNextMonthClick={onNextMonthClickFromLeftGrid}
-          onPrevMonthClick={onPrevMonthClickFromLeftGrid}
-          disableNextMonth={addMonths(leftGridMonth, 1) >= rightGridMonth}
-        />
+          nextButtonAriaLabel="Previous Month"
+          onNextButtonClick={onNextMonthClickFromLeftGrid}
+          onPrevButtonClick={onPrevMonthClickFromLeftGrid}
+          disableNextButton={addMonths(leftGridMonth, 1) >= rightGridMonth}
+          prevButtonAriaLabel="Next Month"
+        >
+          <PanelHeaderButton
+            aria-label={getMonthNameFromTs(leftGridMonth + msOffset, locale)}
+            color={color}
+            label={getMonthNameFromTs(leftGridMonth + msOffset, locale)}
+          />
+          <PanelHeaderButton
+            aria-label={getYearFromTs(leftGridMonth).toString()}
+            color={color}
+            label={getYearFromTs(leftGridMonth)}
+          />
+        </PanelHeader>
         <DaysGrid
           date={leftGridMonth}
           size={size}
@@ -122,13 +141,25 @@ const DateRangePanel: FC<DateRangePanelProps> = ({
       </div>
       <div className="separator" />
       <div className="end-date-panel" data-test="end-date-panel">
-        <DateBrowser
-          date={rightGridMonth}
+        <PanelHeader
           size={size}
-          onNextMonthClick={onNextMonthClickFromRightGrid}
-          onPrevMonthClick={onPrevMonthClickFromRightGrid}
-          disablePrevMonth={subtractMonths(rightGridMonth, 1) <= leftGridMonth}
-        />
+          nextButtonAriaLabel="Previous Month"
+          onNextButtonClick={onNextMonthClickFromRightGrid}
+          onPrevButtonClick={onPrevMonthClickFromRightGrid}
+          disablePrevButton={subtractMonths(rightGridMonth, 1) <= leftGridMonth}
+          prevButtonAriaLabel="Next Month"
+        >
+          <PanelHeaderButton
+            aria-label={getMonthNameFromTs(rightGridMonth + msOffset, locale)}
+            color={color}
+            label={getMonthNameFromTs(rightGridMonth + msOffset, locale)}
+          />
+          <PanelHeaderButton
+            aria-label={getYearFromTs(rightGridMonth).toString()}
+            color={color}
+            label={getYearFromTs(rightGridMonth)}
+          />
+        </PanelHeader>
         <DaysGrid
           date={rightGridMonth}
           size={size}

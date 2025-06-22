@@ -1296,7 +1296,6 @@
   }
 }
 
-
 /* Forced dark mode */
 .dark * .DaysGridCell:focus-visible {
   --focus-visible-outline: var(--focus-visible-outline-dark);
@@ -2001,7 +2000,6 @@
   --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
 }
 
-
 .dark * .DaysGridCell.indigo:focus-visible {
   --focus-visible-outline-dark: var(--indigo-700);
   --focus-visible-outline: var(--focus-visible-outline-dark);
@@ -2024,7 +2022,6 @@
   --inrange-text-dark: var(--indigo-200);
   --inrange-text: var(--inrange-text-dark);
 }
-
 
 .dark * .DaysGridCell.today.indigo:not(.inRange) {
   --today-text-dark: var(--indigo-600);
@@ -2051,7 +2048,6 @@
   --selectedEndDate-bg-dark: var(--indigo-600);
   --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
 }
-
 
 .dark * .DaysGridCell.violet:focus-visible {
   --focus-visible-outline-dark: var(--violet-700);
@@ -2103,7 +2099,6 @@
   --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
 }
 
-
 .dark * .DaysGridCell.purple:focus-visible {
   --focus-visible-outline-dark: var(--purple-700);
   --focus-visible-outline: var(--focus-visible-outline-dark);
@@ -2126,7 +2121,6 @@
   --inrange-text-dark: var(--purple-200);
   --inrange-text: var(--inrange-text-dark);
 }
-
 
 .dark * .DaysGridCell.today.purple:not(.inRange) {
   --today-text-dark: var(--purple-600);
@@ -2154,7 +2148,6 @@
   --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
 }
 
-
 .dark * .DaysGridCell.fuchsia:focus-visible {
   --focus-visible-outline-dark: var(--fuchsia-700);
   --focus-visible-outline: var(--focus-visible-outline-dark);
@@ -2177,7 +2170,6 @@
   --inrange-text-dark: var(--fuchsia-200);
   --inrange-text: var(--inrange-text-dark);
 }
-
 
 .dark * .DaysGridCell.today.fuchsia:not(.inRange) {
   --today-text-dark: var(--fuchsia-600);
@@ -2205,7 +2197,6 @@
   --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
 }
 
-
 .dark * .DaysGridCell.pink:focus-visible {
   --focus-visible-outline-dark: var(--pink-700);
   --focus-visible-outline: var(--focus-visible-outline-dark);
@@ -2228,7 +2219,6 @@
   --inrange-text-dark: var(--pink-200);
   --inrange-text: var(--inrange-text-dark);
 }
-
 
 .dark * .DaysGridCell.today.pink:not(.inRange) {
   --today-text-dark: var(--pink-600);
@@ -2256,7 +2246,6 @@
   --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
 }
 
-
 .dark * .DaysGridCell.rose:focus-visible {
   --focus-visible-outline-dark: var(--rose-700);
   --focus-visible-outline: var(--focus-visible-outline-dark);
@@ -2279,7 +2268,6 @@
   --inrange-text-dark: var(--rose-200);
   --inrange-text: var(--inrange-text-dark);
 }
-
 
 .dark * .DaysGridCell.today.rose:not(.inRange) {
   --today-text-dark: var(--rose-600);
@@ -2331,7 +2319,6 @@
   --inrange-text: var(--inrange-text-dark);
 }
 
-
 .dark * .DaysGridCell.today.slate:not(.inRange) {
   --today-text-dark: var(--slate-600);
   --today-border-dark: var(--slate-600);
@@ -2358,7 +2345,6 @@
   --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
 }
 
-
 .dark * .DaysGridCell.gray:focus-visible {
   --focus-visible-outline-dark: var(--gray-700);
   --focus-visible-outline: var(--focus-visible-outline-dark);
@@ -2381,7 +2367,6 @@
   --inrange-text-dark: var(--gray-200);
   --inrange-text: var(--inrange-text-dark);
 }
-
 
 .dark * .DaysGridCell.today.gray:not(.inRange) {
   --today-text-dark: var(--gray-600);
@@ -2409,7 +2394,6 @@
   --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
 }
 
-
 .dark * .DaysGridCell.zinc:focus-visible {
   --focus-visible-outline-dark: var(--zinc-700);
   --focus-visible-outline: var(--focus-visible-outline-dark);
@@ -2432,7 +2416,6 @@
   --inrange-text-dark: var(--zinc-200);
   --inrange-text: var(--inrange-text-dark);
 }
-
 
 .dark * .DaysGridCell.today.zinc:not(.inRange) {
   --today-text-dark: var(--zinc-600);
@@ -2484,7 +2467,6 @@
   --inrange-text: var(--inrange-text-dark);
 }
 
-
 .dark * .DaysGridCell.today.neutral:not(.inRange) {
   --today-text-dark: var(--neutral-600);
   --today-border-dark: var(--neutral-600);
@@ -2511,7 +2493,6 @@
   --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
 }
 
-
 .dark * .DaysGridCell.stone:focus-visible {
   --focus-visible-outline-dark: var(--stone-700);
   --focus-visible-outline: var(--focus-visible-outline-dark);
@@ -2534,7 +2515,6 @@
   --inrange-text-dark: var(--stone-200);
   --inrange-text: var(--inrange-text-dark);
 }
-
 
 .dark * .DaysGridCell.today.stone:not(.inRange) {
   --today-text-dark: var(--stone-600);

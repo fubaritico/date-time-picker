@@ -1,0 +1,26 @@
+@import url('common/spacing.css');
+
+.ChoicePanel {
+  display: flex;
+  flex-direction: column;
+}
+
+.ChoicePanel .panel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.ChoicePanel.sm .panel-grid {
+  gap: var(--spacing-4);
+  padding: var(--spacing-3);
+}
+
+.ChoicePanel.md .panel-grid {
+  gap: var(--spacing-4);
+  padding: var(--spacing-4);
+}
+
+.ChoicePanel.lg .panel-grid {
+  gap: var(--spacing-4);
+  padding: var(--spacing-5);
+}

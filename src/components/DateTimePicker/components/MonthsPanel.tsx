@@ -10,9 +10,11 @@ import {
   subtractYears,
 } from '@utils'
 
-import Icon from '../../Icon'
 import useDateTimePicker from '../hooks/useDateTimePicker'
 import usePanelDomRect from '../hooks/usePanelDomRect'
+
+import PanelHeader from './PanelHeader'
+import PanelHeaderButton from './PanelHeaderButton'
 
 import type { FC, MouseEvent } from 'react'
 
@@ -102,52 +104,24 @@ const MonthsPanel: FC<MonthsPanelProps> = ({
 
   return (
     <div
-      className={clsx('dp-flex dp-flex-col', className)}
+      className={clsx('ChoicePanel', size, className)}
       data-test="month-panel"
       ref={panelRef}
     >
-      <div
-        className={clsx('dp-flex gap-4 dp-text-gray-600 dp-justify-between', {
-          'dp-px-6 dp-pt-6 dp-pb-3': size === 'lg',
-          'dp-px-4 dp-pt-4 dp-pb-2': size === 'md' || size === 'sm',
-        })}
+      <PanelHeader
+        size={size}
+        nextButtonAriaLabel="Previous Year"
+        onNextButtonClick={gotoNextYear}
+        onPrevButtonClick={gotoPrevYear}
+        prevButtonAriaLabel="Next Year"
       >
-        <button
-          aria-label="Previous Year"
-          className={clsx(
-            'dp-appearance-none dp-border-none dp-bg-transparent dp-cursor-pointer dp-w-6'
-          )}
-          onClick={gotoPrevYear}
-        >
-          <Icon
-            aria-hidden
-            name="HiChevronLeft"
-            className="dp-w-6 dark:dp-text-gray-200"
-          />
-        </button>
-        <div
-          className={clsx('dp-font-bold dark:dp-text-gray-100', {
-            'dp-text-sm': size === 'md',
-            'dp-text-xs': size === 'sm',
-          })}
-        >
-          {formatToYYYYMMDD(date).split('-')[0]}
-        </div>
-        <button
-          aria-label="Next Year"
-          className={clsx(
-            'dp-appearance-none dp-border-none dp-bg-transparent dp-cursor-pointer dp-w-6'
-          )}
-          onClick={gotoNextYear}
-        >
-          <Icon
-            aria-hidden
-            name="HiChevronRight"
-            className="dp-w-6 dark:dp-text-gray-200"
-          />
-        </button>
-      </div>
-      <div role="grid" className="dp-grid dp-grid-cols-3 dp-gap-4 dp-p-4">
+        <PanelHeaderButton
+          aria-label={formatToYYYYMMDD(date).split('-')[0]}
+          color={color}
+          label={formatToYYYYMMDD(date).split('-')[0]}
+        />
+      </PanelHeader>
+      <div role="grid" className="panel-grid">
         {getAllMonthNames('long', locale).map((monthName, i, allMonthNames) => {
           return (
             <button
