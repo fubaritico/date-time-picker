@@ -1,7 +1,6 @@
 import clsx from 'clsx'
 import { forwardRef } from 'react'
 
-import { cx } from '@utils'
 import { Icon } from '@components'
 
 import useDateTimePicker from '../hooks/useDateTimePicker'
@@ -22,15 +21,12 @@ const DateTimeSwitcher = forwardRef<HTMLDivElement, DataTimeSwitcherProps>(
       <div className={clsx('DateTimeSwitcher', size)} ref={ref}>
         <button
           aria-label="Switch to days view"
-          className={cx(
-            'DateTimeSwitcherButton',
-            color ?? 'blue',
-            size,
-            'dp-rounded-tl-lg',
-            {
-              selected: panelView !== PanelView.TIME,
-            }
-          )}
+          className={clsx('DateTimeSwitcherButton', color ?? 'blue', size, {
+            selected: panelView !== PanelView.TIME,
+          })}
+          style={{
+            borderTopLeftRadius: '0.5rem',
+          }}
           onClick={() => {
             setPanelView(PanelView.DAYS)
           }}
@@ -42,15 +38,12 @@ const DateTimeSwitcher = forwardRef<HTMLDivElement, DataTimeSwitcherProps>(
         </button>
         <button
           aria-label="Switch to time view"
-          className={cx(
-            'DateTimeSwitcherButton',
-            color,
-            size,
-            'dp-rounded-tr-lg',
-            {
-              selected: panelView === PanelView.TIME,
-            }
-          )}
+          className={clsx('DateTimeSwitcherButton', color, size, {
+            selected: panelView === PanelView.TIME,
+          })}
+          style={{
+            borderTopRightRadius: '0.5rem',
+          }}
           onClick={() => {
             setPanelView(PanelView.TIME)
           }}

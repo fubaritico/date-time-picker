@@ -90,7 +90,10 @@ const DateRangeInput: FC<DateInputProps> = ({
     >
       <div className={clsx('DateRangeInput', color)}>
         {labelOnlyProperties(inputTextProps).label !== '' && (
-          <Label className="dp-mb-2" {...labelOnlyProperties(inputTextProps)} />
+          <Label
+            style={{ marginBottom: '0.5rem' }}
+            {...labelOnlyProperties(inputTextProps)}
+          />
         )}
         <div data-focus={focus}>
           <InputWithMask

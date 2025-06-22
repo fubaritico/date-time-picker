@@ -66,7 +66,6 @@ const InputWithMask: FC<InputWithMaskProps> = ({
       onFocus={onFocus}
     >
       <TextField
-        className="dp-font-roboto-mono"
         iconAriaLabel="Open calendar panel"
         iconName={
           withPanel

@@ -207,11 +207,11 @@ const TimePanel: FC<TimePanelProps> = ({ className, onDateChange, size }) => {
 
   return (
     <div
-      className={clsx('dp-flex dp-flex-col', className)}
+      className={clsx('TimePanel', className)}
       data-test="time-panel"
       ref={panelRef}
     >
-      <div className="dp-flex dp-items-center dp-justify-center dp-gap-2 dp-p-6">
+      <div className="TimePanel-setters">
         <TimePanelSetter
           date={
             dateUsesAMPM && getCurrentAMPM(date) === 'PM'
@@ -232,9 +232,7 @@ const TimePanel: FC<TimePanelProps> = ({ className, onDateChange, size }) => {
           onTopButtonClick={gotoNextHour}
           unit="hour"
         />
-        <div className="dp-text-gray-900 dark:dp-text-white dp-text-[64px] dp-font-bold dp-leading-[64px]">
-          :
-        </div>
+        <div className="separator">:</div>
         <TimePanelSetter
           date={padNumber(
             getMinutes(
@@ -247,7 +245,7 @@ const TimePanel: FC<TimePanelProps> = ({ className, onDateChange, size }) => {
         />
       </div>
       {dateUsesAMPM && (
-        <div className="dp-flex dp-gap-3 dp-p-3">
+        <div className="TimePanel-buttons">
           <button
             aria-label="Choose AM"
             className={clsx('PanelButton', color, size, {

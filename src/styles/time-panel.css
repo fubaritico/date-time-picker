@@ -1,0 +1,57 @@
+@import url('common/spacing.css');
+@import url('common/typography.css');
+@import url('common/miscellaneous.css');
+
+.TimePanel {
+  /* Colors basic definition for each mode */
+  --text-light: var(--neutral-900);
+  --text-dark: var(--white);
+
+  /* Default values (light mode) */
+  --text: var(--text-light);
+
+  /* Basic styles (enabled) */
+  display: flex;
+  flex-direction: column;
+}
+
+.TimePanel .TimePanel-setters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-6);
+}
+
+.TimePanel .TimePanel-buttons {
+  display: flex;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3);
+}
+
+.TimePanel .TimePanel-setters .separator {
+  font-family: var(--font-family-robotoMono), serif;
+  font-size: var(--time-setter-value);
+  color: var(--text);
+  font-weight: 600;
+  line-height: var(--time-setter-value);
+  text-align: center;
+}
+
+/* Dark mode from system */
+@media (prefers-color-scheme: dark) {
+  /* Default values (light mode) */
+  .TimePanel:not(.light *) .TimePanel-setters .separator {
+    --text: var(--text-dark);
+  }
+}
+
+/* Forced dark mode */
+.dark * .TimePanel .TimePanel-setters .separator {
+  --text: var(--text-dark);
+}
+
+/* Forced light mode */
+.light * .TimePanel .TimePanel-setters .separator {
+  --text: var(--text-light);
+}

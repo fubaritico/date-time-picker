@@ -2,9 +2,9 @@ import clsx from 'clsx'
 
 import Icon from '../Icon'
 
-import type { FC } from 'react'
+import type { ComponentProps, FC } from 'react'
 
-export interface LabelProps {
+export interface LabelProps extends ComponentProps<'label'> {
   /* Extra CSS classes (tailwind) */
   className?: string
   /* Parent input is disabled */
@@ -26,11 +26,13 @@ const Label: FC<LabelProps> = ({
   label,
   size,
   required,
+  ...rest
 }) => {
   return (
     <label
       className={clsx('Label', className, size, { disabled: disabled })}
       htmlFor={label.replace(/\s/g, '')}
+      {...rest}
     >
       <span className={clsx('text', { required: required })}>{label}</span>
       {labelInfo && <Icon name="HiMiniQuestionMarkCircle" />}
