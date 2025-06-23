@@ -174,3 +174,82 @@
   --bg-color: var(--bg-color-light);
   --text-color: var(--text-light);
 }
+
+/* **************** text field integration ***************** */
+.textfield-integration {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  padding-top: 70px;
+}
+
+.textfield-integration-header {
+  --border-color-light: var(--gray-200);
+  --border-color-dark: var(--gray-800);
+  --bg-color-light: var(--gray-100);
+  --bg-color-dark: var(--gray-900);
+  --text-color-light: var(--gray-800);
+  --text-color-dark: var(--gray-300);
+
+  --border-color: var(--border-color-light);
+  --bg-color: var(--bg-color-light);
+  --text-color: var(--text-color-light);
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-6);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  padding: var(--spacing-4);
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Dark mode from system */
+@media (prefers-color-scheme: dark) {
+  /* Default values (light mode) */
+  .textfield-integration-header:not(.light *) {
+    --border-color: var(--border-color-dark);
+    --bg-color: var(--bg-color-dark);
+    --text-color: var(--text-color-dark);
+  }
+}
+
+/* Forced dark mode */
+.dark * .textfield-integration-header {
+  --border-color: var(--border-color-dark);
+  --bg-color: var(--bg-color-dark);
+  --text-color: var(--text-color-dark);
+}
+
+/* Forced light mode */
+.light * .textfield-integration-header {
+  --border-color: var(--border-color-light);
+  --bg-color: var(--bg-color-light);
+  --text-color: var(--text-color-light);
+}
+
+.textfield-integration-header h3 {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  margin: 0;
+}
+
+.textfield-integration-body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-6);
+  width: 100%;
+}
+
+.textfield-integration-body-column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: var(--spacing-4);
+}
