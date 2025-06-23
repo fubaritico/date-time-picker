@@ -119,7 +119,7 @@ const TextField: FC<TextFieldProps> = forwardRef<
       >
         {label && (
           <Label
-            className="dp-mb-1"
+            style={{ marginBottom: '0.25rem' }}
             disabled={disabled}
             label={label}
             labelInfo={labelInfo}

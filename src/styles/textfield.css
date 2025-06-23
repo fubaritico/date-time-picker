@@ -11,7 +11,7 @@
   --border-light: var(--neutral-300);
   --border-dark: var(--neutral-600);
   --bg-light: hsl(from var(--white) h s l / 0.5);
-  --bg-dark: hsl(from var(--black) h s l / 0.5);
+  --bg-dark: hsl(from var(--black) h s l / 0.25);
   --clear-icon-light: var(--neutral-500);
   --clear-icon-dark: var(--neutral-400);
   --placeholder-light: var(--neutral-400);
