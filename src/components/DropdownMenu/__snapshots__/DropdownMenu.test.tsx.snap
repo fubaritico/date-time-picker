@@ -3,48 +3,41 @@
 exports[`DropdownMenu Selectable should render 1`] = `
 <div>
   <div
-    class="dp-w-[200px]"
+    style="width: 200px;"
   >
     <div
-      class="dp-flex dp-flex-col dp-gap-1 dp-max-w-[210px]"
+      class="Dropdown full-width"
     >
       <div
-        class="dp-relative dp-w-full"
+        class="container"
       >
         <div
-          class="w-auto"
+          class="button-container"
         >
           <button
             aria-label="Select a value"
-            class="dp-flex dp-flex-wrap dp-justify-between dp-items-center dp-font-normal dp-border dp-transition-all dp-duration-300 dp-outline-none active:enabled:dp-outline active:enabled:dp-outline-4 disabled:dp-cursor-not-allowed disabled:dp-opacity-50 dp-text-base dp-py-0 dp-px-5 dp-gap-3 dp-h-[52px] dp-rounded-lg dp-text-white/85 dp-bg-stone-500 dp-border-stone-500 hover:enabled:dp-bg-stone-600 hover:enabled:dp-border-stone-600 active:enabled:dp-outline-stone-200 [&_#spinner]:dp-border-white/75 [&_#spinner]:dp-border-r-white/25 dp-w-full dp-flex-nowrap"
+            class="Button lg primary stone right has-icon"
+            data-test="dropdown-value"
           >
-            <span
-              class="dp-truncate dp-flex-shrink"
-              data-test="dropdown-value"
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
             >
+              <path
+                clip-rule="evenodd"
+                d="M11.47 7.72a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06L12 9.31l-6.97 6.97a.75.75 0 0 1-1.06-1.06l7.5-7.5Z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            <span>
               Select a value
             </span>
-            <div
-              class="dp-w-5 dp-justify-self-end dp-mt-0.5"
-            >
-              <svg
-                aria-hidden="true"
-                class="dp-text-white dp-transition-transform dp-size-5"
-                fill="currentColor"
-                height="1em"
-                stroke="currentColor"
-                stroke-width="0"
-                viewBox="0 0 24 24"
-                width="1em"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  clip-rule="evenodd"
-                  d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
-                  fill-rule="evenodd"
-                />
-              </svg>
-            </div>
           </button>
         </div>
       </div>
@@ -56,141 +49,137 @@ exports[`DropdownMenu Selectable should render 1`] = `
 exports[`DropdownMenu Selectable should render menu on label/button click 1`] = `
 <div>
   <div
-    class="dp-w-[200px]"
+    style="width: 200px;"
   >
     <div
-      class="dp-flex dp-flex-col dp-gap-1 dp-max-w-[210px]"
+      class="Dropdown full-width"
     >
       <div
-        class="dp-relative dp-w-full"
+        class="container"
       >
         <div
-          class="w-auto"
+          class="button-container"
         >
           <button
             aria-label="Select a value"
-            class="dp-flex dp-flex-wrap dp-justify-between dp-items-center dp-font-normal dp-border dp-transition-all dp-duration-300 dp-outline-none active:enabled:dp-outline active:enabled:dp-outline-4 disabled:dp-cursor-not-allowed disabled:dp-opacity-50 dp-text-base dp-py-0 dp-px-5 dp-gap-3 dp-h-[52px] dp-rounded-lg dp-text-white/85 dp-bg-stone-500 dp-border-stone-500 hover:enabled:dp-bg-stone-600 hover:enabled:dp-border-stone-600 active:enabled:dp-outline-stone-200 [&_#spinner]:dp-border-white/75 [&_#spinner]:dp-border-r-white/25 dp-w-full dp-flex-nowrap"
+            class="Button lg primary stone right has-icon"
+            data-test="dropdown-value"
           >
-            <span
-              class="dp-truncate dp-flex-shrink"
-              data-test="dropdown-value"
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
             >
+              <path
+                clip-rule="evenodd"
+                d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            <span>
               Select a value
             </span>
-            <div
-              class="dp-w-5 dp-justify-self-end dp-mb-0.5"
-            >
-              <svg
-                aria-hidden="true"
-                class="dp-text-white dp-transition-transform dp-size-5 dp-rotate-180"
-                fill="currentColor"
-                height="1em"
-                stroke="currentColor"
-                stroke-width="0"
-                viewBox="0 0 24 24"
-                width="1em"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  clip-rule="evenodd"
-                  d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
-                  fill-rule="evenodd"
-                />
-              </svg>
-            </div>
           </button>
         </div>
         <div>
           <div
-            class="dp-bg-white dp-shadow dp-rounded-sm dp-absolute dp-z-[999] dp-overflow-hidden menu-enter menu-enter-active"
+            class="Menu lg menu-enter menu-enter-active"
             data-test="dropdown-menu"
             style="position: absolute; top: 0px; left: 0px; visibility: hidden;"
           >
-            <ul
-              class="dp-flex dp-flex-col"
-            >
+            <ul>
               <li
-                class="dp-w-full"
+                class="MenuItem"
               >
                 <button
                   aria-current="false"
                   aria-disabled="false"
                   aria-label="Quick save "
-                  class="dp-flex dp-flex-wrap dp-justify-between dp-items-center dp-font-normal dp-border dp-transition-all dp-duration-300 dp-outline-none active:enabled:dp-outline active:enabled:dp-outline-4 disabled:dp-cursor-not-allowed disabled:dp-opacity-50 dp-text-base dp-py-0 dp-px-5 dp-gap-3 dp-h-[52px] dp-rounded-lg dp-bg-transparent dp-border-0 active:enabled:dp-outline-none dp-rounded-none text-stone-500 dp-truncate dp-text-left dp-w-full dp-flex-nowrap dp-justify-start !dp-px-4 !dp-h-10"
+                  class="Button lg ghost stone left not-rounded"
                 >
-                  <span
-                    class="dp-truncate dp-flex-shrink"
-                    id="item-Quick save"
-                  >
-                    Quick save 
+                  <span>
+                    <span
+                      id="item-Quick save"
+                    >
+                      Quick save 
+                    </span>
                   </span>
                 </button>
               </li>
               <li
-                class="dp-w-full"
+                class="MenuItem"
               >
                 <button
                   aria-current="false"
                   aria-disabled="false"
                   aria-label="Save"
-                  class="dp-flex dp-flex-wrap dp-justify-between dp-items-center dp-font-normal dp-border dp-transition-all dp-duration-300 dp-outline-none active:enabled:dp-outline active:enabled:dp-outline-4 disabled:dp-cursor-not-allowed disabled:dp-opacity-50 dp-text-base dp-py-0 dp-px-5 dp-gap-3 dp-h-[52px] dp-rounded-lg dp-bg-transparent dp-border-0 active:enabled:dp-outline-none dp-rounded-none text-stone-500 dp-truncate dp-text-left dp-w-full dp-flex-nowrap dp-justify-start !dp-px-4 !dp-h-10"
+                  class="Button lg ghost stone left not-rounded"
                 >
-                  <span
-                    class="dp-truncate dp-flex-shrink"
-                    id="item-Save"
-                  >
-                    Save
+                  <span>
+                    <span
+                      id="item-Save"
+                    >
+                      Save
+                    </span>
                   </span>
                 </button>
               </li>
               <li
-                class="dp-w-full"
+                class="MenuItem"
               >
                 <button
                   aria-current="false"
                   aria-disabled="false"
                   aria-label="Reassign"
-                  class="dp-flex dp-flex-wrap dp-justify-between dp-items-center dp-font-normal dp-border dp-transition-all dp-duration-300 dp-outline-none active:enabled:dp-outline active:enabled:dp-outline-4 disabled:dp-cursor-not-allowed disabled:dp-opacity-50 dp-text-base dp-py-0 dp-px-5 dp-gap-3 dp-h-[52px] dp-rounded-lg dp-bg-transparent dp-border-0 active:enabled:dp-outline-none dp-rounded-none text-stone-500 dp-truncate dp-text-left dp-w-full dp-flex-nowrap dp-justify-start !dp-px-4 !dp-h-10"
+                  class="Button lg ghost stone left not-rounded"
                 >
-                  <span
-                    class="dp-truncate dp-flex-shrink"
-                    id="item-Reassign"
-                  >
-                    Reassign
+                  <span>
+                    <span
+                      id="item-Reassign"
+                    >
+                      Reassign
+                    </span>
                   </span>
                 </button>
               </li>
               <li
-                class="dp-w-full"
+                class="MenuItem"
               >
                 <button
                   aria-current="false"
                   aria-disabled="false"
                   aria-label="Edit"
-                  class="dp-flex dp-flex-wrap dp-justify-between dp-items-center dp-font-normal dp-border dp-transition-all dp-duration-300 dp-outline-none active:enabled:dp-outline active:enabled:dp-outline-4 disabled:dp-cursor-not-allowed disabled:dp-opacity-50 dp-text-base dp-py-0 dp-px-5 dp-gap-3 dp-h-[52px] dp-rounded-lg dp-bg-transparent dp-border-0 active:enabled:dp-outline-none dp-rounded-none text-stone-500 dp-truncate dp-text-left dp-w-full dp-flex-nowrap dp-justify-start !dp-px-4 !dp-h-10"
+                  class="Button lg ghost stone left not-rounded"
                 >
-                  <span
-                    class="dp-truncate dp-flex-shrink"
-                    id="item-Edit"
-                  >
-                    Edit
+                  <span>
+                    <span
+                      id="item-Edit"
+                    >
+                      Edit
+                    </span>
                   </span>
                 </button>
               </li>
               <li
-                class="dp-w-full"
+                class="MenuItem"
               >
                 <button
                   aria-current="false"
                   aria-disabled="false"
                   aria-label="Delete"
-                  class="dp-flex dp-flex-wrap dp-justify-between dp-items-center dp-font-normal dp-border dp-transition-all dp-duration-300 dp-outline-none active:enabled:dp-outline active:enabled:dp-outline-4 disabled:dp-cursor-not-allowed disabled:dp-opacity-50 dp-text-base dp-py-0 dp-px-5 dp-gap-3 dp-h-[52px] dp-rounded-lg dp-bg-transparent dp-border-0 active:enabled:dp-outline-none dp-rounded-none text-stone-500 dp-truncate dp-text-left dp-w-full dp-flex-nowrap dp-justify-start !dp-px-4 !dp-h-10"
+                  class="Button lg ghost stone left not-rounded"
                 >
-                  <span
-                    class="dp-truncate dp-flex-shrink"
-                    id="item-Delete"
-                  >
-                    Delete
+                  <span>
+                    <span
+                      id="item-Delete"
+                    >
+                      Delete
+                    </span>
                   </span>
                 </button>
               </li>

@@ -14,7 +14,7 @@ const Integration: FC<IntegrationProps> = (props) => {
   const [currentValue, setCurrentValue] = useState(props.value)
 
   return (
-    <div className="dp-w-[200px]">
+    <div style={{ width: 200 }}>
       {props.children({ props, currentValue, setCurrentValue })}
     </div>
   )

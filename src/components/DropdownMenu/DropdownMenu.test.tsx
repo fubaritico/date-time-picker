@@ -218,10 +218,10 @@ describe('DropdownMenu', () => {
       })
 
       expect(
-        within(screen.getByTestId('dropdown-menu')).getAllByRole('button', {
+        within(screen.getByTestId('dropdown-menu')).getAllByRole('listitem', {
           hidden: true,
         })[0]
-      ).toHaveClass('!dp-bg-blue-100 hover:!dp-bg-blue-200 !dp-text-blue-500')
+      ).toHaveClass('selected')
 
       expect(
         within(screen.getByTestId('dropdown-menu')).getAllByRole('button', {
@@ -252,10 +252,10 @@ describe('DropdownMenu', () => {
       })
 
       expect(
-        within(screen.getByTestId('dropdown-menu')).getAllByRole('button', {
+        within(screen.getByTestId('dropdown-menu')).getAllByRole('listitem', {
           hidden: true,
         })[1]
-      ).toHaveClass('!dp-bg-blue-100 hover:!dp-bg-blue-200 !dp-text-blue-500')
+      ).toHaveClass('selected')
 
       expect(
         within(screen.getByTestId('dropdown-menu')).getAllByRole('button', {

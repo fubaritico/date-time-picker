@@ -1,0 +1,79 @@
+@import './common/spacing.css';
+@import './common/colors.css';
+@import './common/miscellaneous.css';
+@import './common/typography.css';
+
+.Dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.Dropdown.full-width {
+  max-width: 210px;
+}
+
+.Dropdown.disabled {
+  pointer-events: none;
+}
+
+.Dropdown .Label {
+  margin-bottom: var(--spacing-1);
+}
+
+.Dropdown .container {
+  position: relative;
+  width: 100%;
+}
+
+.Dropdown .button-container:not(.has-trigger-component) {
+  width: auto;
+}
+
+.Dropdown .button-container.has-trigger-component {
+  width: fit-content;
+}
+
+.Dropdown .button-container.has-trigger-component button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.Dropdown .button-container:not(.has-trigger-component) .Button {
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+.Dropdown.menu-full-width .Menu {
+  width: 100%;
+}
+
+.react-node-example {
+  display: flex;
+  flex-direction: column;
+}
+
+.react-node-example span:nth-child(1) {
+  font-size: var(--text-sm);
+  font-weight: bold;
+}
+
+.react-node-example span:nth-child(2) {
+  font-size: var(--text-xs);
+}
+
+.trigger-component-example {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--day-cell-width-lg);
+  height: var(--day-cell-height-lg);
+  background-color: var(--white);
+}
+
+.trigger-component-example svg {
+  height: var(--svg-xl);
+  width: var(--svg-xl);
+}

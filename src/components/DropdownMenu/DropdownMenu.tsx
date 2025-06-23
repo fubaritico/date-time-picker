@@ -147,15 +147,19 @@ const DropdownMenu: FC<DropdownMenuProps> = ({
 
   return (
     <div
-      className={clsx('dp-flex dp-flex-col dp-gap-1', rootClassName, {
-        'dp-max-w-[210px]': !dropdownFullWidth,
-        'dp-pointer-events-none': disabled ?? loading,
-      })}
+      className={clsx(
+        'Dropdown',
+        {
+          'full-width': !dropdownFullWidth,
+          'menu-full-width': menuFullWidth,
+          disabled: disabled ?? loading,
+        },
+        rootClassName
+      )}
       style={{ width }}
     >
       {label && (
         <Label
-          className="dp-mb-1"
           label={label}
           labelInfo={labelInfo}
           required={required}
@@ -163,12 +167,12 @@ const DropdownMenu: FC<DropdownMenuProps> = ({
           disabled={disabled}
         />
       )}
-      <div className="dp-relative dp-w-full">
+      <div className="container">
         <div
           className={clsx(
-            'w-auto',
+            'button-container',
             {
-              '!w-fit': triggerComponent,
+              'has-trigger-component': triggerComponent,
             },
             triggerComponentClassName
           )}
@@ -177,7 +181,6 @@ const DropdownMenu: FC<DropdownMenuProps> = ({
         >
           {triggerComponent ? (
             <button
-              className="dp-appearance-none dp-border-0 dp-bg-transparent dp-p-0"
               onClick={() => {
                 setIsOpen(!isOpen)
               }}
@@ -192,7 +195,6 @@ const DropdownMenu: FC<DropdownMenuProps> = ({
               }
               icon={isOpen ? 'HiChevronDown' : 'HiChevronUp'}
               iconPosition="right"
-              className="dp-w-full dp-flex-nowrap"
               data-test="dropdown-value"
               label={currentLabel}
               loading={loading}
@@ -209,11 +211,10 @@ const DropdownMenu: FC<DropdownMenuProps> = ({
         </div>
         <Menu
           buttonComponent={buttonComponent}
-          className={clsx({ 'dp-w-full': menuFullWidth })}
           color={color}
           enablePortal={enablePortal}
           items={items ?? []}
-          menuWidth={menuWidth} // Don't really know what to do with that, to be settled.
+          menuWidth={menuWidth}
           onClose={closeMenu}
           onMenuItemClick={handleMenuItemClick}
           open={isOpen}

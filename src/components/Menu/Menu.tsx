@@ -1,5 +1,12 @@
 import clsx from 'clsx'
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react'
 import { CSSTransition } from 'react-transition-group'
 
 import { FADE_ANIMATION_DURATION } from '@constants'
@@ -20,8 +27,6 @@ import type {
   ReactNode,
   RefObject,
 } from 'react'
-
-export type MenuPlacement = 'bottom-start' | 'bottom-end'
 
 export type MenuProps = HTMLAttributes<HTMLDivElement> & {
   /* The version of button used in place of 'Button component', must extend Button interface */
@@ -88,7 +93,7 @@ const Menu: FC<MenuProps> = ({
    * If the menu goes beyond the viewport on the right, it is placed on the left of the button.
    * The position is also updated on resize and on menu change.
    *
-   * On first opening, the visibility of the menu needs to be set to 'hidden'.
+   * On the first opening, the visibility of the menu needs to be set to 'hidden'.
    */
   const computePlacement = useCallback(() => {
     if (!triggerRef.current || !menuRef.current) return
@@ -139,7 +144,7 @@ const Menu: FC<MenuProps> = ({
       let newTop = triggerRect.height + verticalGap
       let newLeft = 0
 
-      // Adjust if panel goes beyond viewport
+      // Adjust if the panel goes beyond the viewport
       if (triggerRect.bottom + menuRect.height + verticalGap > viewportHeight) {
         newTop = 0 - (menuRect.height + verticalGap)
       }
@@ -182,6 +187,23 @@ const Menu: FC<MenuProps> = ({
   )
 
   /**
+   * Each time the menu opens, compute the scroll top of the menu content
+   * if any item is selected.
+   */
+  useEffect(() => {
+    if (open && menuRef.current) {
+      const targetLi = menuRef.current.querySelector('.selected')
+
+      if (targetLi !== null) {
+        const topPos = (targetLi as HTMLLIElement).offsetTop
+        menuRef.current.scrollTo({
+          top: topPos,
+        })
+      }
+    }
+  }, [open])
+
+  /**
    * Update the menu placement on resize
    */
   useEffect(() => {
@@ -197,7 +219,7 @@ const Menu: FC<MenuProps> = ({
   /**
    * To open new, reset visibility to hidden
    */
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!open && absolutePosition.visibility === 'hidden') {
       setAbsolutePosition({ ...absolutePosition, visibility: 'hidden' })
     }
