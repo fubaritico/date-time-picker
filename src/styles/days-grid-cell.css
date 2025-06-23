@@ -2578,7 +2578,7 @@
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.red:not(.inRange):hover
+.DaysGridCell.today.red:not(.inRange):hover,
 .light * .DaysGridCell.today.red:not(.inRange):hover {
   --today-hover-text-light: var(--red-600);
   --today-hover-border-light: var(--red-600);
@@ -2638,7 +2638,7 @@
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.orange:not(.inRange):hover
+.DaysGridCell.today.orange:not(.inRange):hover,
 .light * .DaysGridCell.today.orange:not(.inRange):hover {
   --today-hover-text-light: var(--orange-600);
   --today-hover-border-light: var(--orange-600);
@@ -2698,7 +2698,7 @@
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.amber:not(.inRange):hover
+.DaysGridCell.today.amber:not(.inRange):hover,
 .light * .DaysGridCell.today.amber:not(.inRange):hover {
   --today-hover-text-light: var(--amber-600);
   --today-hover-border-light: var(--amber-600);
@@ -2758,7 +2758,7 @@
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.yellow:not(.inRange):hover
+.DaysGridCell.today.yellow:not(.inRange):hover,
 .light * .DaysGridCell.today.yellow:not(.inRange):hover {
   --today-hover-text-light: var(--yellow-600);
   --today-hover-border-light: var(--yellow-600);
@@ -2818,7 +2818,7 @@
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.lime:not(.inRange):hover
+.DaysGridCell.today.lime:not(.inRange):hover,
 .light * .DaysGridCell.today.lime:not(.inRange):hover {
   --today-hover-text-light: var(--lime-600);
   --today-hover-border-light: var(--lime-600);
@@ -2878,7 +2878,7 @@
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.green:not(.inRange):hover
+.DaysGridCell.today.green:not(.inRange):hover,
 .light * .DaysGridCell.today.green:not(.inRange):hover {
   --today-hover-text-light: var(--green-600);
   --today-hover-border-light: var(--green-600);
@@ -2938,7 +2938,7 @@
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.emerald:not(.inRange):hover
+.DaysGridCell.today.emerald:not(.inRange):hover,
 .light * .DaysGridCell.today.emerald:not(.inRange):hover {
   --today-hover-text-light: var(--emerald-600);
   --today-hover-border-light: var(--emerald-600);
@@ -2998,7 +2998,7 @@
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.teal:not(.inRange):hover
+.DaysGridCell.today.teal:not(.inRange):hover,
 .light * .DaysGridCell.today.teal:not(.inRange):hover {
   --today-hover-text-light: var(--teal-600);
   --today-hover-border-light: var(--teal-600);
@@ -3058,7 +3058,7 @@
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.cyan:not(.inRange):hover
+.DaysGridCell.today.cyan:not(.inRange):hover,
 .light * .DaysGridCell.today.cyan:not(.inRange):hover {
   --today-hover-text-light: var(--cyan-600);
   --today-hover-border-light: var(--cyan-600);
@@ -3118,7 +3118,7 @@
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.sky:not(.inRange):hover
+.DaysGridCell.today.sky:not(.inRange):hover,
 .light * .DaysGridCell.today.sky:not(.inRange):hover {
   --today-hover-text-light: var(--sky-600);
   --today-hover-border-light: var(--sky-600);
@@ -3178,7 +3178,7 @@
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.blue:not(.inRange):hover
+.DaysGridCell.today.blue:not(.inRange):hover,
 .light * .DaysGridCell.today.blue:not(.inRange):hover {
   --today-hover-text-light: var(--blue-600);
   --today-hover-border-light: var(--blue-600);
@@ -3238,7 +3238,7 @@
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.indigo:not(.inRange):hover
+.DaysGridCell.today.indigo:not(.inRange):hover,
 .light * .DaysGridCell.today.indigo:not(.inRange):hover {
   --today-hover-text-light: var(--indigo-600);
   --today-hover-border-light: var(--indigo-600);
@@ -3298,7 +3298,7 @@
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.violet:not(.inRange):hover
+.DaysGridCell.today.violet:not(.inRange):hover,
 .light * .DaysGridCell.today.violet:not(.inRange):hover {
   --today-hover-text-light: var(--violet-600);
   --today-hover-border-light: var(--violet-600);
@@ -3358,7 +3358,7 @@
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.purple:not(.inRange):hover
+.DaysGridCell.today.purple:not(.inRange):hover,
 .light * .DaysGridCell.today.purple:not(.inRange):hover {
   --today-hover-text-light: var(--purple-600);
   --today-hover-border-light: var(--purple-600);
@@ -3418,7 +3418,7 @@
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.fuchsia:not(.inRange):hover
+.DaysGridCell.today.fuchsia:not(.inRange):hover,
 .light * .DaysGridCell.today.fuchsia:not(.inRange):hover {
   --today-hover-text-light: var(--fuchsia-600);
   --today-hover-border-light: var(--fuchsia-600);
@@ -3478,7 +3478,7 @@
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.pink:not(.inRange):hover
+.DaysGridCell.today.pink:not(.inRange):hover,
 .light * .DaysGridCell.today.pink:not(.inRange):hover {
   --today-hover-text-light: var(--pink-600);
   --today-hover-border-light: var(--pink-600);
@@ -3538,7 +3538,7 @@
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.rose:not(.inRange):hover
+.DaysGridCell.today.rose:not(.inRange):hover,
 .light * .DaysGridCell.today.rose:not(.inRange):hover {
   --today-hover-text-light: var(--rose-600);
   --today-hover-border-light: var(--rose-600);
@@ -3598,7 +3598,7 @@
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.slate:not(.inRange):hover
+.DaysGridCell.today.slate:not(.inRange):hover,
 .light * .DaysGridCell.today.slate:not(.inRange):hover {
   --today-hover-text-light: var(--slate-600);
   --today-hover-border-light: var(--slate-600);
@@ -3658,7 +3658,7 @@
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.gray:not(.inRange):hover
+.DaysGridCell.today.gray:not(.inRange):hover,
 .light * .DaysGridCell.today.gray:not(.inRange):hover {
   --today-hover-text-light: var(--gray-600);
   --today-hover-border-light: var(--gray-600);
@@ -3718,7 +3718,7 @@
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.zinc:not(.inRange):hover
+.DaysGridCell.today.zinc:not(.inRange):hover,
 .light * .DaysGridCell.today.zinc:not(.inRange):hover {
   --today-hover-text-light: var(--zinc-600);
   --today-hover-border-light: var(--zinc-600);
@@ -3778,7 +3778,7 @@
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.neutral:not(.inRange):hover
+.DaysGridCell.today.neutral:not(.inRange):hover,
 .light * .DaysGridCell.today.neutral:not(.inRange):hover {
   --today-hover-text-light: var(--neutral-600);
   --today-hover-border-light: var(--neutral-600);
@@ -3838,7 +3838,7 @@
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.stone:not(.inRange):hover
+.DaysGridCell.today.stone:not(.inRange):hover,
 .light * .DaysGridCell.today.stone:not(.inRange):hover {
   --today-hover-text-light: var(--stone-600);
   --today-hover-border-light: var(--stone-600);
