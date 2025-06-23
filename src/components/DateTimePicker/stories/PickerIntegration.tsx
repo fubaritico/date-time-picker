@@ -1,8 +1,13 @@
 import { useState } from 'react'
 
-import { Button, DropdownMenu, I18nDate, languages } from '@components'
+import {
+  Button,
+  DropdownMenu,
+  I18nDate,
+  languages,
+  timezones,
+} from '@components'
 
-import FakeContent from './FakeContent'
 import localeAwareFormatItems from './localeAwareFormatItems'
 
 import type {
@@ -32,14 +37,12 @@ export type PickerIntegrationProps = CommonPickerProps<PickerType> & {
 const PickerIntegration = ({
   PickerComponent,
   controls = true,
-  placement,
-  timezone = 'America/New_York',
-  locale: l,
   outputFormat,
   ...props
 }: PickerIntegrationProps) => {
   const [date, setDate] = useState<number | undefined>(props.date)
-  const [locale, setLocale] = useState(l ?? 'fr_FR')
+  const [timezone, setTimezone] = useState<Timezone | undefined>(props.timezone)
+  const [locale, setLocale] = useState(props.locale ?? 'fr_FR')
   const [localeAwareFormat, setLocaleAwareFormat] = useState<LocaleAwareFormat>(
     outputFormat ?? (localeAwareFormatItems[0].value as LocaleAwareFormat)
   )
@@ -56,11 +59,14 @@ const PickerIntegration = ({
     setDate(p_date)
   }
 
+  const handleTimezoneChange = (p_timezone?: string) => {
+    setTimezone(p_timezone as Timezone)
+  }
+
   return (
-    <div className="dp-flex dp-flex-col dp-min-h-screen dp-w-full dp-pt-[120px]">
-      {placement === 'bottom-start' && <FakeContent />}
+    <div className="picker-integration">
       {controls && (
-        <div className="dp-flex dp-gap-4 dp-flex-start dp-items-end dp-border-bdp-border-l-gray-200 dp-border-b-gray-200 dark:dp-border-b-gray-700 dp-bg-white dark:dp-bg-gray-800 dp-fixed dp-p-6 dp-w-full dp-top-0 dp-left-0">
+        <div className="picker-integration-header">
           <DropdownMenu
             size="md"
             buttonComponent={Button}
@@ -85,11 +91,25 @@ const PickerIntegration = ({
             onValueChange={handleFormatSelection}
             showSelectedValue
             value={localeAwareFormat}
-            width={400}
-            menuWidth={400}
+            width={200}
+            menuWidth={500}
+          />
+          <DropdownMenu
+            size="md"
+            buttonComponent={Button}
+            dropdownFullWidth
+            variant="primary"
+            label="Timezone"
+            placement="bottom-start"
+            items={timezones}
+            onValueChange={handleTimezoneChange}
+            showSelectedValue
+            value={timezone}
+            width={200}
+            menuWidth={500}
           />
           {date && (
-            <div className="dp-flex dp-items-end dp-gap-1 dp-px-4 dp-self-stretch dp-grow dp-text-gray-900 dp-border-l dp-border-l-gray-200 dark:dp-text-white dark:dp-border-l-gray-700">
+            <div className="picker-integration-value">
               <I18nDate
                 locale={locale}
                 localeAwareFormat={localeAwareFormat}
@@ -100,7 +120,7 @@ const PickerIntegration = ({
           )}
         </div>
       )}
-      <div className="dp-flex dp-gap-4">
+      <div className="picker-integration-body">
         <PickerComponent
           date={date}
           onChange={handleDateChange}
@@ -108,7 +128,6 @@ const PickerIntegration = ({
           timezone={timezone}
         />
       </div>
-      {placement === 'bottom-end' && <FakeContent />}
     </div>
   )
 }

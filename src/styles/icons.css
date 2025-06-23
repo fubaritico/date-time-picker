@@ -1,0 +1,64 @@
+@import url('common/colors.css');
+@import url('common/spacing.css');
+@import url('common/typography.css');
+@import url('common/miscellaneous.css');
+
+.icons {
+  --icon-color-light: var(--gray-900);
+  --icon-color-dark: var(--white);
+  --icon-border-light: var(--gray-300);
+  --icon-border-dark: var(--gray-800);
+
+  --icon-color: var(--icon-color-light);
+  --icon-border: var(--icon-border-light);
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: var(--spacing-4);
+  width: 100%;
+}
+
+.icons .icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-2);
+  border: 1px solid var(--icon-border);
+  border-radius: var(--br-md);
+  transition: var(--transition);
+}
+
+.icons .icon-container svg {
+  height: var(--svg-md);
+  width: var(--svg-md);
+  margin: var(--spacing-5);
+  color: var(--icon-color);
+  transition: var(--transition);
+}
+
+.icons .icon-container span {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  height: var(--day-cell-height-md);
+  width: 100%;
+  padding: 0 var(--spacing-3);
+  color: var(--icon-color);
+  font-size: var(--text-xxs);
+  line-height: var(--line-height-xs);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.dark * .icons {
+  --icon-color: var(--icon-color-dark);
+  --icon-border: var(--icon-border-dark);
+}
+
+.light * .icons {
+  --icon-color: var(--icon-color-light);
+  --icon-border: var(--icon-border-light);
+}

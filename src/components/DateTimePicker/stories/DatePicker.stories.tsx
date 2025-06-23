@@ -1,4 +1,4 @@
-import { withDarkModeForBackground } from '@storybook-decorators/withDarkModeForBackground'
+import { withDatePicker } from '@storybook-decorators/withLayout'
 
 import { timezones } from '@components'
 
@@ -31,7 +31,7 @@ const meta: Meta<typeof DatePicker> = {
   },
   tags: ['autodocs'],
   component: DatePicker,
-  decorators: [withDarkModeForBackground],
+  decorators: [withDatePicker],
 }
 
 export default meta

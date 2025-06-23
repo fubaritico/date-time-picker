@@ -1,10 +1,15 @@
 import { useState } from 'react'
 
-import { Button, DropdownMenu, I18nDate, languages } from '@components'
+import {
+  Button,
+  DropdownMenu,
+  I18nDate,
+  languages,
+  timezones,
+} from '@components'
 
 import DateRangePicker from '../DateRangePicker'
 
-import FakeContent from './FakeContent'
 import localeAwareFormatItems from './localeAwareFormatItems'
 
 import type { CommonPickerProps, DateRange } from '../types'
@@ -29,16 +34,16 @@ export interface DateRangePickerIntegrationProps
  */
 const DateRangePickerIntegration: FC<DateRangePickerIntegrationProps> = ({
   controls = true,
-  placement,
-  timezone = 'America/New_York',
-  locale: l,
   outputFormat,
   ...props
 }) => {
   const [dateRange, setDateRange] = useState<DateRange | undefined>(
     props.dateRange
   )
-  const [locale, setLocale] = useState(l ?? 'fr_FR')
+  const [timezone, setTimezone] = useState<Timezone | undefined>(
+    'America/New_York' as Timezone
+  )
+  const [locale, setLocale] = useState(props.locale ?? 'fr_FR')
   const [localeAwareFormat, setLocaleAwareFormat] = useState<LocaleAwareFormat>(
     outputFormat ?? (localeAwareFormatItems[0].value as LocaleAwareFormat)
   )
@@ -55,11 +60,14 @@ const DateRangePickerIntegration: FC<DateRangePickerIntegrationProps> = ({
     setDateRange(p_dateRange)
   }
 
+  const handleTimezoneChange = (p_timezone?: string) => {
+    setTimezone(p_timezone as Timezone)
+  }
+
   return (
-    <div className="dp-flex dp-flex-col dp-min-h-screen dp-w-full dp-pt-[120px]">
-      {placement === 'bottom-start' && <FakeContent />}
+    <div className="picker-integration">
       {controls && (
-        <div className="dp-flex dp-gap-4 dp-flex-start dp-items-end dp-border-bdp-border-l-gray-200 dp-border-b-gray-200 dark:dp-border-b-gray-700 dp-bg-white dark:dp-bg-gray-800 dp-fixed dp-z-[9999] dp-p-6 dp-w-full dp-top-0 dp-left-0">
+        <div className="picker-integration-header">
           <DropdownMenu
             size="md"
             buttonComponent={Button}
@@ -84,11 +92,25 @@ const DateRangePickerIntegration: FC<DateRangePickerIntegrationProps> = ({
             onValueChange={handleFormatSelection}
             showSelectedValue
             value={localeAwareFormat}
-            width={400}
-            menuWidth={400}
+            width={200}
+            menuWidth={500}
+          />
+          <DropdownMenu
+            size="md"
+            buttonComponent={Button}
+            dropdownFullWidth
+            variant="primary"
+            label="Timezone"
+            placement="bottom-start"
+            items={timezones}
+            onValueChange={handleTimezoneChange}
+            showSelectedValue
+            value={timezone}
+            width={200}
+            menuWidth={500}
           />
           {dateRange && (
-            <div className="dp-flex dp-items-end dp-gap-1 dp-px-4 dp-self-stretch dp-grow dp-text-gray-900 dp-border-l dp-border-l-gray-200 dark:dp-text-white dark:dp-border-l-gray-700">
+            <div className="picker-integration-value">
               <I18nDate
                 locale={locale}
                 localeAwareFormat={localeAwareFormat}
@@ -106,7 +128,7 @@ const DateRangePickerIntegration: FC<DateRangePickerIntegrationProps> = ({
           )}
         </div>
       )}
-      <div className="dp-flex dp-gap-4">
+      <div className="picker-integration-body">
         <DateRangePicker
           {...props}
           dateRange={dateRange}
@@ -115,7 +137,6 @@ const DateRangePickerIntegration: FC<DateRangePickerIntegrationProps> = ({
           timezone={timezone}
         />
       </div>
-      {placement === 'bottom-end' && <FakeContent />}
     </div>
   )
 }

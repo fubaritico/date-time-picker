@@ -1,4 +1,4 @@
-import { withDarkModeForBackground } from '@storybook-decorators/withDarkModeForBackground'
+import { withDatePicker } from '@storybook-decorators/withLayout'
 
 import { COLORS } from '@constants'
 import { timezones } from '@components'
@@ -32,7 +32,7 @@ const meta: Meta<typeof DateTimePicker> = {
   },
   tags: ['autodocs'],
   component: DateTimePicker,
-  decorators: [withDarkModeForBackground],
+  decorators: [withDatePicker],
 }
 
 export default meta
@@ -49,6 +49,7 @@ export const Controlled: IntegrationStory = {
   render: (args: PickerIntegrationProps) => <PickerIntegration {...args} />,
   name: 'Controlled',
   args: {
+    date: 1723220893000,
     PickerComponent: DateTimePicker as AnyPickerComponent,
   },
   argTypes: disabledControls,

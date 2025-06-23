@@ -109,6 +109,11 @@ const disabledControls = {
       disable: true,
     },
   },
+  PickerComponent: {
+    table: {
+      disable: true,
+    },
+  },
   pickerMode: {
     table: {
       disable: true,
@@ -125,6 +130,11 @@ const disabledControls = {
     },
   },
   size: {
+    table: {
+      disable: true,
+    },
+  },
+  timezone: {
     table: {
       disable: true,
     },

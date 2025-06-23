@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
+import { withLayout } from '@storybook-decorators/withLayout'
 import * as hi2 from 'react-icons/hi2'
 
 import { COLORS } from '@constants'
@@ -73,6 +74,7 @@ const meta = {
     },
   },
   tags: ['autodocs'],
+  decorators: [withLayout],
   component: Button,
 } satisfies Meta<typeof Button>
 

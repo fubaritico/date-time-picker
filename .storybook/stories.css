@@ -3,7 +3,83 @@
 @import '../src/styles/common/spacing.css';
 @import '../src/styles/common/miscellaneous.css';
 
-/* Simple hard coded native CSS for stories */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* **************** Stories layout decorator **************** */
+.with-padding,
+.with-layout,
+.with-centered-layout,
+.with-date-picker {
+  --bg-dark: var(--gray-900);
+  --bg-light: var(--gray-100);
+
+  --bg: var(--bg-light);
+
+  background-color: var(--bg);
+
+  display: flex;
+  width: 100%;
+}
+
+.with-padding {
+  padding: var(--spacing-4);
+}
+
+.with-layout,
+.with-date-picker {
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+}
+
+.with-centered-layout {
+  align-items: center;
+  justify-content: center;
+}
+
+.with-date-picker  {
+  min-height: 100vh;
+  min-width: 100vw;
+  padding: var(--spacing-8);
+}
+
+.with-layout,
+.with-centered-layout,
+.with-date-picker {
+  min-height: 100vh;
+}
+
+/* Dark mode from system */
+@media (prefers-color-scheme: dark) {
+  /* Default values (light mode) */
+  .with-padding:not(.light *),
+  .with-layout:not(.light *),
+  .with-centered-layout:not(.light *),
+  .with-date-picker:not(.light *) {
+    --bg: var(--bg-dark);
+  }
+}
+
+/* Forced dark mode */
+.dark * .with-padding,
+.dark * .with-layout,
+.dark * .with-centered-layout,
+.dark * .with-date-picker {
+  --bg: var(--bg-dark);
+}
+
+/* Forced light mode */
+.light * .with-padding,
+.light * .with-layout,
+.light * .with-centered-layout,
+.light * .with-light-mode {
+  --bg: var(--bg-light);
+}
+
+/* ******* Simple hard coded native CSS for stories ******* */
 .case-blocks {
   display: flex;
   flex-direction: column;
@@ -23,4 +99,78 @@
   font-size: var(--text-xl);
   font-weight: 600;
   width: 100%;
+}
+
+/* **************** date picker integration **************** */
+.picker-integration {
+  --border-color-light: var(--gray-200);
+  --border-color-dark: var(--gray-700);
+  --bg-color-light: var(--white);
+  --bg-color-dark: var(--gray-800);
+  --text-light: var(--gray-800);
+  --text-dark: var(--white);
+
+  --border-color: var(--border-color-light);
+  --bg-color: var(--bg-color-light);
+  --text-color: var(--text-light);
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 120px;
+}
+
+.picker-integration-header {
+  display: flex;
+  gap: var(--spacing-4);
+  align-items: end;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-color);
+  position: fixed;
+  padding: var(--spacing-7);
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.picker-integration-value {
+  display: flex;
+  align-items: end;
+  gap: var(--spacing-1);
+  padding: 0 var(--spacing-4);
+  align-self: stretch;
+  flex-grow: 1;
+  color: var(--text-color);
+  border-left: 1px solid var(--border-color);
+}
+
+.picker-integration-body {
+  display: flex;
+  gap: var(--spacing-4);
+  width: 100%;
+}
+
+/* Dark mode from system */
+@media (prefers-color-scheme: dark) {
+  /* Default values (light mode) */
+  .picker-integration:not(.light *) {
+    --border-color: var(--border-color-dark);
+    --bg-color: var(--bg-color-dark);
+    --text-color: var(--text-dark);
+  }
+}
+
+/* Forced dark mode */
+.dark * .picker-integration {
+  --border-color: var(--border-color-dark);
+  --bg-color: var(--bg-color-dark);
+  --text-color: var(--text-dark);
+}
+
+/* Forced light mode */
+.light * .picker-integration {
+  --border-color: var(--border-color-light);
+  --bg-color: var(--bg-color-light);
+  --text-color: var(--text-light);
 }

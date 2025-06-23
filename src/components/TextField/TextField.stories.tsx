@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { withDarkModeForBackground } from '@storybook-decorators/withDarkModeForBackground'
+import { withDatePicker } from '@storybook-decorators/withLayout'
 import { FC, useState } from 'react'
 
 import { COLORS } from '@constants'
@@ -8,7 +8,7 @@ import TextField, { TextFieldProps } from './TextField'
 
 const meta: Meta<typeof TextField> = {
   title: 'Components/TextField',
-  decorators: [withDarkModeForBackground],
+  decorators: [withDatePicker],
   component: TextField,
   tags: ['autodocs'],
   parameters: {
