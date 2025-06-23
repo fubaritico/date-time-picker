@@ -5,14 +5,12 @@ import './styles.css'
 
 import ControlledDateTimePicker from './controlled-date-time-picker'
 import UncontrolledDateTimePicker from './uncontrolled-date-time-picker'
-import Button from '../src/components/Button'
 
 const App = () => {
   const [value, setValue] = useState<number | undefined>(Date.now())
 
   return (
     <div className="dp-p-8 dp-max-w-4xl dp-mx-auto">
-      <Button color="red" label="moon" variant="primary" icon="HiMoon" />
       <h1 className="dp-text-3xl dp-font-bold dp-mb-6">
         DateTimePicker Preview
       </h1>
