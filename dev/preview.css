@@ -1,0 +1,106 @@
+@import '../src/styles/common/typography.css';
+@import '../src/styles/common/colors.css';
+@import '../src/styles/common/spacing.css';
+@import '../src/styles/common/miscellaneous.css';
+
+body {
+  --bg-light: var(--gray-100);
+  --bg-dark: var(--gray-900);
+  --main-title-color-light: var(--gray-700);
+  --main-title-color-dark: var(--gray-200);
+
+  --bg: var(--bg-light);
+  --main-title-color: var(--main-title-color-light);
+
+  background-color: var(--bg);
+}
+
+.preview-container {
+  padding: var(--spacing-8);
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.preview-container h1 {
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  margin-bottom: var(--spacing-6);
+  color: var(--main-title-color);
+}
+
+.controlled-date-time-picker,
+.uncontrolled-date-time-picker {
+  --border-color-light: var(--gray-300);
+  --border-color-dark: var(--gray-700);
+  --title-color-light: var(--gray-800);
+  --title-color-dark: var(--gray-100);
+  --text-color-light: var(--gray-600);
+  --text-color-dark: var(--gray-400);
+
+  --border-color: var(--border-color-light);
+  --title-color: var(--title-color-light);
+  --text-color: var(--text-color-light);
+
+  margin-bottom: var(--spacing-8);
+}
+
+.controlled-date-time-picker h2,
+.uncontrolled-date-time-picker h2 {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--title-color);
+  margin-bottom: var(--spacing-4);
+}
+
+.controlled-date-time-picker > div:nth-child(2),
+.uncontrolled-date-time-picker > div:nth-child(2) {
+  border: 1px solid var(--border-color);
+  border-radius: var(--br-lg);
+  padding: var(--spacing-4);
+}
+
+.controlled-date-time-picker > div:nth-child(2) > div:nth-child(2),
+.uncontrolled-date-time-picker > div:nth-child(2) > div:nth-child(2) {
+  margin-bottom: var(--spacing-4);
+  display: flex;
+  color: var(--text-color);
+  margin-top: var(--spacing-4);
+}
+
+@media (prefers-color-scheme: dark) {
+  body:not(.light *) {
+    --bg: var(--bg-dark);
+    --main-title-color: var(--main-title-color-dark);
+  }
+
+  .controlled-date-time-picker:not(.light *),
+  .uncontrolled-date-time-picker:not(.light *) {
+    --border-color: var(--border-color-dark);
+    --title-color: var(--title-color-dark);
+    --text-color: var(--text-color-dark);
+  }
+}
+
+.dark * body {
+  --bg: var(--bg-dark);
+  --main-title-color: var(--main-title-color-dark);
+}
+
+.dark * .controlled-date-time-picker,
+.dark * .uncontrolled-date-time-picker {
+  --border-color: var(--border-color-dark);
+  --title-color: var(--title-color-dark);
+  --text-color: var(--text-color-dark);
+}
+
+.light * body {
+  --bg: var(--bg-light);
+  --main-title-color: var(--main-title-color-light);
+}
+
+.light * .controlled-date-time-picker,
+.light * .uncontrolled-date-time-picker {
+  --border-color: var(--border-color-light);
+  --title-color: var(--title-color-light);
+  --text-color: var(--text-color-light);
+}
