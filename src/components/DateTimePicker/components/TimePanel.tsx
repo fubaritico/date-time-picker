@@ -46,12 +46,12 @@ const TimePanel: FC<TimePanelProps> = ({ className, onDateChange, size }) => {
   // COMPONENT STATE
   const {
     color,
-    gmtMsOffset,
+    //gmtMsOffset,
     innerDate,
     msOffset,
     locale,
     pickerMode,
-    isControlled,
+    //isControlled,
   } = useDateTimePicker()
   const [date, setDate] = useState<number>(innerDate ?? Date.now() + msOffset)
 
@@ -215,18 +215,8 @@ const TimePanel: FC<TimePanelProps> = ({ className, onDateChange, size }) => {
         <TimePanelSetter
           date={
             dateUsesAMPM && getCurrentAMPM(date) === 'PM'
-              ? padNumber(
-                  getHours(
-                    date -
-                      (isControlled ? -(gmtMsOffset + msOffset) : msOffset) -
-                      12
-                  )
-                )
-              : padNumber(
-                  getHours(
-                    date - (isControlled ? -(gmtMsOffset + msOffset) : msOffset)
-                  )
-                )
+              ? padNumber(getHours(date) - 12)
+              : padNumber(getHours(date))
           }
           onBottomButtonClick={gotoPrevHour}
           onTopButtonClick={gotoNextHour}
@@ -234,11 +224,7 @@ const TimePanel: FC<TimePanelProps> = ({ className, onDateChange, size }) => {
         />
         <div className="separator">:</div>
         <TimePanelSetter
-          date={padNumber(
-            getMinutes(
-              date - (isControlled ? -(gmtMsOffset + msOffset) : msOffset)
-            )
-          ).toString()}
+          date={padNumber(getMinutes(date)).toString()}
           onBottomButtonClick={gotoPrevMinute}
           onTopButtonClick={gotoNextMinute}
           unit="minute"

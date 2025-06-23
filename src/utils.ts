@@ -36,14 +36,14 @@ export const padNumber = (num: number): string => {
  *
  * @returns {number} minutes
  */
-export const getMinutes = (ts?: number, msOffset = 0): number => {
+export const getMinutes = (ts?: number): number => {
   if (!ts || !checkTsValidity(ts)) {
     throw new Error('[getMinutes] Invalid timestamp')
   }
 
-  const date = new Date(ts - msOffset)
+  const date = new Date(ts)
 
-  return date.getMinutes()
+  return date.getUTCMinutes()
 }
 
 /**
@@ -98,14 +98,14 @@ export const addMinutes = (ts?: number, minutes = 1): number => {
  *
  * @returns {number} hours
  */
-export const getHours = (ts?: number, msOffset = 0): number => {
+export const getHours = (ts?: number): number => {
   if (!ts || !checkTsValidity(ts)) {
     throw new Error('[getHours] Invalid timestamp')
   }
 
-  const date = new Date(ts - msOffset)
+  const date = new Date(ts)
 
-  return date.getHours()
+  return date.getUTCHours()
 }
 
 /**
@@ -877,7 +877,7 @@ export const setNewUtcTimestamp = (
  */
 export const getCurrentAMPM = (ts?: number): string => {
   const altDate = ts ?? Date.now()
-  const currentHour = new Date(altDate).getHours()
+  const currentHour = new Date(altDate).getUTCHours()
 
   return currentHour < 12 ? 'AM' : 'PM'
 }
