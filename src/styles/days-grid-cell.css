@@ -15,11 +15,11 @@
   --disabled-text-light: var(--neutral-300);
   --disabled-text-dark: var(--neutral-600);
   --selected-text-light: var(--white);
-  --selected-text-dark: var(--neutral-900);
+  --selected-text-dark: var(--white);
   --selected-hover-text-light: var(--white);
   --selected-hover-text-dark: var(--white);
   --selected-bg-light: var(--neutral-700);
-  --selected-bg-dark: var(--neutral-900);
+  --selected-bg-dark: var(--white);
   --selected-hover-bg-light: var(--neutral-800);
   --selected-hover-bg-dark: var(--neutral-600);
   --inrange-border-light: var(--white);
@@ -271,12 +271,12 @@
     --focus-visible-outline: var(--focus-visible-outline-dark);
   }
 
-  .DaysGridCell.selected.orange:not(.light *) {
+  .orange:not(.light *) {
     --selected-bg-dark: var(--orange-600);
     --selected-bg: var(--selected-bg-dark);
   }
 
-  .DaysGridCell.selected.orange:not(.light *):hover {
+  .orange:not(.light *):hover {
     --selected-hover-bg-dark: var(--orange-500);
     --selected-hover-bg: var(--selected-hover-bg-dark);
   }
