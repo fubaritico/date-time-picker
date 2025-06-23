@@ -100,10 +100,10 @@ const DatePanel: FC<DatePanelProps> = ({ className, onDateChange, size }) => {
     >
       <PanelHeader
         size={size}
-        nextButtonAriaLabel="Previous Month"
+        nextButtonAriaLabel="Next Month"
         onNextButtonClick={gotoNextMonth}
         onPrevButtonClick={gotoPrevMonth}
-        prevButtonAriaLabel="Next Month"
+        prevButtonAriaLabel="Previous Month"
       >
         <PanelHeaderButton
           aria-label={getMonthNameFromTs(panelDate + msOffset, locale)}

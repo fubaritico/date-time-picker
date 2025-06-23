@@ -110,10 +110,10 @@ const MonthsPanel: FC<MonthsPanelProps> = ({
     >
       <PanelHeader
         size={size}
-        nextButtonAriaLabel="Previous Year"
+        nextButtonAriaLabel="Next Year"
         onNextButtonClick={gotoNextYear}
         onPrevButtonClick={gotoPrevYear}
-        prevButtonAriaLabel="Next Year"
+        prevButtonAriaLabel="Previous Year"
       >
         <PanelHeaderButton
           aria-label={formatToYYYYMMDD(date).split('-')[0]}

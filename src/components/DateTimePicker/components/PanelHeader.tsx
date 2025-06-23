@@ -31,6 +31,7 @@ const PanelHeader: FC<PropsWithChildren<PanelHeaderProps>> = ({
   onPrevButtonClick,
   onNextButtonClick,
   prevButtonAriaLabel,
+  nextButtonAriaLabel,
   size,
 }) => (
   <div className={clsx('PanelHeader', size, className)}>
@@ -43,7 +44,7 @@ const PanelHeader: FC<PropsWithChildren<PanelHeaderProps>> = ({
     </button>
     <div className="PanelHeader-content">{children}</div>
     <button
-      aria-label={prevButtonAriaLabel}
+      aria-label={nextButtonAriaLabel}
       onClick={onNextButtonClick}
       disabled={disableNextButton}
     >

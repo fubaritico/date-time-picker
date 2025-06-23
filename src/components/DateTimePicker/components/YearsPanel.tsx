@@ -87,10 +87,10 @@ const YearsPanel: FC<YearsPanelProps> = ({ className, onDateChange, size }) => {
     >
       <PanelHeader
         size={size}
-        nextButtonAriaLabel="Previous 12 years"
+        nextButtonAriaLabel="Next 12 years"
         onNextButtonClick={gotoNextYearsRange}
         onPrevButtonClick={gotoPrevYearsRange}
-        prevButtonAriaLabel="Next 12 years"
+        prevButtonAriaLabel="Previous 12 years"
       >
         <span aria-label={getYearFromTs(year).toString()}>
           {getYearFromTs(year).toString()}
