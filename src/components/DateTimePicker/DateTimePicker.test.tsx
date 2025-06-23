@@ -193,7 +193,7 @@ const runTests = (timezone?: Timezone) => {
       }
 
       expect(await screen.findByTestId(dateTimestamp.toString())).toHaveClass(
-        'dp-font-bold dp-bg-blue-700 dp-text-white'
+        'DaysGridCell enabled selected today blue md'
       )
     })
 
@@ -236,9 +236,7 @@ const runTests = (timezone?: Timezone) => {
       }
 
       expect(screen.getByTestId(clickableDate)).toHaveClass(
-        'dp-font-bold',
-        'dp-bg-blue-700',
-        'dp-text-white'
+        'DaysGridCell enabled selected blue md'
       )
     })
 
@@ -323,9 +321,10 @@ const runTests = (timezone?: Timezone) => {
       )
 
       expect(screen.getByLabelText(`Choose ${currentMonth}`)).toHaveClass(
-        'dp-border-blue-600',
-        'dp-bg-blue-600',
-        'dp-text-white'
+        'PanelButton',
+        'blue',
+        'md',
+        'selected'
       )
     })
 
@@ -360,9 +359,10 @@ const runTests = (timezone?: Timezone) => {
       )
 
       expect(screen.getByLabelText(`Choose ${monthToBeClicked}`)).toHaveClass(
-        'dp-border-blue-600',
-        'dp-bg-blue-600',
-        'dp-text-white'
+        'PanelButton',
+        'blue',
+        'md',
+        'selected'
       )
     })
 
@@ -382,9 +382,10 @@ const runTests = (timezone?: Timezone) => {
       await user.click(screen.getByRole('button', { name: currentYear }))
 
       expect(screen.getByLabelText(`Choose ${currentYear}`)).toHaveClass(
-        'dp-border-blue-600',
-        'dp-bg-blue-600',
-        'dp-text-white'
+        'PanelButton',
+        'blue',
+        'md',
+        'selected'
       )
     })
 
@@ -417,9 +418,10 @@ const runTests = (timezone?: Timezone) => {
       )
 
       expect(screen.getByLabelText(`Choose ${yearToBeClicked}`)).toHaveClass(
-        'dp-border-blue-600',
-        'dp-bg-blue-600',
-        'dp-text-white'
+        'PanelButton',
+        'blue',
+        'md',
+        'selected'
       )
     })
 
@@ -614,7 +616,10 @@ const runTests = (timezone?: Timezone) => {
     })
 
     it('should call the onDateChange component method with proper value when selecting a month after browsing months panel', async () => {
-      const { offset } = setupAsControlled(
+      const {
+        offset,
+        render: { baseElement },
+      } = setupAsControlled(
         DateTimePicker as AnyPickerComponent,
         fixedDate,
         defaultProperties
@@ -637,13 +642,25 @@ const runTests = (timezone?: Timezone) => {
         await screen.findByRole('button', { name: currentMonth })
       )
 
+      if (!timezone) {
+        expect(baseElement).toMatchSnapshot()
+      }
+
       for (let i = 1; i <= nextYearClicks; i++) {
         await user.click(screen.getByRole('button', { name: 'Next Year' }))
+      }
+
+      if (!timezone) {
+        expect(baseElement).toMatchSnapshot()
       }
 
       await user.click(
         screen.getByRole('button', { name: `Choose ${monthToBeClicked}` })
       )
+
+      if (!timezone) {
+        expect(baseElement).toMatchSnapshot()
+      }
 
       expect(spyOnDateChangeFn).toHaveBeenCalledTimes(1)
       expect(spyOnDateChangeFn).toHaveBeenCalledWith(expectedValue)
@@ -1030,9 +1047,9 @@ const runTests = (timezone?: Timezone) => {
         expect(baseElement).toMatchSnapshot()
       }
 
-      expect(screen.getByTestId(disabledDate)).toHaveClass(
-        'dp-text-gray-300',
-        'dp-cursor-not-allowed'
+      expect(screen.getByTestId(disabledDate)).toHaveAttribute(
+        'aria-disabled',
+        'true'
       )
     })
 
