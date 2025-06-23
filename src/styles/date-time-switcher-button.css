@@ -35,12 +35,154 @@
   flex: 1;
   justify-content: center;
   align-items: center;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: var(--transition);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 500ms;
   background: var(--unselected-bg-color);
   color: var(--unselected-text-color);
   border-bottom: 1px solid var(--border-bottom-color);
+}
+
+.DateTimeSwitcherButton:hover {
+  background: var(--unselected-hover-bg-color);
+}
+
+.DateTimeSwitcherButton.selected,
+.DateTimeSwitcherButton.selected:hover {
+  background: var(--selected-bg-color);
+  color: var(--selected-text-color);
+}
+
+.DateTimeSwitcherButton.selected.red,
+.DateTimeSwitcherButton.selected.red:hover {
+  --selected-bg-color: var(--red-100);
+  --selected-text-color: var(--red-700)
+}
+
+.DateTimeSwitcherButton.selected.orange,
+.DateTimeSwitcherButton.selected.orange:hover {
+  --selected-bg-color: var(--orange-100);
+  --selected-text-color: var(--orange-700)
+}
+
+.DateTimeSwitcherButton.selected.amber,
+.DateTimeSwitcherButton.selected.amber:hover {
+  --selected-bg-color: var(--amber-100);
+  --selected-text-color: var(--amber-700)
+}
+
+.DateTimeSwitcherButton.selected.yellow,
+.DateTimeSwitcherButton.selected.yellow:hover {
+  --selected-bg-color: var(--yellow-100);
+  --selected-text-color: var(--yellow-700)
+}
+
+.DateTimeSwitcherButton.selected.lime,
+.DateTimeSwitcherButton.selected.lime:hover {
+  --selected-bg-color: var(--lime-100);
+  --selected-text-color: var(--lime-700)
+}
+
+.DateTimeSwitcherButton.selected.green,
+.DateTimeSwitcherButton.selected.green:hover {
+  --selected-bg-color: var(--green-100);
+  --selected-text-color: var(--green-700)
+}
+
+.DateTimeSwitcherButton.selected.emerald,
+.DateTimeSwitcherButton.selected.emerald:hover {
+  --selected-bg-color: var(--emerald-100);
+  --selected-text-color: var(--emerald-700)
+}
+
+.DateTimeSwitcherButton.selected.teal,
+.DateTimeSwitcherButton.selected.teal:hover {
+  --selected-bg-color: var(--teal-100);
+  --selected-text-color: var(--teal-700)
+}
+
+.DateTimeSwitcherButton.selected.cyan,
+.DateTimeSwitcherButton.selected.cyan:hover {
+  --selected-bg-color: var(--cyan-100);
+  --selected-text-color: var(--cyan-700)
+}
+
+.DateTimeSwitcherButton.selected.sky,
+.DateTimeSwitcherButton.selected.sky:hover {
+  --selected-bg-color: var(--sky-100);
+  --selected-text-color: var(--sky-700)
+}
+
+.DateTimeSwitcherButton.selected.blue,
+.DateTimeSwitcherButton.selected.blue:hover {
+  --selected-bg-color: var(--blue-100);
+  --selected-text-color: var(--blue-700)
+}
+
+.DateTimeSwitcherButton.selected.indigo,
+.DateTimeSwitcherButton.selected.indigo:hover {
+  --selected-bg-color: var(--indigo-100);
+  --selected-text-color: var(--indigo-700)
+}
+
+.DateTimeSwitcherButton.selected.violet,
+.DateTimeSwitcherButton.selected.violet:hover {
+  --selected-bg-color: var(--violet-100);
+  --selected-text-color: var(--violet-700)
+}
+
+.DateTimeSwitcherButton.selected.purple,
+.DateTimeSwitcherButton.selected.purple:hover {
+  --selected-bg-color: var(--purple-100);
+  --selected-text-color: var(--purple-700)
+}
+
+.DateTimeSwitcherButton.selected.fuchsia,
+.DateTimeSwitcherButton.selected.fuchsia:hover {
+  --selected-bg-color: var(--fuchsia-100);
+  --selected-text-color: var(--fuchsia-700)
+}
+
+.DateTimeSwitcherButton.selected.pink,
+.DateTimeSwitcherButton.selected.pink:hover {
+  --selected-bg-color: var(--pink-100);
+  --selected-text-color: var(--pink-700)
+}
+
+.DateTimeSwitcherButton.selected.rose,
+.DateTimeSwitcherButton.selected.rose:hover {
+  --selected-bg-color: var(--rose-100);
+  --selected-text-color: var(--rose-700)
+}
+
+.DateTimeSwitcherButton.selected.slate,
+.DateTimeSwitcherButton.selected.slate:hover {
+  --selected-bg-color: var(--slate-100);
+  --selected-text-color: var(--slate-700)
+}
+
+.DateTimeSwitcherButton.selected.gray,
+.DateTimeSwitcherButton.selected.gray:hover {
+  --selected-bg-color: var(--gray-100);
+  --selected-text-color: var(--gray-700)
+}
+
+.DateTimeSwitcherButton.selected.zinc,
+.DateTimeSwitcherButton.selected.zinc:hover {
+  --selected-bg-color: var(--zinc-100);
+  --selected-text-color: var(--zinc-700)
+}
+
+.DateTimeSwitcherButton.selected.neutral,
+.DateTimeSwitcherButton.selected.neutral:hover {
+  --selected-bg-color: var(--neutral-100);
+  --selected-text-color: var(--neutral-700)
+}
+
+.DateTimeSwitcherButton.selected.stone,
+.DateTimeSwitcherButton.selected.stone:hover {
+  --selected-bg-color: var(--stone-100);
+  --selected-text-color: var(--stone-700)
 }
 
 /* Dark mode from system */
