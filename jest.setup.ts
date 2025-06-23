@@ -113,6 +113,11 @@ Object.defineProperty(global.SVGElement.prototype, 'createSVGMatrix', {
 const noop = () => {}
 Object.defineProperty(window, 'scrollTo', { value: noop, writable: true })
 
+Object.defineProperty(Element.prototype, 'scrollTo', {
+  value: jest.fn(),
+  writable: true,
+})
+
 // Transform some logs into exceptions
 const nativeConsoleError = console.error
 

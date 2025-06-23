@@ -30,7 +30,6 @@ export const padNumber = (num: number): string => {
  * Will return the number of minutes from the given timestamp
  *
  * @param {number} ts - number representing an unix timestamp
- * @param {number} msOffset - because in this utility method, time is in locale time, it has to be reset to initial time zone time
  *
  * @throws {Error} if the timestamp is invalid
  *
@@ -92,7 +91,6 @@ export const addMinutes = (ts?: number, minutes = 1): number => {
  * Will return the amount of hours from the given timestamp
  *
  * @param {number} ts - number representing an unix timestamp
- * @param {number} msOffset - because in this utility method, time is in locale time, it has to be reset to initial time zone time
  *
  * @throws {Error} if the timestamp is invalid
  *
