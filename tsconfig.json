@@ -28,7 +28,7 @@
       "@utils": ["src/utils.ts"]
     },
   },
-  "include": ["src/**/*", "dev/**/*", "global.d.ts", "declarations.d.ts"],
+  "include": ["src/**/*", "dev/**/*", "src/global.d.ts", "src/declarations.d.ts"],
   "exclude": [
     ".storybook",
     "node_modules",

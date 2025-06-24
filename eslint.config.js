@@ -42,6 +42,7 @@ export default tseslint.config(
       'eslint.config.js',
       'commitlint.config.js',
       'generate-css.cjs',
+      'append-definitions-to-file.js',
     ],
   },
 

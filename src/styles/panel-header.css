@@ -65,6 +65,7 @@
   background: transparent;
   cursor: pointer;
   width: var(--svg-md);
+  outline: 0;
 }
 
 .PanelHeader > button:disabled {

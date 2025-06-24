@@ -4,7 +4,7 @@
 @import url('common/typography.css');
 
 /* Base as a monochrome theme */
-.TextField {
+input.TextField {
   /* Colors basic definition for each mode */
   --text-light: var(--neutral-500);
   --text-dark: var(--neutral-300);
@@ -64,61 +64,61 @@
 }
 
 /* States (light by default) */
-.TextField:not(.disabled) {
+input.TextField:not(.disabled) {
   background: var(--bg);
   border-color: var(--border);
   color: var(--text);
 }
 
-.TextField.disabled {
+input.TextField.disabled {
   background: var(--bg);
   border-color: var(--disabled-border);
   color: var(--disabled-text);
 }
 
-.TextField:not(.disabled)::placeholder {
+input.TextField:not(.disabled)::placeholder {
   color: var(--placeholder);
 }
 
-.TextField.disabled::placeholder {
+input.TextField.disabled::placeholder {
   color: var(--disabled-placeholder);
 }
 
-.TextField:not(.disabled, .hide-focus):focus,
-.TextField:not(.disabled, .hide-focus):focus-visible {
+input.TextField:not(.disabled, .hide-focus):focus,
+input.TextField:not(.disabled, .hide-focus):focus-visible {
   outline-color: var(--focus-outline);
 }
 
-.TextField:not(.disabled):focus,
-.TextField:not(.disabled):focus-visible {
+input.TextField:not(.disabled):focus,
+input.TextField:not(.disabled):focus-visible {
   color: var(--focus-text);
 }
 
-.TextField.success {
+input.TextField.success {
   border-color: var(--success-color);
 }
 
-.TextField.warning {
+input.TextField.warning {
   border-color: var(--warning-color);
 }
 
-.TextField.error {
+input.TextField.error {
   border-color: var(--error-color);
 }
 
-.TextField.success {
+input.TextField.success {
   border-color: var(--success-color);
 }
 
-.TextField.warning {
+input.TextField.warning {
   border-color: var(--warning-color);
 }
 
-.TextField.error {
+input.TextField.error {
   border-color: var(--error-color);
 }
 
-.TextField.show-cross.icon-left + .clear-icon-button {
+input.TextField.show-cross.icon-left + .clear-icon-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -126,210 +126,210 @@
   transition: color 300ms linear;
 }
 
-.TextField.show-cross.icon-left + .clear-icon-button .icon {
+input.TextField.show-cross.icon-left + .clear-icon-button .icon {
   color: var(--neutral-600);
 }
 
-.TextField.success.show-cross.icon-left + .clear-icon-button .icon {
+input.TextField.success.show-cross.icon-left + .clear-icon-button .icon {
   color: var(--green-500);
 }
 
-.TextField.warning.show-cross.icon-left + .clear-icon-button .icon {
+input.TextField.warning.show-cross.icon-left + .clear-icon-button .icon {
   color: var(--yellow-500);
 }
 
-.TextField.error.show-cross.icon-left + .clear-icon-button .icon {
+input.TextField.error.show-cross.icon-left + .clear-icon-button .icon {
   color: var(--red-500);
 }
 
-.TextField.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button,
-.TextField.show-icon.icon-left + .icon-button,
-.TextField.show-icon.icon-right + .icon-button {
+input.TextField.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button,
+input.TextField.show-icon.icon-left + .icon-button,
+input.TextField.show-icon.icon-right + .icon-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
 
-.TextField.disabled.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button,
-.TextField.disabled.show-icon.icon-left + .icon-button,
-.TextField.disabled.show-icon.icon-right + .icon-button {
+input.TextField.disabled.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button,
+input.TextField.disabled.show-icon.icon-left + .icon-button,
+input.TextField.disabled.show-icon.icon-right + .icon-button {
   opacity: 0.5;
   cursor: default;
 }
 
-.TextField.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button:not(.enabled),
-.TextField.show-icon.icon-left + .icon-button:not(.enabled),
-.TextField.show-icon.icon-right + .icon-button:not(.enabled) {
+input.TextField.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button:not(.enabled),
+input.TextField.show-icon.icon-left + .icon-button:not(.enabled),
+input.TextField.show-icon.icon-right + .icon-button:not(.enabled) {
   cursor: default;
 }
 
-.TextField.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button .icon,
-.TextField.show-icon.icon-left + .icon-button .icon,
-.TextField.show-icon.icon-right + .icon-button .icon {
+input.TextField.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button .icon,
+input.TextField.show-icon.icon-left + .icon-button .icon,
+input.TextField.show-icon.icon-right + .icon-button .icon {
   color: var(--neutral-500)
 }
 
-.TextField.success.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button .icon,
-.TextField.success.show-icon.icon-left + .icon-button .icon,
-.TextField.success.show-icon.icon-right + .icon-button .icon {
+input.TextField.success.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button .icon,
+input.TextField.success.show-icon.icon-left + .icon-button .icon,
+input.TextField.success.show-icon.icon-right + .icon-button .icon {
   color: var(--green-600);
 }
 
-.TextField.warning.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button .icon,
-.TextField.warning.show-icon.icon-left + .icon-button .icon,
-.TextField.warning.show-icon.icon-right + .icon-button .icon {
+input.TextField.warning.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button .icon,
+input.TextField.warning.show-icon.icon-left + .icon-button .icon,
+input.TextField.warning.show-icon.icon-right + .icon-button .icon {
   color: var(--yellow-600);
 }
 
-.TextField.error.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button .icon,
-.TextField.error.show-icon.icon-left + .icon-button .icon,
-.TextField.error.show-icon.icon-right + .icon-button .icon {
+input.TextField.error.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button .icon,
+input.TextField.error.show-icon.icon-left + .icon-button .icon,
+input.TextField.error.show-icon.icon-right + .icon-button .icon {
   color: var(--red-600);
 }
 
 /* Sizes */
-.TextField.sm.show-icon.icon-left {
+input.TextField.sm.show-icon.icon-left {
   padding-left: var(--size-sm);
 }
 
-.TextField.md.show-icon.icon-left {
+input.TextField.md.show-icon.icon-left {
   padding-left: var(--size-md);
 }
 
-.TextField.lg.show-icon.icon-left {
+input.TextField.lg.show-icon.icon-left {
   padding-left: var(--size-lg);
 }
 
-.TextField.sm.show-icon.icon-right {
+input.TextField.sm.show-icon.icon-right {
   padding-right: var(--size-sm);
 }
 
-.TextField.md.show-icon.icon-right {
+input.TextField.md.show-icon.icon-right {
   padding-right: var(--size-md);
 }
 
-.TextField.lg.show-icon.icon-right {
+input.TextField.lg.show-icon.icon-right {
   padding-right: var(--size-lg);
 }
 
-.TextField.sm.show-cross.icon-left {
+input.TextField.sm.show-cross.icon-left {
   padding-right: var(--size-sm);
 }
 
-.TextField.md.show-cross.icon-left {
+input.TextField.md.show-cross.icon-left {
   padding-right: var(--size-md);
 }
 
-.TextField.lg.show-cross.icon-left {
+input.TextField.lg.show-cross.icon-left {
   padding-right: var(--size-lg);
 }
 
-.TextField.sm.show-cross.icon-left + .clear-icon-button {
+input.TextField.sm.show-cross.icon-left + .clear-icon-button {
   height: var(--svg-sm);
   width: var(--svg-sm);
   right: var(--spacing-2-5);
 }
 
-.TextField.md.show-cross.icon-left + .clear-icon-button {
+input.TextField.md.show-cross.icon-left + .clear-icon-button {
   height: var(--svg-sm);
   width: var(--svg-sm);
   right: var(--spacing-3);
 }
 
-.TextField.lg.show-cross.icon-left + .clear-icon-button {
+input.TextField.lg.show-cross.icon-left + .clear-icon-button {
   height: var(--svg-md);
   width: var(--svg-md);
   right: var(--spacing-3-5);
 }
 
-.TextField.sm.show-cross.icon-left + .clear-icon-button .icon {
+input.TextField.sm.show-cross.icon-left + .clear-icon-button .icon {
   height: var(--svg-sm);
   width: var(--svg-sm);
 }
 
-.TextField.md.show-cross.icon-left + .clear-icon-button .icon {
+input.TextField.md.show-cross.icon-left + .clear-icon-button .icon {
   height: var(--svg-sm);
   width: var(--svg-sm);
 }
 
-.TextField.lg.show-cross.icon-left + .clear-icon-button .icon {
+input.TextField.lg.show-cross.icon-left + .clear-icon-button .icon {
   height: var(--svg-md);
   width: var(--svg-md);
 }
 
-.TextField.sm.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button,
-.TextField.sm.show-icon.icon-left + .icon-button,
-.TextField.sm.show-icon.icon-right + .icon-button,
-.TextField.sm.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button .icon,
-.TextField.sm.show-icon.icon-left + .icon-button .icon,
-.TextField.sm.show-icon.icon-right + .icon-button .icon {
+input.TextField.sm.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button,
+input.TextField.sm.show-icon.icon-left + .icon-button,
+input.TextField.sm.show-icon.icon-right + .icon-button,
+input.TextField.sm.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button .icon,
+input.TextField.sm.show-icon.icon-left + .icon-button .icon,
+input.TextField.sm.show-icon.icon-right + .icon-button .icon {
   height: var(--svg-xs);
   width: var(--svg-xs);
 }
 
-.TextField.sm.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button,
-.TextField.sm.show-icon.icon-left + .icon-button {
+input.TextField.sm.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button,
+input.TextField.sm.show-icon.icon-left + .icon-button {
   left: var(--spacing-3);
 }
 
-.TextField.sm.show-icon.icon-right + .icon-button .icon {
+input.TextField.sm.show-icon.icon-right + .icon-button .icon {
   right: var(--spacing-3);
 }
 
-.TextField.md.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button,
-.TextField.md.show-icon.icon-left + .icon-button,
-.TextField.md.show-icon.icon-right + .icon-button,
-.TextField.md.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button .icon,
-.TextField.md.show-icon.icon-left + .icon-button .icon,
-.TextField.md.show-icon.icon-right + .icon-button .icon {
+input.TextField.md.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button,
+input.TextField.md.show-icon.icon-left + .icon-button,
+input.TextField.md.show-icon.icon-right + .icon-button,
+input.TextField.md.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button .icon,
+input.TextField.md.show-icon.icon-left + .icon-button .icon,
+input.TextField.md.show-icon.icon-right + .icon-button .icon {
   height: var(--svg-sm);
   width: var(--svg-sm);
 }
 
-.TextField.md.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button,
-.TextField.md.show-icon.icon-left + .icon-button {
+input.TextField.md.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button,
+input.TextField.md.show-icon.icon-left + .icon-button {
   left: var(--spacing-3-5);
 }
 
-.TextField.md.show-icon.icon-right + .icon-button .icon {
+input.TextField.md.show-icon.icon-right + .icon-button .icon {
   right: var(--spacing-3-5);
 }
 
-.TextField.lg.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button,
-.TextField.lg.show-icon.icon-left + .icon-button,
-.TextField.lg.show-icon.icon-right + .icon-button,
-.TextField.lg.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button .icon,
-.TextField.lg.show-icon.icon-left + .icon-button .icon,
-.TextField.lg.show-icon.icon-right + .icon-button .icon {
+input.TextField.lg.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button,
+input.TextField.lg.show-icon.icon-left + .icon-button,
+input.TextField.lg.show-icon.icon-right + .icon-button,
+input.TextField.lg.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button .icon,
+input.TextField.lg.show-icon.icon-left + .icon-button .icon,
+input.TextField.lg.show-icon.icon-right + .icon-button .icon {
   height: var(--svg-md);
   width: var(--svg-md);
 }
 
-.TextField.lg.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button,
-.TextField.lg.show-icon.icon-left + .icon-button {
+input.TextField.lg.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button,
+input.TextField.lg.show-icon.icon-left + .icon-button {
   left: var(--spacing-4);
 }
 
-.TextField.lg.show-icon.icon-right + .icon-button .icon {
+input.TextField.lg.show-icon.icon-right + .icon-button .icon {
   right: var(--spacing-4);
 }
 
 /* Sizes */
-.TextField.sm {
+input.TextField.sm {
   font-size: var(--text-xs);
   line-height: var(--line-height-xs);
   height: var(--size-sm);
   padding: 0 var(--spacing-2);
 }
 
-.TextField.md {
+input.TextField.md {
   font-size: var(--text-sm);
   line-height: var(--line-height-sm);
   height: var(--size-md);
   padding: 0 var(--spacing-3);
 }
 
-.TextField.lg {
+input.TextField.lg {
   font-size: var(--text-base);
   line-height: var(--line-height-base);
   height: var(--size-lg);
@@ -339,641 +339,641 @@
 /* Dark mode from system */
 @media (prefers-color-scheme: dark) {
   /* Default values (light mode) */
-  .TextField:not(.disabled, .light *) {
+  input.TextField:not(.disabled, .light *) {
     --bg: var(--bg-dark);
     --text: var(--text-dark);
     --border: var(--border-dark);
   }
 
-  .TextField.disabled:not(.light *) {
+  input.TextField.disabled:not(.light *) {
     --bg: var(--bg-dark);
     --disabled-border: var(--disabled-border-dark);
     --disabled-text: var(--disabled-text-dark);
   }
 
-  .TextField:not(.disabled, .light *)::placeholder {
+  input.TextField:not(.disabled, .light *)::placeholder {
     --placeholder: var(--placeholder-dark);
   }
 
-  .TextField.disabled:not(.light *)::placeholder {
+  input.TextField.disabled:not(.light *)::placeholder {
     --disabled-placeholder: var(--disabled-placeholder-dark);
   }
 
-  .TextField:not(.disabled, .light *):focus,
-  .TextField:not(.disabled, .light *):focus-visible {
+  input.TextField:not(.disabled, .light *):focus,
+  input.TextField:not(.disabled, .light *):focus-visible {
     --focus-text: var(--focus-text-dark);
   }
 
-  .TextField.show-cross.icon-left:not(.light *) + .clear-icon-button .icon {
+  input.TextField.show-cross.icon-left:not(.light *) + .clear-icon-button .icon {
     color: var(--neutral-400);
   }
 
-  .TextField.show-cross.show-icon.icon-left:not(.light *) + .clear-icon-button + .icon-button .icon,
-  .TextField.show-icon.icon-left:not(.light *) + .icon-button .icon,
-  .TextField.show-icon.icon-right:not(.light *) + .icon-button .icon {
+  input.TextField.show-cross.show-icon.icon-left:not(.light *) + .clear-icon-button + .icon-button .icon,
+  input.TextField.show-icon.icon-left:not(.light *) + .icon-button .icon,
+  input.TextField.show-icon.icon-right:not(.light *) + .icon-button .icon {
     color: var(--neutral-400)
   }
 
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--red-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--orange-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--amber-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--yellow-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--lime-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--green-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--emerald-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--teal-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--cyan-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--sky-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--blue-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--indigo-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--violet-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--purple-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--fuchsia-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--pink-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--rose-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--slate-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--gray-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--zinc-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--neutral-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  .TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
+  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--stone-500);
     --focus-outline: var(--focus-outline-dark);
   }
 }
 
 /* Forced dark mode */
-.dark * .TextField:not(.disabled) {
+.dark * input.TextField:not(.disabled) {
   --bg: var(--bg-dark);
   --text: var(--text-dark);
   --border: var(--border-dark);
 }
 
-.dark * .TextField.disabled {
+.dark * input.TextField.disabled {
   --bg: var(--bg-dark);
   --disabled-border: var(--disabled-border-dark);
   --disabled-text: var(--disabled-text-dark);
 }
 
-.dark * .TextField:not(.disabled)::placeholder {
+.dark * input.TextField:not(.disabled)::placeholder {
   --placeholder: var(--placeholder-dark);
 }
 
-.dark * .TextField.disabled::placeholder {
+.dark * input.TextField.disabled::placeholder {
   --disabled-placeholder: var(--disabled-placeholder-dark);
 }
 
-.dark * .TextField:not(.disabled):focus,
-.dark * .TextField:not(.disabled):focus-visible {
+.dark * input.TextField:not(.disabled):focus,
+.dark * input.TextField:not(.disabled):focus-visible {
   --focus-text: var(--focus-text-dark);
 }
 
-.dark * .TextField.show-cross.icon-left + .clear-icon-button .icon {
+.dark * input.TextField.show-cross.icon-left + .clear-icon-button .icon {
   color: var(--neutral-400);
 }
 
-.dark * .TextField.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button .icon,
-.dark * .TextField.show-icon.icon-left + .icon-button .icon,
-.dark * .TextField.show-icon.icon-right + .icon-button .icon {
+.dark * input.TextField.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button .icon,
+.dark * input.TextField.show-icon.icon-left + .icon-button .icon,
+.dark * input.TextField.show-icon.icon-right + .icon-button .icon {
   color: var(--neutral-400)
 }
 
 /* Forced light mode */
-.light * .TextField:not(.disabled) {
+.light * input.TextField:not(.disabled) {
   --bg: var(--bg-light);
   --text: var(--text-light);
   --border: var(--border-light);
 }
 
-.light * .TextField.disabled {
+.light * input.TextField.disabled {
   --bg: var(--bg-light);
   --disabled-border: var(--disabled-border-light);
   --disabled-text: var(--disabled-text-light);
 }
 
-.light * .TextField:not(.disabled)::placeholder {
+.light * input.TextField:not(.disabled)::placeholder {
   --placeholder: var(--placeholder-light);
 }
 
-.light * .TextField.disabled::placeholder {
+.light * input.TextField.disabled::placeholder {
   --disabled-placeholder: var(--disabled-placeholder-light);
 }
 
-.light * .TextField:not(.disabled):focus,
-.light * .TextField:not(.disabled):focus-visible {
+.light * input.TextField:not(.disabled):focus,
+.light * input.TextField:not(.disabled):focus-visible {
   --focus-text: var(--focus-text-light);
 }
 
-.light * .TextField.show-cross.icon-left + .clear-icon-button .icon {
+.light * input.TextField.show-cross.icon-left + .clear-icon-button .icon {
   color: var(--neutral-600);
 }
 
-.light * .TextField.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button .icon,
-.light * .TextField.show-icon.icon-left + .icon-button .icon,
-.light * .TextField.show-icon.icon-right + .icon-button .icon {
+.light * input.TextField.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button .icon,
+.light * input.TextField.show-icon.icon-left + .icon-button .icon,
+.light * input.TextField.show-icon.icon-right + .icon-button .icon {
   color: var(--neutral-500)
 }
 
 /* Colors theme */
-.TextField.red:not(.disabled, .hide-focus):focus,
-.TextField.red:not(.disabled, .hide-focus):focus-visible {
+input.TextField.red:not(.disabled, .hide-focus):focus,
+input.TextField.red:not(.disabled, .hide-focus):focus-visible {
   --focus-outline-light: var(--red-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.TextField.orange:not(.disabled, .hide-focus):focus,
-.TextField.orange:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-light: var(--red-500);
-  --focus-outline: var(--focus-outline-light);
-}
-
-.TextField.amber:not(.disabled, .hide-focus):focus,
-.TextField.amber:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-light: var(--red-500);
-  --focus-outline: var(--focus-outline-light);
-}
-
-.TextField.yellow:not(.disabled, .hide-focus):focus,
-.TextField.yellow:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-light: var(--red-500);
-  --focus-outline: var(--focus-outline-light);
-}
-
-.TextField.lime:not(.disabled, .hide-focus):focus,
-.TextField.lime:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-light: var(--red-500);
-  --focus-outline: var(--focus-outline-light);
-}
-
-.TextField.green:not(.disabled, .hide-focus):focus,
-.TextField.green:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-light: var(--red-500);
-  --focus-outline: var(--focus-outline-light);
-}
-
-.TextField.emerald:not(.disabled, .hide-focus):focus,
-.TextField.emerald:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-light: var(--red-500);
-  --focus-outline: var(--focus-outline-light);
-}
-
-.TextField.teal:not(.disabled, .hide-focus):focus,
-.TextField.teal:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-light: var(--red-500);
-  --focus-outline: var(--focus-outline-light);
-}
-
-.TextField.cyan:not(.disabled, .hide-focus):focus,
-.TextField.cyan:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-light: var(--red-500);
-  --focus-outline: var(--focus-outline-light);
-}
-
-.TextField.sky:not(.disabled, .hide-focus):focus,
-.TextField.sky:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-light: var(--red-500);
-  --focus-outline: var(--focus-outline-light);
-}
-
-.TextField.blue:not(.disabled, .hide-focus):focus,
-.TextField.blue:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-light: var(--red-500);
-  --focus-outline: var(--focus-outline-light);
-}
-
-.TextField.indigo:not(.disabled, .hide-focus):focus,
-.TextField.indigo:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-light: var(--red-500);
-  --focus-outline: var(--focus-outline-light);
-}
-
-.TextField.violet:not(.disabled, .hide-focus):focus,
-.TextField.violet:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-light: var(--red-500);
-  --focus-outline: var(--focus-outline-light);
-}
-
-.TextField.purple:not(.disabled, .hide-focus):focus,
-.TextField.purple:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-light: var(--red-500);
-  --focus-outline: var(--focus-outline-light);
-}
-
-.TextField.fuchsia:not(.disabled, .hide-focus):focus,
-.TextField.fuchsia:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-light: var(--red-500);
-  --focus-outline: var(--focus-outline-light);
-}
-
-.TextField.pink:not(.disabled, .hide-focus):focus,
-.TextField.pink:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-light: var(--red-500);
-  --focus-outline: var(--focus-outline-light);
-}
-
-.TextField.rose:not(.disabled, .hide-focus):focus,
-.TextField.rose:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-light: var(--red-500);
-  --focus-outline: var(--focus-outline-light);
-}
-
-.TextField.slate:not(.disabled, .hide-focus):focus,
-.TextField.slate:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-light: var(--red-500);
-  --focus-outline: var(--focus-outline-light);
-}
-
-.TextField.gray:not(.disabled, .hide-focus):focus,
-.TextField.gray:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-light: var(--red-500);
-  --focus-outline: var(--focus-outline-light);
-}
-
-.TextField.zinc:not(.disabled, .hide-focus):focus,
-.TextField.zinc:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-light: var(--red-500);
-  --focus-outline: var(--focus-outline-light);
-}
-
-.TextField.neutral:not(.disabled, .hide-focus):focus,
-.TextField.neutral:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-light: var(--red-500);
-  --focus-outline: var(--focus-outline-light);
-}
-
-.TextField.stone:not(.disabled, .hide-focus):focus,
-.TextField.stone:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-light: var(--red-500);
-  --focus-outline: var(--focus-outline-light);
-}
-
-
-
-.dark * .TextField.red:not(.disabled, .hide-focus):focus,
-.dark * .TextField.red:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-dark: var(--red-500);
-  --focus-outline: var(--focus-outline-dark);
-}
-
-.dark * .TextField.orange:not(.disabled, .hide-focus):focus,
-.dark * .TextField.orange:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-dark: var(--orange-500);
-  --focus-outline: var(--focus-outline-dark);
-}
-
-.dark * .TextField.amber:not(.disabled, .hide-focus):focus,
-.dark * .TextField.amber:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-dark: var(--amber-500);
-  --focus-outline: var(--focus-outline-dark);
-}
-
-.dark * .TextField.yellow:not(.disabled, .hide-focus):focus,
-.dark * .TextField.yellow:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-dark: var(--yellow-500);
-  --focus-outline: var(--focus-outline-dark);
-}
-
-.dark * .TextField.lime:not(.disabled, .hide-focus):focus,
-.dark * .TextField.lime:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-dark: var(--lime-500);
-  --focus-outline: var(--focus-outline-dark);
-}
-
-.dark * .TextField.green:not(.disabled, .hide-focus):focus,
-.dark * .TextField.green:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-dark: var(--green-500);
-  --focus-outline: var(--focus-outline-dark);
-}
-
-.dark * .TextField.emerald:not(.disabled, .hide-focus):focus,
-.dark * .TextField.emerald:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-dark: var(--emerald-500);
-  --focus-outline: var(--focus-outline-dark);
-}
-
-.dark * .TextField.teal:not(.disabled, .hide-focus):focus,
-.dark * .TextField.teal:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-dark: var(--teal-500);
-  --focus-outline: var(--focus-outline-dark);
-}
-
-.dark * .TextField.cyan:not(.disabled, .hide-focus):focus,
-.dark * .TextField.cyan:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-dark: var(--cyan-500);
-  --focus-outline: var(--focus-outline-dark);
-}
-
-.dark * .TextField.sky:not(.disabled, .hide-focus):focus,
-.dark * .TextField.sky:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-dark: var(--sky-500);
-  --focus-outline: var(--focus-outline-dark);
-}
-
-.dark * .TextField.blue:not(.disabled, .hide-focus):focus,
-.dark * .TextField.blue:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-dark: var(--blue-500);
-  --focus-outline: var(--focus-outline-dark);
-}
-
-.dark * .TextField.indigo:not(.disabled, .hide-focus):focus,
-.dark * .TextField.indigo:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-dark: var(--indigo-500);
-  --focus-outline: var(--focus-outline-dark);
-}
-
-.dark * .TextField.violet:not(.disabled, .hide-focus):focus,
-.dark * .TextField.violet:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-dark: var(--violet-500);
-  --focus-outline: var(--focus-outline-dark);
-}
-
-.dark * .TextField.purple:not(.disabled, .hide-focus):focus,
-.dark * .TextField.purple:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-dark: var(--purple-500);
-  --focus-outline: var(--focus-outline-dark);
-}
-
-.dark * .TextField.fuchsia:not(.disabled, .hide-focus):focus,
-.dark * .TextField.fuchsia:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-dark: var(--fuchsia-500);
-  --focus-outline: var(--focus-outline-dark);
-}
-
-.dark * .TextField.pink:not(.disabled, .hide-focus):focus,
-.dark * .TextField.pink:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-dark: var(--pink-500);
-  --focus-outline: var(--focus-outline-dark);
-}
-
-.dark * .TextField.rose:not(.disabled, .hide-focus):focus,
-.dark * .TextField.rose:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-dark: var(--rose-500);
-  --focus-outline: var(--focus-outline-dark);
-}
-
-.dark * .TextField.slate:not(.disabled, .hide-focus):focus,
-.dark * .TextField.slate:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-dark: var(--slate-500);
-  --focus-outline: var(--focus-outline-dark);
-}
-
-.dark * .TextField.gray:not(.disabled, .hide-focus):focus,
-.dark * .TextField.gray:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-dark: var(--gray-500);
-  --focus-outline: var(--focus-outline-dark);
-}
-
-.dark * .TextField.zinc:not(.disabled, .hide-focus):focus,
-.dark * .TextField.zinc:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-dark: var(--zinc-500);
-  --focus-outline: var(--focus-outline-dark);
-}
-
-.dark * .TextField.neutral:not(.disabled, .hide-focus):focus,
-.dark * .TextField.neutral:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-dark: var(--neutral-500);
-  --focus-outline: var(--focus-outline-dark);
-}
-
-.dark * .TextField.stone:not(.disabled, .hide-focus):focus,
-.dark * .TextField.stone:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-dark: var(--stone-500);
-  --focus-outline: var(--focus-outline-dark);
-}
-
-.light * .TextField.red:not(.disabled, .hide-focus):focus,
-.light * .TextField.red:not(.disabled, .hide-focus):focus-visible {
-  --focus-outline-light: var(--red-500);
-  --focus-outline: var(--focus-outline-light);
-}
-
-.light * .TextField.orange:not(.disabled, .hide-focus):focus,
-.light * .TextField.orange:not(.disabled, .hide-focus):focus-visible {
+input.TextField.orange:not(.disabled, .hide-focus):focus,
+input.TextField.orange:not(.disabled, .hide-focus):focus-visible {
   --focus-outline-light: var(--orange-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * .TextField.amber:not(.disabled, .hide-focus):focus,
-.light * .TextField.amber:not(.disabled, .hide-focus):focus-visible {
+input.TextField.amber:not(.disabled, .hide-focus):focus,
+input.TextField.amber:not(.disabled, .hide-focus):focus-visible {
   --focus-outline-light: var(--amber-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * .TextField.yellow:not(.disabled, .hide-focus):focus,
-.light * .TextField.yellow:not(.disabled, .hide-focus):focus-visible {
+input.TextField.yellow:not(.disabled, .hide-focus):focus,
+input.TextField.yellow:not(.disabled, .hide-focus):focus-visible {
   --focus-outline-light: var(--yellow-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * .TextField.lime:not(.disabled, .hide-focus):focus,
-.light * .TextField.lime:not(.disabled, .hide-focus):focus-visible {
+input.TextField.lime:not(.disabled, .hide-focus):focus,
+input.TextField.lime:not(.disabled, .hide-focus):focus-visible {
   --focus-outline-light: var(--lime-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * .TextField.green:not(.disabled, .hide-focus):focus,
-.light * .TextField.green:not(.disabled, .hide-focus):focus-visible {
+input.TextField.green:not(.disabled, .hide-focus):focus,
+input.TextField.green:not(.disabled, .hide-focus):focus-visible {
   --focus-outline-light: var(--green-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * .TextField.emerald:not(.disabled, .hide-focus):focus,
-.light * .TextField.emerald:not(.disabled, .hide-focus):focus-visible {
+input.TextField.emerald:not(.disabled, .hide-focus):focus,
+input.TextField.emerald:not(.disabled, .hide-focus):focus-visible {
   --focus-outline-light: var(--emerald-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * .TextField.teal:not(.disabled, .hide-focus):focus,
-.light * .TextField.teal:not(.disabled, .hide-focus):focus-visible {
+input.TextField.teal:not(.disabled, .hide-focus):focus,
+input.TextField.teal:not(.disabled, .hide-focus):focus-visible {
   --focus-outline-light: var(--teal-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * .TextField.cyan:not(.disabled, .hide-focus):focus,
-.light * .TextField.cyan:not(.disabled, .hide-focus):focus-visible {
+input.TextField.cyan:not(.disabled, .hide-focus):focus,
+input.TextField.cyan:not(.disabled, .hide-focus):focus-visible {
   --focus-outline-light: var(--cyan-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * .TextField.sky:not(.disabled, .hide-focus):focus,
-.light * .TextField.sky:not(.disabled, .hide-focus):focus-visible {
+input.TextField.sky:not(.disabled, .hide-focus):focus,
+input.TextField.sky:not(.disabled, .hide-focus):focus-visible {
   --focus-outline-light: var(--sky-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * .TextField.blue:not(.disabled, .hide-focus):focus,
-.light * .TextField.blue:not(.disabled, .hide-focus):focus-visible {
+input.TextField.blue:not(.disabled, .hide-focus):focus,
+input.TextField.blue:not(.disabled, .hide-focus):focus-visible {
   --focus-outline-light: var(--blue-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * .TextField.indigo:not(.disabled, .hide-focus):focus,
-.light * .TextField.indigo:not(.disabled, .hide-focus):focus-visible {
+input.TextField.indigo:not(.disabled, .hide-focus):focus,
+input.TextField.indigo:not(.disabled, .hide-focus):focus-visible {
   --focus-outline-light: var(--indigo-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * .TextField.violet:not(.disabled, .hide-focus):focus,
-.light * .TextField.violet:not(.disabled, .hide-focus):focus-visible {
+input.TextField.violet:not(.disabled, .hide-focus):focus,
+input.TextField.violet:not(.disabled, .hide-focus):focus-visible {
   --focus-outline-light: var(--violet-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * .TextField.purple:not(.disabled, .hide-focus):focus,
-.light * .TextField.purple:not(.disabled, .hide-focus):focus-visible {
+input.TextField.purple:not(.disabled, .hide-focus):focus,
+input.TextField.purple:not(.disabled, .hide-focus):focus-visible {
   --focus-outline-light: var(--purple-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * .TextField.fuchsia:not(.disabled, .hide-focus):focus,
-.light * .TextField.fuchsia:not(.disabled, .hide-focus):focus-visible {
+input.TextField.fuchsia:not(.disabled, .hide-focus):focus,
+input.TextField.fuchsia:not(.disabled, .hide-focus):focus-visible {
   --focus-outline-light: var(--fuchsia-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * .TextField.pink:not(.disabled, .hide-focus):focus,
-.light * .TextField.pink:not(.disabled, .hide-focus):focus-visible {
+input.TextField.pink:not(.disabled, .hide-focus):focus,
+input.TextField.pink:not(.disabled, .hide-focus):focus-visible {
   --focus-outline-light: var(--pink-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * .TextField.rose:not(.disabled, .hide-focus):focus,
-.light * .TextField.rose:not(.disabled, .hide-focus):focus-visible {
+input.TextField.rose:not(.disabled, .hide-focus):focus,
+input.TextField.rose:not(.disabled, .hide-focus):focus-visible {
   --focus-outline-light: var(--rose-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * .TextField.slate:not(.disabled, .hide-focus):focus,
-.light * .TextField.slate:not(.disabled, .hide-focus):focus-visible {
+input.TextField.slate:not(.disabled, .hide-focus):focus,
+input.TextField.slate:not(.disabled, .hide-focus):focus-visible {
   --focus-outline-light: var(--slate-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * .TextField.gray:not(.disabled, .hide-focus):focus,
-.light * .TextField.gray:not(.disabled, .hide-focus):focus-visible {
+input.TextField.gray:not(.disabled, .hide-focus):focus,
+input.TextField.gray:not(.disabled, .hide-focus):focus-visible {
   --focus-outline-light: var(--gray-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * .TextField.zinc:not(.disabled, .hide-focus):focus,
-.light * .TextField.zinc:not(.disabled, .hide-focus):focus-visible {
+input.TextField.zinc:not(.disabled, .hide-focus):focus,
+input.TextField.zinc:not(.disabled, .hide-focus):focus-visible {
   --focus-outline-light: var(--zinc-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * .TextField.neutral:not(.disabled, .hide-focus):focus,
-.light * .TextField.neutral:not(.disabled, .hide-focus):focus-visible {
+input.TextField.neutral:not(.disabled, .hide-focus):focus,
+input.TextField.neutral:not(.disabled, .hide-focus):focus-visible {
   --focus-outline-light: var(--neutral-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * .TextField.stone:not(.disabled, .hide-focus):focus,
-.light * .TextField.stone:not(.disabled, .hide-focus):focus-visible {
+input.TextField.stone:not(.disabled, .hide-focus):focus,
+input.TextField.stone:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-light: var(--stone-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+
+
+.dark * input.TextField.red:not(.disabled, .hide-focus):focus,
+.dark * input.TextField.red:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-dark: var(--red-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * input.TextField.orange:not(.disabled, .hide-focus):focus,
+.dark * input.TextField.orange:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-dark: var(--orange-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * input.TextField.amber:not(.disabled, .hide-focus):focus,
+.dark * input.TextField.amber:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-dark: var(--amber-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * input.TextField.yellow:not(.disabled, .hide-focus):focus,
+.dark * input.TextField.yellow:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-dark: var(--yellow-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * input.TextField.lime:not(.disabled, .hide-focus):focus,
+.dark * input.TextField.lime:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-dark: var(--lime-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * input.TextField.green:not(.disabled, .hide-focus):focus,
+.dark * input.TextField.green:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-dark: var(--green-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * input.TextField.emerald:not(.disabled, .hide-focus):focus,
+.dark * input.TextField.emerald:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-dark: var(--emerald-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * input.TextField.teal:not(.disabled, .hide-focus):focus,
+.dark * input.TextField.teal:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-dark: var(--teal-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * input.TextField.cyan:not(.disabled, .hide-focus):focus,
+.dark * input.TextField.cyan:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-dark: var(--cyan-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * input.TextField.sky:not(.disabled, .hide-focus):focus,
+.dark * input.TextField.sky:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-dark: var(--sky-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * input.TextField.blue:not(.disabled, .hide-focus):focus,
+.dark * input.TextField.blue:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-dark: var(--blue-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * input.TextField.indigo:not(.disabled, .hide-focus):focus,
+.dark * input.TextField.indigo:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-dark: var(--indigo-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * input.TextField.violet:not(.disabled, .hide-focus):focus,
+.dark * input.TextField.violet:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-dark: var(--violet-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * input.TextField.purple:not(.disabled, .hide-focus):focus,
+.dark * input.TextField.purple:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-dark: var(--purple-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * input.TextField.fuchsia:not(.disabled, .hide-focus):focus,
+.dark * input.TextField.fuchsia:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-dark: var(--fuchsia-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * input.TextField.pink:not(.disabled, .hide-focus):focus,
+.dark * input.TextField.pink:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-dark: var(--pink-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * input.TextField.rose:not(.disabled, .hide-focus):focus,
+.dark * input.TextField.rose:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-dark: var(--rose-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * input.TextField.slate:not(.disabled, .hide-focus):focus,
+.dark * input.TextField.slate:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-dark: var(--slate-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * input.TextField.gray:not(.disabled, .hide-focus):focus,
+.dark * input.TextField.gray:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-dark: var(--gray-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * input.TextField.zinc:not(.disabled, .hide-focus):focus,
+.dark * input.TextField.zinc:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-dark: var(--zinc-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * input.TextField.neutral:not(.disabled, .hide-focus):focus,
+.dark * input.TextField.neutral:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-dark: var(--neutral-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.dark * input.TextField.stone:not(.disabled, .hide-focus):focus,
+.dark * input.TextField.stone:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-dark: var(--stone-500);
+  --focus-outline: var(--focus-outline-dark);
+}
+
+.light * input.TextField.red:not(.disabled, .hide-focus):focus,
+.light * input.TextField.red:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-light: var(--red-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * input.TextField.orange:not(.disabled, .hide-focus):focus,
+.light * input.TextField.orange:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-light: var(--orange-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * input.TextField.amber:not(.disabled, .hide-focus):focus,
+.light * input.TextField.amber:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-light: var(--amber-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * input.TextField.yellow:not(.disabled, .hide-focus):focus,
+.light * input.TextField.yellow:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-light: var(--yellow-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * input.TextField.lime:not(.disabled, .hide-focus):focus,
+.light * input.TextField.lime:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-light: var(--lime-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * input.TextField.green:not(.disabled, .hide-focus):focus,
+.light * input.TextField.green:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-light: var(--green-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * input.TextField.emerald:not(.disabled, .hide-focus):focus,
+.light * input.TextField.emerald:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-light: var(--emerald-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * input.TextField.teal:not(.disabled, .hide-focus):focus,
+.light * input.TextField.teal:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-light: var(--teal-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * input.TextField.cyan:not(.disabled, .hide-focus):focus,
+.light * input.TextField.cyan:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-light: var(--cyan-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * input.TextField.sky:not(.disabled, .hide-focus):focus,
+.light * input.TextField.sky:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-light: var(--sky-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * input.TextField.blue:not(.disabled, .hide-focus):focus,
+.light * input.TextField.blue:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-light: var(--blue-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * input.TextField.indigo:not(.disabled, .hide-focus):focus,
+.light * input.TextField.indigo:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-light: var(--indigo-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * input.TextField.violet:not(.disabled, .hide-focus):focus,
+.light * input.TextField.violet:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-light: var(--violet-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * input.TextField.purple:not(.disabled, .hide-focus):focus,
+.light * input.TextField.purple:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-light: var(--purple-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * input.TextField.fuchsia:not(.disabled, .hide-focus):focus,
+.light * input.TextField.fuchsia:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-light: var(--fuchsia-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * input.TextField.pink:not(.disabled, .hide-focus):focus,
+.light * input.TextField.pink:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-light: var(--pink-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * input.TextField.rose:not(.disabled, .hide-focus):focus,
+.light * input.TextField.rose:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-light: var(--rose-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * input.TextField.slate:not(.disabled, .hide-focus):focus,
+.light * input.TextField.slate:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-light: var(--slate-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * input.TextField.gray:not(.disabled, .hide-focus):focus,
+.light * input.TextField.gray:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-light: var(--gray-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * input.TextField.zinc:not(.disabled, .hide-focus):focus,
+.light * input.TextField.zinc:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-light: var(--zinc-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * input.TextField.neutral:not(.disabled, .hide-focus):focus,
+.light * input.TextField.neutral:not(.disabled, .hide-focus):focus-visible {
+  --focus-outline-light: var(--neutral-500);
+  --focus-outline: var(--focus-outline-light);
+}
+
+.light * input.TextField.stone:not(.disabled, .hide-focus):focus,
+.light * input.TextField.stone:not(.disabled, .hide-focus):focus-visible {
   --focus-outline-light: var(--stone-500);
   --focus-outline: var(--focus-outline-light);
 }

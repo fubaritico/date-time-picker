@@ -4,15 +4,24 @@ A React 19.x date-time picker component, using TypeScript 5.x, styled using nati
 
 `DatePicker`, `DateTimePicker`, `TimePicker` and `DateRangePicker` are distinct components.
 
+✅ tested locally with [yalc](https://github.com/wclr/yalc) on a real project (types, styles, functionality)
+
+❌ tested as a final imported package from NPM (not yet)
+
+
 ## Work in progress
 
 Tests have to be written for `DateRangePicker`.
 
-Some integration tests still have to be done in real projects. Though the component works fine in the preview.
+Some integration tests still are currently performed in real projects. 
+
+Note that the component works fine in the preview, but it's not imported as a package.
+
+Icon component will be removed and replaced by local SVGs imported statically.
 
 ## Issues
 
-No issues at the moment.
+Some work has to be done with peer dependencies.
 
 ## Styling
 

@@ -2,7 +2,7 @@
 @import url('common/typography.css');
 
 /* base as a monochrome theme */
-.PanelHeaderButton {
+button.PanelHeaderButton {
   /* Colors basic definition for each mode */
   --text-light: var(--neutral-900);
   --text-dark: var(--neutral-300);
@@ -19,228 +19,229 @@
   /* Basic styles */
   color: var(--text);
   transition: color 300ms linear;
+  outline: none;
 }
 
-.PanelHeaderButton:hover {
+button.PanelHeaderButton:hover {
   color: var(--hover-text);
   outline: none;
 }
 
-.PanelHeaderButton:focus {
+button.PanelHeaderButton:focus {
   outline: none;
 }
 
-.PanelHeaderButton:focus-visible {
+button.PanelHeaderButton:focus-visible {
   outline: 1px solid var(--focus-outline);
   color: var(--hover-text);
 }
 
 /* Dark mode from system */
 @media (prefers-color-scheme: dark) {
-  .PanelHeaderButton:not(.light *) {
+  button.PanelHeaderButton:not(.light *) {
     --text: var(--text-dark);
     --hover-text: var(--hover-text-dark);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  .PanelHeaderButton:not(.light *):hover {
+  button.PanelHeaderButton:not(.light *):hover {
     --text: var(--text-dark);
     --hover-text: var(--hover-text-dark);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  .PanelHeaderButton:not(.light *):focus-visible {
+  button.PanelHeaderButton:not(.light *):focus-visible {
     --focus-outline: var(--focus-outline-dark);
     --hover-text: --hover-text-dark;
   }
 }
 
 /* Force dark mode */
-.dark * .PanelHeaderButton {
+.dark * button.PanelHeaderButton {
   --text: var(--text-dark);
   --hover-text: var(--hover-text-dark);
   --focus-outline: var(--focus-outline-dark);
 }
 
-.dark * .PanelHeaderButton:hover {
+.dark * button.PanelHeaderButton:hover {
   color: var(--hover-text-light);
 }
 
 /* Force light mode */
-.light * .PanelHeaderButton {
+.light * button.PanelHeaderButton {
   --text: var(--text-light);
   --hover-text: var(--hover-text-light);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * .PanelHeaderButton:hover {
+.light * button.PanelHeaderButton:hover {
   color: var(--hover-text-light);
 }
 
 /* Sizes */
-.PanelHeaderButton.sm {
+button.PanelHeaderButton.sm {
   font-size: var(--text-xs);
   line-height: var(--line-height-xs);
 }
 
-.PanelHeaderButton.md {
+button.PanelHeaderButton.md {
   line-height: var(--line-height-sm);
 }
 
-.PanelHeaderButton.lg {
+button.PanelHeaderButton.lg {
   font-size: var(--text-base);
   line-height: var(--line-height-base);
 }
 
 /*.Colors theme */
-.PanelHeaderButton.red {
+button.PanelHeaderButton.red {
   --hover-text-light: var(--red-600);
   --hover-text-dark: var(--red-500);
   --focus-outline-light: var(--red-600);
   --focus-outline-dark: var(--red-500);
 }
 
-.PanelHeaderButton.orange {
+button.PanelHeaderButton.orange {
   --hover-text-light: var(--orange-600);
   --hover-text-dark: var(--orange-500);
   --focus-outline-light: var(--orange-600);
   --focus-outline-dark: var(--orange-500);
 }
 
-.PanelHeaderButton.amber {
+button.PanelHeaderButton.amber {
   --hover-text-light: var(--amber-600);
   --hover-text-dark: var(--amber-500);
   --focus-outline-light: var(--amber-600);
   --focus-outline-dark: var(--amber-500);
 }
 
-.PanelHeaderButton.yellow {
+button.PanelHeaderButton.yellow {
   --hover-text-light: var(--yellow-600);
   --hover-text-dark: var(--yellow-500);
   --focus-outline-light: var(--yellow-600);
   --focus-outline-dark: var(--yellow-500);
 }
 
-.PanelHeaderButton.lime {
+button.PanelHeaderButton.lime {
   --hover-text-light: var(--lime-600);
   --hover-text-dark: var(--lime-500);
   --focus-outline-light: var(--lime-600);
   --focus-outline-dark: var(--lime-500);
 }
 
-.PanelHeaderButton.green {
+button.PanelHeaderButton.green {
   --hover-text-light: var(--green-600);
   --hover-text-dark: var(--green-500);
   --focus-outline-light: var(--green-600);
   --focus-outline-dark: var(--green-500);
 }
 
-.PanelHeaderButton.emerald {
+button.PanelHeaderButton.emerald {
   --hover-text-light: var(--emerald-600);
   --hover-text-dark: var(--emerald-500);
   --focus-outline-light: var(--emerald-600);
   --focus-outline-dark: var(--emerald-500);
 }
 
-.PanelHeaderButton.teal {
+button.PanelHeaderButton.teal {
   --hover-text-light: var(--teal-600);
   --hover-text-dark: var(--teal-500);
   --focus-outline-light: var(--teal-600);
   --focus-outline-dark: var(--teal-500);
 }
 
-.PanelHeaderButton.cyan {
+button.PanelHeaderButton.cyan {
   --hover-text-light: var(--cyan-600);
   --hover-text-dark: var(--cyan-500);
   --focus-outline-light: var(--cyan-600);
   --focus-outline-dark: var(--cyan-500);
 }
 
-.PanelHeaderButton.sky {
+button.PanelHeaderButton.sky {
   --hover-text-light: var(--sky-600);
   --hover-text-dark: var(--sky-500);
   --focus-outline-light: var(--sky-600);
   --focus-outline-dark: var(--sky-500);
 }
 
-.PanelHeaderButton.blue {
+button.PanelHeaderButton.blue {
   --hover-text-light: var(--blue-600);
   --hover-text-dark: var(--blue-500);
   --focus-outline-light: var(--blue-600);
   --focus-outline-dark: var(--blue-500);
 }
 
-.PanelHeaderButton.indigo {
+button.PanelHeaderButton.indigo {
   --hover-text-light: var(--indigo-600);
   --hover-text-dark: var(--indigo-500);
   --focus-outline-light: var(--indigo-600);
   --focus-outline-dark: var(--indigo-500);
 }
 
-.PanelHeaderButton.violet {
+button.PanelHeaderButton.violet {
   --hover-text-light: var(--violet-600);
   --hover-text-dark: var(--violet-500);
   --focus-outline-light: var(--violet-600);
   --focus-outline-dark: var(--violet-500);
 }
 
-.PanelHeaderButton.purple {
+button.PanelHeaderButton.purple {
   --hover-text-light: var(--purple-600);
   --hover-text-dark: var(--purple-500);
   --focus-outline-light: var(--purple-600);
   --focus-outline-dark: var(--purple-500);
 }
 
-.PanelHeaderButton.fuchsia {
+button.PanelHeaderButton.fuchsia {
   --hover-text-light: var(--fuchsia-600);
   --hover-text-dark: var(--fuchsia-500);
   --focus-outline-light: var(--fuchsia-600);
   --focus-outline-dark: var(--fuchsia-500);
 }
 
-.PanelHeaderButton.pink {
+button.PanelHeaderButton.pink {
   --hover-text-light: var(--pink-600);
   --hover-text-dark: var(--pink-500);
   --focus-outline-light: var(--pink-600);
   --focus-outline-dark: var(--pink-500);
 }
 
-.PanelHeaderButton.rose {
+button.PanelHeaderButton.rose {
   --hover-text-light: var(--rose-600);
   --hover-text-dark: var(--rose-500);
   --focus-outline-light: var(--rose-600);
   --focus-outline-dark: var(--rose-500);
 }
 
-.PanelHeaderButton.slate {
+button.PanelHeaderButton.slate {
   --hover-text-light: var(--slate-600);
   --hover-text-dark: var(--slate-500);
   --focus-outline-light: var(--slate-600);
   --focus-outline-dark: var(--slate-500);
 }
 
-.PanelHeaderButton.gray {
+button.PanelHeaderButton.gray {
   --hover-text-light: var(--gray-600);
   --hover-text-dark: var(--gray-500);
   --focus-outline-light: var(--gray-600);
   --focus-outline-dark: var(--gray-500);
 }
 
-.PanelHeaderButton.zinc {
+button.PanelHeaderButton.zinc {
   --hover-text-light: var(--zinc-600);
   --hover-text-dark: var(--zinc-500);
   --focus-outline-light: var(--zinc-600);
   --focus-outline-dark: var(--zinc-500);
 }
 
-.PanelHeaderButton.neutral {
+button.PanelHeaderButton.neutral {
   --hover-text-light: var(--neutral-600);
   --hover-text-dark: var(--neutral-500);
   --focus-outline-light: var(--neutral-600);
   --focus-outline-dark: var(--neutral-500);
 }
 
-.PanelHeaderButton.stone {
+button.PanelHeaderButton.stone {
   --hover-text-light: var(--stone-600);
   --hover-text-dark: var(--stone-500);
   --focus-outline-light: var(--stone-600);

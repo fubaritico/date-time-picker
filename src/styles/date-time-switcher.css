@@ -9,7 +9,7 @@
 }
 
 /* Sizes */
-.DateTimeSwitcher.lg ,
+.DateTimeSwitcher.lg,
 .DateTimeSwitcher.md {
   height: var(--date-time-browser-height-lg);
 }

@@ -36,6 +36,10 @@ export default [
             src: 'src/fonts',
             dest: 'dist',
           },
+          {
+            src: ['src/declarations.d.ts', 'src/global.d.ts'],
+            dest: 'dist',
+          },
         ],
       }),
       postcss({
