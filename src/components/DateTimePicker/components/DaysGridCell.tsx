@@ -1,4 +1,4 @@
-import { cx } from '@utils'
+import clsx from 'clsx'
 
 import type {
   ComponentProps,
@@ -69,7 +69,7 @@ const DaysGridCell: FC<PropsWithChildren<DaysGridCellProps>> = ({
     onMouseEnter={
       isClickable && isSelectingRange ? handleDateMouseEnter : undefined
     }
-    className={cx(
+    className={clsx(
       'DaysGridCell',
       {
         hasDateRangeMode: hasDateRangeMode,

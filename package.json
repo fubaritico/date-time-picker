@@ -25,13 +25,10 @@
     "access": "public"
   },
   "scripts": {
-    "dev": "concurrently 'vite -c vite.config.js' 'pnpm dev:postcss' 'pnpm dev:tw:css'",
+    "dev": "concurrently 'vite -c vite.config.js' 'pnpm dev:postcss'",
     "dev:postcss": "postcss ./src/native-styles.css --config ./dev -o ./dev/native-styles.css -w",
-    "dev:tw:css": "tailwindcss -w -i ./src/index.css -o ./dev/styles.css",
     "storybook": "storybook dev -p 6006",
-    "storybook:css": "tailwindcss -w -i ./src/index.css -o ./src/storybook.css",
-    "build": "rm -rf dist && rollup -c rollup.config.js && pnpm build:css",
-    "build:css": "tailwindcss -i ./src/index.css -o ./dist/date-picker.css --minify",
+    "build": "rm -rf dist && rollup -c rollup.config.js && pnpm build:postcss",
     "build:postcss": "node generate-css.cjs",
     "test": "TZ=UTC jest",
     "lint": "eslint .",
@@ -43,7 +40,7 @@
     "yalc:remove": "./yalc-dev.sh remove",
     "prepare": "husky",
     "prerelease": "pnpm lint && pnpm type-check && pnpm test && pnpm build",
-    "release": "pnpm prerelease && pnpm build && pnpm publish --access public"
+    "release": "pnpm prerelease && pnpm publish --access public"
   },
   "packageManager": "pnpm@10.0.0",
   "keywords": [
@@ -62,9 +59,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
-    "react-transition-group": "^4.4.5",
-    "tailwind-merge": "^3.3.0",
-    "tailwindcss": "^3.3.0"
+    "react-transition-group": "^4.4.5"
   },
   "engines": {
     "node": ">=22.11.0",
@@ -137,6 +132,7 @@
     "react-icons": "^5.5.0",
     "react-transition-group": "^4.4.5",
     "rollup": "^4.40.2",
+    "rollup-plugin-copy": "^3.5.0",
     "rollup-plugin-dts": "^6.2.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
@@ -144,8 +140,6 @@
     "storybook": "^8.6.12",
     "storybook-dark-mode": "^4.0.2",
     "stylelint-config-standard": "^38.0.0",
-    "tailwind-merge": "^3.3.0",
-    "tailwindcss": "^3.3.0",
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.2",
     "tsx": "^4.20.1",

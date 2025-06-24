@@ -6,6 +6,7 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import postcss from 'rollup-plugin-postcss'
 import dts from 'rollup-plugin-dts'
 import { visualizer } from 'rollup-plugin-visualizer'
+import copy from 'rollup-plugin-copy'
 import dynamicImportVars from '@rollup/plugin-dynamic-import-vars'
 
 // import pkg from './package.json' with { type: 'json' }
@@ -29,6 +30,14 @@ export default [
     ],
     plugins: [
       peerDepsExternal(),
+      copy({
+        targets: [
+          {
+            src: 'src/fonts',
+            dest: 'dist',
+          },
+        ],
+      }),
       postcss({
         config: {
           path: './postcss.config.js',
@@ -66,8 +75,6 @@ export default [
       'clsx',
       'react-icons',
       'react-transition-group',
-      'tailwind-merge',
-      'tailwindcss',
     ],
   },
   {
@@ -82,8 +89,6 @@ export default [
       'clsx',
       'react-icons',
       'react-transition-group',
-      'tailwind-merge',
-      'tailwindcss',
     ],
   },
 ]

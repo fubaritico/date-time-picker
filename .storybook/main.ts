@@ -19,6 +19,7 @@ const config: StorybookConfig = {
     getAbsolutePath('@storybook/addon-designs'),
     getAbsolutePath('storybook-dark-mode'),
   ],
+  staticDirs: ['../public'],
   core: {
     builder: {
       name: '@storybook/builder-vite',

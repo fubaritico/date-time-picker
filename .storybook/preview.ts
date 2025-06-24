@@ -1,7 +1,6 @@
 import { themes } from '@storybook/theming'
 
 import './stories.css'
-import '../src/storybook.css'
 import '../dev/native-styles.css'
 
 /** @type { import('@storybook/react').Preview } */
@@ -19,8 +18,8 @@ const preview = {
       dark: { ...themes.dark, appBg: '#111827' },
       light: { ...themes.normal, appBg: '#f3f4f6' },
       current: 'light',
-      darkClass: ['dark', 'dp-dark'],
-      lightClass: ['light', 'dp-light'],
+      darkClass: ['dark'],
+      lightClass: ['light'],
       stylePreview: true,
     },
     options: {

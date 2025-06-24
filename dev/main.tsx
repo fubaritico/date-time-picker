@@ -1,8 +1,6 @@
 import { useState, StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
 
-import './styles.css'
-
 import ControlledDateTimePicker from './controlled-date-time-picker'
 import UncontrolledDateTimePicker from './uncontrolled-date-time-picker'
 

@@ -19,7 +19,36 @@
 @import './styles/menu-item.css';
 @import './styles/panel-animation.css';
 @import './styles/panel-button.css';
+@import './styles/reset.css';
 @import './styles/spinner.css';
 @import './styles/textfield.css';
 @import './styles/time-panel.css';
 @import './styles/time-panel-setter.css';
+
+/* Roboto mono (same kerning letters) used for TimePanel component */
+@font-face {
+  font-family: 'RobotoMono';
+  src: url('./fonts/RobotoMono/RobotoMono-SemiBold.woff2') format('woff2'),
+  url('./fonts/RobotoMono/RobotoMono-SemiBold.woff') format('woff'),
+  url('./fonts/RobotoMono/RobotoMono-SemiBold.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RobotoMono';
+  src: url('./fonts/RobotoMono/RobotoMono-SemiBold.woff2') format('woff2'),
+  url('./fonts/RobotoMono/RobotoMono-SemiBold.woff') format('woff'),
+  url('./fonts/RobotoMono/RobotoMono-SemiBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RobotoMono';
+  src: url('./fonts/RobotoMono/RobotoMono-SemiBold.woff2') format('woff2'),
+  url('./fonts/RobotoMono/RobotoMono-SemiBold.woff') format('woff'),
+  url('./fonts/RobotoMono/RobotoMono-SemiBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}

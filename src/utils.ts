@@ -1,7 +1,3 @@
-import clsx from 'clsx'
-import { extendTailwindMerge } from 'tailwind-merge'
-
-import type { ClassValue } from 'clsx'
 import type { ChangeEvent, KeyboardEvent } from 'react'
 
 /**
@@ -1116,12 +1112,3 @@ export const formatToLocaleAwareFormat = (
       })
   )
 }
-
-const twMerge = extendTailwindMerge({
-  prefix: 'dp-',
-})
-
-/**
- * Utility function to apply CSS classes by merging them
- */
-export const cx = (...classes: ClassValue[]) => twMerge(clsx(...classes))
