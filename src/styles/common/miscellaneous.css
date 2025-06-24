@@ -14,7 +14,7 @@
 
   /* box-shadow */
   --box-shadox-elevation-1: 0 1px 4px 0 rgba(0, 0, 0, 0.08);
-  --box-shadox-elevation-2: 0 4px 6px 0 rgba(0, 0, 0, 0.05), 0 10px 15px 0 rgba(0, 0, 0, 0.1);
+  --box-shadox-elevation-2: 0 1px 4px 0 rgba(0, 0, 0, 0.25), 0 1px 4px 0 rgba(0, 0, 0, 0.08);
   /* background-image */
   --bg-storybook-light: radial-gradient(
     ellipse at 33%,

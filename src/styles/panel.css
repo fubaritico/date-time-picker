@@ -48,15 +48,18 @@
   /* Default values (light mode) */
   .Panel:not(.light *) {
     --bg: var(--bg-dark);
+    box-shadow: var(--box-shadox-elevation-2);
   }
 }
 
 /* Forced dark mode */
 .dark * .Panel {
   --bg: var(--bg-dark);
+  box-shadow: var(--box-shadox-elevation-2);
 }
 
 /* Forced light mode */
 .light * .Panel {
   --bg: var(--bg-light);
+  box-shadow: var(--box-shadox-elevation-1);
 }

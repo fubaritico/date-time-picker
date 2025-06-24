@@ -58,16 +58,19 @@
   /* Default values (light mode) */
   .Menu:not(.light *) {
     --menu-bg: var(--menu-bg-dark);
+    box-shadow: var(--box-shadox-elevation-2);
   }
 }
 
 /* Forced dark mode */
 .dark * .Menu {
   --menu-bg: var(--menu-bg-dark);
+  box-shadow: var(--box-shadox-elevation-2);
 }
 
 /* Forced light mode */
 .light * .Menu {
   --menu-bg: var(--menu-bg-light);
+  box-shadow: var(--box-shadox-elevation-1);
 }
 
