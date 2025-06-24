@@ -3,7 +3,7 @@ import { useState } from 'react'
 import {
   Button,
   DropdownMenu,
-  I18nDate,
+  I18nDateLabel,
   languages,
   timezones,
 } from '@components'
@@ -111,14 +111,14 @@ const DateRangePickerIntegration: FC<DateRangePickerIntegrationProps> = ({
           />
           {dateRange && (
             <div className="picker-integration-value">
-              <I18nDate
+              <I18nDateLabel
                 locale={locale}
                 localeAwareFormat={localeAwareFormat}
                 value={dateRange[0]}
                 timezone={timezone}
               />
               <span>|</span>
-              <I18nDate
+              <I18nDateLabel
                 locale={locale}
                 localeAwareFormat={localeAwareFormat}
                 value={dateRange[1]}

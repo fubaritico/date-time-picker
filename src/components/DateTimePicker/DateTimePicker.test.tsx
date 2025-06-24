@@ -20,7 +20,7 @@ import {
   subtractMinutes,
   subtractYears,
 } from '@utils'
-import { I18nDate } from '@components'
+import { I18nDateLabel } from '@components'
 
 import DatePicker from './DatePicker'
 import DateTimePicker from './DateTimePicker'
@@ -92,7 +92,7 @@ const setupAsControlled = (
             />
             {!!currentValue && (
               <span data-test={dateSpanTestId}>
-                <I18nDate
+                <I18nDateLabel
                   value={currentValue}
                   localeAwareFormat={localeAwareFormat}
                   locale={props.locale}

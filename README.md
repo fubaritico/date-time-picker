@@ -21,7 +21,7 @@ Icon component will be removed and replaced by local SVGs imported statically.
 
 ## Issues
 
-Some work has to be done with peer dependencies.
+Some work has to be done with peer dependencies, unwanted CSS overrides.
 
 ## Styling
 
@@ -30,6 +30,78 @@ An overall rework of the CSS strategy has been done. The picker is now styled us
 It allows having a better performance and a more consistent styling across the components.
 
 It also facilitates style override and customization.
+
+## Usage
+
+To get the component styles in your project, you can import the CSS file directly in your main entry point (e.g., `index.tsx` or `App.tsx`):
+
+```tsx
+import '@fubaratico/date-time-picker/styles.css'
+```
+
+You can then use the component in your React application like this:
+
+```tsx
+import { DateTimePicker } from '@fubaratico/date-time-picker';
+
+function App() {
+  const handleDateChange = (date?: number) => {
+    console.log('Selected date:', date);
+  };
+
+  return (
+    <div className="App">
+      <DateTimePicker
+        date={Date.now()}
+        onChange={handleDateChange}
+        label="Select Date and Time"
+        color="blue"
+        size="md"
+      />
+    </div>
+  );
+}
+```
+
+Usage is the same for `DatePicker`, `TimePicker`, and `DateRangePicker` components, with their respective properties.
+
+### Component I18nDateLabel utility
+
+The component provides a utility function to format dates and times based on the selected locale and timezone. You can use it like this:
+
+```tsx
+import {DateTimePicker, I18nDateLabel} from '@fubaratico/date-time-picker'
+import {useState} from "react";
+
+import '@fubaratico/date-time-picker/styles.css'
+import './App.css'
+
+function App() {
+   const [date, setDate] = useState<number | undefined>(new Date('2023-10-01T12:00:00Z').getTime())
+   const handleChange = (newDate?: number) => {
+      setDate(newDate)
+   }
+
+   return (
+           <div style={{width: '100vw', height: '100vh', display: 'flex', justifyContent: 'start', alignItems: 'start'}}>
+              <DateTimePicker date={date} color="emerald" onChange={handleChange}/>
+              <div style={{marginLeft: '20px'}}>
+                 <h2>Selected value:</h2>
+                 <p>{date ? new Date(date).toString() : 'None'}</p>
+                 <I18nDateLabel
+                         locale="fr_FR"
+                         localeAwareFormat="L LT"
+                         value={date}
+                 />
+              </div>
+           </div>
+   )
+}
+
+export default App
+```
+
+It allows displaying the date in a localized format, taking into account the locale and timezone settings.
 
 ## Properties
 

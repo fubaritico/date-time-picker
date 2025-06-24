@@ -3,7 +3,7 @@ import { useState } from 'react'
 import {
   Button,
   DropdownMenu,
-  I18nDate,
+  I18nDateLabel,
   languages,
   timezones,
 } from '@components'
@@ -110,7 +110,7 @@ const PickerIntegration = ({
           />
           {date && (
             <div className="picker-integration-value">
-              <I18nDate
+              <I18nDateLabel
                 locale={locale}
                 localeAwareFormat={localeAwareFormat}
                 value={date}

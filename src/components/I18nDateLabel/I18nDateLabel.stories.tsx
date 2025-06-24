@@ -1,14 +1,14 @@
 import { withLayout, withPadding } from '@storybook-decorators/withLayout'
 
-import I18nDate, { I18nDateProps } from './I18nDate'
+import I18nDateLabel, { I18nDateLabelProps } from './I18nDateLabel'
 
 import { languages, timezones } from '.'
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-const meta: Meta<typeof I18nDate> = {
-  title: 'Components/I18nDate',
-  component: I18nDate,
+const meta: Meta<typeof I18nDateLabel> = {
+  title: 'Components/I18nDateLabel',
+  component: I18nDateLabel,
   parameters: {
     layout: 'fullscreen',
   },
@@ -67,9 +67,9 @@ const meta: Meta<typeof I18nDate> = {
 
 export default meta
 
-type Story = StoryObj<typeof I18nDate>
+type Story = StoryObj<typeof I18nDateLabel>
 
-const storyRenderer = (args: I18nDateProps) => <I18nDate {...args} />
+const storyRenderer = (args: I18nDateLabelProps) => <I18nDateLabel {...args} />
 
 export const Default: Story = {
   args: {

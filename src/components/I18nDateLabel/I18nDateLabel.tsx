@@ -2,7 +2,7 @@ import { formatToLocaleAwareFormat } from '@utils'
 
 import type { FC } from 'react'
 
-export interface I18nDateProps {
+export interface I18nDateLabelProps {
   /* Locale as a string under the shape of 'en_US', defaults to 'en_US' */
   locale?: string
   /* Locale aware formats from momentJS for datetime, date or time */
@@ -13,7 +13,7 @@ export interface I18nDateProps {
   value?: number
 }
 
-const I18nDate: FC<I18nDateProps> = ({
+const I18nDateLabel: FC<I18nDateLabelProps> = ({
   locale = 'en_US',
   localeAwareFormat = 'L LT',
   timezone,
@@ -28,4 +28,4 @@ const I18nDate: FC<I18nDateProps> = ({
   )
 }
 
-export default I18nDate
+export default I18nDateLabel

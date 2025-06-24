@@ -4,6 +4,7 @@ export {
   TimePicker,
   DateRangePicker,
 } from './components/DateTimePicker'
+export { default as I18nDateLabel } from './components/I18nDateLabel'
 
 export type {
   DatePickerProps,
@@ -11,3 +12,4 @@ export type {
   TimePickerProps,
   DateRangePickerProps,
 } from './components/DateTimePicker'
+export type { I18nDateLabelProps } from './components/I18nDateLabel'

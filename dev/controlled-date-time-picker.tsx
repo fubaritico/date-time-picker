@@ -1,4 +1,4 @@
-import { I18nDate } from '@components'
+import { I18nDateLabel } from '@components'
 
 import { DateTimePicker } from 'src/components/DateTimePicker'
 
@@ -32,7 +32,7 @@ const ControlledDateTimePicker: FC<
         <div>
           <p>
             Selected value: {date ? date.toString() : 'None'}&nbsp;|&nbsp;
-            <I18nDate
+            <I18nDateLabel
               locale={locale}
               localeAwareFormat="L LT"
               timezone={timezone}
