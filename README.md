@@ -1,47 +1,75 @@
 # DateTimePicker Component
 
-A React 19.x date-time picker component, using TypeScript 5.x, styled with Tailwind 3.x and CVA for styling.
+A React 19.x date-time picker component, using TypeScript 5.x, styled using native CSS.
+
+`DatePicker`, `DateTimePicker`, `TimePicker` and `DateRangePicker` are distinct components.
 
 ## Work in progress
 
-Creation of `DatePicker`, `DateTimePicker`, `TimePicker` and `DateRangePicker` as separated components.
-
 Tests have to be written for `DateRangePicker`.
 
-Some integration tests will be done in real projects.
+Some integration tests still have to be done in real projects. Though the component works fine in the preview.
 
 ## Issues
 
-### CSS
+No issues at the moment.
 
-Due to the number of safelist CSS classes used, tailwind has to generate potential utility classes at build time. This leads to a large CSS file size. 
+## Styling
 
-To mitigate this, a rework of the CSS strategy will be done. CSS modules will be used to scope styles to the component, and only the necessary classes will be generated.
+An overall rework of the CSS strategy has been done. The picker is now styled using mere CSS native.
+
+It allows having a better performance and a more consistent styling across the components.
+
+It also facilitates style override and customization.
 
 ## Properties
 
-| Properties        | Type                                          | Default             | Description                                                                                                                     |
-|-------------------|-----------------------------------------------|---------------------|---------------------------------------------------------------------------------------------------------------------------------|
-| color             | string                                        | undefined                | Color theme based on Tailwind palette names.                                                                                    |
-| date              | number                                        | undefined                | When using `DatePicker`, `DateTimePicker` or `TimePicker`, date as an UTC timestamp. It will default to now if not provided     |
-| dateRange         | [number, number]                              | [undefined, undefined] | When using `DateRangePicker`, range date as a pair of Unix timestamps                                                           |
-| enablePortal      | boolean                                       | false               | Whether to render the panel in a portal                                                                                         |
-| errors            | string[]                                      | []                  | Error messages to display                                                                                                       |
-| loading           | boolean                                       | false               | If true, the input text is disabled and a loading animation is displayed on the right                                           |
-| locale            | string                                        | 'en'                | Locale language in international ISO-8601                                                                                       |
-| maxDate           | Date                                          | undefined                | When defining a valid/enabled range of dates, it will be the max/end date                                                       |
-| minDate           | Date                                          | undefined                | When defining a valid/enabled range of dates, it will be the min/start date                                                     |
-| pickerMode        | 'DATE' \| 'TIME' \| 'DATETIME' \| 'DATERANGE' | 'DATE'          | (dev and integration tests only) The mode of the picker                                                                         |
-| noDefault         | boolean                                       | false               | If true, no default date (today) will be displayed                                                                              |
-| onDateChange      | (value?: number) => void                      | undefined                | When using `DatePicker`, `DateTimePicker` or `TimePicker`, this function is called on date click if the component is controlled |
-| onDateRangeChange | (date: [number, number]) => void              | undefined                | When using `DateRangePicker`, this function is called on date range change                                                      |
-| placement         | 'bottom-start' \| 'bottom-end'                | 'bottom-start'      | The placement of the panel                                                                                                      |
-| size              | 'sm' \| 'md' \| 'lg'                          | 'md'                | The size of the component                                                                                                       |
-| timezone          | string                                        | undefined                | Timezone list member based on moment.js                                                                                         |
+### Common
+| Property | Type | Description                         |
+|----------|------|-------------------------------------|
+| color | `'blue' \| 'red' \| 'green' \| ...` | Tailwind color theme for styling    |
+| disabled | `boolean` | Disables the picker input           |
+| errors | `string[]` | Error messages displayed below input |
+| helperText | `string` | Helper text shown below input       |
+| label | `string` | Input label                         |
+| labelInfo | `string` | Tooltip information for label       |
+| locale | `string` | Language format (ISO-8601)          |
+| loading | `boolean` | Shows loading animation             |
+| minDate | `number` | Minimum selectable timestamp        |
+| maxDate | `number` | Maximum selectable timestamp        |
+| required | `boolean` | Marks the field as required         |
+| size | `'sm' \| 'md' \| 'lg'` | Component size                      |
+| timezone | `Timezone` | Timezone (moment.js based)          |
+
+### Picker-specific Properties
+| Property | Type | Description |
+|----------|------|-------------|
+| enablePortal | `boolean` | Place panel in portal |
+| extraIcon | `ReactElement` | Additional right-side icon |
+| open | `boolean` | Control panel visibility |
+| placement | `'bottom-start' \| 'bottom-end'` | Panel placement |
+
+### DatePicker & DateTimePicker
+| Property | Type | Description |
+|----------|------|-------------|
+| date | `number` | UTC timestamp in ms |
+| onChange | `(value?: number) => void` | Date change callback |
+
+### DateRangePicker
+| Property | Type | Description |
+|----------|------|-------------|
+| dateRange | `[number \| undefined, number \| undefined]` | Start/end timestamps |
+| onDateRangeChange | `(range: DateRange) => void` | Range change callback |
+
+### TimePicker
+| Property | Type | Description |
+|----------|------|-------------|
+| date | `number` | UTC timestamp in ms |
+| onChange | `(value?: number) => void` | Time change callback |
 
 ## Color themes
 
-Theme coloring is now implemented. It is based on Tailwind CSS colors. It works with `cva` under the hood.
+Theme coloring is now implemented. It is based on Tailwind CSS colors. It allows to colorize the pickers according to the tailwind color palettes.
 
 ## Features
 
