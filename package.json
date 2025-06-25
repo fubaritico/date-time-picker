@@ -1,5 +1,5 @@
 {
-  "name": "@fubaratico/date-time-picker",
+  "name": "@fubar-it-co/date-time-picker",
   "version": "0.1.3",
   "description": "A React 19 date and time picker component",
   "type": "module",
@@ -19,7 +19,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/fubaratico/date-time-picker.git"
+    "url": "https://github.com/fubar-it-co/date-time-picker.git"
   },
   "publishConfig": {
     "access": "public"
@@ -36,8 +36,11 @@
     "build:files": "node append-definitions-to-file.js",
     "test": "TZ=UTC jest",
     "prepare": "husky",
+    "bump:patch": "npm version patch",
+    "bump:minor": "npm version minor",
+    "bump:major": "npm version major",
     "prerelease": "pnpm lint && pnpm type-check && pnpm test && pnpm build",
-    "release": "pnpm prerelease && pnpm publish --access public",
+    "release": "pnpm prerelease && pnpm bump:patch && pnpm publish --access public",
     "yalc:publish": "./yalc-dev.sh publish",
     "yalc:watch": "./yalc-dev.sh watch",
     "yalc:push": "./yalc-dev.sh push",
@@ -53,7 +56,7 @@
     "component",
     "native css"
   ],
-  "author": "Fubaratico <contact@fubaratico.com>",
+  "author": "fubar-it-co <contact@fubar-it-co.com>",
   "license": "MIT",
   "peerDependencies": {
     "react": "^19.0.0",

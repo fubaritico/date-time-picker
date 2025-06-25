@@ -36,13 +36,13 @@ It also facilitates style override and customization.
 To get the component styles in your project, you can import the CSS file directly in your main entry point (e.g., `index.tsx` or `App.tsx`):
 
 ```tsx
-import '@fubaratico/date-time-picker/styles.css'
+import '@fubar-it-co/date-time-picker/styles.css'
 ```
 
 You can then use the component in your React application like this:
 
 ```tsx
-import { DateTimePicker } from '@fubaratico/date-time-picker';
+import { DateTimePicker } from '@fubar-it-co/date-time-picker';
 
 function App() {
   const handleDateChange = (date?: number) => {
@@ -70,10 +70,10 @@ Usage is the same for `DatePicker`, `TimePicker`, and `DateRangePicker` componen
 The component provides a utility function to format dates and times based on the selected locale and timezone. You can use it like this:
 
 ```tsx
-import {DateTimePicker, I18nDateLabel} from '@fubaratico/date-time-picker'
+import {DateTimePicker, I18nDateLabel} from '@fubar-it-co/date-time-picker'
 import {useState} from "react";
 
-import '@fubaratico/date-time-picker/styles.css'
+import '@fubar-it-co/date-time-picker/styles.css'
 import './App.css'
 
 function App() {
@@ -292,7 +292,7 @@ pnpm build
 
 Before publishing, make sure to update the following fields in `package.json`:
 
-1. `name`: Replace `@<fubaratico or your scope>/date-time-picker` with your actual npm scope or username
+1. `name`: Replace `@<fubar-it-co or your scope>/date-time-picker` with your actual npm scope or username
 2. `author`: Add your name, email, and website
 3. `repository.url`: Update with your actual GitHub repository URL
 
@@ -360,13 +360,13 @@ In your test project directory:
 
 1. Add the package from yalc:
    ```bash
-   yalc add @<fubaratico or your scope>/date-time-picker
+   yalc add @<fubar-it-co or your scope>/date-time-picker
    pnpm install
    ```
 
 2. Import and use the component as if it were installed from npm:
    ```typescript
-   import { DateTimePicker } from '@<fubaratico or your scope>/date-time-picker';
+   import { DateTimePicker } from '@<fubar-it-co or your scope>/date-time-picker';
    ```
 
 #### Development Workflow
@@ -391,7 +391,7 @@ When you're done testing:
 
 1. In your test project:
    ```bash
-   yalc remove @<fubaratico or your scope>/date-time-picker
+   yalc remove @<fubar-it-co or your scope>/date-time-picker
    pnpm install
    ```
 
