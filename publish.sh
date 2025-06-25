@@ -69,13 +69,14 @@ log "Creating new version..." "$YELLOW"
 pnpm version patch
 check_status "Version bump"
 
-log "Pushing new version to repository..." "$YELLOW"
-git push --follow-tags
-check_status "Git push"
+CURRENT_VERSION=$(node -p "require('./package.json').version")
+log "Ensuring tag v${CURRENT_VERSION} exists..." "$YELLOW"
+git tag -a "v${CURRENT_VERSION}" -m "Version ${CURRENT_VERSION}" || true
+check_status "Tag creation"
 
-log "Publishing to npm..." "$YELLOW"
-pnpm publish --access public
-check_status "Publish"
+log "Pushing new version to repository..." "$YELLOW"
+git push origin main --force && git push origin --tags --force
+check_status "Git push"
 
 # Clean up - remove .npmrc file and unset environment variables
 log "Cleaning up..." "$YELLOW"
