@@ -2,6 +2,10 @@
 
 # Make the script executable in MacOS: chmod +x publish.sh
 
+# You have to be logged in to npm before running this script.
+# You have to create a scope in you npm account first.
+# run:  pnpm login --scope=@your-scope-name
+
 # Colors for output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
