@@ -19,7 +19,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/fubar-it-co/date-time-picker.git"
+    "url": "https://github.com/fubaritico/date-time-picker.git"
   },
   "publishConfig": {
     "access": "public"
@@ -56,7 +56,7 @@
     "component",
     "native css"
   ],
-  "author": "fubar-it-co <contact@fubar-it-co.com>",
+  "author": "fubar-it-co <contact@fubaritico.com>",
   "license": "MIT",
   "peerDependencies": {
     "react": "^19.0.0",
