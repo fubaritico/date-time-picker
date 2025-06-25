@@ -6,8 +6,9 @@ A React 19.x date-time picker component, using TypeScript 5.x, styled using nati
 
 ✅ tested locally with [yalc](https://github.com/wclr/yalc) on a real project (types, styles, functionality)
 
-❌ tested as a final imported package from NPM (not yet)
+✅ tested as a final imported package from NPM on a real project (types, styles, functionality)
 
+The package is available on NPM as `@fubar-it-co/date-time-picker`, [go to NPM](https://www.npmjs.com/package/@fubar-it-co/date-time-picker).
 
 ## Work in progress
 
@@ -162,6 +163,43 @@ Theme coloring is now implemented. It is based on Tailwind CSS colors. It allows
 - **Accessibility**: Fully accessible with ARIA attributes.
 - **Localization**: Supports multiple locales for internationalization.
 - **Timezone**: Supports timezone selection and display.
+
+## Preview
+
+### DatePicker
+
+<p style="display: flex; gap: 10px; flex-wrap: nowrap; align-items: start; justify-content: left;">
+  <img src="docs/date-picker-light.png" alt="Date Picker Light" />
+  <img src="docs/date-picker-dark.png" alt="Date Picker Dark" />
+</p>
+
+### Date Time Picker
+
+<p style="display: flex; gap: 10px; flex-wrap: nowrap; align-items: start; justify-content: left;">
+  <img src="docs/date-time-picker-light.png" alt="Date Time Picker Light" />
+  <img src="docs/date-time-picker-light-time.png" alt="Date Time Picker Light with Time" />
+</p>
+
+### Date Range Picker
+
+<p style="display: flex; gap: 10px; flex-direction: column; align-items: start; justify-content: center;">
+  <img src="docs/date-range-picker-light.png" alt="Date Range Picker Light" />
+  <img src="docs/date-range-picker-dark.png" alt="Date Range Picker Dark" />
+</p>
+
+### Time Picker
+
+<p style="display: flex; gap: 10px; flex-wrap: nowrap; align-items: start; justify-content: left;">
+  <img src="docs/time-picker-light.png" alt="Time Picker Light" />
+</p>
+
+### Color Theme
+
+Note that, by default, the component uses the `blue` color theme. You can change it by passing the `color` prop to the component.
+
+<p style="display: flex; gap: 10px; flex-wrap: nowrap; align-items: start; justify-content: left;">
+  <img src="docs/date-time-picker-dark-orange.png" alt="Time Picker Light" />
+</p>
 
 ## Development
 

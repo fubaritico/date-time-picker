@@ -150,17 +150,28 @@ input.TextField.show-icon.icon-right + .icon-button {
   transform: translateY(-50%);
 }
 
+input.TextField.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button:focus,
+input.TextField.show-icon.icon-left + .icon-button:focus,
+input.TextField.show-icon.icon-right + .icon-button:focus,
+input.TextField.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button:focus-visible,
+input.TextField.show-icon.icon-left + .icon-button:focus-visible,
+input.TextField.show-icon.icon-right + .icon-button:focus-visible {
+  outline: 0 none;
+}
+
 input.TextField.disabled.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button,
 input.TextField.disabled.show-icon.icon-left + .icon-button,
 input.TextField.disabled.show-icon.icon-right + .icon-button {
   opacity: 0.5;
   cursor: default;
+  outline: 0 none;
 }
 
 input.TextField.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button:not(.enabled),
 input.TextField.show-icon.icon-left + .icon-button:not(.enabled),
 input.TextField.show-icon.icon-right + .icon-button:not(.enabled) {
   cursor: default;
+  outline: 0 none;
 }
 
 input.TextField.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button .icon,
