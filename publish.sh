@@ -44,6 +44,13 @@ if [ -z "$NPM_TOKEN" ]; then
     exit 1
 fi
 
+# Check git tags configuration
+log "Configuring git..." "$YELLOW"
+git config --local version.commitTag true
+git config --local tag.gpgSign false
+git config --local version.tagName "v%s"
+check_status "Git configuration"
+
 # Create or update .npmrc file with the token
 log "Configuring npm authentication..." "$YELLOW"
 cat > .npmrc << EOL
