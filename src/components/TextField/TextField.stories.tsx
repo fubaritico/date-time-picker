@@ -5,7 +5,7 @@ import { FC, useState } from 'react'
 import { COLORS } from '@constants'
 
 import TextField, { TextFieldProps } from './TextField'
-import { ReactComponent as HiCalendar } from '../../assets/svg/HiCalendar.svg'
+import { ReactComponent as HiCalendar } from '../../assets/svg/HiCalendarDays.svg'
 import { ReactComponent as HiMiniUser } from '../../assets/svg/HiMiniUser.svg'
 
 const meta: Meta<typeof TextField> = {
