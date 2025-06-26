@@ -1,21 +1,11 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { withLayout } from '@storybook-decorators/withLayout'
-import * as hi2 from 'react-icons/hi2'
 
 import { COLORS } from '@constants'
 
 import Button, { ButtonProps } from './Button'
 
 import type { FC } from 'react'
-
-const icons = Object.keys(hi2).reduce<Record<Hi2UiIconNames, string>>(
-  (obj, key) => {
-    const k = key as Hi2UiIconNames
-    obj[k] = ''
-    return obj
-  },
-  {} as Record<Hi2UiIconNames, string>
-)
 
 const meta = {
   title: 'Components/Button',
@@ -35,13 +25,6 @@ const meta = {
           },
           {} as Record<UIColor, string>
         ),
-      },
-    },
-    icon: {
-      options: Object.keys(hi2),
-      control: {
-        type: 'select',
-        labels: icons,
       },
     },
     iconPosition: {

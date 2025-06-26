@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 
-import { Icon } from '@components'
+import { ReactComponent as HiChevronLeft } from '../../../assets/svg/HiChevronLeft.svg'
+import { ReactComponent as HiChevronRight } from '../../../assets/svg/HiChevronRight.svg'
 
 import type { FC, PropsWithChildren } from 'react'
 
@@ -40,7 +41,7 @@ const PanelHeader: FC<PropsWithChildren<PanelHeaderProps>> = ({
       onClick={onPrevButtonClick}
       disabled={disablePrevButton}
     >
-      <Icon aria-hidden name="HiChevronLeft" />
+      <HiChevronLeft aria-hidden />
     </button>
     <div className="PanelHeader-content">{children}</div>
     <button
@@ -48,7 +49,7 @@ const PanelHeader: FC<PropsWithChildren<PanelHeaderProps>> = ({
       onClick={onNextButtonClick}
       disabled={disableNextButton}
     >
-      <Icon aria-hidden name="HiChevronRight" />
+      <HiChevronRight aria-hidden />
     </button>
   </div>
 )

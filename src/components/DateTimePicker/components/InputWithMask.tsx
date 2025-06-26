@@ -2,6 +2,9 @@ import MonaHealthInputMask from '@mona-health/react-input-mask'
 
 import { TextField } from '@components'
 
+import { ReactComponent as HiClock } from '../../../assets/svg/HiClock.svg'
+import { ReactComponent as HiMiniCalendarDays } from '../../../assets/svg/HiMiniCalendarDays.svg'
+
 import type { DateInputProps, InputMask, PickerMode } from '../types'
 import type { ChangeEvent, FC, FocusEventHandler, RefObject } from 'react'
 
@@ -67,11 +70,11 @@ const InputWithMask: FC<InputWithMaskProps> = ({
     >
       <TextField
         iconAriaLabel="Open calendar panel"
-        iconName={
+        icon={
           withPanel
             ? pickerMode === 'TIME'
-              ? 'HiClock'
-              : 'HiMiniCalendarDays'
+              ? HiClock
+              : HiMiniCalendarDays
             : undefined
         }
         iconRef={iconRef}

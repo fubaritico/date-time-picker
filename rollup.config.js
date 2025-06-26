@@ -5,9 +5,9 @@ import terser from '@rollup/plugin-terser'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import postcss from 'rollup-plugin-postcss'
 import dts from 'rollup-plugin-dts'
+import svgr from '@svgr/rollup'
 import { visualizer } from 'rollup-plugin-visualizer'
 import copy from 'rollup-plugin-copy'
-import dynamicImportVars from '@rollup/plugin-dynamic-import-vars'
 
 // import pkg from './package.json' with { type: 'json' }
 
@@ -52,10 +52,10 @@ export default [
           insertAt: 'top',
         },
       }),
+      svgr({ exportType: 'named' }),
       resolve({
         extensions: ['.ts', '.tsx'],
       }),
-      dynamicImportVars(),
       commonjs(),
       typescript({
         tsconfig: 'tsconfig.json',
@@ -72,14 +72,7 @@ export default [
         filename: 'bundle-analysis.html',
       }),
     ],
-    external: [
-      'react',
-      'react-dom',
-      '@mona-health/react-input-mask',
-      'clsx',
-      'react-icons',
-      'react-transition-group',
-    ],
+    external: ['react', 'react-dom', 'clsx', 'react-transition-group'],
   },
   {
     input: 'src/index.ts',
@@ -89,9 +82,7 @@ export default [
       /\.css$/,
       'react',
       'react-dom',
-      '@mona-health/react-input-mask',
       'clsx',
-      'react-icons',
       'react-transition-group',
     ],
   },

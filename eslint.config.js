@@ -135,6 +135,16 @@ export default tseslint.config(
               group: 'internal',
               position: 'before',
             },
+            {
+              pattern: '../../assets/svg/*.svg',
+              group: 'sibling',
+              position: 'after',
+            },
+            {
+              pattern: '../../../assets/svg/*.svg',
+              group: 'sibling',
+              position: 'after',
+            },
           ],
           pathGroupsExcludedImportTypes: ['type'],
           distinctGroup: false,

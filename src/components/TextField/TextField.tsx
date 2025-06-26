@@ -4,8 +4,9 @@ import { forwardRef, useState } from 'react'
 import { createCustomChangeEvent, handleKeyDown } from '@utils'
 
 import HelperText from '../HelperText'
-import Icon from '../Icon'
 import Label from '../Label'
+
+import { ReactComponent as HiXMark } from '../../assets/svg/HiXMark.svg'
 
 import type {
   ChangeEvent,
@@ -13,6 +14,7 @@ import type {
   FC,
   ForwardedRef,
   RefObject,
+  SVGProps,
 } from 'react'
 
 export interface TextFieldProps
@@ -33,8 +35,8 @@ export interface TextFieldProps
   hideFocus?: boolean
   /* Icon aria label for accessibility and tests*/
   iconAriaLabel?: string
-  /* Name of the icon displayed on the left */
-  iconName?: Hi2UiIconNames
+  /* Icon as a React component */
+  icon?: FC<SVGProps<SVGSVGElement>>
   /* Icon set to use */
   iconPosition?: 'left' | 'right'
   /* Icon ref for special use cases */
@@ -85,7 +87,7 @@ const TextField: FC<TextFieldProps> = forwardRef<
       helperText,
       hideFocus,
       iconAriaLabel,
-      iconName,
+      icon: Icon,
       iconPosition = 'left',
       iconRef,
       label,
@@ -136,7 +138,7 @@ const TextField: FC<TextFieldProps> = forwardRef<
           }}
           onMouseLeave={() => {
             if (canClear) {
-              setShowCross(false)
+              setShowCross(true)
             }
           }}
         >
@@ -149,7 +151,7 @@ const TextField: FC<TextFieldProps> = forwardRef<
               `icon-${iconPosition}`,
               {
                 disabled: disabled,
-                'show-icon': iconName,
+                'show-icon': Icon,
                 'show-cross': showCross,
                 'hide-focus': hideFocus,
               },
@@ -165,7 +167,7 @@ const TextField: FC<TextFieldProps> = forwardRef<
             ref={ref}
             {...rest}
           />
-          {showCross && !disabled && (
+          {showCross && !disabled && !!Icon && (
             <div
               role="button"
               tabIndex={0}
@@ -177,10 +179,10 @@ const TextField: FC<TextFieldProps> = forwardRef<
                 onReset()
               }}
             >
-              <Icon name="HiXMark" className="icon" />
+              <HiXMark className="icon" />
             </div>
           )}
-          {!!iconName && (iconPosition === 'left' || !canClear) && (
+          {!!Icon && (iconPosition === 'left' || !canClear) && (
             <div
               aria-label={onIconClick ? iconAriaLabel : undefined}
               className={clsx('icon-button', {
@@ -196,7 +198,7 @@ const TextField: FC<TextFieldProps> = forwardRef<
               tabIndex={onIconClick ? 0 : undefined}
               ref={iconRef as RefObject<HTMLDivElement>}
             >
-              <Icon aria-hidden name={iconName} className="icon" />
+              <Icon aria-hidden className="icon" />
             </div>
           )}
         </div>

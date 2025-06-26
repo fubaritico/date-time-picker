@@ -1,4 +1,5 @@
-import Icon from '../../Icon/Icon'
+import { ReactComponent as HiChevronDown } from '../../../assets/svg/HiChevronDown.svg'
+import { ReactComponent as HiChevronUp } from '../../../assets/svg/HiChevronUp.svg'
 
 import type { FC } from 'react'
 
@@ -30,11 +31,11 @@ const TimePanelSetter: FC<TimePanelSetterProps> = ({
   return (
     <div className="TimePanelSetter">
       <button aria-label={`Add one ${unit}`} onClick={onTopButtonClick}>
-        <Icon aria-hidden name="HiChevronUp" />
+        <HiChevronUp aria-hidden />
       </button>
       <div aria-label={date}>{date}</div>
       <button aria-label={`Remove one ${unit}`} onClick={onBottomButtonClick}>
-        <Icon aria-hidden name="HiChevronDown" />
+        <HiChevronDown aria-hidden />
       </button>
     </div>
   )

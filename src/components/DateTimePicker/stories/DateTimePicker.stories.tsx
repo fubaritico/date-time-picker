@@ -29,6 +29,11 @@ const meta: Meta<typeof DateTimePicker> = {
         }, {}),
       },
     },
+    size: {
+      options: ['sm', 'md', 'lg'],
+      control: { type: 'select', labels: { sm: 'sm', md: 'md', lg: 'lg' } },
+      description: 'Size of the DateTimePicker',
+    },
   },
   tags: ['autodocs'],
   component: DateTimePicker,

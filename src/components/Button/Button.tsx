@@ -1,16 +1,21 @@
 import clsx from 'clsx'
 
 import ConditionalWrapper from '../ConditionalWrapper'
-import Icon from '../Icon'
 
-import type { ButtonHTMLAttributes, FC, ReactNode, RefObject } from 'react'
+import type {
+  ButtonHTMLAttributes,
+  FC,
+  ReactNode,
+  RefObject,
+  SVGProps,
+} from 'react'
 
 export interface ButtonProps
   extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color'> {
   /* Button color */
   color?: UIColor
-  /* Hero icon names for defining icon to display */
-  icon?: Hi2UiIconNames
+  /* Icon as a React component */
+  icon?: FC<SVGProps<SVGSVGElement>>
   /* Icon set to use */
   iconPosition?: 'left' | 'right'
   /* If true, will display a loading animation instead of the label */
@@ -30,7 +35,7 @@ export interface ButtonProps
 const Button: FC<ButtonProps> = ({
   className,
   disabled,
-  icon,
+  icon: Icon,
   iconPosition = 'left',
   label,
   loading,
@@ -51,7 +56,7 @@ const Button: FC<ButtonProps> = ({
         variant,
         color,
         iconPosition,
-        { loading: loading, 'not-rounded': notRounded, 'has-icon': !!icon },
+        { loading: loading, 'not-rounded': notRounded, 'has-icon': !!Icon },
         className
       )}
       disabled={disabled ?? !!loading}
@@ -67,7 +72,7 @@ const Button: FC<ButtonProps> = ({
         wrapper={(c) => <span className="hidden-content">{c}</span>}
       >
         <>
-          {icon && <Icon name={icon} />}
+          {Icon && <Icon />}
           <span>{label}</span>
         </>
       </ConditionalWrapper>

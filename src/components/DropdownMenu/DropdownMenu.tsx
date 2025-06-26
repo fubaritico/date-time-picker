@@ -6,6 +6,8 @@ import Label from '../Label'
 import Menu from '../Menu'
 
 import { isString } from './DropdownMenu.utils'
+import { ReactComponent as HiChevronDown } from '../../assets/svg/HiChevronDown.svg'
+import { ReactComponent as HiChevronUp } from '../../assets/svg/HiChevronUp.svg'
 
 import type { ButtonProps, MenuItemConfig } from '@components'
 import type { FC, ReactNode } from 'react'
@@ -193,7 +195,7 @@ const DropdownMenu: FC<DropdownMenuProps> = ({
               aria-label={
                 isString(buttonLabel) ? buttonLabel : 'Select an option'
               }
-              icon={isOpen ? 'HiChevronDown' : 'HiChevronUp'}
+              icon={isOpen ? HiChevronDown : HiChevronUp}
               iconPosition="right"
               data-test="dropdown-value"
               label={currentLabel}

@@ -1,3 +1,5 @@
+import { ReactComponent as HiClock } from '../../assets/svg/HiClock.svg'
+
 import type { MenuItemConfig } from '@components'
 
 export const menuItems: MenuItemConfig[] = [
@@ -69,7 +71,7 @@ export const longMenuItems: MenuItemConfig[] = [
   {
     label: 'Very long menu item with icon for an "selectable" item',
     value: 'value3',
-    icon: 'HiDocument',
+    icon: HiClock,
   },
   {
     label: 'Another long menu item for an "selectable" item',
@@ -82,7 +84,7 @@ export const longMenuItems: MenuItemConfig[] = [
     onButtonClick: () => {
       alert('Very long menu item with icon for an "action" item')
     },
-    icon: 'HiDocument',
+    icon: HiClock,
   },
   {
     label: 'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
@@ -112,7 +114,7 @@ export const coloredMenuItems: MenuItemConfig[] = [
     onButtonClick: () => {
       alert('Quick save')
     },
-    icon: 'HiDocument',
+    icon: HiClock,
   },
   {
     label:
@@ -126,7 +128,7 @@ export const coloredMenuItems: MenuItemConfig[] = [
     onButtonClick: () => {
       alert('Reassign')
     },
-    icon: 'HiEnvelope',
+    icon: HiClock,
     color: 'yellow',
   },
   {
@@ -134,7 +136,7 @@ export const coloredMenuItems: MenuItemConfig[] = [
     onButtonClick: () => {
       alert('Edit')
     },
-    icon: 'HiPencil',
+    icon: HiClock,
     color: 'green',
   },
   {
@@ -142,7 +144,7 @@ export const coloredMenuItems: MenuItemConfig[] = [
     onButtonClick: () => {
       alert('Delete')
     },
-    icon: 'HiTrash',
+    icon: HiClock,
     color: 'red',
   },
 ]

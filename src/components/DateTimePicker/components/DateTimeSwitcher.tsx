@@ -1,10 +1,13 @@
 import clsx from 'clsx'
 import { forwardRef } from 'react'
 
-import { Icon } from '@components'
-
 import useDateTimePicker from '../hooks/useDateTimePicker'
 import { PanelView } from '../types'
+
+import { ReactComponent as HiCalendarDays } from '../../../assets/svg/HiCalendarDays.svg'
+import { ReactComponent as HiClock } from '../../../assets/svg/HiClock.svg'
+import { ReactComponent as HiMiniCalendarDays } from '../../../assets/svg/HiMiniCalendarDays.svg'
+import { ReactComponent as HiMiniClock } from '../../../assets/svg/HiMiniClock.svg'
 
 interface DataTimeSwitcherProps {
   /* Type of view currently displayed: 'DAYS' or 'TIME' */
@@ -31,10 +34,11 @@ const DateTimeSwitcher = forwardRef<HTMLDivElement, DataTimeSwitcherProps>(
             setPanelView(PanelView.DAYS)
           }}
         >
-          <Icon
-            aria-hidden
-            name={size === 'sm' ? 'HiMiniCalendarDays' : 'HiCalendarDays'}
-          />
+          {size === 'sm' ? (
+            <HiMiniCalendarDays aria-hidden />
+          ) : (
+            <HiCalendarDays aria-hidden />
+          )}
         </button>
         <button
           aria-label="Switch to time view"
@@ -48,7 +52,11 @@ const DateTimeSwitcher = forwardRef<HTMLDivElement, DataTimeSwitcherProps>(
             setPanelView(PanelView.TIME)
           }}
         >
-          <Icon aria-hidden name={size === 'sm' ? 'HiMiniClock' : 'HiClock'} />
+          {size === 'sm' ? (
+            <HiMiniClock aria-hidden />
+          ) : (
+            <HiClock aria-hidden />
+          )}
         </button>
       </div>
     )

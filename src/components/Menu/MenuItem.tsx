@@ -4,7 +4,7 @@ import Button from '../Button'
 
 import { isString } from './Menu.utils'
 
-import type { FC, ReactElement } from 'react'
+import type { FC, ReactElement, SVGProps } from 'react'
 
 export type MenuItemType = 'selectable' | 'separator' | 'action' | 'element'
 
@@ -13,8 +13,8 @@ export interface MenuItemConfig {
   color?: UIColor
   /* Disabled state for a menu item */
   disabled?: boolean
-  /* Icon name for a menu item (hi2) */
-  icon?: Hi2UiIconNames
+  /* Icon as a React component */
+  icon?: FC<SVGProps<SVGSVGElement>>
   /* Label display for the Item, also used as the value */
   label?: string | ReactElement
   /* Callback called on menu item click (used when menu item type is action) */

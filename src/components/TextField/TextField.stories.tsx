@@ -5,6 +5,8 @@ import { FC, useState } from 'react'
 import { COLORS } from '@constants'
 
 import TextField, { TextFieldProps } from './TextField'
+import { ReactComponent as HiCalendar } from '../../assets/svg/HiCalendar.svg'
+import { ReactComponent as HiMiniUser } from '../../assets/svg/HiMiniUser.svg'
 
 const meta: Meta<typeof TextField> = {
   title: 'Components/TextField',
@@ -84,7 +86,7 @@ const meta: Meta<typeof TextField> = {
         type: { summary: 'string' },
       },
     },
-    iconName: {
+    icon: {
       control: 'text',
       description: 'Icon file name',
       table: {
@@ -207,13 +209,13 @@ const IntegrationBoard: FC = () => {
             initialValue={''}
             size="sm"
             canClear
-            iconName="HiMiniUser"
+            icon={HiMiniUser}
           />
           <Integration
             label="First name /w clickable icon and no clear icon"
             initialValue={''}
             size="sm"
-            iconName="HiCalendar"
+            icon={HiCalendar}
             onIconClick={() => {
               alert('Icon clicked')
             }}
@@ -223,7 +225,7 @@ const IntegrationBoard: FC = () => {
             initialValue={''}
             size="sm"
             canClear
-            iconName="HiMiniUser"
+            icon={HiMiniUser}
             required
           />
           <Integration
@@ -231,7 +233,7 @@ const IntegrationBoard: FC = () => {
             initialValue={''}
             size="sm"
             canClear
-            iconName="HiMiniUser"
+            icon={HiMiniUser}
             disabled
           />
           <Integration
@@ -240,7 +242,7 @@ const IntegrationBoard: FC = () => {
             severity="success"
             size="sm"
             canClear
-            iconName="HiMiniUser"
+            icon={HiMiniUser}
           />
           <Integration
             label="Required success first name /w icon"
@@ -248,7 +250,7 @@ const IntegrationBoard: FC = () => {
             severity="success"
             size="sm"
             canClear
-            iconName="HiMiniUser"
+            icon={HiMiniUser}
             required
           />
           <Integration
@@ -257,7 +259,7 @@ const IntegrationBoard: FC = () => {
             severity="success"
             size="sm"
             canClear
-            iconName="HiMiniUser"
+            icon={HiMiniUser}
             disabled
           />
           <Integration
@@ -266,7 +268,7 @@ const IntegrationBoard: FC = () => {
             severity="error"
             size="sm"
             canClear
-            iconName="HiMiniUser"
+            icon={HiMiniUser}
           />
           <Integration
             label="Required error first name /w icon"
@@ -274,7 +276,7 @@ const IntegrationBoard: FC = () => {
             severity="error"
             size="sm"
             canClear
-            iconName="HiMiniUser"
+            icon={HiMiniUser}
             required
           />
           <Integration
@@ -283,7 +285,7 @@ const IntegrationBoard: FC = () => {
             severity="error"
             size="sm"
             canClear
-            iconName="HiMiniUser"
+            icon={HiMiniUser}
             disabled
           />
         </div>
@@ -337,12 +339,12 @@ const IntegrationBoard: FC = () => {
             label="First name /w icon"
             initialValue={''}
             canClear
-            iconName="HiMiniUser"
+            icon={HiMiniUser}
           />
           <Integration
             label="First name /w clickable icon and no clear icon"
             initialValue={''}
-            iconName="HiCalendar"
+            icon={HiCalendar}
             onIconClick={() => {
               alert('Icon clicked')
             }}
@@ -351,14 +353,14 @@ const IntegrationBoard: FC = () => {
             label="Required first name /w icon"
             initialValue={''}
             canClear
-            iconName="HiMiniUser"
+            icon={HiMiniUser}
             required
           />
           <Integration
             label="First name disabled /w icon"
             initialValue={''}
             canClear
-            iconName="HiMiniUser"
+            icon={HiMiniUser}
             disabled
           />
           <Integration
@@ -366,14 +368,14 @@ const IntegrationBoard: FC = () => {
             initialValue="John Doe"
             severity="success"
             canClear
-            iconName="HiMiniUser"
+            icon={HiMiniUser}
           />
           <Integration
             label="Required success first name /w icon"
             initialValue="John Doe"
             severity="success"
             canClear
-            iconName="HiMiniUser"
+            icon={HiMiniUser}
             required
           />
           <Integration
@@ -381,7 +383,7 @@ const IntegrationBoard: FC = () => {
             initialValue="John Doe"
             severity="success"
             canClear
-            iconName="HiMiniUser"
+            icon={HiMiniUser}
             disabled
           />
           <Integration
@@ -389,14 +391,14 @@ const IntegrationBoard: FC = () => {
             initialValue="John Doe"
             severity="error"
             canClear
-            iconName="HiMiniUser"
+            icon={HiMiniUser}
           />
           <Integration
             label="Required error first name /w icon"
             initialValue="John Doe"
             severity="error"
             canClear
-            iconName="HiMiniUser"
+            icon={HiMiniUser}
             required
           />
           <Integration
@@ -404,7 +406,7 @@ const IntegrationBoard: FC = () => {
             initialValue="John Doe"
             severity="error"
             canClear
-            iconName="HiMiniUser"
+            icon={HiMiniUser}
             disabled
           />
         </div>
@@ -471,13 +473,13 @@ const IntegrationBoard: FC = () => {
             initialValue={''}
             size="lg"
             canClear
-            iconName="HiMiniUser"
+            icon={HiMiniUser}
           />
           <Integration
             label="First name /w clickable icon and no clear icon"
             initialValue={''}
             size="lg"
-            iconName="HiCalendar"
+            icon={HiCalendar}
             onIconClick={() => {
               alert('Icon clicked')
             }}
@@ -487,7 +489,7 @@ const IntegrationBoard: FC = () => {
             initialValue={''}
             size="lg"
             canClear
-            iconName="HiMiniUser"
+            icon={HiMiniUser}
             required
           />
           <Integration
@@ -495,7 +497,7 @@ const IntegrationBoard: FC = () => {
             initialValue={''}
             size="lg"
             canClear
-            iconName="HiMiniUser"
+            icon={HiMiniUser}
             disabled
           />
           <Integration
@@ -504,7 +506,7 @@ const IntegrationBoard: FC = () => {
             severity="success"
             size="lg"
             canClear
-            iconName="HiMiniUser"
+            icon={HiMiniUser}
           />
           <Integration
             label="Required success first name /w icon"
@@ -512,7 +514,7 @@ const IntegrationBoard: FC = () => {
             severity="success"
             size="lg"
             canClear
-            iconName="HiMiniUser"
+            icon={HiMiniUser}
             required
           />
           <Integration
@@ -521,7 +523,7 @@ const IntegrationBoard: FC = () => {
             severity="success"
             size="lg"
             canClear
-            iconName="HiMiniUser"
+            icon={HiMiniUser}
             disabled
           />
           <Integration
@@ -530,7 +532,7 @@ const IntegrationBoard: FC = () => {
             severity="error"
             size="lg"
             canClear
-            iconName="HiMiniUser"
+            icon={HiMiniUser}
           />
           <Integration
             label="Required error first name /w icon"
@@ -538,7 +540,7 @@ const IntegrationBoard: FC = () => {
             severity="error"
             size="lg"
             canClear
-            iconName="HiMiniUser"
+            icon={HiMiniUser}
             required
           />
           <Integration
@@ -547,7 +549,7 @@ const IntegrationBoard: FC = () => {
             severity="error"
             size="lg"
             canClear
-            iconName="HiMiniUser"
+            icon={HiMiniUser}
             disabled
           />
         </div>
@@ -596,7 +598,7 @@ export const Board: Story = {
         disable: true,
       },
     },
-    iconName: {
+    icon: {
       table: {
         disable: true,
       },

@@ -14,11 +14,9 @@ The package is available on NPM as `@fubar-it-co/date-time-picker`, [go to NPM](
 
 Tests have to be written for `DateRangePicker`.
 
-Some integration tests still are currently performed in real projects. 
+Some integration tests are still currently performed in real projects. 
 
-Note that the component works fine in the preview, but it's not imported as a package.
-
-Icon component will be removed and replaced by local SVGs imported statically.
+The accessibility features are not yet implemented, but some components are designed to be accessible.
 
 ## Issues
 
@@ -160,9 +158,9 @@ Theme coloring is now implemented. It is based on Tailwind CSS colors. It allows
 - **TimePicker**: Select a time from a time picker.
 - **DateRangePicker**: Select a range of dates from a calendar.
 - **Dark Mode**: Supports dark mode styling for all components.
-- **Accessibility**: Fully accessible with ARIA attributes.
 - **Localization**: Supports multiple locales for internationalization.
 - **Timezone**: Supports timezone selection and display.
+- <font color="#999">**Accessibility**: Fully accessible with ARIA attributes (not yet)</font>.
 
 ## Preview
 
@@ -288,31 +286,6 @@ yarn format
 # or
 pnpm format
 ```
-
-### Commit Message Convention
-
-This project follows the [Conventional Commits](https://www.conventionalcommits.org/) specification for commit messages. This helps to generate changelogs and makes commit history more readable.
-
-Format: `<type>(<scope>): <subject>`
-
-Recommended examples:
-- `feat: add new date format option`
-- `fix: correct time zone calculation`
-- `docs: update API documentation`
-- `style: format code with prettier`
-
-Allowed types:
-- `build`: Changes that affect the build system or external dependencies
-- `chore`: Other changes that don't modify src or test files
-- `ci`: Changes to CI configuration files and scripts
-- `docs`: Documentation only changes
-- `feat`: A new feature
-- `fix`: A bug fix
-- `perf`: A code change that improves performance
-- `refactor`: A code change that neither fixes a bug nor adds a feature
-- `revert`: Reverts a previous commit
-- `style`: Changes that do not affect the meaning of the code (white-space, formatting, etc)
-- `test`: Adding missing tests or correcting existing tests
 
 ### Building
 

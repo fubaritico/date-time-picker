@@ -2,7 +2,6 @@ import { Meta, StoryObj } from '@storybook/react'
 import { withCenteredLayout } from '@storybook-decorators/withLayout'
 
 import { COLORS } from '@constants'
-import { Icon } from '@components'
 
 import DropdownMenu from './DropdownMenu'
 import Integration from './DropdownMenu.integration'
@@ -12,6 +11,7 @@ import {
   longMenuItems,
   menuItems,
 } from './mock'
+import HiEllipsisVertical from '../../assets/svg/HiEllipsisVertical.svg'
 
 import type { DropdownMenuProps } from './DropdownMenu'
 import type { FC } from 'react'
@@ -202,7 +202,7 @@ export const IconButtonWithMenuToTheLeft: Story = {
     menuWidth: 200,
     triggerComponent: (
       <div className="trigger-component-example">
-        <Icon name="HiEllipsisVertical" />
+        <HiEllipsisVertical />
       </div>
     ),
     showSelectedValue: true,

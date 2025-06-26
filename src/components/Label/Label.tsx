@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 
-import Icon from '../Icon'
+import { ReactComponent as HiMiniQuestionMarkCircle } from '../../assets/svg/HiMiniQuestionMarkCircle.svg'
 
 import type { ComponentProps, FC } from 'react'
 
@@ -35,7 +35,7 @@ const Label: FC<LabelProps> = ({
       {...rest}
     >
       <span className={clsx('text', { required: required })}>{label}</span>
-      {labelInfo && <Icon name="HiMiniQuestionMarkCircle" />}
+      {labelInfo && <HiMiniQuestionMarkCircle />}
     </label>
   )
 }

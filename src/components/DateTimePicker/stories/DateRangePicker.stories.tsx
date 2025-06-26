@@ -44,6 +44,11 @@ const meta: Meta<typeof DateRangePicker> = {
         ),
       },
     },
+    size: {
+      options: ['sm', 'md', 'lg'],
+      control: { type: 'select', labels: { sm: 'sm', md: 'md', lg: 'lg' } },
+      description: 'Size of the DateRangePicker',
+    },
   },
   tags: ['autodocs'],
   component: DateRangePicker,
