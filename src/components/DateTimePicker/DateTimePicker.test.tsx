@@ -147,13 +147,13 @@ const runTests = (timezone?: Timezone) => {
     })
 
     it('should show days panel content on icon click', async () => {
-      const { dateTimestamp } = setup(
-        fixedDate,
-        DateTimePicker as AnyPickerComponent,
-        {
-          timezone,
-        }
-      )
+      const {
+        dateTimestamp,
+        render: { container },
+      } = setup(fixedDate, DateTimePicker as AnyPickerComponent, {
+        timezone,
+      })
+      if (timezone) expect(container).toMatchSnapshot()
 
       const currentMonth = getLongMonthNameFromTs(dateTimestamp).toString()
       const currentYear = getYearFromTs(dateTimestamp).toString()

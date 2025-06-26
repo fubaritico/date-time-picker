@@ -167,7 +167,7 @@ const TextField: FC<TextFieldProps> = forwardRef<
             ref={ref}
             {...rest}
           />
-          {showCross && !disabled && !!Icon && (
+          {showCross && !disabled && (
             <div
               role="button"
               tabIndex={0}
