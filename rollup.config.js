@@ -8,6 +8,7 @@ import dts from 'rollup-plugin-dts'
 import svgr from '@svgr/rollup'
 import { visualizer } from 'rollup-plugin-visualizer'
 import copy from 'rollup-plugin-copy'
+import dynamicImportVars from '@rollup/plugin-dynamic-import-vars'
 
 // import pkg from './package.json' with { type: 'json' }
 
@@ -56,6 +57,7 @@ export default [
       resolve({
         extensions: ['.ts', '.tsx'],
       }),
+      dynamicImportVars(),
       commonjs(),
       typescript({
         tsconfig: 'tsconfig.json',
