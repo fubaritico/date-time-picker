@@ -8,16 +8,32 @@
   --text-dark: var(--gray-300);
   --arrow-light: var(--gray-900);
   --arrow-dark: var(--gray-100);
+  --focus-outline-light: var(--neutral-700);
+  --focus-outline-dark: var(--neutral-100);
 
   /* Default values (light mode) */
   --text: var(--text-light);
   --arrow: var(--arrow-light);
+  --focus-outline: var(--focus-outline-light);
 
   /* Basic styles */
   display: flex;
   gap: var(--spacing-4);
   justify-content: space-between;
   color: var(--text);
+}
+
+.PanelHeader > button,
+.PanelHeader > button:focus {
+  border-radius: var(--br-sm);
+  outline-offset: 2px;
+  outline: 2px solid transparent;
+}
+
+.PanelHeader > button:focus-visible {
+  border-radius: var(--br-sm);
+  outline-offset: 2px;
+  outline: 2px solid var(--focus-outline);
 }
 
 /* Sizes */
@@ -36,6 +52,10 @@
     --text: var(--text-dark);
     --arrow: var(--arrow-dark);
   }
+
+  .PanelHeader:not(.light *) > button:focus-visible {
+    --focus-outline: var(--focus-outline-dark);
+  }
 }
 
 /* Force dark mode */
@@ -44,11 +64,20 @@
   --arrow: var(--arrow-dark);
 }
 
+.dark * .PanelHeader > button:focus-visible {
+  --focus-outline: var(--focus-outline-dark);
+}
+
 /* Force light mode */
 .light * .PanelHeader {
   --text: var(--text-light);
   --arrow: var(--arrow-light);
 }
+
+.light * .PanelHeader > button:focus-visible {
+  --focus-outline: var(--focus-outline-light);
+}
+
 
 /* Sizes */
 .PanelHeader.sm, .PanelHeader.md {

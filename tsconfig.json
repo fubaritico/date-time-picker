@@ -19,7 +19,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "allowUnreachableCode": false,
-    "types": ["@testing-library/jest-dom", "node"],
+    "types": ["@testing-library/jest-dom", "jest-axe", "node"],
     "baseUrl": ".",
     "paths": {
       "@components": ["src/components/index.ts"],

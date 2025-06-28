@@ -8,19 +8,33 @@ A React 19.x date-time picker component, using TypeScript 5.x, styled using nati
 
 ✅ tested as a final imported package from NPM on a real project (types, styles, functionality)
 
+✅ tested accessibility for `DatePicker`, `DateTimePicker`, and `TimePicker` components
+
+❌ `DateRangePicker` component is not yet fully tested for accessibility
+
 The package is available on NPM as `@fubar-it-co/date-time-picker`, [go to NPM](https://www.npmjs.com/package/@fubar-it-co/date-time-picker).
+
+## Dependencies
+
+`@mona-health/react-input-mask` v3.0.3
+
+### Peer Dependencies
+- `react` >= 19.0.0
+- `react-dom` >= 19.0.0
+- `clsx` >= 11.0.0
+- `react-transition-group` >= 4.4.5
 
 ## Work in progress
 
 Tests have to be written for `DateRangePicker`.
 
-Some integration tests are still currently performed in real projects. 
+Tests have to be written for the accessibility features.
 
-The accessibility features are not yet implemented, but some components are designed to be accessible.
+Some integration tests are still currently performed in real projects.
 
 ## Issues
 
-Some work has to be done with peer dependencies, unwanted CSS overrides.
+Some work has to be done with peer dependencies.
 
 ## Styling
 
@@ -160,7 +174,7 @@ Theme coloring is now implemented. It is based on Tailwind CSS colors. It allows
 - **Dark Mode**: Supports dark mode styling for all components.
 - **Localization**: Supports multiple locales for internationalization.
 - **Timezone**: Supports timezone selection and display.
-- <font color="#999">**Accessibility**: Fully accessible with ARIA attributes (not yet)</font>.
+- **Accessibility**: Fully accessible with ARIA attributes.
 
 ## Preview
 

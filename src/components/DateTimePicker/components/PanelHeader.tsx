@@ -35,7 +35,7 @@ const PanelHeader: FC<PropsWithChildren<PanelHeaderProps>> = ({
   nextButtonAriaLabel,
   size,
 }) => (
-  <div className={clsx('PanelHeader', size, className)}>
+  <div className={clsx('PanelHeader', size, className)} aria-live="polite">
     <button
       aria-label={prevButtonAriaLabel}
       onClick={onPrevButtonClick}

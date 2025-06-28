@@ -26,6 +26,8 @@ input.TextField {
   --disabled-text-dark: var(--neutral-400);
   --disabled-placeholder-light: var(--neutral-100);
   --disabled-placeholder-dark: var(--neutral-500);
+  --icon-button-focus-outline-light: var(--neutral-700);
+  --icon-button-focus-outline-dark: var(--neutral-100);
 
   /* Default values (light mode) */
   --text: var(--text-light);
@@ -43,6 +45,7 @@ input.TextField {
   --warning-color: var(--yellow-500);
   --error-color: var(--red-500);
   --clear-icon: var(--clear-icon-light);
+  --icon-button-focus-outline: var(--icon-button-focus-outline-light);
 
   /* Basic styles (enabled) */
   appearance: none;
@@ -119,11 +122,12 @@ input.TextField.error {
 }
 
 input.TextField.show-cross.icon-left + .clear-icon-button {
+  appearance: none;
+  border: 0 none;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  cursor: pointer;
-  transition: color 300ms linear;
+  outline: 2px solid transparent;
 }
 
 input.TextField.show-cross.icon-left + .clear-icon-button .icon {
@@ -148,30 +152,29 @@ input.TextField.show-icon.icon-right + .icon-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  outline: 2px solid transparent;
+  border-radius: var(--br-sm);
 }
 
 input.TextField.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button:focus,
 input.TextField.show-icon.icon-left + .icon-button:focus,
-input.TextField.show-icon.icon-right + .icon-button:focus,
+input.TextField.show-icon.icon-right + .icon-button:focus {
+
+}
+
 input.TextField.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button:focus-visible,
 input.TextField.show-icon.icon-left + .icon-button:focus-visible,
 input.TextField.show-icon.icon-right + .icon-button:focus-visible {
-  outline: 0 none;
+  outline-offset: 4px;
+  outline: 2px solid var(--gray-700);
 }
 
 input.TextField.disabled.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button,
 input.TextField.disabled.show-icon.icon-left + .icon-button,
 input.TextField.disabled.show-icon.icon-right + .icon-button {
+  outline: 2px solid transparent;
   opacity: 0.5;
   cursor: default;
-  outline: 0 none;
-}
-
-input.TextField.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button:not(.enabled),
-input.TextField.show-icon.icon-left + .icon-button:not(.enabled),
-input.TextField.show-icon.icon-right + .icon-button:not(.enabled) {
-  cursor: default;
-  outline: 0 none;
 }
 
 input.TextField.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button .icon,
@@ -385,6 +388,13 @@ input.TextField.lg {
     color: var(--neutral-400)
   }
 
+  input.TextField.show-cross.show-icon.icon-left:not(.light *) + .clear-icon-button + .icon-button:focus-visible,
+  input.TextField.show-icon.icon-left:not(.light *) + .icon-button:focus-visible,
+  input.TextField.show-icon.icon-right:not(.light *) + .icon-button:focus-visible {
+    outline-offset: 4px;
+    outline: 2px solid var(--gray-100);
+  }
+
   input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
   input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--red-500);
@@ -544,6 +554,13 @@ input.TextField.lg {
   --focus-text: var(--focus-text-dark);
 }
 
+.dark * input.TextField.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button:focus-visible,
+.dark * input.TextField.show-icon.icon-left + .icon-button:focus-visible,
+.dark * input.TextField.show-icon.icon-right + .icon-button:focus-visible {
+  outline-offset: 4px;
+  outline: 2px solid var(--gray-100);
+}
+
 .dark * input.TextField.show-cross.icon-left + .clear-icon-button .icon {
   color: var(--neutral-400);
 }
@@ -578,6 +595,13 @@ input.TextField.lg {
 .light * input.TextField:not(.disabled):focus,
 .light * input.TextField:not(.disabled):focus-visible {
   --focus-text: var(--focus-text-light);
+}
+
+.light * input.TextField.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button:focus-visible,
+.light * input.TextField.show-icon.icon-left + .icon-button:focus-visible,
+.light * input.TextField.show-icon.icon-right + .icon-button:focus-visible {
+  outline-offset: 4px;
+  outline: 2px solid var(--gray-700);
 }
 
 .light * input.TextField.show-cross.icon-left + .clear-icon-button .icon {

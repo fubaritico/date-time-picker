@@ -1,5 +1,12 @@
 import clsx from 'clsx'
-import { memo, useCallback, useEffect, useRef, useState } from 'react'
+import {
+  type KeyboardEvent,
+  memo,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
 import { CSSTransition } from 'react-transition-group'
 
 import { FADE_ANIMATION_DURATION } from '@constants'
@@ -79,7 +86,7 @@ const Panel: FC<PanelProps> = ({
 
   const [position, setPosition] = useState({ top: 0, left: 0 })
   const dateTimeSwitcherRef = useRef<HTMLDivElement>(null)
-  const nodeRef = useRef(null)
+  const nodeRef = useRef<HTMLDivElement>(null)
   const isNotDateRangePicker = pickerMode !== 'DATERANGE'
 
   /**
@@ -169,6 +176,21 @@ const Panel: FC<PanelProps> = ({
     triggerRef,
   ])
 
+  /**
+   * When the 'esc' is selected, it will close the panel (possible issue with the fact that it has to be focused).
+   *
+   * @param {KeyboardEvent} event
+   */
+  const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === 'Escape') {
+      onClickOutside()
+    }
+  }
+
+  /**
+   * On mount/init, will position the panel accordingly to the 'placement' property.
+   * Then attach a resize event listener to update the panel position when the window is resized.
+   */
   useEffect(() => {
     updatePanelPlacement()
 
@@ -180,10 +202,17 @@ const Panel: FC<PanelProps> = ({
   }, [open, panelRect, updatePanelPlacement])
 
   /**
+   * When the panel is opened, it will focus the panel element.
+   */
+  useEffect(() => {
+    if (open && nodeRef.current) nodeRef.current.focus()
+  }, [open])
+
+  /**
    * On day selection, the calendar is closed.
    * On month or year selection, the calendar is back to days view, the calendar doesn't close.
    *
-   * If the component is controlled the passed callback is called, otherwise the date is set in the context.
+   * If the component is controlled, the passed callback is called. Otherwise, the date is set in the context.
    * IMPORTANT: See if the controlled mechanism is needed. (for now, it's only used in storybook)
    *
    * @param date Date as formatted string in ISO 8601: "YYYY-MM-DD" depending on calendar mode, defaults to today
@@ -250,11 +279,15 @@ const Panel: FC<PanelProps> = ({
           ignoreClickAwayRef={ignoreClickAwayRef}
         >
           <div
+            aria-label="Choose a date"
+            aria-modal="true"
             className={clsx('Panel', size, {
               portal: enablePortal,
               'not-range-picker': isNotDateRangePicker,
             })}
             ref={nodeRef}
+            onKeyDown={handleKeyDown}
+            role="dialog"
             style={{
               position: 'absolute',
               top: `${position.top.toString()}px`,

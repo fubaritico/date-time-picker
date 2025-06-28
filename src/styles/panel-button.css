@@ -10,12 +10,15 @@ button.PanelButton {
   --text-dark: var(--neutral-300);
   --hover-bg-light: var(--neutral-100);
   --hover-bg-dark: var(--neutral-700);
+  --focus-outline-light: var(--neutral-700);
+  --focus-outline-dark: var(--neutral-100);
 
   /* Default values (light mode) */
   --text: var(--text-light);
   --hover-bg: var(--hover-bg-light);
   --selected-text: var(--white);
   --selected-bg: var(--neutral-600);
+  --focus-outline: var(--focus-outline-light);
 
   /* Basic styles (enabled) */
   padding: var(--spacing-2);
@@ -23,10 +26,12 @@ button.PanelButton {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  transition-property: var(--transition);
+  transition-property: var(--transition), outline;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 200ms;
   flex: 1;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
 /* States (light by default) */
@@ -46,6 +51,15 @@ button.PanelButton.selected:hover {
   background: var(--selected-bg);
   color: var(--selected-text);
 }
+
+button.PanelButton:focus {
+  outline: 2px solid transparent;
+}
+
+button.PanelButton:focus-visible {
+  outline: 2px solid var(--focus-outline);
+}
+
 
 /* Sizes */
 button.PanelButton.sm {
@@ -69,6 +83,10 @@ button.PanelButton.lg {
 /* Dark mode from system */
 @media (prefers-color-scheme: dark) {
   /* Default values (light mode) */
+  button.PanelButton:not(.light *):focus-visible {
+    --focus-outline: var(--focus-outline-dark);
+  }
+
   button.PanelButton:not(.selected, .light *) {
     --text: var(--text-dark);
   }
@@ -182,13 +200,26 @@ button.PanelButton.lg {
   button.PanelButton.selected.stone:not(.light *):hover {
     --selected-bg: var(--stone-600);
   }
-
 }
 
 /* Forced dark mode */
 .dark * button.PanelButton:not(.selected) {
   --text: var(--text-dark);
   --hover-bg: var(--hover-bg-dark);
+}
+
+.dark * button.PanelButton:focus-visible {
+  --focus-outline: var(--focus-outline-dark);
+}
+
+/* Forced light mode */
+.light * button.PanelButton:not(.selected) {
+  --text: var(--text-light);
+  --hover-bg: var(--hover-bg-light);
+}
+
+.light * button.PanelButton:focus-visible {
+  --focus-outline: var(--focus-outline-light);
 }
 
 /* Colors theme */

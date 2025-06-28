@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 import {
   getAllWeekDaysNamesFromTs,
@@ -49,6 +49,12 @@ const DaysGrid: FC<DaysGridProps> = ({
   onEndDateChangeHandler,
   size = 'md',
 }) => {
+  // État pour le focus géré par les flèches
+  const [keyboardFocusedIndex, setKeyboardFocusedIndex] = useState<number>(-1)
+  // Référence pour la grille
+  const gridRef = useRef<HTMLDivElement>(null)
+  const dateFocusedOnInit = useRef<boolean>(false)
+
   const [startIndex, setStartIndex] = useState(0)
   // State: Array of dates in Unix timestamp format
   const [arrayOfDates, setArrayOfDates] = useState<number[]>([])
@@ -64,6 +70,18 @@ const DaysGrid: FC<DaysGridProps> = ({
     setTempEndDate,
     isSelectingRange,
   } = useDateRangePanel()
+
+  /**
+   * Will set the focus on a specific date cell based on its index.
+   */
+  const setFocusOnDate = useCallback((index: number) => {
+    setKeyboardFocusedIndex(index >= 0 ? index : 0)
+    const cells = gridRef.current?.querySelectorAll('button')
+    if (cells?.[index]) {
+      ;(cells[index] as HTMLElement).focus()
+    }
+  }, [])
+
   /**
    * Will set all the necessary math to display the grid of dates.
    */
@@ -84,12 +102,85 @@ const DaysGrid: FC<DaysGridProps> = ({
   }, [date])
 
   /**
+   * Will set the initial keyboard focused index to the first date of the month.
+   * This is useful for keyboard navigation.
+   */
+  useEffect(() => {
+    let index = 0
+
+    if (!arrayOfDates.length || dateFocusedOnInit.current) return
+
+    if (!date) {
+      setKeyboardFocusedIndex(index)
+    }
+
+    if (date) {
+      index = arrayOfDates.findIndex(
+        (d) => getStartOfDayTs(d) === getStartOfDayTs(date)
+      )
+    }
+
+    if (
+      arrayOfDates.some((d) => getStartOfDayTs(d) === getStartOfDayTs(date))
+    ) {
+      index = arrayOfDates.findIndex(
+        (d) => getStartOfDayTs(d) === getStartOfDayTs(date)
+      )
+    }
+
+    setFocusOnDate(index)
+    dateFocusedOnInit.current = true
+  }, [arrayOfDates, date, setFocusOnDate])
+
+  /**
+   *
+   * @param e
+   */
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent<HTMLDivElement>) => {
+      const DAYS_IN_WEEK = 7
+      const TOTAL_CELLS = arrayOfDates.length
+
+      // Pour les flèches, on empêche le comportement par défaut
+      if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(e.key)) {
+        e.preventDefault()
+
+        let newIndex = keyboardFocusedIndex
+
+        switch (e.key) {
+          case 'ArrowLeft':
+            newIndex = Math.max(0, keyboardFocusedIndex - 1)
+            break
+          case 'Tab':
+          case 'ArrowRight':
+            newIndex = Math.min(TOTAL_CELLS - 1, keyboardFocusedIndex + 1)
+            break
+          case 'ArrowUp':
+            newIndex = Math.max(0, keyboardFocusedIndex - DAYS_IN_WEEK)
+            break
+          case 'ArrowDown':
+            newIndex = Math.min(
+              TOTAL_CELLS - 1,
+              keyboardFocusedIndex + DAYS_IN_WEEK
+            )
+            break
+        }
+
+        if (newIndex !== keyboardFocusedIndex) {
+          setFocusOnDate(newIndex)
+        }
+      }
+    },
+    [arrayOfDates, keyboardFocusedIndex, setFocusOnDate]
+  )
+
+  /**
    * Callback function for handling date clicks.
    *
-   * @param {MouseEvent<HTMLDivElement>} event - The mouse event object.
+   * @param {MouseEvent<HTMLButtonElement>} event - The mouse event object.
    */
   const handleDateClick = useCallback(
-    (event: MouseEvent<HTMLDivElement>) => {
+    (event: MouseEvent<HTMLButtonElement>) => {
       const clickedDate = event.currentTarget.dataset.date
 
       if (!clickedDate) {
@@ -129,7 +220,7 @@ const DaysGrid: FC<DaysGridProps> = ({
    *
    * @param event
    */
-  const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+  const handleCellKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
     if (event.key === 'Enter' || event.key === ' ') {
       handleDateClick(event as never)
     }
@@ -143,7 +234,7 @@ const DaysGrid: FC<DaysGridProps> = ({
    * @param event
    */
   const handleDateMouseEnter = useCallback(
-    (event: MouseEvent<HTMLDivElement>) => {
+    (event: MouseEvent<HTMLButtonElement>) => {
       if (isSelectingRange) {
         const hoveredDate = event.currentTarget.dataset.date
         if (hoveredDate) {
@@ -202,24 +293,24 @@ const DaysGrid: FC<DaysGridProps> = ({
    */
   const setDaysGridState = useCallback(
     (ts: number) => {
-      const isClickable = isDateClickable(ts)
+      const disabled = !isDateClickable(ts)
       const isToday =
         getStartOfDayTs(Date.now() + msOffset) === getStartOfDayTs(ts)
       const startDateIsSelected = tempStartDate === ts || dateRange[0] === ts
       const endDateIsSelected = tempEndDate === ts || dateRange[1] === ts
-      const isSelected = isClickable && innerDate === ts
+      const isSelected = innerDate === ts
       const isInRange = dateIsInRange(ts)
       const defaultBehavior =
         getStartOfDayTs(Date.now() + msOffset) !== getStartOfDayTs(ts) &&
         innerDate !== ts &&
-        isClickable &&
+        disabled &&
         !startDateIsSelected &&
         !endDateIsSelected &&
         !isInRange &&
         !isToday
 
       return {
-        isClickable,
+        disabled,
         isToday,
         startDateIsSelected,
         endDateIsSelected,
@@ -240,12 +331,22 @@ const DaysGrid: FC<DaysGridProps> = ({
   )
 
   return (
-    <div className={clsx('DaysGrid', size)} data-test="days-grid" role="grid">
+    <section
+      className={clsx('DaysGrid', size)}
+      data-test="days-grid"
+      ref={gridRef}
+      role="grid"
+      onKeyDown={handleKeyDown}
+    >
       {getAllWeekDaysNamesFromTs(date, locale).map(
-        (name: string, index: number) => (
-          <div key={`${name}-${index.toString()}`} className="week-day">
-            {name.replace(/\.$/, '')}
-          </div>
+        ({ short, long }, index: number) => (
+          <abbr
+            key={`${short}-${index.toString()}`}
+            className="week-day"
+            title={long}
+          >
+            {short.replace(/\.$/, '')}
+          </abbr>
         )
       )}
       {Array.from({ length: startIndex }, (_, index) => index).map(
@@ -262,11 +363,15 @@ const DaysGrid: FC<DaysGridProps> = ({
             {...setDaysGridState(value)}
             key={value}
             color={color}
-            handleDateClick={handleDateClick}
-            handleKeyDown={handleKeyDown}
-            handleDateMouseEnter={handleDateMouseEnter}
+            locale={locale}
+            onClick={handleDateClick}
+            onKeyDown={handleCellKeyDown}
+            onMouseEnter={handleDateMouseEnter}
             hasDateRangeMode={pickerMode === 'DATERANGE'}
             isSelectingRange={isSelectingRange}
+            tabIndex={
+              index + 1 === 1 ? (setDaysGridState(value).disabled ? -1 : 0) : -1
+            }
             size={size}
             value={value}
           >
@@ -274,7 +379,7 @@ const DaysGrid: FC<DaysGridProps> = ({
           </DaysGridCell>
         )
       })}
-    </div>
+    </section>
   )
 }
 

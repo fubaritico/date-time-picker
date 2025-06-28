@@ -138,7 +138,7 @@ const TextField: FC<TextFieldProps> = forwardRef<
           }}
           onMouseLeave={() => {
             if (canClear) {
-              setShowCross(true)
+              setShowCross(false)
             }
           }}
         >
@@ -168,8 +168,8 @@ const TextField: FC<TextFieldProps> = forwardRef<
             {...rest}
           />
           {showCross && !disabled && (
-            <div
-              role="button"
+            <button
+              aria-label="Clear text"
               tabIndex={0}
               onKeyDown={handleKeyDown(() => {
                 onReset()
@@ -179,27 +179,25 @@ const TextField: FC<TextFieldProps> = forwardRef<
                 onReset()
               }}
             >
-              <HiXMark className="icon" />
-            </div>
+              <HiXMark className="icon" aria-hidden />
+            </button>
           )}
           {!!Icon && (iconPosition === 'left' || !canClear) && (
-            <div
+            <button
               aria-label={onIconClick ? iconAriaLabel : undefined}
-              className={clsx('icon-button', {
-                enabled: !disabled && !!onIconClick,
-              })}
+              className="icon-button"
+              disabled={disabled ?? !onIconClick}
               onClick={() =>
                 (!disabled || preserveIconClick) && onIconClick?.(ref)
               }
               onKeyDown={handleKeyDown(
                 () => (!disabled || preserveIconClick) && onIconClick?.(ref)
               )}
-              role="button"
-              tabIndex={onIconClick ? 0 : undefined}
-              ref={iconRef as RefObject<HTMLDivElement>}
+              tabIndex={onIconClick ? 0 : -1}
+              ref={iconRef as RefObject<HTMLButtonElement>}
             >
               <Icon aria-hidden className="icon" />
-            </div>
+            </button>
           )}
         </div>
       </HelperText>

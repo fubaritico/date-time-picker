@@ -160,23 +160,6 @@ export const getFirstInstantOfMonth = (ts?: number): number => {
 }
 
 /**
- * Will return the timestamp corresponding to the last instant of the month
- * @param ts
- */
-export const getLastInstantOfMonth = (ts?: number): number => {
-  if (!ts || !checkTsValidity(ts)) {
-    throw new Error('[getLastInstantOfMonth] Invalid timestamp')
-  }
-
-  const date = new Date(ts)
-  date.setMonth(date.getMonth() + 1) // Move to the next month
-  date.setDate(0) // Set to the last day of the previous month (current month)
-  date.setHours(23, 59, 59, 999) // Set to the end of the day
-
-  return date.getTime()
-}
-
-/**
  * Will return the timestamp corresponding to the minimum time of the day (00:00:00) for the given timestamp
  *
  * @param {number} ts - number representing a unix timestamp
@@ -470,7 +453,12 @@ export const getYearFromTs = (ts?: number): number => {
  * @returns {string} formatted date string
  */
 export const formatToYYYYMMDD = (ts: number): string => {
+  if (!ts || !checkTsValidity(ts)) {
+    throw new Error('[formatToYYYYMMDD] Invalid timestamp')
+  }
+
   const date = new Date(ts)
+
   return date.toISOString().split('T')[0]
 }
 
@@ -506,13 +494,13 @@ export const getStartDayOfWeekOfCurrentMonth = (ts: number): number => {
 export const getAllWeekDaysNamesFromTs = (
   ts: number,
   locale = 'en-US'
-): string[] => {
+): { short: string; long: string }[] => {
   if (!checkTsValidity(ts)) {
     throw new Error('[getAllWeeksDayNamesFromTs] Invalid timestamp')
   }
 
   const date = new Date(ts)
-  const weekdays: string[] = []
+  const weekdays: { short: string; long: string }[] = []
 
   // Get the first day of the week (Monday)
   const firstDayOfWeek = new Date(date)
@@ -524,7 +512,10 @@ export const getAllWeekDaysNamesFromTs = (
   for (let i = 0; i < 7; i++) {
     const weekday = new Date(firstDayOfWeek)
     weekday.setDate(firstDayOfWeek.getDate() + i)
-    weekdays.push(weekday.toLocaleString(locale, { weekday: 'short' }))
+    weekdays.push({
+      short: weekday.toLocaleString(locale, { weekday: 'short' }),
+      long: weekday.toLocaleString(locale, { weekday: 'long' }),
+    })
   }
 
   return weekdays
@@ -796,18 +787,6 @@ export const formatTimestampToDate = (ts: number, locale: string): string => {
 }
 
 /**
- * Formats a given timestamp to 'YYYY-MM-DDTHH:mm:ss+00:00'
- *
- * @param {number} ts - number representing a unix timestamp
- * @returns {string} formatted date string in 'YYYY-MM-DDTHH:mm:ss+00:00' format
- */
-export const formatTimestampToISO = (ts: number): string => {
-  const date = new Date(ts)
-
-  return date.toISOString()
-}
-
-/**
  * Will return the timestamp corresponding to the start of the day for the given timestamp
  *
  * @param {number} ts - number representing a unix timestamp
@@ -820,23 +799,6 @@ export const getStartOfDayTs = (ts: number): number => {
   const offset = getOffsetInMsFromTimezone(date)
   const dateWithOffset = new Date(date.getTime() - offset)
   dateWithOffset.setHours(0, 0, 0, 0) // Set time components to zero
-
-  return dateWithOffset.getTime()
-}
-
-/**
- * Will return the timestamp corresponding to the end of the day for the given timestamp
- *
- * @param {number} ts - number representing a unix timestamp
- * @throws {Error} if the timestamp is invalid
- *
- * @returns {number} new timestamp
- */
-export const getEndOfDayTs = (ts?: number): number => {
-  const date = new Date(ts ?? Date.now())
-  const offset = getOffsetInMsFromTimezone(date)
-  const dateWithOffset = new Date(date.getTime() - offset)
-  dateWithOffset.setHours(23, 59, 59, 0) // Set time components to 23:59:59
 
   return dateWithOffset.getTime()
 }
@@ -910,6 +872,7 @@ export const debounce = <Fn extends (...args: never[]) => void>(
 export const handleKeyDown =
   <Element>(callback: (e?: Event) => void) =>
   (event: KeyboardEvent<Element>): void => {
+    event.preventDefault()
     if (event.key === 'Enter' || event.key === ' ') {
       // The passed callback has, most of the time, no event argument
       callback(event as never)
@@ -1110,5 +1073,34 @@ export const formatToLocaleAwareFormat = (
       .replace(/\sGMT(-|\+)(\d+)/, (_match: string, p1: string, p2: string) => {
         return ` ${p1}${p2}:00`
       })
+  )
+}
+
+/**
+ *
+ *
+ * @param {number} ts - number representing a unix timestamp
+ * @param {string} locale - locale as a string under the shape of 'fr_FR'
+ *
+ * @throws {Error} if the timestamp is invalid or format is not supported
+ *
+ * @returns {string} formatted date string
+ */
+export const formatHumanReadableDate = (
+  ts: number,
+  locale = 'en_US'
+): string => {
+  if (isNaN(ts) || ts <= 0) {
+    throw new Error('[formatHumanReadableDate] Invalid timestamp')
+  }
+
+  const options: Intl.DateTimeFormatOptions = {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  }
+
+  return new Intl.DateTimeFormat(locale.replace('_', '-'), options).format(
+    new Date(ts)
   )
 }

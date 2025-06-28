@@ -108,7 +108,7 @@ const DatePanel: FC<DatePanelProps> = ({ className, onDateChange, size }) => {
         <PanelHeaderButton
           aria-label={getMonthNameFromTs(panelDate + msOffset, locale)}
           color={color}
-          isClickable
+          disabled
           label={getMonthNameFromTs(panelDate + msOffset, locale)}
           onClick={() => {
             setPanelView(PanelView.MONTHS)
@@ -117,7 +117,7 @@ const DatePanel: FC<DatePanelProps> = ({ className, onDateChange, size }) => {
         <PanelHeaderButton
           aria-label={getYearFromTs(panelDate).toString()}
           color={color}
-          isClickable
+          disabled
           label={getYearFromTs(panelDate)}
           onClick={() => {
             setPanelView(PanelView.YEARS)

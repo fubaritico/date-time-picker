@@ -12,6 +12,15 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
+# Set default version type to patch if not provided
+VERSION_TYPE="${1:-patch}"
+
+# Validate version type argument
+if [[ ! "$VERSION_TYPE" =~ ^(patch|minor|major)$ ]]; then
+    echo -e "\033[0;31mError: Invalid version type. Must be one of: patch, minor, major\033[0m"
+    exit 1
+fi
+
 # Function to log messages
 log() {
     echo -e "${2:-$GREEN}$1${NC}"
@@ -73,7 +82,7 @@ pnpm prerelease
 check_status "Build"
 
 log "Creating new version..." "$YELLOW"
-pnpm version patch
+pnpm version "$VERSION_TYPE"
 check_status "Version bump"
 
 CURRENT_VERSION=$(node -p "require('./package.json').version")

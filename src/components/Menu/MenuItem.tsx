@@ -75,7 +75,7 @@ const MenuItem: FC<MenuItemProps> = ({
           type={item.buttonType}
           aria-hidden={item.separator}
           aria-label={isString(item.label) ? item.label : undefined}
-          aria-current={selected}
+          aria-selected={selected}
           aria-disabled={item.disabled ?? typeof item.label !== 'string'}
           color={color}
           disabled={item.disabled ?? typeof item.label !== 'string'}

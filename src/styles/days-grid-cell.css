@@ -4,14 +4,14 @@
 @import url('common/typography.css');
 
 /* base as a monochrome theme */
-.DaysGridCell {
+button.DaysGridCell {
   /* Colors basic definition for each mode */
   --text-light: var(--neutral-900);
   --text-dark: var(--neutral-200);
   --hover-bg-light: var(--neutral-100);
   --hover-bg-dark: var(--neutral-700);
-  --focus-visible-outline-light: var(--neutral-100);
-  --focus-visible-outline-dark: var(--neutral-700);
+  --focus-visible-outline-light: var(--neutral-700);
+  --focus-visible-outline-dark: var(--neutral-100);
   --disabled-text-light: var(--neutral-300);
   --disabled-text-dark: var(--neutral-600);
   --selected-text-light: var(--white);
@@ -70,58 +70,62 @@
   --selectedEndDate-text: var(--selectedEndDate-text-light);
 
   /* Basic styles (enabled) */
+  appearance: none;
+  border: 0 none;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: var(--transition), outline;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 8px;
   font-weight: bold;
+  outline-offset: 2px;
+  outline: 2px solid transparent;
 }
 
 /* States (light by default) */
-.DaysGridCell:focus {
+button.DaysGridCell:focus {
   outline: none;
 }
 
-.DaysGridCell:focus-visible {
-  outline: 1px solid var(--focus-visible-outline);
+button.DaysGridCell:focus-visible {
+  outline: 2px solid var(--focus-visible-outline);
 }
 
-.DaysGridCell:not(.hasDateRangeMode) {
+button.DaysGridCell:not(.hasDateRangeMode) {
   transition-duration: 500ms;
 }
 
-.DaysGridCell.hasDateRangeMode {
+button.DaysGridCell.hasDateRangeMode {
   transition-duration: 200ms;
 }
 
-.DaysGridCell.enabled {
+button.DaysGridCell.enabled {
   cursor: pointer;
   color: var(--text);
 }
 
-.DaysGridCell.enabled:hover {
+button.DaysGridCell.enabled:hover {
   background: var(--hover-bg);
 }
 
-.DaysGridCell:not(.enabled) {
+button.DaysGridCell:not(.enabled) {
   cursor: not-allowed;
   color: var(--disabled-text);
 }
 
-.DaysGridCell.selected {
+button.DaysGridCell.selected {
   color: var(--selected-text);
   background-color: var(--selected-bg);
 }
 
-.DaysGridCell.selected:hover {
+button.DaysGridCell.selected:hover {
   color: var(--selected-hover-text);
   background-color: var(--selected-hover-bg);
 }
 
-.DaysGridCell.inRange:not(.selectedStartDate, .selectedEndDate),
-.DaysGridCell.inRange:not(.selectedStartDate, .selectedEndDate):hover {
+button.DaysGridCell.inRange:not(.selectedStartDate, .selectedEndDate),
+button.DaysGridCell.inRange:not(.selectedStartDate, .selectedEndDate):hover {
   border-radius: 0;
   background: var(--inrange-bg);
   color: var(--inrange-text);
@@ -129,19 +133,19 @@
   margin: 0 -2px;
 }
 
-.DaysGridCell.today:not(.inRange, .selected, .selected) {
+button.DaysGridCell.today:not(.inRange, .selected, .selected) {
   border: 2px solid var(--today-border);
   background: transparent;
   color: var(--today-text);
 }
 
-.DaysGridCell.today:not(.inRange, .selected, .selected):hover {
+button.DaysGridCell.today:not(.inRange, .selected, .selected):hover {
   border-color: var(--today-hover-border);
   color: var(--today-hover-text);
 }
 
-.DaysGridCell.selectedStartDate,
-.DaysGridCell.selectedStartDate:hover {
+button.DaysGridCell.selectedStartDate,
+button.DaysGridCell.selectedStartDate:hover {
   border-right: 1px solid var(--selectedStartDate-border);
   background: var(--selectedStartDate-bg);
   color: var(--selectedStartDate-text);
@@ -151,8 +155,8 @@
   width: 40px !important;
 }
 
-.DaysGridCell.selectedEndDate,
-.DaysGridCell.selectedEndDate:hover {
+button.DaysGridCell.selectedEndDate,
+button.DaysGridCell.selectedEndDate:hover {
   background: var(--selectedEndDate-bg);
   color: var(--selectedEndDate-text);
   margin: 0 -2px;
@@ -164,111 +168,101 @@
 /* Dark mode from system */
 @media (prefers-color-scheme: dark) {
   /* Default values (light mode) */
-  .DaysGridCell:focus-visible:not(.light *) {
+  button.DaysGridCell:focus-visible:not(.light *) {
     --focus-visible-outline: var(--focus-visible-outline-dark);
   }
 
-  .DaysGridCell.selected:not(.light *) {
+  button.DaysGridCell.selected:not(.light *) {
     --selected-text: var(--selected-text-dark);
     --selected-bg: var(--selected-bg-dark);
   }
 
-  .DaysGridCell.selected:not(.light *):hover {
+  button.DaysGridCell.selected:not(.light *):hover {
     --selected-hover-text: var(--selected-hover-text-dark);
     --selected-hover-bg: var(--selected-hover-bg-dark);
   }
 
-  .DaysGridCell.enabled:not(.light *) {
+  button.DaysGridCell.enabled:not(.light *) {
     --hover-bg-dark: var(--gray-700);
     --text: var(--text-dark);
     --hover-bg: var(--hover-bg-dark);
   }
 
-  .DaysGridCell:not(.enabled, .light *),
-  .DaysGridCell:not(.enabled, .light *):hover {
+  button.DaysGridCell:not(.enabled, .light *),
+  button.DaysGridCell:not(.enabled, .light *):hover {
     --disabled-text: var(--disabled-text-dark);
   }
 
-  .DaysGridCell.inRange:not(.selectedStartDate, .selectedEndDate, .light *),
-  .DaysGridCell.inRange:not(.selectedStartDate, .selectedEndDate, .light *):hover {
+  button.DaysGridCell.inRange:not(.selectedStartDate, .selectedEndDate, .light *),
+  button.DaysGridCell.inRange:not(.selectedStartDate, .selectedEndDate, .light *):hover {
     --inrange-border: var(--inrange-border-dark);
   }
 
-  .DaysGridCell.today:not(.inRange, .selected, .selected, .light *) {
+  button.DaysGridCell.today:not(.inRange, .selected, .selected, .light *) {
     --today-text: var(--today-text-dark);
     --today-border: var(--today-border-dark);
   }
 
-  .DaysGridCell.today:not(.inRange, .selected, .selected, .light *):hover {
+  button.DaysGridCell.today:not(.inRange, .selected, .selected, .light *):hover {
     --today-hover-text: var(--today-hover-text-dark);
     --today-hover-border: var(--today-hover-border-dark);
   }
 
-  .DaysGridCell.selectedStartDate:not(.light *),
-  .DaysGridCell.selectedStartDate:not(.light *):hover {
+  button.DaysGridCell.selectedStartDate:not(.light *),
+  button.DaysGridCell.selectedStartDate:not(.light *):hover {
     --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
     --selectedStartDate-text: var(--selectedStartDate-text-dark);
     --selectedStartDate-border: var(--selectedStartDate-border-dark);
   }
 
-  .DaysGridCell.selectedEndDate:not(.light *),
-  .DaysGridCell.selectedEndDate:not(.light *):hover {
+  button.DaysGridCell.selectedEndDate:not(.light *),
+  button.DaysGridCell.selectedEndDate:not(.light *):hover {
     --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
     --selectedEndDate-text: var(--selectedEndDate-text-dark);
   }
 
-  .DaysGridCell.red:focus-visible:not(.light *) {
-    --focus-visible-outline-dark: var(--red-700);
-    --focus-visible-outline: var(--focus-visible-outline-dark);
-  }
-
-  .DaysGridCell.selected.red:not(.light *) {
+  button.DaysGridCell.selected.red:not(.light *) {
     --selected-bg-dark: var(--red-600);
     --selected-bg: var(--selected-bg-dark);
   }
 
-  .DaysGridCell.selected.red:not(.light *):hover {
+  button.DaysGridCell.selected.red:not(.light *):hover {
     --selected-hover-bg-dark: var(--red-500);
     --selected-hover-bg: var(--selected-hover-bg-dark);
   }
 
-  .DaysGridCell.inRange.red:not(.selectedStartDate, .selectedEndDate, .light *),
-  .DaysGridCell.inRange.red:not(.selectedStartDate, .selectedEndDate, .light *):hover {
+  button.DaysGridCell.inRange.red:not(.selectedStartDate, .selectedEndDate, .light *),
+  button.DaysGridCell.inRange.red:not(.selectedStartDate, .selectedEndDate, .light *):hover {
     --inrange-bg-dark: var(--red-700);
     --inrange-bg: var(--inrange-bg-dark);
     --inrange-text-dark: var(--red-200);
     --inrange-text: var(--inrange-text-dark);
   }
 
-  .DaysGridCell.today.red:not(.inRange, .selected, .light *) {
+  button.DaysGridCell.today.red:not(.inRange, .selected, .light *) {
     --today-text-dark: var(--red-600);
     --today-border-dark: var(--red-600);
     --today-text: var(--today-text-dark);
     --today-border: var(--today-border-dark);
   }
 
-  .DaysGridCell.today.red:not(.inRange, .selected, .light *):hover {
+  button.DaysGridCell.today.red:not(.inRange, .selected, .light *):hover {
     --today-hover-text-dark: var(--red-600);
     --today-hover-border-dark: var(--red-600);
     --today-hover-text: var(--today-hover-text-dark);
     --today-hover-border: var(--today-hover-border-dark);
   }
 
-  .DaysGridCell.selectedStartDate.red:not(.light *),
-  .DaysGridCell.selectedStartDate.red:not(.light *):hover {
+  button.DaysGridCell.selectedStartDate.red:not(.light *),
+  button.DaysGridCell.selectedStartDate.red:not(.light *):hover {
     --selectedStartDate-bg-dark: var(--red-600);
     --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
   }
 
-  .DaysGridCell.selectedEndDate.red:not(.light *),
-  .DaysGridCell.selectedEndDate.red:not(.light *):hover {
+  button.DaysGridCell.selectedEndDate.red:not(.light *),
+  button.DaysGridCell.selectedEndDate.red:not(.light *):hover {
     --selectedEndDate-bg-dark: var(--red-600);
     --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
-  }
-
-  .DaysGridCell.orange:focus-visible:not(.light *) {
-    --focus-visible-outline-dark: var(--orange-700);
-    --focus-visible-outline: var(--focus-visible-outline-dark);
   }
 
   .orange:not(.light *) {
@@ -281,1182 +275,1077 @@
     --selected-hover-bg: var(--selected-hover-bg-dark);
   }
 
-  .DaysGridCell.inRange.orange:not(.selectedStartDate, .selectedEndDate, .light *),
-  .DaysGridCell.inRange.orange:not(.selectedStartDate, .selectedEndDate, .light *):hover {
+  button.DaysGridCell.inRange.orange:not(.selectedStartDate, .selectedEndDate, .light *),
+  button.DaysGridCell.inRange.orange:not(.selectedStartDate, .selectedEndDate, .light *):hover {
     --inrange-bg-dark: var(--orange-700);
     --inrange-bg: var(--inrange-bg-dark);
     --inrange-text-dark: var(--orange-200);
     --inrange-text: var(--inrange-text-dark);
   }
 
-  .DaysGridCell.today.orange:not(.inRange, .selected, .light *) {
+  button.DaysGridCell.today.orange:not(.inRange, .selected, .light *) {
     --today-text-dark: var(--orange-600);
     --today-border-dark: var(--orange-600);
     --today-text: var(--today-text-dark);
     --today-border: var(--today-border-dark);
   }
 
-  .DaysGridCell.today.orange:not(.inRange, .selected, .light *):hover {
+  button.DaysGridCell.today.orange:not(.inRange, .selected, .light *):hover {
     --today-hover-text-dark: var(--orange-600);
     --today-hover-border-dark: var(--orange-600);
     --today-hover-text: var(--today-hover-text-dark);
     --today-hover-border: var(--today-hover-border-dark);
   }
 
-  .DaysGridCell.selectedStartDate.orange:not(.light *),
-  .DaysGridCell.selectedStartDate.orange:not(.light *):hover {
+  button.DaysGridCell.selectedStartDate.orange:not(.light *),
+  button.DaysGridCell.selectedStartDate.orange:not(.light *):hover {
     --selectedStartDate-bg-dark: var(--orange-600);
     --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
   }
 
-  .DaysGridCell.selectedEndDate.orange:not(.light *),
-  .DaysGridCell.selectedEndDate.orange:not(.light *):hover {
+  button.DaysGridCell.selectedEndDate.orange:not(.light *),
+  button.DaysGridCell.selectedEndDate.orange:not(.light *):hover {
     --selectedEndDate-bg-dark: var(--orange-600);
     --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
   }
 
-  .DaysGridCell.amber:focus-visible:not(.light *) {
-    --focus-visible-outline-dark: var(--amber-700);
-    --focus-visible-outline: var(--focus-visible-outline-dark);
-  }
-
-  .DaysGridCell.selected.amber:not(.light *) {
+  button.DaysGridCell.selected.amber:not(.light *) {
     --selected-bg-dark: var(--amber-600);
     --selected-bg: var(--selected-bg-dark);
   }
 
-  .DaysGridCell.selected.amber:not(.light *):hover {
+  button.DaysGridCell.selected.amber:not(.light *):hover {
     --selected-hover-bg-dark: var(--amber-500);
     --selected-hover-bg: var(--selected-hover-bg-dark);
   }
 
-  .DaysGridCell.inRange.amber:not(.selectedStartDate, .selectedEndDate, .light *),
-  .DaysGridCell.inRange.amber:not(.selectedStartDate, .selectedEndDate, .light *):hover {
+  button.DaysGridCell.inRange.amber:not(.selectedStartDate, .selectedEndDate, .light *),
+  button.DaysGridCell.inRange.amber:not(.selectedStartDate, .selectedEndDate, .light *):hover {
     --inrange-bg-dark: var(--amber-700);
     --inrange-bg: var(--inrange-bg-dark);
     --inrange-text-dark: var(--amber-200);
     --inrange-text: var(--inrange-text-dark);
   }
 
-  .DaysGridCell.today.amber:not(.inRange, .selected, .light *) {
+  button.DaysGridCell.today.amber:not(.inRange, .selected, .light *) {
     --today-text-dark: var(--amber-600);
     --today-border-dark: var(--amber-600);
     --today-text: var(--today-text-dark);
     --today-border: var(--today-border-dark);
   }
 
-  .DaysGridCell.today.amber:not(.inRange, .selected, .light *):hover {
+  button.DaysGridCell.today.amber:not(.inRange, .selected, .light *):hover {
     --today-hover-text-dark: var(--amber-600);
     --today-hover-border-dark: var(--amber-600);
     --today-hover-text: var(--today-hover-text-dark);
     --today-hover-border: var(--today-hover-border-dark);
   }
 
-  .DaysGridCell.selectedStartDate.amber:not(.light *),
-  .DaysGridCell.selectedStartDate.amber:not(.light *):hover {
+  button.DaysGridCell.selectedStartDate.amber:not(.light *),
+  button.DaysGridCell.selectedStartDate.amber:not(.light *):hover {
     --selectedStartDate-bg-dark: var(--amber-600);
     --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
   }
 
-  .DaysGridCell.selectedEndDate.amber:not(.light *),
-  .DaysGridCell.selectedEndDate.amber:not(.light *):hover {
+  button.DaysGridCell.selectedEndDate.amber:not(.light *),
+  button.DaysGridCell.selectedEndDate.amber:not(.light *):hover {
     --selectedEndDate-bg-dark: var(--amber-600);
     --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
   }
 
-  .DaysGridCell.yellow:focus-visible:not(.light *) {
-    --focus-visible-outline-dark: var(--yellow-700);
-    --focus-visible-outline: var(--focus-visible-outline-dark);
-  }
-
-  .DaysGridCell.selected.yellow:not(.light *) {
+  button.DaysGridCell.selected.yellow:not(.light *) {
     --selected-bg-dark: var(--yellow-600);
     --selected-bg: var(--selected-bg-dark);
   }
 
-  .DaysGridCell.selected.yellow:not(.light *):hover {
+  button.DaysGridCell.selected.yellow:not(.light *):hover {
     --selected-hover-bg-dark: var(--yellow-500);
     --selected-hover-bg: var(--selected-hover-bg-dark);
   }
 
-  .DaysGridCell.inRange.yellow:not(.selectedStartDate, .selectedEndDate, .light *),
-  .DaysGridCell.inRange.yellow:not(.selectedStartDate, .selectedEndDate, .light *):hover {
+  button.DaysGridCell.inRange.yellow:not(.selectedStartDate, .selectedEndDate, .light *),
+  button.DaysGridCell.inRange.yellow:not(.selectedStartDate, .selectedEndDate, .light *):hover {
     --inrange-bg-dark: var(--yellow-700);
     --inrange-bg: var(--inrange-bg-dark);
     --inrange-text-dark: var(--yellow-200);
     --inrange-text: var(--inrange-text-dark);
   }
 
-  .DaysGridCell.today.yellow:not(.inRange, .selected, .light *) {
+  button.DaysGridCell.today.yellow:not(.inRange, .selected, .light *) {
     --today-text-dark: var(--yellow-600);
     --today-border-dark: var(--yellow-600);
     --today-text: var(--today-text-dark);
     --today-border: var(--today-border-dark);
   }
 
-  .DaysGridCell.today.yellow:not(.inRange, .selected, .light *):hover {
+  button.DaysGridCell.today.yellow:not(.inRange, .selected, .light *):hover {
     --today-hover-text-dark: var(--yellow-600);
     --today-hover-border-dark: var(--yellow-600);
     --today-hover-text: var(--today-hover-text-dark);
     --today-hover-border: var(--today-hover-border-dark);
   }
 
-  .DaysGridCell.selectedStartDate.yellow:not(.light *),
-  .DaysGridCell.selectedStartDate.yellow:not(.light *):hover {
+  button.DaysGridCell.selectedStartDate.yellow:not(.light *),
+  button.DaysGridCell.selectedStartDate.yellow:not(.light *):hover {
     --selectedStartDate-bg-dark: var(--yellow-600);
     --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
   }
 
-  .DaysGridCell.selectedEndDate.yellow:not(.light *),
-  .DaysGridCell.selectedEndDate.yellow:not(.light *):hover {
+  button.DaysGridCell.selectedEndDate.yellow:not(.light *),
+  button.DaysGridCell.selectedEndDate.yellow:not(.light *):hover {
     --selectedEndDate-bg-dark: var(--yellow-600);
     --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
   }
 
-  .DaysGridCell.lime:focus-visible:not(.light *) {
-    --focus-visible-outline-dark: var(--lime-700);
-    --focus-visible-outline: var(--focus-visible-outline-dark);
-  }
-
-  .DaysGridCell.selected.lime:not(.light *) {
+  button.DaysGridCell.selected.lime:not(.light *) {
     --selected-bg-dark: var(--lime-600);
     --selected-bg: var(--selected-bg-dark);
   }
 
-  .DaysGridCell.selected.lime:not(.light *):hover {
+  button.DaysGridCell.selected.lime:not(.light *):hover {
     --selected-hover-bg-dark: var(--lime-500);
     --selected-hover-bg: var(--selected-hover-bg-dark);
   }
 
-  .DaysGridCell.inRange.lime:not(.selectedStartDate, .selectedEndDate, .light *),
-  .DaysGridCell.inRange.lime:not(.selectedStartDate, .selectedEndDate, .light *):hover {
+  button.DaysGridCell.inRange.lime:not(.selectedStartDate, .selectedEndDate, .light *),
+  button.DaysGridCell.inRange.lime:not(.selectedStartDate, .selectedEndDate, .light *):hover {
     --inrange-bg-dark: var(--lime-700);
     --inrange-bg: var(--inrange-bg-dark);
     --inrange-text-dark: var(--lime-200);
     --inrange-text: var(--inrange-text-dark);
   }
 
-  .DaysGridCell.today.lime:not(.inRange, .selected, .light *) {
+  button.DaysGridCell.today.lime:not(.inRange, .selected, .light *) {
     --today-text-dark: var(--lime-600);
     --today-border-dark: var(--lime-600);
     --today-text: var(--today-text-dark);
     --today-border: var(--today-border-dark);
   }
 
-  .DaysGridCell.today.lime:not(.inRange, .selected, .light *):hover {
+  button.DaysGridCell.today.lime:not(.inRange, .selected, .light *):hover {
     --today-hover-text-dark: var(--lime-600);
     --today-hover-border-dark: var(--lime-600);
     --today-hover-text: var(--today-hover-text-dark);
     --today-hover-border: var(--today-hover-border-dark);
   }
 
-  .DaysGridCell.selectedStartDate.lime:not(.light *),
-  .DaysGridCell.selectedStartDate.lime:not(.light *):hover {
+  button.DaysGridCell.selectedStartDate.lime:not(.light *),
+  button.DaysGridCell.selectedStartDate.lime:not(.light *):hover {
     --selectedStartDate-bg-dark: var(--lime-600);
     --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
   }
 
-  .DaysGridCell.selectedEndDate.lime:not(.light *),
-  .DaysGridCell.selectedEndDate.lime:not(.light *):hover {
+  button.DaysGridCell.selectedEndDate.lime:not(.light *),
+  button.DaysGridCell.selectedEndDate.lime:not(.light *):hover {
     --selectedEndDate-bg-dark: var(--lime-600);
     --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
   }
 
-  .DaysGridCell.green:focus-visible:not(.light *) {
-    --focus-visible-outline-dark: var(--green-700);
-    --focus-visible-outline: var(--focus-visible-outline-dark);
-  }
-
-  .DaysGridCell.selected.green:not(.light *) {
+  button.DaysGridCell.selected.green:not(.light *) {
     --selected-bg-dark: var(--green-600);
     --selected-bg: var(--selected-bg-dark);
   }
 
-  .DaysGridCell.selected.green:not(.light *):hover {
+  button.DaysGridCell.selected.green:not(.light *):hover {
     --selected-hover-bg-dark: var(--green-500);
     --selected-hover-bg: var(--selected-hover-bg-dark);
   }
 
-  .DaysGridCell.inRange.green:not(.selectedStartDate, .selectedEndDate, .light *),
-  .DaysGridCell.inRange.green:not(.selectedStartDate, .selectedEndDate, .light *):hover {
+  button.DaysGridCell.inRange.green:not(.selectedStartDate, .selectedEndDate, .light *),
+  button.DaysGridCell.inRange.green:not(.selectedStartDate, .selectedEndDate, .light *):hover {
     --inrange-bg-dark: var(--green-700);
     --inrange-bg: var(--inrange-bg-dark);
     --inrange-text-dark: var(--green-200);
     --inrange-text: var(--inrange-text-dark);
   }
 
-  .DaysGridCell.today.green:not(.inRange, .selected, .light *) {
+  button.DaysGridCell.today.green:not(.inRange, .selected, .light *) {
     --today-text-dark: var(--green-600);
     --today-border-dark: var(--green-600);
     --today-text: var(--today-text-dark);
     --today-border: var(--today-border-dark);
   }
 
-  .DaysGridCell.today.green:not(.inRange, .selected, .light *):hover {
+  button.DaysGridCell.today.green:not(.inRange, .selected, .light *):hover {
     --today-hover-text-dark: var(--green-600);
     --today-hover-border-dark: var(--green-600);
     --today-hover-text: var(--today-hover-text-dark);
     --today-hover-border: var(--today-hover-border-dark);
   }
 
-  .DaysGridCell.selectedStartDate.green:not(.light *),
-  .DaysGridCell.selectedStartDate.green:not(.light *):hover {
+  button.DaysGridCell.selectedStartDate.green:not(.light *),
+  button.DaysGridCell.selectedStartDate.green:not(.light *):hover {
     --selectedStartDate-bg-dark: var(--green-600);
     --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
   }
 
-  .DaysGridCell.selectedEndDate.green:not(.light *),
-  .DaysGridCell.selectedEndDate.green:not(.light *):hover {
+  button.DaysGridCell.selectedEndDate.green:not(.light *),
+  button.DaysGridCell.selectedEndDate.green:not(.light *):hover {
     --selectedEndDate-bg-dark: var(--green-600);
     --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
   }
 
-  .DaysGridCell.emerald:focus-visible:not(.light *) {
-    --focus-visible-outline-dark: var(--emerald-700);
-    --focus-visible-outline: var(--focus-visible-outline-dark);
-  }
-
-  .DaysGridCell.selected.emerald:not(.light *) {
+  button.DaysGridCell.selected.emerald:not(.light *) {
     --selected-bg-dark: var(--emerald-600);
     --selected-bg: var(--selected-bg-dark);
   }
 
-  .DaysGridCell.selected.emerald:not(.light *):hover {
+  button.DaysGridCell.selected.emerald:not(.light *):hover {
     --selected-hover-bg-dark: var(--emerald-500);
     --selected-hover-bg: var(--selected-hover-bg-dark);
   }
 
-  .DaysGridCell.inRange.emerald:not(.selectedStartDate, .selectedEndDate, .light *),
-  .DaysGridCell.inRange.emerald:not(.selectedStartDate, .selectedEndDate, .light *):hover {
+  button.DaysGridCell.inRange.emerald:not(.selectedStartDate, .selectedEndDate, .light *),
+  button.DaysGridCell.inRange.emerald:not(.selectedStartDate, .selectedEndDate, .light *):hover {
     --inrange-bg-dark: var(--emerald-700);
     --inrange-bg: var(--inrange-bg-dark);
     --inrange-text-dark: var(--emerald-200);
     --inrange-text: var(--inrange-text-dark);
   }
 
-  .DaysGridCell.today.emerald:not(.inRange, .selected, .light *) {
+  button.DaysGridCell.today.emerald:not(.inRange, .selected, .light *) {
     --today-text-dark: var(--emerald-600);
     --today-border-dark: var(--emerald-600);
     --today-text: var(--today-text-dark);
     --today-border: var(--today-border-dark);
   }
 
-  .DaysGridCell.today.emerald:not(.inRange, .selected, .light *):hover {
+  button.DaysGridCell.today.emerald:not(.inRange, .selected, .light *):hover {
     --today-hover-text-dark: var(--emerald-600);
     --today-hover-border-dark: var(--emerald-600);
     --today-hover-text: var(--today-hover-text-dark);
     --today-hover-border: var(--today-hover-border-dark);
   }
 
-  .DaysGridCell.selectedStartDate.emerald:not(.light *),
-  .DaysGridCell.selectedStartDate.emerald:not(.light *):hover {
+  button.DaysGridCell.selectedStartDate.emerald:not(.light *),
+  button.DaysGridCell.selectedStartDate.emerald:not(.light *):hover {
     --selectedStartDate-bg-dark: var(--emerald-600);
     --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
   }
 
-  .DaysGridCell.selectedEndDate.emerald:not(.light *),
-  .DaysGridCell.selectedEndDate.emerald:not(.light *):hover {
+  button.DaysGridCell.selectedEndDate.emerald:not(.light *),
+  button.DaysGridCell.selectedEndDate.emerald:not(.light *):hover {
     --selectedEndDate-bg-dark: var(--emerald-600);
     --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
   }
 
-  .DaysGridCell.teal:focus-visible:not(.light *) {
-    --focus-visible-outline-dark: var(--teal-700);
-    --focus-visible-outline: var(--focus-visible-outline-dark);
-  }
-
-  .DaysGridCell.selected.teal:not(.light *) {
+  button.DaysGridCell.selected.teal:not(.light *) {
     --selected-bg-dark: var(--teal-600);
     --selected-bg: var(--selected-bg-dark);
   }
 
-  .DaysGridCell.selected.teal:not(.light *):hover {
+  button.DaysGridCell.selected.teal:not(.light *):hover {
     --selected-hover-bg-dark: var(--teal-500);
     --selected-hover-bg: var(--selected-hover-bg-dark);
   }
 
-  .DaysGridCell.inRange.teal:not(.selectedStartDate, .selectedEndDate, .light *),
-  .DaysGridCell.inRange.teal:not(.selectedStartDate, .selectedEndDate, .light *):hover {
+  button.DaysGridCell.inRange.teal:not(.selectedStartDate, .selectedEndDate, .light *),
+  button.DaysGridCell.inRange.teal:not(.selectedStartDate, .selectedEndDate, .light *):hover {
     --inrange-bg-dark: var(--teal-700);
     --inrange-bg: var(--inrange-bg-dark);
     --inrange-text-dark: var(--teal-200);
     --inrange-text: var(--inrange-text-dark);
   }
 
-  .DaysGridCell.today.teal:not(.inRange, .selected, .light *) {
+  button.DaysGridCell.today.teal:not(.inRange, .selected, .light *) {
     --today-text-dark: var(--teal-600);
     --today-border-dark: var(--teal-600);
     --today-text: var(--today-text-dark);
     --today-border: var(--today-border-dark);
   }
 
-  .DaysGridCell.today.teal:not(.inRange, .selected, .light *):hover {
+  button.DaysGridCell.today.teal:not(.inRange, .selected, .light *):hover {
     --today-hover-text-dark: var(--teal-600);
     --today-hover-border-dark: var(--teal-600);
     --today-hover-text: var(--today-hover-text-dark);
     --today-hover-border: var(--today-hover-border-dark);
   }
 
-  .DaysGridCell.selectedStartDate.teal:not(.light *),
-  .DaysGridCell.selectedStartDate.teal:not(.light *):hover {
+  button.DaysGridCell.selectedStartDate.teal:not(.light *),
+  button.DaysGridCell.selectedStartDate.teal:not(.light *):hover {
     --selectedStartDate-bg-dark: var(--teal-600);
     --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
   }
 
-  .DaysGridCell.selectedEndDate.teal:not(.light *),
-  .DaysGridCell.selectedEndDate.teal:not(.light *):hover {
+  button.DaysGridCell.selectedEndDate.teal:not(.light *),
+  button.DaysGridCell.selectedEndDate.teal:not(.light *):hover {
     --selectedEndDate-bg-dark: var(--teal-600);
     --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
   }
 
-  .DaysGridCell.cyan:focus-visible:not(.light *) {
-    --focus-visible-outline-dark: var(--cyan-700);
-    --focus-visible-outline: var(--focus-visible-outline-dark);
-  }
-
-  .DaysGridCell.selected.cyan:not(.light *) {
+  button.DaysGridCell.selected.cyan:not(.light *) {
     --selected-bg-dark: var(--cyan-600);
     --selected-bg: var(--selected-bg-dark);
   }
 
-  .DaysGridCell.selected.cyan:not(.light *):hover {
+  button.DaysGridCell.selected.cyan:not(.light *):hover {
     --selected-hover-bg-dark: var(--cyan-500);
     --selected-hover-bg: var(--selected-hover-bg-dark);
   }
 
-  .DaysGridCell.inRange.cyan:not(.selectedStartDate, .selectedEndDate, .light *),
-  .DaysGridCell.inRange.cyan:not(.selectedStartDate, .selectedEndDate, .light *):hover {
+  button.DaysGridCell.inRange.cyan:not(.selectedStartDate, .selectedEndDate, .light *),
+  button.DaysGridCell.inRange.cyan:not(.selectedStartDate, .selectedEndDate, .light *):hover {
     --inrange-bg-dark: var(--cyan-700);
     --inrange-bg: var(--inrange-bg-dark);
     --inrange-text-dark: var(--cyan-200);
     --inrange-text: var(--inrange-text-dark);
   }
 
-  .DaysGridCell.today.cyan:not(.inRange, .selected, .light *) {
+  button.DaysGridCell.today.cyan:not(.inRange, .selected, .light *) {
     --today-text-dark: var(--cyan-600);
     --today-border-dark: var(--cyan-600);
     --today-text: var(--today-text-dark);
     --today-border: var(--today-border-dark);
   }
 
-  .DaysGridCell.today.cyan:not(.inRange, .selected, .light *):hover {
+  button.DaysGridCell.today.cyan:not(.inRange, .selected, .light *):hover {
     --today-hover-text-dark: var(--cyan-600);
     --today-hover-border-dark: var(--cyan-600);
     --today-hover-text: var(--today-hover-text-dark);
     --today-hover-border: var(--today-hover-border-dark);
   }
 
-  .DaysGridCell.selectedStartDate.cyan:not(.light *),
-  .DaysGridCell.selectedStartDate.cyan:not(.light *):hover {
+  button.DaysGridCell.selectedStartDate.cyan:not(.light *),
+  button.DaysGridCell.selectedStartDate.cyan:not(.light *):hover {
     --selectedStartDate-bg-dark: var(--cyan-600);
     --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
   }
 
-  .DaysGridCell.selectedEndDate.cyan:not(.light *),
-  .DaysGridCell.selectedEndDate.cyan:not(.light *):hover {
+  button.DaysGridCell.selectedEndDate.cyan:not(.light *),
+  button.DaysGridCell.selectedEndDate.cyan:not(.light *):hover {
     --selectedEndDate-bg-dark: var(--cyan-600);
     --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
   }
 
-  .DaysGridCell.sky:focus-visible:not(.light *) {
-    --focus-visible-outline-dark: var(--sky-700);
-    --focus-visible-outline: var(--focus-visible-outline-dark);
-  }
-
-  .DaysGridCell.selected.sky:not(.light *) {
+  button.DaysGridCell.selected.sky:not(.light *) {
     --selected-bg-dark: var(--sky-600);
     --selected-bg: var(--selected-bg-dark);
   }
 
-  .DaysGridCell.selected.sky:not(.light *):hover {
+  button.DaysGridCell.selected.sky:not(.light *):hover {
     --selected-hover-bg-dark: var(--sky-500);
     --selected-hover-bg: var(--selected-hover-bg-dark);
   }
 
-  .DaysGridCell.inRange.sky:not(.selectedStartDate, .selectedEndDate, .light *),
-  .DaysGridCell.inRange.sky:not(.selectedStartDate, .selectedEndDate, .light *):hover {
+  button.DaysGridCell.inRange.sky:not(.selectedStartDate, .selectedEndDate, .light *),
+  button.DaysGridCell.inRange.sky:not(.selectedStartDate, .selectedEndDate, .light *):hover {
     --inrange-bg-dark: var(--sky-700);
     --inrange-bg: var(--inrange-bg-dark);
     --inrange-text-dark: var(--sky-200);
     --inrange-text: var(--inrange-text-dark);
   }
 
-  .DaysGridCell.today.sky:not(.inRange, .selected, .light *) {
+  button.DaysGridCell.today.sky:not(.inRange, .selected, .light *) {
     --today-text-dark: var(--sky-600);
     --today-border-dark: var(--sky-600);
     --today-text: var(--today-text-dark);
     --today-border: var(--today-border-dark);
   }
 
-  .DaysGridCell.today.sky:not(.inRange, .selected, .light *):hover {
+  button.DaysGridCell.today.sky:not(.inRange, .selected, .light *):hover {
     --today-hover-text-dark: var(--sky-600);
     --today-hover-border-dark: var(--sky-600);
     --today-hover-text: var(--today-hover-text-dark);
     --today-hover-border: var(--today-hover-border-dark);
   }
 
-  .DaysGridCell.selectedStartDate.sky:not(.light *),
-  .DaysGridCell.selectedStartDate.sky:not(.light *):hover {
+  button.DaysGridCell.selectedStartDate.sky:not(.light *),
+  button.DaysGridCell.selectedStartDate.sky:not(.light *):hover {
     --selectedStartDate-bg-dark: var(--sky-600);
     --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
   }
 
-  .DaysGridCell.selectedEndDate.sky:not(.light *),
-  .DaysGridCell.selectedEndDate.sky:not(.light *):hover {
+  button.DaysGridCell.selectedEndDate.sky:not(.light *),
+  button.DaysGridCell.selectedEndDate.sky:not(.light *):hover {
     --selectedEndDate-bg-dark: var(--sky-600);
     --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
   }
 
-  .DaysGridCell.blue:focus-visible:not(.light *) {
-    --focus-visible-outline-dark: var(--blue-700);
-    --focus-visible-outline: var(--focus-visible-outline-dark);
-  }
-
-  .DaysGridCell.selected.blue:not(.light *) {
+  button.DaysGridCell.selected.blue:not(.light *) {
     --selected-bg-dark: var(--blue-600);
     --selected-bg: var(--selected-bg-dark);
   }
 
-  .DaysGridCell.selected.blue:not(.light *):hover {
+  button.DaysGridCell.selected.blue:not(.light *):hover {
     --selected-hover-bg-dark: var(--blue-500);
     --selected-hover-bg: var(--selected-hover-bg-dark);
   }
 
-  .DaysGridCell.inRange.blue:not(.selectedStartDate, .selectedEndDate, .light *),
-  .DaysGridCell.inRange.blue:not(.selectedStartDate, .selectedEndDate, .light *):hover {
+  button.DaysGridCell.inRange.blue:not(.selectedStartDate, .selectedEndDate, .light *),
+  button.DaysGridCell.inRange.blue:not(.selectedStartDate, .selectedEndDate, .light *):hover {
     --inrange-bg-dark: var(--blue-700);
     --inrange-bg: var(--inrange-bg-dark);
     --inrange-text-dark: var(--blue-200);
     --inrange-text: var(--inrange-text-dark);
   }
 
-  .DaysGridCell.today.blue:not(.inRange, .selected, .light *) {
+  button.DaysGridCell.today.blue:not(.inRange, .selected, .light *) {
     --today-text-dark: var(--blue-600);
     --today-border-dark: var(--blue-600);
     --today-text: var(--today-text-dark);
     --today-border: var(--today-border-dark);
   }
 
-  .DaysGridCell.today.blue:not(.inRange, .selected, .light *):hover {
+  button.DaysGridCell.today.blue:not(.inRange, .selected, .light *):hover {
     --today-hover-text-dark: var(--blue-600);
     --today-hover-border-dark: var(--blue-600);
     --today-hover-text: var(--today-hover-text-dark);
     --today-hover-border: var(--today-hover-border-dark);
   }
 
-  .DaysGridCell.selectedStartDate.blue:not(.light *),
-  .DaysGridCell.selectedStartDate.blue:not(.light *):hover {
+  button.DaysGridCell.selectedStartDate.blue:not(.light *),
+  button.DaysGridCell.selectedStartDate.blue:not(.light *):hover {
     --selectedStartDate-bg-dark: var(--blue-600);
     --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
   }
 
-  .DaysGridCell.selectedEndDate.blue:not(.light *),
-  .DaysGridCell.selectedEndDate.blue:not(.light *):hover {
+  button.DaysGridCell.selectedEndDate.blue:not(.light *),
+  button.DaysGridCell.selectedEndDate.blue:not(.light *):hover {
     --selectedEndDate-bg-dark: var(--blue-600);
     --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
   }
 
-  .DaysGridCell.indigo:focus-visible:not(.light *) {
-    --focus-visible-outline-dark: var(--indigo-700);
-    --focus-visible-outline: var(--focus-visible-outline-dark);
-  }
-
-  .DaysGridCell.selected.indigo:not(.light *) {
+  button.DaysGridCell.selected.indigo:not(.light *) {
     --selected-bg-dark: var(--indigo-600);
     --selected-bg: var(--selected-bg-dark);
   }
 
-  .DaysGridCell.selected.indigo:not(.light *):hover {
+  button.DaysGridCell.selected.indigo:not(.light *):hover {
     --selected-hover-bg-dark: var(--indigo-500);
     --selected-hover-bg: var(--selected-hover-bg-dark);
   }
 
-  .DaysGridCell.inRange.indigo:not(.selectedStartDate, .selectedEndDate, .light *),
-  .DaysGridCell.inRange.indigo:not(.selectedStartDate, .selectedEndDate, .light *):hover {
+  button.DaysGridCell.inRange.indigo:not(.selectedStartDate, .selectedEndDate, .light *),
+  button.DaysGridCell.inRange.indigo:not(.selectedStartDate, .selectedEndDate, .light *):hover {
     --inrange-bg-dark: var(--indigo-700);
     --inrange-bg: var(--inrange-bg-dark);
     --inrange-text-dark: var(--indigo-200);
     --inrange-text: var(--inrange-text-dark);
   }
 
-  .DaysGridCell.today.indigo:not(.inRange, .selected, .light *) {
+  button.DaysGridCell.today.indigo:not(.inRange, .selected, .light *) {
     --today-text-dark: var(--indigo-600);
     --today-border-dark: var(--indigo-600);
     --today-text: var(--today-text-dark);
     --today-border: var(--today-border-dark);
   }
 
-  .DaysGridCell.today.indigo:not(.inRange, .selected, .light *):hover {
+  button.DaysGridCell.today.indigo:not(.inRange, .selected, .light *):hover {
     --today-hover-text-dark: var(--indigo-600);
     --today-hover-border-dark: var(--indigo-600);
     --today-hover-text: var(--today-hover-text-dark);
     --today-hover-border: var(--today-hover-border-dark);
   }
 
-  .DaysGridCell.selectedStartDate.indigo:not(.light *),
-  .DaysGridCell.selectedStartDate.indigo:not(.light *):hover {
+  button.DaysGridCell.selectedStartDate.indigo:not(.light *),
+  button.DaysGridCell.selectedStartDate.indigo:not(.light *):hover {
     --selectedStartDate-bg-dark: var(--indigo-600);
     --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
   }
 
-  .DaysGridCell.selectedEndDate.indigo:not(.light *),
-  .DaysGridCell.selectedEndDate.indigo:not(.light *):hover {
+  button.DaysGridCell.selectedEndDate.indigo:not(.light *),
+  button.DaysGridCell.selectedEndDate.indigo:not(.light *):hover {
     --selectedEndDate-bg-dark: var(--indigo-600);
     --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
   }
 
-  .DaysGridCell.violet:focus-visible:not(.light *) {
-    --focus-visible-outline-dark: var(--violet-700);
-    --focus-visible-outline: var(--focus-visible-outline-dark);
-  }
-
-  .DaysGridCell.selected.violet:not(.light *) {
+  button.DaysGridCell.selected.violet:not(.light *) {
     --selected-bg-dark: var(--violet-600);
     --selected-bg: var(--selected-bg-dark);
   }
 
-  .DaysGridCell.selected.violet:not(.light *):hover {
+  button.DaysGridCell.selected.violet:not(.light *):hover {
     --selected-hover-bg-dark: var(--violet-500);
     --selected-hover-bg: var(--selected-hover-bg-dark);
   }
 
-  .DaysGridCell.inRange.violet:not(.selectedStartDate, .selectedEndDate, .light *),
-  .DaysGridCell.inRange.violet:not(.selectedStartDate, .selectedEndDate, .light *):hover {
+  button.DaysGridCell.inRange.violet:not(.selectedStartDate, .selectedEndDate, .light *),
+  button.DaysGridCell.inRange.violet:not(.selectedStartDate, .selectedEndDate, .light *):hover {
     --inrange-bg-dark: var(--violet-700);
     --inrange-bg: var(--inrange-bg-dark);
     --inrange-text-dark: var(--violet-200);
     --inrange-text: var(--inrange-text-dark);
   }
 
-  .DaysGridCell.today.violet:not(.inRange, .selected, .light *) {
+  button.DaysGridCell.today.violet:not(.inRange, .selected, .light *) {
     --today-text-dark: var(--violet-600);
     --today-border-dark: var(--violet-600);
     --today-text: var(--today-text-dark);
     --today-border: var(--today-border-dark);
   }
 
-  .DaysGridCell.today.violet:not(.inRange, .selected, .light *):hover {
+  button.DaysGridCell.today.violet:not(.inRange, .selected, .light *):hover {
     --today-hover-text-dark: var(--violet-600);
     --today-hover-border-dark: var(--violet-600);
     --today-hover-text: var(--today-hover-text-dark);
     --today-hover-border: var(--today-hover-border-dark);
   }
 
-  .DaysGridCell.selectedStartDate.violet:not(.light *),
-  .DaysGridCell.selectedStartDate.violet:not(.light *):hover {
+  button.DaysGridCell.selectedStartDate.violet:not(.light *),
+  button.DaysGridCell.selectedStartDate.violet:not(.light *):hover {
     --selectedStartDate-bg-dark: var(--violet-600);
     --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
   }
 
-  .DaysGridCell.selectedEndDate.violet:not(.light *),
-  .DaysGridCell.selectedEndDate.violet:not(.light *):hover {
+  button.DaysGridCell.selectedEndDate.violet:not(.light *),
+  button.DaysGridCell.selectedEndDate.violet:not(.light *):hover {
     --selectedEndDate-bg-dark: var(--violet-600);
     --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
   }
 
-  .DaysGridCell.purple:focus-visible:not(.light *) {
-    --focus-visible-outline-dark: var(--purple-700);
-    --focus-visible-outline: var(--focus-visible-outline-dark);
-  }
-
-  .DaysGridCell.selected.purple:not(.light *) {
+  button.DaysGridCell.selected.purple:not(.light *) {
     --selected-bg-dark: var(--purple-600);
     --selected-bg: var(--selected-bg-dark);
   }
 
-  .DaysGridCell.selected.purple:not(.light *):hover {
+  button.DaysGridCell.selected.purple:not(.light *):hover {
     --selected-hover-bg-dark: var(--purple-500);
     --selected-hover-bg: var(--selected-hover-bg-dark);
   }
 
-  .DaysGridCell.inRange.purple:not(.selectedStartDate, .selectedEndDate, .light *),
-  .DaysGridCell.inRange.purple:not(.selectedStartDate, .selectedEndDate, .light *):hover {
+  button.DaysGridCell.inRange.purple:not(.selectedStartDate, .selectedEndDate, .light *),
+  button.DaysGridCell.inRange.purple:not(.selectedStartDate, .selectedEndDate, .light *):hover {
     --inrange-bg-dark: var(--purple-700);
     --inrange-bg: var(--inrange-bg-dark);
     --inrange-text-dark: var(--purple-200);
     --inrange-text: var(--inrange-text-dark);
   }
 
-  .DaysGridCell.today.purple:not(.inRange, .selected, .light *) {
+  button.DaysGridCell.today.purple:not(.inRange, .selected, .light *) {
     --today-text-dark: var(--purple-600);
     --today-border-dark: var(--purple-600);
     --today-text: var(--today-text-dark);
     --today-border: var(--today-border-dark);
   }
 
-  .DaysGridCell.today.purple:not(.inRange, .selected, .light *):hover {
+  button.DaysGridCell.today.purple:not(.inRange, .selected, .light *):hover {
     --today-hover-text-dark: var(--purple-600);
     --today-hover-border-dark: var(--purple-600);
     --today-hover-text: var(--today-hover-text-dark);
     --today-hover-border: var(--today-hover-border-dark);
   }
 
-  .DaysGridCell.selectedStartDate.purple:not(.light *),
-  .DaysGridCell.selectedStartDate.purple:not(.light *):hover {
+  button.DaysGridCell.selectedStartDate.purple:not(.light *),
+  button.DaysGridCell.selectedStartDate.purple:not(.light *):hover {
     --selectedStartDate-bg-dark: var(--purple-600);
     --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
   }
 
-  .DaysGridCell.selectedEndDate.purple:not(.light *),
-  .DaysGridCell.selectedEndDate.purple:not(.light *):hover {
+  button.DaysGridCell.selectedEndDate.purple:not(.light *),
+  button.DaysGridCell.selectedEndDate.purple:not(.light *):hover {
     --selectedEndDate-bg-dark: var(--purple-600);
     --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
   }
 
-  .DaysGridCell.fuchsia:focus-visible:not(.light *) {
-    --focus-visible-outline-dark: var(--fuchsia-700);
-    --focus-visible-outline: var(--focus-visible-outline-dark);
-  }
-
-  .DaysGridCell.selected.fuchsia:not(.light *) {
+  button.DaysGridCell.selected.fuchsia:not(.light *) {
     --selected-bg-dark: var(--fuchsia-600);
     --selected-bg: var(--selected-bg-dark);
   }
 
-  .DaysGridCell.selected.fuchsia:not(.light *):hover {
+  button.DaysGridCell.selected.fuchsia:not(.light *):hover {
     --selected-hover-bg-dark: var(--fuchsia-500);
     --selected-hover-bg: var(--selected-hover-bg-dark);
   }
 
-  .DaysGridCell.inRange.fuchsia:not(.selectedStartDate, .selectedEndDate, .light *),
-  .DaysGridCell.inRange.fuchsia:not(.selectedStartDate, .selectedEndDate, .light *):hover {
+  button.DaysGridCell.inRange.fuchsia:not(.selectedStartDate, .selectedEndDate, .light *),
+  button.DaysGridCell.inRange.fuchsia:not(.selectedStartDate, .selectedEndDate, .light *):hover {
     --inrange-bg-dark: var(--fuchsia-700);
     --inrange-bg: var(--inrange-bg-dark);
     --inrange-text-dark: var(--fuchsia-200);
     --inrange-text: var(--inrange-text-dark);
   }
 
-  .DaysGridCell.today.fuchsia:not(.inRange, .selected, .light *) {
+  button.DaysGridCell.today.fuchsia:not(.inRange, .selected, .light *) {
     --today-text-dark: var(--fuchsia-600);
     --today-border-dark: var(--fuchsia-600);
     --today-text: var(--today-text-dark);
     --today-border: var(--today-border-dark);
   }
 
-  .DaysGridCell.today.fuchsia:not(.inRange, .selected, .light *):hover {
+  button.DaysGridCell.today.fuchsia:not(.inRange, .selected, .light *):hover {
     --today-hover-text-dark: var(--fuchsia-600);
     --today-hover-border-dark: var(--fuchsia-600);
     --today-hover-text: var(--today-hover-text-dark);
     --today-hover-border: var(--today-hover-border-dark);
   }
 
-  .DaysGridCell.selectedStartDate.fuchsia:not(.light *),
-  .DaysGridCell.selectedStartDate.fuchsia:not(.light *):hover {
+  button.DaysGridCell.selectedStartDate.fuchsia:not(.light *),
+  button.DaysGridCell.selectedStartDate.fuchsia:not(.light *):hover {
     --selectedStartDate-bg-dark: var(--fuchsia-600);
     --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
   }
 
-  .DaysGridCell.selectedEndDate.fuchsia:not(.light *),
-  .DaysGridCell.selectedEndDate.fuchsia:not(.light *):hover {
+  button.DaysGridCell.selectedEndDate.fuchsia:not(.light *),
+  button.DaysGridCell.selectedEndDate.fuchsia:not(.light *):hover {
     --selectedEndDate-bg-dark: var(--fuchsia-600);
     --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
   }
 
-  .DaysGridCell.pink:focus-visible:not(.light *) {
-    --focus-visible-outline-dark: var(--pink-700);
-    --focus-visible-outline: var(--focus-visible-outline-dark);
-  }
-
-  .DaysGridCell.selected.pink:not(.light *) {
+  button.DaysGridCell.selected.pink:not(.light *) {
     --selected-bg-dark: var(--pink-600);
     --selected-bg: var(--selected-bg-dark);
   }
 
-  .DaysGridCell.selected.pink:not(.light *):hover {
+  button.DaysGridCell.selected.pink:not(.light *):hover {
     --selected-hover-bg-dark: var(--pink-500);
     --selected-hover-bg: var(--selected-hover-bg-dark);
   }
 
-  .DaysGridCell.inRange.pink:not(.selectedStartDate, .selectedEndDate, .light *),
-  .DaysGridCell.inRange.pink:not(.selectedStartDate, .selectedEndDate, .light *):hover {
+  button.DaysGridCell.inRange.pink:not(.selectedStartDate, .selectedEndDate, .light *),
+  button.DaysGridCell.inRange.pink:not(.selectedStartDate, .selectedEndDate, .light *):hover {
     --inrange-bg-dark: var(--pink-700);
     --inrange-bg: var(--inrange-bg-dark);
     --inrange-text-dark: var(--pink-200);
     --inrange-text: var(--inrange-text-dark);
   }
 
-  .DaysGridCell.today.pink:not(.inRange, .selected, .light *) {
+  button.DaysGridCell.today.pink:not(.inRange, .selected, .light *) {
     --today-text-dark: var(--pink-600);
     --today-border-dark: var(--pink-600);
     --today-text: var(--today-text-dark);
     --today-border: var(--today-border-dark);
   }
 
-  .DaysGridCell.today.pink:not(.inRange, .selected, .light *):hover {
+  button.DaysGridCell.today.pink:not(.inRange, .selected, .light *):hover {
     --today-hover-text-dark: var(--pink-600);
     --today-hover-border-dark: var(--pink-600);
     --today-hover-text: var(--today-hover-text-dark);
     --today-hover-border: var(--today-hover-border-dark);
   }
 
-  .DaysGridCell.selectedStartDate.pink:not(.light *),
-  .DaysGridCell.selectedStartDate.pink:not(.light *):hover {
+  button.DaysGridCell.selectedStartDate.pink:not(.light *),
+  button.DaysGridCell.selectedStartDate.pink:not(.light *):hover {
     --selectedStartDate-bg-dark: var(--pink-600);
     --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
   }
 
-  .DaysGridCell.selectedEndDate.pink:not(.light *),
-  .DaysGridCell.selectedEndDate.pink:not(.light *):hover {
+  button.DaysGridCell.selectedEndDate.pink:not(.light *),
+  button.DaysGridCell.selectedEndDate.pink:not(.light *):hover {
     --selectedEndDate-bg-dark: var(--pink-600);
     --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
   }
 
-  .DaysGridCell.rose:focus-visible:not(.light *) {
-    --focus-visible-outline-dark: var(--rose-700);
-    --focus-visible-outline: var(--focus-visible-outline-dark);
-  }
-
-  .DaysGridCell.selected.rose:not(.light *) {
+  button.DaysGridCell.selected.rose:not(.light *) {
     --selected-bg-dark: var(--rose-600);
     --selected-bg: var(--selected-bg-dark);
   }
 
-  .DaysGridCell.selected.rose:not(.light *):hover {
+  button.DaysGridCell.selected.rose:not(.light *):hover {
     --selected-hover-bg-dark: var(--rose-500);
     --selected-hover-bg: var(--selected-hover-bg-dark);
   }
 
-  .DaysGridCell.inRange.rose:not(.selectedStartDate, .selectedEndDate, .light *),
-  .DaysGridCell.inRange.rose:not(.selectedStartDate, .selectedEndDate, .light *):hover {
+  button.DaysGridCell.inRange.rose:not(.selectedStartDate, .selectedEndDate, .light *),
+  button.DaysGridCell.inRange.rose:not(.selectedStartDate, .selectedEndDate, .light *):hover {
     --inrange-bg-dark: var(--rose-700);
     --inrange-bg: var(--inrange-bg-dark);
     --inrange-text-dark: var(--rose-200);
     --inrange-text: var(--inrange-text-dark);
   }
 
-  .DaysGridCell.today.rose:not(.inRange, .selected, .light *) {
+  button.DaysGridCell.today.rose:not(.inRange, .selected, .light *) {
     --today-text-dark: var(--rose-600);
     --today-border-dark: var(--rose-600);
     --today-text: var(--today-text-dark);
     --today-border: var(--today-border-dark);
   }
 
-  .DaysGridCell.today.rose:not(.inRange, .selected, .light *):hover {
+  button.DaysGridCell.today.rose:not(.inRange, .selected, .light *):hover {
     --today-hover-text-dark: var(--rose-600);
     --today-hover-border-dark: var(--rose-600);
     --today-hover-text: var(--today-hover-text-dark);
     --today-hover-border: var(--today-hover-border-dark);
   }
 
-  .DaysGridCell.selectedStartDate.rose:not(.light *),
-  .DaysGridCell.selectedStartDate.rose:not(.light *):hover {
+  button.DaysGridCell.selectedStartDate.rose:not(.light *),
+  button.DaysGridCell.selectedStartDate.rose:not(.light *):hover {
     --selectedStartDate-bg-dark: var(--rose-600);
     --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
   }
 
-  .DaysGridCell.selectedEndDate.rose:not(.light *),
-  .DaysGridCell.selectedEndDate.rose:not(.light *):hover {
+  button.DaysGridCell.selectedEndDate.rose:not(.light *),
+  button.DaysGridCell.selectedEndDate.rose:not(.light *):hover {
     --selectedEndDate-bg-dark: var(--rose-600);
     --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
   }
 
-  .DaysGridCell.slate:focus-visible:not(.light *) {
-    --focus-visible-outline-dark: var(--slate-700);
-    --focus-visible-outline: var(--focus-visible-outline-dark);
-  }
-
-  .DaysGridCell.selected.slate:not(.light *) {
+  button.DaysGridCell.selected.slate:not(.light *) {
     --selected-bg-dark: var(--slate-600);
     --selected-bg: var(--selected-bg-dark);
   }
 
-  .DaysGridCell.selected.slate:not(.light *):hover {
+  button.DaysGridCell.selected.slate:not(.light *):hover {
     --selected-hover-bg-dark: var(--slate-500);
     --selected-hover-bg: var(--selected-hover-bg-dark);
   }
 
-  .DaysGridCell.inRange.slate:not(.selectedStartDate, .selectedEndDate, .light *),
-  .DaysGridCell.inRange.slate:not(.selectedStartDate, .selectedEndDate, .light *):hover {
+  button.DaysGridCell.inRange.slate:not(.selectedStartDate, .selectedEndDate, .light *),
+  button.DaysGridCell.inRange.slate:not(.selectedStartDate, .selectedEndDate, .light *):hover {
     --inrange-bg-dark: var(--slate-700);
     --inrange-bg: var(--inrange-bg-dark);
     --inrange-text-dark: var(--slate-200);
     --inrange-text: var(--inrange-text-dark);
   }
 
-  .DaysGridCell.today.slate:not(.inRange, .selected, .light *) {
+  button.DaysGridCell.today.slate:not(.inRange, .selected, .light *) {
     --today-text-dark: var(--slate-600);
     --today-border-dark: var(--slate-600);
     --today-text: var(--today-text-dark);
     --today-border: var(--today-border-dark);
   }
 
-  .DaysGridCell.today.slate:not(.inRange, .selected, .light *):hover {
+  button.DaysGridCell.today.slate:not(.inRange, .selected, .light *):hover {
     --today-hover-text-dark: var(--slate-600);
     --today-hover-border-dark: var(--slate-600);
     --today-hover-text: var(--today-hover-text-dark);
     --today-hover-border: var(--today-hover-border-dark);
   }
 
-  .DaysGridCell.selectedStartDate.slate:not(.light *),
-  .DaysGridCell.selectedStartDate.slate:not(.light *):hover {
+  button.DaysGridCell.selectedStartDate.slate:not(.light *),
+  button.DaysGridCell.selectedStartDate.slate:not(.light *):hover {
     --selectedStartDate-bg-dark: var(--slate-600);
     --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
   }
 
-  .DaysGridCell.selectedEndDate.slate:not(.light *),
-  .DaysGridCell.selectedEndDate.slate:not(.light *):hover {
+  button.DaysGridCell.selectedEndDate.slate:not(.light *),
+  button.DaysGridCell.selectedEndDate.slate:not(.light *):hover {
     --selectedEndDate-bg-dark: var(--slate-600);
     --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
   }
 
-  .DaysGridCell.gray:focus-visible:not(.light *) {
-    --focus-visible-outline-dark: var(--gray-700);
-    --focus-visible-outline: var(--focus-visible-outline-dark);
-  }
-
-  .DaysGridCell.selected.gray:not(.light *) {
+  button.DaysGridCell.selected.gray:not(.light *) {
     --selected-bg-dark: var(--gray-600);
     --selected-bg: var(--selected-bg-dark);
   }
 
-  .DaysGridCell.selected.gray:not(.light *):hover {
+  button.DaysGridCell.selected.gray:not(.light *):hover {
     --selected-hover-bg-dark: var(--gray-500);
     --selected-hover-bg: var(--selected-hover-bg-dark);
   }
 
-  .DaysGridCell.inRange.gray:not(.selectedStartDate, .selectedEndDate, .light *),
-  .DaysGridCell.inRange.gray:not(.selectedStartDate, .selectedEndDate, .light *):hover {
+  button.DaysGridCell.inRange.gray:not(.selectedStartDate, .selectedEndDate, .light *),
+  button.DaysGridCell.inRange.gray:not(.selectedStartDate, .selectedEndDate, .light *):hover {
     --inrange-bg-dark: var(--gray-700);
     --inrange-bg: var(--inrange-bg-dark);
     --inrange-text-dark: var(--gray-200);
     --inrange-text: var(--inrange-text-dark);
   }
 
-  .DaysGridCell.today.gray:not(.inRange, .selected, .light *) {
+  button.DaysGridCell.today.gray:not(.inRange, .selected, .light *) {
     --today-text-dark: var(--gray-600);
     --today-border-dark: var(--gray-600);
     --today-text: var(--today-text-dark);
     --today-border: var(--today-border-dark);
   }
 
-  .DaysGridCell.today.gray:not(.inRange, .selected, .light *):hover {
+  button.DaysGridCell.today.gray:not(.inRange, .selected, .light *):hover {
     --today-hover-text-dark: var(--gray-600);
     --today-hover-border-dark: var(--gray-600);
     --today-hover-text: var(--today-hover-text-dark);
     --today-hover-border: var(--today-hover-border-dark);
   }
 
-  .DaysGridCell.selectedStartDate.gray:not(.light *),
-  .DaysGridCell.selectedStartDate.gray:not(.light *):hover {
+  button.DaysGridCell.selectedStartDate.gray:not(.light *),
+  button.DaysGridCell.selectedStartDate.gray:not(.light *):hover {
     --selectedStartDate-bg-dark: var(--gray-600);
     --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
   }
 
-  .DaysGridCell.selectedEndDate.gray:not(.light *),
-  .DaysGridCell.selectedEndDate.gray:not(.light *):hover {
+  button.DaysGridCell.selectedEndDate.gray:not(.light *),
+  button.DaysGridCell.selectedEndDate.gray:not(.light *):hover {
     --selectedEndDate-bg-dark: var(--gray-600);
     --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
   }
 
-  .DaysGridCell.zinc:focus-visible:not(.light *) {
-    --focus-visible-outline-dark: var(--zinc-700);
-    --focus-visible-outline: var(--focus-visible-outline-dark);
-  }
-
-  .DaysGridCell.selected.zinc:not(.light *) {
+  button.DaysGridCell.selected.zinc:not(.light *) {
     --selected-bg-dark: var(--zinc-600);
     --selected-bg: var(--selected-bg-dark);
   }
 
-  .DaysGridCell.selected.zinc:not(.light *):hover {
+  button.DaysGridCell.selected.zinc:not(.light *):hover {
     --selected-hover-bg-dark: var(--zinc-500);
     --selected-hover-bg: var(--selected-hover-bg-dark);
   }
 
-  .DaysGridCell.inRange.zinc:not(.selectedStartDate, .selectedEndDate, .light *),
-  .DaysGridCell.inRange.zinc:not(.selectedStartDate, .selectedEndDate, .light *):hover {
+  button.DaysGridCell.inRange.zinc:not(.selectedStartDate, .selectedEndDate, .light *),
+  button.DaysGridCell.inRange.zinc:not(.selectedStartDate, .selectedEndDate, .light *):hover {
     --inrange-bg-dark: var(--zinc-700);
     --inrange-bg: var(--inrange-bg-dark);
     --inrange-text-dark: var(--zinc-200);
     --inrange-text: var(--inrange-text-dark);
   }
 
-  .DaysGridCell.today.zinc:not(.inRange, .selected, .light *) {
+  button.DaysGridCell.today.zinc:not(.inRange, .selected, .light *) {
     --today-text-dark: var(--zinc-600);
     --today-border-dark: var(--zinc-600);
     --today-text: var(--today-text-dark);
     --today-border: var(--today-border-dark);
   }
 
-  .DaysGridCell.today.zinc:not(.inRange, .selected, .light *):hover {
+  button.DaysGridCell.today.zinc:not(.inRange, .selected, .light *):hover {
     --today-hover-text-dark: var(--zinc-600);
     --today-hover-border-dark: var(--zinc-600);
     --today-hover-text: var(--today-hover-text-dark);
     --today-hover-border: var(--today-hover-border-dark);
   }
 
-  .DaysGridCell.selectedStartDate.zinc:not(.light *),
-  .DaysGridCell.selectedStartDate.zinc:not(.light *):hover {
+  button.DaysGridCell.selectedStartDate.zinc:not(.light *),
+  button.DaysGridCell.selectedStartDate.zinc:not(.light *):hover {
     --selectedStartDate-bg-dark: var(--zinc-600);
     --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
   }
 
-  .DaysGridCell.selectedEndDate.zinc:not(.light *),
-  .DaysGridCell.selectedEndDate.zinc:not(.light *):hover {
+  button.DaysGridCell.selectedEndDate.zinc:not(.light *),
+  button.DaysGridCell.selectedEndDate.zinc:not(.light *):hover {
     --selectedEndDate-bg-dark: var(--zinc-600);
     --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
   }
 
-  .DaysGridCell.neutral:focus-visible:not(.light *) {
-    --focus-visible-outline-dark: var(--neutral-700);
-    --focus-visible-outline: var(--focus-visible-outline-dark);
-  }
-
-  .DaysGridCell.selected.neutral:not(.light *) {
+  button.DaysGridCell.selected.neutral:not(.light *) {
     --selected-bg-dark: var(--neutral-600);
     --selected-bg: var(--selected-bg-dark);
   }
 
-  .DaysGridCell.selected.neutral:not(.light *):hover {
+  button.DaysGridCell.selected.neutral:not(.light *):hover {
     --selected-hover-bg-dark: var(--neutral-500);
     --selected-hover-bg: var(--selected-hover-bg-dark);
   }
 
-  .DaysGridCell.inRange.neutral:not(.selectedStartDate, .selectedEndDate, .light *),
-  .DaysGridCell.inRange.neutral:not(.selectedStartDate, .selectedEndDate, .light *):hover {
+  button.DaysGridCell.inRange.neutral:not(.selectedStartDate, .selectedEndDate, .light *),
+  button.DaysGridCell.inRange.neutral:not(.selectedStartDate, .selectedEndDate, .light *):hover {
     --inrange-bg-dark: var(--neutral-700);
     --inrange-bg: var(--inrange-bg-dark);
     --inrange-text-dark: var(--neutral-200);
     --inrange-text: var(--inrange-text-dark);
   }
 
-  .DaysGridCell.today.neutral:not(.inRange, .selected, .light *) {
+  button.DaysGridCell.today.neutral:not(.inRange, .selected, .light *) {
     --today-text-dark: var(--neutral-600);
     --today-border-dark: var(--neutral-600);
     --today-text: var(--today-text-dark);
     --today-border: var(--today-border-dark);
   }
 
-  .DaysGridCell.today.neutral:not(.inRange, .selected, .light *):hover {
+  button.DaysGridCell.today.neutral:not(.inRange, .selected, .light *):hover {
     --today-hover-text-dark: var(--neutral-600);
     --today-hover-border-dark: var(--neutral-600);
     --today-hover-text: var(--today-hover-text-dark);
     --today-hover-border: var(--today-hover-border-dark);
   }
 
-  .DaysGridCell.selectedStartDate.neutral:not(.light *),
-  .DaysGridCell.selectedStartDate.neutral:not(.light *):hover {
+  button.DaysGridCell.selectedStartDate.neutral:not(.light *),
+  button.DaysGridCell.selectedStartDate.neutral:not(.light *):hover {
     --selectedStartDate-bg-dark: var(--neutral-600);
     --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
   }
 
-  .DaysGridCell.selectedEndDate.neutral:not(.light *),
-  .DaysGridCell.selectedEndDate.neutral:not(.light *):hover {
+  button.DaysGridCell.selectedEndDate.neutral:not(.light *),
+  button.DaysGridCell.selectedEndDate.neutral:not(.light *):hover {
     --selectedEndDate-bg-dark: var(--neutral-600);
     --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
   }
 
-  .DaysGridCell.stone:focus-visible:not(.light *) {
-    --focus-visible-outline-dark: var(--stone-700);
-    --focus-visible-outline: var(--focus-visible-outline-dark);
-  }
-
-  .DaysGridCell.selected.stone:not(.light *) {
+  button.DaysGridCell.selected.stone:not(.light *) {
     --selected-bg-dark: var(--stone-600);
     --selected-bg: var(--selected-bg-dark);
   }
 
-  .DaysGridCell.selected.stone:not(.light *):hover {
+  button.DaysGridCell.selected.stone:not(.light *):hover {
     --selected-hover-bg-dark: var(--stone-500);
     --selected-hover-bg: var(--selected-hover-bg-dark);
   }
 
-  .DaysGridCell.inRange.stone:not(.selectedStartDate, .selectedEndDate, .light *),
-  .DaysGridCell.inRange.stone:not(.selectedStartDate, .selectedEndDate, .light *):hover {
+  button.DaysGridCell.inRange.stone:not(.selectedStartDate, .selectedEndDate, .light *),
+  button.DaysGridCell.inRange.stone:not(.selectedStartDate, .selectedEndDate, .light *):hover {
     --inrange-bg-dark: var(--stone-700);
     --inrange-bg: var(--inrange-bg-dark);
     --inrange-text-dark: var(--stone-200);
     --inrange-text: var(--inrange-text-dark);
   }
 
-  .DaysGridCell.today.stone:not(.inRange, .selected, .light *) {
+  button.DaysGridCell.today.stone:not(.inRange, .selected, .light *) {
     --today-text-dark: var(--stone-600);
     --today-border-dark: var(--stone-600);
     --today-text: var(--today-text-dark);
     --today-border: var(--today-border-dark);
   }
 
-  .DaysGridCell.today.stone:not(.inRange, .selected, .light *):hover {
+  button.DaysGridCell.today.stone:not(.inRange, .selected, .light *):hover {
     --today-hover-text-dark: var(--stone-600);
     --today-hover-border-dark: var(--stone-600);
     --today-hover-text: var(--today-hover-text-dark);
     --today-hover-border: var(--today-hover-border-dark);
   }
 
-  .DaysGridCell.selectedStartDate.stone:not(.light *),
-  .DaysGridCell.selectedStartDate.stone:not(.light *):hover {
+  button.DaysGridCell.selectedStartDate.stone:not(.light *),
+  button.DaysGridCell.selectedStartDate.stone:not(.light *):hover {
     --selectedStartDate-bg-dark: var(--stone-600);
     --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
   }
 
-  .DaysGridCell.selectedEndDate.stone:not(.light *),
-  .DaysGridCell.selectedEndDate.stone:not(.light *):hover {
+  button.DaysGridCell.selectedEndDate.stone:not(.light *),
+  button.DaysGridCell.selectedEndDate.stone:not(.light *):hover {
     --selectedEndDate-bg-dark: var(--stone-600);
     --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
   }
 }
 
 /* Forced dark mode */
-.dark * .DaysGridCell:focus-visible {
+.dark * button.DaysGridCell:focus-visible {
   --focus-visible-outline: var(--focus-visible-outline-dark);
 }
 
-.dark * .DaysGridCell.selected {
+.dark * button.DaysGridCell.selected {
   --selected-text: var(--selected-text-dark);
   --selected-bg: var(--selected-bg-dark);
 }
 
-.dark * .DaysGridCell.selected:hover {
+.dark * button.DaysGridCell.selected:hover {
   --selected-hover-text: var(--selected-hover-text-dark);
   --selected-hover-bg: var(--selected-hover-bg-dark);
 }
 
-.dark * .DaysGridCell.enabled {
+.dark * button.DaysGridCell.enabled {
   --hover-bg-dark: var(--gray-700);
   --text: var(--text-dark);
   --hover-bg: var(--hover-bg-dark);
 }
 
-.dark * .DaysGridCell:not(.enabled) {
+.dark * button.DaysGridCell:not(.enabled) {
   --disabled-text: var(--disabled-text-dark);
 }
 
-.dark * .DaysGridCell.inRange:not(.selectedStartDate, .selectedEndDate),
-.dark * .DaysGridCell.inRange:not(.selectedStartDate, .selectedEndDate):hover {
+.dark * button.DaysGridCell.inRange:not(.selectedStartDate, .selectedEndDate),
+.dark * button.DaysGridCell.inRange:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-border: var(--inrange-border-dark);
 }
 
-.dark * .DaysGridCell.today:not(.inRange, .selected, .selected) {
+.dark * button.DaysGridCell.today:not(.inRange, .selected, .selected) {
   --today-text: var(--today-text-dark);
   --today-border: var(--today-border-dark);
 }
 
-.dark * .DaysGridCell.today:not(.inRange, .selected, .selected):hover {
+.dark * button.DaysGridCell.today:not(.inRange, .selected, .selected):hover {
   --today-hover-text: var(--today-hover-text-dark);
   --today-hover-border: var(--today-hover-border-dark);
 }
 
-.dark * .DaysGridCell.selectedStartDate,
-.dark * .DaysGridCell.selectedStartDate:hover {
+.dark * button.DaysGridCell.selectedStartDate,
+.dark * button.DaysGridCell.selectedStartDate:hover {
   --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
   --selectedStartDate-text: var(--selectedStartDate-text-dark);
   --selectedStartDate-border: var(--selectedStartDate-border-dark);
 }
 
-.dark * .DaysGridCell.selectedEndDate,
-.dark * .DaysGridCell.selectedEndDate:hover {
+.dark * button.DaysGridCell.selectedEndDate,
+.dark * button.DaysGridCell.selectedEndDate:hover {
   --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
   --selectedEndDate-text: var(--selectedEndDate-text-dark);
 }
 
 /* Forced light mode */
-.light * .DaysGridCell:focus-visible {
+.light * button.DaysGridCell:focus-visible {
   --focus-visible-outline: var(--focus-visible-outline-light);
 }
 
-.light * .DaysGridCell.selected {
+.light * button.DaysGridCell.selected {
   --selected-text: var(--selected-text-light);
   --selected-bg: var(--selected-bg-light);
 }
 
-.light * .DaysGridCell.selected:hover {
+.light * button.DaysGridCell.selected:hover {
   --selected-hover-text: var(--selected-hover-text-light);
   --selected-hover-bg: var(--selected-hover-bg-light);
 }
 
-.light * .DaysGridCell.enabled {
+.light * button.DaysGridCell.enabled {
   --hover-bg-light: var(--gray-100);
   --text: var(--text-light);
   --hover-bg: var(--hover-bg-light);
 }
 
-.light * .DaysGridCell:not(.enabled) {
+.light * button.DaysGridCell:not(.enabled) {
   --disabled-text: var(--disabled-text-light);
 }
 
-.light * .DaysGridCell.inRange:not(.selectedStartDate, .selectedEndDate),
-.light * .DaysGridCell.inRange:not(.selectedStartDate, .selectedEndDate):hover {
+.light * button.DaysGridCell.inRange:not(.selectedStartDate, .selectedEndDate),
+.light * button.DaysGridCell.inRange:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-border: var(--inrange-border-light);
 }
 
-.light * .DaysGridCell.today:not(.inRange, .selected, .selected) {
+.light * button.DaysGridCell.today:not(.inRange, .selected, .selected) {
   --today-text: var(--today-text-light);
   --today-border: var(--today-border-light);
 }
 
-.light * .DaysGridCell.today:not(.inRange, .selected, .selected):hover {
+.light * button.DaysGridCell.today:not(.inRange, .selected, .selected):hover {
   --today-hover-text: var(--today-hover-text-light);
   --today-hover-border: var(--today-hover-border-light);
 }
 
-.light * .DaysGridCell.selectedStartDate,
-.light * .DaysGridCell.selectedStartDate:hover {
+.light * button.DaysGridCell.selectedStartDate,
+.light * button.DaysGridCell.selectedStartDate:hover {
   --selectedStartDate-bg: var(--selectedStartDate-bg-light);
   --selectedStartDate-text: var(--selectedStartDate-text-light);
   --selectedStartDate-border: var(--selectedStartDate-border-light);
 }
 
-.light * .DaysGridCell.selectedEndDate,
-.light * .DaysGridCell.selectedEndDate:hover {
+.light * button.DaysGridCell.selectedEndDate,
+.light * button.DaysGridCell.selectedEndDate:hover {
   --selectedEndDate-bg: var(--selectedEndDate-bg-light);
   --selectedEndDate-text: var(--selectedEndDate-text-light);
 }
 
 /*.Sizes */
-.DaysGridCell.sm {
+button.DaysGridCell.sm {
   height: var(--day-cell-height-sm);
   width: var(--day-cell-width-sm);
   font-size: var(--text-xs);
 }
 
-.DaysGridCell.md {
+button.DaysGridCell.md {
   height: var(--day-cell-height-md);
   width: var(--day-cell-width-md);
   font-size: var(--text-sm);
 }
 
-.DaysGridCell.lg {
+button.DaysGridCell.lg {
   height: var(--day-cell-height-lg);
   width: var(--day-cell-width-lg);
   font-size: var(--text-sm);
 }
 
-.DaysGridCell.inRange:not(.selectedStartDate, .selectedEndDate).sm,
-.DaysGridCell.selectedStartDate.sm,
-.DaysGridCell.selectedEndDate.sm {
+button.DaysGridCell.inRange:not(.selectedStartDate, .selectedEndDate).sm,
+button.DaysGridCell.selectedStartDate.sm,
+button.DaysGridCell.selectedEndDate.sm {
   width: 36px;
 }
 
-.DaysGridCell.inRange:not(.selectedStartDate, .selectedEndDate).md,
-.DaysGridCell.selectedStartDate.md,
-.DaysGridCell.selectedEndDate.md {
+button.DaysGridCell.inRange:not(.selectedStartDate, .selectedEndDate).md,
+button.DaysGridCell.selectedStartDate.md,
+button.DaysGridCell.selectedEndDate.md {
   width: 40px;
 }
 
-.DaysGridCell.inRange:not(.selectedStartDate, .selectedEndDate).lg,
-.DaysGridCell.selectedStartDate.lg,
-.DaysGridCell.selectedEndDate.lg {
+button.DaysGridCell.inRange:not(.selectedStartDate, .selectedEndDate).lg,
+button.DaysGridCell.selectedStartDate.lg,
+button.DaysGridCell.selectedEndDate.lg {
   width: 44px;
 }
 
 /* Colors theme */
-.dark * .DaysGridCell.red:focus-visible {
-  --focus-visible-outline-dark: var(--red-700);
-  --focus-visible-outline: var(--focus-visible-outline-dark);
-}
-
-.dark * .DaysGridCell.selected.red {
+.dark * button.DaysGridCell.selected.red {
   --selected-bg-dark: var(--red-600);
   --selected-bg: var(--selected-bg-dark);
 }
 
-.dark * .DaysGridCell.selected.red:hover {
+.dark * button.DaysGridCell.selected.red:hover {
   --selected-hover-bg-dark: var(--red-500);
   --selected-hover-bg: var(--selected-hover-bg-dark);
 }
 
-.dark * .DaysGridCell.inRange.red:not(.selectedStartDate, .selectedEndDate),
-.dark * .DaysGridCell.inRange.red:not(.selectedStartDate, .selectedEndDate):hover {
+.dark * button.DaysGridCell.inRange.red:not(.selectedStartDate, .selectedEndDate),
+.dark * button.DaysGridCell.inRange.red:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-dark: var(--red-700);
   --inrange-bg: var(--inrange-bg-dark);
   --inrange-text-dark: var(--red-200);
@@ -1464,50 +1353,45 @@
 }
 
 
-.dark * .DaysGridCell.today.red:not(.inRange) {
+.dark * button.DaysGridCell.today.red:not(.inRange) {
   --today-text-dark: var(--red-600);
   --today-border-dark: var(--red-600);
   --today-text: var(--today-text-dark);
   --today-border: var(--today-border-dark);
 }
 
-.dark * .DaysGridCell.today.red:not(.inRange):hover {
+.dark * button.DaysGridCell.today.red:not(.inRange):hover {
   --today-hover-text-dark: var(--red-600);
   --today-hover-border-dark: var(--red-600);
   --today-hover-text: var(--today-hover-text-dark);
   --today-hover-border: var(--today-hover-border-dark);
 }
 
-.dark * .DaysGridCell.selectedStartDate.red,
-.dark * .DaysGridCell.selectedStartDate.red:hover {
+.dark * button.DaysGridCell.selectedStartDate.red,
+.dark * button.DaysGridCell.selectedStartDate.red:hover {
   --selectedStartDate-bg-dark: var(--red-600);
   --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
 }
 
-.dark * .DaysGridCell.selectedEndDate.red,
-.dark * .DaysGridCell.selectedEndDate.red:hover {
+.dark * button.DaysGridCell.selectedEndDate.red,
+.dark * button.DaysGridCell.selectedEndDate.red:hover {
   --selectedEndDate-bg-dark: var(--red-600);
   --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
 }
 
 
-.dark * .DaysGridCell.orange:focus-visible {
-  --focus-visible-outline-dark: var(--orange-700);
-  --focus-visible-outline: var(--focus-visible-outline-dark);
-}
-
-.dark * .DaysGridCell.selected.orange {
+.dark * button.DaysGridCell.selected.orange {
   --selected-bg-dark: var(--orange-600);
   --selected-bg: var(--selected-bg-dark);
 }
 
-.dark * .DaysGridCell.selected.orange:hover {
+.dark * button.DaysGridCell.selected.orange:hover {
   --selected-hover-bg-dark: var(--orange-500);
   --selected-hover-bg: var(--selected-hover-bg-dark);
 }
 
-.dark * .DaysGridCell.inRange.orange:not(.selectedStartDate, .selectedEndDate),
-.dark * .DaysGridCell.inRange.orange:not(.selectedStartDate, .selectedEndDate):hover {
+.dark * button.DaysGridCell.inRange.orange:not(.selectedStartDate, .selectedEndDate),
+.dark * button.DaysGridCell.inRange.orange:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-dark: var(--orange-700);
   --inrange-bg: var(--inrange-bg-dark);
   --inrange-text-dark: var(--orange-200);
@@ -1515,50 +1399,45 @@
 }
 
 
-.dark * .DaysGridCell.today.orange:not(.inRange) {
+.dark * button.DaysGridCell.today.orange:not(.inRange) {
   --today-text-dark: var(--orange-600);
   --today-border-dark: var(--orange-600);
   --today-text: var(--today-text-dark);
   --today-border: var(--today-border-dark);
 }
 
-.dark * .DaysGridCell.today.orange:not(.inRange):hover {
+.dark * button.DaysGridCell.today.orange:not(.inRange):hover {
   --today-hover-text-dark: var(--orange-600);
   --today-hover-border-dark: var(--orange-600);
   --today-hover-text: var(--today-hover-text-dark);
   --today-hover-border: var(--today-hover-border-dark);
 }
 
-.dark * .DaysGridCell.selectedStartDate.orange,
-.dark * .DaysGridCell.selectedStartDate.orange:hover {
+.dark * button.DaysGridCell.selectedStartDate.orange,
+.dark * button.DaysGridCell.selectedStartDate.orange:hover {
   --selectedStartDate-bg-dark: var(--orange-600);
   --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
 }
 
-.dark * .DaysGridCell.selectedEndDate.orange,
-.dark * .DaysGridCell.selectedEndDate.orange:hover {
+.dark * button.DaysGridCell.selectedEndDate.orange,
+.dark * button.DaysGridCell.selectedEndDate.orange:hover {
   --selectedEndDate-bg-dark: var(--orange-600);
   --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
 }
 
 
-.dark * .DaysGridCell.amber:focus-visible {
-  --focus-visible-outline-dark: var(--amber-700);
-  --focus-visible-outline: var(--focus-visible-outline-dark);
-}
-
-.dark * .DaysGridCell.selected.amber {
+.dark * button.DaysGridCell.selected.amber {
   --selected-bg-dark: var(--amber-600);
   --selected-bg: var(--selected-bg-dark);
 }
 
-.dark * .DaysGridCell.selected.amber:hover {
+.dark * button.DaysGridCell.selected.amber:hover {
   --selected-hover-bg-dark: var(--amber-500);
   --selected-hover-bg: var(--selected-hover-bg-dark);
 }
 
-.dark * .DaysGridCell.inRange.amber:not(.selectedStartDate, .selectedEndDate),
-.dark * .DaysGridCell.inRange.amber:not(.selectedStartDate, .selectedEndDate):hover {
+.dark * button.DaysGridCell.inRange.amber:not(.selectedStartDate, .selectedEndDate),
+.dark * button.DaysGridCell.inRange.amber:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-dark: var(--amber-700);
   --inrange-bg: var(--inrange-bg-dark);
   --inrange-text-dark: var(--amber-200);
@@ -1566,50 +1445,45 @@
 }
 
 
-.dark * .DaysGridCell.today.amber:not(.inRange) {
+.dark * button.DaysGridCell.today.amber:not(.inRange) {
   --today-text-dark: var(--amber-600);
   --today-border-dark: var(--amber-600);
   --today-text: var(--today-text-dark);
   --today-border: var(--today-border-dark);
 }
 
-.dark * .DaysGridCell.today.amber:not(.inRange):hover {
+.dark * button.DaysGridCell.today.amber:not(.inRange):hover {
   --today-hover-text-dark: var(--amber-600);
   --today-hover-border-dark: var(--amber-600);
   --today-hover-text: var(--today-hover-text-dark);
   --today-hover-border: var(--today-hover-border-dark);
 }
 
-.dark * .DaysGridCell.selectedStartDate.amber,
-.dark * .DaysGridCell.selectedStartDate.amber:hover {
+.dark * button.DaysGridCell.selectedStartDate.amber,
+.dark * button.DaysGridCell.selectedStartDate.amber:hover {
   --selectedStartDate-bg-dark: var(--amber-600);
   --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
 }
 
-.dark * .DaysGridCell.selectedEndDate.amber,
-.dark * .DaysGridCell.selectedEndDate.amber:hover {
+.dark * button.DaysGridCell.selectedEndDate.amber,
+.dark * button.DaysGridCell.selectedEndDate.amber:hover {
   --selectedEndDate-bg-dark: var(--amber-600);
   --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
 }
 
 
-.dark * .DaysGridCell.yellow:focus-visible {
-  --focus-visible-outline-dark: var(--yellow-700);
-  --focus-visible-outline: var(--focus-visible-outline-dark);
-}
-
-.dark * .DaysGridCell.selected.yellow {
+.dark * button.DaysGridCell.selected.yellow {
   --selected-bg-dark: var(--yellow-600);
   --selected-bg: var(--selected-bg-dark);
 }
 
-.dark * .DaysGridCell.selected.yellow:hover {
+.dark * button.DaysGridCell.selected.yellow:hover {
   --selected-hover-bg-dark: var(--yellow-500);
   --selected-hover-bg: var(--selected-hover-bg-dark);
 }
 
-.dark * .DaysGridCell.inRange.yellow:not(.selectedStartDate, .selectedEndDate),
-.dark * .DaysGridCell.inRange.yellow:not(.selectedStartDate, .selectedEndDate):hover {
+.dark * button.DaysGridCell.inRange.yellow:not(.selectedStartDate, .selectedEndDate),
+.dark * button.DaysGridCell.inRange.yellow:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-dark: var(--yellow-700);
   --inrange-bg: var(--inrange-bg-dark);
   --inrange-text-dark: var(--yellow-200);
@@ -1617,50 +1491,45 @@
 }
 
 
-.dark * .DaysGridCell.today.yellow:not(.inRange) {
+.dark * button.DaysGridCell.today.yellow:not(.inRange) {
   --today-text-dark: var(--yellow-600);
   --today-border-dark: var(--yellow-600);
   --today-text: var(--today-text-dark);
   --today-border: var(--today-border-dark);
 }
 
-.dark * .DaysGridCell.today.yellow:not(.inRange):hover {
+.dark * button.DaysGridCell.today.yellow:not(.inRange):hover {
   --today-hover-text-dark: var(--yellow-600);
   --today-hover-border-dark: var(--yellow-600);
   --today-hover-text: var(--today-hover-text-dark);
   --today-hover-border: var(--today-hover-border-dark);
 }
 
-.dark * .DaysGridCell.selectedStartDate.yellow,
-.dark * .DaysGridCell.selectedStartDate.yellow:hover {
+.dark * button.DaysGridCell.selectedStartDate.yellow,
+.dark * button.DaysGridCell.selectedStartDate.yellow:hover {
   --selectedStartDate-bg-dark: var(--yellow-600);
   --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
 }
 
-.dark * .DaysGridCell.selectedEndDate.yellow,
-.dark * .DaysGridCell.selectedEndDate.yellow:hover {
+.dark * button.DaysGridCell.selectedEndDate.yellow,
+.dark * button.DaysGridCell.selectedEndDate.yellow:hover {
   --selectedEndDate-bg-dark: var(--yellow-600);
   --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
 }
 
 
-.dark * .DaysGridCell.lime:focus-visible {
-  --focus-visible-outline-dark: var(--lime-700);
-  --focus-visible-outline: var(--focus-visible-outline-dark);
-}
-
-.dark * .DaysGridCell.selected.lime {
+.dark * button.DaysGridCell.selected.lime {
   --selected-bg-dark: var(--lime-600);
   --selected-bg: var(--selected-bg-dark);
 }
 
-.dark * .DaysGridCell.selected.lime:hover {
+.dark * button.DaysGridCell.selected.lime:hover {
   --selected-hover-bg-dark: var(--lime-500);
   --selected-hover-bg: var(--selected-hover-bg-dark);
 }
 
-.dark * .DaysGridCell.inRange.lime:not(.selectedStartDate, .selectedEndDate),
-.dark * .DaysGridCell.inRange.lime:not(.selectedStartDate, .selectedEndDate):hover {
+.dark * button.DaysGridCell.inRange.lime:not(.selectedStartDate, .selectedEndDate),
+.dark * button.DaysGridCell.inRange.lime:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-dark: var(--lime-700);
   --inrange-bg: var(--inrange-bg-dark);
   --inrange-text-dark: var(--lime-200);
@@ -1668,50 +1537,45 @@
 }
 
 
-.dark * .DaysGridCell.today.lime:not(.inRange) {
+.dark * button.DaysGridCell.today.lime:not(.inRange) {
   --today-text-dark: var(--lime-600);
   --today-border-dark: var(--lime-600);
   --today-text: var(--today-text-dark);
   --today-border: var(--today-border-dark);
 }
 
-.dark * .DaysGridCell.today.lime:not(.inRange):hover {
+.dark * button.DaysGridCell.today.lime:not(.inRange):hover {
   --today-hover-text-dark: var(--lime-600);
   --today-hover-border-dark: var(--lime-600);
   --today-hover-text: var(--today-hover-text-dark);
   --today-hover-border: var(--today-hover-border-dark);
 }
 
-.dark * .DaysGridCell.selectedStartDate.lime,
-.dark * .DaysGridCell.selectedStartDate.lime:hover {
+.dark * button.DaysGridCell.selectedStartDate.lime,
+.dark * button.DaysGridCell.selectedStartDate.lime:hover {
   --selectedStartDate-bg-dark: var(--lime-600);
   --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
 }
 
-.dark * .DaysGridCell.selectedEndDate.lime,
-.dark * .DaysGridCell.selectedEndDate.lime:hover {
+.dark * button.DaysGridCell.selectedEndDate.lime,
+.dark * button.DaysGridCell.selectedEndDate.lime:hover {
   --selectedEndDate-bg-dark: var(--lime-600);
   --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
 }
 
 
-.dark * .DaysGridCell.green:focus-visible {
-  --focus-visible-outline-dark: var(--green-700);
-  --focus-visible-outline: var(--focus-visible-outline-dark);
-}
-
-.dark * .DaysGridCell.selected.green {
+.dark * button.DaysGridCell.selected.green {
   --selected-bg-dark: var(--green-600);
   --selected-bg: var(--selected-bg-dark);
 }
 
-.dark * .DaysGridCell.selected.green:hover {
+.dark * button.DaysGridCell.selected.green:hover {
   --selected-hover-bg-dark: var(--green-500);
   --selected-hover-bg: var(--selected-hover-bg-dark);
 }
 
-.dark * .DaysGridCell.inRange.green:not(.selectedStartDate, .selectedEndDate),
-.dark * .DaysGridCell.inRange.green:not(.selectedStartDate, .selectedEndDate):hover {
+.dark * button.DaysGridCell.inRange.green:not(.selectedStartDate, .selectedEndDate),
+.dark * button.DaysGridCell.inRange.green:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-dark: var(--green-700);
   --inrange-bg: var(--inrange-bg-dark);
   --inrange-text-dark: var(--green-200);
@@ -1719,50 +1583,45 @@
 }
 
 
-.dark * .DaysGridCell.today.green:not(.inRange) {
+.dark * button.DaysGridCell.today.green:not(.inRange) {
   --today-text-dark: var(--green-600);
   --today-border-dark: var(--green-600);
   --today-text: var(--today-text-dark);
   --today-border: var(--today-border-dark);
 }
 
-.dark * .DaysGridCell.today.green:not(.inRange):hover {
+.dark * button.DaysGridCell.today.green:not(.inRange):hover {
   --today-hover-text-dark: var(--green-600);
   --today-hover-border-dark: var(--green-600);
   --today-hover-text: var(--today-hover-text-dark);
   --today-hover-border: var(--today-hover-border-dark);
 }
 
-.dark * .DaysGridCell.selectedStartDate.green,
-.dark * .DaysGridCell.selectedStartDate.green:hover {
+.dark * button.DaysGridCell.selectedStartDate.green,
+.dark * button.DaysGridCell.selectedStartDate.green:hover {
   --selectedStartDate-bg-dark: var(--green-600);
   --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
 }
 
-.dark * .DaysGridCell.selectedEndDate.green,
-.dark * .DaysGridCell.selectedEndDate.green:hover {
+.dark * button.DaysGridCell.selectedEndDate.green,
+.dark * button.DaysGridCell.selectedEndDate.green:hover {
   --selectedEndDate-bg-dark: var(--green-600);
   --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
 }
 
 
-.dark * .DaysGridCell.emerald:focus-visible {
-  --focus-visible-outline-dark: var(--emerald-700);
-  --focus-visible-outline: var(--focus-visible-outline-dark);
-}
-
-.dark * .DaysGridCell.selected.emerald {
+.dark * button.DaysGridCell.selected.emerald {
   --selected-bg-dark: var(--emerald-600);
   --selected-bg: var(--selected-bg-dark);
 }
 
-.dark * .DaysGridCell.selected.emerald:hover {
+.dark * button.DaysGridCell.selected.emerald:hover {
   --selected-hover-bg-dark: var(--emerald-500);
   --selected-hover-bg: var(--selected-hover-bg-dark);
 }
 
-.dark * .DaysGridCell.inRange.emerald:not(.selectedStartDate, .selectedEndDate),
-.dark * .DaysGridCell.inRange.emerald:not(.selectedStartDate, .selectedEndDate):hover {
+.dark * button.DaysGridCell.inRange.emerald:not(.selectedStartDate, .selectedEndDate),
+.dark * button.DaysGridCell.inRange.emerald:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-dark: var(--emerald-700);
   --inrange-bg: var(--inrange-bg-dark);
   --inrange-text-dark: var(--emerald-200);
@@ -1770,50 +1629,45 @@
 }
 
 
-.dark * .DaysGridCell.today.emerald:not(.inRange) {
+.dark * button.DaysGridCell.today.emerald:not(.inRange) {
   --today-text-dark: var(--emerald-600);
   --today-border-dark: var(--emerald-600);
   --today-text: var(--today-text-dark);
   --today-border: var(--today-border-dark);
 }
 
-.dark * .DaysGridCell.today.emerald:not(.inRange):hover {
+.dark * button.DaysGridCell.today.emerald:not(.inRange):hover {
   --today-hover-text-dark: var(--emerald-600);
   --today-hover-border-dark: var(--emerald-600);
   --today-hover-text: var(--today-hover-text-dark);
   --today-hover-border: var(--today-hover-border-dark);
 }
 
-.dark * .DaysGridCell.selectedStartDate.emerald,
-.dark * .DaysGridCell.selectedStartDate.emerald:hover {
+.dark * button.DaysGridCell.selectedStartDate.emerald,
+.dark * button.DaysGridCell.selectedStartDate.emerald:hover {
   --selectedStartDate-bg-dark: var(--emerald-600);
   --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
 }
 
-.dark * .DaysGridCell.selectedEndDate.emerald,
-.dark * .DaysGridCell.selectedEndDate.emerald:hover {
+.dark * button.DaysGridCell.selectedEndDate.emerald,
+.dark * button.DaysGridCell.selectedEndDate.emerald:hover {
   --selectedEndDate-bg-dark: var(--emerald-600);
   --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
 }
 
 
-.dark * .DaysGridCell.teal:focus-visible {
-  --focus-visible-outline-dark: var(--teal-700);
-  --focus-visible-outline: var(--focus-visible-outline-dark);
-}
-
-.dark * .DaysGridCell.selected.teal {
+.dark * button.DaysGridCell.selected.teal {
   --selected-bg-dark: var(--teal-600);
   --selected-bg: var(--selected-bg-dark);
 }
 
-.dark * .DaysGridCell.selected.teal:hover {
+.dark * button.DaysGridCell.selected.teal:hover {
   --selected-hover-bg-dark: var(--teal-500);
   --selected-hover-bg: var(--selected-hover-bg-dark);
 }
 
-.dark * .DaysGridCell.inRange.teal:not(.selectedStartDate, .selectedEndDate),
-.dark * .DaysGridCell.inRange.teal:not(.selectedStartDate, .selectedEndDate):hover {
+.dark * button.DaysGridCell.inRange.teal:not(.selectedStartDate, .selectedEndDate),
+.dark * button.DaysGridCell.inRange.teal:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-dark: var(--teal-700);
   --inrange-bg: var(--inrange-bg-dark);
   --inrange-text-dark: var(--teal-200);
@@ -1821,50 +1675,45 @@
 }
 
 
-.dark * .DaysGridCell.today.teal:not(.inRange) {
+.dark * button.DaysGridCell.today.teal:not(.inRange) {
   --today-text-dark: var(--teal-600);
   --today-border-dark: var(--teal-600);
   --today-text: var(--today-text-dark);
   --today-border: var(--today-border-dark);
 }
 
-.dark * .DaysGridCell.today.teal:not(.inRange):hover {
+.dark * button.DaysGridCell.today.teal:not(.inRange):hover {
   --today-hover-text-dark: var(--teal-600);
   --today-hover-border-dark: var(--teal-600);
   --today-hover-text: var(--today-hover-text-dark);
   --today-hover-border: var(--today-hover-border-dark);
 }
 
-.dark * .DaysGridCell.selectedStartDate.teal,
-.dark * .DaysGridCell.selectedStartDate.teal:hover {
+.dark * button.DaysGridCell.selectedStartDate.teal,
+.dark * button.DaysGridCell.selectedStartDate.teal:hover {
   --selectedStartDate-bg-dark: var(--teal-600);
   --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
 }
 
-.dark * .DaysGridCell.selectedEndDate.teal,
-.dark * .DaysGridCell.selectedEndDate.teal:hover {
+.dark * button.DaysGridCell.selectedEndDate.teal,
+.dark * button.DaysGridCell.selectedEndDate.teal:hover {
   --selectedEndDate-bg-dark: var(--teal-600);
   --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
 }
 
 
-.dark * .DaysGridCell.cyan:focus-visible {
-  --focus-visible-outline-dark: var(--cyan-700);
-  --focus-visible-outline: var(--focus-visible-outline-dark);
-}
-
-.dark * .DaysGridCell.selected.cyan {
+.dark * button.DaysGridCell.selected.cyan {
   --selected-bg-dark: var(--cyan-600);
   --selected-bg: var(--selected-bg-dark);
 }
 
-.dark * .DaysGridCell.selected.cyan:hover {
+.dark * button.DaysGridCell.selected.cyan:hover {
   --selected-hover-bg-dark: var(--cyan-500);
   --selected-hover-bg: var(--selected-hover-bg-dark);
 }
 
-.dark * .DaysGridCell.inRange.cyan:not(.selectedStartDate, .selectedEndDate),
-.dark * .DaysGridCell.inRange.cyan:not(.selectedStartDate, .selectedEndDate):hover {
+.dark * button.DaysGridCell.inRange.cyan:not(.selectedStartDate, .selectedEndDate),
+.dark * button.DaysGridCell.inRange.cyan:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-dark: var(--cyan-700);
   --inrange-bg: var(--inrange-bg-dark);
   --inrange-text-dark: var(--cyan-200);
@@ -1872,50 +1721,45 @@
 }
 
 
-.dark * .DaysGridCell.today.cyan:not(.inRange) {
+.dark * button.DaysGridCell.today.cyan:not(.inRange) {
   --today-text-dark: var(--cyan-600);
   --today-border-dark: var(--cyan-600);
   --today-text: var(--today-text-dark);
   --today-border: var(--today-border-dark);
 }
 
-.dark * .DaysGridCell.today.cyan:not(.inRange):hover {
+.dark * button.DaysGridCell.today.cyan:not(.inRange):hover {
   --today-hover-text-dark: var(--cyan-600);
   --today-hover-border-dark: var(--cyan-600);
   --today-hover-text: var(--today-hover-text-dark);
   --today-hover-border: var(--today-hover-border-dark);
 }
 
-.dark * .DaysGridCell.selectedStartDate.cyan,
-.dark * .DaysGridCell.selectedStartDate.cyan:hover {
+.dark * button.DaysGridCell.selectedStartDate.cyan,
+.dark * button.DaysGridCell.selectedStartDate.cyan:hover {
   --selectedStartDate-bg-dark: var(--cyan-600);
   --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
 }
 
-.dark * .DaysGridCell.selectedEndDate.cyan,
-.dark * .DaysGridCell.selectedEndDate.cyan:hover {
+.dark * button.DaysGridCell.selectedEndDate.cyan,
+.dark * button.DaysGridCell.selectedEndDate.cyan:hover {
   --selectedEndDate-bg-dark: var(--cyan-600);
   --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
 }
 
 
-.dark * .DaysGridCell.sky:focus-visible {
-  --focus-visible-outline-dark: var(--sky-700);
-  --focus-visible-outline: var(--focus-visible-outline-dark);
-}
-
-.dark * .DaysGridCell.selected.sky {
+.dark * button.DaysGridCell.selected.sky {
   --selected-bg-dark: var(--sky-600);
   --selected-bg: var(--selected-bg-dark);
 }
 
-.dark * .DaysGridCell.selected.sky:hover {
+.dark * button.DaysGridCell.selected.sky:hover {
   --selected-hover-bg-dark: var(--sky-500);
   --selected-hover-bg: var(--selected-hover-bg-dark);
 }
 
-.dark * .DaysGridCell.inRange.sky:not(.selectedStartDate, .selectedEndDate),
-.dark * .DaysGridCell.inRange.sky:not(.selectedStartDate, .selectedEndDate):hover {
+.dark * button.DaysGridCell.inRange.sky:not(.selectedStartDate, .selectedEndDate),
+.dark * button.DaysGridCell.inRange.sky:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-dark: var(--sky-700);
   --inrange-bg: var(--inrange-bg-dark);
   --inrange-text-dark: var(--sky-200);
@@ -1923,50 +1767,45 @@
 }
 
 
-.dark * .DaysGridCell.today.sky:not(.inRange) {
+.dark * button.DaysGridCell.today.sky:not(.inRange) {
   --today-text-dark: var(--sky-600);
   --today-border-dark: var(--sky-600);
   --today-text: var(--today-text-dark);
   --today-border: var(--today-border-dark);
 }
 
-.dark * .DaysGridCell.today.sky:not(.inRange):hover {
+.dark * button.DaysGridCell.today.sky:not(.inRange):hover {
   --today-hover-text-dark: var(--sky-600);
   --today-hover-border-dark: var(--sky-600);
   --today-hover-text: var(--today-hover-text-dark);
   --today-hover-border: var(--today-hover-border-dark);
 }
 
-.dark * .DaysGridCell.selectedStartDate.sky,
-.dark * .DaysGridCell.selectedStartDate.sky:hover {
+.dark * button.DaysGridCell.selectedStartDate.sky,
+.dark * button.DaysGridCell.selectedStartDate.sky:hover {
   --selectedStartDate-bg-dark: var(--sky-600);
   --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
 }
 
-.dark * .DaysGridCell.selectedEndDate.sky,
-.dark * .DaysGridCell.selectedEndDate.sky:hover {
+.dark * button.DaysGridCell.selectedEndDate.sky,
+.dark * button.DaysGridCell.selectedEndDate.sky:hover {
   --selectedEndDate-bg-dark: var(--sky-600);
   --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
 }
 
 
-.dark * .DaysGridCell.blue:focus-visible {
-  --focus-visible-outline-dark: var(--blue-700);
-  --focus-visible-outline: var(--focus-visible-outline-dark);
-}
-
-.dark * .DaysGridCell.selected.blue {
+.dark * button.DaysGridCell.selected.blue {
   --selected-bg-dark: var(--blue-600);
   --selected-bg: var(--selected-bg-dark);
 }
 
-.dark * .DaysGridCell.selected.blue:hover {
+.dark * button.DaysGridCell.selected.blue:hover {
   --selected-hover-bg-dark: var(--blue-500);
   --selected-hover-bg: var(--selected-hover-bg-dark);
 }
 
-.dark * .DaysGridCell.inRange.blue:not(.selectedStartDate, .selectedEndDate),
-.dark * .DaysGridCell.inRange.blue:not(.selectedStartDate, .selectedEndDate):hover {
+.dark * button.DaysGridCell.inRange.blue:not(.selectedStartDate, .selectedEndDate),
+.dark * button.DaysGridCell.inRange.blue:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-dark: var(--blue-700);
   --inrange-bg: var(--inrange-bg-dark);
   --inrange-text-dark: var(--blue-200);
@@ -1974,98 +1813,88 @@
 }
 
 
-.dark * .DaysGridCell.today.blue:not(.inRange) {
+.dark * button.DaysGridCell.today.blue:not(.inRange) {
   --today-text-dark: var(--blue-600);
   --today-border-dark: var(--blue-600);
   --today-text: var(--today-text-dark);
   --today-border: var(--today-border-dark);
 }
 
-.dark * .DaysGridCell.today.blue:not(.inRange):hover {
+.dark * button.DaysGridCell.today.blue:not(.inRange):hover {
   --today-hover-text-dark: var(--blue-600);
   --today-hover-border-dark: var(--blue-600);
   --today-hover-text: var(--today-hover-text-dark);
   --today-hover-border: var(--today-hover-border-dark);
 }
 
-.dark * .DaysGridCell.selectedStartDate.blue,
-.dark * .DaysGridCell.selectedStartDate.blue:hover {
+.dark * button.DaysGridCell.selectedStartDate.blue,
+.dark * button.DaysGridCell.selectedStartDate.blue:hover {
   --selectedStartDate-bg-dark: var(--blue-600);
   --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
 }
 
-.dark * .DaysGridCell.selectedEndDate.blue,
-.dark * .DaysGridCell.selectedEndDate.blue:hover {
+.dark * button.DaysGridCell.selectedEndDate.blue,
+.dark * button.DaysGridCell.selectedEndDate.blue:hover {
   --selectedEndDate-bg-dark: var(--blue-600);
   --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
 }
 
-.dark * .DaysGridCell.indigo:focus-visible {
-  --focus-visible-outline-dark: var(--indigo-700);
-  --focus-visible-outline: var(--focus-visible-outline-dark);
-}
-
-.dark * .DaysGridCell.selected.indigo {
+.dark * button.DaysGridCell.selected.indigo {
   --selected-bg-dark: var(--indigo-600);
   --selected-bg: var(--selected-bg-dark);
 }
 
-.dark * .DaysGridCell.selected.indigo:hover {
+.dark * button.DaysGridCell.selected.indigo:hover {
   --selected-hover-bg-dark: var(--indigo-500);
   --selected-hover-bg: var(--selected-hover-bg-dark);
 }
 
-.dark * .DaysGridCell.inRange.indigo:not(.selectedStartDate, .selectedEndDate),
-.dark * .DaysGridCell.inRange.indigo:not(.selectedStartDate, .selectedEndDate):hover {
+.dark * button.DaysGridCell.inRange.indigo:not(.selectedStartDate, .selectedEndDate),
+.dark * button.DaysGridCell.inRange.indigo:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-dark: var(--indigo-700);
   --inrange-bg: var(--inrange-bg-dark);
   --inrange-text-dark: var(--indigo-200);
   --inrange-text: var(--inrange-text-dark);
 }
 
-.dark * .DaysGridCell.today.indigo:not(.inRange) {
+.dark * button.DaysGridCell.today.indigo:not(.inRange) {
   --today-text-dark: var(--indigo-600);
   --today-border-dark: var(--indigo-600);
   --today-text: var(--today-text-dark);
   --today-border: var(--today-border-dark);
 }
 
-.dark * .DaysGridCell.today.indigo:not(.inRange):hover {
+.dark * button.DaysGridCell.today.indigo:not(.inRange):hover {
   --today-hover-text-dark: var(--indigo-600);
   --today-hover-border-dark: var(--indigo-600);
   --today-hover-text: var(--today-hover-text-dark);
   --today-hover-border: var(--today-hover-border-dark);
 }
 
-.dark * .DaysGridCell.selectedStartDate.indigo,
-.dark * .DaysGridCell.selectedStartDate.indigo:hover {
+.dark * button.DaysGridCell.selectedStartDate.indigo,
+.dark * button.DaysGridCell.selectedStartDate.indigo:hover {
   --selectedStartDate-bg-dark: var(--indigo-600);
   --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
 }
 
-.dark * .DaysGridCell.selectedEndDate.indigo,
-.dark * .DaysGridCell.selectedEndDate.indigo:hover {
+.dark * button.DaysGridCell.selectedEndDate.indigo,
+.dark * button.DaysGridCell.selectedEndDate.indigo:hover {
   --selectedEndDate-bg-dark: var(--indigo-600);
   --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
 }
 
-.dark * .DaysGridCell.violet:focus-visible {
-  --focus-visible-outline-dark: var(--violet-700);
-  --focus-visible-outline: var(--focus-visible-outline-dark);
-}
-
-.dark * .DaysGridCell.selected.violet {
+.dark * button.DaysGridCell.selected.violet {
   --selected-bg-dark: var(--violet-600);
   --selected-bg: var(--selected-bg-dark);
 }
 
-.dark * .DaysGridCell.selected.violet:hover {
+.dark * button.DaysGridCell.selected.violet:hover {
   --selected-hover-bg-dark: var(--violet-500);
   --selected-hover-bg: var(--selected-hover-bg-dark);
 }
 
-.dark * .DaysGridCell.inRange.violet:not(.selectedStartDate, .selectedEndDate),
-.dark * .DaysGridCell.inRange.violet:not(.selectedStartDate, .selectedEndDate):hover {
+.dark * button.DaysGridCell.inRange.violet:not(.selectedStartDate, .selectedEndDate),
+.dark * button.DaysGridCell.inRange.violet:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-dark: var(--violet-700);
   --inrange-bg: var(--inrange-bg-dark);
   --inrange-text-dark: var(--violet-200);
@@ -2073,1791 +1902,1614 @@
 }
 
 
-.dark * .DaysGridCell.today.violet:not(.inRange) {
+.dark * button.DaysGridCell.today.violet:not(.inRange) {
   --today-text-dark: var(--violet-600);
   --today-border-dark: var(--violet-600);
   --today-text: var(--today-text-dark);
   --today-border: var(--today-border-dark);
 }
 
-.dark * .DaysGridCell.today.violet:not(.inRange):hover {
+.dark * button.DaysGridCell.today.violet:not(.inRange):hover {
   --today-hover-text-dark: var(--violet-600);
   --today-hover-border-dark: var(--violet-600);
   --today-hover-text: var(--today-hover-text-dark);
   --today-hover-border: var(--today-hover-border-dark);
 }
 
-.dark * .DaysGridCell.selectedStartDate.violet,
-.dark * .DaysGridCell.selectedStartDate.violet:hover {
+.dark * button.DaysGridCell.selectedStartDate.violet,
+.dark * button.DaysGridCell.selectedStartDate.violet:hover {
   --selectedStartDate-bg-dark: var(--violet-600);
   --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
 }
 
-.dark * .DaysGridCell.selectedEndDate.violet,
-.dark * .DaysGridCell.selectedEndDate.violet:hover {
+.dark * button.DaysGridCell.selectedEndDate.violet,
+.dark * button.DaysGridCell.selectedEndDate.violet:hover {
   --selectedEndDate-bg-dark: var(--violet-600);
   --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
 }
 
-.dark * .DaysGridCell.purple:focus-visible {
-  --focus-visible-outline-dark: var(--purple-700);
-  --focus-visible-outline: var(--focus-visible-outline-dark);
-}
-
-.dark * .DaysGridCell.selected.purple {
+.dark * button.DaysGridCell.selected.purple {
   --selected-bg-dark: var(--purple-600);
   --selected-bg: var(--selected-bg-dark);
 }
 
-.dark * .DaysGridCell.selected.purple:hover {
+.dark * button.DaysGridCell.selected.purple:hover {
   --selected-hover-bg-dark: var(--purple-500);
   --selected-hover-bg: var(--selected-hover-bg-dark);
 }
 
-.dark * .DaysGridCell.inRange.purple:not(.selectedStartDate, .selectedEndDate),
-.dark * .DaysGridCell.inRange.purple:not(.selectedStartDate, .selectedEndDate):hover {
+.dark * button.DaysGridCell.inRange.purple:not(.selectedStartDate, .selectedEndDate),
+.dark * button.DaysGridCell.inRange.purple:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-dark: var(--purple-700);
   --inrange-bg: var(--inrange-bg-dark);
   --inrange-text-dark: var(--purple-200);
   --inrange-text: var(--inrange-text-dark);
 }
 
-.dark * .DaysGridCell.today.purple:not(.inRange) {
+.dark * button.DaysGridCell.today.purple:not(.inRange) {
   --today-text-dark: var(--purple-600);
   --today-border-dark: var(--purple-600);
   --today-text: var(--today-text-dark);
   --today-border: var(--today-border-dark);
 }
 
-.dark * .DaysGridCell.today.purple:not(.inRange):hover {
+.dark * button.DaysGridCell.today.purple:not(.inRange):hover {
   --today-hover-text-dark: var(--purple-600);
   --today-hover-border-dark: var(--purple-600);
   --today-hover-text: var(--today-hover-text-dark);
   --today-hover-border: var(--today-hover-border-dark);
 }
 
-.dark * .DaysGridCell.selectedStartDate.purple,
-.dark * .DaysGridCell.selectedStartDate.purple:hover {
+.dark * button.DaysGridCell.selectedStartDate.purple,
+.dark * button.DaysGridCell.selectedStartDate.purple:hover {
   --selectedStartDate-bg-dark: var(--purple-600);
   --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
 }
 
-.dark * .DaysGridCell.selectedEndDate.purple,
-.dark * .DaysGridCell.selectedEndDate.purple:hover {
+.dark * button.DaysGridCell.selectedEndDate.purple,
+.dark * button.DaysGridCell.selectedEndDate.purple:hover {
   --selectedEndDate-bg-dark: var(--purple-600);
   --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
 }
 
-.dark * .DaysGridCell.fuchsia:focus-visible {
-  --focus-visible-outline-dark: var(--fuchsia-700);
-  --focus-visible-outline: var(--focus-visible-outline-dark);
-}
-
-.dark * .DaysGridCell.selected.fuchsia {
+.dark * button.DaysGridCell.selected.fuchsia {
   --selected-bg-dark: var(--fuchsia-600);
   --selected-bg: var(--selected-bg-dark);
 }
 
-.dark * .DaysGridCell.selected.fuchsia:hover {
+.dark * button.DaysGridCell.selected.fuchsia:hover {
   --selected-hover-bg-dark: var(--fuchsia-500);
   --selected-hover-bg: var(--selected-hover-bg-dark);
 }
 
-.dark * .DaysGridCell.inRange.fuchsia:not(.selectedStartDate, .selectedEndDate),
-.dark * .DaysGridCell.inRange.fuchsia:not(.selectedStartDate, .selectedEndDate):hover {
+.dark * button.DaysGridCell.inRange.fuchsia:not(.selectedStartDate, .selectedEndDate),
+.dark * button.DaysGridCell.inRange.fuchsia:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-dark: var(--fuchsia-700);
   --inrange-bg: var(--inrange-bg-dark);
   --inrange-text-dark: var(--fuchsia-200);
   --inrange-text: var(--inrange-text-dark);
 }
 
-.dark * .DaysGridCell.today.fuchsia:not(.inRange) {
+.dark * button.DaysGridCell.today.fuchsia:not(.inRange) {
   --today-text-dark: var(--fuchsia-600);
   --today-border-dark: var(--fuchsia-600);
   --today-text: var(--today-text-dark);
   --today-border: var(--today-border-dark);
 }
 
-.dark * .DaysGridCell.today.fuchsia:not(.inRange):hover {
+.dark * button.DaysGridCell.today.fuchsia:not(.inRange):hover {
   --today-hover-text-dark: var(--fuchsia-600);
   --today-hover-border-dark: var(--fuchsia-600);
   --today-hover-text: var(--today-hover-text-dark);
   --today-hover-border: var(--today-hover-border-dark);
 }
 
-.dark * .DaysGridCell.selectedStartDate.fuchsia,
-.dark * .DaysGridCell.selectedStartDate.fuchsia:hover {
+.dark * button.DaysGridCell.selectedStartDate.fuchsia,
+.dark * button.DaysGridCell.selectedStartDate.fuchsia:hover {
   --selectedStartDate-bg-dark: var(--fuchsia-600);
   --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
 }
 
-.dark * .DaysGridCell.selectedEndDate.fuchsia,
-.dark * .DaysGridCell.selectedEndDate.fuchsia:hover {
+.dark * button.DaysGridCell.selectedEndDate.fuchsia,
+.dark * button.DaysGridCell.selectedEndDate.fuchsia:hover {
   --selectedEndDate-bg-dark: var(--fuchsia-600);
   --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
 }
 
-.dark * .DaysGridCell.pink:focus-visible {
-  --focus-visible-outline-dark: var(--pink-700);
-  --focus-visible-outline: var(--focus-visible-outline-dark);
-}
-
-.dark * .DaysGridCell.selected.pink {
+.dark * button.DaysGridCell.selected.pink {
   --selected-bg-dark: var(--pink-600);
   --selected-bg: var(--selected-bg-dark);
 }
 
-.dark * .DaysGridCell.selected.pink:hover {
+.dark * button.DaysGridCell.selected.pink:hover {
   --selected-hover-bg-dark: var(--pink-500);
   --selected-hover-bg: var(--selected-hover-bg-dark);
 }
 
-.dark * .DaysGridCell.inRange.pink:not(.selectedStartDate, .selectedEndDate),
-.dark * .DaysGridCell.inRange.pink:not(.selectedStartDate, .selectedEndDate):hover {
+.dark * button.DaysGridCell.inRange.pink:not(.selectedStartDate, .selectedEndDate),
+.dark * button.DaysGridCell.inRange.pink:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-dark: var(--pink-700);
   --inrange-bg: var(--inrange-bg-dark);
   --inrange-text-dark: var(--pink-200);
   --inrange-text: var(--inrange-text-dark);
 }
 
-.dark * .DaysGridCell.today.pink:not(.inRange) {
+.dark * button.DaysGridCell.today.pink:not(.inRange) {
   --today-text-dark: var(--pink-600);
   --today-border-dark: var(--pink-600);
   --today-text: var(--today-text-dark);
   --today-border: var(--today-border-dark);
 }
 
-.dark * .DaysGridCell.today.pink:not(.inRange):hover {
+.dark * button.DaysGridCell.today.pink:not(.inRange):hover {
   --today-hover-text-dark: var(--pink-600);
   --today-hover-border-dark: var(--pink-600);
   --today-hover-text: var(--today-hover-text-dark);
   --today-hover-border: var(--today-hover-border-dark);
 }
 
-.dark * .DaysGridCell.selectedStartDate.pink,
-.dark * .DaysGridCell.selectedStartDate.pink:hover {
+.dark * button.DaysGridCell.selectedStartDate.pink,
+.dark * button.DaysGridCell.selectedStartDate.pink:hover {
   --selectedStartDate-bg-dark: var(--pink-600);
   --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
 }
 
-.dark * .DaysGridCell.selectedEndDate.pink,
-.dark * .DaysGridCell.selectedEndDate.pink:hover {
+.dark * button.DaysGridCell.selectedEndDate.pink,
+.dark * button.DaysGridCell.selectedEndDate.pink:hover {
   --selectedEndDate-bg-dark: var(--pink-600);
   --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
 }
 
-.dark * .DaysGridCell.rose:focus-visible {
-  --focus-visible-outline-dark: var(--rose-700);
-  --focus-visible-outline: var(--focus-visible-outline-dark);
-}
-
-.dark * .DaysGridCell.selected.rose {
+.dark * button.DaysGridCell.selected.rose {
   --selected-bg-dark: var(--rose-600);
   --selected-bg: var(--selected-bg-dark);
 }
 
-.dark * .DaysGridCell.selected.rose:hover {
+.dark * button.DaysGridCell.selected.rose:hover {
   --selected-hover-bg-dark: var(--rose-500);
   --selected-hover-bg: var(--selected-hover-bg-dark);
 }
 
-.dark * .DaysGridCell.inRange.rose:not(.selectedStartDate, .selectedEndDate),
-.dark * .DaysGridCell.inRange.rose:not(.selectedStartDate, .selectedEndDate):hover {
+.dark * button.DaysGridCell.inRange.rose:not(.selectedStartDate, .selectedEndDate),
+.dark * button.DaysGridCell.inRange.rose:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-dark: var(--rose-700);
   --inrange-bg: var(--inrange-bg-dark);
   --inrange-text-dark: var(--rose-200);
   --inrange-text: var(--inrange-text-dark);
 }
 
-.dark * .DaysGridCell.today.rose:not(.inRange) {
+.dark * button.DaysGridCell.today.rose:not(.inRange) {
   --today-text-dark: var(--rose-600);
   --today-border-dark: var(--rose-600);
   --today-text: var(--today-text-dark);
   --today-border: var(--today-border-dark);
 }
 
-.dark * .DaysGridCell.today.rose:not(.inRange):hover {
+.dark * button.DaysGridCell.today.rose:not(.inRange):hover {
   --today-hover-text-dark: var(--rose-600);
   --today-hover-border-dark: var(--rose-600);
   --today-hover-text: var(--today-hover-text-dark);
   --today-hover-border: var(--today-hover-border-dark);
 }
 
-.dark * .DaysGridCell.selectedStartDate.rose,
-.dark * .DaysGridCell.selectedStartDate.rose:hover {
+.dark * button.DaysGridCell.selectedStartDate.rose,
+.dark * button.DaysGridCell.selectedStartDate.rose:hover {
   --selectedStartDate-bg-dark: var(--rose-600);
   --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
 }
 
-.dark * .DaysGridCell.selectedEndDate.rose,
-.dark * .DaysGridCell.selectedEndDate.rose:hover {
+.dark * button.DaysGridCell.selectedEndDate.rose,
+.dark * button.DaysGridCell.selectedEndDate.rose:hover {
   --selectedEndDate-bg-dark: var(--rose-600);
   --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
 }
 
 
-.dark * .DaysGridCell.slate:focus-visible {
-  --focus-visible-outline-dark: var(--slate-700);
-  --focus-visible-outline: var(--focus-visible-outline-dark);
-}
-
-.dark * .DaysGridCell.selected.slate {
+.dark * button.DaysGridCell.selected.slate {
   --selected-bg-dark: var(--slate-600);
   --selected-bg: var(--selected-bg-dark);
 }
 
-.dark * .DaysGridCell.selected.slate:hover {
+.dark * button.DaysGridCell.selected.slate:hover {
   --selected-hover-bg-dark: var(--slate-500);
   --selected-hover-bg: var(--selected-hover-bg-dark);
 }
 
-.dark * .DaysGridCell.inRange.slate:not(.selectedStartDate, .selectedEndDate),
-.dark * .DaysGridCell.inRange.slate:not(.selectedStartDate, .selectedEndDate):hover {
+.dark * button.DaysGridCell.inRange.slate:not(.selectedStartDate, .selectedEndDate),
+.dark * button.DaysGridCell.inRange.slate:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-dark: var(--slate-700);
   --inrange-bg: var(--inrange-bg-dark);
   --inrange-text-dark: var(--slate-200);
   --inrange-text: var(--inrange-text-dark);
 }
 
-.dark * .DaysGridCell.today.slate:not(.inRange) {
+.dark * button.DaysGridCell.today.slate:not(.inRange) {
   --today-text-dark: var(--slate-600);
   --today-border-dark: var(--slate-600);
   --today-text: var(--today-text-dark);
   --today-border: var(--today-border-dark);
 }
 
-.dark * .DaysGridCell.today.slate:not(.inRange):hover {
+.dark * button.DaysGridCell.today.slate:not(.inRange):hover {
   --today-hover-text-dark: var(--slate-600);
   --today-hover-border-dark: var(--slate-600);
   --today-hover-text: var(--today-hover-text-dark);
   --today-hover-border: var(--today-hover-border-dark);
 }
 
-.dark * .DaysGridCell.selectedStartDate.slate,
-.dark * .DaysGridCell.selectedStartDate.slate:hover {
+.dark * button.DaysGridCell.selectedStartDate.slate,
+.dark * button.DaysGridCell.selectedStartDate.slate:hover {
   --selectedStartDate-bg-dark: var(--slate-600);
   --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
 }
 
-.dark * .DaysGridCell.selectedEndDate.slate,
-.dark * .DaysGridCell.selectedEndDate.slate:hover {
+.dark * button.DaysGridCell.selectedEndDate.slate,
+.dark * button.DaysGridCell.selectedEndDate.slate:hover {
   --selectedEndDate-bg-dark: var(--slate-600);
   --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
 }
 
-.dark * .DaysGridCell.gray:focus-visible {
-  --focus-visible-outline-dark: var(--gray-700);
-  --focus-visible-outline: var(--focus-visible-outline-dark);
-}
-
-.dark * .DaysGridCell.selected.gray {
+.dark * button.DaysGridCell.selected.gray {
   --selected-bg-dark: var(--gray-600);
   --selected-bg: var(--selected-bg-dark);
 }
 
-.dark * .DaysGridCell.selected.gray:hover {
+.dark * button.DaysGridCell.selected.gray:hover {
   --selected-hover-bg-dark: var(--gray-500);
   --selected-hover-bg: var(--selected-hover-bg-dark);
 }
 
-.dark * .DaysGridCell.inRange.gray:not(.selectedStartDate, .selectedEndDate),
-.dark * .DaysGridCell.inRange.gray:not(.selectedStartDate, .selectedEndDate):hover {
+.dark * button.DaysGridCell.inRange.gray:not(.selectedStartDate, .selectedEndDate),
+.dark * button.DaysGridCell.inRange.gray:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-dark: var(--gray-700);
   --inrange-bg: var(--inrange-bg-dark);
   --inrange-text-dark: var(--gray-200);
   --inrange-text: var(--inrange-text-dark);
 }
 
-.dark * .DaysGridCell.today.gray:not(.inRange) {
+.dark * button.DaysGridCell.today.gray:not(.inRange) {
   --today-text-dark: var(--gray-600);
   --today-border-dark: var(--gray-600);
   --today-text: var(--today-text-dark);
   --today-border: var(--today-border-dark);
 }
 
-.dark * .DaysGridCell.today.gray:not(.inRange):hover {
+.dark * button.DaysGridCell.today.gray:not(.inRange):hover {
   --today-hover-text-dark: var(--gray-600);
   --today-hover-border-dark: var(--gray-600);
   --today-hover-text: var(--today-hover-text-dark);
   --today-hover-border: var(--today-hover-border-dark);
 }
 
-.dark * .DaysGridCell.selectedStartDate.gray,
-.dark * .DaysGridCell.selectedStartDate.gray:hover {
+.dark * button.DaysGridCell.selectedStartDate.gray,
+.dark * button.DaysGridCell.selectedStartDate.gray:hover {
   --selectedStartDate-bg-dark: var(--gray-600);
   --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
 }
 
-.dark * .DaysGridCell.selectedEndDate.gray,
-.dark * .DaysGridCell.selectedEndDate.gray:hover {
+.dark * button.DaysGridCell.selectedEndDate.gray,
+.dark * button.DaysGridCell.selectedEndDate.gray:hover {
   --selectedEndDate-bg-dark: var(--gray-600);
   --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
 }
 
-.dark * .DaysGridCell.zinc:focus-visible {
-  --focus-visible-outline-dark: var(--zinc-700);
-  --focus-visible-outline: var(--focus-visible-outline-dark);
-}
-
-.dark * .DaysGridCell.selected.zinc {
+.dark * button.DaysGridCell.selected.zinc {
   --selected-bg-dark: var(--zinc-600);
   --selected-bg: var(--selected-bg-dark);
 }
 
-.dark * .DaysGridCell.selected.zinc:hover {
+.dark * button.DaysGridCell.selected.zinc:hover {
   --selected-hover-bg-dark: var(--zinc-500);
   --selected-hover-bg: var(--selected-hover-bg-dark);
 }
 
-.dark * .DaysGridCell.inRange.zinc:not(.selectedStartDate, .selectedEndDate),
-.dark * .DaysGridCell.inRange.zinc:not(.selectedStartDate, .selectedEndDate):hover {
+.dark * button.DaysGridCell.inRange.zinc:not(.selectedStartDate, .selectedEndDate),
+.dark * button.DaysGridCell.inRange.zinc:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-dark: var(--zinc-700);
   --inrange-bg: var(--inrange-bg-dark);
   --inrange-text-dark: var(--zinc-200);
   --inrange-text: var(--inrange-text-dark);
 }
 
-.dark * .DaysGridCell.today.zinc:not(.inRange) {
+.dark * button.DaysGridCell.today.zinc:not(.inRange) {
   --today-text-dark: var(--zinc-600);
   --today-border-dark: var(--zinc-600);
   --today-text: var(--today-text-dark);
   --today-border: var(--today-border-dark);
 }
 
-.dark * .DaysGridCell.today.zinc:not(.inRange):hover {
+.dark * button.DaysGridCell.today.zinc:not(.inRange):hover {
   --today-hover-text-dark: var(--zinc-600);
   --today-hover-border-dark: var(--zinc-600);
   --today-hover-text: var(--today-hover-text-dark);
   --today-hover-border: var(--today-hover-border-dark);
 }
 
-.dark * .DaysGridCell.selectedStartDate.zinc,
-.dark * .DaysGridCell.selectedStartDate.zinc:hover {
+.dark * button.DaysGridCell.selectedStartDate.zinc,
+.dark * button.DaysGridCell.selectedStartDate.zinc:hover {
   --selectedStartDate-bg-dark: var(--zinc-600);
   --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
 }
 
-.dark * .DaysGridCell.selectedEndDate.zinc,
-.dark * .DaysGridCell.selectedEndDate.zinc:hover {
+.dark * button.DaysGridCell.selectedEndDate.zinc,
+.dark * button.DaysGridCell.selectedEndDate.zinc:hover {
   --selectedEndDate-bg-dark: var(--zinc-600);
   --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
 }
 
 
-.dark * .DaysGridCell.neutral:focus-visible {
-  --focus-visible-outline-dark: var(--neutral-700);
-  --focus-visible-outline: var(--focus-visible-outline-dark);
-}
-
-.dark * .DaysGridCell.selected.neutral {
+.dark * button.DaysGridCell.selected.neutral {
   --selected-bg-dark: var(--neutral-600);
   --selected-bg: var(--selected-bg-dark);
 }
 
-.dark * .DaysGridCell.selected.neutral:hover {
+.dark * button.DaysGridCell.selected.neutral:hover {
   --selected-hover-bg-dark: var(--neutral-500);
   --selected-hover-bg: var(--selected-hover-bg-dark);
 }
 
-.dark * .DaysGridCell.inRange.neutral:not(.selectedStartDate, .selectedEndDate),
-.dark * .DaysGridCell.inRange.neutral:not(.selectedStartDate, .selectedEndDate):hover {
+.dark * button.DaysGridCell.inRange.neutral:not(.selectedStartDate, .selectedEndDate),
+.dark * button.DaysGridCell.inRange.neutral:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-dark: var(--neutral-700);
   --inrange-bg: var(--inrange-bg-dark);
   --inrange-text-dark: var(--neutral-200);
   --inrange-text: var(--inrange-text-dark);
 }
 
-.dark * .DaysGridCell.today.neutral:not(.inRange) {
+.dark * button.DaysGridCell.today.neutral:not(.inRange) {
   --today-text-dark: var(--neutral-600);
   --today-border-dark: var(--neutral-600);
   --today-text: var(--today-text-dark);
   --today-border: var(--today-border-dark);
 }
 
-.dark * .DaysGridCell.today.neutral:not(.inRange):hover {
+.dark * button.DaysGridCell.today.neutral:not(.inRange):hover {
   --today-hover-text-dark: var(--neutral-600);
   --today-hover-border-dark: var(--neutral-600);
   --today-hover-text: var(--today-hover-text-dark);
   --today-hover-border: var(--today-hover-border-dark);
 }
 
-.dark * .DaysGridCell.selectedStartDate.neutral,
-.dark * .DaysGridCell.selectedStartDate.neutral:hover {
+.dark * button.DaysGridCell.selectedStartDate.neutral,
+.dark * button.DaysGridCell.selectedStartDate.neutral:hover {
   --selectedStartDate-bg-dark: var(--neutral-600);
   --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
 }
 
-.dark * .DaysGridCell.selectedEndDate.neutral,
-.dark * .DaysGridCell.selectedEndDate.neutral:hover {
+.dark * button.DaysGridCell.selectedEndDate.neutral,
+.dark * button.DaysGridCell.selectedEndDate.neutral:hover {
   --selectedEndDate-bg-dark: var(--neutral-600);
   --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
 }
 
-.dark * .DaysGridCell.stone:focus-visible {
-  --focus-visible-outline-dark: var(--stone-700);
-  --focus-visible-outline: var(--focus-visible-outline-dark);
-}
-
-.dark * .DaysGridCell.selected.stone {
+.dark * button.DaysGridCell.selected.stone {
   --selected-bg-dark: var(--stone-600);
   --selected-bg: var(--selected-bg-dark);
 }
 
-.dark * .DaysGridCell.selected.stone:hover {
+.dark * button.DaysGridCell.selected.stone:hover {
   --selected-hover-bg-dark: var(--stone-500);
   --selected-hover-bg: var(--selected-hover-bg-dark);
 }
 
-.dark * .DaysGridCell.inRange.stone:not(.selectedStartDate, .selectedEndDate),
-.dark * .DaysGridCell.inRange.stone:not(.selectedStartDate, .selectedEndDate):hover {
+.dark * button.DaysGridCell.inRange.stone:not(.selectedStartDate, .selectedEndDate),
+.dark * button.DaysGridCell.inRange.stone:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-dark: var(--stone-700);
   --inrange-bg: var(--inrange-bg-dark);
   --inrange-text-dark: var(--stone-200);
   --inrange-text: var(--inrange-text-dark);
 }
 
-.dark * .DaysGridCell.today.stone:not(.inRange) {
+.dark * button.DaysGridCell.today.stone:not(.inRange) {
   --today-text-dark: var(--stone-600);
   --today-border-dark: var(--stone-600);
   --today-text: var(--today-text-dark);
   --today-border: var(--today-border-dark);
 }
 
-.dark * .DaysGridCell.today.stone:not(.inRange):hover {
+.dark * button.DaysGridCell.today.stone:not(.inRange):hover {
   --today-hover-text-dark: var(--stone-600);
   --today-hover-border-dark: var(--stone-600);
   --today-hover-text: var(--today-hover-text-dark);
   --today-hover-border: var(--today-hover-border-dark);
 }
 
-.dark * .DaysGridCell.selectedStartDate.stone,
-.dark * .DaysGridCell.selectedStartDate.stone:hover {
+.dark * button.DaysGridCell.selectedStartDate.stone,
+.dark * button.DaysGridCell.selectedStartDate.stone:hover {
   --selectedStartDate-bg-dark: var(--stone-600);
   --selectedStartDate-bg: var(--selectedStartDate-bg-dark);
 }
 
-.dark * .DaysGridCell.selectedEndDate.stone,
-.dark * .DaysGridCell.selectedEndDate.stone:hover {
+.dark * button.DaysGridCell.selectedEndDate.stone,
+.dark * button.DaysGridCell.selectedEndDate.stone:hover {
   --selectedEndDate-bg-dark: var(--stone-600);
   --selectedEndDate-bg: var(--selectedEndDate-bg-dark);
 }
 
-.DaysGridCell.red:focus-visible,
-.light * .DaysGridCell.red:focus-visible {
-  --focus-visible-outline-light: var(--red-100);
-  --focus-visible-outline: var(--focus-visible-outline-light);
-}
-
-.DaysGridCell.selected.red,
-.light * .DaysGridCell.selected.red {
+button.DaysGridCell.selected.red,
+.light * button.DaysGridCell.selected.red {
   --selected-bg-light: var(--red-600);
   --selected-bg: var(--selected-bg-light);
 }
 
-.DaysGridCell.selected.red:hover,
-.light * .DaysGridCell.selected.red:hover {
+button.DaysGridCell.selected.red:hover,
+.light * button.DaysGridCell.selected.red:hover {
   --selected-hover-bg-light: var(--red-500);
   --selected-hover-bg: var(--selected-hover-bg-light);
 }
 
-.DaysGridCell.inRange.red:not(.selectedStartDate, .selectedEndDate),
-.DaysGridCell.inRange.red:not(.selectedStartDate, .selectedEndDate):hover,
-.light * .DaysGridCell.inRange.red:not(.selectedStartDate, .selectedEndDate),
-.light * .DaysGridCell.inRange.red:not(.selectedStartDate, .selectedEndDate):hover {
+button.DaysGridCell.inRange.red:not(.selectedStartDate, .selectedEndDate),
+button.DaysGridCell.inRange.red:not(.selectedStartDate, .selectedEndDate):hover,
+.light * button.DaysGridCell.inRange.red:not(.selectedStartDate, .selectedEndDate),
+.light * button.DaysGridCell.inRange.red:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-light: var(--red-100);
   --inrange-bg: var(--inrange-bg-light);
   --inrange-text-light: var(--red-700);
   --inrange-text: var(--inrange-text-light);
 }
 
-.DaysGridCell.today.red:not(.inRange),
-.light * .DaysGridCell.today.red:not(.inRange) {
+button.DaysGridCell.today.red:not(.inRange),
+.light * button.DaysGridCell.today.red:not(.inRange) {
   --today-text-light: var(--red-600);
   --today-border-light: var(--red-600);
   --today-text: var(--today-text-light);
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.red:not(.inRange):hover,
-.light * .DaysGridCell.today.red:not(.inRange):hover {
+button.DaysGridCell.today.red:not(.inRange):hover,
+.light * button.DaysGridCell.today.red:not(.inRange):hover {
   --today-hover-text-light: var(--red-600);
   --today-hover-border-light: var(--red-600);
   --today-hover-text: var(--today-hover-text-light);
   --today-hover-border: var(--today-hover-border-light);
 }
 
-.DaysGridCell.selectedStartDate.red,
-.DaysGridCell.selectedStartDate.red:hover,
-.light * .DaysGridCell.selectedStartDate.red,
-.light * .DaysGridCell.selectedStartDate.red:hover {
+button.DaysGridCell.selectedStartDate.red,
+button.DaysGridCell.selectedStartDate.red:hover,
+.light * button.DaysGridCell.selectedStartDate.red,
+.light * button.DaysGridCell.selectedStartDate.red:hover {
   --selectedStartDate-bg-light: var(--red-700);
   --selectedStartDate-bg: var(--selectedStartDate-bg-light);
 }
 
-.DaysGridCell.selectedEndDate.red,
-.DaysGridCell.selectedEndDate.red:hover,
-.light * .DaysGridCell.selectedEndDate.red,
-.light * .DaysGridCell.selectedEndDate.red:hover {
+button.DaysGridCell.selectedEndDate.red,
+button.DaysGridCell.selectedEndDate.red:hover,
+.light * button.DaysGridCell.selectedEndDate.red,
+.light * button.DaysGridCell.selectedEndDate.red:hover {
   --selectedEndDate-bg-light: var(--red-700);
   --selectedEndDate-bg: var(--selectedEndDate-bg-light);
 }
 
-.DaysGridCell.orange:focus-visible,
-.light * .DaysGridCell.orange:focus-visible {
-  --focus-visible-outline-light: var(--orange-100);
-  --focus-visible-outline: var(--focus-visible-outline-light);
-}
-
-.DaysGridCell.selected.orange,
-.light * .DaysGridCell.selected.orange {
+button.DaysGridCell.selected.orange,
+.light * button.DaysGridCell.selected.orange {
   --selected-bg-light: var(--orange-600);
   --selected-bg: var(--selected-bg-light);
 }
 
-.DaysGridCell.selected.orange:hover,
-.light * .DaysGridCell.selected.orange:hover {
+button.DaysGridCell.selected.orange:hover,
+.light * button.DaysGridCell.selected.orange:hover {
   --selected-hover-bg-light: var(--orange-500);
   --selected-hover-bg: var(--selected-hover-bg-light);
 }
 
-.DaysGridCell.inRange.orange:not(.selectedStartDate, .selectedEndDate),
-.DaysGridCell.inRange.orange:not(.selectedStartDate, .selectedEndDate):hover,
-.light * .DaysGridCell.inRange.orange:not(.selectedStartDate, .selectedEndDate),
-.light * .DaysGridCell.inRange.orange:not(.selectedStartDate, .selectedEndDate):hover {
+button.DaysGridCell.inRange.orange:not(.selectedStartDate, .selectedEndDate),
+button.DaysGridCell.inRange.orange:not(.selectedStartDate, .selectedEndDate):hover,
+.light * button.DaysGridCell.inRange.orange:not(.selectedStartDate, .selectedEndDate),
+.light * button.DaysGridCell.inRange.orange:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-light: var(--orange-100);
   --inrange-bg: var(--inrange-bg-light);
   --inrange-text-light: var(--orange-700);
   --inrange-text: var(--inrange-text-light);
 }
 
-.DaysGridCell.today.orange:not(.inRange),
-.light * .DaysGridCell.today.orange:not(.inRange) {
+button.DaysGridCell.today.orange:not(.inRange),
+.light * button.DaysGridCell.today.orange:not(.inRange) {
   --today-text-light: var(--orange-600);
   --today-border-light: var(--orange-600);
   --today-text: var(--today-text-light);
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.orange:not(.inRange):hover,
-.light * .DaysGridCell.today.orange:not(.inRange):hover {
+button.DaysGridCell.today.orange:not(.inRange):hover,
+.light * button.DaysGridCell.today.orange:not(.inRange):hover {
   --today-hover-text-light: var(--orange-600);
   --today-hover-border-light: var(--orange-600);
   --today-hover-text: var(--today-hover-text-light);
   --today-hover-border: var(--today-hover-border-light);
 }
 
-.DaysGridCell.selectedStartDate.orange,
-.DaysGridCell.selectedStartDate.orange:hover,
-.light * .DaysGridCell.selectedStartDate.orange,
-.light * .DaysGridCell.selectedStartDate.orange:hover {
+button.DaysGridCell.selectedStartDate.orange,
+button.DaysGridCell.selectedStartDate.orange:hover,
+.light * button.DaysGridCell.selectedStartDate.orange,
+.light * button.DaysGridCell.selectedStartDate.orange:hover {
   --selectedStartDate-bg-light: var(--orange-700);
   --selectedStartDate-bg: var(--selectedStartDate-bg-light);
 }
 
-.DaysGridCell.selectedEndDate.orange,
-.DaysGridCell.selectedEndDate.orange:hover,
-.light * .DaysGridCell.selectedEndDate.orange,
-.light * .DaysGridCell.selectedEndDate.orange:hover {
+button.DaysGridCell.selectedEndDate.orange,
+button.DaysGridCell.selectedEndDate.orange:hover,
+.light * button.DaysGridCell.selectedEndDate.orange,
+.light * button.DaysGridCell.selectedEndDate.orange:hover {
   --selectedEndDate-bg-light: var(--orange-700);
   --selectedEndDate-bg: var(--selectedEndDate-bg-light);
 }
 
-.DaysGridCell.amber:focus-visible,
-.light * .DaysGridCell.amber:focus-visible {
-  --focus-visible-outline-light: var(--amber-100);
-  --focus-visible-outline: var(--focus-visible-outline-light);
-}
-
-.DaysGridCell.selected.amber,
-.light * .DaysGridCell.selected.amber {
+button.DaysGridCell.selected.amber,
+.light * button.DaysGridCell.selected.amber {
   --selected-bg-light: var(--amber-600);
   --selected-bg: var(--selected-bg-light);
 }
 
-.DaysGridCell.selected.amber:hover,
-.light * .DaysGridCell.selected.amber:hover {
+button.DaysGridCell.selected.amber:hover,
+.light * button.DaysGridCell.selected.amber:hover {
   --selected-hover-bg-light: var(--amber-500);
   --selected-hover-bg: var(--selected-hover-bg-light);
 }
 
-.DaysGridCell.inRange.amber:not(.selectedStartDate, .selectedEndDate),
-.DaysGridCell.inRange.amber:not(.selectedStartDate, .selectedEndDate):hover,
-.light * .DaysGridCell.inRange.amber:not(.selectedStartDate, .selectedEndDate),
-.light * .DaysGridCell.inRange.amber:not(.selectedStartDate, .selectedEndDate):hover {
+button.DaysGridCell.inRange.amber:not(.selectedStartDate, .selectedEndDate),
+button.DaysGridCell.inRange.amber:not(.selectedStartDate, .selectedEndDate):hover,
+.light * button.DaysGridCell.inRange.amber:not(.selectedStartDate, .selectedEndDate),
+.light * button.DaysGridCell.inRange.amber:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-light: var(--amber-100);
   --inrange-bg: var(--inrange-bg-light);
   --inrange-text-light: var(--amber-700);
   --inrange-text: var(--inrange-text-light);
 }
 
-.DaysGridCell.today.amber:not(.inRange),
-.light * .DaysGridCell.today.amber:not(.inRange) {
+button.DaysGridCell.today.amber:not(.inRange),
+.light * button.DaysGridCell.today.amber:not(.inRange) {
   --today-text-light: var(--amber-600);
   --today-border-light: var(--amber-600);
   --today-text: var(--today-text-light);
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.amber:not(.inRange):hover,
-.light * .DaysGridCell.today.amber:not(.inRange):hover {
+button.DaysGridCell.today.amber:not(.inRange):hover,
+.light * button.DaysGridCell.today.amber:not(.inRange):hover {
   --today-hover-text-light: var(--amber-600);
   --today-hover-border-light: var(--amber-600);
   --today-hover-text: var(--today-hover-text-light);
   --today-hover-border: var(--today-hover-border-light);
 }
 
-.DaysGridCell.selectedStartDate.amber,
-.DaysGridCell.selectedStartDate.amber:hover,
-.light * .DaysGridCell.selectedStartDate.amber,
-.light * .DaysGridCell.selectedStartDate.amber:hover {
+button.DaysGridCell.selectedStartDate.amber,
+button.DaysGridCell.selectedStartDate.amber:hover,
+.light * button.DaysGridCell.selectedStartDate.amber,
+.light * button.DaysGridCell.selectedStartDate.amber:hover {
   --selectedStartDate-bg-light: var(--amber-700);
   --selectedStartDate-bg: var(--selectedStartDate-bg-light);
 }
 
-.DaysGridCell.selectedEndDate.amber,
-.DaysGridCell.selectedEndDate.amber:hover,
-.light * .DaysGridCell.selectedEndDate.amber,
-.light * .DaysGridCell.selectedEndDate.amber:hover {
+button.DaysGridCell.selectedEndDate.amber,
+button.DaysGridCell.selectedEndDate.amber:hover,
+.light * button.DaysGridCell.selectedEndDate.amber,
+.light * button.DaysGridCell.selectedEndDate.amber:hover {
   --selectedEndDate-bg-light: var(--amber-700);
   --selectedEndDate-bg: var(--selectedEndDate-bg-light);
 }
 
-.DaysGridCell.yellow:focus-visible,
-.light * .DaysGridCell.yellow:focus-visible {
-  --focus-visible-outline-light: var(--yellow-100);
-  --focus-visible-outline: var(--focus-visible-outline-light);
-}
-
-.DaysGridCell.selected.yellow,
-.light * .DaysGridCell.selected.yellow {
+button.DaysGridCell.selected.yellow,
+.light * button.DaysGridCell.selected.yellow {
   --selected-bg-light: var(--yellow-600);
   --selected-bg: var(--selected-bg-light);
 }
 
-.DaysGridCell.selected.yellow:hover,
-.light * .DaysGridCell.selected.yellow:hover {
+button.DaysGridCell.selected.yellow:hover,
+.light * button.DaysGridCell.selected.yellow:hover {
   --selected-hover-bg-light: var(--yellow-500);
   --selected-hover-bg: var(--selected-hover-bg-light);
 }
 
-.DaysGridCell.inRange.yellow:not(.selectedStartDate, .selectedEndDate),
-.DaysGridCell.inRange.yellow:not(.selectedStartDate, .selectedEndDate):hover,
-.light * .DaysGridCell.inRange.yellow:not(.selectedStartDate, .selectedEndDate),
-.light * .DaysGridCell.inRange.yellow:not(.selectedStartDate, .selectedEndDate):hover {
+button.DaysGridCell.inRange.yellow:not(.selectedStartDate, .selectedEndDate),
+button.DaysGridCell.inRange.yellow:not(.selectedStartDate, .selectedEndDate):hover,
+.light * button.DaysGridCell.inRange.yellow:not(.selectedStartDate, .selectedEndDate),
+.light * button.DaysGridCell.inRange.yellow:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-light: var(--yellow-100);
   --inrange-bg: var(--inrange-bg-light);
   --inrange-text-light: var(--yellow-700);
   --inrange-text: var(--inrange-text-light);
 }
 
-.DaysGridCell.today.yellow:not(.inRange),
-.light * .DaysGridCell.today.yellow:not(.inRange) {
+button.DaysGridCell.today.yellow:not(.inRange),
+.light * button.DaysGridCell.today.yellow:not(.inRange) {
   --today-text-light: var(--yellow-600);
   --today-border-light: var(--yellow-600);
   --today-text: var(--today-text-light);
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.yellow:not(.inRange):hover,
-.light * .DaysGridCell.today.yellow:not(.inRange):hover {
+button.DaysGridCell.today.yellow:not(.inRange):hover,
+.light * button.DaysGridCell.today.yellow:not(.inRange):hover {
   --today-hover-text-light: var(--yellow-600);
   --today-hover-border-light: var(--yellow-600);
   --today-hover-text: var(--today-hover-text-light);
   --today-hover-border: var(--today-hover-border-light);
 }
 
-.DaysGridCell.selectedStartDate.yellow,
-.DaysGridCell.selectedStartDate.yellow:hover,
-.light * .DaysGridCell.selectedStartDate.yellow,
-.light * .DaysGridCell.selectedStartDate.yellow:hover {
+button.DaysGridCell.selectedStartDate.yellow,
+button.DaysGridCell.selectedStartDate.yellow:hover,
+.light * button.DaysGridCell.selectedStartDate.yellow,
+.light * button.DaysGridCell.selectedStartDate.yellow:hover {
   --selectedStartDate-bg-light: var(--yellow-700);
   --selectedStartDate-bg: var(--selectedStartDate-bg-light);
 }
 
-.DaysGridCell.selectedEndDate.yellow,
-.DaysGridCell.selectedEndDate.yellow:hover,
-.light * .DaysGridCell.selectedEndDate.yellow,
-.light * .DaysGridCell.selectedEndDate.yellow:hover {
+button.DaysGridCell.selectedEndDate.yellow,
+button.DaysGridCell.selectedEndDate.yellow:hover,
+.light * button.DaysGridCell.selectedEndDate.yellow,
+.light * button.DaysGridCell.selectedEndDate.yellow:hover {
   --selectedEndDate-bg-light: var(--yellow-700);
   --selectedEndDate-bg: var(--selectedEndDate-bg-light);
 }
 
-.DaysGridCell.lime:focus-visible,
-.light * .DaysGridCell.lime:focus-visible {
-  --focus-visible-outline-light: var(--lime-100);
-  --focus-visible-outline: var(--focus-visible-outline-light);
-}
-
-.DaysGridCell.selected.lime,
-.light * .DaysGridCell.selected.lime {
+button.DaysGridCell.selected.lime,
+.light * button.DaysGridCell.selected.lime {
   --selected-bg-light: var(--lime-600);
   --selected-bg: var(--selected-bg-light);
 }
 
-.DaysGridCell.selected.lime:hover,
-.light * .DaysGridCell.selected.lime:hover {
+button.DaysGridCell.selected.lime:hover,
+.light * button.DaysGridCell.selected.lime:hover {
   --selected-hover-bg-light: var(--lime-500);
   --selected-hover-bg: var(--selected-hover-bg-light);
 }
 
-.DaysGridCell.inRange.lime:not(.selectedStartDate, .selectedEndDate),
-.DaysGridCell.inRange.lime:not(.selectedStartDate, .selectedEndDate):hover,
-.light * .DaysGridCell.inRange.lime:not(.selectedStartDate, .selectedEndDate),
-.light * .DaysGridCell.inRange.lime:not(.selectedStartDate, .selectedEndDate):hover {
+button.DaysGridCell.inRange.lime:not(.selectedStartDate, .selectedEndDate),
+button.DaysGridCell.inRange.lime:not(.selectedStartDate, .selectedEndDate):hover,
+.light * button.DaysGridCell.inRange.lime:not(.selectedStartDate, .selectedEndDate),
+.light * button.DaysGridCell.inRange.lime:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-light: var(--lime-100);
   --inrange-bg: var(--inrange-bg-light);
   --inrange-text-light: var(--lime-700);
   --inrange-text: var(--inrange-text-light);
 }
 
-.DaysGridCell.today.lime:not(.inRange),
-.light * .DaysGridCell.today.lime:not(.inRange) {
+button.DaysGridCell.today.lime:not(.inRange),
+.light * button.DaysGridCell.today.lime:not(.inRange) {
   --today-text-light: var(--lime-600);
   --today-border-light: var(--lime-600);
   --today-text: var(--today-text-light);
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.lime:not(.inRange):hover,
-.light * .DaysGridCell.today.lime:not(.inRange):hover {
+button.DaysGridCell.today.lime:not(.inRange):hover,
+.light * button.DaysGridCell.today.lime:not(.inRange):hover {
   --today-hover-text-light: var(--lime-600);
   --today-hover-border-light: var(--lime-600);
   --today-hover-text: var(--today-hover-text-light);
   --today-hover-border: var(--today-hover-border-light);
 }
 
-.DaysGridCell.selectedStartDate.lime,
-.DaysGridCell.selectedStartDate.lime:hover,
-.light * .DaysGridCell.selectedStartDate.lime,
-.light * .DaysGridCell.selectedStartDate.lime:hover {
+button.DaysGridCell.selectedStartDate.lime,
+button.DaysGridCell.selectedStartDate.lime:hover,
+.light * button.DaysGridCell.selectedStartDate.lime,
+.light * button.DaysGridCell.selectedStartDate.lime:hover {
   --selectedStartDate-bg-light: var(--lime-700);
   --selectedStartDate-bg: var(--selectedStartDate-bg-light);
 }
 
-.DaysGridCell.selectedEndDate.lime,
-.DaysGridCell.selectedEndDate.lime:hover,
-.light * .DaysGridCell.selectedEndDate.lime,
-.light * .DaysGridCell.selectedEndDate.lime:hover {
+button.DaysGridCell.selectedEndDate.lime,
+button.DaysGridCell.selectedEndDate.lime:hover,
+.light * button.DaysGridCell.selectedEndDate.lime,
+.light * button.DaysGridCell.selectedEndDate.lime:hover {
   --selectedEndDate-bg-light: var(--lime-700);
   --selectedEndDate-bg: var(--selectedEndDate-bg-light);
 }
 
-.DaysGridCell.green:focus-visible,
-.light * .DaysGridCell.green:focus-visible {
-  --focus-visible-outline-light: var(--green-100);
-  --focus-visible-outline: var(--focus-visible-outline-light);
-}
-
-.DaysGridCell.selected.green,
-.light * .DaysGridCell.selected.green {
+button.DaysGridCell.selected.green,
+.light * button.DaysGridCell.selected.green {
   --selected-bg-light: var(--green-600);
   --selected-bg: var(--selected-bg-light);
 }
 
-.DaysGridCell.selected.green:hover,
-.light * .DaysGridCell.selected.green:hover {
+button.DaysGridCell.selected.green:hover,
+.light * button.DaysGridCell.selected.green:hover {
   --selected-hover-bg-light: var(--green-500);
   --selected-hover-bg: var(--selected-hover-bg-light);
 }
 
-.DaysGridCell.inRange.green:not(.selectedStartDate, .selectedEndDate),
-.DaysGridCell.inRange.green:not(.selectedStartDate, .selectedEndDate):hover,
-.light * .DaysGridCell.inRange.green:not(.selectedStartDate, .selectedEndDate),
-.light * .DaysGridCell.inRange.green:not(.selectedStartDate, .selectedEndDate):hover {
+button.DaysGridCell.inRange.green:not(.selectedStartDate, .selectedEndDate),
+button.DaysGridCell.inRange.green:not(.selectedStartDate, .selectedEndDate):hover,
+.light * button.DaysGridCell.inRange.green:not(.selectedStartDate, .selectedEndDate),
+.light * button.DaysGridCell.inRange.green:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-light: var(--green-100);
   --inrange-bg: var(--inrange-bg-light);
   --inrange-text-light: var(--green-700);
   --inrange-text: var(--inrange-text-light);
 }
 
-.DaysGridCell.today.green:not(.inRange),
-.light * .DaysGridCell.today.green:not(.inRange) {
+button.DaysGridCell.today.green:not(.inRange),
+.light * button.DaysGridCell.today.green:not(.inRange) {
   --today-text-light: var(--green-600);
   --today-border-light: var(--green-600);
   --today-text: var(--today-text-light);
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.green:not(.inRange):hover,
-.light * .DaysGridCell.today.green:not(.inRange):hover {
+button.DaysGridCell.today.green:not(.inRange):hover,
+.light * button.DaysGridCell.today.green:not(.inRange):hover {
   --today-hover-text-light: var(--green-600);
   --today-hover-border-light: var(--green-600);
   --today-hover-text: var(--today-hover-text-light);
   --today-hover-border: var(--today-hover-border-light);
 }
 
-.DaysGridCell.selectedStartDate.green,
-.DaysGridCell.selectedStartDate.green:hover,
-.light * .DaysGridCell.selectedStartDate.green,
-.light * .DaysGridCell.selectedStartDate.green:hover {
+button.DaysGridCell.selectedStartDate.green,
+button.DaysGridCell.selectedStartDate.green:hover,
+.light * button.DaysGridCell.selectedStartDate.green,
+.light * button.DaysGridCell.selectedStartDate.green:hover {
   --selectedStartDate-bg-light: var(--green-700);
   --selectedStartDate-bg: var(--selectedStartDate-bg-light);
 }
 
-.DaysGridCell.selectedEndDate.green,
-.DaysGridCell.selectedEndDate.green:hover,
-.light * .DaysGridCell.selectedEndDate.green,
-.light * .DaysGridCell.selectedEndDate.green:hover {
+button.DaysGridCell.selectedEndDate.green,
+button.DaysGridCell.selectedEndDate.green:hover,
+.light * button.DaysGridCell.selectedEndDate.green,
+.light * button.DaysGridCell.selectedEndDate.green:hover {
   --selectedEndDate-bg-light: var(--green-700);
   --selectedEndDate-bg: var(--selectedEndDate-bg-light);
 }
 
-.DaysGridCell.emerald:focus-visible,
-.light * .DaysGridCell.emerald:focus-visible {
-  --focus-visible-outline-light: var(--emerald-100);
-  --focus-visible-outline: var(--focus-visible-outline-light);
-}
-
-.DaysGridCell.selected.emerald,
-.light * .DaysGridCell.selected.emerald {
+button.DaysGridCell.selected.emerald,
+.light * button.DaysGridCell.selected.emerald {
   --selected-bg-light: var(--emerald-600);
   --selected-bg: var(--selected-bg-light);
 }
 
-.DaysGridCell.selected.emerald:hover,
-.light * .DaysGridCell.selected.emerald:hover {
+button.DaysGridCell.selected.emerald:hover,
+.light * button.DaysGridCell.selected.emerald:hover {
   --selected-hover-bg-light: var(--emerald-500);
   --selected-hover-bg: var(--selected-hover-bg-light);
 }
 
-.DaysGridCell.inRange.emerald:not(.selectedStartDate, .selectedEndDate),
-.DaysGridCell.inRange.emerald:not(.selectedStartDate, .selectedEndDate):hover,
-.light * .DaysGridCell.inRange.emerald:not(.selectedStartDate, .selectedEndDate),
-.light * .DaysGridCell.inRange.emerald:not(.selectedStartDate, .selectedEndDate):hover {
+button.DaysGridCell.inRange.emerald:not(.selectedStartDate, .selectedEndDate),
+button.DaysGridCell.inRange.emerald:not(.selectedStartDate, .selectedEndDate):hover,
+.light * button.DaysGridCell.inRange.emerald:not(.selectedStartDate, .selectedEndDate),
+.light * button.DaysGridCell.inRange.emerald:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-light: var(--emerald-100);
   --inrange-bg: var(--inrange-bg-light);
   --inrange-text-light: var(--emerald-700);
   --inrange-text: var(--inrange-text-light);
 }
 
-.DaysGridCell.today.emerald:not(.inRange),
-.light * .DaysGridCell.today.emerald:not(.inRange) {
+button.DaysGridCell.today.emerald:not(.inRange),
+.light * button.DaysGridCell.today.emerald:not(.inRange) {
   --today-text-light: var(--emerald-600);
   --today-border-light: var(--emerald-600);
   --today-text: var(--today-text-light);
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.emerald:not(.inRange):hover,
-.light * .DaysGridCell.today.emerald:not(.inRange):hover {
+button.DaysGridCell.today.emerald:not(.inRange):hover,
+.light * button.DaysGridCell.today.emerald:not(.inRange):hover {
   --today-hover-text-light: var(--emerald-600);
   --today-hover-border-light: var(--emerald-600);
   --today-hover-text: var(--today-hover-text-light);
   --today-hover-border: var(--today-hover-border-light);
 }
 
-.DaysGridCell.selectedStartDate.emerald,
-.DaysGridCell.selectedStartDate.emerald:hover,
-.light * .DaysGridCell.selectedStartDate.emerald,
-.light * .DaysGridCell.selectedStartDate.emerald:hover {
+button.DaysGridCell.selectedStartDate.emerald,
+button.DaysGridCell.selectedStartDate.emerald:hover,
+.light * button.DaysGridCell.selectedStartDate.emerald,
+.light * button.DaysGridCell.selectedStartDate.emerald:hover {
   --selectedStartDate-bg-light: var(--emerald-700);
   --selectedStartDate-bg: var(--selectedStartDate-bg-light);
 }
 
-.DaysGridCell.selectedEndDate.emerald,
-.DaysGridCell.selectedEndDate.emerald:hover,
-.light * .DaysGridCell.selectedEndDate.emerald,
-.light * .DaysGridCell.selectedEndDate.emerald:hover {
+button.DaysGridCell.selectedEndDate.emerald,
+button.DaysGridCell.selectedEndDate.emerald:hover,
+.light * button.DaysGridCell.selectedEndDate.emerald,
+.light * button.DaysGridCell.selectedEndDate.emerald:hover {
   --selectedEndDate-bg-light: var(--emerald-700);
   --selectedEndDate-bg: var(--selectedEndDate-bg-light);
 }
 
-.DaysGridCell.teal:focus-visible,
-.light * .DaysGridCell.teal:focus-visible {
-  --focus-visible-outline-light: var(--teal-100);
-  --focus-visible-outline: var(--focus-visible-outline-light);
-}
-
-.DaysGridCell.selected.teal,
-.light * .DaysGridCell.selected.teal {
+button.DaysGridCell.selected.teal,
+.light * button.DaysGridCell.selected.teal {
   --selected-bg-light: var(--teal-600);
   --selected-bg: var(--selected-bg-light);
 }
 
-.DaysGridCell.selected.teal:hover,
-.light * .DaysGridCell.selected.teal:hover {
+button.DaysGridCell.selected.teal:hover,
+.light * button.DaysGridCell.selected.teal:hover {
   --selected-hover-bg-light: var(--teal-500);
   --selected-hover-bg: var(--selected-hover-bg-light);
 }
 
-.DaysGridCell.inRange.teal:not(.selectedStartDate, .selectedEndDate),
-.DaysGridCell.inRange.teal:not(.selectedStartDate, .selectedEndDate):hover,
-.light * .DaysGridCell.inRange.teal:not(.selectedStartDate, .selectedEndDate),
-.light * .DaysGridCell.inRange.teal:not(.selectedStartDate, .selectedEndDate):hover {
+button.DaysGridCell.inRange.teal:not(.selectedStartDate, .selectedEndDate),
+button.DaysGridCell.inRange.teal:not(.selectedStartDate, .selectedEndDate):hover,
+.light * button.DaysGridCell.inRange.teal:not(.selectedStartDate, .selectedEndDate),
+.light * button.DaysGridCell.inRange.teal:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-light: var(--teal-100);
   --inrange-bg: var(--inrange-bg-light);
   --inrange-text-light: var(--teal-700);
   --inrange-text: var(--inrange-text-light);
 }
 
-.DaysGridCell.today.teal:not(.inRange),
-.light * .DaysGridCell.today.teal:not(.inRange) {
+button.DaysGridCell.today.teal:not(.inRange),
+.light * button.DaysGridCell.today.teal:not(.inRange) {
   --today-text-light: var(--teal-600);
   --today-border-light: var(--teal-600);
   --today-text: var(--today-text-light);
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.teal:not(.inRange):hover,
-.light * .DaysGridCell.today.teal:not(.inRange):hover {
+button.DaysGridCell.today.teal:not(.inRange):hover,
+.light * button.DaysGridCell.today.teal:not(.inRange):hover {
   --today-hover-text-light: var(--teal-600);
   --today-hover-border-light: var(--teal-600);
   --today-hover-text: var(--today-hover-text-light);
   --today-hover-border: var(--today-hover-border-light);
 }
 
-.DaysGridCell.selectedStartDate.teal,
-.DaysGridCell.selectedStartDate.teal:hover,
-.light * .DaysGridCell.selectedStartDate.teal,
-.light * .DaysGridCell.selectedStartDate.teal:hover {
+button.DaysGridCell.selectedStartDate.teal,
+button.DaysGridCell.selectedStartDate.teal:hover,
+.light * button.DaysGridCell.selectedStartDate.teal,
+.light * button.DaysGridCell.selectedStartDate.teal:hover {
   --selectedStartDate-bg-light: var(--teal-700);
   --selectedStartDate-bg: var(--selectedStartDate-bg-light);
 }
 
-.DaysGridCell.selectedEndDate.teal,
-.DaysGridCell.selectedEndDate.teal:hover,
-.light * .DaysGridCell.selectedEndDate.teal,
-.light * .DaysGridCell.selectedEndDate.teal:hover {
+button.DaysGridCell.selectedEndDate.teal,
+button.DaysGridCell.selectedEndDate.teal:hover,
+.light * button.DaysGridCell.selectedEndDate.teal,
+.light * button.DaysGridCell.selectedEndDate.teal:hover {
   --selectedEndDate-bg-light: var(--teal-700);
   --selectedEndDate-bg: var(--selectedEndDate-bg-light);
 }
 
-.DaysGridCell.cyan:focus-visible,
-.light * .DaysGridCell.cyan:focus-visible {
-  --focus-visible-outline-light: var(--cyan-100);
-  --focus-visible-outline: var(--focus-visible-outline-light);
-}
-
-.DaysGridCell.selected.cyan,
-.light * .DaysGridCell.selected.cyan {
+button.DaysGridCell.selected.cyan,
+.light * button.DaysGridCell.selected.cyan {
   --selected-bg-light: var(--cyan-600);
   --selected-bg: var(--selected-bg-light);
 }
 
-.DaysGridCell.selected.cyan:hover,
-.light * .DaysGridCell.selected.cyan:hover {
+button.DaysGridCell.selected.cyan:hover,
+.light * button.DaysGridCell.selected.cyan:hover {
   --selected-hover-bg-light: var(--cyan-500);
   --selected-hover-bg: var(--selected-hover-bg-light);
 }
 
-.DaysGridCell.inRange.cyan:not(.selectedStartDate, .selectedEndDate),
-.DaysGridCell.inRange.cyan:not(.selectedStartDate, .selectedEndDate):hover,
-.light * .DaysGridCell.inRange.cyan:not(.selectedStartDate, .selectedEndDate),
-.light * .DaysGridCell.inRange.cyan:not(.selectedStartDate, .selectedEndDate):hover {
+button.DaysGridCell.inRange.cyan:not(.selectedStartDate, .selectedEndDate),
+button.DaysGridCell.inRange.cyan:not(.selectedStartDate, .selectedEndDate):hover,
+.light * button.DaysGridCell.inRange.cyan:not(.selectedStartDate, .selectedEndDate),
+.light * button.DaysGridCell.inRange.cyan:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-light: var(--cyan-100);
   --inrange-bg: var(--inrange-bg-light);
   --inrange-text-light: var(--cyan-700);
   --inrange-text: var(--inrange-text-light);
 }
 
-.DaysGridCell.today.cyan:not(.inRange),
-.light * .DaysGridCell.today.cyan:not(.inRange) {
+button.DaysGridCell.today.cyan:not(.inRange),
+.light * button.DaysGridCell.today.cyan:not(.inRange) {
   --today-text-light: var(--cyan-600);
   --today-border-light: var(--cyan-600);
   --today-text: var(--today-text-light);
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.cyan:not(.inRange):hover,
-.light * .DaysGridCell.today.cyan:not(.inRange):hover {
+button.DaysGridCell.today.cyan:not(.inRange):hover,
+.light * button.DaysGridCell.today.cyan:not(.inRange):hover {
   --today-hover-text-light: var(--cyan-600);
   --today-hover-border-light: var(--cyan-600);
   --today-hover-text: var(--today-hover-text-light);
   --today-hover-border: var(--today-hover-border-light);
 }
 
-.DaysGridCell.selectedStartDate.cyan,
-.DaysGridCell.selectedStartDate.cyan:hover,
-.light * .DaysGridCell.selectedStartDate.cyan,
-.light * .DaysGridCell.selectedStartDate.cyan:hover {
+button.DaysGridCell.selectedStartDate.cyan,
+button.DaysGridCell.selectedStartDate.cyan:hover,
+.light * button.DaysGridCell.selectedStartDate.cyan,
+.light * button.DaysGridCell.selectedStartDate.cyan:hover {
   --selectedStartDate-bg-light: var(--cyan-700);
   --selectedStartDate-bg: var(--selectedStartDate-bg-light);
 }
 
-.DaysGridCell.selectedEndDate.cyan,
-.DaysGridCell.selectedEndDate.cyan:hover,
-.light * .DaysGridCell.selectedEndDate.cyan,
-.light * .DaysGridCell.selectedEndDate.cyan:hover {
+button.DaysGridCell.selectedEndDate.cyan,
+button.DaysGridCell.selectedEndDate.cyan:hover,
+.light * button.DaysGridCell.selectedEndDate.cyan,
+.light * button.DaysGridCell.selectedEndDate.cyan:hover {
   --selectedEndDate-bg-light: var(--cyan-700);
   --selectedEndDate-bg: var(--selectedEndDate-bg-light);
 }
 
-.DaysGridCell.sky:focus-visible,
-.light * .DaysGridCell.sky:focus-visible {
-  --focus-visible-outline-light: var(--sky-100);
-  --focus-visible-outline: var(--focus-visible-outline-light);
-}
-
-.DaysGridCell.selected.sky,
-.light * .DaysGridCell.selected.sky {
+button.DaysGridCell.selected.sky,
+.light * button.DaysGridCell.selected.sky {
   --selected-bg-light: var(--sky-600);
   --selected-bg: var(--selected-bg-light);
 }
 
-.DaysGridCell.selected.sky:hover,
-.light * .DaysGridCell.selected.sky:hover {
+button.DaysGridCell.selected.sky:hover,
+.light * button.DaysGridCell.selected.sky:hover {
   --selected-hover-bg-light: var(--sky-500);
   --selected-hover-bg: var(--selected-hover-bg-light);
 }
 
-.DaysGridCell.inRange.sky:not(.selectedStartDate, .selectedEndDate),
-.DaysGridCell.inRange.sky:not(.selectedStartDate, .selectedEndDate):hover,
-.light * .DaysGridCell.inRange.sky:not(.selectedStartDate, .selectedEndDate),
-.light * .DaysGridCell.inRange.sky:not(.selectedStartDate, .selectedEndDate):hover {
+button.DaysGridCell.inRange.sky:not(.selectedStartDate, .selectedEndDate),
+button.DaysGridCell.inRange.sky:not(.selectedStartDate, .selectedEndDate):hover,
+.light * button.DaysGridCell.inRange.sky:not(.selectedStartDate, .selectedEndDate),
+.light * button.DaysGridCell.inRange.sky:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-light: var(--sky-100);
   --inrange-bg: var(--inrange-bg-light);
   --inrange-text-light: var(--sky-700);
   --inrange-text: var(--inrange-text-light);
 }
 
-.DaysGridCell.today.sky:not(.inRange),
-.light * .DaysGridCell.today.sky:not(.inRange) {
+button.DaysGridCell.today.sky:not(.inRange),
+.light * button.DaysGridCell.today.sky:not(.inRange) {
   --today-text-light: var(--sky-600);
   --today-border-light: var(--sky-600);
   --today-text: var(--today-text-light);
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.sky:not(.inRange):hover,
-.light * .DaysGridCell.today.sky:not(.inRange):hover {
+button.DaysGridCell.today.sky:not(.inRange):hover,
+.light * button.DaysGridCell.today.sky:not(.inRange):hover {
   --today-hover-text-light: var(--sky-600);
   --today-hover-border-light: var(--sky-600);
   --today-hover-text: var(--today-hover-text-light);
   --today-hover-border: var(--today-hover-border-light);
 }
 
-.DaysGridCell.selectedStartDate.sky,
-.DaysGridCell.selectedStartDate.sky:hover,
-.light * .DaysGridCell.selectedStartDate.sky,
-.light * .DaysGridCell.selectedStartDate.sky:hover {
+button.DaysGridCell.selectedStartDate.sky,
+button.DaysGridCell.selectedStartDate.sky:hover,
+.light * button.DaysGridCell.selectedStartDate.sky,
+.light * button.DaysGridCell.selectedStartDate.sky:hover {
   --selectedStartDate-bg-light: var(--sky-700);
   --selectedStartDate-bg: var(--selectedStartDate-bg-light);
 }
 
-.DaysGridCell.selectedEndDate.sky,
-.DaysGridCell.selectedEndDate.sky:hover,
-.light * .DaysGridCell.selectedEndDate.sky,
-.light * .DaysGridCell.selectedEndDate.sky:hover {
+button.DaysGridCell.selectedEndDate.sky,
+button.DaysGridCell.selectedEndDate.sky:hover,
+.light * button.DaysGridCell.selectedEndDate.sky,
+.light * button.DaysGridCell.selectedEndDate.sky:hover {
   --selectedEndDate-bg-light: var(--sky-700);
   --selectedEndDate-bg: var(--selectedEndDate-bg-light);
 }
 
-.DaysGridCell.blue:focus-visible,
-.light * .DaysGridCell.blue:focus-visible {
-  --focus-visible-outline-light: var(--blue-100);
-  --focus-visible-outline: var(--focus-visible-outline-light);
-}
-
-.DaysGridCell.selected.blue,
-.light * .DaysGridCell.selected.blue {
+button.DaysGridCell.selected.blue,
+.light * button.DaysGridCell.selected.blue {
   --selected-bg-light: var(--blue-600);
   --selected-bg: var(--selected-bg-light);
 }
 
-.DaysGridCell.selected.blue:hover,
-.light * .DaysGridCell.selected.blue:hover {
+button.DaysGridCell.selected.blue:hover,
+.light * button.DaysGridCell.selected.blue:hover {
   --selected-hover-bg-light: var(--blue-500);
   --selected-hover-bg: var(--selected-hover-bg-light);
 }
 
-.DaysGridCell.inRange.blue:not(.selectedStartDate, .selectedEndDate),
-.DaysGridCell.inRange.blue:not(.selectedStartDate, .selectedEndDate):hover,
-.light * .DaysGridCell.inRange.blue:not(.selectedStartDate, .selectedEndDate),
-.light * .DaysGridCell.inRange.blue:not(.selectedStartDate, .selectedEndDate):hover {
+button.DaysGridCell.inRange.blue:not(.selectedStartDate, .selectedEndDate),
+button.DaysGridCell.inRange.blue:not(.selectedStartDate, .selectedEndDate):hover,
+.light * button.DaysGridCell.inRange.blue:not(.selectedStartDate, .selectedEndDate),
+.light * button.DaysGridCell.inRange.blue:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-light: var(--blue-100);
   --inrange-bg: var(--inrange-bg-light);
   --inrange-text-light: var(--blue-700);
   --inrange-text: var(--inrange-text-light);
 }
 
-.DaysGridCell.today.blue:not(.inRange),
-.light * .DaysGridCell.today.blue:not(.inRange) {
+button.DaysGridCell.today.blue:not(.inRange),
+.light * button.DaysGridCell.today.blue:not(.inRange) {
   --today-text-light: var(--blue-600);
   --today-border-light: var(--blue-600);
   --today-text: var(--today-text-light);
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.blue:not(.inRange):hover,
-.light * .DaysGridCell.today.blue:not(.inRange):hover {
+button.DaysGridCell.today.blue:not(.inRange):hover,
+.light * button.DaysGridCell.today.blue:not(.inRange):hover {
   --today-hover-text-light: var(--blue-600);
   --today-hover-border-light: var(--blue-600);
   --today-hover-text: var(--today-hover-text-light);
   --today-hover-border: var(--today-hover-border-light);
 }
 
-.DaysGridCell.selectedStartDate.blue,
-.DaysGridCell.selectedStartDate.blue:hover,
-.light * .DaysGridCell.selectedStartDate.blue,
-.light * .DaysGridCell.selectedStartDate.blue:hover {
+button.DaysGridCell.selectedStartDate.blue,
+button.DaysGridCell.selectedStartDate.blue:hover,
+.light * button.DaysGridCell.selectedStartDate.blue,
+.light * button.DaysGridCell.selectedStartDate.blue:hover {
   --selectedStartDate-bg-light: var(--blue-700);
   --selectedStartDate-bg: var(--selectedStartDate-bg-light);
 }
 
-.DaysGridCell.selectedEndDate.blue,
-.DaysGridCell.selectedEndDate.blue:hover,
-.light * .DaysGridCell.selectedEndDate.blue,
-.light * .DaysGridCell.selectedEndDate.blue:hover {
+button.DaysGridCell.selectedEndDate.blue,
+button.DaysGridCell.selectedEndDate.blue:hover,
+.light * button.DaysGridCell.selectedEndDate.blue,
+.light * button.DaysGridCell.selectedEndDate.blue:hover {
   --selectedEndDate-bg-light: var(--blue-700);
   --selectedEndDate-bg: var(--selectedEndDate-bg-light);
 }
 
-.DaysGridCell.indigo:focus-visible,
-.light * .DaysGridCell.indigo:focus-visible {
-  --focus-visible-outline-light: var(--indigo-100);
-  --focus-visible-outline: var(--focus-visible-outline-light);
-}
-
-.DaysGridCell.selected.indigo,
-.light * .DaysGridCell.selected.indigo {
+button.DaysGridCell.selected.indigo,
+.light * button.DaysGridCell.selected.indigo {
   --selected-bg-light: var(--indigo-600);
   --selected-bg: var(--selected-bg-light);
 }
 
-.DaysGridCell.selected.indigo:hover,
-.light * .DaysGridCell.selected.indigo:hover {
+button.DaysGridCell.selected.indigo:hover,
+.light * button.DaysGridCell.selected.indigo:hover {
   --selected-hover-bg-light: var(--indigo-500);
   --selected-hover-bg: var(--selected-hover-bg-light);
 }
 
-.DaysGridCell.inRange.indigo:not(.selectedStartDate, .selectedEndDate),
-.DaysGridCell.inRange.indigo:not(.selectedStartDate, .selectedEndDate):hover,
-.light * .DaysGridCell.inRange.indigo:not(.selectedStartDate, .selectedEndDate),
-.light * .DaysGridCell.inRange.indigo:not(.selectedStartDate, .selectedEndDate):hover {
+button.DaysGridCell.inRange.indigo:not(.selectedStartDate, .selectedEndDate),
+button.DaysGridCell.inRange.indigo:not(.selectedStartDate, .selectedEndDate):hover,
+.light * button.DaysGridCell.inRange.indigo:not(.selectedStartDate, .selectedEndDate),
+.light * button.DaysGridCell.inRange.indigo:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-light: var(--indigo-100);
   --inrange-bg: var(--inrange-bg-light);
   --inrange-text-light: var(--indigo-700);
   --inrange-text: var(--inrange-text-light);
 }
 
-.DaysGridCell.today.indigo:not(.inRange),
-.light * .DaysGridCell.today.indigo:not(.inRange) {
+button.DaysGridCell.today.indigo:not(.inRange),
+.light * button.DaysGridCell.today.indigo:not(.inRange) {
   --today-text-light: var(--indigo-600);
   --today-border-light: var(--indigo-600);
   --today-text: var(--today-text-light);
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.indigo:not(.inRange):hover,
-.light * .DaysGridCell.today.indigo:not(.inRange):hover {
+button.DaysGridCell.today.indigo:not(.inRange):hover,
+.light * button.DaysGridCell.today.indigo:not(.inRange):hover {
   --today-hover-text-light: var(--indigo-600);
   --today-hover-border-light: var(--indigo-600);
   --today-hover-text: var(--today-hover-text-light);
   --today-hover-border: var(--today-hover-border-light);
 }
 
-.DaysGridCell.selectedStartDate.indigo,
-.DaysGridCell.selectedStartDate.indigo:hover,
-.light * .DaysGridCell.selectedStartDate.indigo,
-.light * .DaysGridCell.selectedStartDate.indigo:hover {
+button.DaysGridCell.selectedStartDate.indigo,
+button.DaysGridCell.selectedStartDate.indigo:hover,
+.light * button.DaysGridCell.selectedStartDate.indigo,
+.light * button.DaysGridCell.selectedStartDate.indigo:hover {
   --selectedStartDate-bg-light: var(--indigo-700);
   --selectedStartDate-bg: var(--selectedStartDate-bg-light);
 }
 
-.DaysGridCell.selectedEndDate.indigo,
-.DaysGridCell.selectedEndDate.indigo:hover,
-.light * .DaysGridCell.selectedEndDate.indigo,
-.light * .DaysGridCell.selectedEndDate.indigo:hover {
+button.DaysGridCell.selectedEndDate.indigo,
+button.DaysGridCell.selectedEndDate.indigo:hover,
+.light * button.DaysGridCell.selectedEndDate.indigo,
+.light * button.DaysGridCell.selectedEndDate.indigo:hover {
   --selectedEndDate-bg-light: var(--indigo-700);
   --selectedEndDate-bg: var(--selectedEndDate-bg-light);
 }
 
-.DaysGridCell.violet:focus-visible,
-.light * .DaysGridCell.violet:focus-visible {
-  --focus-visible-outline-light: var(--violet-100);
-  --focus-visible-outline: var(--focus-visible-outline-light);
-}
-
-.DaysGridCell.selected.violet,
-.light * .DaysGridCell.selected.violet {
+button.DaysGridCell.selected.violet,
+.light * button.DaysGridCell.selected.violet {
   --selected-bg-light: var(--violet-600);
   --selected-bg: var(--selected-bg-light);
 }
 
-.DaysGridCell.selected.violet:hover,
-.light * .DaysGridCell.selected.violet:hover {
+button.DaysGridCell.selected.violet:hover,
+.light * button.DaysGridCell.selected.violet:hover {
   --selected-hover-bg-light: var(--violet-500);
   --selected-hover-bg: var(--selected-hover-bg-light);
 }
 
-.DaysGridCell.inRange.violet:not(.selectedStartDate, .selectedEndDate),
-.DaysGridCell.inRange.violet:not(.selectedStartDate, .selectedEndDate):hover,
-.light * .DaysGridCell.inRange.violet:not(.selectedStartDate, .selectedEndDate),
-.light * .DaysGridCell.inRange.violet:not(.selectedStartDate, .selectedEndDate):hover {
+button.DaysGridCell.inRange.violet:not(.selectedStartDate, .selectedEndDate),
+button.DaysGridCell.inRange.violet:not(.selectedStartDate, .selectedEndDate):hover,
+.light * button.DaysGridCell.inRange.violet:not(.selectedStartDate, .selectedEndDate),
+.light * button.DaysGridCell.inRange.violet:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-light: var(--violet-100);
   --inrange-bg: var(--inrange-bg-light);
   --inrange-text-light: var(--violet-700);
   --inrange-text: var(--inrange-text-light);
 }
 
-.DaysGridCell.today.violet:not(.inRange),
-.light * .DaysGridCell.today.violet:not(.inRange) {
+button.DaysGridCell.today.violet:not(.inRange),
+.light * button.DaysGridCell.today.violet:not(.inRange) {
   --today-text-light: var(--violet-600);
   --today-border-light: var(--violet-600);
   --today-text: var(--today-text-light);
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.violet:not(.inRange):hover,
-.light * .DaysGridCell.today.violet:not(.inRange):hover {
+button.DaysGridCell.today.violet:not(.inRange):hover,
+.light * button.DaysGridCell.today.violet:not(.inRange):hover {
   --today-hover-text-light: var(--violet-600);
   --today-hover-border-light: var(--violet-600);
   --today-hover-text: var(--today-hover-text-light);
   --today-hover-border: var(--today-hover-border-light);
 }
 
-.DaysGridCell.selectedStartDate.violet,
-.DaysGridCell.selectedStartDate.violet:hover,
-.light * .DaysGridCell.selectedStartDate.violet,
-.light * .DaysGridCell.selectedStartDate.violet:hover {
+button.DaysGridCell.selectedStartDate.violet,
+button.DaysGridCell.selectedStartDate.violet:hover,
+.light * button.DaysGridCell.selectedStartDate.violet,
+.light * button.DaysGridCell.selectedStartDate.violet:hover {
   --selectedStartDate-bg-light: var(--violet-700);
   --selectedStartDate-bg: var(--selectedStartDate-bg-light);
 }
 
-.DaysGridCell.selectedEndDate.violet,
-.DaysGridCell.selectedEndDate.violet:hover,
-.light * .DaysGridCell.selectedEndDate.violet,
-.light * .DaysGridCell.selectedEndDate.violet:hover {
+button.DaysGridCell.selectedEndDate.violet,
+button.DaysGridCell.selectedEndDate.violet:hover,
+.light * button.DaysGridCell.selectedEndDate.violet,
+.light * button.DaysGridCell.selectedEndDate.violet:hover {
   --selectedEndDate-bg-light: var(--violet-700);
   --selectedEndDate-bg: var(--selectedEndDate-bg-light);
 }
 
-.DaysGridCell.purple:focus-visible,
-.light * .DaysGridCell.purple:focus-visible {
-  --focus-visible-outline-light: var(--purple-100);
-  --focus-visible-outline: var(--focus-visible-outline-light);
-}
-
-.DaysGridCell.selected.purple,
-.light * .DaysGridCell.selected.purple {
+button.DaysGridCell.selected.purple,
+.light * button.DaysGridCell.selected.purple {
   --selected-bg-light: var(--purple-600);
   --selected-bg: var(--selected-bg-light);
 }
 
-.DaysGridCell.selected.purple:hover,
-.light * .DaysGridCell.selected.purple:hover {
+button.DaysGridCell.selected.purple:hover,
+.light * button.DaysGridCell.selected.purple:hover {
   --selected-hover-bg-light: var(--purple-500);
   --selected-hover-bg: var(--selected-hover-bg-light);
 }
 
-.DaysGridCell.inRange.purple:not(.selectedStartDate, .selectedEndDate),
-.DaysGridCell.inRange.purple:not(.selectedStartDate, .selectedEndDate):hover,
-.light * .DaysGridCell.inRange.purple:not(.selectedStartDate, .selectedEndDate),
-.light * .DaysGridCell.inRange.purple:not(.selectedStartDate, .selectedEndDate):hover {
+button.DaysGridCell.inRange.purple:not(.selectedStartDate, .selectedEndDate),
+button.DaysGridCell.inRange.purple:not(.selectedStartDate, .selectedEndDate):hover,
+.light * button.DaysGridCell.inRange.purple:not(.selectedStartDate, .selectedEndDate),
+.light * button.DaysGridCell.inRange.purple:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-light: var(--purple-100);
   --inrange-bg: var(--inrange-bg-light);
   --inrange-text-light: var(--purple-700);
   --inrange-text: var(--inrange-text-light);
 }
 
-.DaysGridCell.today.purple:not(.inRange),
-.light * .DaysGridCell.today.purple:not(.inRange) {
+button.DaysGridCell.today.purple:not(.inRange),
+.light * button.DaysGridCell.today.purple:not(.inRange) {
   --today-text-light: var(--purple-600);
   --today-border-light: var(--purple-600);
   --today-text: var(--today-text-light);
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.purple:not(.inRange):hover,
-.light * .DaysGridCell.today.purple:not(.inRange):hover {
+button.DaysGridCell.today.purple:not(.inRange):hover,
+.light * button.DaysGridCell.today.purple:not(.inRange):hover {
   --today-hover-text-light: var(--purple-600);
   --today-hover-border-light: var(--purple-600);
   --today-hover-text: var(--today-hover-text-light);
   --today-hover-border: var(--today-hover-border-light);
 }
 
-.DaysGridCell.selectedStartDate.purple,
-.DaysGridCell.selectedStartDate.purple:hover,
-.light * .DaysGridCell.selectedStartDate.purple,
-.light * .DaysGridCell.selectedStartDate.purple:hover {
+button.DaysGridCell.selectedStartDate.purple,
+button.DaysGridCell.selectedStartDate.purple:hover,
+.light * button.DaysGridCell.selectedStartDate.purple,
+.light * button.DaysGridCell.selectedStartDate.purple:hover {
   --selectedStartDate-bg-light: var(--purple-700);
   --selectedStartDate-bg: var(--selectedStartDate-bg-light);
 }
 
-.DaysGridCell.selectedEndDate.purple,
-.DaysGridCell.selectedEndDate.purple:hover,
-.light * .DaysGridCell.selectedEndDate.purple,
-.light * .DaysGridCell.selectedEndDate.purple:hover {
+button.DaysGridCell.selectedEndDate.purple,
+button.DaysGridCell.selectedEndDate.purple:hover,
+.light * button.DaysGridCell.selectedEndDate.purple,
+.light * button.DaysGridCell.selectedEndDate.purple:hover {
   --selectedEndDate-bg-light: var(--purple-700);
   --selectedEndDate-bg: var(--selectedEndDate-bg-light);
 }
 
-.DaysGridCell.fuchsia:focus-visible,
-.light * .DaysGridCell.fuchsia:focus-visible {
-  --focus-visible-outline-light: var(--fuchsia-100);
-  --focus-visible-outline: var(--focus-visible-outline-light);
-}
-
-.DaysGridCell.selected.fuchsia,
-.light * .DaysGridCell.selected.fuchsia {
+button.DaysGridCell.selected.fuchsia,
+.light * button.DaysGridCell.selected.fuchsia {
   --selected-bg-light: var(--fuchsia-600);
   --selected-bg: var(--selected-bg-light);
 }
 
-.DaysGridCell.selected.fuchsia:hover,
-.light * .DaysGridCell.selected.fuchsia:hover {
+button.DaysGridCell.selected.fuchsia:hover,
+.light * button.DaysGridCell.selected.fuchsia:hover {
   --selected-hover-bg-light: var(--fuchsia-500);
   --selected-hover-bg: var(--selected-hover-bg-light);
 }
 
-.DaysGridCell.inRange.fuchsia:not(.selectedStartDate, .selectedEndDate),
-.DaysGridCell.inRange.fuchsia:not(.selectedStartDate, .selectedEndDate):hover,
-.light * .DaysGridCell.inRange.fuchsia:not(.selectedStartDate, .selectedEndDate),
-.light * .DaysGridCell.inRange.fuchsia:not(.selectedStartDate, .selectedEndDate):hover {
+button.DaysGridCell.inRange.fuchsia:not(.selectedStartDate, .selectedEndDate),
+button.DaysGridCell.inRange.fuchsia:not(.selectedStartDate, .selectedEndDate):hover,
+.light * button.DaysGridCell.inRange.fuchsia:not(.selectedStartDate, .selectedEndDate),
+.light * button.DaysGridCell.inRange.fuchsia:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-light: var(--fuchsia-100);
   --inrange-bg: var(--inrange-bg-light);
   --inrange-text-light: var(--fuchsia-700);
   --inrange-text: var(--inrange-text-light);
 }
 
-.DaysGridCell.today.fuchsia:not(.inRange),
-.light * .DaysGridCell.today.fuchsia:not(.inRange) {
+button.DaysGridCell.today.fuchsia:not(.inRange),
+.light * button.DaysGridCell.today.fuchsia:not(.inRange) {
   --today-text-light: var(--fuchsia-600);
   --today-border-light: var(--fuchsia-600);
   --today-text: var(--today-text-light);
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.fuchsia:not(.inRange):hover,
-.light * .DaysGridCell.today.fuchsia:not(.inRange):hover {
+button.DaysGridCell.today.fuchsia:not(.inRange):hover,
+.light * button.DaysGridCell.today.fuchsia:not(.inRange):hover {
   --today-hover-text-light: var(--fuchsia-600);
   --today-hover-border-light: var(--fuchsia-600);
   --today-hover-text: var(--today-hover-text-light);
   --today-hover-border: var(--today-hover-border-light);
 }
 
-.DaysGridCell.selectedStartDate.fuchsia,
-.DaysGridCell.selectedStartDate.fuchsia:hover,
-.light * .DaysGridCell.selectedStartDate.fuchsia,
-.light * .DaysGridCell.selectedStartDate.fuchsia:hover {
+button.DaysGridCell.selectedStartDate.fuchsia,
+button.DaysGridCell.selectedStartDate.fuchsia:hover,
+.light * button.DaysGridCell.selectedStartDate.fuchsia,
+.light * button.DaysGridCell.selectedStartDate.fuchsia:hover {
   --selectedStartDate-bg-light: var(--fuchsia-700);
   --selectedStartDate-bg: var(--selectedStartDate-bg-light);
 }
 
-.DaysGridCell.selectedEndDate.fuchsia,
-.DaysGridCell.selectedEndDate.fuchsia:hover,
-.light * .DaysGridCell.selectedEndDate.fuchsia,
-.light * .DaysGridCell.selectedEndDate.fuchsia:hover {
+button.DaysGridCell.selectedEndDate.fuchsia,
+button.DaysGridCell.selectedEndDate.fuchsia:hover,
+.light * button.DaysGridCell.selectedEndDate.fuchsia,
+.light * button.DaysGridCell.selectedEndDate.fuchsia:hover {
   --selectedEndDate-bg-light: var(--fuchsia-700);
   --selectedEndDate-bg: var(--selectedEndDate-bg-light);
 }
 
-.DaysGridCell.pink:focus-visible,
-.light * .DaysGridCell.pink:focus-visible {
-  --focus-visible-outline-light: var(--pink-100);
-  --focus-visible-outline: var(--focus-visible-outline-light);
-}
-
-.DaysGridCell.selected.pink,
-.light * .DaysGridCell.selected.pink {
+button.DaysGridCell.selected.pink,
+.light * button.DaysGridCell.selected.pink {
   --selected-bg-light: var(--pink-600);
   --selected-bg: var(--selected-bg-light);
 }
 
-.DaysGridCell.selected.pink:hover,
-.light * .DaysGridCell.selected.pink:hover {
+button.DaysGridCell.selected.pink:hover,
+.light * button.DaysGridCell.selected.pink:hover {
   --selected-hover-bg-light: var(--pink-500);
   --selected-hover-bg: var(--selected-hover-bg-light);
 }
 
-.DaysGridCell.inRange.pink:not(.selectedStartDate, .selectedEndDate),
-.DaysGridCell.inRange.pink:not(.selectedStartDate, .selectedEndDate):hover,
-.light * .DaysGridCell.inRange.pink:not(.selectedStartDate, .selectedEndDate),
-.light * .DaysGridCell.inRange.pink:not(.selectedStartDate, .selectedEndDate):hover {
+button.DaysGridCell.inRange.pink:not(.selectedStartDate, .selectedEndDate),
+button.DaysGridCell.inRange.pink:not(.selectedStartDate, .selectedEndDate):hover,
+.light * button.DaysGridCell.inRange.pink:not(.selectedStartDate, .selectedEndDate),
+.light * button.DaysGridCell.inRange.pink:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-light: var(--pink-100);
   --inrange-bg: var(--inrange-bg-light);
   --inrange-text-light: var(--pink-700);
   --inrange-text: var(--inrange-text-light);
 }
 
-.DaysGridCell.today.pink:not(.inRange),
-.light * .DaysGridCell.today.pink:not(.inRange) {
+button.DaysGridCell.today.pink:not(.inRange),
+.light * button.DaysGridCell.today.pink:not(.inRange) {
   --today-text-light: var(--pink-600);
   --today-border-light: var(--pink-600);
   --today-text: var(--today-text-light);
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.pink:not(.inRange):hover,
-.light * .DaysGridCell.today.pink:not(.inRange):hover {
+button.DaysGridCell.today.pink:not(.inRange):hover,
+.light * button.DaysGridCell.today.pink:not(.inRange):hover {
   --today-hover-text-light: var(--pink-600);
   --today-hover-border-light: var(--pink-600);
   --today-hover-text: var(--today-hover-text-light);
   --today-hover-border: var(--today-hover-border-light);
 }
 
-.DaysGridCell.selectedStartDate.pink,
-.DaysGridCell.selectedStartDate.pink:hover,
-.light * .DaysGridCell.selectedStartDate.pink,
-.light * .DaysGridCell.selectedStartDate.pink:hover {
+button.DaysGridCell.selectedStartDate.pink,
+button.DaysGridCell.selectedStartDate.pink:hover,
+.light * button.DaysGridCell.selectedStartDate.pink,
+.light * button.DaysGridCell.selectedStartDate.pink:hover {
   --selectedStartDate-bg-light: var(--pink-700);
   --selectedStartDate-bg: var(--selectedStartDate-bg-light);
 }
 
-.DaysGridCell.selectedEndDate.pink,
-.DaysGridCell.selectedEndDate.pink:hover,
-.light * .DaysGridCell.selectedEndDate.pink,
-.light * .DaysGridCell.selectedEndDate.pink:hover {
+button.DaysGridCell.selectedEndDate.pink,
+button.DaysGridCell.selectedEndDate.pink:hover,
+.light * button.DaysGridCell.selectedEndDate.pink,
+.light * button.DaysGridCell.selectedEndDate.pink:hover {
   --selectedEndDate-bg-light: var(--pink-700);
   --selectedEndDate-bg: var(--selectedEndDate-bg-light);
 }
 
-.DaysGridCell.rose:focus-visible,
-.light * .DaysGridCell.rose:focus-visible {
-  --focus-visible-outline-light: var(--rose-100);
-  --focus-visible-outline: var(--focus-visible-outline-light);
-}
-
-.DaysGridCell.selected.rose,
-.light * .DaysGridCell.selected.rose {
+button.DaysGridCell.selected.rose,
+.light * button.DaysGridCell.selected.rose {
   --selected-bg-light: var(--rose-600);
   --selected-bg: var(--selected-bg-light);
 }
 
-.DaysGridCell.selected.rose:hover,
-.light * .DaysGridCell.selected.rose:hover {
+button.DaysGridCell.selected.rose:hover,
+.light * button.DaysGridCell.selected.rose:hover {
   --selected-hover-bg-light: var(--rose-500);
   --selected-hover-bg: var(--selected-hover-bg-light);
 }
 
-.DaysGridCell.inRange.rose:not(.selectedStartDate, .selectedEndDate),
-.DaysGridCell.inRange.rose:not(.selectedStartDate, .selectedEndDate):hover,
-.light * .DaysGridCell.inRange.rose:not(.selectedStartDate, .selectedEndDate),
-.light * .DaysGridCell.inRange.rose:not(.selectedStartDate, .selectedEndDate):hover {
+button.DaysGridCell.inRange.rose:not(.selectedStartDate, .selectedEndDate),
+button.DaysGridCell.inRange.rose:not(.selectedStartDate, .selectedEndDate):hover,
+.light * button.DaysGridCell.inRange.rose:not(.selectedStartDate, .selectedEndDate),
+.light * button.DaysGridCell.inRange.rose:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-light: var(--rose-100);
   --inrange-bg: var(--inrange-bg-light);
   --inrange-text-light: var(--rose-700);
   --inrange-text: var(--inrange-text-light);
 }
 
-.DaysGridCell.today.rose:not(.inRange),
-.light * .DaysGridCell.today.rose:not(.inRange) {
+button.DaysGridCell.today.rose:not(.inRange),
+.light * button.DaysGridCell.today.rose:not(.inRange) {
   --today-text-light: var(--rose-600);
   --today-border-light: var(--rose-600);
   --today-text: var(--today-text-light);
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.rose:not(.inRange):hover,
-.light * .DaysGridCell.today.rose:not(.inRange):hover {
+button.DaysGridCell.today.rose:not(.inRange):hover,
+.light * button.DaysGridCell.today.rose:not(.inRange):hover {
   --today-hover-text-light: var(--rose-600);
   --today-hover-border-light: var(--rose-600);
   --today-hover-text: var(--today-hover-text-light);
   --today-hover-border: var(--today-hover-border-light);
 }
 
-.DaysGridCell.selectedStartDate.rose,
-.DaysGridCell.selectedStartDate.rose:hover,
-.light * .DaysGridCell.selectedStartDate.rose,
-.light * .DaysGridCell.selectedStartDate.rose:hover {
+button.DaysGridCell.selectedStartDate.rose,
+button.DaysGridCell.selectedStartDate.rose:hover,
+.light * button.DaysGridCell.selectedStartDate.rose,
+.light * button.DaysGridCell.selectedStartDate.rose:hover {
   --selectedStartDate-bg-light: var(--rose-700);
   --selectedStartDate-bg: var(--selectedStartDate-bg-light);
 }
 
-.DaysGridCell.selectedEndDate.rose,
-.DaysGridCell.selectedEndDate.rose:hover,
-.light * .DaysGridCell.selectedEndDate.rose,
-.light * .DaysGridCell.selectedEndDate.rose:hover {
+button.DaysGridCell.selectedEndDate.rose,
+button.DaysGridCell.selectedEndDate.rose:hover,
+.light * button.DaysGridCell.selectedEndDate.rose,
+.light * button.DaysGridCell.selectedEndDate.rose:hover {
   --selectedEndDate-bg-light: var(--rose-700);
   --selectedEndDate-bg: var(--selectedEndDate-bg-light);
 }
 
-.DaysGridCell.slate:focus-visible,
-.light * .DaysGridCell.slate:focus-visible {
-  --focus-visible-outline-light: var(--slate-100);
-  --focus-visible-outline: var(--focus-visible-outline-light);
-}
-
-.DaysGridCell.selected.slate,
-.light * .DaysGridCell.selected.slate {
+button.DaysGridCell.selected.slate,
+.light * button.DaysGridCell.selected.slate {
   --selected-bg-light: var(--slate-600);
   --selected-bg: var(--selected-bg-light);
 }
 
-.DaysGridCell.selected.slate:hover,
-.light * .DaysGridCell.selected.slate:hover {
+button.DaysGridCell.selected.slate:hover,
+.light * button.DaysGridCell.selected.slate:hover {
   --selected-hover-bg-light: var(--slate-500);
   --selected-hover-bg: var(--selected-hover-bg-light);
 }
 
-.DaysGridCell.inRange.slate:not(.selectedStartDate, .selectedEndDate),
-.DaysGridCell.inRange.slate:not(.selectedStartDate, .selectedEndDate):hover,
-.light * .DaysGridCell.inRange.slate:not(.selectedStartDate, .selectedEndDate),
-.light * .DaysGridCell.inRange.slate:not(.selectedStartDate, .selectedEndDate):hover {
+button.DaysGridCell.inRange.slate:not(.selectedStartDate, .selectedEndDate),
+button.DaysGridCell.inRange.slate:not(.selectedStartDate, .selectedEndDate):hover,
+.light * button.DaysGridCell.inRange.slate:not(.selectedStartDate, .selectedEndDate),
+.light * button.DaysGridCell.inRange.slate:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-light: var(--slate-100);
   --inrange-bg: var(--inrange-bg-light);
   --inrange-text-light: var(--slate-700);
   --inrange-text: var(--inrange-text-light);
 }
 
-.DaysGridCell.today.slate:not(.inRange),
-.light * .DaysGridCell.today.slate:not(.inRange) {
+button.DaysGridCell.today.slate:not(.inRange),
+.light * button.DaysGridCell.today.slate:not(.inRange) {
   --today-text-light: var(--slate-600);
   --today-border-light: var(--slate-600);
   --today-text: var(--today-text-light);
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.slate:not(.inRange):hover,
-.light * .DaysGridCell.today.slate:not(.inRange):hover {
+button.DaysGridCell.today.slate:not(.inRange):hover,
+.light * button.DaysGridCell.today.slate:not(.inRange):hover {
   --today-hover-text-light: var(--slate-600);
   --today-hover-border-light: var(--slate-600);
   --today-hover-text: var(--today-hover-text-light);
   --today-hover-border: var(--today-hover-border-light);
 }
 
-.DaysGridCell.selectedStartDate.slate,
-.DaysGridCell.selectedStartDate.slate:hover,
-.light * .DaysGridCell.selectedStartDate.slate,
-.light * .DaysGridCell.selectedStartDate.slate:hover {
+button.DaysGridCell.selectedStartDate.slate,
+button.DaysGridCell.selectedStartDate.slate:hover,
+.light * button.DaysGridCell.selectedStartDate.slate,
+.light * button.DaysGridCell.selectedStartDate.slate:hover {
   --selectedStartDate-bg-light: var(--slate-700);
   --selectedStartDate-bg: var(--selectedStartDate-bg-light);
 }
 
-.DaysGridCell.selectedEndDate.slate,
-.DaysGridCell.selectedEndDate.slate:hover,
-.light * .DaysGridCell.selectedEndDate.slate,
-.light * .DaysGridCell.selectedEndDate.slate:hover {
+button.DaysGridCell.selectedEndDate.slate,
+button.DaysGridCell.selectedEndDate.slate:hover,
+.light * button.DaysGridCell.selectedEndDate.slate,
+.light * button.DaysGridCell.selectedEndDate.slate:hover {
   --selectedEndDate-bg-light: var(--slate-700);
   --selectedEndDate-bg: var(--selectedEndDate-bg-light);
 }
 
-.DaysGridCell.gray:focus-visible,
-.light * .DaysGridCell.gray:focus-visible {
-  --focus-visible-outline-light: var(--gray-100);
-  --focus-visible-outline: var(--focus-visible-outline-light);
-}
-
-.DaysGridCell.selected.gray,
-.light * .DaysGridCell.selected.gray {
+button.DaysGridCell.selected.gray,
+.light * button.DaysGridCell.selected.gray {
   --selected-bg-light: var(--gray-600);
   --selected-bg: var(--selected-bg-light);
 }
 
-.DaysGridCell.selected.gray:hover,
-.light * .DaysGridCell.selected.gray:hover {
+button.DaysGridCell.selected.gray:hover,
+.light * button.DaysGridCell.selected.gray:hover {
   --selected-hover-bg-light: var(--gray-500);
   --selected-hover-bg: var(--selected-hover-bg-light);
 }
 
-.DaysGridCell.inRange.gray:not(.selectedStartDate, .selectedEndDate),
-.DaysGridCell.inRange.gray:not(.selectedStartDate, .selectedEndDate):hover,
-.light * .DaysGridCell.inRange.gray:not(.selectedStartDate, .selectedEndDate),
-.light * .DaysGridCell.inRange.gray:not(.selectedStartDate, .selectedEndDate):hover {
+button.DaysGridCell.inRange.gray:not(.selectedStartDate, .selectedEndDate),
+button.DaysGridCell.inRange.gray:not(.selectedStartDate, .selectedEndDate):hover,
+.light * button.DaysGridCell.inRange.gray:not(.selectedStartDate, .selectedEndDate),
+.light * button.DaysGridCell.inRange.gray:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-light: var(--gray-100);
   --inrange-bg: var(--inrange-bg-light);
   --inrange-text-light: var(--gray-700);
   --inrange-text: var(--inrange-text-light);
 }
 
-.DaysGridCell.today.gray:not(.inRange),
-.light * .DaysGridCell.today.gray:not(.inRange) {
+button.DaysGridCell.today.gray:not(.inRange),
+.light * button.DaysGridCell.today.gray:not(.inRange) {
   --today-text-light: var(--gray-600);
   --today-border-light: var(--gray-600);
   --today-text: var(--today-text-light);
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.gray:not(.inRange):hover,
-.light * .DaysGridCell.today.gray:not(.inRange):hover {
+button.DaysGridCell.today.gray:not(.inRange):hover,
+.light * button.DaysGridCell.today.gray:not(.inRange):hover {
   --today-hover-text-light: var(--gray-600);
   --today-hover-border-light: var(--gray-600);
   --today-hover-text: var(--today-hover-text-light);
   --today-hover-border: var(--today-hover-border-light);
 }
 
-.DaysGridCell.selectedStartDate.gray,
-.DaysGridCell.selectedStartDate.gray:hover,
-.light * .DaysGridCell.selectedStartDate.gray,
-.light * .DaysGridCell.selectedStartDate.gray:hover {
+button.DaysGridCell.selectedStartDate.gray,
+button.DaysGridCell.selectedStartDate.gray:hover,
+.light * button.DaysGridCell.selectedStartDate.gray,
+.light * button.DaysGridCell.selectedStartDate.gray:hover {
   --selectedStartDate-bg-light: var(--gray-700);
   --selectedStartDate-bg: var(--selectedStartDate-bg-light);
 }
 
-.DaysGridCell.selectedEndDate.gray,
-.DaysGridCell.selectedEndDate.gray:hover,
-.light * .DaysGridCell.selectedEndDate.gray,
-.light * .DaysGridCell.selectedEndDate.gray:hover {
+button.DaysGridCell.selectedEndDate.gray,
+button.DaysGridCell.selectedEndDate.gray:hover,
+.light * button.DaysGridCell.selectedEndDate.gray,
+.light * button.DaysGridCell.selectedEndDate.gray:hover {
   --selectedEndDate-bg-light: var(--gray-700);
   --selectedEndDate-bg: var(--selectedEndDate-bg-light);
 }
 
-.DaysGridCell.zinc:focus-visible,
-.light * .DaysGridCell.zinc:focus-visible {
-  --focus-visible-outline-light: var(--zinc-100);
-  --focus-visible-outline: var(--focus-visible-outline-light);
-}
-
-.DaysGridCell.selected.zinc,
-.light * .DaysGridCell.selected.zinc {
+button.DaysGridCell.selected.zinc,
+.light * button.DaysGridCell.selected.zinc {
   --selected-bg-light: var(--zinc-600);
   --selected-bg: var(--selected-bg-light);
 }
 
-.DaysGridCell.selected.zinc:hover,
-.light * .DaysGridCell.selected.zinc:hover {
+button.DaysGridCell.selected.zinc:hover,
+.light * button.DaysGridCell.selected.zinc:hover {
   --selected-hover-bg-light: var(--zinc-500);
   --selected-hover-bg: var(--selected-hover-bg-light);
 }
 
-.DaysGridCell.inRange.zinc:not(.selectedStartDate, .selectedEndDate),
-.DaysGridCell.inRange.zinc:not(.selectedStartDate, .selectedEndDate):hover,
-.light * .DaysGridCell.inRange.zinc:not(.selectedStartDate, .selectedEndDate),
-.light * .DaysGridCell.inRange.zinc:not(.selectedStartDate, .selectedEndDate):hover {
+button.DaysGridCell.inRange.zinc:not(.selectedStartDate, .selectedEndDate),
+button.DaysGridCell.inRange.zinc:not(.selectedStartDate, .selectedEndDate):hover,
+.light * button.DaysGridCell.inRange.zinc:not(.selectedStartDate, .selectedEndDate),
+.light * button.DaysGridCell.inRange.zinc:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-light: var(--zinc-100);
   --inrange-bg: var(--inrange-bg-light);
   --inrange-text-light: var(--zinc-700);
   --inrange-text: var(--inrange-text-light);
 }
 
-.DaysGridCell.today.zinc:not(.inRange),
-.light * .DaysGridCell.today.zinc:not(.inRange) {
+button.DaysGridCell.today.zinc:not(.inRange),
+.light * button.DaysGridCell.today.zinc:not(.inRange) {
   --today-text-light: var(--zinc-600);
   --today-border-light: var(--zinc-600);
   --today-text: var(--today-text-light);
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.zinc:not(.inRange):hover,
-.light * .DaysGridCell.today.zinc:not(.inRange):hover {
+button.DaysGridCell.today.zinc:not(.inRange):hover,
+.light * button.DaysGridCell.today.zinc:not(.inRange):hover {
   --today-hover-text-light: var(--zinc-600);
   --today-hover-border-light: var(--zinc-600);
   --today-hover-text: var(--today-hover-text-light);
   --today-hover-border: var(--today-hover-border-light);
 }
 
-.DaysGridCell.selectedStartDate.zinc,
-.DaysGridCell.selectedStartDate.zinc:hover,
-.light * .DaysGridCell.selectedStartDate.zinc,
-.light * .DaysGridCell.selectedStartDate.zinc:hover {
+button.DaysGridCell.selectedStartDate.zinc,
+button.DaysGridCell.selectedStartDate.zinc:hover,
+.light * button.DaysGridCell.selectedStartDate.zinc,
+.light * button.DaysGridCell.selectedStartDate.zinc:hover {
   --selectedStartDate-bg-light: var(--zinc-700);
   --selectedStartDate-bg: var(--selectedStartDate-bg-light);
 }
 
-.DaysGridCell.selectedEndDate.zinc,
-.DaysGridCell.selectedEndDate.zinc:hover,
-.light * .DaysGridCell.selectedEndDate.zinc,
-.light * .DaysGridCell.selectedEndDate.zinc:hover {
+button.DaysGridCell.selectedEndDate.zinc,
+button.DaysGridCell.selectedEndDate.zinc:hover,
+.light * button.DaysGridCell.selectedEndDate.zinc,
+.light * button.DaysGridCell.selectedEndDate.zinc:hover {
   --selectedEndDate-bg-light: var(--zinc-700);
   --selectedEndDate-bg: var(--selectedEndDate-bg-light);
 }
 
-.DaysGridCell.neutral:focus-visible,
-.light * .DaysGridCell.neutral:focus-visible {
-  --focus-visible-outline-light: var(--neutral-100);
-  --focus-visible-outline: var(--focus-visible-outline-light);
-}
-
-.DaysGridCell.selected.neutral,
-.light * .DaysGridCell.selected.neutral {
+button.DaysGridCell.selected.neutral,
+.light * button.DaysGridCell.selected.neutral {
   --selected-bg-light: var(--neutral-600);
   --selected-bg: var(--selected-bg-light);
 }
 
-.DaysGridCell.selected.neutral:hover,
-.light * .DaysGridCell.selected.neutral:hover {
+button.DaysGridCell.selected.neutral:hover,
+.light * button.DaysGridCell.selected.neutral:hover {
   --selected-hover-bg-light: var(--neutral-500);
   --selected-hover-bg: var(--selected-hover-bg-light);
 }
 
-.DaysGridCell.inRange.neutral:not(.selectedStartDate, .selectedEndDate),
-.DaysGridCell.inRange.neutral:not(.selectedStartDate, .selectedEndDate):hover,
-.light * .DaysGridCell.inRange.neutral:not(.selectedStartDate, .selectedEndDate),
-.light * .DaysGridCell.inRange.neutral:not(.selectedStartDate, .selectedEndDate):hover {
+button.DaysGridCell.inRange.neutral:not(.selectedStartDate, .selectedEndDate),
+button.DaysGridCell.inRange.neutral:not(.selectedStartDate, .selectedEndDate):hover,
+.light * button.DaysGridCell.inRange.neutral:not(.selectedStartDate, .selectedEndDate),
+.light * button.DaysGridCell.inRange.neutral:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-light: var(--neutral-100);
   --inrange-bg: var(--inrange-bg-light);
   --inrange-text-light: var(--neutral-700);
   --inrange-text: var(--inrange-text-light);
 }
 
-.DaysGridCell.today.neutral:not(.inRange),
-.light * .DaysGridCell.today.neutral:not(.inRange) {
+button.DaysGridCell.today.neutral:not(.inRange),
+.light * button.DaysGridCell.today.neutral:not(.inRange) {
   --today-text-light: var(--neutral-600);
   --today-border-light: var(--neutral-600);
   --today-text: var(--today-text-light);
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.neutral:not(.inRange):hover,
-.light * .DaysGridCell.today.neutral:not(.inRange):hover {
+button.DaysGridCell.today.neutral:not(.inRange):hover,
+.light * button.DaysGridCell.today.neutral:not(.inRange):hover {
   --today-hover-text-light: var(--neutral-600);
   --today-hover-border-light: var(--neutral-600);
   --today-hover-text: var(--today-hover-text-light);
   --today-hover-border: var(--today-hover-border-light);
 }
 
-.DaysGridCell.selectedStartDate.neutral,
-.DaysGridCell.selectedStartDate.neutral:hover,
-.light * .DaysGridCell.selectedStartDate.neutral,
-.light * .DaysGridCell.selectedStartDate.neutral:hover {
+button.DaysGridCell.selectedStartDate.neutral,
+button.DaysGridCell.selectedStartDate.neutral:hover,
+.light * button.DaysGridCell.selectedStartDate.neutral,
+.light * button.DaysGridCell.selectedStartDate.neutral:hover {
   --selectedStartDate-bg-light: var(--neutral-700);
   --selectedStartDate-bg: var(--selectedStartDate-bg-light);
 }
 
-.DaysGridCell.selectedEndDate.neutral,
-.DaysGridCell.selectedEndDate.neutral:hover,
-.light * .DaysGridCell.selectedEndDate.neutral,
-.light * .DaysGridCell.selectedEndDate.neutral:hover {
+button.DaysGridCell.selectedEndDate.neutral,
+button.DaysGridCell.selectedEndDate.neutral:hover,
+.light * button.DaysGridCell.selectedEndDate.neutral,
+.light * button.DaysGridCell.selectedEndDate.neutral:hover {
   --selectedEndDate-bg-light: var(--neutral-700);
   --selectedEndDate-bg: var(--selectedEndDate-bg-light);
 }
 
-.DaysGridCell.stone:focus-visible,
-.light * .DaysGridCell.stone:focus-visible {
-  --focus-visible-outline-light: var(--stone-100);
-  --focus-visible-outline: var(--focus-visible-outline-light);
-}
-
-.DaysGridCell.selected.stone,
-.light * .DaysGridCell.selected.stone {
+button.DaysGridCell.selected.stone,
+.light * button.DaysGridCell.selected.stone {
   --selected-bg-light: var(--stone-600);
   --selected-bg: var(--selected-bg-light);
 }
 
-.DaysGridCell.selected.stone:hover,
-.light * .DaysGridCell.selected.stone:hover {
+button.DaysGridCell.selected.stone:hover,
+.light * button.DaysGridCell.selected.stone:hover {
   --selected-hover-bg-light: var(--stone-500);
   --selected-hover-bg: var(--selected-hover-bg-light);
 }
 
-.DaysGridCell.inRange.stone:not(.selectedStartDate, .selectedEndDate),
-.DaysGridCell.inRange.stone:not(.selectedStartDate, .selectedEndDate):hover,
-.light * .DaysGridCell.inRange.stone:not(.selectedStartDate, .selectedEndDate),
-.light * .DaysGridCell.inRange.stone:not(.selectedStartDate, .selectedEndDate):hover {
+button.DaysGridCell.inRange.stone:not(.selectedStartDate, .selectedEndDate),
+button.DaysGridCell.inRange.stone:not(.selectedStartDate, .selectedEndDate):hover,
+.light * button.DaysGridCell.inRange.stone:not(.selectedStartDate, .selectedEndDate),
+.light * button.DaysGridCell.inRange.stone:not(.selectedStartDate, .selectedEndDate):hover {
   --inrange-bg-light: var(--stone-100);
   --inrange-bg: var(--inrange-bg-light);
   --inrange-text-light: var(--stone-700);
   --inrange-text: var(--inrange-text-light);
 }
 
-.DaysGridCell.today.stone:not(.inRange),
-.light * .DaysGridCell.today.stone:not(.inRange) {
+button.DaysGridCell.today.stone:not(.inRange),
+.light * button.DaysGridCell.today.stone:not(.inRange) {
   --today-text-light: var(--stone-600);
   --today-border-light: var(--stone-600);
   --today-text: var(--today-text-light);
   --today-border: var(--today-border-light);
 }
 
-.DaysGridCell.today.stone:not(.inRange):hover,
-.light * .DaysGridCell.today.stone:not(.inRange):hover {
+button.DaysGridCell.today.stone:not(.inRange):hover,
+.light * button.DaysGridCell.today.stone:not(.inRange):hover {
   --today-hover-text-light: var(--stone-600);
   --today-hover-border-light: var(--stone-600);
   --today-hover-text: var(--today-hover-text-light);
   --today-hover-border: var(--today-hover-border-light);
 }
 
-.DaysGridCell.selectedStartDate.stone,
-.DaysGridCell.selectedStartDate.stone:hover,
-.light * .DaysGridCell.selectedStartDate.stone,
-.light * .DaysGridCell.selectedStartDate.stone:hover {
+button.DaysGridCell.selectedStartDate.stone,
+button.DaysGridCell.selectedStartDate.stone:hover,
+.light * button.DaysGridCell.selectedStartDate.stone,
+.light * button.DaysGridCell.selectedStartDate.stone:hover {
   --selectedStartDate-bg-light: var(--stone-700);
   --selectedStartDate-bg: var(--selectedStartDate-bg-light);
 }
 
-.DaysGridCell.selectedEndDate.stone,
-.DaysGridCell.selectedEndDate.stone:hover,
-.light * .DaysGridCell.selectedEndDate.stone,
-.light * .DaysGridCell.selectedEndDate.stone:hover {
+button.DaysGridCell.selectedEndDate.stone,
+button.DaysGridCell.selectedEndDate.stone:hover,
+.light * button.DaysGridCell.selectedEndDate.stone,
+.light * button.DaysGridCell.selectedEndDate.stone:hover {
   --selectedEndDate-bg-light: var(--stone-700);
   --selectedEndDate-bg: var(--selectedEndDate-bg-light);
 }

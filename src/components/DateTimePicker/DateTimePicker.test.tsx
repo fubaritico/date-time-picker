@@ -1,5 +1,6 @@
-import { act, render, screen, waitFor } from '@testing-library/react'
+import { act, render, screen, waitFor, within } from '@testing-library/react'
 import user from '@testing-library/user-event'
+import { axe } from 'jest-axe'
 import MockDate from 'mockdate'
 
 import {
@@ -7,6 +8,7 @@ import {
   addMinutes,
   addMonths,
   addYears,
+  formatHumanReadableDate,
   formatTimestampForTextInput,
   formatToLocaleAwareFormat,
   getAllMonthNames,
@@ -37,7 +39,7 @@ import type { AnyPickerComponent, AnyPickerProps } from './types'
  * @param {AnyPickerComponent} Component - The type of picker to be used in the test
  * @param {Number} pFixedDate - The fixed date to use for the tests. Here, 2025-03-15T15:28:13.000Z as a timestamp.
  *
- * @returns The dateTimestamp, the offset and the render function.
+ * @returns The todayTimestamp, the offset and the render function.
  */
 const setup = (
   pFixedDate: number,
@@ -46,10 +48,10 @@ const setup = (
 ) => {
   const today = new Date(pFixedDate)
   const offset = getOffsetInMsFromTimezone(today, props?.timezone)
-  const dateTimestamp = today.getTime() + offset
+  const todayTimestamp = today.getTime() + offset
 
   return {
-    dateTimestamp,
+    todayTimestamp,
     offset,
     render: render(<Component {...props} />),
   }
@@ -66,7 +68,7 @@ const localeAwareFormat: LocaleAwareFormat = 'L LT'
  * @param {Number} pFixedDate - The fixed date to use for the tests. Here 2025-03-15T15:28:13.000Z as a timestamp.
  * @param {CommonPickerProps} props - The props to pass to the component.
  *
- * @returns {Object} - The dateTimestamp, the offset and the render function.
+ * @returns {Object} - The todayTimestamp, the offset and the render function.
  */
 const setupAsControlled = (
   Component: AnyPickerComponent,
@@ -79,7 +81,7 @@ const setupAsControlled = (
   const dateTimestamp = today.getTime() + msOffset
 
   return {
-    dateTimestamp,
+    todayTimestamp: dateTimestamp,
     offset: msOffset,
     render: render(
       <Integration {...props} spyOnDateChange={spyOnDateChangeFn}>
@@ -148,17 +150,17 @@ const runTests = (timezone?: Timezone) => {
 
     it('should show days panel content on icon click', async () => {
       const {
-        dateTimestamp,
+        todayTimestamp,
         render: { container },
       } = setup(fixedDate, DateTimePicker as AnyPickerComponent, {
         timezone,
       })
       if (timezone) expect(container).toMatchSnapshot()
 
-      const currentMonth = getLongMonthNameFromTs(dateTimestamp).toString()
-      const currentYear = getYearFromTs(dateTimestamp).toString()
+      const currentMonth = getLongMonthNameFromTs(todayTimestamp).toString()
+      const currentYear = getYearFromTs(todayTimestamp).toString()
 
-      await user.click(screen.getByLabelText('Open calendar panel'))
+      await user.click(screen.getByLabelText('Choose Date'))
 
       expect(
         await screen.findByRole('button', { name: 'Previous Month' })
@@ -180,11 +182,11 @@ const runTests = (timezone?: Timezone) => {
 
     it("should display today's date as an highlighted grid cell (selected on init)", async () => {
       const {
-        dateTimestamp,
+        todayTimestamp,
         render: { baseElement },
       } = setup(fixedDate, DateTimePicker as AnyPickerComponent, { timezone })
 
-      await user.click(screen.getByLabelText('Open calendar panel'))
+      await user.click(screen.getByLabelText('Choose Date'))
 
       expect(await screen.findByTestId('days-grid')).toBeInTheDocument()
 
@@ -192,21 +194,25 @@ const runTests = (timezone?: Timezone) => {
         expect(baseElement).toMatchSnapshot()
       }
 
-      expect(await screen.findByTestId(dateTimestamp.toString())).toHaveClass(
-        'DaysGridCell enabled selected today blue md'
+      expect(await screen.findByTestId(todayTimestamp.toString())).toHaveClass(
+        'DaysGridCell enabled today blue md'
       )
     })
 
     it('should close the days panel on date selection', async () => {
       setup(fixedDate, DateTimePicker as AnyPickerComponent)
 
-      await user.click(screen.getByLabelText('Open calendar panel'))
+      await user.click(screen.getByLabelText('Choose Date'))
 
       await user.click(
         await screen.findByRole('button', { name: 'Next Month' })
       )
 
-      await user.click(screen.getByRole('button', { name: '1' }))
+      await user.click(
+        screen.getByRole('button', {
+          name: formatHumanReadableDate(addMonths(fixedDate, 1)),
+        })
+      )
 
       await waitFor(() => {
         expect(screen.queryByRole('grid')).not.toBeInTheDocument()
@@ -215,33 +221,37 @@ const runTests = (timezone?: Timezone) => {
 
     it('should display a previously selected date as an slightly highlighted grid cell', async () => {
       const {
-        dateTimestamp,
+        todayTimestamp,
         render: { baseElement },
       } = setup(fixedDate, DateTimePicker as AnyPickerComponent, { timezone })
 
       const clickableDate = getFirstDayOfCurrentMonthTs(
-        addMonths(dateTimestamp, 1)
-      ).toString()
+        addMonths(todayTimestamp, 1)
+      )
 
-      await user.click(screen.getByLabelText('Open calendar panel'))
+      await user.click(screen.getByLabelText('Choose Date'))
 
       await user.click(
         await screen.findByRole('button', { name: 'Next Month' })
       )
 
-      await user.click(screen.getByRole('button', { name: '1' }))
+      await user.click(
+        screen.getByRole('button', {
+          name: formatHumanReadableDate(clickableDate),
+        })
+      )
 
       if (timezone) {
         expect(baseElement).toMatchSnapshot()
       }
 
-      expect(screen.getByTestId(clickableDate)).toHaveClass(
+      expect(screen.getByTestId(clickableDate.toString())).toHaveClass(
         'DaysGridCell enabled selected blue md'
       )
     })
 
     it('should show month panel contents on month button click', async () => {
-      const { dateTimestamp } = setup(
+      const { todayTimestamp } = setup(
         fixedDate,
         DateTimePicker as AnyPickerComponent,
         {
@@ -249,10 +259,10 @@ const runTests = (timezone?: Timezone) => {
         }
       )
 
-      const currentMonth = getLongMonthNameFromTs(dateTimestamp).toString()
-      const currentYear = getYearFromTs(dateTimestamp).toString()
+      const currentMonth = getLongMonthNameFromTs(todayTimestamp).toString()
+      const currentYear = getYearFromTs(todayTimestamp).toString()
 
-      await user.click(screen.getByLabelText('Open calendar panel'))
+      await user.click(screen.getByLabelText('Choose Date'))
       await user.click(
         await screen.findByRole('button', { name: currentMonth })
       )
@@ -269,7 +279,7 @@ const runTests = (timezone?: Timezone) => {
     })
 
     it('should show years panel contents on year button click', async () => {
-      const { dateTimestamp } = setup(
+      const { todayTimestamp } = setup(
         fixedDate,
         DateTimePicker as AnyPickerComponent,
         {
@@ -277,12 +287,12 @@ const runTests = (timezone?: Timezone) => {
         }
       )
 
-      const currentYear = getYearFromTs(dateTimestamp).toString()
+      const currentYear = getYearFromTs(todayTimestamp).toString()
       const years = Array.from({ length: 12 }, (_, i) =>
         (i + parseInt(currentYear, 10)).toString()
       )
 
-      await user.click(screen.getByLabelText('Open calendar panel'))
+      await user.click(screen.getByLabelText('Choose Date'))
 
       await user.click(await screen.findByRole('button', { name: currentYear }))
 
@@ -305,16 +315,16 @@ const runTests = (timezone?: Timezone) => {
     })
 
     it('should display selected month on init', async () => {
-      const { dateTimestamp } = setup(
+      const { todayTimestamp } = setup(
         fixedDate,
         DateTimePicker as AnyPickerComponent,
         {
           timezone,
         }
       )
-      const currentMonth = getLongMonthNameFromTs(dateTimestamp).toString()
+      const currentMonth = getLongMonthNameFromTs(todayTimestamp).toString()
 
-      await user.click(screen.getByLabelText('Open calendar panel'))
+      await user.click(screen.getByLabelText('Choose Date'))
 
       await user.click(
         await screen.findByRole('button', { name: currentMonth })
@@ -329,7 +339,7 @@ const runTests = (timezone?: Timezone) => {
     })
 
     it('should display the proper month as selected after selection', async () => {
-      const { dateTimestamp } = setup(
+      const { todayTimestamp } = setup(
         fixedDate,
         DateTimePicker as AnyPickerComponent,
         {
@@ -337,12 +347,12 @@ const runTests = (timezone?: Timezone) => {
         }
       )
 
-      const currentMonth = getLongMonthNameFromTs(dateTimestamp).toString()
+      const currentMonth = getLongMonthNameFromTs(todayTimestamp).toString()
       const monthToBeClicked = getLongMonthNameFromTs(
-        addMonths(dateTimestamp, 1)
+        addMonths(todayTimestamp, 1)
       ).toString()
 
-      await user.click(screen.getByLabelText('Open calendar panel'))
+      await user.click(screen.getByLabelText('Choose Date'))
 
       await user.click(
         await screen.findByRole('button', { name: currentMonth })
@@ -352,7 +362,7 @@ const runTests = (timezone?: Timezone) => {
         screen.getByRole('button', { name: `Choose ${monthToBeClicked}` })
       )
 
-      await user.click(screen.getByLabelText('Open calendar panel'))
+      await user.click(screen.getByLabelText('Choose Date'))
 
       await user.click(
         await screen.findByRole('button', { name: monthToBeClicked })
@@ -367,7 +377,7 @@ const runTests = (timezone?: Timezone) => {
     })
 
     it('should display selected year on init', async () => {
-      const { dateTimestamp } = setup(
+      const { todayTimestamp } = setup(
         fixedDate,
         DateTimePicker as AnyPickerComponent,
         {
@@ -375,9 +385,9 @@ const runTests = (timezone?: Timezone) => {
         }
       )
 
-      const currentYear = getYearFromTs(dateTimestamp).toString()
+      const currentYear = getYearFromTs(todayTimestamp).toString()
 
-      await user.click(screen.getByLabelText('Open calendar panel'))
+      await user.click(screen.getByLabelText('Choose Date'))
 
       await user.click(screen.getByRole('button', { name: currentYear }))
 
@@ -390,7 +400,7 @@ const runTests = (timezone?: Timezone) => {
     })
 
     it('should display the proper year as selected after selection', async () => {
-      const { dateTimestamp } = setup(
+      const { todayTimestamp } = setup(
         fixedDate,
         DateTimePicker as AnyPickerComponent,
         {
@@ -398,12 +408,12 @@ const runTests = (timezone?: Timezone) => {
         }
       )
 
-      const currentYear = getYearFromTs(dateTimestamp).toString()
+      const currentYear = getYearFromTs(todayTimestamp).toString()
       const yearToBeClicked = getYearFromTs(
-        addYears(dateTimestamp, 1)
+        addYears(todayTimestamp, 1)
       ).toString()
 
-      await user.click(screen.getByLabelText('Open calendar panel'))
+      await user.click(screen.getByLabelText('Choose Date'))
 
       await user.click(await screen.findByRole('button', { name: currentYear }))
 
@@ -411,7 +421,7 @@ const runTests = (timezone?: Timezone) => {
         screen.getByRole('button', { name: `Choose ${yearToBeClicked}` })
       )
 
-      await user.click(screen.getByLabelText('Open calendar panel'))
+      await user.click(screen.getByLabelText('Choose Date'))
 
       await user.click(
         await screen.findByRole('button', { name: yearToBeClicked })
@@ -427,20 +437,20 @@ const runTests = (timezone?: Timezone) => {
 
     it('should show 12 previous years in panel on previous button click', async () => {
       const {
-        dateTimestamp,
+        todayTimestamp,
         render: { baseElement },
       } = setup(fixedDate, DateTimePicker as AnyPickerComponent, { timezone })
 
-      const currentYear = getYearFromTs(dateTimestamp).toString()
+      const currentYear = getYearFromTs(todayTimestamp).toString()
       const twelveYearAgo = getYearFromTs(
-        subtractYears(dateTimestamp, 12)
+        subtractYears(todayTimestamp, 12)
       ).toString() // 2013
       const years = Array.from(
         { length: 12 },
         (_, i) => (i + parseInt(twelveYearAgo, 10)).toString() // 2013 > 2024
       )
 
-      await user.click(screen.getByLabelText('Open calendar panel'))
+      await user.click(screen.getByLabelText('Choose Date'))
 
       await user.click(await screen.findByRole('button', { name: currentYear }))
 
@@ -463,7 +473,7 @@ const runTests = (timezone?: Timezone) => {
     })
 
     it('should show 12 next years in panel on next button click', async () => {
-      const { dateTimestamp } = setup(
+      const { todayTimestamp } = setup(
         fixedDate,
         DateTimePicker as AnyPickerComponent,
         {
@@ -471,13 +481,15 @@ const runTests = (timezone?: Timezone) => {
         }
       )
 
-      const currentYear = getYearFromTs(dateTimestamp).toString()
-      const yearsFromNow = getYearFromTs(addYears(dateTimestamp, 12)).toString()
+      const currentYear = getYearFromTs(todayTimestamp).toString()
+      const yearsFromNow = getYearFromTs(
+        addYears(todayTimestamp, 12)
+      ).toString()
       const years = Array.from({ length: 12 }, (_, i) =>
         (i + parseInt(currentYear, 10) + 12).toString()
       )
 
-      await user.click(screen.getByLabelText('Open calendar panel'))
+      await user.click(screen.getByLabelText('Choose Date'))
 
       await user.click(await screen.findByRole('button', { name: currentYear }))
 
@@ -547,11 +559,17 @@ const runTests = (timezone?: Timezone) => {
         defaultProperties.date ?? Date.now()
       )
 
-      await user.click(screen.getByLabelText('Open calendar panel'))
+      await user.click(screen.getByLabelText('Choose Date'))
 
-      await user.click(
-        screen.getByRole('button', { name: selectedDay.toString() })
-      )
+      const buttonAriaLabel = within(screen.getByRole('grid'))
+        .getAllByRole('button')
+        [selectedDay - 1].getAttribute('aria-label')
+
+      if (buttonAriaLabel === null) {
+        throw new Error('Button aria-label is null')
+      }
+
+      await user.click(screen.getByRole('button', { name: buttonAriaLabel }))
 
       expect(spyOnDateChangeFn).toHaveBeenCalledTimes(1)
       expect(spyOnDateChangeFn).toHaveBeenCalledWith(expectedValue)
@@ -571,15 +589,21 @@ const runTests = (timezone?: Timezone) => {
         selectedDay
       )
 
-      await user.click(screen.getByLabelText('Open calendar panel'))
+      await user.click(screen.getByLabelText('Choose Date'))
 
       for (let i = 0; i < nextMonthsClicks; i++) {
         await user.click(screen.getByRole('button', { name: 'Next Month' }))
       }
 
-      await user.click(
-        screen.getByRole('button', { name: selectedDay.toString() })
-      )
+      const buttonAriaLabel = within(screen.getByRole('grid'))
+        .getAllByRole('button')
+        [selectedDay - 1].getAttribute('aria-label')
+
+      if (buttonAriaLabel === null) {
+        throw new Error('Button aria-label is null')
+      }
+
+      await user.click(screen.getByRole('button', { name: buttonAriaLabel }))
 
       expect(spyOnDateChangeFn).toHaveBeenCalledTimes(1)
       expect(spyOnDateChangeFn).toHaveBeenCalledWith(expectedValue)
@@ -601,7 +625,7 @@ const runTests = (timezone?: Timezone) => {
       ).toString()
       const expectedValue = addMonths(date, 2)
 
-      await user.click(screen.getByLabelText('Open calendar panel'))
+      await user.click(screen.getByLabelText('Choose Date'))
 
       await user.click(
         await screen.findByRole('button', { name: currentMonth })
@@ -636,7 +660,7 @@ const runTests = (timezone?: Timezone) => {
       const nextYearClicks = 3
       const expectedValue = addMonths(addYears(date, nextYearClicks), monthDiff)
 
-      await user.click(screen.getByLabelText('Open calendar panel'))
+      await user.click(screen.getByLabelText('Choose Date'))
 
       await user.click(
         await screen.findByRole('button', { name: currentMonth })
@@ -680,7 +704,7 @@ const runTests = (timezone?: Timezone) => {
       const yearToBeClicked = getYearFromTs(addYears(innerDate, 1)).toString()
       const expectedValue = addYears(date, 1)
 
-      await user.click(screen.getByLabelText('Open calendar panel'))
+      await user.click(screen.getByLabelText('Choose Date'))
 
       await user.click(await screen.findByRole('button', { name: currentYear }))
 
@@ -707,7 +731,7 @@ const runTests = (timezone?: Timezone) => {
       const yearDiff = parseInt(yearToBeClicked) - parseInt(currentYear)
       const expectedValue = addYears(date, yearDiff)
 
-      await user.click(screen.getByLabelText('Open calendar panel'))
+      await user.click(screen.getByLabelText('Choose Date'))
 
       await user.click(await screen.findByRole('button', { name: currentYear }))
 
@@ -734,7 +758,7 @@ const runTests = (timezone?: Timezone) => {
 
       const date = defaultProperties.date ?? Date.now()
 
-      await user.click(screen.getByLabelText('Open calendar panel'))
+      await user.click(screen.getByLabelText('Choose Date'))
 
       await user.click(
         await screen.findByRole('button', { name: 'Switch to time view' })
@@ -761,7 +785,7 @@ const runTests = (timezone?: Timezone) => {
       const minutesToBeAdded = 15
       const minutesToBeRemoved = 5
 
-      await user.click(screen.getByLabelText('Open calendar panel'))
+      await user.click(screen.getByLabelText('Choose Date'))
 
       await user.click(
         await screen.findByRole('button', { name: 'Switch to time view' })
@@ -814,7 +838,7 @@ const runTests = (timezone?: Timezone) => {
 
       const expectedValue = subtractHours(date, 12)
 
-      await user.click(screen.getByLabelText('Open calendar panel'))
+      await user.click(screen.getByLabelText('Choose Date'))
 
       await user.click(
         await screen.findByRole('button', { name: 'Switch to time view' })
@@ -970,11 +994,17 @@ const runTests = (timezone?: Timezone) => {
 
         const selectedDay = 1
 
-        await user.click(screen.getByLabelText('Open calendar panel'))
+        await user.click(screen.getByLabelText('Choose Date'))
 
-        await user.click(
-          screen.getByRole('button', { name: selectedDay.toString() })
-        ) // Pass to the 1st day of the current month
+        const buttonAriaLabel = within(screen.getByRole('grid'))
+          .getAllByRole('button')
+          [selectedDay - 1].getAttribute('aria-label')
+
+        if (buttonAriaLabel === null) {
+          throw new Error('Button aria-label is null')
+        }
+
+        await user.click(screen.getByRole('button', { name: buttonAriaLabel })) // Pass to the 1st day of the current month
 
         const firstDayOfCurrentMonthTs = getFirstDayOfCurrentMonthTs(innerDate)
 
@@ -1041,7 +1071,7 @@ const runTests = (timezone?: Timezone) => {
       const disabledDate = fixedDate - 1000 * 60 * 60 * 24 + offset
       defaultProperties.date = disabledDate
 
-      await user.click(screen.getByLabelText('Open calendar panel'))
+      await user.click(screen.getByLabelText('Choose Date'))
 
       if (timezone) {
         expect(baseElement).toMatchSnapshot()
@@ -1062,9 +1092,13 @@ const runTests = (timezone?: Timezone) => {
         defaultProperties
       )
 
-      await user.click(screen.getByLabelText('Open calendar panel'))
+      await user.click(screen.getByLabelText('Choose Date'))
 
-      await user.click(screen.getByRole('button', { name: '1' }))
+      await user.click(
+        screen.getByRole('button', {
+          name: formatHumanReadableDate(defaultProperties.date),
+        })
+      )
       expect(spyOnDateChangeFn).not.toHaveBeenCalled()
     })
 
@@ -1079,7 +1113,7 @@ const runTests = (timezone?: Timezone) => {
         fixedDate,
         defaultProperties
       )
-      await user.click(screen.getByLabelText('Open calendar panel'))
+      await user.click(screen.getByLabelText('Choose Date'))
 
       const minDateElement = screen.getByTestId(minDate + offset)
       expect(minDateElement).not.toHaveClass('cursor-not-allowed')
@@ -1087,6 +1121,63 @@ const runTests = (timezone?: Timezone) => {
       const maxDateElement = screen.getByTestId(maxDate + offset)
       expect(maxDateElement).not.toHaveClass('cursor-not-allowed')
     })
+  })
+
+  /**
+   * Those tests follow the specifications listed at:
+   * https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/examples/datepicker-dialog
+   * Note that because the features are organized in a specific ways,
+   * some a11y rules are not applicable but adapted.
+   * Some other rules were simply not implemented due to their unwanted complexity.
+   */
+  describe('DateTimePicker: accessibility', () => {
+    it('should have no accessibility violations', async () => {
+      const {
+        render: { container },
+      } = setup(fixedDate, DateTimePicker as AnyPickerComponent, {
+        timezone,
+      })
+
+      const results = await axe(container)
+
+      expect(results).toHaveNoViolations()
+    })
+
+    it.skip('should open the calendar panel when "enter" or "space" key is pressed', async () => {})
+
+    it.skip('should close the calendar panel when "escape" key is pressed', async () => {})
+
+    it.skip("should focus on the current date if there's no selected date when calendar panel is open", async () => {})
+
+    it.skip('should focus on the selected date when calendar panel is open', async () => {})
+
+    it.skip(
+      'should focus on the first date of the month ' +
+        "if the grid doesn't have selected date or current date when calendar panel is open",
+      async () => {}
+    )
+
+    it.skip('should move the selection to the previous element when "shift + tab" keys are pressed', async () => {})
+
+    it.skip('should move the selection to the next element when "tab" key is pressed', async () => {})
+
+    it.skip('should select the focused date when "enter" or "space" key is pressed', async () => {})
+
+    it.skip('should be possible to focus date using arrows keys in the date grid', async () => {})
+
+    it.skip('should change the grid of dates to the previous month when "Page up" key is pressed', async () => {})
+
+    it.skip('should move focus to the day of the month that has the same number, and if that day does not exist, move focus to the last day of the month when "Page up" key is pressed', async () => {})
+
+    it.skip('should changes the grid of dates to the next month when "Page down" key is pressed', async () => {})
+
+    it.skip('should move focus to the day of the month that has the same number. and if that day does not exist, move focus to the last day of the month when "Page down" key is pressed', async () => {})
+
+    it.skip('should be possible to access months panel and select a month using "tab" and "enter" keys', async () => {})
+
+    it.skip('should be possible to access years panel and select a year using "tab" and "enter" keys', async () => {})
+
+    it.skip('should be possible to access time panel and select a time using "tab" and "enter" keys', async () => {})
   })
 }
 

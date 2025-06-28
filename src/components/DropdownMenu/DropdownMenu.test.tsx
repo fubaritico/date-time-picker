@@ -227,7 +227,7 @@ describe('DropdownMenu', () => {
         within(screen.getByTestId('dropdown-menu')).getAllByRole('button', {
           hidden: true,
         })[0]
-      ).toHaveAttribute('aria-current', 'true')
+      ).toHaveAttribute('aria-selected', 'true')
     })
 
     it('should display menu item as selected and selected value in label placeholder after if value is passed when "showSelectedValue" is true', async () => {
@@ -261,7 +261,7 @@ describe('DropdownMenu', () => {
         within(screen.getByTestId('dropdown-menu')).getAllByRole('button', {
           hidden: true,
         })[1]
-      ).toHaveAttribute('aria-current', 'true')
+      ).toHaveAttribute('aria-selected', 'true')
     })
   })
 
@@ -340,7 +340,7 @@ describe('DropdownMenu', () => {
         within(screen.getByTestId('dropdown-menu')).getAllByRole('button', {
           hidden: true,
         })[0]
-      ).toHaveAttribute('aria-current', 'false')
+      ).toHaveAttribute('aria-selected', 'false')
     })
   })
 })

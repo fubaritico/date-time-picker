@@ -75,9 +75,9 @@ exports[`DropdownMenu Selectable should render menu on label/button click 1`] = 
                 class="MenuItem"
               >
                 <button
-                  aria-current="false"
                   aria-disabled="false"
                   aria-label="Quick save "
+                  aria-selected="false"
                   class="Button lg ghost stone left not-rounded"
                 >
                   <span>
@@ -93,9 +93,9 @@ exports[`DropdownMenu Selectable should render menu on label/button click 1`] = 
                 class="MenuItem"
               >
                 <button
-                  aria-current="false"
                   aria-disabled="false"
                   aria-label="Save"
+                  aria-selected="false"
                   class="Button lg ghost stone left not-rounded"
                 >
                   <span>
@@ -111,9 +111,9 @@ exports[`DropdownMenu Selectable should render menu on label/button click 1`] = 
                 class="MenuItem"
               >
                 <button
-                  aria-current="false"
                   aria-disabled="false"
                   aria-label="Reassign"
+                  aria-selected="false"
                   class="Button lg ghost stone left not-rounded"
                 >
                   <span>
@@ -129,9 +129,9 @@ exports[`DropdownMenu Selectable should render menu on label/button click 1`] = 
                 class="MenuItem"
               >
                 <button
-                  aria-current="false"
                   aria-disabled="false"
                   aria-label="Edit"
+                  aria-selected="false"
                   class="Button lg ghost stone left not-rounded"
                 >
                   <span>
@@ -147,9 +147,9 @@ exports[`DropdownMenu Selectable should render menu on label/button click 1`] = 
                 class="MenuItem"
               >
                 <button
-                  aria-current="false"
                   aria-disabled="false"
                   aria-label="Delete"
+                  aria-selected="false"
                   class="Button lg ghost stone left not-rounded"
                 >
                   <span>

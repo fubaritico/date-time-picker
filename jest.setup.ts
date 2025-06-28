@@ -1,6 +1,8 @@
 /* eslint-disable no-console */
 import { format } from 'node:util'
 
+import 'jest-axe/extend-expect'
+
 declare const global: any
 
 /**

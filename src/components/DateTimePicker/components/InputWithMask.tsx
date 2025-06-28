@@ -69,7 +69,7 @@ const InputWithMask: FC<InputWithMaskProps> = ({
       onFocus={onFocus}
     >
       <TextField
-        iconAriaLabel="Open calendar panel"
+        iconAriaLabel="Choose Date"
         icon={
           withPanel
             ? pickerMode === 'TIME'
@@ -79,6 +79,7 @@ const InputWithMask: FC<InputWithMaskProps> = ({
         }
         iconRef={iconRef}
         onIconClick={onIconClick}
+        placeholder="Choose Date"
         {...rest}
       />
     </MonaHealthInputMask>

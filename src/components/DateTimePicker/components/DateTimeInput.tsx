@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 
 import {
   convertFormattedDateToTimestamp,
+  formatHumanReadableDate,
   formatTimestampForTextInput,
   formatTimestampToDate,
 } from '@utils'
@@ -242,23 +243,31 @@ const DateTimeInput: FC<DateInputProps> = ({
   )
 
   return (
-    <InputWithMask
-      alwaysShowMask
-      color={color}
-      mask={inputMaskInstance?.getMask()}
-      value={inputValue ?? ''}
-      disabled={inputTextProps.disabled}
-      required={inputTextProps.required}
-      severity={innerErrors ? 'error' : undefined}
-      errors={innerErrors}
-      onChange={async (e: ChangeEvent<HTMLInputElement>) => {
-        await handleChange(e)
-      }}
-      iconRef={clickAwayIgnoreRef}
-      onIconClick={onIconClick}
-      pickerMode={pickerMode}
-      {...textInputOnlyProperties(inputTextProps)}
-    />
+    <>
+      <InputWithMask
+        aria-labelledby="date"
+        alwaysShowMask
+        color={color}
+        mask={inputMaskInstance?.getMask()}
+        value={inputValue ?? ''}
+        disabled={inputTextProps.disabled}
+        required={inputTextProps.required}
+        severity={innerErrors ? 'error' : undefined}
+        errors={innerErrors}
+        onChange={async (e: ChangeEvent<HTMLInputElement>) => {
+          await handleChange(e)
+        }}
+        iconRef={clickAwayIgnoreRef}
+        onIconClick={onIconClick}
+        pickerMode={pickerMode}
+        {...textInputOnlyProperties(inputTextProps)}
+      />
+      {innerDate && (
+        <span id="date" style={{ visibility: 'hidden' }}>
+          {formatHumanReadableDate(innerDate)}
+        </span>
+      )}
+    </>
   )
 }
 

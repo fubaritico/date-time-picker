@@ -9,7 +9,7 @@ export interface PanelHeaderButtonProps
   /* Component theme color, overrides default color */
   color?: UIColor
   /* If true, the component will render a clickable button */
-  isClickable?: boolean
+  disabled?: boolean
   /* The button label */
   label: ReactNode
   /* The function called by the button if a button is rendered */
@@ -19,7 +19,7 @@ export interface PanelHeaderButtonProps
 }
 
 const PanelHeaderButton: FC<PanelHeaderButtonProps> = ({
-  isClickable,
+  disabled,
   color,
   label,
   onClick,
@@ -28,7 +28,7 @@ const PanelHeaderButton: FC<PanelHeaderButtonProps> = ({
 }) => {
   return (
     <ConditionalWrapper
-      condition={isClickable ?? false}
+      condition={disabled ?? false}
       wrapper={(children: ReactNode) => (
         <button
           aria-label={rest['aria-label'] ?? 'Select'}
