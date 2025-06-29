@@ -85,6 +85,9 @@ log "Creating new version..." "$YELLOW"
 pnpm version "$VERSION_TYPE"
 check_status "Version bump"
 
+pnpm publish --no-git-checks
+check_status "Publish"
+
 CURRENT_VERSION=$(node -p "require('./package.json').version")
 log "Ensuring tag v${CURRENT_VERSION} exists..." "$YELLOW"
 git tag -a "v${CURRENT_VERSION}" -m "Version ${CURRENT_VERSION}" || true
