@@ -52,7 +52,7 @@ const DaysGrid: FC<DaysGridProps> = ({
   // État pour le focus géré par les flèches
   const [keyboardFocusedIndex, setKeyboardFocusedIndex] = useState<number>(-1)
   // Référence pour la grille
-  const gridRef = useRef<HTMLDivElement>(null)
+  const gridRef = useRef<HTMLTableElement>(null)
   const dateFocusedOnInit = useRef<boolean>(false)
 
   const [startIndex, setStartIndex] = useState(0)
@@ -330,56 +330,96 @@ const DaysGrid: FC<DaysGridProps> = ({
     ]
   )
 
+  // Fonction pour compléter le tableau avec des cellules vides
+  const padArray = <T,>(array: (T | null)[], size: number): (T | null)[] => {
+    const padding = size - (array.length % size)
+    if (padding === size) return array
+    const paddedArray = Array.from({ length: padding }, () => null)
+    return [...array, ...paddedArray]
+  }
+
+  const chunk = <T,>(array: T[], size: number): (T | null)[][] => {
+    const chunks: (T | null)[][] = []
+    for (let i = 0; i < array.length; i += size) {
+      chunks.push(padArray(array.slice(i, i + size), size))
+    }
+    return chunks
+  }
+
   return (
-    <section
-      className={clsx('DaysGrid', size)}
-      data-test="days-grid"
-      ref={gridRef}
-      role="grid"
-      onKeyDown={handleKeyDown}
-    >
-      {getAllWeekDaysNamesFromTs(date, locale).map(
-        ({ short, long }, index: number) => (
-          <abbr
-            key={`${short}-${index.toString()}`}
-            className="week-day"
-            title={long}
-          >
-            {short.replace(/\.$/, '')}
-          </abbr>
-        )
-      )}
-      {Array.from({ length: startIndex }, (_, index) => index).map(
-        (value: number, index: number) => (
-          <div
-            key={`${value.toString()}-${index.toString()}`}
-            role="gridcell"
-          />
-        )
-      )}
-      {arrayOfDates.map((value: number, index: number) => {
-        return (
-          <DaysGridCell
-            {...setDaysGridState(value)}
-            key={value}
-            color={color}
-            locale={locale}
-            onClick={handleDateClick}
-            onKeyDown={handleCellKeyDown}
-            onMouseEnter={handleDateMouseEnter}
-            hasDateRangeMode={pickerMode === 'DATERANGE'}
-            isSelectingRange={isSelectingRange}
-            tabIndex={
-              index + 1 === 1 ? (setDaysGridState(value).disabled ? -1 : 0) : -1
-            }
-            size={size}
-            value={value}
-          >
-            {index + 1}
-          </DaysGridCell>
-        )
-      })}
-    </section>
+    <div className={clsx('DaysGrid', size)}>
+      <table
+        data-test="days-grid"
+        ref={gridRef}
+        role="grid"
+        onKeyDown={handleKeyDown}
+      >
+        <thead>
+          <tr>
+            {getAllWeekDaysNamesFromTs(date, locale).map(
+              ({ short, long }, index: number) => (
+                <th key={`${short}-${index.toString()}`}>
+                  <abbr className="week-day" title={long}>
+                    {short.replace(/\.$/, '')}
+                  </abbr>
+                </th>
+              )
+            )}
+          </tr>
+        </thead>
+        <tbody>
+          {chunk(
+            [
+              ...Array.from({ length: startIndex }, () => null),
+              ...arrayOfDates,
+            ],
+            7
+          ).map((week, weekIndex) => (
+            <tr key={`week-${weekIndex.toString()}`}>
+              {week.map((value, dayIndex) => {
+                if (value === null) {
+                  return (
+                    <td
+                      key={`empty-${weekIndex.toString()}-${dayIndex.toString()}`}
+                    />
+                  )
+                }
+                return (
+                  <td
+                    key={`day-${value.toString()}`}
+                    {...(setDaysGridState(value).isSelected && {
+                      'aria-selected': 'true',
+                    })}
+                  >
+                    <DaysGridCell
+                      {...setDaysGridState(value)}
+                      color={color}
+                      locale={locale}
+                      onClick={handleDateClick}
+                      onKeyDown={handleCellKeyDown}
+                      onMouseEnter={handleDateMouseEnter}
+                      hasDateRangeMode={pickerMode === 'DATERANGE'}
+                      isSelectingRange={isSelectingRange}
+                      tabIndex={
+                        weekIndex === 0 && dayIndex === startIndex
+                          ? setDaysGridState(value).disabled
+                            ? -1
+                            : 0
+                          : -1
+                      }
+                      size={size}
+                      value={value}
+                    >
+                      {new Date(value).getDate()}
+                    </DaysGridCell>
+                  </td>
+                )
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   )
 }
 

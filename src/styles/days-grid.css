@@ -2,9 +2,13 @@
 @import url('common/miscellaneous.css');
 @import url('common/typography.css');
 
-.DaysGrid {
-  display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
+.DaysGrid table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.DaysGrid th abbr:where([title]) {
+  text-decoration: none;
 }
 
 .DaysGrid .week-day {
@@ -16,17 +20,17 @@
 
 /* Sizes */
 .DaysGrid.sm {
-  gap: var(--spacing-1);
+  border-spacing: var(--spacing-1);
   padding: var(--spacing-3);
 }
 
 .DaysGrid.md {
-  gap: var(--spacing-1);
+  border-spacing: var(--spacing-1);
   padding: var(--spacing-4);
 }
 
 .DaysGrid.lg {
-  gap: var(--spacing-2);
+  border-spacing: var(--spacing-2);
   padding: var(--spacing-5);
 }
 

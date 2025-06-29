@@ -1,5 +1,5 @@
 import { act, render, screen, waitFor, within } from '@testing-library/react'
-import user from '@testing-library/user-event'
+import userEvent from '@testing-library/user-event'
 import { axe } from 'jest-axe'
 import MockDate from 'mockdate'
 
@@ -160,7 +160,7 @@ const runTests = (timezone?: Timezone) => {
       const currentMonth = getLongMonthNameFromTs(todayTimestamp).toString()
       const currentYear = getYearFromTs(todayTimestamp).toString()
 
-      await user.click(screen.getByLabelText('Choose Date'))
+      await userEvent.click(screen.getByLabelText('Choose Date'))
 
       expect(
         await screen.findByRole('button', { name: 'Previous Month' })
@@ -186,7 +186,7 @@ const runTests = (timezone?: Timezone) => {
         render: { baseElement },
       } = setup(fixedDate, DateTimePicker as AnyPickerComponent, { timezone })
 
-      await user.click(screen.getByLabelText('Choose Date'))
+      await userEvent.click(screen.getByLabelText('Choose Date'))
 
       expect(await screen.findByTestId('days-grid')).toBeInTheDocument()
 
@@ -202,13 +202,13 @@ const runTests = (timezone?: Timezone) => {
     it('should close the days panel on date selection', async () => {
       setup(fixedDate, DateTimePicker as AnyPickerComponent)
 
-      await user.click(screen.getByLabelText('Choose Date'))
+      await userEvent.click(screen.getByLabelText('Choose Date'))
 
-      await user.click(
+      await userEvent.click(
         await screen.findByRole('button', { name: 'Next Month' })
       )
 
-      await user.click(
+      await userEvent.click(
         screen.getByRole('button', {
           name: formatHumanReadableDate(addMonths(fixedDate, 1)),
         })
@@ -229,13 +229,13 @@ const runTests = (timezone?: Timezone) => {
         addMonths(todayTimestamp, 1)
       )
 
-      await user.click(screen.getByLabelText('Choose Date'))
+      await userEvent.click(screen.getByLabelText('Choose Date'))
 
-      await user.click(
+      await userEvent.click(
         await screen.findByRole('button', { name: 'Next Month' })
       )
 
-      await user.click(
+      await userEvent.click(
         screen.getByRole('button', {
           name: formatHumanReadableDate(clickableDate),
         })
@@ -262,8 +262,8 @@ const runTests = (timezone?: Timezone) => {
       const currentMonth = getLongMonthNameFromTs(todayTimestamp).toString()
       const currentYear = getYearFromTs(todayTimestamp).toString()
 
-      await user.click(screen.getByLabelText('Choose Date'))
-      await user.click(
+      await userEvent.click(screen.getByLabelText('Choose Date'))
+      await userEvent.click(
         await screen.findByRole('button', { name: currentMonth })
       )
 
@@ -292,9 +292,11 @@ const runTests = (timezone?: Timezone) => {
         (i + parseInt(currentYear, 10)).toString()
       )
 
-      await user.click(screen.getByLabelText('Choose Date'))
+      await userEvent.click(screen.getByLabelText('Choose Date'))
 
-      await user.click(await screen.findByRole('button', { name: currentYear }))
+      await userEvent.click(
+        await screen.findByRole('button', { name: currentYear })
+      )
 
       expect(
         screen.getByRole('button', { name: 'Previous 12 years' })
@@ -324,9 +326,9 @@ const runTests = (timezone?: Timezone) => {
       )
       const currentMonth = getLongMonthNameFromTs(todayTimestamp).toString()
 
-      await user.click(screen.getByLabelText('Choose Date'))
+      await userEvent.click(screen.getByLabelText('Choose Date'))
 
-      await user.click(
+      await userEvent.click(
         await screen.findByRole('button', { name: currentMonth })
       )
 
@@ -352,19 +354,19 @@ const runTests = (timezone?: Timezone) => {
         addMonths(todayTimestamp, 1)
       ).toString()
 
-      await user.click(screen.getByLabelText('Choose Date'))
+      await userEvent.click(screen.getByLabelText('Choose Date'))
 
-      await user.click(
+      await userEvent.click(
         await screen.findByRole('button', { name: currentMonth })
       )
 
-      await user.click(
+      await userEvent.click(
         screen.getByRole('button', { name: `Choose ${monthToBeClicked}` })
       )
 
-      await user.click(screen.getByLabelText('Choose Date'))
+      await userEvent.click(screen.getByLabelText('Choose Date'))
 
-      await user.click(
+      await userEvent.click(
         await screen.findByRole('button', { name: monthToBeClicked })
       )
 
@@ -387,9 +389,9 @@ const runTests = (timezone?: Timezone) => {
 
       const currentYear = getYearFromTs(todayTimestamp).toString()
 
-      await user.click(screen.getByLabelText('Choose Date'))
+      await userEvent.click(screen.getByLabelText('Choose Date'))
 
-      await user.click(screen.getByRole('button', { name: currentYear }))
+      await userEvent.click(screen.getByRole('button', { name: currentYear }))
 
       expect(screen.getByLabelText(`Choose ${currentYear}`)).toHaveClass(
         'PanelButton',
@@ -413,17 +415,19 @@ const runTests = (timezone?: Timezone) => {
         addYears(todayTimestamp, 1)
       ).toString()
 
-      await user.click(screen.getByLabelText('Choose Date'))
+      await userEvent.click(screen.getByLabelText('Choose Date'))
 
-      await user.click(await screen.findByRole('button', { name: currentYear }))
+      await userEvent.click(
+        await screen.findByRole('button', { name: currentYear })
+      )
 
-      await user.click(
+      await userEvent.click(
         screen.getByRole('button', { name: `Choose ${yearToBeClicked}` })
       )
 
-      await user.click(screen.getByLabelText('Choose Date'))
+      await userEvent.click(screen.getByLabelText('Choose Date'))
 
-      await user.click(
+      await userEvent.click(
         await screen.findByRole('button', { name: yearToBeClicked })
       )
 
@@ -450,11 +454,13 @@ const runTests = (timezone?: Timezone) => {
         (_, i) => (i + parseInt(twelveYearAgo, 10)).toString() // 2013 > 2024
       )
 
-      await user.click(screen.getByLabelText('Choose Date'))
+      await userEvent.click(screen.getByLabelText('Choose Date'))
 
-      await user.click(await screen.findByRole('button', { name: currentYear }))
+      await userEvent.click(
+        await screen.findByRole('button', { name: currentYear })
+      )
 
-      await user.click(
+      await userEvent.click(
         screen.getByRole('button', { name: 'Previous 12 years', hidden: true })
       )
 
@@ -489,11 +495,15 @@ const runTests = (timezone?: Timezone) => {
         (i + parseInt(currentYear, 10) + 12).toString()
       )
 
-      await user.click(screen.getByLabelText('Choose Date'))
+      await userEvent.click(screen.getByLabelText('Choose Date'))
 
-      await user.click(await screen.findByRole('button', { name: currentYear }))
+      await userEvent.click(
+        await screen.findByRole('button', { name: currentYear })
+      )
 
-      await user.click(screen.getByRole('button', { name: 'Next 12 years' }))
+      await userEvent.click(
+        screen.getByRole('button', { name: 'Next 12 years' })
+      )
 
       expect(screen.getByLabelText(yearsFromNow)).toBeInTheDocument()
       expect(
@@ -559,7 +569,7 @@ const runTests = (timezone?: Timezone) => {
         defaultProperties.date ?? Date.now()
       )
 
-      await user.click(screen.getByLabelText('Choose Date'))
+      await userEvent.click(screen.getByLabelText('Choose Date'))
 
       const buttonAriaLabel = within(screen.getByRole('grid'))
         .getAllByRole('button')
@@ -569,7 +579,9 @@ const runTests = (timezone?: Timezone) => {
         throw new Error('Button aria-label is null')
       }
 
-      await user.click(screen.getByRole('button', { name: buttonAriaLabel }))
+      await userEvent.click(
+        screen.getByRole('button', { name: buttonAriaLabel })
+      )
 
       expect(spyOnDateChangeFn).toHaveBeenCalledTimes(1)
       expect(spyOnDateChangeFn).toHaveBeenCalledWith(expectedValue)
@@ -589,10 +601,12 @@ const runTests = (timezone?: Timezone) => {
         selectedDay
       )
 
-      await user.click(screen.getByLabelText('Choose Date'))
+      await userEvent.click(screen.getByLabelText('Choose Date'))
 
       for (let i = 0; i < nextMonthsClicks; i++) {
-        await user.click(screen.getByRole('button', { name: 'Next Month' }))
+        await userEvent.click(
+          screen.getByRole('button', { name: 'Next Month' })
+        )
       }
 
       const buttonAriaLabel = within(screen.getByRole('grid'))
@@ -603,7 +617,9 @@ const runTests = (timezone?: Timezone) => {
         throw new Error('Button aria-label is null')
       }
 
-      await user.click(screen.getByRole('button', { name: buttonAriaLabel }))
+      await userEvent.click(
+        screen.getByRole('button', { name: buttonAriaLabel })
+      )
 
       expect(spyOnDateChangeFn).toHaveBeenCalledTimes(1)
       expect(spyOnDateChangeFn).toHaveBeenCalledWith(expectedValue)
@@ -625,13 +641,13 @@ const runTests = (timezone?: Timezone) => {
       ).toString()
       const expectedValue = addMonths(date, 2)
 
-      await user.click(screen.getByLabelText('Choose Date'))
+      await userEvent.click(screen.getByLabelText('Choose Date'))
 
-      await user.click(
+      await userEvent.click(
         await screen.findByRole('button', { name: currentMonth })
       )
 
-      await user.click(
+      await userEvent.click(
         screen.getByRole('button', { name: `Choose ${monthToBeClicked}` })
       )
 
@@ -660,9 +676,9 @@ const runTests = (timezone?: Timezone) => {
       const nextYearClicks = 3
       const expectedValue = addMonths(addYears(date, nextYearClicks), monthDiff)
 
-      await user.click(screen.getByLabelText('Choose Date'))
+      await userEvent.click(screen.getByLabelText('Choose Date'))
 
-      await user.click(
+      await userEvent.click(
         await screen.findByRole('button', { name: currentMonth })
       )
 
@@ -671,14 +687,14 @@ const runTests = (timezone?: Timezone) => {
       }
 
       for (let i = 1; i <= nextYearClicks; i++) {
-        await user.click(screen.getByRole('button', { name: 'Next Year' }))
+        await userEvent.click(screen.getByRole('button', { name: 'Next Year' }))
       }
 
       if (!timezone) {
         expect(baseElement).toMatchSnapshot()
       }
 
-      await user.click(
+      await userEvent.click(
         screen.getByRole('button', { name: `Choose ${monthToBeClicked}` })
       )
 
@@ -704,11 +720,13 @@ const runTests = (timezone?: Timezone) => {
       const yearToBeClicked = getYearFromTs(addYears(innerDate, 1)).toString()
       const expectedValue = addYears(date, 1)
 
-      await user.click(screen.getByLabelText('Choose Date'))
+      await userEvent.click(screen.getByLabelText('Choose Date'))
 
-      await user.click(await screen.findByRole('button', { name: currentYear }))
+      await userEvent.click(
+        await screen.findByRole('button', { name: currentYear })
+      )
 
-      await user.click(
+      await userEvent.click(
         screen.getByRole('button', { name: `Choose ${yearToBeClicked}` })
       )
 
@@ -731,15 +749,17 @@ const runTests = (timezone?: Timezone) => {
       const yearDiff = parseInt(yearToBeClicked) - parseInt(currentYear)
       const expectedValue = addYears(date, yearDiff)
 
-      await user.click(screen.getByLabelText('Choose Date'))
+      await userEvent.click(screen.getByLabelText('Choose Date'))
 
-      await user.click(await screen.findByRole('button', { name: currentYear }))
+      await userEvent.click(
+        await screen.findByRole('button', { name: currentYear })
+      )
 
-      await user.click(
+      await userEvent.click(
         await screen.findByRole('button', { name: 'Next 12 years' })
       )
 
-      await user.click(
+      await userEvent.click(
         screen.getByRole('button', { name: `Choose ${yearToBeClicked}` })
       )
 
@@ -758,15 +778,17 @@ const runTests = (timezone?: Timezone) => {
 
       const date = defaultProperties.date ?? Date.now()
 
-      await user.click(screen.getByLabelText('Choose Date'))
+      await userEvent.click(screen.getByLabelText('Choose Date'))
 
-      await user.click(
+      await userEvent.click(
         await screen.findByRole('button', { name: 'Switch to time view' })
       )
 
       for (let i = 1; i <= hoursToBeAdded; i++) {
         const expectedValue = addHours(date, i)
-        await user.click(screen.getByRole('button', { name: 'Add one hour' }))
+        await userEvent.click(
+          screen.getByRole('button', { name: 'Add one hour' })
+        )
         expect(spyOnDateChangeFn).toHaveBeenCalledWith(expectedValue)
       }
 
@@ -785,9 +807,9 @@ const runTests = (timezone?: Timezone) => {
       const minutesToBeAdded = 15
       const minutesToBeRemoved = 5
 
-      await user.click(screen.getByLabelText('Choose Date'))
+      await userEvent.click(screen.getByLabelText('Choose Date'))
 
-      await user.click(
+      await userEvent.click(
         await screen.findByRole('button', { name: 'Switch to time view' })
       )
 
@@ -795,14 +817,16 @@ const runTests = (timezone?: Timezone) => {
 
       for (let i = 1; i <= minutesToBeAdded; i++) {
         callValues.push([addMinutes(date, i)])
-        await user.click(screen.getByRole('button', { name: 'Add one minute' }))
+        await userEvent.click(
+          screen.getByRole('button', { name: 'Add one minute' })
+        )
       }
 
       for (let j = 1; j <= minutesToBeRemoved; j++) {
         callValues.push([
           subtractMinutes(callValues[minutesToBeAdded - 1][0], j),
         ])
-        await user.click(
+        await userEvent.click(
           screen.getByRole('button', { name: 'Remove one minute' })
         )
       }
@@ -838,16 +862,16 @@ const runTests = (timezone?: Timezone) => {
 
       const expectedValue = subtractHours(date, 12)
 
-      await user.click(screen.getByLabelText('Choose Date'))
+      await userEvent.click(screen.getByLabelText('Choose Date'))
 
-      await user.click(
+      await userEvent.click(
         await screen.findByRole('button', { name: 'Switch to time view' })
       )
 
       // Because there's now a possibility that the date could change
       // from AM to PM or vice versa, we will only stick to this case
       // give that the date is fixed and the
-      await user.click(screen.getByRole('button', { name: 'Choose AM' }))
+      await userEvent.click(screen.getByRole('button', { name: 'Choose AM' }))
 
       expect(spyOnDateChangeFn).toHaveBeenCalledWith(expectedValue)
 
@@ -877,7 +901,7 @@ const runTests = (timezone?: Timezone) => {
     // For instance, if I simulate a change of 8 characters length,
     // the input will have the 8 first characters of the old/orevious value.
     it('should update the date value when typing a valid date in the text input', async () => {
-      const userEvent = user.setup()
+      const user = userEvent.setup()
       const expectedValue = '2021/12/31 11:30 AM'
       setupAsControlled(
         DateTimePicker as AnyPickerComponent,
@@ -888,8 +912,8 @@ const runTests = (timezone?: Timezone) => {
       const textInput = await screen.findByRole('textbox')
 
       await act(async () => {
-        await userEvent.clear(textInput)
-        await userEvent.type(textInput, '202112311130')
+        await user.clear(textInput)
+        await user.type(textInput, '202112311130')
       })
 
       expect((textInput as HTMLInputElement).value).toContain(expectedValue)
@@ -994,7 +1018,7 @@ const runTests = (timezone?: Timezone) => {
 
         const selectedDay = 1
 
-        await user.click(screen.getByLabelText('Choose Date'))
+        await userEvent.click(screen.getByLabelText('Choose Date'))
 
         const buttonAriaLabel = within(screen.getByRole('grid'))
           .getAllByRole('button')
@@ -1004,7 +1028,9 @@ const runTests = (timezone?: Timezone) => {
           throw new Error('Button aria-label is null')
         }
 
-        await user.click(screen.getByRole('button', { name: buttonAriaLabel })) // Pass to the 1st day of the current month
+        await userEvent.click(
+          screen.getByRole('button', { name: buttonAriaLabel })
+        ) // Pass to the 1st day of the current month
 
         const firstDayOfCurrentMonthTs = getFirstDayOfCurrentMonthTs(innerDate)
 
@@ -1048,7 +1074,7 @@ const runTests = (timezone?: Timezone) => {
         )
       })
 
-      await user.type(textInput, '2024-01-01')
+      await userEvent.type(textInput, '2024-01-01')
       expect(screen.getByRole('textbox')).toHaveClass(
         '!border-red-500',
         '!bg-red-50',
@@ -1071,7 +1097,7 @@ const runTests = (timezone?: Timezone) => {
       const disabledDate = fixedDate - 1000 * 60 * 60 * 24 + offset
       defaultProperties.date = disabledDate
 
-      await user.click(screen.getByLabelText('Choose Date'))
+      await userEvent.click(screen.getByLabelText('Choose Date'))
 
       if (timezone) {
         expect(baseElement).toMatchSnapshot()
@@ -1092,9 +1118,9 @@ const runTests = (timezone?: Timezone) => {
         defaultProperties
       )
 
-      await user.click(screen.getByLabelText('Choose Date'))
+      await userEvent.click(screen.getByLabelText('Choose Date'))
 
-      await user.click(
+      await userEvent.click(
         screen.getByRole('button', {
           name: formatHumanReadableDate(defaultProperties.date),
         })
@@ -1113,7 +1139,7 @@ const runTests = (timezone?: Timezone) => {
         fixedDate,
         defaultProperties
       )
-      await user.click(screen.getByLabelText('Choose Date'))
+      await userEvent.click(screen.getByLabelText('Choose Date'))
 
       const minDateElement = screen.getByTestId(minDate + offset)
       expect(minDateElement).not.toHaveClass('cursor-not-allowed')
@@ -1143,7 +1169,45 @@ const runTests = (timezone?: Timezone) => {
       expect(results).toHaveNoViolations()
     })
 
-    it.skip('should open the calendar panel when "enter" or "space" key is pressed', async () => {})
+    it('should open the calendar panel when "enter" key is pressed', async () => {
+      const {
+        render: { container },
+      } = setup(fixedDate, DateTimePicker as AnyPickerComponent, {
+        timezone,
+      })
+
+      const user = userEvent.setup()
+
+      await user.keyboard('{Tab}')
+      await user.keyboard('{Tab}')
+
+      expect(screen.getByLabelText('Choose Date')).toHaveFocus()
+
+      await user.keyboard('{Enter}')
+
+      expect(screen.getByRole('dialog')).toBeInTheDocument()
+
+      const results = await axe(container)
+
+      expect(results).toHaveNoViolations()
+    })
+
+    it.skip('should open the calendar panel when "space" key is pressed', async () => {
+      setup(fixedDate, DateTimePicker as AnyPickerComponent, {
+        timezone,
+      })
+
+      const user = userEvent.setup()
+
+      await user.keyboard('{Tab}')
+      await user.keyboard('{Tab}')
+
+      expect(screen.getByLabelText('Choose Date')).toHaveFocus()
+
+      await user.keyboard('{space}')
+
+      expect(screen.getByRole('dialog')).toBeInTheDocument()
+    })
 
     it.skip('should close the calendar panel when "escape" key is pressed', async () => {})
 

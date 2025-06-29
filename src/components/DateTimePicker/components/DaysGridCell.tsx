@@ -54,7 +54,6 @@ const DaysGridCell: FC<PropsWithChildren<DaysGridCellProps>> = ({
   return (
     <button
       aria-label={formatHumanReadableDate(value, locale)}
-      aria-selected={isSelected ?? 'false'}
       aria-disabled={disabled}
       className={clsx(
         'DaysGridCell',

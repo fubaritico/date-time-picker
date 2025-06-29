@@ -570,362 +570,423 @@ exports[`DateTimePicker Controlled Date Picker - Date/Time mode should call the 
                   />
                 </button>
               </div>
-              <section
+              <div
                 class="DaysGrid md"
-                data-test="days-grid"
-                role="grid"
               >
-                <abbr
-                  class="week-day"
-                  title="Monday"
+                <table
+                  data-test="days-grid"
+                  role="grid"
                 >
-                  Mon
-                </abbr>
-                <abbr
-                  class="week-day"
-                  title="Tuesday"
-                >
-                  Tue
-                </abbr>
-                <abbr
-                  class="week-day"
-                  title="Wednesday"
-                >
-                  Wed
-                </abbr>
-                <abbr
-                  class="week-day"
-                  title="Thursday"
-                >
-                  Thu
-                </abbr>
-                <abbr
-                  class="week-day"
-                  title="Friday"
-                >
-                  Fri
-                </abbr>
-                <abbr
-                  class="week-day"
-                  title="Saturday"
-                >
-                  Sat
-                </abbr>
-                <abbr
-                  class="week-day"
-                  title="Sunday"
-                >
-                  Sun
-                </abbr>
-                <button
-                  aria-disabled="false"
-                  aria-label="February 1, 2027"
-                  aria-selected="false"
-                  class="DaysGridCell enabled blue md"
-                  data-date="1801499293000"
-                  data-test="1801499293000"
-                  tabindex="0"
-                >
-                  1
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="February 2, 2027"
-                  aria-selected="false"
-                  class="DaysGridCell enabled blue md"
-                  data-date="1801585693000"
-                  data-test="1801585693000"
-                  tabindex="-1"
-                >
-                  2
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="February 3, 2027"
-                  aria-selected="false"
-                  class="DaysGridCell enabled blue md"
-                  data-date="1801672093000"
-                  data-test="1801672093000"
-                  tabindex="-1"
-                >
-                  3
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="February 4, 2027"
-                  aria-selected="false"
-                  class="DaysGridCell enabled blue md"
-                  data-date="1801758493000"
-                  data-test="1801758493000"
-                  tabindex="-1"
-                >
-                  4
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="February 5, 2027"
-                  aria-selected="false"
-                  class="DaysGridCell enabled blue md"
-                  data-date="1801844893000"
-                  data-test="1801844893000"
-                  tabindex="-1"
-                >
-                  5
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="February 6, 2027"
-                  aria-selected="false"
-                  class="DaysGridCell enabled blue md"
-                  data-date="1801931293000"
-                  data-test="1801931293000"
-                  tabindex="-1"
-                >
-                  6
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="February 7, 2027"
-                  aria-selected="false"
-                  class="DaysGridCell enabled blue md"
-                  data-date="1802017693000"
-                  data-test="1802017693000"
-                  tabindex="-1"
-                >
-                  7
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="February 8, 2027"
-                  aria-selected="false"
-                  class="DaysGridCell enabled blue md"
-                  data-date="1802104093000"
-                  data-test="1802104093000"
-                  tabindex="-1"
-                >
-                  8
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="February 9, 2027"
-                  aria-selected="true"
-                  class="DaysGridCell enabled selected blue md"
-                  data-date="1802190493000"
-                  data-test="1802190493000"
-                  tabindex="-1"
-                >
-                  9
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="February 10, 2027"
-                  aria-selected="false"
-                  class="DaysGridCell enabled blue md"
-                  data-date="1802276893000"
-                  data-test="1802276893000"
-                  tabindex="-1"
-                >
-                  10
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="February 11, 2027"
-                  aria-selected="false"
-                  class="DaysGridCell enabled blue md"
-                  data-date="1802363293000"
-                  data-test="1802363293000"
-                  tabindex="-1"
-                >
-                  11
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="February 12, 2027"
-                  aria-selected="false"
-                  class="DaysGridCell enabled blue md"
-                  data-date="1802449693000"
-                  data-test="1802449693000"
-                  tabindex="-1"
-                >
-                  12
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="February 13, 2027"
-                  aria-selected="false"
-                  class="DaysGridCell enabled blue md"
-                  data-date="1802536093000"
-                  data-test="1802536093000"
-                  tabindex="-1"
-                >
-                  13
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="February 14, 2027"
-                  aria-selected="false"
-                  class="DaysGridCell enabled blue md"
-                  data-date="1802622493000"
-                  data-test="1802622493000"
-                  tabindex="-1"
-                >
-                  14
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="February 15, 2027"
-                  aria-selected="false"
-                  class="DaysGridCell enabled blue md"
-                  data-date="1802708893000"
-                  data-test="1802708893000"
-                  tabindex="-1"
-                >
-                  15
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="February 16, 2027"
-                  aria-selected="false"
-                  class="DaysGridCell enabled blue md"
-                  data-date="1802795293000"
-                  data-test="1802795293000"
-                  tabindex="-1"
-                >
-                  16
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="February 17, 2027"
-                  aria-selected="false"
-                  class="DaysGridCell enabled blue md"
-                  data-date="1802881693000"
-                  data-test="1802881693000"
-                  tabindex="-1"
-                >
-                  17
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="February 18, 2027"
-                  aria-selected="false"
-                  class="DaysGridCell enabled blue md"
-                  data-date="1802968093000"
-                  data-test="1802968093000"
-                  tabindex="-1"
-                >
-                  18
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="February 19, 2027"
-                  aria-selected="false"
-                  class="DaysGridCell enabled blue md"
-                  data-date="1803054493000"
-                  data-test="1803054493000"
-                  tabindex="-1"
-                >
-                  19
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="February 20, 2027"
-                  aria-selected="false"
-                  class="DaysGridCell enabled blue md"
-                  data-date="1803140893000"
-                  data-test="1803140893000"
-                  tabindex="-1"
-                >
-                  20
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="February 21, 2027"
-                  aria-selected="false"
-                  class="DaysGridCell enabled blue md"
-                  data-date="1803227293000"
-                  data-test="1803227293000"
-                  tabindex="-1"
-                >
-                  21
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="February 22, 2027"
-                  aria-selected="false"
-                  class="DaysGridCell enabled blue md"
-                  data-date="1803313693000"
-                  data-test="1803313693000"
-                  tabindex="-1"
-                >
-                  22
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="February 23, 2027"
-                  aria-selected="false"
-                  class="DaysGridCell enabled blue md"
-                  data-date="1803400093000"
-                  data-test="1803400093000"
-                  tabindex="-1"
-                >
-                  23
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="February 24, 2027"
-                  aria-selected="false"
-                  class="DaysGridCell enabled blue md"
-                  data-date="1803486493000"
-                  data-test="1803486493000"
-                  tabindex="-1"
-                >
-                  24
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="February 25, 2027"
-                  aria-selected="false"
-                  class="DaysGridCell enabled blue md"
-                  data-date="1803572893000"
-                  data-test="1803572893000"
-                  tabindex="-1"
-                >
-                  25
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="February 26, 2027"
-                  aria-selected="false"
-                  class="DaysGridCell enabled blue md"
-                  data-date="1803659293000"
-                  data-test="1803659293000"
-                  tabindex="-1"
-                >
-                  26
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="February 27, 2027"
-                  aria-selected="false"
-                  class="DaysGridCell enabled blue md"
-                  data-date="1803745693000"
-                  data-test="1803745693000"
-                  tabindex="-1"
-                >
-                  27
-                </button>
-                <button
-                  aria-disabled="false"
-                  aria-label="February 28, 2027"
-                  aria-selected="false"
-                  class="DaysGridCell enabled blue md"
-                  data-date="1803832093000"
-                  data-test="1803832093000"
-                  tabindex="-1"
-                >
-                  28
-                </button>
-              </section>
+                  <thead>
+                    <tr>
+                      <th>
+                        <abbr
+                          class="week-day"
+                          title="Monday"
+                        >
+                          Mon
+                        </abbr>
+                      </th>
+                      <th>
+                        <abbr
+                          class="week-day"
+                          title="Tuesday"
+                        >
+                          Tue
+                        </abbr>
+                      </th>
+                      <th>
+                        <abbr
+                          class="week-day"
+                          title="Wednesday"
+                        >
+                          Wed
+                        </abbr>
+                      </th>
+                      <th>
+                        <abbr
+                          class="week-day"
+                          title="Thursday"
+                        >
+                          Thu
+                        </abbr>
+                      </th>
+                      <th>
+                        <abbr
+                          class="week-day"
+                          title="Friday"
+                        >
+                          Fri
+                        </abbr>
+                      </th>
+                      <th>
+                        <abbr
+                          class="week-day"
+                          title="Saturday"
+                        >
+                          Sat
+                        </abbr>
+                      </th>
+                      <th>
+                        <abbr
+                          class="week-day"
+                          title="Sunday"
+                        >
+                          Sun
+                        </abbr>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <button
+                          aria-disabled="false"
+                          aria-label="February 1, 2027"
+                          class="DaysGridCell enabled blue md"
+                          data-date="1801499293000"
+                          data-test="1801499293000"
+                          tabindex="0"
+                        >
+                          1
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="false"
+                          aria-label="February 2, 2027"
+                          class="DaysGridCell enabled blue md"
+                          data-date="1801585693000"
+                          data-test="1801585693000"
+                          tabindex="-1"
+                        >
+                          2
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="false"
+                          aria-label="February 3, 2027"
+                          class="DaysGridCell enabled blue md"
+                          data-date="1801672093000"
+                          data-test="1801672093000"
+                          tabindex="-1"
+                        >
+                          3
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="false"
+                          aria-label="February 4, 2027"
+                          class="DaysGridCell enabled blue md"
+                          data-date="1801758493000"
+                          data-test="1801758493000"
+                          tabindex="-1"
+                        >
+                          4
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="false"
+                          aria-label="February 5, 2027"
+                          class="DaysGridCell enabled blue md"
+                          data-date="1801844893000"
+                          data-test="1801844893000"
+                          tabindex="-1"
+                        >
+                          5
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="false"
+                          aria-label="February 6, 2027"
+                          class="DaysGridCell enabled blue md"
+                          data-date="1801931293000"
+                          data-test="1801931293000"
+                          tabindex="-1"
+                        >
+                          6
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="false"
+                          aria-label="February 7, 2027"
+                          class="DaysGridCell enabled blue md"
+                          data-date="1802017693000"
+                          data-test="1802017693000"
+                          tabindex="-1"
+                        >
+                          7
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <button
+                          aria-disabled="false"
+                          aria-label="February 8, 2027"
+                          class="DaysGridCell enabled blue md"
+                          data-date="1802104093000"
+                          data-test="1802104093000"
+                          tabindex="-1"
+                        >
+                          8
+                        </button>
+                      </td>
+                      <td
+                        aria-selected="true"
+                      >
+                        <button
+                          aria-disabled="false"
+                          aria-label="February 9, 2027"
+                          class="DaysGridCell enabled selected blue md"
+                          data-date="1802190493000"
+                          data-test="1802190493000"
+                          tabindex="-1"
+                        >
+                          9
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="false"
+                          aria-label="February 10, 2027"
+                          class="DaysGridCell enabled blue md"
+                          data-date="1802276893000"
+                          data-test="1802276893000"
+                          tabindex="-1"
+                        >
+                          10
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="false"
+                          aria-label="February 11, 2027"
+                          class="DaysGridCell enabled blue md"
+                          data-date="1802363293000"
+                          data-test="1802363293000"
+                          tabindex="-1"
+                        >
+                          11
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="false"
+                          aria-label="February 12, 2027"
+                          class="DaysGridCell enabled blue md"
+                          data-date="1802449693000"
+                          data-test="1802449693000"
+                          tabindex="-1"
+                        >
+                          12
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="false"
+                          aria-label="February 13, 2027"
+                          class="DaysGridCell enabled blue md"
+                          data-date="1802536093000"
+                          data-test="1802536093000"
+                          tabindex="-1"
+                        >
+                          13
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="false"
+                          aria-label="February 14, 2027"
+                          class="DaysGridCell enabled blue md"
+                          data-date="1802622493000"
+                          data-test="1802622493000"
+                          tabindex="-1"
+                        >
+                          14
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <button
+                          aria-disabled="false"
+                          aria-label="February 15, 2027"
+                          class="DaysGridCell enabled blue md"
+                          data-date="1802708893000"
+                          data-test="1802708893000"
+                          tabindex="-1"
+                        >
+                          15
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="false"
+                          aria-label="February 16, 2027"
+                          class="DaysGridCell enabled blue md"
+                          data-date="1802795293000"
+                          data-test="1802795293000"
+                          tabindex="-1"
+                        >
+                          16
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="false"
+                          aria-label="February 17, 2027"
+                          class="DaysGridCell enabled blue md"
+                          data-date="1802881693000"
+                          data-test="1802881693000"
+                          tabindex="-1"
+                        >
+                          17
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="false"
+                          aria-label="February 18, 2027"
+                          class="DaysGridCell enabled blue md"
+                          data-date="1802968093000"
+                          data-test="1802968093000"
+                          tabindex="-1"
+                        >
+                          18
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="false"
+                          aria-label="February 19, 2027"
+                          class="DaysGridCell enabled blue md"
+                          data-date="1803054493000"
+                          data-test="1803054493000"
+                          tabindex="-1"
+                        >
+                          19
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="false"
+                          aria-label="February 20, 2027"
+                          class="DaysGridCell enabled blue md"
+                          data-date="1803140893000"
+                          data-test="1803140893000"
+                          tabindex="-1"
+                        >
+                          20
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="false"
+                          aria-label="February 21, 2027"
+                          class="DaysGridCell enabled blue md"
+                          data-date="1803227293000"
+                          data-test="1803227293000"
+                          tabindex="-1"
+                        >
+                          21
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <button
+                          aria-disabled="false"
+                          aria-label="February 22, 2027"
+                          class="DaysGridCell enabled blue md"
+                          data-date="1803313693000"
+                          data-test="1803313693000"
+                          tabindex="-1"
+                        >
+                          22
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="false"
+                          aria-label="February 23, 2027"
+                          class="DaysGridCell enabled blue md"
+                          data-date="1803400093000"
+                          data-test="1803400093000"
+                          tabindex="-1"
+                        >
+                          23
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="false"
+                          aria-label="February 24, 2027"
+                          class="DaysGridCell enabled blue md"
+                          data-date="1803486493000"
+                          data-test="1803486493000"
+                          tabindex="-1"
+                        >
+                          24
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="false"
+                          aria-label="February 25, 2027"
+                          class="DaysGridCell enabled blue md"
+                          data-date="1803572893000"
+                          data-test="1803572893000"
+                          tabindex="-1"
+                        >
+                          25
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="false"
+                          aria-label="February 26, 2027"
+                          class="DaysGridCell enabled blue md"
+                          data-date="1803659293000"
+                          data-test="1803659293000"
+                          tabindex="-1"
+                        >
+                          26
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="false"
+                          aria-label="February 27, 2027"
+                          class="DaysGridCell enabled blue md"
+                          data-date="1803745693000"
+                          data-test="1803745693000"
+                          tabindex="-1"
+                        >
+                          27
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="false"
+                          aria-label="February 28, 2027"
+                          class="DaysGridCell enabled blue md"
+                          data-date="1803832093000"
+                          data-test="1803832093000"
+                          tabindex="-1"
+                        >
+                          28
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
@@ -1069,387 +1130,454 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
                 />
               </button>
             </div>
-            <section
+            <div
               class="DaysGrid md"
-              data-test="days-grid"
-              role="grid"
             >
-              <abbr
-                class="week-day"
-                title="Monday"
+              <table
+                data-test="days-grid"
+                role="grid"
               >
-                Mon
-              </abbr>
-              <abbr
-                class="week-day"
-                title="Tuesday"
-              >
-                Tue
-              </abbr>
-              <abbr
-                class="week-day"
-                title="Wednesday"
-              >
-                Wed
-              </abbr>
-              <abbr
-                class="week-day"
-                title="Thursday"
-              >
-                Thu
-              </abbr>
-              <abbr
-                class="week-day"
-                title="Friday"
-              >
-                Fri
-              </abbr>
-              <abbr
-                class="week-day"
-                title="Saturday"
-              >
-                Sat
-              </abbr>
-              <abbr
-                class="week-day"
-                title="Sunday"
-              >
-                Sun
-              </abbr>
-              <div
-                role="gridcell"
-              />
-              <button
-                aria-disabled="false"
-                aria-label="April 1, 2025"
-                aria-selected="true"
-                class="DaysGridCell enabled selected blue md"
-                data-date="1743510493000"
-                data-test="1743510493000"
-                tabindex="0"
-              >
-                1
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="April 2, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1743596893000"
-                data-test="1743596893000"
-                tabindex="-1"
-              >
-                2
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="April 3, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1743683293000"
-                data-test="1743683293000"
-                tabindex="-1"
-              >
-                3
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="April 4, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1743769693000"
-                data-test="1743769693000"
-                tabindex="-1"
-              >
-                4
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="April 5, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1743856093000"
-                data-test="1743856093000"
-                tabindex="-1"
-              >
-                5
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="April 6, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1743942493000"
-                data-test="1743942493000"
-                tabindex="-1"
-              >
-                6
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="April 7, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1744028893000"
-                data-test="1744028893000"
-                tabindex="-1"
-              >
-                7
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="April 8, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1744115293000"
-                data-test="1744115293000"
-                tabindex="-1"
-              >
-                8
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="April 9, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1744201693000"
-                data-test="1744201693000"
-                tabindex="-1"
-              >
-                9
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="April 10, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1744288093000"
-                data-test="1744288093000"
-                tabindex="-1"
-              >
-                10
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="April 11, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1744374493000"
-                data-test="1744374493000"
-                tabindex="-1"
-              >
-                11
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="April 12, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1744460893000"
-                data-test="1744460893000"
-                tabindex="-1"
-              >
-                12
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="April 13, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1744547293000"
-                data-test="1744547293000"
-                tabindex="-1"
-              >
-                13
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="April 14, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1744633693000"
-                data-test="1744633693000"
-                tabindex="-1"
-              >
-                14
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="April 15, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1744720093000"
-                data-test="1744720093000"
-                tabindex="-1"
-              >
-                15
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="April 16, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1744806493000"
-                data-test="1744806493000"
-                tabindex="-1"
-              >
-                16
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="April 17, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1744892893000"
-                data-test="1744892893000"
-                tabindex="-1"
-              >
-                17
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="April 18, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1744979293000"
-                data-test="1744979293000"
-                tabindex="-1"
-              >
-                18
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="April 19, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1745065693000"
-                data-test="1745065693000"
-                tabindex="-1"
-              >
-                19
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="April 20, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1745152093000"
-                data-test="1745152093000"
-                tabindex="-1"
-              >
-                20
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="April 21, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1745238493000"
-                data-test="1745238493000"
-                tabindex="-1"
-              >
-                21
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="April 22, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1745324893000"
-                data-test="1745324893000"
-                tabindex="-1"
-              >
-                22
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="April 23, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1745411293000"
-                data-test="1745411293000"
-                tabindex="-1"
-              >
-                23
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="April 24, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1745497693000"
-                data-test="1745497693000"
-                tabindex="-1"
-              >
-                24
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="April 25, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1745584093000"
-                data-test="1745584093000"
-                tabindex="-1"
-              >
-                25
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="April 26, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1745670493000"
-                data-test="1745670493000"
-                tabindex="-1"
-              >
-                26
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="April 27, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1745756893000"
-                data-test="1745756893000"
-                tabindex="-1"
-              >
-                27
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="April 28, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1745843293000"
-                data-test="1745843293000"
-                tabindex="-1"
-              >
-                28
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="April 29, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1745929693000"
-                data-test="1745929693000"
-                tabindex="-1"
-              >
-                29
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="April 30, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1746016093000"
-                data-test="1746016093000"
-                tabindex="-1"
-              >
-                30
-              </button>
-            </section>
+                <thead>
+                  <tr>
+                    <th>
+                      <abbr
+                        class="week-day"
+                        title="Monday"
+                      >
+                        Mon
+                      </abbr>
+                    </th>
+                    <th>
+                      <abbr
+                        class="week-day"
+                        title="Tuesday"
+                      >
+                        Tue
+                      </abbr>
+                    </th>
+                    <th>
+                      <abbr
+                        class="week-day"
+                        title="Wednesday"
+                      >
+                        Wed
+                      </abbr>
+                    </th>
+                    <th>
+                      <abbr
+                        class="week-day"
+                        title="Thursday"
+                      >
+                        Thu
+                      </abbr>
+                    </th>
+                    <th>
+                      <abbr
+                        class="week-day"
+                        title="Friday"
+                      >
+                        Fri
+                      </abbr>
+                    </th>
+                    <th>
+                      <abbr
+                        class="week-day"
+                        title="Saturday"
+                      >
+                        Sat
+                      </abbr>
+                    </th>
+                    <th>
+                      <abbr
+                        class="week-day"
+                        title="Sunday"
+                      >
+                        Sun
+                      </abbr>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td />
+                    <td
+                      aria-selected="true"
+                    >
+                      <button
+                        aria-disabled="false"
+                        aria-label="April 1, 2025"
+                        class="DaysGridCell enabled selected blue md"
+                        data-date="1743510493000"
+                        data-test="1743510493000"
+                        tabindex="0"
+                      >
+                        1
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="April 2, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1743596893000"
+                        data-test="1743596893000"
+                        tabindex="-1"
+                      >
+                        2
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="April 3, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1743683293000"
+                        data-test="1743683293000"
+                        tabindex="-1"
+                      >
+                        3
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="April 4, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1743769693000"
+                        data-test="1743769693000"
+                        tabindex="-1"
+                      >
+                        4
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="April 5, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1743856093000"
+                        data-test="1743856093000"
+                        tabindex="-1"
+                      >
+                        5
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="April 6, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1743942493000"
+                        data-test="1743942493000"
+                        tabindex="-1"
+                      >
+                        6
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="April 7, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1744028893000"
+                        data-test="1744028893000"
+                        tabindex="-1"
+                      >
+                        7
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="April 8, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1744115293000"
+                        data-test="1744115293000"
+                        tabindex="-1"
+                      >
+                        8
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="April 9, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1744201693000"
+                        data-test="1744201693000"
+                        tabindex="-1"
+                      >
+                        9
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="April 10, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1744288093000"
+                        data-test="1744288093000"
+                        tabindex="-1"
+                      >
+                        10
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="April 11, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1744374493000"
+                        data-test="1744374493000"
+                        tabindex="-1"
+                      >
+                        11
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="April 12, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1744460893000"
+                        data-test="1744460893000"
+                        tabindex="-1"
+                      >
+                        12
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="April 13, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1744547293000"
+                        data-test="1744547293000"
+                        tabindex="-1"
+                      >
+                        13
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="April 14, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1744633693000"
+                        data-test="1744633693000"
+                        tabindex="-1"
+                      >
+                        14
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="April 15, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1744720093000"
+                        data-test="1744720093000"
+                        tabindex="-1"
+                      >
+                        15
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="April 16, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1744806493000"
+                        data-test="1744806493000"
+                        tabindex="-1"
+                      >
+                        16
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="April 17, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1744892893000"
+                        data-test="1744892893000"
+                        tabindex="-1"
+                      >
+                        17
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="April 18, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1744979293000"
+                        data-test="1744979293000"
+                        tabindex="-1"
+                      >
+                        18
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="April 19, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1745065693000"
+                        data-test="1745065693000"
+                        tabindex="-1"
+                      >
+                        19
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="April 20, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1745152093000"
+                        data-test="1745152093000"
+                        tabindex="-1"
+                      >
+                        20
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="April 21, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1745238493000"
+                        data-test="1745238493000"
+                        tabindex="-1"
+                      >
+                        21
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="April 22, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1745324893000"
+                        data-test="1745324893000"
+                        tabindex="-1"
+                      >
+                        22
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="April 23, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1745411293000"
+                        data-test="1745411293000"
+                        tabindex="-1"
+                      >
+                        23
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="April 24, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1745497693000"
+                        data-test="1745497693000"
+                        tabindex="-1"
+                      >
+                        24
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="April 25, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1745584093000"
+                        data-test="1745584093000"
+                        tabindex="-1"
+                      >
+                        25
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="April 26, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1745670493000"
+                        data-test="1745670493000"
+                        tabindex="-1"
+                      >
+                        26
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="April 27, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1745756893000"
+                        data-test="1745756893000"
+                        tabindex="-1"
+                      >
+                        27
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="April 28, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1745843293000"
+                        data-test="1745843293000"
+                        tabindex="-1"
+                      >
+                        28
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="April 29, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1745929693000"
+                        data-test="1745929693000"
+                        tabindex="-1"
+                      >
+                        29
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="April 30, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1746016093000"
+                        data-test="1746016093000"
+                        tabindex="-1"
+                      >
+                        30
+                      </button>
+                    </td>
+                    <td />
+                    <td />
+                    <td />
+                    <td />
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
@@ -1587,410 +1715,474 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
                 />
               </button>
             </div>
-            <section
+            <div
               class="DaysGrid md"
-              data-test="days-grid"
-              role="grid"
             >
-              <abbr
-                class="week-day"
-                title="Monday"
+              <table
+                data-test="days-grid"
+                role="grid"
               >
-                Mon
-              </abbr>
-              <abbr
-                class="week-day"
-                title="Tuesday"
-              >
-                Tue
-              </abbr>
-              <abbr
-                class="week-day"
-                title="Wednesday"
-              >
-                Wed
-              </abbr>
-              <abbr
-                class="week-day"
-                title="Thursday"
-              >
-                Thu
-              </abbr>
-              <abbr
-                class="week-day"
-                title="Friday"
-              >
-                Fri
-              </abbr>
-              <abbr
-                class="week-day"
-                title="Saturday"
-              >
-                Sat
-              </abbr>
-              <abbr
-                class="week-day"
-                title="Sunday"
-              >
-                Sun
-              </abbr>
-              <div
-                role="gridcell"
-              />
-              <div
-                role="gridcell"
-              />
-              <div
-                role="gridcell"
-              />
-              <div
-                role="gridcell"
-              />
-              <div
-                role="gridcell"
-              />
-              <button
-                aria-disabled="false"
-                aria-label="March 1, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1740832093000"
-                data-test="1740832093000"
-                tabindex="0"
-              >
-                1
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="March 2, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1740918493000"
-                data-test="1740918493000"
-                tabindex="-1"
-              >
-                2
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="March 3, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1741004893000"
-                data-test="1741004893000"
-                tabindex="-1"
-              >
-                3
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="March 4, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1741091293000"
-                data-test="1741091293000"
-                tabindex="-1"
-              >
-                4
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="March 5, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1741177693000"
-                data-test="1741177693000"
-                tabindex="-1"
-              >
-                5
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="March 6, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1741264093000"
-                data-test="1741264093000"
-                tabindex="-1"
-              >
-                6
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="March 7, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1741350493000"
-                data-test="1741350493000"
-                tabindex="-1"
-              >
-                7
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="March 8, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1741436893000"
-                data-test="1741436893000"
-                tabindex="-1"
-              >
-                8
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="March 9, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1741523293000"
-                data-test="1741523293000"
-                tabindex="-1"
-              >
-                9
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="March 10, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1741609693000"
-                data-test="1741609693000"
-                tabindex="-1"
-              >
-                10
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="March 11, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1741696093000"
-                data-test="1741696093000"
-                tabindex="-1"
-              >
-                11
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="March 12, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1741782493000"
-                data-test="1741782493000"
-                tabindex="-1"
-              >
-                12
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="March 13, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1741868893000"
-                data-test="1741868893000"
-                tabindex="-1"
-              >
-                13
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="March 14, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1741955293000"
-                data-test="1741955293000"
-                tabindex="-1"
-              >
-                14
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="March 15, 2025"
-                aria-selected="true"
-                class="DaysGridCell enabled selected today blue md"
-                data-date="1742041693000"
-                data-test="1742041693000"
-                tabindex="-1"
-              >
-                15
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="March 16, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1742128093000"
-                data-test="1742128093000"
-                tabindex="-1"
-              >
-                16
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="March 17, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1742214493000"
-                data-test="1742214493000"
-                tabindex="-1"
-              >
-                17
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="March 18, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1742300893000"
-                data-test="1742300893000"
-                tabindex="-1"
-              >
-                18
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="March 19, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1742387293000"
-                data-test="1742387293000"
-                tabindex="-1"
-              >
-                19
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="March 20, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1742473693000"
-                data-test="1742473693000"
-                tabindex="-1"
-              >
-                20
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="March 21, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1742560093000"
-                data-test="1742560093000"
-                tabindex="-1"
-              >
-                21
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="March 22, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1742646493000"
-                data-test="1742646493000"
-                tabindex="-1"
-              >
-                22
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="March 23, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1742732893000"
-                data-test="1742732893000"
-                tabindex="-1"
-              >
-                23
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="March 24, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1742819293000"
-                data-test="1742819293000"
-                tabindex="-1"
-              >
-                24
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="March 25, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1742905693000"
-                data-test="1742905693000"
-                tabindex="-1"
-              >
-                25
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="March 26, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1742992093000"
-                data-test="1742992093000"
-                tabindex="-1"
-              >
-                26
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="March 27, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1743078493000"
-                data-test="1743078493000"
-                tabindex="-1"
-              >
-                27
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="March 28, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1743164893000"
-                data-test="1743164893000"
-                tabindex="-1"
-              >
-                28
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="March 29, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1743251293000"
-                data-test="1743251293000"
-                tabindex="-1"
-              >
-                29
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="March 30, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1743337693000"
-                data-test="1743337693000"
-                tabindex="-1"
-              >
-                30
-              </button>
-              <button
-                aria-disabled="false"
-                aria-label="March 31, 2025"
-                aria-selected="false"
-                class="DaysGridCell enabled blue md"
-                data-date="1743424093000"
-                data-test="1743424093000"
-                tabindex="-1"
-              >
-                31
-              </button>
-            </section>
+                <thead>
+                  <tr>
+                    <th>
+                      <abbr
+                        class="week-day"
+                        title="Monday"
+                      >
+                        Mon
+                      </abbr>
+                    </th>
+                    <th>
+                      <abbr
+                        class="week-day"
+                        title="Tuesday"
+                      >
+                        Tue
+                      </abbr>
+                    </th>
+                    <th>
+                      <abbr
+                        class="week-day"
+                        title="Wednesday"
+                      >
+                        Wed
+                      </abbr>
+                    </th>
+                    <th>
+                      <abbr
+                        class="week-day"
+                        title="Thursday"
+                      >
+                        Thu
+                      </abbr>
+                    </th>
+                    <th>
+                      <abbr
+                        class="week-day"
+                        title="Friday"
+                      >
+                        Fri
+                      </abbr>
+                    </th>
+                    <th>
+                      <abbr
+                        class="week-day"
+                        title="Saturday"
+                      >
+                        Sat
+                      </abbr>
+                    </th>
+                    <th>
+                      <abbr
+                        class="week-day"
+                        title="Sunday"
+                      >
+                        Sun
+                      </abbr>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td />
+                    <td />
+                    <td />
+                    <td />
+                    <td />
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="March 1, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1740832093000"
+                        data-test="1740832093000"
+                        tabindex="0"
+                      >
+                        1
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="March 2, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1740918493000"
+                        data-test="1740918493000"
+                        tabindex="-1"
+                      >
+                        2
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="March 3, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1741004893000"
+                        data-test="1741004893000"
+                        tabindex="-1"
+                      >
+                        3
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="March 4, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1741091293000"
+                        data-test="1741091293000"
+                        tabindex="-1"
+                      >
+                        4
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="March 5, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1741177693000"
+                        data-test="1741177693000"
+                        tabindex="-1"
+                      >
+                        5
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="March 6, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1741264093000"
+                        data-test="1741264093000"
+                        tabindex="-1"
+                      >
+                        6
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="March 7, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1741350493000"
+                        data-test="1741350493000"
+                        tabindex="-1"
+                      >
+                        7
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="March 8, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1741436893000"
+                        data-test="1741436893000"
+                        tabindex="-1"
+                      >
+                        8
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="March 9, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1741523293000"
+                        data-test="1741523293000"
+                        tabindex="-1"
+                      >
+                        9
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="March 10, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1741609693000"
+                        data-test="1741609693000"
+                        tabindex="-1"
+                      >
+                        10
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="March 11, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1741696093000"
+                        data-test="1741696093000"
+                        tabindex="-1"
+                      >
+                        11
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="March 12, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1741782493000"
+                        data-test="1741782493000"
+                        tabindex="-1"
+                      >
+                        12
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="March 13, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1741868893000"
+                        data-test="1741868893000"
+                        tabindex="-1"
+                      >
+                        13
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="March 14, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1741955293000"
+                        data-test="1741955293000"
+                        tabindex="-1"
+                      >
+                        14
+                      </button>
+                    </td>
+                    <td
+                      aria-selected="true"
+                    >
+                      <button
+                        aria-disabled="false"
+                        aria-label="March 15, 2025"
+                        class="DaysGridCell enabled selected today blue md"
+                        data-date="1742041693000"
+                        data-test="1742041693000"
+                        tabindex="-1"
+                      >
+                        15
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="March 16, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1742128093000"
+                        data-test="1742128093000"
+                        tabindex="-1"
+                      >
+                        16
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="March 17, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1742214493000"
+                        data-test="1742214493000"
+                        tabindex="-1"
+                      >
+                        17
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="March 18, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1742300893000"
+                        data-test="1742300893000"
+                        tabindex="-1"
+                      >
+                        18
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="March 19, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1742387293000"
+                        data-test="1742387293000"
+                        tabindex="-1"
+                      >
+                        19
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="March 20, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1742473693000"
+                        data-test="1742473693000"
+                        tabindex="-1"
+                      >
+                        20
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="March 21, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1742560093000"
+                        data-test="1742560093000"
+                        tabindex="-1"
+                      >
+                        21
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="March 22, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1742646493000"
+                        data-test="1742646493000"
+                        tabindex="-1"
+                      >
+                        22
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="March 23, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1742732893000"
+                        data-test="1742732893000"
+                        tabindex="-1"
+                      >
+                        23
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="March 24, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1742819293000"
+                        data-test="1742819293000"
+                        tabindex="-1"
+                      >
+                        24
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="March 25, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1742905693000"
+                        data-test="1742905693000"
+                        tabindex="-1"
+                      >
+                        25
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="March 26, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1742992093000"
+                        data-test="1742992093000"
+                        tabindex="-1"
+                      >
+                        26
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="March 27, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1743078493000"
+                        data-test="1743078493000"
+                        tabindex="-1"
+                      >
+                        27
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="March 28, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1743164893000"
+                        data-test="1743164893000"
+                        tabindex="-1"
+                      >
+                        28
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="March 29, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1743251293000"
+                        data-test="1743251293000"
+                        tabindex="-1"
+                      >
+                        29
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="March 30, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1743337693000"
+                        data-test="1743337693000"
+                        tabindex="-1"
+                      >
+                        30
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button
+                        aria-disabled="false"
+                        aria-label="March 31, 2025"
+                        class="DaysGridCell enabled blue md"
+                        data-date="1743424093000"
+                        data-test="1743424093000"
+                        tabindex="-1"
+                      >
+                        31
+                      </button>
+                    </td>
+                    <td />
+                    <td />
+                    <td />
+                    <td />
+                    <td />
+                    <td />
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
@@ -2559,441 +2751,505 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                   />
                 </button>
               </div>
-              <section
+              <div
                 class="DaysGrid md"
-                data-test="days-grid"
-                role="grid"
               >
-                <abbr
-                  class="week-day"
-                  title="Monday"
+                <table
+                  data-test="days-grid"
+                  role="grid"
                 >
-                  Mon
-                </abbr>
-                <abbr
-                  class="week-day"
-                  title="Tuesday"
-                >
-                  Tue
-                </abbr>
-                <abbr
-                  class="week-day"
-                  title="Wednesday"
-                >
-                  Wed
-                </abbr>
-                <abbr
-                  class="week-day"
-                  title="Thursday"
-                >
-                  Thu
-                </abbr>
-                <abbr
-                  class="week-day"
-                  title="Friday"
-                >
-                  Fri
-                </abbr>
-                <abbr
-                  class="week-day"
-                  title="Saturday"
-                >
-                  Sat
-                </abbr>
-                <abbr
-                  class="week-day"
-                  title="Sunday"
-                >
-                  Sun
-                </abbr>
-                <div
-                  role="gridcell"
-                />
-                <div
-                  role="gridcell"
-                />
-                <div
-                  role="gridcell"
-                />
-                <div
-                  role="gridcell"
-                />
-                <div
-                  role="gridcell"
-                />
-                <button
-                  aria-disabled="true"
-                  aria-label="March 1, 2025"
-                  aria-selected="false"
-                  class="DaysGridCell blue md"
-                  data-date="1740832093000"
-                  data-test="1740832093000"
-                  disabled=""
-                  tabindex="-1"
-                >
-                  1
-                </button>
-                <button
-                  aria-disabled="true"
-                  aria-label="March 2, 2025"
-                  aria-selected="false"
-                  class="DaysGridCell blue md"
-                  data-date="1740918493000"
-                  data-test="1740918493000"
-                  disabled=""
-                  tabindex="-1"
-                >
-                  2
-                </button>
-                <button
-                  aria-disabled="true"
-                  aria-label="March 3, 2025"
-                  aria-selected="false"
-                  class="DaysGridCell blue md"
-                  data-date="1741004893000"
-                  data-test="1741004893000"
-                  disabled=""
-                  tabindex="-1"
-                >
-                  3
-                </button>
-                <button
-                  aria-disabled="true"
-                  aria-label="March 4, 2025"
-                  aria-selected="false"
-                  class="DaysGridCell blue md"
-                  data-date="1741091293000"
-                  data-test="1741091293000"
-                  disabled=""
-                  tabindex="-1"
-                >
-                  4
-                </button>
-                <button
-                  aria-disabled="true"
-                  aria-label="March 5, 2025"
-                  aria-selected="false"
-                  class="DaysGridCell blue md"
-                  data-date="1741177693000"
-                  data-test="1741177693000"
-                  disabled=""
-                  tabindex="-1"
-                >
-                  5
-                </button>
-                <button
-                  aria-disabled="true"
-                  aria-label="March 6, 2025"
-                  aria-selected="false"
-                  class="DaysGridCell blue md"
-                  data-date="1741264093000"
-                  data-test="1741264093000"
-                  disabled=""
-                  tabindex="-1"
-                >
-                  6
-                </button>
-                <button
-                  aria-disabled="true"
-                  aria-label="March 7, 2025"
-                  aria-selected="false"
-                  class="DaysGridCell blue md"
-                  data-date="1741350493000"
-                  data-test="1741350493000"
-                  disabled=""
-                  tabindex="-1"
-                >
-                  7
-                </button>
-                <button
-                  aria-disabled="true"
-                  aria-label="March 8, 2025"
-                  aria-selected="false"
-                  class="DaysGridCell blue md"
-                  data-date="1741436893000"
-                  data-test="1741436893000"
-                  disabled=""
-                  tabindex="-1"
-                >
-                  8
-                </button>
-                <button
-                  aria-disabled="true"
-                  aria-label="March 9, 2025"
-                  aria-selected="false"
-                  class="DaysGridCell blue md"
-                  data-date="1741523293000"
-                  data-test="1741523293000"
-                  disabled=""
-                  tabindex="-1"
-                >
-                  9
-                </button>
-                <button
-                  aria-disabled="true"
-                  aria-label="March 10, 2025"
-                  aria-selected="false"
-                  class="DaysGridCell blue md"
-                  data-date="1741609693000"
-                  data-test="1741609693000"
-                  disabled=""
-                  tabindex="-1"
-                >
-                  10
-                </button>
-                <button
-                  aria-disabled="true"
-                  aria-label="March 11, 2025"
-                  aria-selected="false"
-                  class="DaysGridCell blue md"
-                  data-date="1741696093000"
-                  data-test="1741696093000"
-                  disabled=""
-                  tabindex="-1"
-                >
-                  11
-                </button>
-                <button
-                  aria-disabled="true"
-                  aria-label="March 12, 2025"
-                  aria-selected="false"
-                  class="DaysGridCell blue md"
-                  data-date="1741782493000"
-                  data-test="1741782493000"
-                  disabled=""
-                  tabindex="-1"
-                >
-                  12
-                </button>
-                <button
-                  aria-disabled="true"
-                  aria-label="March 13, 2025"
-                  aria-selected="false"
-                  class="DaysGridCell blue md"
-                  data-date="1741868893000"
-                  data-test="1741868893000"
-                  disabled=""
-                  tabindex="-1"
-                >
-                  13
-                </button>
-                <button
-                  aria-disabled="true"
-                  aria-label="March 14, 2025"
-                  aria-selected="false"
-                  class="DaysGridCell blue md"
-                  data-date="1741955293000"
-                  data-test="1741955293000"
-                  disabled=""
-                  tabindex="-1"
-                >
-                  14
-                </button>
-                <button
-                  aria-disabled="true"
-                  aria-label="March 15, 2025"
-                  aria-selected="true"
-                  class="DaysGridCell selected today blue md"
-                  data-date="1742041693000"
-                  data-test="1742041693000"
-                  disabled=""
-                  tabindex="-1"
-                >
-                  15
-                </button>
-                <button
-                  aria-disabled="true"
-                  aria-label="March 16, 2025"
-                  aria-selected="false"
-                  class="DaysGridCell blue md"
-                  data-date="1742128093000"
-                  data-test="1742128093000"
-                  disabled=""
-                  tabindex="-1"
-                >
-                  16
-                </button>
-                <button
-                  aria-disabled="true"
-                  aria-label="March 17, 2025"
-                  aria-selected="false"
-                  class="DaysGridCell blue md"
-                  data-date="1742214493000"
-                  data-test="1742214493000"
-                  disabled=""
-                  tabindex="-1"
-                >
-                  17
-                </button>
-                <button
-                  aria-disabled="true"
-                  aria-label="March 18, 2025"
-                  aria-selected="false"
-                  class="DaysGridCell blue md"
-                  data-date="1742300893000"
-                  data-test="1742300893000"
-                  disabled=""
-                  tabindex="-1"
-                >
-                  18
-                </button>
-                <button
-                  aria-disabled="true"
-                  aria-label="March 19, 2025"
-                  aria-selected="false"
-                  class="DaysGridCell blue md"
-                  data-date="1742387293000"
-                  data-test="1742387293000"
-                  disabled=""
-                  tabindex="-1"
-                >
-                  19
-                </button>
-                <button
-                  aria-disabled="true"
-                  aria-label="March 20, 2025"
-                  aria-selected="false"
-                  class="DaysGridCell blue md"
-                  data-date="1742473693000"
-                  data-test="1742473693000"
-                  disabled=""
-                  tabindex="-1"
-                >
-                  20
-                </button>
-                <button
-                  aria-disabled="true"
-                  aria-label="March 21, 2025"
-                  aria-selected="false"
-                  class="DaysGridCell blue md"
-                  data-date="1742560093000"
-                  data-test="1742560093000"
-                  disabled=""
-                  tabindex="-1"
-                >
-                  21
-                </button>
-                <button
-                  aria-disabled="true"
-                  aria-label="March 22, 2025"
-                  aria-selected="false"
-                  class="DaysGridCell blue md"
-                  data-date="1742646493000"
-                  data-test="1742646493000"
-                  disabled=""
-                  tabindex="-1"
-                >
-                  22
-                </button>
-                <button
-                  aria-disabled="true"
-                  aria-label="March 23, 2025"
-                  aria-selected="false"
-                  class="DaysGridCell blue md"
-                  data-date="1742732893000"
-                  data-test="1742732893000"
-                  disabled=""
-                  tabindex="-1"
-                >
-                  23
-                </button>
-                <button
-                  aria-disabled="true"
-                  aria-label="March 24, 2025"
-                  aria-selected="false"
-                  class="DaysGridCell blue md"
-                  data-date="1742819293000"
-                  data-test="1742819293000"
-                  disabled=""
-                  tabindex="-1"
-                >
-                  24
-                </button>
-                <button
-                  aria-disabled="true"
-                  aria-label="March 25, 2025"
-                  aria-selected="false"
-                  class="DaysGridCell blue md"
-                  data-date="1742905693000"
-                  data-test="1742905693000"
-                  disabled=""
-                  tabindex="-1"
-                >
-                  25
-                </button>
-                <button
-                  aria-disabled="true"
-                  aria-label="March 26, 2025"
-                  aria-selected="false"
-                  class="DaysGridCell blue md"
-                  data-date="1742992093000"
-                  data-test="1742992093000"
-                  disabled=""
-                  tabindex="-1"
-                >
-                  26
-                </button>
-                <button
-                  aria-disabled="true"
-                  aria-label="March 27, 2025"
-                  aria-selected="false"
-                  class="DaysGridCell blue md"
-                  data-date="1743078493000"
-                  data-test="1743078493000"
-                  disabled=""
-                  tabindex="-1"
-                >
-                  27
-                </button>
-                <button
-                  aria-disabled="true"
-                  aria-label="March 28, 2025"
-                  aria-selected="false"
-                  class="DaysGridCell blue md"
-                  data-date="1743164893000"
-                  data-test="1743164893000"
-                  disabled=""
-                  tabindex="-1"
-                >
-                  28
-                </button>
-                <button
-                  aria-disabled="true"
-                  aria-label="March 29, 2025"
-                  aria-selected="false"
-                  class="DaysGridCell blue md"
-                  data-date="1743251293000"
-                  data-test="1743251293000"
-                  disabled=""
-                  tabindex="-1"
-                >
-                  29
-                </button>
-                <button
-                  aria-disabled="true"
-                  aria-label="March 30, 2025"
-                  aria-selected="false"
-                  class="DaysGridCell blue md"
-                  data-date="1743337693000"
-                  data-test="1743337693000"
-                  disabled=""
-                  tabindex="-1"
-                >
-                  30
-                </button>
-                <button
-                  aria-disabled="true"
-                  aria-label="March 31, 2025"
-                  aria-selected="false"
-                  class="DaysGridCell blue md"
-                  data-date="1743424093000"
-                  data-test="1743424093000"
-                  disabled=""
-                  tabindex="-1"
-                >
-                  31
-                </button>
-              </section>
+                  <thead>
+                    <tr>
+                      <th>
+                        <abbr
+                          class="week-day"
+                          title="Monday"
+                        >
+                          Mon
+                        </abbr>
+                      </th>
+                      <th>
+                        <abbr
+                          class="week-day"
+                          title="Tuesday"
+                        >
+                          Tue
+                        </abbr>
+                      </th>
+                      <th>
+                        <abbr
+                          class="week-day"
+                          title="Wednesday"
+                        >
+                          Wed
+                        </abbr>
+                      </th>
+                      <th>
+                        <abbr
+                          class="week-day"
+                          title="Thursday"
+                        >
+                          Thu
+                        </abbr>
+                      </th>
+                      <th>
+                        <abbr
+                          class="week-day"
+                          title="Friday"
+                        >
+                          Fri
+                        </abbr>
+                      </th>
+                      <th>
+                        <abbr
+                          class="week-day"
+                          title="Saturday"
+                        >
+                          Sat
+                        </abbr>
+                      </th>
+                      <th>
+                        <abbr
+                          class="week-day"
+                          title="Sunday"
+                        >
+                          Sun
+                        </abbr>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td />
+                      <td />
+                      <td />
+                      <td />
+                      <td />
+                      <td>
+                        <button
+                          aria-disabled="true"
+                          aria-label="March 1, 2025"
+                          class="DaysGridCell blue md"
+                          data-date="1740832093000"
+                          data-test="1740832093000"
+                          disabled=""
+                          tabindex="-1"
+                        >
+                          1
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="true"
+                          aria-label="March 2, 2025"
+                          class="DaysGridCell blue md"
+                          data-date="1740918493000"
+                          data-test="1740918493000"
+                          disabled=""
+                          tabindex="-1"
+                        >
+                          2
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <button
+                          aria-disabled="true"
+                          aria-label="March 3, 2025"
+                          class="DaysGridCell blue md"
+                          data-date="1741004893000"
+                          data-test="1741004893000"
+                          disabled=""
+                          tabindex="-1"
+                        >
+                          3
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="true"
+                          aria-label="March 4, 2025"
+                          class="DaysGridCell blue md"
+                          data-date="1741091293000"
+                          data-test="1741091293000"
+                          disabled=""
+                          tabindex="-1"
+                        >
+                          4
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="true"
+                          aria-label="March 5, 2025"
+                          class="DaysGridCell blue md"
+                          data-date="1741177693000"
+                          data-test="1741177693000"
+                          disabled=""
+                          tabindex="-1"
+                        >
+                          5
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="true"
+                          aria-label="March 6, 2025"
+                          class="DaysGridCell blue md"
+                          data-date="1741264093000"
+                          data-test="1741264093000"
+                          disabled=""
+                          tabindex="-1"
+                        >
+                          6
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="true"
+                          aria-label="March 7, 2025"
+                          class="DaysGridCell blue md"
+                          data-date="1741350493000"
+                          data-test="1741350493000"
+                          disabled=""
+                          tabindex="-1"
+                        >
+                          7
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="true"
+                          aria-label="March 8, 2025"
+                          class="DaysGridCell blue md"
+                          data-date="1741436893000"
+                          data-test="1741436893000"
+                          disabled=""
+                          tabindex="-1"
+                        >
+                          8
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="true"
+                          aria-label="March 9, 2025"
+                          class="DaysGridCell blue md"
+                          data-date="1741523293000"
+                          data-test="1741523293000"
+                          disabled=""
+                          tabindex="-1"
+                        >
+                          9
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <button
+                          aria-disabled="true"
+                          aria-label="March 10, 2025"
+                          class="DaysGridCell blue md"
+                          data-date="1741609693000"
+                          data-test="1741609693000"
+                          disabled=""
+                          tabindex="-1"
+                        >
+                          10
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="true"
+                          aria-label="March 11, 2025"
+                          class="DaysGridCell blue md"
+                          data-date="1741696093000"
+                          data-test="1741696093000"
+                          disabled=""
+                          tabindex="-1"
+                        >
+                          11
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="true"
+                          aria-label="March 12, 2025"
+                          class="DaysGridCell blue md"
+                          data-date="1741782493000"
+                          data-test="1741782493000"
+                          disabled=""
+                          tabindex="-1"
+                        >
+                          12
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="true"
+                          aria-label="March 13, 2025"
+                          class="DaysGridCell blue md"
+                          data-date="1741868893000"
+                          data-test="1741868893000"
+                          disabled=""
+                          tabindex="-1"
+                        >
+                          13
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="true"
+                          aria-label="March 14, 2025"
+                          class="DaysGridCell blue md"
+                          data-date="1741955293000"
+                          data-test="1741955293000"
+                          disabled=""
+                          tabindex="-1"
+                        >
+                          14
+                        </button>
+                      </td>
+                      <td
+                        aria-selected="true"
+                      >
+                        <button
+                          aria-disabled="true"
+                          aria-label="March 15, 2025"
+                          class="DaysGridCell selected today blue md"
+                          data-date="1742041693000"
+                          data-test="1742041693000"
+                          disabled=""
+                          tabindex="-1"
+                        >
+                          15
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="true"
+                          aria-label="March 16, 2025"
+                          class="DaysGridCell blue md"
+                          data-date="1742128093000"
+                          data-test="1742128093000"
+                          disabled=""
+                          tabindex="-1"
+                        >
+                          16
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <button
+                          aria-disabled="true"
+                          aria-label="March 17, 2025"
+                          class="DaysGridCell blue md"
+                          data-date="1742214493000"
+                          data-test="1742214493000"
+                          disabled=""
+                          tabindex="-1"
+                        >
+                          17
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="true"
+                          aria-label="March 18, 2025"
+                          class="DaysGridCell blue md"
+                          data-date="1742300893000"
+                          data-test="1742300893000"
+                          disabled=""
+                          tabindex="-1"
+                        >
+                          18
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="true"
+                          aria-label="March 19, 2025"
+                          class="DaysGridCell blue md"
+                          data-date="1742387293000"
+                          data-test="1742387293000"
+                          disabled=""
+                          tabindex="-1"
+                        >
+                          19
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="true"
+                          aria-label="March 20, 2025"
+                          class="DaysGridCell blue md"
+                          data-date="1742473693000"
+                          data-test="1742473693000"
+                          disabled=""
+                          tabindex="-1"
+                        >
+                          20
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="true"
+                          aria-label="March 21, 2025"
+                          class="DaysGridCell blue md"
+                          data-date="1742560093000"
+                          data-test="1742560093000"
+                          disabled=""
+                          tabindex="-1"
+                        >
+                          21
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="true"
+                          aria-label="March 22, 2025"
+                          class="DaysGridCell blue md"
+                          data-date="1742646493000"
+                          data-test="1742646493000"
+                          disabled=""
+                          tabindex="-1"
+                        >
+                          22
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="true"
+                          aria-label="March 23, 2025"
+                          class="DaysGridCell blue md"
+                          data-date="1742732893000"
+                          data-test="1742732893000"
+                          disabled=""
+                          tabindex="-1"
+                        >
+                          23
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <button
+                          aria-disabled="true"
+                          aria-label="March 24, 2025"
+                          class="DaysGridCell blue md"
+                          data-date="1742819293000"
+                          data-test="1742819293000"
+                          disabled=""
+                          tabindex="-1"
+                        >
+                          24
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="true"
+                          aria-label="March 25, 2025"
+                          class="DaysGridCell blue md"
+                          data-date="1742905693000"
+                          data-test="1742905693000"
+                          disabled=""
+                          tabindex="-1"
+                        >
+                          25
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="true"
+                          aria-label="March 26, 2025"
+                          class="DaysGridCell blue md"
+                          data-date="1742992093000"
+                          data-test="1742992093000"
+                          disabled=""
+                          tabindex="-1"
+                        >
+                          26
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="true"
+                          aria-label="March 27, 2025"
+                          class="DaysGridCell blue md"
+                          data-date="1743078493000"
+                          data-test="1743078493000"
+                          disabled=""
+                          tabindex="-1"
+                        >
+                          27
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="true"
+                          aria-label="March 28, 2025"
+                          class="DaysGridCell blue md"
+                          data-date="1743164893000"
+                          data-test="1743164893000"
+                          disabled=""
+                          tabindex="-1"
+                        >
+                          28
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="true"
+                          aria-label="March 29, 2025"
+                          class="DaysGridCell blue md"
+                          data-date="1743251293000"
+                          data-test="1743251293000"
+                          disabled=""
+                          tabindex="-1"
+                        >
+                          29
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          aria-disabled="true"
+                          aria-label="March 30, 2025"
+                          class="DaysGridCell blue md"
+                          data-date="1743337693000"
+                          data-test="1743337693000"
+                          disabled=""
+                          tabindex="-1"
+                        >
+                          30
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <button
+                          aria-disabled="true"
+                          aria-label="March 31, 2025"
+                          class="DaysGridCell blue md"
+                          data-date="1743424093000"
+                          data-test="1743424093000"
+                          disabled=""
+                          tabindex="-1"
+                        >
+                          31
+                        </button>
+                      </td>
+                      <td />
+                      <td />
+                      <td />
+                      <td />
+                      <td />
+                      <td />
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
