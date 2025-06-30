@@ -1,0 +1,304 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TimePicker with timezone Basic behavior should close time panel when clicking outside the panel only 1`] = `
+<div>
+  <div
+    style="position: relative;"
+  >
+    <div
+      style="position: relative;"
+    >
+      <div
+        class="HelperText"
+      >
+        <div
+          style="position: relative; width: 100%;"
+        >
+          <input
+            aria-labelledby="human-readable-date"
+            class="TextField blue md icon-left show-icon"
+            placeholder="Choose Date"
+            type="text"
+            value="12:28 PM"
+          />
+          <button
+            aria-label="Choose Time"
+            class="icon-button"
+            tabindex="0"
+          >
+            <svg
+              aria-hidden="true"
+              class="icon"
+              data-jest-file-name="HiClock.svg"
+              data-jest-svg-name="HiClock"
+              data-testid="HiClock"
+            />
+          </button>
+        </div>
+      </div>
+      <span
+        id="human-readable-date"
+        style="visibility: hidden;"
+      >
+        March 15, 2025 at 12:28 PM
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TimePicker with timezone Basic behavior should show time panel with the proper state on icon click (en_US, en) 1`] = `
+<div>
+  <div
+    style="position: relative;"
+  >
+    <div
+      style="position: relative;"
+    >
+      <div
+        class="HelperText"
+      >
+        <div
+          style="position: relative; width: 100%;"
+        >
+          <input
+            aria-labelledby="human-readable-date"
+            class="TextField blue md icon-left show-icon"
+            placeholder="Choose Date"
+            type="text"
+            value="12:28 PM"
+          />
+          <button
+            aria-label="Choose Time"
+            class="icon-button"
+            tabindex="0"
+          >
+            <svg
+              aria-hidden="true"
+              class="icon"
+              data-jest-file-name="HiClock.svg"
+              data-jest-svg-name="HiClock"
+              data-testid="HiClock"
+            />
+          </button>
+        </div>
+      </div>
+      <span
+        id="human-readable-date"
+        style="visibility: hidden;"
+      >
+        March 15, 2025 at 12:28 PM
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TimePicker with timezone Basic behavior should show time panel with the proper state on icon click (fr-FR, fr_FR, fr) 1`] = `
+<div>
+  <div
+    style="position: relative;"
+  >
+    <div
+      style="position: relative;"
+    >
+      <div
+        class="HelperText"
+      >
+        <div
+          style="position: relative; width: 100%;"
+        >
+          <input
+            aria-labelledby="human-readable-date"
+            class="TextField blue md icon-left show-icon"
+            placeholder="Choose Date"
+            type="text"
+            value="12:28"
+          />
+          <button
+            aria-label="Choose Time"
+            class="icon-button"
+            tabindex="0"
+          >
+            <svg
+              aria-hidden="true"
+              class="icon"
+              data-jest-file-name="HiClock.svg"
+              data-jest-svg-name="HiClock"
+              data-testid="HiClock"
+            />
+          </button>
+        </div>
+      </div>
+      <span
+        id="human-readable-date"
+        style="visibility: hidden;"
+      >
+        15 mars 2025 à 12:28
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TimePicker with timezone Controlled Time Picker - (en) should render w/ the provided date in the text field 1`] = `
+<div>
+  <div>
+    <div
+      style="position: relative;"
+    >
+      <div
+        style="position: relative;"
+      >
+        <div
+          class="HelperText"
+        >
+          <div
+            style="position: relative; width: 100%;"
+          >
+            <input
+              aria-labelledby="human-readable-date"
+              class="TextField blue md icon-left show-icon"
+              placeholder="Choose Date"
+              type="text"
+              value="08:02 AM"
+            />
+            <button
+              aria-label="Choose Time"
+              class="icon-button"
+              tabindex="0"
+            >
+              <svg
+                aria-hidden="true"
+                class="icon"
+                data-jest-file-name="HiClock.svg"
+                data-jest-svg-name="HiClock"
+                data-testid="HiClock"
+              />
+            </button>
+          </div>
+        </div>
+        <span
+          id="human-readable-date"
+          style="visibility: hidden;"
+        >
+          August 9, 2024 at 08:02 AM
+        </span>
+      </div>
+    </div>
+    <span
+      data-test="current-value"
+    >
+      8/9/2024, 8:02 AM
+    </span>
+  </div>
+</div>
+`;
+
+exports[`TimePicker with timezone Controlled Time Picker - (fr) should render w/ the provided date in the text field 1`] = `
+<div>
+  <div>
+    <div
+      style="position: relative;"
+    >
+      <div
+        style="position: relative;"
+      >
+        <div
+          class="HelperText"
+        >
+          <div
+            style="position: relative; width: 100%;"
+          >
+            <input
+              aria-labelledby="human-readable-date"
+              class="TextField blue md icon-left show-icon"
+              placeholder="Choose Date"
+              type="text"
+              value="08:02"
+            />
+            <button
+              aria-label="Choose Time"
+              class="icon-button"
+              tabindex="0"
+            >
+              <svg
+                aria-hidden="true"
+                class="icon"
+                data-jest-file-name="HiClock.svg"
+                data-jest-svg-name="HiClock"
+                data-testid="HiClock"
+              />
+            </button>
+          </div>
+        </div>
+        <span
+          id="human-readable-date"
+          style="visibility: hidden;"
+        >
+          9 août 2024 à 08:02
+        </span>
+      </div>
+    </div>
+    <span
+      data-test="current-value"
+    >
+      09/08/2024 08:02
+    </span>
+  </div>
+</div>
+`;
+
+exports[`TimePicker with timezone Controlled Time Picker should render w/ the provided date in the text field 1`] = `
+<div>
+  <div>
+    <div
+      style="position: relative;"
+    >
+      <div
+        style="position: relative;"
+      >
+        <div
+          class="HelperText"
+        >
+          <div
+            style="position: relative; width: 100%;"
+          >
+            <input
+              aria-labelledby="human-readable-date"
+              class="TextField blue md icon-left show-icon"
+              placeholder="Choose Date"
+              type="text"
+              value="01:28 PM"
+            />
+            <button
+              aria-label="Choose Time"
+              class="icon-button"
+              tabindex="0"
+            >
+              <svg
+                aria-hidden="true"
+                class="icon"
+                data-jest-file-name="HiClock.svg"
+                data-jest-svg-name="HiClock"
+                data-testid="HiClock"
+              />
+            </button>
+          </div>
+        </div>
+        <span
+          id="human-readable-date"
+          style="visibility: hidden;"
+        >
+          August 9, 2024 at 01:28 PM
+        </span>
+      </div>
+    </div>
+    <span
+      data-test="current-value"
+    >
+      8/9/2024, 1:28 PM
+    </span>
+  </div>
+</div>
+`;

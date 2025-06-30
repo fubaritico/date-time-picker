@@ -111,7 +111,7 @@ const DateRangePanel: FC<DateRangePanelProps> = ({
   )
 
   return (
-    <div className={clsx('DateRangePanel', className)}>
+    <div className={clsx('DateRangePanel', size, className)}>
       <div className="start-date-panel" data-test="start-date-panel">
         <PanelHeader
           size={size}

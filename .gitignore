@@ -38,6 +38,7 @@ yarn-error.log*
 # Build
 /dist/
 /coverage/
+/reports/
 /.nyc_output/
 src/date-picker.css
 

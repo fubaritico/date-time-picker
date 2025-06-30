@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { AnyPickerProps } from './types'
+import { AnyPickerProps } from '../types'
 
 import type { Dispatch, FC, ReactNode, SetStateAction } from 'react'
 

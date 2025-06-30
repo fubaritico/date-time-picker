@@ -69,7 +69,7 @@ const InputWithMask: FC<InputWithMaskProps> = ({
       onFocus={onFocus}
     >
       <TextField
-        iconAriaLabel="Choose Date"
+        iconAriaLabel={pickerMode === 'TIME' ? 'Choose Time' : 'Choose Date'}
         icon={
           withPanel
             ? pickerMode === 'TIME'

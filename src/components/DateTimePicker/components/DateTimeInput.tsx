@@ -245,7 +245,7 @@ const DateTimeInput: FC<DateInputProps> = ({
   return (
     <>
       <InputWithMask
-        aria-labelledby="date"
+        aria-labelledby="human-readable-date"
         alwaysShowMask
         color={color}
         mask={inputMaskInstance?.getMask()}
@@ -263,8 +263,8 @@ const DateTimeInput: FC<DateInputProps> = ({
         {...textInputOnlyProperties(inputTextProps)}
       />
       {innerDate && (
-        <span id="date" style={{ visibility: 'hidden' }}>
-          {formatHumanReadableDate(innerDate)}
+        <span id="human-readable-date" style={{ visibility: 'hidden' }}>
+          {formatHumanReadableDate(innerDate, locale, pickerMode)}
         </span>
       )}
     </>

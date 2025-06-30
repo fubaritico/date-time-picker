@@ -43,6 +43,7 @@ export default tseslint.config(
       'commitlint.config.js',
       'generate-css.cjs',
       'append-definitions-to-file.js',
+      'reports',
     ],
   },
 

@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from 'react'
 import {
   addHours,
   addMinutes,
+  convertTo12Hour,
   getCurrentAMPM,
   getHours,
   getMaxTimeOfDayLessOneHour,
@@ -214,8 +215,8 @@ const TimePanel: FC<TimePanelProps> = ({ className, onDateChange, size }) => {
       <div className="TimePanel-setters">
         <TimePanelSetter
           date={
-            dateUsesAMPM && getCurrentAMPM(date) === 'PM'
-              ? padNumber(getHours(date) - 12)
+            dateUsesAMPM
+              ? padNumber(convertTo12Hour(getHours(date)))
               : padNumber(getHours(date))
           }
           onBottomButtonClick={gotoPrevHour}

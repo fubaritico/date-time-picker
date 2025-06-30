@@ -12,6 +12,18 @@ const checkTsValidity = (ts: number): boolean => {
 }
 
 /**
+ * Converts 24-hour format to 12-hour format
+ *
+ * @param hour24 - Hour in 24-hour format (0-23)
+ * @returns Hour in 12-hour format (1-12)
+ */
+export const convertTo12Hour = (hour24: number): number => {
+  if (hour24 === 0) return 12
+  if (hour24 > 12) return hour24 - 12
+  return hour24
+}
+
+/**
  * Pads a number with a leading zero if it is less than 10
  *
  * @param {number} num - The number to pad
@@ -1088,17 +1100,27 @@ export const formatToLocaleAwareFormat = (
  */
 export const formatHumanReadableDate = (
   ts: number,
-  locale = 'en_US'
+  locale = 'en_US',
+  pickerMode = 'DATETIME'
 ): string => {
   if (isNaN(ts) || ts <= 0) {
     throw new Error('[formatHumanReadableDate] Invalid timestamp')
   }
 
-  const options: Intl.DateTimeFormatOptions = {
+  const dateFormatOptions: Intl.DateTimeFormatOptions = {
     day: 'numeric',
     month: 'long',
     year: 'numeric',
   }
+
+  const dateTimeFormatOptions: Intl.DateTimeFormatOptions = {
+    ...dateFormatOptions,
+    hour: '2-digit',
+    minute: '2-digit',
+  }
+
+  const options =
+    pickerMode === 'DATETIME' ? dateFormatOptions : dateTimeFormatOptions
 
   return new Intl.DateTimeFormat(locale.replace('_', '-'), options).format(
     new Date(ts)

@@ -27,6 +27,19 @@
   background: var(--separator);
 }
 
+/* Sizes */
+.DateRangePanel.sm {
+  width: 570px;
+}
+
+.DateRangePanel.md {
+  width: 640px;
+}
+
+.DateRangePanel.lg {
+  width: 720px;
+}
+
 /* Dark mode from system */
 @media (prefers-color-scheme: dark) {
   /* Default values (light mode) */

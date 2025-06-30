@@ -251,6 +251,10 @@ const DaysGrid: FC<DaysGridProps> = ({
   /**
    * Will check if the date timestamp is within the range of the min and max authorized dates.
    * If not, the date cell won't be clickable.
+   *
+   * @param ts - The date as a Unix timestamp.
+   *
+   * @return {boolean} - Returns true if the date is clickable, false otherwise.
    */
   const isDateClickable = useCallback(
     (ts: number) => {
@@ -266,21 +270,25 @@ const DaysGrid: FC<DaysGridProps> = ({
    *
    * On selecting a range, it will check if the date is in the range of the temporary start and end dates.
    * It will then not use the date range prop, but the temporary values set while selecting a range.
+   *
+   * @param ts - The date as a Unix timestamp.
+   *
+   * @return {boolean} - Returns true if the date is in range, false otherwise.
    */
   const dateIsInRange = useCallback(
-    (value: number) => {
+    (ts: number) => {
       const inRangeOnInit =
         tempStartDate === undefined &&
         dateRange[0] !== undefined &&
         dateRange[1] !== undefined &&
-        value >= dateRange[0] &&
-        value <= dateRange[1]
+        ts >= dateRange[0] &&
+        ts <= dateRange[1]
 
       const temporaryInRange =
         tempStartDate !== undefined &&
         tempEndDate !== undefined &&
-        value > tempStartDate &&
-        value <= tempEndDate
+        ts > tempStartDate &&
+        ts <= tempEndDate
 
       return inRangeOnInit || temporaryInRange
     },
@@ -290,6 +298,10 @@ const DaysGrid: FC<DaysGridProps> = ({
   /**
    * Will set the state of the grid cell based on the date and its properties.
    * It will be used to determine if the cell is clickable, selected, in range, etc.
+   *
+   * @param ts - The date as a Unix timestamp.
+   *
+   * @return An object containing the state of the cell.
    */
   const setDaysGridState = useCallback(
     (ts: number) => {
@@ -330,7 +342,17 @@ const DaysGrid: FC<DaysGridProps> = ({
     ]
   )
 
-  // Fonction pour compléter le tableau avec des cellules vides
+  /**
+   * Pads the array to ensure it has a specific size.
+   * This is useful to ensure that the grid has a complete week (7 days).
+   *
+   * @template T
+   *
+   * @param array - The array to pad.
+   * @param size - The size to pad the array to. It should be a multiple of 7 (i.e., a week).
+   *
+   * @return {(T | null)[]} - The padded array.
+   */
   const padArray = <T,>(array: (T | null)[], size: number): (T | null)[] => {
     const padding = size - (array.length % size)
     if (padding === size) return array
@@ -338,6 +360,17 @@ const DaysGrid: FC<DaysGridProps> = ({
     return [...array, ...paddedArray]
   }
 
+  /**
+   * Splits the array into chunks of a specific size.
+   * This is useful to display the dates in a grid format.
+   *
+   * @template T
+   *
+   * @param array - The array to chunk.
+   * @param size - The size of each chunk. It should be a multiple of 7 (i.e., a week).
+   *
+   * @return {(T | null)[][]} - An array of arrays, each containing a chunk of the original array.
+   */
   const chunk = <T,>(array: T[], size: number): (T | null)[][] => {
     const chunks: (T | null)[][] = []
     for (let i = 0; i < array.length; i += size) {
@@ -410,7 +443,7 @@ const DaysGrid: FC<DaysGridProps> = ({
                       size={size}
                       value={value}
                     >
-                      {new Date(value).getDate()}
+                      {new Date(value + msOffset).getDate()}
                     </DaysGridCell>
                   </td>
                 )
