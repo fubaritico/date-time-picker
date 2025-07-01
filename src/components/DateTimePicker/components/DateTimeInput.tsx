@@ -264,7 +264,7 @@ const DateTimeInput: FC<DateInputProps> = ({
         {...textInputOnlyProperties(inputTextProps)}
       />
       {innerDate && (
-        <span id="human-readable-date" style={{ visibility: 'hidden' }}>
+        <span id="human-readable-date" style={{ display: 'none' }}>
           {formatHumanReadableDate(innerDate, locale, pickerMode)}
         </span>
       )}

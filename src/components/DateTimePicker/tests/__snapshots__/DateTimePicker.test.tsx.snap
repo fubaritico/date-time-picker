@@ -41,7 +41,7 @@ exports[`DateTimePicker Controlled Date Picker - Date/Time mode should call the 
           </div>
           <span
             id="human-readable-date"
-            style="visibility: hidden;"
+            style="display: none;"
           >
             August 9, 2024
           </span>
@@ -262,7 +262,7 @@ exports[`DateTimePicker Controlled Date Picker - Date/Time mode should call the 
           </div>
           <span
             id="human-readable-date"
-            style="visibility: hidden;"
+            style="display: none;"
           >
             August 9, 2024
           </span>
@@ -483,7 +483,7 @@ exports[`DateTimePicker Controlled Date Picker - Date/Time mode should call the 
           </div>
           <span
             id="human-readable-date"
-            style="visibility: hidden;"
+            style="display: none;"
           >
             February 9, 2027
           </span>
@@ -1044,7 +1044,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
         </div>
         <span
           id="human-readable-date"
-          style="visibility: hidden;"
+          style="display: none;"
         >
           April 1, 2025
         </span>
@@ -1630,7 +1630,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
         </div>
         <span
           id="human-readable-date"
-          style="visibility: hidden;"
+          style="display: none;"
         >
           March 15, 2025
         </span>
@@ -2236,7 +2236,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should sho
         </div>
         <span
           id="human-readable-date"
-          style="visibility: hidden;"
+          style="display: none;"
         >
           March 15, 2025
         </span>
@@ -2457,7 +2457,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should sho
       </div>
       <span
         id="human-readable-date"
-        style="visibility: hidden;"
+        style="display: none;"
       >
         March 15, 2025
       </span>
@@ -2506,7 +2506,7 @@ exports[`DateTimePicker with timezone Controlled Date Picker - Date/Time mode sh
         </div>
         <span
           id="human-readable-date"
-          style="visibility: hidden;"
+          style="display: none;"
         >
           August 9, 2024
         </span>
@@ -2562,7 +2562,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
           </div>
           <span
             id="human-readable-date"
-            style="visibility: hidden;"
+            style="display: none;"
           >
             March 15, 2025
           </span>

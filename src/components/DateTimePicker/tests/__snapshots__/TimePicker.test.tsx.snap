@@ -39,7 +39,7 @@ exports[`TimePicker with timezone Basic behavior should close time panel when cl
       </div>
       <span
         id="human-readable-date"
-        style="visibility: hidden;"
+        style="display: none;"
       >
         March 15, 2025 at 12:28 PM
       </span>
@@ -87,7 +87,7 @@ exports[`TimePicker with timezone Basic behavior should show time panel with the
       </div>
       <span
         id="human-readable-date"
-        style="visibility: hidden;"
+        style="display: none;"
       >
         March 15, 2025 at 12:28 PM
       </span>
@@ -135,7 +135,7 @@ exports[`TimePicker with timezone Basic behavior should show time panel with the
       </div>
       <span
         id="human-readable-date"
-        style="visibility: hidden;"
+        style="display: none;"
       >
         15 mars 2025 à 12:28
       </span>
@@ -184,7 +184,7 @@ exports[`TimePicker with timezone Controlled Time Picker - (en) should render w/
         </div>
         <span
           id="human-readable-date"
-          style="visibility: hidden;"
+          style="display: none;"
         >
           August 9, 2024 at 08:02 AM
         </span>
@@ -239,7 +239,7 @@ exports[`TimePicker with timezone Controlled Time Picker - (fr) should render w/
         </div>
         <span
           id="human-readable-date"
-          style="visibility: hidden;"
+          style="display: none;"
         >
           9 août 2024 à 08:02
         </span>
@@ -294,7 +294,7 @@ exports[`TimePicker with timezone Controlled Time Picker should render w/ the pr
         </div>
         <span
           id="human-readable-date"
-          style="visibility: hidden;"
+          style="display: none;"
         >
           August 9, 2024 at 01:28 PM
         </span>

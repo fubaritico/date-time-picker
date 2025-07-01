@@ -373,7 +373,7 @@ button.DateTimeSwitcherButton.selected.stone:hover {
 /* Forced dark mode */
 .dark * button.DateTimeSwitcherButton {
   --unselected-bg-color: var(--gray-800);
-  --unselected-text-color: var(--selected-text-color-dark);
+  --unselected-text-color: var(--unselected-text-color-dark);
   --border-color: var(--border-color-dark);
   --border-bottom-color: var(--border-bottom-color-dark);
   background: var(--unselected-bg-color);
@@ -452,7 +452,6 @@ button.DateTimeSwitcherButton.lg svg {
 .dark .DateTimeSwitcherButton.selected.red, .dark .DateTimeSwitcherButton.selected.red:hover {
   --selected-bg-color-dark: hsl(from var(--red-800) h s l / 0.5);
   --selected-bg-color: var(--selected-bg-color-dark);
-  --selected-text-color: var(--red-500);
   --unselected-hover-bg-color: var(--selected-bg-color-dark);
   --unselected-hover-text-color: var(--selected-text-color-dark);
 }
@@ -470,7 +469,6 @@ button.DateTimeSwitcherButton.lg svg {
 .dark .DateTimeSwitcherButton.selected.orange, .dark .DateTimeSwitcherButton.selected.orange:hover {
   --selected-bg-color-dark: hsl(from var(--orange-800) h s l / 0.5);
   --selected-bg-color: var(--selected-bg-color-dark);
-  --selected-text-color: var(--orange-500);
   --unselected-hover-bg-color: var(--selected-bg-color-dark);
   --unselected-hover-text-color: var(--selected-text-color-dark);
 }
@@ -488,7 +486,6 @@ button.DateTimeSwitcherButton.lg svg {
 .dark .DateTimeSwitcherButton.selected.amber, .dark .DateTimeSwitcherButton.selected.amber:hover {
   --selected-bg-color-dark: hsl(from var(--amber-800) h s l / 0.5);
   --selected-bg-color: var(--selected-bg-color-dark);
-  --selected-text-color: var(--amber-500);
   --unselected-hover-bg-color: var(--selected-bg-color-dark);
   --unselected-hover-text-color: var(--selected-text-color-dark);
 }
@@ -506,7 +503,6 @@ button.DateTimeSwitcherButton.lg svg {
 .dark .DateTimeSwitcherButton.selected.yellow, .dark .DateTimeSwitcherButton.selected.yellow:hover {
   --selected-bg-color-dark: hsl(from var(--yellow-800) h s l / 0.5);
   --selected-bg-color: var(--selected-bg-color-dark);
-  --selected-text-color: var(--yellow-500);
   --unselected-hover-bg-color: var(--selected-bg-color-dark);
   --unselected-hover-text-color: var(--selected-text-color-dark);
 }
@@ -524,7 +520,6 @@ button.DateTimeSwitcherButton.lg svg {
 .dark .DateTimeSwitcherButton.selected.lime, .dark .DateTimeSwitcherButton.selected.lime:hover {
   --selected-bg-color-dark: hsl(from var(--lime-800) h s l / 0.5);
   --selected-bg-color: var(--selected-bg-color-dark);
-  --selected-text-color: var(--lime-500);
   --unselected-hover-bg-color: var(--selected-bg-color-dark);
   --unselected-hover-text-color: var(--selected-text-color-dark);
 }
@@ -542,7 +537,6 @@ button.DateTimeSwitcherButton.lg svg {
 .dark .DateTimeSwitcherButton.selected.green, .dark .DateTimeSwitcherButton.selected.green:hover {
   --selected-bg-color-dark: hsl(from var(--green-800) h s l / 0.5);
   --selected-bg-color: var(--selected-bg-color-dark);
-  --selected-text-color: var(--green-500);
   --unselected-hover-bg-color: var(--selected-bg-color-dark);
   --unselected-hover-text-color: var(--selected-text-color-dark);
 }
@@ -560,7 +554,6 @@ button.DateTimeSwitcherButton.lg svg {
 .dark .DateTimeSwitcherButton.selected.emerald, .dark .DateTimeSwitcherButton.selected.emerald:hover {
   --selected-bg-color-dark: hsl(from var(--emerald-800) h s l / 0.5);
   --selected-bg-color: var(--selected-bg-color-dark);
-  --selected-text-color: var(--emerald-500);
   --unselected-hover-bg-color: var(--selected-bg-color-dark);
   --unselected-hover-text-color: var(--selected-text-color-dark);
 }
@@ -578,7 +571,6 @@ button.DateTimeSwitcherButton.lg svg {
 .dark .DateTimeSwitcherButton.selected.teal, .dark .DateTimeSwitcherButton.selected.teal:hover {
   --selected-bg-color-dark: hsl(from var(--teal-800) h s l / 0.5);
   --selected-bg-color: var(--selected-bg-color-dark);
-  --selected-text-color: var(--teal-500);
   --unselected-hover-bg-color: var(--selected-bg-color-dark);
   --unselected-hover-text-color: var(--selected-text-color-dark);
 }
@@ -596,7 +588,6 @@ button.DateTimeSwitcherButton.lg svg {
 .dark .DateTimeSwitcherButton.selected.cyan, .dark .DateTimeSwitcherButton.selected.cyan:hover {
   --selected-bg-color-dark: hsl(from var(--cyan-800) h s l / 0.5);
   --selected-bg-color: var(--selected-bg-color-dark);
-  --selected-text-color: var(--cyan-500);
   --unselected-hover-bg-color: var(--selected-bg-color-dark);
   --unselected-hover-text-color: var(--selected-text-color-dark);
 }
@@ -614,7 +605,6 @@ button.DateTimeSwitcherButton.lg svg {
 .dark .DateTimeSwitcherButton.selected.sky, .dark .DateTimeSwitcherButton.selected.sky:hover {
   --selected-bg-color-dark: hsl(from var(--sky-800) h s l / 0.5);
   --selected-bg-color: var(--selected-bg-color-dark);
-  --selected-text-color: var(--sky-500);
   --unselected-hover-bg-color: var(--selected-bg-color-dark);
   --unselected-hover-text-color: var(--selected-text-color-dark);
 }
@@ -632,7 +622,6 @@ button.DateTimeSwitcherButton.lg svg {
 .dark .DateTimeSwitcherButton.selected.blue, .dark .DateTimeSwitcherButton.selected.blue:hover {
   --selected-bg-color-dark: hsl(from var(--blue-800) h s l / 0.5);
   --selected-bg-color: var(--selected-bg-color-dark);
-  --selected-text-color: var(--blue-500);
   --unselected-hover-bg-color: var(--selected-bg-color-dark);
   --unselected-hover-text-color: var(--selected-text-color-dark);
 }
@@ -650,7 +639,6 @@ button.DateTimeSwitcherButton.lg svg {
 .dark .DateTimeSwitcherButton.selected.indigo, .dark .DateTimeSwitcherButton.selected.indigo:hover {
   --selected-bg-color-dark: hsl(from var(--indigo-800) h s l / 0.5);
   --selected-bg-color: var(--selected-bg-color-dark);
-  --selected-text-color: var(--indigo-500);
   --unselected-hover-bg-color: var(--selected-bg-color-dark);
   --unselected-hover-text-color: var(--selected-text-color-dark);
 }
@@ -668,7 +656,6 @@ button.DateTimeSwitcherButton.lg svg {
 .dark .DateTimeSwitcherButton.selected.violet, .dark .DateTimeSwitcherButton.selected.violet:hover {
   --selected-bg-color-dark: hsl(from var(--violet-800) h s l / 0.5);
   --selected-bg-color: var(--selected-bg-color-dark);
-  --selected-text-color: var(--violet-500);
   --unselected-hover-bg-color: var(--selected-bg-color-dark);
   --unselected-hover-text-color: var(--selected-text-color-dark);
 }
@@ -686,7 +673,6 @@ button.DateTimeSwitcherButton.lg svg {
 .dark .DateTimeSwitcherButton.selected.purple, .dark .DateTimeSwitcherButton.selected.purple:hover {
   --selected-bg-color-dark: hsl(from var(--purple-800) h s l / 0.5);
   --selected-bg-color: var(--selected-bg-color-dark);
-  --selected-text-color: var(--purple-500);
   --unselected-hover-bg-color: var(--selected-bg-color-dark);
   --unselected-hover-text-color: var(--selected-text-color-dark);
 }
@@ -704,7 +690,6 @@ button.DateTimeSwitcherButton.lg svg {
 .dark .DateTimeSwitcherButton.selected.fuchsia, .dark .DateTimeSwitcherButton.selected.fuchsia:hover {
   --selected-bg-color-dark: hsl(from var(--fuchsia-800) h s l / 0.5);
   --selected-bg-color: var(--selected-bg-color-dark);
-  --selected-text-color: var(--fuchsia-500);
   --unselected-hover-bg-color: var(--selected-bg-color-dark);
   --unselected-hover-text-color: var(--selected-text-color-dark);
 }
@@ -722,7 +707,6 @@ button.DateTimeSwitcherButton.lg svg {
 .dark .DateTimeSwitcherButton.selected.pink, .dark .DateTimeSwitcherButton.selected.pink:hover {
   --selected-bg-color-dark: hsl(from var(--pink-800) h s l / 0.5);
   --selected-bg-color: var(--selected-bg-color-dark);
-  --selected-text-color: var(--pink-500);
   --unselected-hover-bg-color: var(--selected-bg-color-dark);
   --unselected-hover-text-color: var(--selected-text-color-dark);
 }
@@ -740,7 +724,6 @@ button.DateTimeSwitcherButton.lg svg {
 .dark .DateTimeSwitcherButton.selected.rose, .dark .DateTimeSwitcherButton.selected.rose:hover {
   --selected-bg-color-dark: hsl(from var(--rose-800) h s l / 0.5);
   --selected-bg-color: var(--selected-bg-color-dark);
-  --selected-text-color: var(--rose-500);
   --unselected-hover-bg-color: var(--selected-bg-color-dark);
   --unselected-hover-text-color: var(--selected-text-color-dark);
 }
@@ -758,7 +741,6 @@ button.DateTimeSwitcherButton.lg svg {
 .dark .DateTimeSwitcherButton.selected.slate, .dark .DateTimeSwitcherButton.selected.slate:hover {
   --selected-bg-color-dark: hsl(from var(--slate-800) h s l / 0.5);
   --selected-bg-color: var(--selected-bg-color-dark);
-  --selected-text-color: var(--slate-500);
   --unselected-hover-bg-color: var(--selected-bg-color-dark);
   --unselected-hover-text-color: var(--selected-text-color-dark);
 }
@@ -776,7 +758,6 @@ button.DateTimeSwitcherButton.lg svg {
 .dark .DateTimeSwitcherButton.selected.gray, .dark .DateTimeSwitcherButton.selected.gray:hover {
   --selected-bg-color-dark: hsl(from var(--gray-800) h s l / 0.5);
   --selected-bg-color: var(--selected-bg-color-dark);
-  --selected-text-color: var(--gray-500);
   --unselected-hover-bg-color: var(--selected-bg-color-dark);
   --unselected-hover-text-color: var(--selected-text-color-dark);
 }
@@ -794,7 +775,6 @@ button.DateTimeSwitcherButton.lg svg {
 .dark .DateTimeSwitcherButton.selected.zinc, .dark .DateTimeSwitcherButton.selected.zinc:hover {
   --selected-bg-color-dark: hsl(from var(--zinc-800) h s l / 0.5);
   --selected-bg-color: var(--selected-bg-color-dark);
-  --selected-text-color: var(--zinc-500);
   --unselected-hover-bg-color: var(--selected-bg-color-dark);
   --unselected-hover-text-color: var(--selected-text-color-dark);
 }
@@ -812,7 +792,6 @@ button.DateTimeSwitcherButton.lg svg {
 .dark .DateTimeSwitcherButton.selected.neutral, .dark .DateTimeSwitcherButton.selected.neutral:hover {
   --selected-bg-color-dark: hsl(from var(--neutral-800) h s l / 0.5);
   --selected-bg-color: var(--selected-bg-color-dark);
-  --selected-text-color: var(--neutral-500);
   --unselected-hover-bg-color: var(--selected-bg-color-dark);
   --unselected-hover-text-color: var(--selected-text-color-dark);
 }
@@ -830,7 +809,6 @@ button.DateTimeSwitcherButton.lg svg {
 .dark .DateTimeSwitcherButton.selected.stone, .dark .DateTimeSwitcherButton.selected.stone:hover {
   --selected-bg-color-dark: hsl(from var(--stone-800) h s l / 0.5);
   --selected-bg-color: var(--selected-bg-color-dark);
-  --selected-text-color: var(--stone-500);
   --unselected-hover-bg-color: var(--selected-bg-color-dark);
   --unselected-hover-text-color: var(--selected-text-color-dark);
 }
