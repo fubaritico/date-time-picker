@@ -25,6 +25,10 @@ export type DaysGridProps = Omit<BasicPickerProps, 'onChange'> & {
   onStartDateChangeHandler?: (date: number) => void
   /* In DATE_RANGE picker mode, called on end date change */
   onEndDateChangeHandler?: (date: number) => void
+  /* Keyboard handler that allows navigating to the previous month from a focused date */
+  onPrevMonthKeyPress: () => void
+  /* Keyboard handler that allows navigating to the next month from a focused date */
+  onNextMonthKeyPress: () => void
   /* In DATE_RANGE .... */
   panelRole?: 'left' | 'right'
   /* Panel size: 'sm' | 'md' | 'lg' */
@@ -47,17 +51,19 @@ const DaysGrid: FC<DaysGridProps> = ({
   onDateChange,
   onStartDateChangeHandler,
   onEndDateChangeHandler,
+  onNextMonthKeyPress,
+  onPrevMonthKeyPress,
   size = 'md',
 }) => {
-  // État pour le focus géré par les flèches
+  // State: Focus managed using arrows
   const [keyboardFocusedIndex, setKeyboardFocusedIndex] = useState<number>(-1)
-  // Référence pour la grille
-  const gridRef = useRef<HTMLTableElement>(null)
-  const dateFocusedOnInit = useRef<boolean>(false)
-
+  // State: From where iteration starts in the grid
   const [startIndex, setStartIndex] = useState(0)
   // State: Array of dates in Unix timestamp format
   const [arrayOfDates, setArrayOfDates] = useState<number[]>([])
+  // Référence pour la grille
+  const gridRef = useRef<HTMLTableElement>(null)
+  const dateFocusedOnInit = useRef<boolean>(false)
   // Shared state from the DateTimePicker context
   const { color, innerDate, minDate, maxDate, msOffset, locale, pickerMode } =
     useDateTimePicker()
@@ -75,104 +81,13 @@ const DaysGrid: FC<DaysGridProps> = ({
    * Will set the focus on a specific date cell based on its index.
    */
   const setFocusOnDate = useCallback((index: number) => {
-    setKeyboardFocusedIndex(index >= 0 ? index : 0)
+    const value = index >= 0 ? index : 0
+    setKeyboardFocusedIndex(value)
     const cells = gridRef.current?.querySelectorAll('button')
-    if (cells?.[index]) {
-      ;(cells[index] as HTMLElement).focus()
+    if (cells?.[value]) {
+      ;(cells[value] as HTMLElement).focus()
     }
   }, [])
-
-  /**
-   * Will set all the necessary math to display the grid of dates.
-   */
-  useEffect(() => {
-    const firstDayOfMonth = getStartDayOfWeekOfCurrentMonth(date)
-    setStartIndex((firstDayOfMonth + 6) % 7) // Adjust to make Monday the first day
-    setArrayOfDates(() => {
-      const startOfMonth = getFirstDayOfCurrentMonthTs(date)
-      const endOfMonth = getLastDayOfCurrentMonthTs(date)
-      const arr = []
-      const oneDayInMs = 86400000
-
-      for (let day = startOfMonth; day <= endOfMonth; day += oneDayInMs) {
-        arr.push(day)
-      }
-      return arr
-    })
-  }, [date])
-
-  /**
-   * Will set the initial keyboard focused index to the first date of the month.
-   * This is useful for keyboard navigation.
-   */
-  useEffect(() => {
-    let index = 0
-
-    if (!arrayOfDates.length || dateFocusedOnInit.current) return
-
-    if (!date) {
-      setKeyboardFocusedIndex(index)
-    }
-
-    if (date) {
-      index = arrayOfDates.findIndex(
-        (d) => getStartOfDayTs(d) === getStartOfDayTs(date)
-      )
-    }
-
-    if (
-      arrayOfDates.some((d) => getStartOfDayTs(d) === getStartOfDayTs(date))
-    ) {
-      index = arrayOfDates.findIndex(
-        (d) => getStartOfDayTs(d) === getStartOfDayTs(date)
-      )
-    }
-
-    setFocusOnDate(index)
-    dateFocusedOnInit.current = true
-  }, [arrayOfDates, date, setFocusOnDate])
-
-  /**
-   *
-   * @param e
-   */
-  const handleKeyDown = useCallback(
-    (e: KeyboardEvent<HTMLDivElement>) => {
-      const DAYS_IN_WEEK = 7
-      const TOTAL_CELLS = arrayOfDates.length
-
-      // Pour les flèches, on empêche le comportement par défaut
-      if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(e.key)) {
-        e.preventDefault()
-
-        let newIndex = keyboardFocusedIndex
-
-        switch (e.key) {
-          case 'ArrowLeft':
-            newIndex = Math.max(0, keyboardFocusedIndex - 1)
-            break
-          case 'Tab':
-          case 'ArrowRight':
-            newIndex = Math.min(TOTAL_CELLS - 1, keyboardFocusedIndex + 1)
-            break
-          case 'ArrowUp':
-            newIndex = Math.max(0, keyboardFocusedIndex - DAYS_IN_WEEK)
-            break
-          case 'ArrowDown':
-            newIndex = Math.min(
-              TOTAL_CELLS - 1,
-              keyboardFocusedIndex + DAYS_IN_WEEK
-            )
-            break
-        }
-
-        if (newIndex !== keyboardFocusedIndex) {
-          setFocusOnDate(newIndex)
-        }
-      }
-    },
-    [arrayOfDates, keyboardFocusedIndex, setFocusOnDate]
-  )
 
   /**
    * Callback function for handling date clicks.
@@ -180,8 +95,8 @@ const DaysGrid: FC<DaysGridProps> = ({
    * @param {MouseEvent<HTMLButtonElement>} event - The mouse event object.
    */
   const handleDateClick = useCallback(
-    (event: MouseEvent<HTMLButtonElement>) => {
-      const clickedDate = event.currentTarget.dataset.date
+    (el: HTMLButtonElement) => {
+      const clickedDate = el.dataset.date
 
       if (!clickedDate) {
         console.warn('The clicked date is undefined.')
@@ -216,15 +131,79 @@ const DaysGrid: FC<DaysGridProps> = ({
   )
 
   /**
-   * When a date is selected, will trigger the onDateChange callback. (quite useless but nice though)
-   *
-   * @param event
+   * [a11y] Handles keyboard navigation within the grid.
+   * @param {KeyboardEvent} e
    */
-  const handleCellKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      handleDateClick(event as never)
-    }
-  }
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent<HTMLDivElement>) => {
+      if (
+        ![
+          'ArrowLeft',
+          'ArrowRight',
+          'ArrowUp',
+          'ArrowDown',
+          'PageDown',
+          'PageUp',
+          'Enter',
+          ' ',
+        ].includes(e.key)
+      )
+        return
+      const DAYS_IN_WEEK = 7
+      const TOTAL_CELLS = arrayOfDates.length
+
+      // Pour les flèches, on empêche le comportement par défaut
+
+      e.preventDefault()
+
+      const cells = gridRef.current?.querySelectorAll('button')
+      let newIndex = keyboardFocusedIndex
+
+      switch (e.key) {
+        case 'ArrowLeft':
+          newIndex = Math.max(0, keyboardFocusedIndex - 1)
+          break
+        case 'Tab':
+        case 'ArrowRight':
+          newIndex = Math.min(TOTAL_CELLS - 1, keyboardFocusedIndex + 1)
+          break
+        case 'ArrowUp':
+          newIndex = Math.max(0, keyboardFocusedIndex - DAYS_IN_WEEK)
+          break
+        case 'ArrowDown':
+          newIndex = Math.min(
+            TOTAL_CELLS - 1,
+            keyboardFocusedIndex + DAYS_IN_WEEK
+          )
+          break
+        case 'PageDown':
+          onPrevMonthKeyPress()
+          break
+        case 'PageUp':
+          onNextMonthKeyPress()
+          break
+        case 'Enter':
+        case ' ':
+          if (cells?.[keyboardFocusedIndex]) {
+            ;(cells[keyboardFocusedIndex] as HTMLElement).focus()
+            handleDateClick(cells[keyboardFocusedIndex])
+          }
+          break
+      }
+
+      if (newIndex !== keyboardFocusedIndex) {
+        setFocusOnDate(newIndex)
+      }
+    },
+    [
+      arrayOfDates.length,
+      handleDateClick,
+      keyboardFocusedIndex,
+      onNextMonthKeyPress,
+      onPrevMonthKeyPress,
+      setFocusOnDate,
+    ]
+  )
 
   /**
    * DATE RANGE MODE ONLY
@@ -312,14 +291,6 @@ const DaysGrid: FC<DaysGridProps> = ({
       const endDateIsSelected = tempEndDate === ts || dateRange[1] === ts
       const isSelected = innerDate === ts
       const isInRange = dateIsInRange(ts)
-      const defaultBehavior =
-        getStartOfDayTs(Date.now() + msOffset) !== getStartOfDayTs(ts) &&
-        innerDate !== ts &&
-        disabled &&
-        !startDateIsSelected &&
-        !endDateIsSelected &&
-        !isInRange &&
-        !isToday
 
       return {
         disabled,
@@ -328,7 +299,6 @@ const DaysGrid: FC<DaysGridProps> = ({
         endDateIsSelected,
         isSelected,
         isInRange,
-        defaultBehavior,
       }
     },
     [
@@ -379,6 +349,57 @@ const DaysGrid: FC<DaysGridProps> = ({
     return chunks
   }
 
+  /**
+   * Will set all the necessary math to display the grid of dates.
+   */
+  useEffect(() => {
+    const firstDayOfMonth = getStartDayOfWeekOfCurrentMonth(date)
+    setStartIndex((firstDayOfMonth + 6) % 7) // Adjust to make Monday the first day
+    setArrayOfDates(() => {
+      const startOfMonth = getFirstDayOfCurrentMonthTs(date)
+      const endOfMonth = getLastDayOfCurrentMonthTs(date)
+      const arr = []
+      const oneDayInMs = 86400000
+
+      for (let day = startOfMonth; day <= endOfMonth; day += oneDayInMs) {
+        arr.push(day)
+      }
+      return arr
+    })
+  }, [date])
+
+  /**
+   * Will set the initial keyboard focus index to the first date of the month.
+   * This is useful for keyboard navigation.
+   */
+  useEffect(() => {
+    let index = 0
+
+    if (!arrayOfDates.length) return
+
+    if (!date) {
+      setFocusOnDate(index)
+      return
+    }
+
+    if (date) {
+      index = arrayOfDates.findIndex(
+        (d) => getStartOfDayTs(d) === getStartOfDayTs(date)
+      )
+    }
+
+    if (
+      arrayOfDates.some((d) => getStartOfDayTs(d) === getStartOfDayTs(date))
+    ) {
+      index = arrayOfDates.findIndex(
+        (d) => getStartOfDayTs(d) === getStartOfDayTs(date)
+      )
+    }
+
+    setFocusOnDate(index)
+    dateFocusedOnInit.current = true
+  }, [arrayOfDates, date, setFocusOnDate])
+
   return (
     <div className={clsx('DaysGrid', size)}>
       <table
@@ -428,9 +449,15 @@ const DaysGrid: FC<DaysGridProps> = ({
                       {...setDaysGridState(value)}
                       color={color}
                       locale={locale}
-                      onClick={handleDateClick}
-                      onKeyDown={handleCellKeyDown}
+                      onClick={(e) => {
+                        handleDateClick(e.currentTarget)
+                      }}
                       onMouseEnter={handleDateMouseEnter}
+                      onFocus={() => {
+                        if (new Date(value + msOffset).getDate() === 1) {
+                          setKeyboardFocusedIndex(0)
+                        }
+                      }}
                       hasDateRangeMode={pickerMode === 'DATERANGE'}
                       isSelectingRange={isSelectingRange}
                       tabIndex={

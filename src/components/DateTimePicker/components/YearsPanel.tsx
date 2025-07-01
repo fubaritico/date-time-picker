@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 import { addYears, getYearFromTs, subtractYears } from '@utils'
 
@@ -8,7 +8,7 @@ import usePanelDomRect from '../hooks/usePanelDomRect'
 
 import PanelHeader from './PanelHeader'
 
-import type { FC, MouseEvent } from 'react'
+import type { FC, KeyboardEvent } from 'react'
 
 export interface YearsPanelProps {
   /* Tailwind CSS classes overrides or extensions for more flexibility */
@@ -28,13 +28,17 @@ export interface YearsPanelProps {
  * @constructor
  */
 const YearsPanel: FC<YearsPanelProps> = ({ className, onDateChange, size }) => {
-  const { color, innerDate, msOffset } = useDateTimePicker()
-  const [year, setYear] = useState<number>(innerDate ?? Date.now() + msOffset)
-
+  const { color, innerDate, locale, msOffset } = useDateTimePicker()
   const panelRef = usePanelDomRect()
+  // State: Focus managed using arrows
+  const [keyboardFocusedIndex, setKeyboardFocusedIndex] = useState<number>(-1)
+  // State: Inner date
+  const [date, setDate] = useState<number>(innerDate ?? Date.now() + msOffset)
+
+  const gridRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    setYear(innerDate ?? Date.now() + msOffset)
+    setDate(innerDate ?? Date.now() + msOffset)
   }, [innerDate, msOffset])
 
   /**
@@ -46,7 +50,7 @@ const YearsPanel: FC<YearsPanelProps> = ({ className, onDateChange, size }) => {
    * @returns {void}
    */
   const gotoPrevYearsRange = useCallback(() => {
-    setYear((prev) => {
+    setDate((prev) => {
       return subtractYears(prev, 12)
     })
   }, [])
@@ -58,9 +62,21 @@ const YearsPanel: FC<YearsPanelProps> = ({ className, onDateChange, size }) => {
    * @returns {void}
    */
   const gotoNextYearsRange = useCallback(() => {
-    setYear((prev) => {
+    setDate((prev) => {
       return addYears(prev, 12)
     })
+  }, [])
+
+  /**
+   * Will set the focus on a specific date cell based on its index.
+   */
+  const setFocusOnDate = useCallback((index: number) => {
+    const value = index >= 0 ? index : 0
+    setKeyboardFocusedIndex(value)
+    const cells = gridRef.current?.querySelectorAll('button')
+    if (cells?.[value]) {
+      ;(cells[value] as HTMLElement).focus()
+    }
   }, [])
 
   /**
@@ -69,8 +85,8 @@ const YearsPanel: FC<YearsPanelProps> = ({ className, onDateChange, size }) => {
    * @param {React.MouseEvent<HTMLButtonElement>} event - The mouse event object.
    */
   const handleDateClick = useCallback(
-    (event: MouseEvent<HTMLButtonElement>) => {
-      const clickedDate = event.currentTarget.dataset.date
+    (el: HTMLButtonElement) => {
+      const clickedDate = el.dataset.date
 
       if (clickedDate) {
         onDateChange?.(Number(clickedDate))
@@ -78,6 +94,98 @@ const YearsPanel: FC<YearsPanelProps> = ({ className, onDateChange, size }) => {
     },
     [onDateChange]
   )
+
+  /**
+   * [a11y] Handles keyboard navigation within the grid.
+   * @param {KeyboardEvent} e
+   */
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent<HTMLDivElement>) => {
+      if (
+        ![
+          'ArrowLeft',
+          'ArrowRight',
+          'ArrowUp',
+          'ArrowDown',
+          'PageDown',
+          'PageUp',
+          'Enter',
+          ' ',
+        ].includes(e.key)
+      )
+        return
+      const ROW_LENGTH = 3
+      const TOTAL_CELLS = 12
+
+      // Pour les flèches, on empêche le comportement par défaut
+
+      e.preventDefault()
+
+      const cells = gridRef.current?.querySelectorAll('button')
+      let newIndex = keyboardFocusedIndex
+
+      switch (e.key) {
+        case 'ArrowLeft':
+          newIndex = Math.max(0, keyboardFocusedIndex - 1)
+          break
+        case 'Tab':
+        case 'ArrowRight':
+          newIndex = Math.min(TOTAL_CELLS - 1, keyboardFocusedIndex + 1)
+          break
+        case 'ArrowUp':
+          newIndex = Math.max(0, keyboardFocusedIndex - ROW_LENGTH)
+          break
+        case 'ArrowDown':
+          newIndex = Math.min(
+            TOTAL_CELLS - 1,
+            keyboardFocusedIndex + ROW_LENGTH
+          )
+          break
+        case 'PageDown':
+          gotoPrevYearsRange()
+          break
+        case 'PageUp':
+          gotoNextYearsRange()
+          break
+        case 'Enter':
+        case ' ':
+          if (cells?.[keyboardFocusedIndex]) {
+            ;(cells[keyboardFocusedIndex] as HTMLElement).focus()
+            handleDateClick(cells[keyboardFocusedIndex])
+          }
+          break
+      }
+
+      if (newIndex !== keyboardFocusedIndex) {
+        setFocusOnDate(newIndex)
+      }
+    },
+    [
+      handleDateClick,
+      keyboardFocusedIndex,
+      gotoPrevYearsRange,
+      gotoNextYearsRange,
+      setFocusOnDate,
+    ]
+  )
+
+  /**
+   * Will set the initial keyboard focus index to the first date of the month.
+   * This is useful for keyboard navigation.
+   */
+  useEffect(() => {
+    let index = 0
+
+    const years = Array.from({ length: 12 }, (_, i) => i).map((offset) =>
+      getYearFromTs(addYears(date, offset))
+    )
+
+    if (date) {
+      index = years.findIndex((year) => year === getYearFromTs(date))
+    }
+
+    setFocusOnDate(index)
+  }, [locale, date, setFocusOnDate])
 
   return (
     <div
@@ -92,17 +200,22 @@ const YearsPanel: FC<YearsPanelProps> = ({ className, onDateChange, size }) => {
         onPrevButtonClick={gotoPrevYearsRange}
         prevButtonAriaLabel="Previous 12 years"
       >
-        <span aria-label={getYearFromTs(year).toString()}>
-          {getYearFromTs(year).toString()}
+        <span aria-label={getYearFromTs(date).toString()}>
+          {getYearFromTs(date).toString()}
         </span>
         {' - '}
-        <span aria-label={getYearFromTs(addYears(year, 11)).toString()}>
-          {getYearFromTs(addYears(year, 11)).toString()}
+        <span aria-label={getYearFromTs(addYears(date, 11)).toString()}>
+          {getYearFromTs(addYears(date, 11)).toString()}
         </span>
       </PanelHeader>
-      <div role="grid" className="panel-grid">
+      <div
+        role="grid"
+        className="panel-grid"
+        ref={gridRef}
+        onKeyDown={handleKeyDown}
+      >
         {Array.from({ length: 12 }, (_, i) => i).map((offset) => {
-          const yearWithOffset = getYearFromTs(addYears(year, offset))
+          const yearWithOffset = getYearFromTs(addYears(date, offset))
 
           const selectedYear = getYearFromTs(innerDate ?? Date.now() + msOffset)
 
@@ -113,8 +226,10 @@ const YearsPanel: FC<YearsPanelProps> = ({ className, onDateChange, size }) => {
                 selected: yearWithOffset === selectedYear,
               })}
               key={yearWithOffset}
-              data-date={addYears(year, offset).toString()}
-              onClick={handleDateClick}
+              data-date={addYears(date, offset).toString()}
+              onClick={(e) => {
+                handleDateClick(e.currentTarget)
+              }}
             >
               {yearWithOffset.toString()}
             </button>

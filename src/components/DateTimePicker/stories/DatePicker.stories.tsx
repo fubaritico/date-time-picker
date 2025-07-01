@@ -72,12 +72,12 @@ export const WithPrefill: IntegrationStory = {
   argTypes: disabledControls,
 }
 
-export const WithNoDefaultDate: IntegrationStory = {
+export const WithnoDefaultDateDate: IntegrationStory = {
   ...Controlled,
   name: 'Controlled with no default date',
   args: {
     ...Controlled.args,
-    noDefault: true,
+    noDefaultDate: true,
   },
   argTypes: disabledControls,
 }
@@ -90,7 +90,7 @@ export const WithMaxAndMin: Story = {
     date: 1696629600000,
     minDate: 1696370400000,
     maxDate: 1697752800000,
-    noDefault: true,
+    noDefaultDate: true,
     required: true,
     label: 'Select a Date (within next week)',
   },

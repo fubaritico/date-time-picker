@@ -20,6 +20,7 @@ exports[`DateTimePicker Controlled Date Picker - Date/Time mode should call the 
                 aria-labelledby="human-readable-date"
                 class="TextField blue md icon-left show-icon"
                 placeholder="Choose Date"
+                tabindex="0"
                 type="text"
                 value="2024/08/09 04:28 PM"
               />
@@ -240,6 +241,7 @@ exports[`DateTimePicker Controlled Date Picker - Date/Time mode should call the 
                 aria-labelledby="human-readable-date"
                 class="TextField blue md icon-left show-icon"
                 placeholder="Choose Date"
+                tabindex="0"
                 type="text"
                 value="2024/08/09 04:28 PM"
               />
@@ -460,6 +462,7 @@ exports[`DateTimePicker Controlled Date Picker - Date/Time mode should call the 
                 aria-labelledby="human-readable-date"
                 class="TextField blue md icon-left show-icon"
                 placeholder="Choose Date"
+                tabindex="0"
                 type="text"
                 value="2027/02/09 04:28 PM"
               />
@@ -1020,6 +1023,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               aria-labelledby="human-readable-date"
               class="TextField blue md icon-left show-icon"
               placeholder="Choose Date"
+              tabindex="0"
               type="text"
               value="2025/04/01 12:28 PM"
             />
@@ -1605,6 +1609,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should dis
               aria-labelledby="human-readable-date"
               class="TextField blue md icon-left show-icon"
               placeholder="Choose Date"
+              tabindex="0"
               type="text"
               value="2025/03/15 12:28 PM"
             />
@@ -2210,6 +2215,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should sho
               aria-labelledby="human-readable-date"
               class="TextField blue md icon-left show-icon"
               placeholder="Choose Date"
+              tabindex="0"
               type="text"
               value="2025/03/15 12:28 PM"
             />
@@ -2430,6 +2436,7 @@ exports[`DateTimePicker with timezone Basic behavior - Date/Time mode should sho
             aria-labelledby="human-readable-date"
             class="TextField blue md icon-left show-icon"
             placeholder="Choose Date"
+            tabindex="0"
             type="text"
             value="2025-03-15 12:28 PM"
           />
@@ -2478,6 +2485,7 @@ exports[`DateTimePicker with timezone Controlled Date Picker - Date/Time mode sh
               aria-labelledby="human-readable-date"
               class="TextField blue md icon-left show-icon"
               placeholder="Choose Date"
+              tabindex="0"
               type="text"
               value="2024-08-09 01:28 PM"
             />
@@ -2533,6 +2541,7 @@ exports[`DateTimePicker with timezone DateTimePicker: minDate and maxDate functi
                 aria-labelledby="human-readable-date"
                 class="TextField blue md icon-left show-icon"
                 placeholder="Choose Date"
+                tabindex="0"
                 type="text"
                 value="2025/03/15 12:28 PM"
               />

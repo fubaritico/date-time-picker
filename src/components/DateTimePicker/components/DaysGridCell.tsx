@@ -76,6 +76,7 @@ const DaysGridCell: FC<PropsWithChildren<DaysGridCellProps>> = ({
       onKeyDown={!disabled ? onKeyDown : undefined}
       onMouseEnter={!disabled && isSelectingRange ? onMouseEnter : undefined}
       tabIndex={rest.tabIndex}
+      {...rest}
     >
       {children}
     </button>

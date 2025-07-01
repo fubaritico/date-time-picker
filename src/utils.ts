@@ -615,14 +615,14 @@ export const getTimestampsForEachMonth = (ts: number): number[] => {
 }
 
 /**
- * Gets the offset in milliseconds from the given timezone.
+ * Gets the msOffset in milliseconds from the given timezone.
  *
  * @see: https://stackoverflow.com/questions/1091372/getting-the-clients-time-zone-and-offset-in-javascript
  *
- * @param {Date} date - The local date for which to get the offset for display in the text input.
+ * @param {Date} date - The local date for which to get the msOffset for display in the text input.
  * @param {string} timeZone - The IANA timezone string (e.g., 'America/New_York').
  *
- * @returns {number} - The offset in milliseconds from local timezone.
+ * @returns {number} - The msOffset in milliseconds from local timezone.
  */
 export const getOffsetInMsFromTimezone = (
   date: Date,
@@ -657,7 +657,7 @@ export const getOffsetInMsFromTimezone = (
   const matches = /^(GMT|UTC)(-|−|\+)?(\d+)?/.exec(timeZoneName)
 
   if (!matches) {
-    throw new Error('Unable to parse timezone offset')
+    throw new Error('Unable to parse timezone msOffset')
   }
 
   const sign = matches[2] === '-' ? -1 : 1
@@ -672,7 +672,7 @@ export const getOffsetInMsFromTimezone = (
  *
  * @param {number} ts - number representing a unix timestamp
  * @param {string} format - the desired format ('YYYY-MM-DD', 'hh:mm A', 'YYYY-MM-DD hh:mm A')
- * @param {number} offset - the offset in milliseconds from GMT time zone (daylight taken into account)
+ * @param {number} offset - the msOffset in milliseconds from GMT time zone (daylight taken into account)
  *
  * @throws {Error} if the timestamp is invalid or format is not supported
  *
@@ -1059,7 +1059,7 @@ const getLocaleAwareFormat = (
  * @param {number} pValue - date under the shape of a unix timestamp UTC
  * @param {string} pLocale - locale as a string under the shape of 'fr_FR'
  * @param {string} pLocaleAwareFormat - format to apply to the date in a locale way
- * @param {string} pTimezone - time to add/substract the hour offset, default
+ * @param {string} pTimezone - time to add/substract the hour msOffset, default
  */
 export const formatToLocaleAwareFormat = (
   pValue: number,

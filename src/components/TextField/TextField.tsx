@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { forwardRef, useState } from 'react'
+import { forwardRef, useEffect, useRef, useState } from 'react'
 
 import { createCustomChangeEvent, handleKeyDown } from '@utils'
 
@@ -13,6 +13,7 @@ import type {
   ComponentProps,
   FC,
   ForwardedRef,
+  KeyboardEvent,
   RefObject,
   SVGProps,
 } from 'react'
@@ -29,6 +30,8 @@ export interface TextFieldProps
   canClear?: boolean
   /* Error messages displayed under the input text when an error occurs */
   errors?: string[]
+  /* [a11y] When true, will bring the focus on the icon button */
+  focusIconButton?: boolean
   /* Information message displayed under the input text */
   helperText?: string
   /* If true, no focus state is shown on focus */
@@ -84,6 +87,7 @@ const TextField: FC<TextFieldProps> = forwardRef<
       canClear = false,
       disabled,
       errors,
+      focusIconButton,
       helperText,
       hideFocus,
       iconAriaLabel,
@@ -107,11 +111,63 @@ const TextField: FC<TextFieldProps> = forwardRef<
     ref
   ) => {
     const [showCross, setShowCross] = useState(false)
+    const initRef = useRef(false)
+    const isProgrammaticFocus = useRef(false)
 
+    /**
+     * Handle the cross-button click to reset the input value.
+     */
     const onReset = () => {
       const customEvent = createCustomChangeEvent('')
       onChange?.(customEvent)
     }
+
+    /**
+     * [a11y] Manage the input keyboard behavior by explicitly
+     * handling the Tab and Shift+Tab keys to unlock the tabulation.
+     *
+     * @param {KeyboardEvent} e
+     */
+    const onIconButtonKeyDown = (e: KeyboardEvent<HTMLButtonElement>) => {
+      if (e.key === 'Tab' && e.shiftKey) {
+        e.preventDefault()
+        const input = e.currentTarget.parentElement?.querySelector('input')
+        input?.focus()
+        return
+      }
+
+      if (!isProgrammaticFocus.current) {
+        handleKeyDown(() => {
+          if (!disabled || preserveIconClick) onIconClick?.(ref)
+        })(e)
+      }
+    }
+
+    /**
+     * Handle the icon button click.
+     */
+    const onIconButtonClick = () => {
+      if (!isProgrammaticFocus.current) {
+        if (!disabled || preserveIconClick) onIconClick?.(ref)
+      }
+    }
+
+    /**
+     * [a11y] Focus the icon button when focusIconButton is true
+     */
+    useEffect(() => {
+      if (iconRef?.current && focusIconButton && initRef.current) {
+        isProgrammaticFocus.current = true
+        setTimeout(() => {
+          iconRef.current?.focus()
+        }, 0)
+        // Reinit after a short delay to avoid focus issues
+        setTimeout(() => {
+          isProgrammaticFocus.current = false
+        }, 100)
+      }
+      initRef.current = true
+    }, [iconRef, focusIconButton])
 
     return (
       <HelperText
@@ -154,6 +210,7 @@ const TextField: FC<TextFieldProps> = forwardRef<
                 'show-icon': Icon,
                 'show-cross': showCross,
                 'hide-focus': hideFocus,
+                error: errors,
               },
               className
             )}
@@ -165,6 +222,7 @@ const TextField: FC<TextFieldProps> = forwardRef<
             type={type}
             value={value}
             ref={ref}
+            tabIndex={0}
             {...rest}
           />
           {showCross && !disabled && (
@@ -187,12 +245,9 @@ const TextField: FC<TextFieldProps> = forwardRef<
               aria-label={onIconClick ? iconAriaLabel : undefined}
               className="icon-button"
               disabled={disabled ?? !onIconClick}
-              onClick={() =>
-                (!disabled || preserveIconClick) && onIconClick?.(ref)
-              }
-              onKeyDown={handleKeyDown(
-                () => (!disabled || preserveIconClick) && onIconClick?.(ref)
-              )}
+              onClick={onIconButtonClick}
+              onFocus={undefined}
+              onKeyDown={onIconButtonKeyDown}
               tabIndex={onIconClick ? 0 : -1}
               ref={iconRef as RefObject<HTMLButtonElement>}
             >

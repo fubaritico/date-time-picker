@@ -126,6 +126,7 @@ const PickerIntegration = ({
           onChange={handleDateChange}
           locale={locale}
           timezone={timezone}
+          noDefaultDate={props.noDefaultDate}
         />
       </div>
     </div>

@@ -135,6 +135,8 @@ const DateRangePanel: FC<DateRangePanelProps> = ({
         <DaysGrid
           date={leftGridMonth}
           size={size}
+          onNextMonthKeyPress={onNextMonthClickFromLeftGrid}
+          onPrevMonthKeyPress={onPrevMonthClickFromLeftGrid}
           onStartDateChangeHandler={onStartDateChangeHandler}
           onEndDateChangeHandler={onEndDateChangeHandler}
         />
@@ -163,6 +165,8 @@ const DateRangePanel: FC<DateRangePanelProps> = ({
         <DaysGrid
           date={rightGridMonth}
           size={size}
+          onNextMonthKeyPress={onNextMonthClickFromRightGrid}
+          onPrevMonthKeyPress={onPrevMonthClickFromRightGrid}
           onStartDateChangeHandler={onStartDateChangeHandler}
           onEndDateChangeHandler={onEndDateChangeHandler}
         />

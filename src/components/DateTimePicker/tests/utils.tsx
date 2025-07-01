@@ -14,7 +14,7 @@ import type { AnyPickerComponent, AnyPickerProps } from '../types'
  * @param {AnyPickerComponent} Component - The type of picker to be used in the test
  * @param {Number} pFixedDate - The fixed date to use for the tests. Here, 2025-03-15T15:28:13.000Z as a timestamp.
  *
- * @returns The todayTimestamp, the offset and the render function.
+ * @returns The todayTimestamp, the msOffset and the render function.
  */
 export const setup = (
   pFixedDate: number,
@@ -22,12 +22,12 @@ export const setup = (
   props?: AnyPickerProps
 ) => {
   const today = new Date(pFixedDate)
-  const offset = getOffsetInMsFromTimezone(today, props?.timezone)
-  const todayTimestamp = today.getTime() + offset
+  const msOffset = getOffsetInMsFromTimezone(today, props?.timezone)
+  const todayTimestamp = today.getTime() + msOffset
 
   return {
     todayTimestamp,
-    offset,
+    msOffset,
     render: render(<Component {...props} />),
   }
 }
@@ -43,7 +43,7 @@ export const localeAwareFormat: LocaleAwareFormat = 'L LT'
  * @param {CommonPickerProps} props - The props to pass to the component.
  * @param spyOnDateChangeFn
  *
- * @returns {Object} - The todayTimestamp, the offset and the render function.
+ * @returns {Object} - The todayTimestamp, the msOffset and the render function.
  */
 export const setupAsControlled = (
   Component: AnyPickerComponent,
@@ -58,7 +58,7 @@ export const setupAsControlled = (
 
   return {
     todayTimestamp: dateTimestamp,
-    offset: msOffset,
+    msOffset,
     render: render(
       <Integration {...props} spyOnDateChange={spyOnDateChangeFn}>
         {({ props, currentValue, setCurrentValue }) => (

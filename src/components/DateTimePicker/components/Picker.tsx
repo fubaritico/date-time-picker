@@ -21,7 +21,7 @@ const Picker = <T extends PickerMode>({
   maxDate,
   minDate,
   pickerMode,
-  noDefault = false,
+  noDefaultDate = false,
   onChange,
   onDateRangeChange,
   placement = 'bottom-start',
@@ -64,7 +64,7 @@ const Picker = <T extends PickerMode>({
   }
 
   /**
-   * Will pass the proper time offset from the timezone (in milliseconds)
+   * Will pass the proper time msOffset from the timezone (in milliseconds)
    */
   const offsets = useMemo(() => {
     const d = new Date(Date.now())
@@ -97,7 +97,8 @@ const Picker = <T extends PickerMode>({
       locale={locale}
       maxDate={maxDate}
       minDate={minDate}
-      noDefault={noDefault}
+      noDefaultDate={noDefaultDate}
+      open={isOpen}
       msOffset={offsets.msOffset}
       pickerMode={pickerMode}
       dateRange={dateRange}

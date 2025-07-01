@@ -101,7 +101,7 @@ export const WithMaxAndMin: Story = {
     dateRange: [1744137767000, 1745520167000],
     minDate: 1741718567000,
     maxDate: 1750272167000,
-    noDefault: true,
+    noDefaultDate: true,
     required: true,
     label: 'Select a Date',
   },

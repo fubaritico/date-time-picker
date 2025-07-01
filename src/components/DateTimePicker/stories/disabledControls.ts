@@ -79,7 +79,7 @@ const disabledControls = {
       disable: true,
     },
   },
-  noDefault: {
+  noDefaultDate: {
     table: {
       disable: true,
     },

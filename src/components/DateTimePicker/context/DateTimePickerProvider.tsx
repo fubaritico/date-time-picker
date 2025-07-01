@@ -26,7 +26,8 @@ const DateTimePickerProvider: FC<PropsWithChildren<PickerProviderProps>> = ({
   isControlled,
   hasLabel,
   locale = 'en_US',
-  noDefault,
+  noDefaultDate,
+  open,
   pickerMode = 'DATE',
 }) => {
   const [panelView, setPanelView] = useState(
@@ -40,9 +41,17 @@ const DateTimePickerProvider: FC<PropsWithChildren<PickerProviderProps>> = ({
   }, [locale])
 
   // DATE_TIME_FORMAT also includes time to be extracted
-  const [innerDate, setInnerDate] = useState<number | undefined>(
-    !p_date && !noDefault ? Date.now() + msOffset : undefined
-  )
+  const [innerDate, setInnerDate] = useState<number | undefined>(() => {
+    if (!p_date && !noDefaultDate) {
+      return Date.now() + msOffset
+    }
+
+    if (p_date && !noDefaultDate) {
+      return p_date + msOffset
+    }
+
+    return undefined
+  })
 
   // DATE_RANGE_FORMAT
   const [innerDateRange, setInnerDateRange] = useState<DateRange>(
@@ -80,6 +89,7 @@ const DateTimePickerProvider: FC<PropsWithChildren<PickerProviderProps>> = ({
       maxDate: p_maxDate ? p_maxDate + msOffset : undefined,
       minDate: p_minDate ? p_minDate + msOffset : undefined,
       msOffset,
+      open,
       panelRect,
       panelView,
       pickerMode,
@@ -99,6 +109,7 @@ const DateTimePickerProvider: FC<PropsWithChildren<PickerProviderProps>> = ({
     innerLocale,
     isControlled,
     msOffset,
+    open,
     panelRect,
     panelView,
     pickerMode,

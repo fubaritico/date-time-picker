@@ -59,6 +59,7 @@ const DateTimeInput: FC<DateInputProps> = ({
     maxDate,
     minDate,
     msOffset,
+    open,
     pickerMode,
     setInnerDate,
     setIgnoreClickAwayRef,
@@ -248,11 +249,11 @@ const DateTimeInput: FC<DateInputProps> = ({
         aria-labelledby="human-readable-date"
         alwaysShowMask
         color={color}
+        focusIconButton={!open}
         mask={inputMaskInstance?.getMask()}
         value={inputValue ?? ''}
         disabled={inputTextProps.disabled}
         required={inputTextProps.required}
-        severity={innerErrors ? 'error' : undefined}
         errors={innerErrors}
         onChange={async (e: ChangeEvent<HTMLInputElement>) => {
           await handleChange(e)

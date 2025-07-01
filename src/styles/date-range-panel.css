@@ -28,16 +28,19 @@
 }
 
 /* Sizes */
-.DateRangePanel.sm {
-  width: 570px;
+.DateRangePanel.sm .start-date-panel,
+.DateRangePanel.sm .end-date-panel {
+  width: 270px;
 }
 
-.DateRangePanel.md {
-  width: 640px;
+.DateRangePanel.md .start-date-panel,
+.DateRangePanel.md .end-date-panel {
+  width: 305px;
 }
 
-.DateRangePanel.lg {
-  width: 720px;
+.DateRangePanel.lg .start-date-panel,
+.DateRangePanel.lg .end-date-panel {
+  width: 345px;
 }
 
 /* Dark mode from system */

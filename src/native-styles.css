@@ -52,3 +52,9 @@
   font-weight: 700;
   font-style: normal;
 }
+
+/* Focus outline for accessibility (debugging purposes)
+*:focus {
+  outline: 2px solid red !important;
+}
+*/

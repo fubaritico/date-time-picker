@@ -56,12 +56,12 @@ export const WithPrefill: IntegrationStory = {
   argTypes: disabledControls,
 }
 
-export const WithNoDefaultDate: IntegrationStory = {
+export const WithnoDefaultDateDate: IntegrationStory = {
   ...Controlled,
   name: 'Controlled with no default date',
   args: {
     ...Controlled.args,
-    noDefault: true,
+    noDefaultDate: true,
   },
   argTypes: disabledControls,
 }

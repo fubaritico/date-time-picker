@@ -15,6 +15,8 @@ export interface InputWithMaskProps extends DateInputProps {
   color?: UIColor
   /* Extra CSS styles (tailwind) */
   className?: string
+  /* [a11y] When true, will bring the focus on the icon button */
+  focusIconButton?: boolean
   /* If true, the outline around the text field will not be shown on focus */
   hideFocus?: boolean
   /* Reference to pass to ignore an element */
@@ -38,6 +40,7 @@ export interface InputWithMaskProps extends DateInputProps {
 const InputWithMask: FC<InputWithMaskProps> = ({
   alwaysShowMask,
   className,
+  focusIconButton,
   iconRef,
   onIconClick,
   mask,
@@ -45,7 +48,6 @@ const InputWithMask: FC<InputWithMaskProps> = ({
   required,
   value,
   disabled,
-  severity,
   errors,
   onChange,
   onFocus,
@@ -61,7 +63,6 @@ const InputWithMask: FC<InputWithMaskProps> = ({
       value={value ?? ''}
       disabled={disabled}
       required={required}
-      severity={severity}
       errors={errors}
       onChange={async (e: ChangeEvent<HTMLInputElement>) => {
         await onChange(e)
@@ -69,6 +70,7 @@ const InputWithMask: FC<InputWithMaskProps> = ({
       onFocus={onFocus}
     >
       <TextField
+        focusIconButton={focusIconButton}
         iconAriaLabel={pickerMode === 'TIME' ? 'Choose Time' : 'Choose Date'}
         icon={
           withPanel

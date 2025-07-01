@@ -35,9 +35,9 @@ export interface DatePanelProps {
  *
  * FUCKING IMPORTANT:
  * ------------------
- * On input, the timestamp value gets the offset in milliseconds.
- * It keeps this offset throughout the edition of its value.
- * On output, the timestamp value gets its offset removed to come back to UTC..
+ * On input, the timestamp value gets the msOffset in milliseconds.
+ * It keeps this msOffset throughout the edition of its value.
+ * On output, the timestamp value gets its msOffset removed to come back to UTC..
  *
  * @param className
  * @param onDateChange
@@ -124,7 +124,13 @@ const DatePanel: FC<DatePanelProps> = ({ className, onDateChange, size }) => {
           }}
         />
       </PanelHeader>
-      <DaysGrid date={panelDate} size={size} onDateChange={onDateChange} />
+      <DaysGrid
+        date={panelDate}
+        size={size}
+        onDateChange={onDateChange}
+        onPrevMonthKeyPress={gotoPrevMonth}
+        onNextMonthKeyPress={gotoNextMonth}
+      />
     </div>
   )
 }
