@@ -16,7 +16,7 @@ import { DATE_TIME_FORMAT } from '@components'
 
 import DateTimePicker from '../DateTimePicker'
 
-import { setup } from './utils'
+import { setupUncontrolledPicker } from './utils'
 
 import type { AnyPickerComponent } from '../types'
 
@@ -41,7 +41,7 @@ describe('DateTimePicker: accessibility', () => {
   it('should have no accessibility violations', async () => {
     const {
       render: { container },
-    } = setup(fixedDate, DateTimePicker as AnyPickerComponent)
+    } = setupUncontrolledPicker(fixedDate, DateTimePicker as AnyPickerComponent)
 
     const results = await axe(container)
 
@@ -49,7 +49,7 @@ describe('DateTimePicker: accessibility', () => {
   })
 
   it('should open the calendar panel when "enter" key is pressed', async () => {
-    setup(fixedDate, DateTimePicker as AnyPickerComponent)
+    setupUncontrolledPicker(fixedDate, DateTimePicker as AnyPickerComponent)
 
     const user = userEvent.setup()
 
@@ -66,7 +66,7 @@ describe('DateTimePicker: accessibility', () => {
   it('should have no accessibility violations when panel is open', async () => {
     const {
       render: { container },
-    } = setup(fixedDate, DateTimePicker as AnyPickerComponent)
+    } = setupUncontrolledPicker(fixedDate, DateTimePicker as AnyPickerComponent)
 
     const user = userEvent.setup()
 
@@ -86,7 +86,7 @@ describe('DateTimePicker: accessibility', () => {
 
   // Space doesn't work when triggered from a focused button
   it.skip('should open the calendar panel when "space" key is pressed', async () => {
-    setup(fixedDate, DateTimePicker as AnyPickerComponent)
+    setupUncontrolledPicker(fixedDate, DateTimePicker as AnyPickerComponent)
 
     const user = userEvent.setup()
 
@@ -101,7 +101,7 @@ describe('DateTimePicker: accessibility', () => {
   })
 
   it('should close the calendar panel when "escape" key is pressed', async () => {
-    setup(fixedDate, DateTimePicker as AnyPickerComponent)
+    setupUncontrolledPicker(fixedDate, DateTimePicker as AnyPickerComponent)
 
     const user = userEvent.setup()
 
@@ -119,7 +119,10 @@ describe('DateTimePicker: accessibility', () => {
   })
 
   it("should focus on the current date if there's no selected date when calendar panel is open", async () => {
-    const { msOffset } = setup(fixedDate, DateTimePicker as AnyPickerComponent)
+    const { msOffset } = setupUncontrolledPicker(
+      fixedDate,
+      DateTimePicker as AnyPickerComponent
+    )
 
     const user = userEvent.setup()
 
@@ -135,7 +138,7 @@ describe('DateTimePicker: accessibility', () => {
   })
 
   it('should focus on "Choose Date" button when closing the panel', async () => {
-    setup(fixedDate, DateTimePicker as AnyPickerComponent)
+    setupUncontrolledPicker(fixedDate, DateTimePicker as AnyPickerComponent)
 
     const user = userEvent.setup()
 
@@ -155,7 +158,7 @@ describe('DateTimePicker: accessibility', () => {
   })
 
   it('should move the selection to the next element when "tab" key is pressed', async () => {
-    setup(fixedDate, DateTimePicker as AnyPickerComponent)
+    setupUncontrolledPicker(fixedDate, DateTimePicker as AnyPickerComponent)
 
     const user = userEvent.setup()
 
@@ -171,7 +174,10 @@ describe('DateTimePicker: accessibility', () => {
   })
 
   it('should move the selection to the previous element when "shift + tab" keys are pressed', async () => {
-    const { msOffset } = setup(fixedDate, DateTimePicker as AnyPickerComponent)
+    const { msOffset } = setupUncontrolledPicker(
+      fixedDate,
+      DateTimePicker as AnyPickerComponent
+    )
 
     const user = userEvent.setup()
 
@@ -225,7 +231,10 @@ describe('DateTimePicker: accessibility', () => {
   })
 
   it('should be possible to focus date using arrows keys in the date grid', async () => {
-    const { msOffset } = setup(fixedDate, DateTimePicker as AnyPickerComponent)
+    const { msOffset } = setupUncontrolledPicker(
+      fixedDate,
+      DateTimePicker as AnyPickerComponent
+    )
 
     const startDate = new Date(fixedDate + msOffset).getDate()
 
@@ -254,7 +263,10 @@ describe('DateTimePicker: accessibility', () => {
   })
 
   it('should focus on the selected date when calendar panel is open', async () => {
-    const { msOffset } = setup(fixedDate, DateTimePicker as AnyPickerComponent)
+    const { msOffset } = setupUncontrolledPicker(
+      fixedDate,
+      DateTimePicker as AnyPickerComponent
+    )
 
     const oneDayInMs = 86400000
     const user = userEvent.setup()
@@ -321,7 +333,10 @@ describe('DateTimePicker: accessibility', () => {
   })
 
   it('should change the grid of dates to the previous month when "Page down" key is pressed', async () => {
-    const { msOffset } = setup(fixedDate, DateTimePicker as AnyPickerComponent)
+    const { msOffset } = setupUncontrolledPicker(
+      fixedDate,
+      DateTimePicker as AnyPickerComponent
+    )
 
     const user = userEvent.setup()
 
@@ -349,7 +364,7 @@ describe('DateTimePicker: accessibility', () => {
     'should move focus to the day of the month that has the same number, and if that day does not exist,' +
       'move focus to the last day of the month when "Page down" key is pressed',
     async () => {
-      const { msOffset } = setup(
+      const { msOffset } = setupUncontrolledPicker(
         fixedDate,
         DateTimePicker as AnyPickerComponent
       )
@@ -391,7 +406,10 @@ describe('DateTimePicker: accessibility', () => {
   )
 
   it('should changes the grid of dates to the next month when "Page Up" key is pressed', async () => {
-    const { msOffset } = setup(fixedDate, DateTimePicker as AnyPickerComponent)
+    const { msOffset } = setupUncontrolledPicker(
+      fixedDate,
+      DateTimePicker as AnyPickerComponent
+    )
 
     const user = userEvent.setup()
 
@@ -414,7 +432,10 @@ describe('DateTimePicker: accessibility', () => {
   })
 
   it('should move focus to the day of the month that has the same number, and if that day does not exist, move focus to the last day of the month when "Page up" key is pressed', async () => {
-    const { msOffset } = setup(fixedDate, DateTimePicker as AnyPickerComponent)
+    const { msOffset } = setupUncontrolledPicker(
+      fixedDate,
+      DateTimePicker as AnyPickerComponent
+    )
 
     const oneDayInMs = 86400000
     const user = userEvent.setup()
@@ -454,7 +475,10 @@ describe('DateTimePicker: accessibility', () => {
   })
 
   it('should be possible to access months panel and select a month using "tab" and "enter" keys', async () => {
-    const { msOffset } = setup(fixedDate, DateTimePicker as AnyPickerComponent)
+    const { msOffset } = setupUncontrolledPicker(
+      fixedDate,
+      DateTimePicker as AnyPickerComponent
+    )
 
     const user = userEvent.setup()
 
@@ -504,7 +528,10 @@ describe('DateTimePicker: accessibility', () => {
   })
 
   it('should be possible to access years panel and select a year using "tab" and "enter" keys', async () => {
-    const { msOffset } = setup(fixedDate, DateTimePicker as AnyPickerComponent)
+    const { msOffset } = setupUncontrolledPicker(
+      fixedDate,
+      DateTimePicker as AnyPickerComponent
+    )
 
     const user = userEvent.setup()
 
@@ -551,7 +578,10 @@ describe('DateTimePicker: accessibility', () => {
   })
 
   it('should be possible to access time panel and select a time using "tab" and "enter" keys', async () => {
-    const { msOffset } = setup(fixedDate, DateTimePicker as AnyPickerComponent)
+    const { msOffset } = setupUncontrolledPicker(
+      fixedDate,
+      DateTimePicker as AnyPickerComponent
+    )
 
     const user = userEvent.setup()
 

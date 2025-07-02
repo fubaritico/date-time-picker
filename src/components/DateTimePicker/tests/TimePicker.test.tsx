@@ -22,8 +22,8 @@ import TimePicker from '../TimePicker'
 import {
   dateSpanTestId,
   localeAwareFormat,
-  setup,
-  setupAsControlled,
+  setupControlledDateTimePicker,
+  setupUncontrolledPicker,
 } from './utils'
 
 import type { AnyPickerComponent, AnyPickerProps } from '../types'
@@ -52,7 +52,7 @@ const runTests = (timezone?: Timezone) => {
         0
       )
 
-      setup(fixedDate, TimePicker as AnyPickerComponent)
+      setupUncontrolledPicker(fixedDate, TimePicker as AnyPickerComponent)
 
       await waitFor(() => {
         expect(screen.getByRole('textbox')).toHaveValue(expectedValue)
@@ -66,7 +66,7 @@ const runTests = (timezone?: Timezone) => {
       const {
         msOffset,
         render: { container },
-      } = setup(fixedDate, TimePicker as AnyPickerComponent, {
+      } = setupUncontrolledPicker(fixedDate, TimePicker as AnyPickerComponent, {
         timezone,
         locale: 'en_US',
       })
@@ -104,7 +104,7 @@ const runTests = (timezone?: Timezone) => {
       const {
         msOffset,
         render: { container },
-      } = setup(fixedDate, TimePicker as AnyPickerComponent, {
+      } = setupUncontrolledPicker(fixedDate, TimePicker as AnyPickerComponent, {
         timezone,
         locale: 'fr_FR', // 'fr' by default, I don't remember, so bear with me
       })
@@ -135,7 +135,7 @@ const runTests = (timezone?: Timezone) => {
     it('should close time panel when clicking outside the panel only', async () => {
       const {
         render: { container },
-      } = setup(fixedDate, TimePicker as AnyPickerComponent, {
+      } = setupUncontrolledPicker(fixedDate, TimePicker as AnyPickerComponent, {
         timezone,
       })
 
@@ -153,7 +153,7 @@ const runTests = (timezone?: Timezone) => {
     })
 
     it('should update the time panel on time selection', async () => {
-      setup(fixedDate, TimePicker as AnyPickerComponent)
+      setupUncontrolledPicker(fixedDate, TimePicker as AnyPickerComponent)
 
       await userEvent.click(screen.getByLabelText('Choose Time'))
 
@@ -191,7 +191,7 @@ const runTests = (timezone?: Timezone) => {
     })
 
     it('should update the state of AM/PM button when changing meridian on time selection', async () => {
-      setup(fixedDate, TimePicker as AnyPickerComponent)
+      setupUncontrolledPicker(fixedDate, TimePicker as AnyPickerComponent)
 
       const hoursToRemove = 8 // based on the time zone msOffset, this will change the time from PM to AM
       const hoursToAdd = 4
@@ -264,7 +264,7 @@ const runTests = (timezone?: Timezone) => {
       const {
         msOffset,
         render: { container },
-      } = setupAsControlled(
+      } = setupControlledDateTimePicker(
         TimePicker as AnyPickerComponent,
         fixedDate,
         defaultProperties,
@@ -290,7 +290,7 @@ const runTests = (timezone?: Timezone) => {
     })
 
     it('should call the onDateChange component method with proper value when changing hours', async () => {
-      setupAsControlled(
+      setupControlledDateTimePicker(
         TimePicker as AnyPickerComponent,
         fixedDate,
         defaultProperties,
@@ -315,7 +315,7 @@ const runTests = (timezone?: Timezone) => {
     })
 
     it('should call the onDateChange component method with proper value when changing minutes', async () => {
-      setupAsControlled(
+      setupControlledDateTimePicker(
         TimePicker as AnyPickerComponent,
         fixedDate,
         defaultProperties,
@@ -368,7 +368,7 @@ const runTests = (timezone?: Timezone) => {
     })
 
     it('should call the onDateChange component method with proper value when changing AM-PM', async () => {
-      setupAsControlled(
+      setupControlledDateTimePicker(
         TimePicker as AnyPickerComponent,
         fixedDate,
         defaultProperties,
@@ -413,7 +413,7 @@ const runTests = (timezone?: Timezone) => {
       const {
         msOffset,
         render: { container },
-      } = setupAsControlled(
+      } = setupControlledDateTimePicker(
         TimePicker as AnyPickerComponent,
         fixedDate,
         defaultProperties
@@ -444,7 +444,7 @@ const runTests = (timezone?: Timezone) => {
       const {
         msOffset,
         render: { container },
-      } = setupAsControlled(
+      } = setupControlledDateTimePicker(
         TimePicker as AnyPickerComponent,
         fixedDate,
         defaultProperties

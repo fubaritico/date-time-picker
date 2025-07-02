@@ -70,7 +70,7 @@ const meta: Meta<typeof DropdownWrapper> = {
       description: 'The default value of the Dropdown',
     },
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'hidden'],
   decorators: [withCenteredLayout],
   component: DropdownWrapper,
 }

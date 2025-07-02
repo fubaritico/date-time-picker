@@ -14,6 +14,8 @@ A React 19.x date-time picker component, using TypeScript 5.x, styled using nati
 
 The package is available on NPM as `@fubar-it-co/date-time-picker`, [go to NPM](https://www.npmjs.com/package/@fubar-it-co/date-time-picker).
 
+A Storybook instance is available to preview the components and their features [here](https://fubaritico-pickers.tiiny.site/?path=/story/datepicker--uncontrolled).
+
 ## Dependencies
 
 `@mona-health/react-input-mask` v3.0.3

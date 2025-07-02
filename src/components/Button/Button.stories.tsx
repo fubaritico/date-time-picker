@@ -56,7 +56,7 @@ const meta = {
       description: 'Variant of the button: "primary" or "secondary"',
     },
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'hidden'],
   decorators: [withLayout],
   component: Button,
 } satisfies Meta<typeof Button>
