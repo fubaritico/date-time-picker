@@ -57,9 +57,9 @@ const runTests = (timezone?: Timezone) => {
   })
 
   /**
-   * When uncontrolled the default value should be that of today.
+   * When uncontrolled, the default value should be that of today.
    */
-  describe('Basic behavior - Date/Time mode', () => {
+  describe('Basic behavior', () => {
     it('should pass the date of today as a formatted value to the masked input', async () => {
       const expectedValue = formatTimestampForTextInput(
         Date.now(),
@@ -129,7 +129,7 @@ const runTests = (timezone?: Timezone) => {
       }
 
       expect(await screen.findByTestId(todayTimestamp.toString())).toHaveClass(
-        'DaysGridCell enabled today blue md'
+        'DaysGridCell today blue md'
       )
     })
 
@@ -184,7 +184,7 @@ const runTests = (timezone?: Timezone) => {
       }
 
       expect(screen.getByTestId(clickableDate.toString())).toHaveClass(
-        'DaysGridCell enabled selected blue md'
+        'DaysGridCell selected blue md'
       )
     })
 
@@ -458,7 +458,7 @@ const runTests = (timezone?: Timezone) => {
     })
   })
 
-  describe('Controlled Date Picker - Date/Time mode', () => {
+  describe('Controlled', () => {
     beforeEach(() => {
       spyOnDateChangeFn.mockReset()
     })
@@ -840,7 +840,7 @@ const runTests = (timezone?: Timezone) => {
     })
   })
 
-  describe.skip('Controlled Date Picker - text input behavior (en)', () => {
+  describe.skip('Controlled - text input behavior (en)', () => {
     const defaultProperties: AnyPickerProps = {
       date: 1723201362000, // Aug 9, 2024, 11:02:42 AM (GMT)
       locale: 'en_US',
@@ -880,7 +880,7 @@ const runTests = (timezone?: Timezone) => {
     })
   })
 
-  describe('Controlled Date/Time Picker - i18n', () => {
+  describe('Controlled - i18n', () => {
     const date = 1723201362000 // Aug 9, 2024, 11:02:42 AM
     const defaultProperties: AnyPickerProps = {
       date,
@@ -931,7 +931,7 @@ const runTests = (timezone?: Timezone) => {
     )
   })
 
-  describe('DateTimePicker: minDate and maxDate functionality', () => {
+  describe('Min date & max date', () => {
     const defaultProperties: AnyPickerProps = {
       minDate: new Date(2025, 0, 15).getTime(),
       maxDate: new Date(2025, 0, 30).getTime(),
@@ -942,7 +942,7 @@ const runTests = (timezone?: Timezone) => {
 
     // TODO: find why the error state is not shown when the date is out of range
     it.skip('shows an error state for keyboard-entered dates outside range', async () => {
-      // Update the date to outOfRangeDate and wrap the setup in `act` to ensure state changes are properly flushed
+      // Update the date to outOfRangeDate and wrap the setupUncontrolledPicker in `act` to ensure state changes are properly flushed
       setupControlledDateTimePicker(
         DateTimePicker as AnyPickerComponent,
         fixedDate,
@@ -1052,6 +1052,6 @@ describe('DateTimePicker', () => {
  * The same set of test with a given timezone
  * @see: https://stackoverflow.com/questions/38399465/how-to-get-list-of-all-timezones-in-javascript
  */
-describe('DateTimePicker with timezone', () => {
+describe('DateTimePicker w/ timezone', () => {
   runTests('America/Argentina/La_Rioja')
 })

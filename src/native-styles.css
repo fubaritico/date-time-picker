@@ -54,7 +54,8 @@
 }
 
 /* Focus outline for accessibility (debugging purposes)
-*:focus {
+
+*:focus-visible {
   outline: 2px solid red !important;
 }
 */

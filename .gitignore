@@ -62,6 +62,7 @@ yalc.lock
 
 # Storybook
 storybook-static/
+storybook-static.zip
 
 # a11y
 a11y.md

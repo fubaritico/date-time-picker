@@ -1,8 +1,7 @@
 import clsx from 'clsx'
+import { ComponentProps, FC, PropsWithChildren, useState } from 'react'
 
 import { formatHumanReadableDate } from '@utils'
-
-import type { ComponentProps, FC, PropsWithChildren } from 'react'
 
 export interface DaysGridCellProps
   extends Omit<ComponentProps<'button'>, 'color'> {
@@ -51,15 +50,16 @@ const DaysGridCell: FC<PropsWithChildren<DaysGridCellProps>> = ({
   value,
   ...rest
 }) => {
+  const [focused, setFocused] = useState(false)
   return (
     <button
       aria-label={formatHumanReadableDate(value, locale)}
       aria-disabled={disabled}
+      data-focus={focused}
       className={clsx(
         'DaysGridCell',
         {
           hasDateRangeMode: hasDateRangeMode,
-          enabled: !disabled,
           selected: isSelected,
           inRange: isInRange,
           today: isToday,
@@ -72,6 +72,12 @@ const DaysGridCell: FC<PropsWithChildren<DaysGridCellProps>> = ({
       data-date={value}
       data-test={value}
       disabled={disabled}
+      onFocus={() => {
+        setFocused(true)
+      }}
+      onBlur={() => {
+        setFocused(false)
+      }}
       onClick={!disabled ? onClick : undefined}
       onKeyDown={!disabled ? onKeyDown : undefined}
       onMouseEnter={!disabled && isSelectingRange ? onMouseEnter : undefined}

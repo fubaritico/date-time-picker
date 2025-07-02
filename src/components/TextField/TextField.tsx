@@ -28,6 +28,8 @@ export interface TextFieldProps
   containerClassName?: string
   /* If true, an icon button will show on hovering the input and will allow clearing the content of the text input on click */
   canClear?: boolean
+  /* For test purposes only */
+  containerDataTest?: string
   /* Error messages displayed under the input text when an error occurs */
   errors?: string[]
   /* [a11y] When true, will bring the focus on the icon button */
@@ -84,6 +86,7 @@ const TextField: FC<TextFieldProps> = forwardRef<
       className,
       color = 'blue',
       containerClassName,
+      containerDataTest,
       canClear = false,
       disabled,
       errors,
@@ -186,6 +189,7 @@ const TextField: FC<TextFieldProps> = forwardRef<
           />
         )}
         <div
+          data-test={containerDataTest}
           style={{ position: 'relative', width: '100%' }}
           onMouseEnter={() => {
             if (canClear) {

@@ -61,6 +61,7 @@
   --panel-button-height-sm: 30px;
 
   --transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, outline;
+  --transition-simple: color, background-color, border-color, text-decoration-color, opacity, transform;
 
   --focus-outline-width: 2px;
   --focus-outline-offset: 2px;

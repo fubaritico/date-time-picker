@@ -7,6 +7,12 @@
   width: 100%;
 }
 
+.DaysGrid td,
+.DaysGrid td:focus,
+.DaysGrid td:focus-visible {
+  outline: none;
+}
+
 .DaysGrid th abbr:where([title]) {
   text-decoration: none;
 }

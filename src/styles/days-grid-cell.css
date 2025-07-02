@@ -69,18 +69,18 @@ button.DaysGridCell {
   --selectedEndDate-bg: var(--selectedEndDate-bg-light);
   --selectedEndDate-text: var(--selectedEndDate-text-light);
 
-  /* Basic styles (enabled) */
+  /* Basic styles */
   appearance: none;
   border: 0 none;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition-property: var(--transition), outline;
+  transition-property: var(--transition-simple);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 8px;
   font-weight: bold;
   outline-offset: 2px;
-  outline: 2px solid transparent;
+  outline: none;
 }
 
 /* States (light by default) */
@@ -100,16 +100,16 @@ button.DaysGridCell.hasDateRangeMode {
   transition-duration: 200ms;
 }
 
-button.DaysGridCell.enabled {
+button.DaysGridCell {
   cursor: pointer;
   color: var(--text);
 }
 
-button.DaysGridCell.enabled:hover {
+button.DaysGridCell:hover {
   background: var(--hover-bg);
 }
 
-button.DaysGridCell:not(.enabled) {
+button.DaysGridCell:disabled {
   cursor: not-allowed;
   color: var(--disabled-text);
 }
@@ -182,14 +182,14 @@ button.DaysGridCell.selectedEndDate:hover {
     --selected-hover-bg: var(--selected-hover-bg-dark);
   }
 
-  button.DaysGridCell.enabled:not(.light *) {
+  button.DaysGridCell:not(.light *) {
     --hover-bg-dark: var(--gray-700);
     --text: var(--text-dark);
     --hover-bg: var(--hover-bg-dark);
   }
 
-  button.DaysGridCell:not(.enabled, .light *),
-  button.DaysGridCell:not(.enabled, .light *):hover {
+  button.DaysGridCell:disabled:not(.light *),
+  button.DaysGridCell:disabled:not(.light *):hover {
     --disabled-text: var(--disabled-text-dark);
   }
 
@@ -1205,13 +1205,13 @@ button.DaysGridCell.selectedEndDate:hover {
   --selected-hover-bg: var(--selected-hover-bg-dark);
 }
 
-.dark * button.DaysGridCell.enabled {
+.dark * button.DaysGridCell {
   --hover-bg-dark: var(--gray-700);
   --text: var(--text-dark);
   --hover-bg: var(--hover-bg-dark);
 }
 
-.dark * button.DaysGridCell:not(.enabled) {
+.dark * button.DaysGridCell:disabled {
   --disabled-text: var(--disabled-text-dark);
 }
 
@@ -1258,13 +1258,13 @@ button.DaysGridCell.selectedEndDate:hover {
   --selected-hover-bg: var(--selected-hover-bg-light);
 }
 
-.light * button.DaysGridCell.enabled {
+.light * button.DaysGridCell {
   --hover-bg-light: var(--gray-100);
   --text: var(--text-light);
   --hover-bg: var(--hover-bg-light);
 }
 
-.light * button.DaysGridCell:not(.enabled) {
+.light * button.DaysGridCell:disabled {
   --disabled-text: var(--disabled-text-light);
 }
 

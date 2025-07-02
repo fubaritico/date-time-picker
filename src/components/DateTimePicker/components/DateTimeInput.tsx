@@ -258,6 +258,7 @@ const DateTimeInput: FC<DateInputProps> = ({
         onChange={async (e: ChangeEvent<HTMLInputElement>) => {
           await handleChange(e)
         }}
+        placeholder="Choose Date"
         iconRef={clickAwayIgnoreRef}
         onIconClick={onIconClick}
         pickerMode={pickerMode}

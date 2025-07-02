@@ -83,6 +83,19 @@ export const Controlled: IntegrationStory = {
   argTypes: disabledControls,
 }
 
+export const ControlledForTest: IntegrationStory = {
+  render: (args: DateRangePickerIntegrationProps) => (
+    <DateRangePickerIntegration {...args} />
+  ),
+  name: 'Controlled for tests',
+  args: {
+    timezone: 'Europe/Paris',
+    pickerMode: 'DATERANGE',
+    dateRange: [1741011177000, 1743171177000],
+  },
+  argTypes: disabledControls,
+}
+
 export const WithPortal: Story = {
   render: (args: DateRangePickerProps) => <DateRangePicker {...args} />,
   name: 'With Portal',

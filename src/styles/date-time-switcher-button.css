@@ -38,7 +38,7 @@ button.DateTimeSwitcherButton {
   flex: 1;
   justify-content: center;
   align-items: center;
-  transition-property: var(--transition);
+  transition-property: var(--transition-simple);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 500ms;
   background: var(--unselected-bg-color);
@@ -50,11 +50,11 @@ button.DateTimeSwitcherButton {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   outline-offset: -2px;
-  outline: 2px solid transparent;
+  outline: 0 none;
 }
 
 button.DateTimeSwitcherButton:focus {
-  outline: 2px solid transparent;
+  outline: 0 none;
 }
 
 button.DateTimeSwitcherButton:focus-visible {

@@ -111,15 +111,18 @@ const DateRangePanel: FC<DateRangePanelProps> = ({
   )
 
   return (
-    <div className={clsx('DateRangePanel', size, className)}>
+    <div
+      className={clsx('DateRangePanel', size, className)}
+      data-test="date-range-panel"
+    >
       <div className="start-date-panel" data-test="start-date-panel">
         <PanelHeader
           size={size}
-          nextButtonAriaLabel="Previous Month"
+          nextButtonAriaLabel="Next Month"
           onNextButtonClick={onNextMonthClickFromLeftGrid}
           onPrevButtonClick={onPrevMonthClickFromLeftGrid}
           disableNextButton={addMonths(leftGridMonth, 1) >= rightGridMonth}
-          prevButtonAriaLabel="Next Month"
+          prevButtonAriaLabel="Previous Month"
         >
           <PanelHeaderButton
             aria-label={getMonthNameFromTs(leftGridMonth + msOffset, locale)}
@@ -145,11 +148,11 @@ const DateRangePanel: FC<DateRangePanelProps> = ({
       <div className="end-date-panel" data-test="end-date-panel">
         <PanelHeader
           size={size}
-          nextButtonAriaLabel="Previous Month"
+          nextButtonAriaLabel="Next Month"
           onNextButtonClick={onNextMonthClickFromRightGrid}
           onPrevButtonClick={onPrevMonthClickFromRightGrid}
           disablePrevButton={subtractMonths(rightGridMonth, 1) <= leftGridMonth}
-          prevButtonAriaLabel="Next Month"
+          prevButtonAriaLabel="Previous Month"
         >
           <PanelHeaderButton
             aria-label={getMonthNameFromTs(rightGridMonth + msOffset, locale)}

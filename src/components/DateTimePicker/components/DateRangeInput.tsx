@@ -97,8 +97,11 @@ const DateRangeInput: FC<DateInputProps> = ({
         )}
         <div data-focus={focus}>
           <InputWithMask
-            key="start-input"
             alwaysShowMask
+            dataTest="start-input-control"
+            data-test="start-input"
+            key="start-input"
+            iconAriaLabel="Choose Date Range"
             mask={startInputMaskInstance?.getMask()}
             value={startInputValue ?? ''}
             disabled={inputTextProps.disabled}
@@ -118,8 +121,10 @@ const DateRangeInput: FC<DateInputProps> = ({
             {...textInputOnlyProperties(inputTextProps)}
           />
           <InputWithMask
-            key="end-input"
             alwaysShowMask
+            dataTest="end-input-control"
+            data-test="end-input"
+            key="end-input"
             hideFocus
             mask={endInputMaskInstance?.getMask()}
             value={endInputValue ?? ''}

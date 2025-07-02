@@ -15,10 +15,14 @@ export interface InputWithMaskProps extends DateInputProps {
   color?: UIColor
   /* Extra CSS styles (tailwind) */
   className?: string
+  /* For test purposes only */
+  dataTest?: string
   /* [a11y] When true, will bring the focus on the icon button */
   focusIconButton?: boolean
   /* If true, the outline around the text field will not be shown on focus */
   hideFocus?: boolean
+  /* Icon aria label for accessibility and tests*/
+  iconAriaLabel?: string
   /* Reference to pass to ignore an element */
   iconRef?: RefObject<HTMLButtonElement | null>
   /* The I18n input mask instance */
@@ -29,6 +33,8 @@ export interface InputWithMaskProps extends DateInputProps {
   onFocus?: FocusEventHandler<HTMLInputElement> | undefined
   /* Defines the behavior of the component */
   pickerMode?: PickerMode
+  /* Placeholder text of the input */
+  placeholder?: string
   /* Panel size: 'sm' | 'md' | 'lg' */
   size?: UISize
   /* Value passed to the input */
@@ -40,10 +46,13 @@ export interface InputWithMaskProps extends DateInputProps {
 const InputWithMask: FC<InputWithMaskProps> = ({
   alwaysShowMask,
   className,
+  dataTest,
   focusIconButton,
+  iconAriaLabel = 'Choose Date',
   iconRef,
   onIconClick,
   mask,
+  placeholder,
   pickerMode,
   required,
   value,
@@ -71,7 +80,7 @@ const InputWithMask: FC<InputWithMaskProps> = ({
     >
       <TextField
         focusIconButton={focusIconButton}
-        iconAriaLabel={pickerMode === 'TIME' ? 'Choose Time' : 'Choose Date'}
+        iconAriaLabel={pickerMode === 'TIME' ? 'Choose Time' : iconAriaLabel}
         icon={
           withPanel
             ? pickerMode === 'TIME'
@@ -81,7 +90,8 @@ const InputWithMask: FC<InputWithMaskProps> = ({
         }
         iconRef={iconRef}
         onIconClick={onIconClick}
-        placeholder="Choose Date"
+        placeholder={placeholder}
+        containerDataTest={dataTest}
         {...rest}
       />
     </MonaHealthInputMask>

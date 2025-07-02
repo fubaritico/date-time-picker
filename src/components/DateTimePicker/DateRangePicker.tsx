@@ -18,6 +18,7 @@ const DateRangePicker: FC<DateRangePickerProps> = ({
       dateRange={dateRange}
       onDateRangeChange={onDateRangeChange}
       locale={locale}
+      pickerMode="DATERANGE"
       timezone={timezone}
     />
   )

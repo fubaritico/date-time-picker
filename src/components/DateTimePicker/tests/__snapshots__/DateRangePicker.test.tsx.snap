@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DateRangePicker should render 1`] = `
+<div>
+  <div
+    style="position: relative;"
+  >
+    <div
+      style="position: relative;"
+    >
+      <div>
+        <div
+          class="DateRangeInput blue"
+        >
+          <div
+            data-focus="false"
+          >
+            <div
+              class="HelperText"
+            >
+              <div
+                data-test="start-input-control"
+                style="position: relative; width: 100%;"
+              >
+                <input
+                  class="TextField blue md icon-left show-icon hide-focus"
+                  data-test="start-input"
+                  tabindex="0"
+                  type="text"
+                  value=""
+                />
+                <button
+                  aria-label="Choose Date Range"
+                  class="icon-button"
+                  tabindex="0"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="icon"
+                    data-jest-file-name="HiMiniCalendarDays.svg"
+                    data-jest-svg-name="HiMiniCalendarDays"
+                    data-testid="HiMiniCalendarDays"
+                  />
+                </button>
+              </div>
+            </div>
+            <div
+              class="HelperText"
+            >
+              <div
+                data-test="end-input-control"
+                style="position: relative; width: 100%;"
+              >
+                <input
+                  class="TextField blue md icon-left show-icon hide-focus"
+                  data-test="end-input"
+                  tabindex="0"
+                  type="text"
+                  value=""
+                />
+                <button
+                  class="icon-button"
+                  disabled=""
+                  tabindex="-1"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="icon"
+                    data-jest-file-name="HiMiniCalendarDays.svg"
+                    data-jest-svg-name="HiMiniCalendarDays"
+                    data-testid="HiMiniCalendarDays"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

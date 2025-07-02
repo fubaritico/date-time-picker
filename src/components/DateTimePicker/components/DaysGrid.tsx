@@ -42,6 +42,8 @@ export type DaysGridProps = Omit<BasicPickerProps, 'onChange'> & {
  * @param onDateChange - Function called on date change, will receive a date in Unix timestamp format.
  * @param onStartDateChangeHandler - In DATE_RANGE picker mode, called on start date change.
  * @param onEndDateChangeHandler - In DATE_RANGE picker mode, called on end date change.
+ * @param onNextMonthKeyPress
+ * @param onPrevMonthKeyPress
  * @param size - Panel size: 'sm' | 'md' | 'lg'.
  *
  * @constructor
@@ -76,18 +78,6 @@ const DaysGrid: FC<DaysGridProps> = ({
     setTempEndDate,
     isSelectingRange,
   } = useDateRangePanel()
-
-  /**
-   * Will set the focus on a specific date cell based on its index.
-   */
-  const setFocusOnDate = useCallback((index: number) => {
-    const value = index >= 0 ? index : 0
-    setKeyboardFocusedIndex(value)
-    const cells = gridRef.current?.querySelectorAll('button')
-    if (cells?.[value]) {
-      ;(cells[value] as HTMLElement).focus()
-    }
-  }, [])
 
   /**
    * Callback function for handling date clicks.
@@ -129,6 +119,18 @@ const DaysGrid: FC<DaysGridProps> = ({
       onEndDateChangeHandler,
     ]
   )
+
+  /**
+   * Will set the focus on a specific date cell based on its index.
+   */
+  const setFocusOnDate = useCallback((index: number) => {
+    const value = index >= 0 ? index : 0
+    setKeyboardFocusedIndex(value)
+    const cells = gridRef.current?.querySelectorAll('button')
+    if (cells?.[value]) {
+      ;(cells[value] as HTMLElement).focus()
+    }
+  }, [])
 
   /**
    * [a11y] Handles keyboard navigation within the grid.

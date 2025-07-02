@@ -18,25 +18,21 @@ button.PanelHeaderButton {
 
   /* Basic styles */
   color: var(--text);
-  transition: color, outline;
+  appearance: none;
+  border: none;
+  transition: color;
   transition-duration: 300ms;
   transition-timing-function: linear;
-  outline-offset: 1px;
-  outline: 1px solid transparent;
+  outline: none;
 }
 
 button.PanelHeaderButton:hover {
   color: var(--hover-text);
-  outline: 1px solid transparent;
-}
-
-button.PanelHeaderButton:focus {
-  outline: 1px solid transparent;
 }
 
 button.PanelHeaderButton:focus-visible {
-  outline: 1px solid var(--focus-outline);
   color: var(--hover-text);
+  outline: 1px solid var(--focus-outline);
 }
 
 /* Dark mode from system */
