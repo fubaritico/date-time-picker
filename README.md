@@ -315,41 +315,28 @@ yarn build
 pnpm build
 ```
 
-### Publishing
+## Change logs
 
-Before publishing, make sure to update the following fields in `package.json`:
+After each release, a changelog is generated automatically. You can find the changelog in the `CHANGELOG.md` file.
+Don't forget to run `chmod +x change-log.sh` to make the file executable
 
-1. `name`: Replace `@<fubar-it-co or your scope>/date-time-picker` with your actual npm scope or username
-2. `author`: Add your name, email, and website
-3. `repository.url`: Update with your actual GitHub repository URL
+## Publishing
 
-This package uses GitHub Actions for automated publishing to npm. There are two ways to trigger a new release:
+To publish the package to npm, you can use the following command:
 
-#### Option 1: Create a GitHub Release
+```bash
+./publish.sh # Don't forget to run chmod +x publish.sh to make the file executable
+```
 
-1. Go to the GitHub repository's "Releases" section
-2. Click "Draft a new release"
-3. Create a new tag version (e.g., v1.0.0)
-4. Set a release title and description
-5. Click "Publish release"
+The script accepts the following parameters:
 
-The GitHub Actions workflow will automatically build and publish the package to npm.
+```bash
+./publish.sh patch # or minor or major
+```
 
-#### Option 2: Manual Workflow Dispatch
+where `patch`, `minor`, or `major` can be used to specify the version bump type according to [Semantic Versioning](https://semver.org/).
 
-1. Go to the GitHub repository's "Actions" tab
-2. Select the "Publish to NPM" workflow
-3. Click "Run workflow"
-4. Choose the version bump type (patch, minor, major, or specific version)
-5. Click "Run workflow"
-
-The GitHub Actions workflow will:
-- Bump the version in package.json
-- Create a git tag
-- Push the changes to GitHub
-- Build and publish the package to npm
-
-#### Setup Requirements
+### Setup Requirements
 
 Before you can publish, make sure:
 
@@ -359,11 +346,11 @@ Before you can publish, make sure:
    - Go to your GitHub repository settings → Secrets → Actions
    - Add a new secret named NPM_TOKEN with your npm token value
 
-- ### Local Development with Yalc
+## Local Development with Yalc
 
 To test the package locally before publishing to npm, you can use `yalc`. This allows you to simulate installing and using the package in other local projects.
 
-#### Setup Yalc
+### Setup Yalc
 
 1. Install yalc globally:
    ```bash
@@ -371,7 +358,7 @@ To test the package locally before publishing to npm, you can use `yalc`. This a
    ```
    Note: If you encounter any global installation issues, run `pnpm setup` first.
 
-#### Publishing Locally
+### Publishing Locally
 
 In the date-time-picker directory:
 
@@ -381,7 +368,7 @@ In the date-time-picker directory:
    yalc publish
    ```
 
-#### Using in Another Project
+## Using in Another Project
 
 In your test project directory:
 
@@ -396,7 +383,7 @@ In your test project directory:
    import { DateTimePicker } from '@<fubar-it-co or your scope>/date-time-picker';
    ```
 
-#### Development Workflow
+### Development Workflow
 
 For active development:
 
@@ -412,7 +399,7 @@ For active development:
 
    Or use `yalc push --watch` to automatically push changes.
 
-#### Cleanup
+### Cleanup
 
 When you're done testing:
 
@@ -427,11 +414,11 @@ When you're done testing:
    yalc installations clean
    ```
 
-### NPM Token Configuration
+## NPM Token Configuration
 
 When working with private packages or publishing, you might encounter issues with the NPM_TOKEN. Here's how to handle it:
 
-#### For Local Development
+### For Local Development
 
 If you see warnings about NPM_TOKEN not being set, you have two options:
 

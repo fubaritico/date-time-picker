@@ -85,6 +85,16 @@ log "Creating new version..." "$YELLOW"
 pnpm version "$VERSION_TYPE"
 check_status "Version bump"
 
+# Generate changelog
+log "Generating changelog..." "$YELLOW"
+pnpm exec conventional-changelog -p angular -i CHANGELOG.md -s
+check_status "Changelog generation"
+
+# Add changelog to git
+git add CHANGELOG.md
+git commit -m "docs: update changelog for version bump"
+check_status "Changelog commit"
+
 pnpm publish --no-git-checks
 check_status "Publish"
 

@@ -114,6 +114,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "concurrently": "^9.1.2",
+    "conventional-changelog-cli": "^5.0.0",
     "dotenv-cli": "^8.0.0",
     "eslint": "^9.21.0",
     "eslint-config-prettier": "^10.1.2",
