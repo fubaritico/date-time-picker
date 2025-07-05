@@ -146,9 +146,8 @@ export default class ENInputMask extends AbstractInputMask {
   validate(value: string): string {
     let newInputValue = ''
 
-    if (this.pickerMode === 'DATETIME' || this.pickerMode === 'DATE') {
+    if (this.pickerMode !== 'TIME') {
       newInputValue = this.validateYear(value)
-
       newInputValue = this.validateMonth(newInputValue)
       newInputValue = this.validateDay(newInputValue)
     }

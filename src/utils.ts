@@ -683,17 +683,17 @@ export const formatTimestampForTextInput = (
   format: string,
   offset: number
 ): string => {
-  if (!ts || !checkTsValidity(ts)) {
-    throw new Error('[formatTimestamp] Invalid timestamp')
+  if (!checkTsValidity(ts)) {
+    throw new Error('[formatTimestampForTextInput] Invalid timestamp')
   }
 
   const date = new Date(ts - offset)
 
-  const year = date.getFullYear().toString()
-  const month = String(date.getMonth() + 1).padStart(2, '0')
-  const day = String(date.getDate()).padStart(2, '0')
-  const hours = date.getHours()
-  const minutes = String(date.getMinutes()).padStart(2, '0')
+  const year = date.getUTCFullYear().toString()
+  const month = String(date.getUTCMonth() + 1).padStart(2, '0')
+  const day = String(date.getUTCDate()).padStart(2, '0')
+  const hours = date.getUTCHours()
+  const minutes = String(date.getUTCMinutes()).padStart(2, '0')
   const ampm = hours >= 12 ? 'PM' : 'AM'
   const formattedHours = String(hours % 12 || 12).padStart(2, '0')
   const formatted24Hours = String(hours).padStart(2, '0')
@@ -738,7 +738,7 @@ export const convertFormattedDateToTimestamp = (
   const enDateFormat = /(\d{2})\/(\d{2})\/(\d{4})/
   const frDateFormat = /(\d{4})\/(\d{2})\/(\d{2})/
 
-  let year, month, day, hours, minutes
+  let year, month, day, hours, minutes, ampm
 
   const enDateTimeFormatMatch = enDateTimeFormat.exec(dateStr)
   const frDateTimeFormatMatch = frDateTimeFormat.exec(dateStr)
@@ -746,7 +746,7 @@ export const convertFormattedDateToTimestamp = (
   const frDateFormatMatch = frDateFormat.exec(dateStr)
 
   if (enDateTimeFormatMatch !== null) {
-    ;[year, month, day, hours, minutes] = enDateTimeFormatMatch.slice(1)
+    ;[year, month, day, hours, minutes, ampm] = enDateTimeFormatMatch.slice(1)
   } else if (frDateTimeFormatMatch !== null) {
     ;[day, month, year, hours, minutes] = frDateTimeFormatMatch.slice(1)
   } else if (enDateFormatMatch !== null) {
@@ -762,7 +762,11 @@ export const convertFormattedDateToTimestamp = (
       parseInt(year, 10),
       parseInt(month, 10) - 1,
       parseInt(day, 10),
-      hours ? parseInt(hours, 10) : 0,
+      hours
+        ? ampm === 'AM'
+          ? parseInt(hours, 10)
+          : parseInt(hours, 10) + 12
+        : 0,
       minutes ? parseInt(minutes, 10) : 0
     )
   )

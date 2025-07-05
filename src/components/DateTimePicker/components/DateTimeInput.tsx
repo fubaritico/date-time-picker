@@ -98,22 +98,14 @@ const DateTimeInput: FC<DateInputProps> = ({
 
       switch (pickerMode) {
         case 'TIME':
-          return formatTimestampForTextInput(
-            innerDate,
-            TIME_FORMAT[locale],
-            gmtMsOffset
-          )
+          return formatTimestampForTextInput(innerDate, TIME_FORMAT[locale], 0)
         case 'DATE':
-          return formatTimestampForTextInput(
-            innerDate,
-            DATE_FORMAT[locale],
-            gmtMsOffset
-          )
+          return formatTimestampForTextInput(innerDate, DATE_FORMAT[locale], 0)
         case 'DATETIME':
           return formatTimestampForTextInput(
             innerDate,
             DATE_TIME_FORMAT[locale],
-            gmtMsOffset
+            0
           )
         default:
           return undefined
@@ -168,7 +160,7 @@ const DateTimeInput: FC<DateInputProps> = ({
    *
    * @param newInputValue
    */
-  const formatNewInputValue = useCallback(
+  const toUtcTimestamp = useCallback(
     (newInputValue: string): number | undefined =>
       !newInputValue.includes('_')
         ? convertFormattedDateToTimestamp(newInputValue)
@@ -198,12 +190,12 @@ const DateTimeInput: FC<DateInputProps> = ({
       // Always attempt to parse, even with potentially invalid input
       const formattedNewInputValue =
         pickerMode === 'TIME' && !!innerDate
-          ? formatNewInputValue(
+          ? toUtcTimestamp(
               formatTimestampToDate(innerDate, locale) +
                 ' ' +
                 validatedInputValue
             )
-          : formatNewInputValue(validatedInputValue)
+          : toUtcTimestamp(validatedInputValue)
 
       // Check if the date is valid and within bounds
       if (formattedNewInputValue) {
@@ -212,9 +204,10 @@ const DateTimeInput: FC<DateInputProps> = ({
 
         if (isAfterMin && isBeforeMax) {
           setInnerErrors(undefined)
+          const newDate = formattedNewInputValue - msOffset
 
           if (isControlled) {
-            onDateChange?.(formattedNewInputValue - msOffset)
+            onDateChange?.(newDate)
           } else {
             setInnerDate(formattedNewInputValue)
           }
@@ -222,23 +215,21 @@ const DateTimeInput: FC<DateInputProps> = ({
           setInnerErrors(['Selected date is out of bounds.'])
           onDateChange?.(undefined)
         }
-      } else {
-        // Explicitly handle invalid input
-        onDateChange?.(undefined)
       }
     },
     [
+      msOffset,
+      gmtMsOffset,
       inputMaskInstance,
       loadMaskClass,
       pickerMode,
-      formatNewInputValue,
       innerDate,
+      toUtcTimestamp,
       locale,
       minDate,
       maxDate,
       isControlled,
       onDateChange,
-      msOffset,
       setInnerDate,
     ]
   )

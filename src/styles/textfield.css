@@ -63,7 +63,7 @@ input.TextField {
   color: var(--focus-text);
   outline-offset: var(--focus-outline-offset);
   outline: var(--focus-outline-width) solid transparent;
-  font-family: var(--font-family-robotoMono), serif;
+  font-family: var(--font-family-roboto), serif;
 }
 
 /* States (light by default) */

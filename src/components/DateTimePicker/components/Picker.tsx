@@ -67,7 +67,7 @@ const Picker = <T extends PickerMode>({
    * Will pass the proper time msOffset from the timezone (in milliseconds)
    */
   const offsets = useMemo(() => {
-    const d = new Date(Date.now())
+    const d = new Date(date ?? Date.now())
     const utc = new Date(
       Date.UTC(
         d.getUTCFullYear(),
@@ -84,7 +84,7 @@ const Picker = <T extends PickerMode>({
       gmtMsOffset: getOffsetInMsFromTimezone(utc),
       msOffset: getOffsetInMsFromTimezone(utc, timezone),
     }
-  }, [timezone])
+  }, [timezone, date])
 
   return (
     <DateTimePickerProvider

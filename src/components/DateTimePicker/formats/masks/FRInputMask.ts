@@ -272,7 +272,7 @@ export default class FRInputMask extends AbstractInputMask {
   validate(value: string): string {
     let newInputValue = ''
 
-    if (this.pickerMode === 'DATETIME' || this.pickerMode === 'DATE') {
+    if (this.pickerMode !== 'TIME') {
       newInputValue = this.validateDay(value)
       newInputValue = this.validateMonth(newInputValue)
       newInputValue = this.validateYear(newInputValue)
