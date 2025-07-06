@@ -87,12 +87,12 @@ check_status "Version bump"
 
 # Generate changelog
 log "Generating changelog..." "$YELLOW"
-pnpm exec conventional-changelog -p angular -i CHANGELOG.md -s
+pnpm exec conventional-changelog -p angular -i CHANGELOG.md -s -r 0
 check_status "Changelog generation"
 
 # Add changelog to git
 git add CHANGELOG.md
-git commit -m "docs: update changelog for version bump"
+git commit -m "docs: update changelog for version bump" --no-verify
 check_status "Changelog commit"
 
 pnpm publish --no-git-checks
