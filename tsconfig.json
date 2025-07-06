@@ -7,7 +7,6 @@
     "skipLibCheck": true,
     "jsx": "react-jsx",
     "module": "ESNext",
-    "sourceMap": true,
     "rootDir": ".",
     "outDir": "./dist",
     "moduleResolution": "bundler",

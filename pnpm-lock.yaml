@@ -34,7 +34,7 @@ importers:
         specifier: ^2.1.5
         version: 2.1.5(rollup@4.44.1)
       '@rollup/plugin-node-resolve':
-        specifier: ^15.0.0
+        specifier: ^15.3.1
         version: 15.3.1(rollup@4.44.1)
       '@rollup/plugin-terser':
         specifier: ^0.4.4
@@ -189,6 +189,9 @@ importers:
       mockdate:
         specifier: ^3.0.5
         version: 3.0.5
+      object-assign:
+        specifier: ^4.1.1
+        version: 4.1.1
       postcss:
         specifier: ^8.4.0
         version: 8.5.6

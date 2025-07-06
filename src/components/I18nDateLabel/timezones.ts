@@ -1,4 +1,4 @@
-import type { MenuItemConfig } from '@components'
+import type { MenuItemConfig } from '../Menu/MenuItem'
 
 export const timezones: MenuItemConfig[] = [
   {
