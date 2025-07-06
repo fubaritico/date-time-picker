@@ -54,6 +54,7 @@ exports[`DateRangePicker should render 1`] = `
                 <input
                   class="TextField blue md icon-left show-icon hide-focus"
                   data-test="end-input"
+                  disabled=""
                   tabindex="0"
                   type="text"
                   value=""

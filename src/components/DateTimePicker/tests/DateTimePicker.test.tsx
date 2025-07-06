@@ -63,8 +63,7 @@ const runTests = (timezone?: Timezone) => {
     it('should pass the date of today as a formatted value to the masked input', async () => {
       const expectedValue = formatTimestampForTextInput(
         Date.now(),
-        DATE_TIME_FORMAT.en,
-        0
+        DATE_TIME_FORMAT.en
       )
 
       setupUncontrolledPicker(fixedDate, DateTimePicker as AnyPickerComponent)
@@ -492,9 +491,8 @@ const runTests = (timezone?: Timezone) => {
       await waitFor(() => {
         expect(screen.getByRole('textbox')).toHaveValue(
           formatTimestampForTextInput(
-            innerDate, // Reproducing the addition of msOffset in the component
-            DATE_TIME_FORMAT[defaultProperties.locale?.split('_')[0] ?? 'en'],
-            0
+            innerDate,
+            DATE_TIME_FORMAT[defaultProperties.locale?.split('_')[0] ?? 'en']
           )
         )
       })
@@ -745,6 +743,54 @@ const runTests = (timezone?: Timezone) => {
       expect(spyOnDateChangeFn).toHaveBeenCalledTimes(hoursToBeAdded)
     })
 
+    it('should properly update input value and displayed value with proper value when changing hours', async () => {
+      const { msOffset } = setupControlledDateTimePicker(
+        DateTimePicker as AnyPickerComponent,
+        fixedDate,
+        defaultProperties,
+        spyOnDateChangeFn
+      )
+
+      const hoursToBeAdded = 5
+
+      const date = defaultProperties.date ?? Date.now()
+
+      await userEvent.click(screen.getByLabelText('Choose Date'))
+
+      await userEvent.click(
+        await screen.findByRole('button', { name: 'Switch to time view' })
+      )
+
+      for (let i = 1; i <= hoursToBeAdded; i++) {
+        await userEvent.click(
+          screen.getByRole('button', { name: 'Add one hour' })
+        )
+      }
+
+      // Check the utility component displayed value
+      await waitFor(() => {
+        expect(screen.getByTestId(dateSpanTestId)).toHaveTextContent(
+          formatToLocaleAwareFormat(
+            addHours(date, hoursToBeAdded),
+            defaultProperties.locale ?? 'en_US',
+            localeAwareFormat,
+            timezone
+          )
+        )
+      })
+
+      // Check the text input value
+      await waitFor(() => {
+        expect(screen.getByRole('textbox')).toHaveValue(
+          formatTimestampForTextInput(
+            addHours(date, hoursToBeAdded),
+            DATE_TIME_FORMAT[defaultProperties.locale?.split('_')[0] ?? 'en'],
+            msOffset
+          )
+        )
+      })
+    })
+
     it('should call the onDateChange component method with proper value when changing minutes', async () => {
       setupControlledDateTimePicker(
         DateTimePicker as AnyPickerComponent,
@@ -786,7 +832,40 @@ const runTests = (timezone?: Timezone) => {
         minutesToBeAdded + minutesToBeRemoved
       )
       expect(callValues).toEqual(spyOnDateChangeFn.mock.calls)
+    })
 
+    it('should properly update input value and displayed value with proper value when changing minutes', async () => {
+      const { msOffset } = setupControlledDateTimePicker(
+        DateTimePicker as AnyPickerComponent,
+        fixedDate,
+        defaultProperties,
+        spyOnDateChangeFn
+      )
+
+      const date = defaultProperties.date ?? Date.now()
+
+      const minutesToBeAdded = 15
+      const minutesToBeRemoved = 5
+
+      await userEvent.click(screen.getByLabelText('Choose Date'))
+
+      await userEvent.click(
+        await screen.findByRole('button', { name: 'Switch to time view' })
+      )
+
+      for (let i = 1; i <= minutesToBeAdded; i++) {
+        await userEvent.click(
+          screen.getByRole('button', { name: 'Add one minute' })
+        )
+      }
+
+      for (let j = 1; j <= minutesToBeRemoved; j++) {
+        await userEvent.click(
+          screen.getByRole('button', { name: 'Remove one minute' })
+        )
+      }
+
+      // Check the utility component displayed value
       await waitFor(() => {
         expect(screen.getByTestId(dateSpanTestId)).toHaveTextContent(
           formatToLocaleAwareFormat(
@@ -797,6 +876,20 @@ const runTests = (timezone?: Timezone) => {
             defaultProperties.locale ?? 'en_US',
             localeAwareFormat,
             timezone
+          )
+        )
+      })
+
+      // Check the text input value
+      await waitFor(() => {
+        expect(screen.getByRole('textbox')).toHaveValue(
+          formatTimestampForTextInput(
+            subtractMinutes(
+              addMinutes(date, minutesToBeAdded),
+              minutesToBeRemoved
+            ), // Reproducing the addition of msOffset in the component
+            DATE_TIME_FORMAT[defaultProperties.locale?.split('_')[0] ?? 'en'],
+            msOffset
           )
         )
       })
@@ -922,9 +1015,8 @@ const runTests = (timezone?: Timezone) => {
           expect(screen.getByRole('textbox')).toHaveValue(
             formatTimestampForTextInput(
               firstDayOfCurrentMonthTs,
-              DATE_TIME_FORMAT[pLocale.split('_')[0]],
-              0
-            ).replace(/-/g, '/')
+              DATE_TIME_FORMAT[pLocale.split('_')[0]]
+            )
           )
         })
       }
@@ -954,7 +1046,7 @@ const runTests = (timezone?: Timezone) => {
 
       await waitFor(() => {
         expect(textInput).toHaveValue(
-          formatTimestampForTextInput(fixedDate, DATE_FORMAT[intl ?? 'en'], 0)
+          formatTimestampForTextInput(fixedDate, DATE_FORMAT[intl ?? 'en'])
         )
       })
 

@@ -2527,7 +2527,7 @@ exports[`DateTimePicker w/ timezone Basic behavior should show days panel conten
             placeholder="Choose Date"
             tabindex="0"
             type="text"
-            value="2025-03-15 12:28 PM"
+            value="2025/03/15 12:28 PM"
           />
           <button
             aria-label="Choose Date"
@@ -2576,7 +2576,7 @@ exports[`DateTimePicker w/ timezone Controlled should render w/ the provided dat
               placeholder="Choose Date"
               tabindex="0"
               type="text"
-              value="2024-08-09 01:28 PM"
+              value="2024/08/09 01:28 PM"
             />
             <button
               aria-label="Choose Date"

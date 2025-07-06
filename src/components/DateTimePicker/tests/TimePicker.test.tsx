@@ -48,8 +48,7 @@ const runTests = (timezone?: Timezone) => {
     it('should pass the current time as a formatted value to the masked input', async () => {
       const expectedValue = formatTimestampForTextInput(
         Date.now(),
-        TIME_FORMAT.en,
-        0
+        TIME_FORMAT.en
       )
 
       setupUncontrolledPicker(fixedDate, TimePicker as AnyPickerComponent)
@@ -173,8 +172,7 @@ const runTests = (timezone?: Timezone) => {
         expect(screen.getByRole('textbox')).toHaveValue(
           formatTimestampForTextInput(
             addHours(subtractMinutes(fixedDate, 1), 2),
-            TIME_FORMAT.en,
-            0
+            TIME_FORMAT.en
           )
         )
       })
@@ -222,8 +220,7 @@ const runTests = (timezone?: Timezone) => {
         expect(screen.getByRole('textbox')).toHaveValue(
           formatTimestampForTextInput(
             subtractHours(fixedDate, hoursToRemove - hoursToAdd),
-            TIME_FORMAT.en,
-            0
+            TIME_FORMAT.en
           )
         )
       })
@@ -282,8 +279,7 @@ const runTests = (timezone?: Timezone) => {
         expect(screen.getByRole('textbox')).toHaveValue(
           formatTimestampForTextInput(
             innerDate,
-            TIME_FORMAT[defaultProperties.locale?.split('_')[0] ?? 'en'],
-            0
+            TIME_FORMAT[defaultProperties.locale?.split('_')[0] ?? 'en']
           )
         )
       })
@@ -427,7 +423,7 @@ const runTests = (timezone?: Timezone) => {
 
       await waitFor(() => {
         expect(screen.getByRole('textbox')).toHaveValue(
-          formatTimestampForTextInput(date + msOffset, TIME_FORMAT.en, 0)
+          formatTimestampForTextInput(date, TIME_FORMAT.en, msOffset)
         )
       })
     })
@@ -458,7 +454,7 @@ const runTests = (timezone?: Timezone) => {
 
       await waitFor(() => {
         expect(screen.getByRole('textbox')).toHaveValue(
-          formatTimestampForTextInput(date + msOffset, TIME_FORMAT.fr, 0)
+          formatTimestampForTextInput(date, TIME_FORMAT.fr, msOffset)
         )
       })
     })

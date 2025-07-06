@@ -521,9 +521,8 @@ describe('DateTimePicker: accessibility', () => {
     expect(screen.getByRole('textbox')).toHaveValue(
       formatTimestampForTextInput(
         addMonths(fixedDate + msOffset, 2),
-        DATE_TIME_FORMAT.en,
-        0
-      ).replaceAll('-', '/')
+        DATE_TIME_FORMAT.en
+      )
     )
   })
 
@@ -571,9 +570,8 @@ describe('DateTimePicker: accessibility', () => {
     expect(screen.getByRole('textbox')).toHaveValue(
       formatTimestampForTextInput(
         addYears(fixedDate + msOffset, 2),
-        DATE_TIME_FORMAT.en,
-        0
-      ).replaceAll('-', '/')
+        DATE_TIME_FORMAT.en
+      )
     )
   })
 
@@ -615,9 +613,8 @@ describe('DateTimePicker: accessibility', () => {
     expect(screen.getByRole('textbox')).toHaveValue(
       formatTimestampForTextInput(
         addHours(fixedDate + msOffset, 3),
-        DATE_TIME_FORMAT.en,
-        0
-      ).replaceAll('-', '/')
+        DATE_TIME_FORMAT.en
+      )
     )
 
     await user.keyboard('{Escape}')
