@@ -14,18 +14,18 @@ import type { CommonPickerProps, PickerMode } from '../types'
 const Picker = <T extends PickerMode>({
   color,
   date,
+  dateRange,
   enablePortal,
   errors,
   loading,
   locale,
   maxDate,
   minDate,
-  pickerMode,
   noDefaultDate = false,
   onChange,
   onDateRangeChange,
   placement = 'bottom-start',
-  dateRange,
+  pickerMode,
   size = 'md',
   timezone,
   ...textInputProps
@@ -63,10 +63,7 @@ const Picker = <T extends PickerMode>({
     setIsOpen(false)
   }
 
-  /**
-   * Will pass the proper time msOffset from the timezone (in milliseconds)
-   */
-  const offsets = useMemo(() => {
+  const computeOffsets = (date: number | undefined, timezone?: Timezone) => {
     const d = new Date(date ?? Date.now())
     const utc = new Date(
       Date.UTC(
@@ -84,24 +81,43 @@ const Picker = <T extends PickerMode>({
       gmtMsOffset: getOffsetInMsFromTimezone(utc),
       msOffset: getOffsetInMsFromTimezone(utc, timezone),
     }
-  }, [timezone, date])
+  }
+
+  /**
+   * Will pass the proper time msOffset from the timezone (in milliseconds)
+   */
+  const datePickerOffsets = useMemo(
+    () => computeOffsets(date, timezone),
+    [date, timezone]
+  )
+
+  /**
+   * Will pass the proper time msOffset from the timezone (in milliseconds)
+   */
+  const dateRangePickerOffsets = useMemo(() => {
+    return [
+      computeOffsets(dateRange?.[0], timezone),
+      computeOffsets(dateRange?.[1], timezone),
+    ]
+  }, [dateRange, timezone])
 
   return (
     <DateTimePickerProvider
       color={color}
       date={date}
-      isControlled={!!onChange || !!onDateRangeChange}
-      gmtMsOffset={offsets.gmtMsOffset}
+      dateRange={dateRange}
+      dateRangePickerOffsets={dateRangePickerOffsets}
+      gmtMsOffset={datePickerOffsets.gmtMsOffset}
       hasLabel={!!textInputProps.label}
+      isControlled={!!onChange || !!onDateRangeChange}
       loading={loading}
       locale={locale}
       maxDate={maxDate}
       minDate={minDate}
+      msOffset={datePickerOffsets.msOffset}
       noDefaultDate={noDefaultDate}
       open={isOpen}
-      msOffset={offsets.msOffset}
       pickerMode={pickerMode}
-      dateRange={dateRange}
     >
       <div style={{ position: 'relative' }}>
         <div ref={triggerRef} style={{ position: 'relative' }}>

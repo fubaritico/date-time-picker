@@ -98,14 +98,13 @@ const DateTimeInput: FC<DateInputProps> = ({
 
       switch (pickerMode) {
         case 'TIME':
-          return formatTimestampForTextInput(innerDate, TIME_FORMAT[locale], 0)
+          return formatTimestampForTextInput(innerDate, TIME_FORMAT[locale])
         case 'DATE':
-          return formatTimestampForTextInput(innerDate, DATE_FORMAT[locale], 0)
+          return formatTimestampForTextInput(innerDate, DATE_FORMAT[locale])
         case 'DATETIME':
           return formatTimestampForTextInput(
             innerDate,
-            DATE_TIME_FORMAT[locale],
-            0
+            DATE_TIME_FORMAT[locale]
           )
         default:
           return undefined
@@ -219,7 +218,6 @@ const DateTimeInput: FC<DateInputProps> = ({
     },
     [
       msOffset,
-      gmtMsOffset,
       inputMaskInstance,
       loadMaskClass,
       pickerMode,

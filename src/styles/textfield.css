@@ -67,33 +67,34 @@ input.TextField {
 }
 
 /* States (light by default) */
-input.TextField:not(.disabled) {
+input.TextField {
   background: var(--bg);
   border-color: var(--border);
   color: var(--text);
 }
 
-input.TextField.disabled {
+input.TextField:disabled {
+  cursor: not-allowed;
   background: var(--bg);
   border-color: var(--disabled-border);
   color: var(--disabled-text);
 }
 
-input.TextField:not(.disabled)::placeholder {
+input.TextField::placeholder {
   color: var(--placeholder);
 }
 
-input.TextField.disabled::placeholder {
+input.TextField:disabled::placeholder {
   color: var(--disabled-placeholder);
 }
 
-input.TextField:not(.disabled, .hide-focus):focus,
-input.TextField:not(.disabled, .hide-focus):focus-visible {
+input.TextField:not(.hide-focus):focus,
+input.TextField:not(.hide-focus):focus-visible {
   outline-color: var(--focus-outline);
 }
 
-input.TextField:not(.disabled):focus,
-input.TextField:not(.disabled):focus-visible {
+input.TextField:focus,
+input.TextField:focus-visible {
   color: var(--focus-text);
 }
 
@@ -169,9 +170,9 @@ input.TextField.show-icon.icon-right + .icon-button:focus-visible {
   outline: 2px solid var(--gray-700);
 }
 
-input.TextField.disabled.show-cross.show-icon.icon-left + .clear-icon-button + .icon-button,
-input.TextField.disabled.show-icon.icon-left + .icon-button,
-input.TextField.disabled.show-icon.icon-right + .icon-button {
+input.TextField.show-cross.show-icon.icon-left:disabled + .clear-icon-button + .icon-button,
+input.TextField.show-icon.icon-left:disabled + .icon-button,
+input.TextField.show-icon.icon-right:disabled + .icon-button {
   outline: 2px solid transparent;
   opacity: 0.5;
   cursor: default;
@@ -353,28 +354,28 @@ input.TextField.lg {
 /* Dark mode from system */
 @media (prefers-color-scheme: dark) {
   /* Default values (light mode) */
-  input.TextField:not(.disabled, .light *) {
+  input.TextField:not(.light *) {
     --bg: var(--bg-dark);
     --text: var(--text-dark);
     --border: var(--border-dark);
   }
 
-  input.TextField.disabled:not(.light *) {
+  input.TextField:disabled:not(.light *) {
     --bg: var(--bg-dark);
     --disabled-border: var(--disabled-border-dark);
     --disabled-text: var(--disabled-text-dark);
   }
 
-  input.TextField:not(.disabled, .light *)::placeholder {
+  input.TextField::placeholder:not(.light *) {
     --placeholder: var(--placeholder-dark);
   }
 
-  input.TextField.disabled:not(.light *)::placeholder {
+  input.TextField:disabled::placeholder:not(.light *) {
     --disabled-placeholder: var(--disabled-placeholder-dark);
   }
 
-  input.TextField:not(.disabled, .light *):focus,
-  input.TextField:not(.disabled, .light *):focus-visible {
+  input.TextField:not(.light *):focus,
+  input.TextField:not(.light *):focus-visible {
     --focus-text: var(--focus-text-dark);
   }
 
@@ -395,162 +396,162 @@ input.TextField.lg {
     outline: 2px solid var(--gray-100);
   }
 
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.hide-focus, .light *):focus,
+  input.TextField.red:not(.hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--red-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.hide-focus, .light *):focus,
+  input.TextField.red:not(.hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--orange-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.hide-focus, .light *):focus,
+  input.TextField.red:not(.hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--amber-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.hide-focus, .light *):focus,
+  input.TextField.red:not(.hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--yellow-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.hide-focus, .light *):focus,
+  input.TextField.red:not(.hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--lime-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.hide-focus, .light *):focus,
+  input.TextField.red:not(.hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--green-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.hide-focus, .light *):focus,
+  input.TextField.red:not(.hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--emerald-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.hide-focus, .light *):focus,
+  input.TextField.red:not(.hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--teal-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.hide-focus, .light *):focus,
+  input.TextField.red:not(.hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--cyan-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.hide-focus, .light *):focus,
+  input.TextField.red:not(.hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--sky-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.hide-focus, .light *):focus,
+  input.TextField.red:not(.hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--blue-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.hide-focus, .light *):focus,
+  input.TextField.red:not(.hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--indigo-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.hide-focus, .light *):focus,
+  input.TextField.red:not(.hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--violet-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.hide-focus, .light *):focus,
+  input.TextField.red:not(.hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--purple-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.hide-focus, .light *):focus,
+  input.TextField.red:not(.hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--fuchsia-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.hide-focus, .light *):focus,
+  input.TextField.red:not(.hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--pink-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.hide-focus, .light *):focus,
+  input.TextField.red:not(.hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--rose-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.hide-focus, .light *):focus,
+  input.TextField.red:not(.hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--slate-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.hide-focus, .light *):focus,
+  input.TextField.red:not(.hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--gray-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.hide-focus, .light *):focus,
+  input.TextField.red:not(.hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--zinc-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.hide-focus, .light *):focus,
+  input.TextField.red:not(.hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--neutral-500);
     --focus-outline: var(--focus-outline-dark);
   }
 
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus,
-  input.TextField.red:not(.disabled, .hide-focus, .light *):focus-visible {
+  input.TextField.red:not(.hide-focus, .light *):focus,
+  input.TextField.red:not(.hide-focus, .light *):focus-visible {
     --focus-outline-dark: var(--stone-500);
     --focus-outline: var(--focus-outline-dark);
   }
 }
 
 /* Forced dark mode */
-.dark * input.TextField:not(.disabled) {
+.dark * input.TextField {
   --bg: var(--bg-dark);
   --text: var(--text-dark);
   --border: var(--border-dark);
 }
 
-.dark * input.TextField.disabled {
+.dark * input.TextField:disabled {
   --bg: var(--bg-dark);
   --disabled-border: var(--disabled-border-dark);
   --disabled-text: var(--disabled-text-dark);
 }
 
-.dark * input.TextField:not(.disabled)::placeholder {
+.dark * input.TextField::placeholder {
   --placeholder: var(--placeholder-dark);
 }
 
-.dark * input.TextField.disabled::placeholder {
+.dark * input.TextField:disabled::placeholder {
   --disabled-placeholder: var(--disabled-placeholder-dark);
 }
 
-.dark * input.TextField:not(.disabled):focus,
-.dark * input.TextField:not(.disabled):focus-visible {
+.dark * input.TextField:focus,
+.dark * input.TextField:focus-visible {
   --focus-text: var(--focus-text-dark);
 }
 
@@ -572,28 +573,28 @@ input.TextField.lg {
 }
 
 /* Forced light mode */
-.light * input.TextField:not(.disabled) {
+.light * input.TextField {
   --bg: var(--bg-light);
   --text: var(--text-light);
   --border: var(--border-light);
 }
 
-.light * input.TextField.disabled {
+.light * input.TextField:disabled {
   --bg: var(--bg-light);
   --disabled-border: var(--disabled-border-light);
   --disabled-text: var(--disabled-text-light);
 }
 
-.light * input.TextField:not(.disabled)::placeholder {
+.light * input.TextField::placeholder {
   --placeholder: var(--placeholder-light);
 }
 
-.light * input.TextField.disabled::placeholder {
+.light * input.TextField:disabled::placeholder {
   --disabled-placeholder: var(--disabled-placeholder-light);
 }
 
-.light * input.TextField:not(.disabled):focus,
-.light * input.TextField:not(.disabled):focus-visible {
+.light * input.TextField:focus,
+.light * input.TextField:focus-visible {
   --focus-text: var(--focus-text-light);
 }
 
@@ -615,400 +616,400 @@ input.TextField.lg {
 }
 
 /* Colors theme */
-input.TextField.red:not(.disabled, .hide-focus):focus,
-input.TextField.red:not(.disabled, .hide-focus):focus-visible {
+input.TextField.red:not(.hide-focus):focus,
+input.TextField.red:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--red-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-input.TextField.orange:not(.disabled, .hide-focus):focus,
-input.TextField.orange:not(.disabled, .hide-focus):focus-visible {
+input.TextField.orange:not(.hide-focus):focus,
+input.TextField.orange:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--orange-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-input.TextField.amber:not(.disabled, .hide-focus):focus,
-input.TextField.amber:not(.disabled, .hide-focus):focus-visible {
+input.TextField.amber:not(.hide-focus):focus,
+input.TextField.amber:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--amber-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-input.TextField.yellow:not(.disabled, .hide-focus):focus,
-input.TextField.yellow:not(.disabled, .hide-focus):focus-visible {
+input.TextField.yellow:not(.hide-focus):focus,
+input.TextField.yellow:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--yellow-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-input.TextField.lime:not(.disabled, .hide-focus):focus,
-input.TextField.lime:not(.disabled, .hide-focus):focus-visible {
+input.TextField.lime:not(.hide-focus):focus,
+input.TextField.lime:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--lime-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-input.TextField.green:not(.disabled, .hide-focus):focus,
-input.TextField.green:not(.disabled, .hide-focus):focus-visible {
+input.TextField.green:not(.hide-focus):focus,
+input.TextField.green:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--green-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-input.TextField.emerald:not(.disabled, .hide-focus):focus,
-input.TextField.emerald:not(.disabled, .hide-focus):focus-visible {
+input.TextField.emerald:not(.hide-focus):focus,
+input.TextField.emerald:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--emerald-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-input.TextField.teal:not(.disabled, .hide-focus):focus,
-input.TextField.teal:not(.disabled, .hide-focus):focus-visible {
+input.TextField.teal:not(.hide-focus):focus,
+input.TextField.teal:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--teal-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-input.TextField.cyan:not(.disabled, .hide-focus):focus,
-input.TextField.cyan:not(.disabled, .hide-focus):focus-visible {
+input.TextField.cyan:not(.hide-focus):focus,
+input.TextField.cyan:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--cyan-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-input.TextField.sky:not(.disabled, .hide-focus):focus,
-input.TextField.sky:not(.disabled, .hide-focus):focus-visible {
+input.TextField.sky:not(.hide-focus):focus,
+input.TextField.sky:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--sky-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-input.TextField.blue:not(.disabled, .hide-focus):focus,
-input.TextField.blue:not(.disabled, .hide-focus):focus-visible {
+input.TextField.blue:not(.hide-focus):focus,
+input.TextField.blue:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--blue-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-input.TextField.indigo:not(.disabled, .hide-focus):focus,
-input.TextField.indigo:not(.disabled, .hide-focus):focus-visible {
+input.TextField.indigo:not(.hide-focus):focus,
+input.TextField.indigo:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--indigo-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-input.TextField.violet:not(.disabled, .hide-focus):focus,
-input.TextField.violet:not(.disabled, .hide-focus):focus-visible {
+input.TextField.violet:not(.hide-focus):focus,
+input.TextField.violet:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--violet-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-input.TextField.purple:not(.disabled, .hide-focus):focus,
-input.TextField.purple:not(.disabled, .hide-focus):focus-visible {
+input.TextField.purple:not(.hide-focus):focus,
+input.TextField.purple:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--purple-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-input.TextField.fuchsia:not(.disabled, .hide-focus):focus,
-input.TextField.fuchsia:not(.disabled, .hide-focus):focus-visible {
+input.TextField.fuchsia:not(.hide-focus):focus,
+input.TextField.fuchsia:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--fuchsia-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-input.TextField.pink:not(.disabled, .hide-focus):focus,
-input.TextField.pink:not(.disabled, .hide-focus):focus-visible {
+input.TextField.pink:not(.hide-focus):focus,
+input.TextField.pink:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--pink-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-input.TextField.rose:not(.disabled, .hide-focus):focus,
-input.TextField.rose:not(.disabled, .hide-focus):focus-visible {
+input.TextField.rose:not(.hide-focus):focus,
+input.TextField.rose:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--rose-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-input.TextField.slate:not(.disabled, .hide-focus):focus,
-input.TextField.slate:not(.disabled, .hide-focus):focus-visible {
+input.TextField.slate:not(.hide-focus):focus,
+input.TextField.slate:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--slate-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-input.TextField.gray:not(.disabled, .hide-focus):focus,
-input.TextField.gray:not(.disabled, .hide-focus):focus-visible {
+input.TextField.gray:not(.hide-focus):focus,
+input.TextField.gray:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--gray-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-input.TextField.zinc:not(.disabled, .hide-focus):focus,
-input.TextField.zinc:not(.disabled, .hide-focus):focus-visible {
+input.TextField.zinc:not(.hide-focus):focus,
+input.TextField.zinc:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--zinc-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-input.TextField.neutral:not(.disabled, .hide-focus):focus,
-input.TextField.neutral:not(.disabled, .hide-focus):focus-visible {
+input.TextField.neutral:not(.hide-focus):focus,
+input.TextField.neutral:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--neutral-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-input.TextField.stone:not(.disabled, .hide-focus):focus,
-input.TextField.stone:not(.disabled, .hide-focus):focus-visible {
+input.TextField.stone:not(.hide-focus):focus,
+input.TextField.stone:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--stone-500);
   --focus-outline: var(--focus-outline-light);
 }
 
 
 
-.dark * input.TextField.red:not(.disabled, .hide-focus):focus,
-.dark * input.TextField.red:not(.disabled, .hide-focus):focus-visible {
+.dark * input.TextField.red:not(.hide-focus):focus,
+.dark * input.TextField.red:not(.hide-focus):focus-visible {
   --focus-outline-dark: var(--red-500);
   --focus-outline: var(--focus-outline-dark);
 }
 
-.dark * input.TextField.orange:not(.disabled, .hide-focus):focus,
-.dark * input.TextField.orange:not(.disabled, .hide-focus):focus-visible {
+.dark * input.TextField.orange:not(.hide-focus):focus,
+.dark * input.TextField.orange:not(.hide-focus):focus-visible {
   --focus-outline-dark: var(--orange-500);
   --focus-outline: var(--focus-outline-dark);
 }
 
-.dark * input.TextField.amber:not(.disabled, .hide-focus):focus,
-.dark * input.TextField.amber:not(.disabled, .hide-focus):focus-visible {
+.dark * input.TextField.amber:not(.hide-focus):focus,
+.dark * input.TextField.amber:not(.hide-focus):focus-visible {
   --focus-outline-dark: var(--amber-500);
   --focus-outline: var(--focus-outline-dark);
 }
 
-.dark * input.TextField.yellow:not(.disabled, .hide-focus):focus,
-.dark * input.TextField.yellow:not(.disabled, .hide-focus):focus-visible {
+.dark * input.TextField.yellow:not(.hide-focus):focus,
+.dark * input.TextField.yellow:not(.hide-focus):focus-visible {
   --focus-outline-dark: var(--yellow-500);
   --focus-outline: var(--focus-outline-dark);
 }
 
-.dark * input.TextField.lime:not(.disabled, .hide-focus):focus,
-.dark * input.TextField.lime:not(.disabled, .hide-focus):focus-visible {
+.dark * input.TextField.lime:not(.hide-focus):focus,
+.dark * input.TextField.lime:not(.hide-focus):focus-visible {
   --focus-outline-dark: var(--lime-500);
   --focus-outline: var(--focus-outline-dark);
 }
 
-.dark * input.TextField.green:not(.disabled, .hide-focus):focus,
-.dark * input.TextField.green:not(.disabled, .hide-focus):focus-visible {
+.dark * input.TextField.green:not(.hide-focus):focus,
+.dark * input.TextField.green:not(.hide-focus):focus-visible {
   --focus-outline-dark: var(--green-500);
   --focus-outline: var(--focus-outline-dark);
 }
 
-.dark * input.TextField.emerald:not(.disabled, .hide-focus):focus,
-.dark * input.TextField.emerald:not(.disabled, .hide-focus):focus-visible {
+.dark * input.TextField.emerald:not(.hide-focus):focus,
+.dark * input.TextField.emerald:not(.hide-focus):focus-visible {
   --focus-outline-dark: var(--emerald-500);
   --focus-outline: var(--focus-outline-dark);
 }
 
-.dark * input.TextField.teal:not(.disabled, .hide-focus):focus,
-.dark * input.TextField.teal:not(.disabled, .hide-focus):focus-visible {
+.dark * input.TextField.teal:not(.hide-focus):focus,
+.dark * input.TextField.teal:not(.hide-focus):focus-visible {
   --focus-outline-dark: var(--teal-500);
   --focus-outline: var(--focus-outline-dark);
 }
 
-.dark * input.TextField.cyan:not(.disabled, .hide-focus):focus,
-.dark * input.TextField.cyan:not(.disabled, .hide-focus):focus-visible {
+.dark * input.TextField.cyan:not(.hide-focus):focus,
+.dark * input.TextField.cyan:not(.hide-focus):focus-visible {
   --focus-outline-dark: var(--cyan-500);
   --focus-outline: var(--focus-outline-dark);
 }
 
-.dark * input.TextField.sky:not(.disabled, .hide-focus):focus,
-.dark * input.TextField.sky:not(.disabled, .hide-focus):focus-visible {
+.dark * input.TextField.sky:not(.hide-focus):focus,
+.dark * input.TextField.sky:not(.hide-focus):focus-visible {
   --focus-outline-dark: var(--sky-500);
   --focus-outline: var(--focus-outline-dark);
 }
 
-.dark * input.TextField.blue:not(.disabled, .hide-focus):focus,
-.dark * input.TextField.blue:not(.disabled, .hide-focus):focus-visible {
+.dark * input.TextField.blue:not(.hide-focus):focus,
+.dark * input.TextField.blue:not(.hide-focus):focus-visible {
   --focus-outline-dark: var(--blue-500);
   --focus-outline: var(--focus-outline-dark);
 }
 
-.dark * input.TextField.indigo:not(.disabled, .hide-focus):focus,
-.dark * input.TextField.indigo:not(.disabled, .hide-focus):focus-visible {
+.dark * input.TextField.indigo:not(.hide-focus):focus,
+.dark * input.TextField.indigo:not(.hide-focus):focus-visible {
   --focus-outline-dark: var(--indigo-500);
   --focus-outline: var(--focus-outline-dark);
 }
 
-.dark * input.TextField.violet:not(.disabled, .hide-focus):focus,
-.dark * input.TextField.violet:not(.disabled, .hide-focus):focus-visible {
+.dark * input.TextField.violet:not(.hide-focus):focus,
+.dark * input.TextField.violet:not(.hide-focus):focus-visible {
   --focus-outline-dark: var(--violet-500);
   --focus-outline: var(--focus-outline-dark);
 }
 
-.dark * input.TextField.purple:not(.disabled, .hide-focus):focus,
-.dark * input.TextField.purple:not(.disabled, .hide-focus):focus-visible {
+.dark * input.TextField.purple:not(.hide-focus):focus,
+.dark * input.TextField.purple:not(.hide-focus):focus-visible {
   --focus-outline-dark: var(--purple-500);
   --focus-outline: var(--focus-outline-dark);
 }
 
-.dark * input.TextField.fuchsia:not(.disabled, .hide-focus):focus,
-.dark * input.TextField.fuchsia:not(.disabled, .hide-focus):focus-visible {
+.dark * input.TextField.fuchsia:not(.hide-focus):focus,
+.dark * input.TextField.fuchsia:not(.hide-focus):focus-visible {
   --focus-outline-dark: var(--fuchsia-500);
   --focus-outline: var(--focus-outline-dark);
 }
 
-.dark * input.TextField.pink:not(.disabled, .hide-focus):focus,
-.dark * input.TextField.pink:not(.disabled, .hide-focus):focus-visible {
+.dark * input.TextField.pink:not(.hide-focus):focus,
+.dark * input.TextField.pink:not(.hide-focus):focus-visible {
   --focus-outline-dark: var(--pink-500);
   --focus-outline: var(--focus-outline-dark);
 }
 
-.dark * input.TextField.rose:not(.disabled, .hide-focus):focus,
-.dark * input.TextField.rose:not(.disabled, .hide-focus):focus-visible {
+.dark * input.TextField.rose:not(.hide-focus):focus,
+.dark * input.TextField.rose:not(.hide-focus):focus-visible {
   --focus-outline-dark: var(--rose-500);
   --focus-outline: var(--focus-outline-dark);
 }
 
-.dark * input.TextField.slate:not(.disabled, .hide-focus):focus,
-.dark * input.TextField.slate:not(.disabled, .hide-focus):focus-visible {
+.dark * input.TextField.slate:not(.hide-focus):focus,
+.dark * input.TextField.slate:not(.hide-focus):focus-visible {
   --focus-outline-dark: var(--slate-500);
   --focus-outline: var(--focus-outline-dark);
 }
 
-.dark * input.TextField.gray:not(.disabled, .hide-focus):focus,
-.dark * input.TextField.gray:not(.disabled, .hide-focus):focus-visible {
+.dark * input.TextField.gray:not(.hide-focus):focus,
+.dark * input.TextField.gray:not(.hide-focus):focus-visible {
   --focus-outline-dark: var(--gray-500);
   --focus-outline: var(--focus-outline-dark);
 }
 
-.dark * input.TextField.zinc:not(.disabled, .hide-focus):focus,
-.dark * input.TextField.zinc:not(.disabled, .hide-focus):focus-visible {
+.dark * input.TextField.zinc:not(.hide-focus):focus,
+.dark * input.TextField.zinc:not(.hide-focus):focus-visible {
   --focus-outline-dark: var(--zinc-500);
   --focus-outline: var(--focus-outline-dark);
 }
 
-.dark * input.TextField.neutral:not(.disabled, .hide-focus):focus,
-.dark * input.TextField.neutral:not(.disabled, .hide-focus):focus-visible {
+.dark * input.TextField.neutral:not(.hide-focus):focus,
+.dark * input.TextField.neutral:not(.hide-focus):focus-visible {
   --focus-outline-dark: var(--neutral-500);
   --focus-outline: var(--focus-outline-dark);
 }
 
-.dark * input.TextField.stone:not(.disabled, .hide-focus):focus,
-.dark * input.TextField.stone:not(.disabled, .hide-focus):focus-visible {
+.dark * input.TextField.stone:not(.hide-focus):focus,
+.dark * input.TextField.stone:not(.hide-focus):focus-visible {
   --focus-outline-dark: var(--stone-500);
   --focus-outline: var(--focus-outline-dark);
 }
 
-.light * input.TextField.red:not(.disabled, .hide-focus):focus,
-.light * input.TextField.red:not(.disabled, .hide-focus):focus-visible {
+.light * input.TextField.red:not(.hide-focus):focus,
+.light * input.TextField.red:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--red-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * input.TextField.orange:not(.disabled, .hide-focus):focus,
-.light * input.TextField.orange:not(.disabled, .hide-focus):focus-visible {
+.light * input.TextField.orange:not(.hide-focus):focus,
+.light * input.TextField.orange:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--orange-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * input.TextField.amber:not(.disabled, .hide-focus):focus,
-.light * input.TextField.amber:not(.disabled, .hide-focus):focus-visible {
+.light * input.TextField.amber:not(.hide-focus):focus,
+.light * input.TextField.amber:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--amber-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * input.TextField.yellow:not(.disabled, .hide-focus):focus,
-.light * input.TextField.yellow:not(.disabled, .hide-focus):focus-visible {
+.light * input.TextField.yellow:not(.hide-focus):focus,
+.light * input.TextField.yellow:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--yellow-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * input.TextField.lime:not(.disabled, .hide-focus):focus,
-.light * input.TextField.lime:not(.disabled, .hide-focus):focus-visible {
+.light * input.TextField.lime:not(.hide-focus):focus,
+.light * input.TextField.lime:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--lime-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * input.TextField.green:not(.disabled, .hide-focus):focus,
-.light * input.TextField.green:not(.disabled, .hide-focus):focus-visible {
+.light * input.TextField.green:not(.hide-focus):focus,
+.light * input.TextField.green:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--green-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * input.TextField.emerald:not(.disabled, .hide-focus):focus,
-.light * input.TextField.emerald:not(.disabled, .hide-focus):focus-visible {
+.light * input.TextField.emerald:not(.hide-focus):focus,
+.light * input.TextField.emerald:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--emerald-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * input.TextField.teal:not(.disabled, .hide-focus):focus,
-.light * input.TextField.teal:not(.disabled, .hide-focus):focus-visible {
+.light * input.TextField.teal:not(.hide-focus):focus,
+.light * input.TextField.teal:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--teal-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * input.TextField.cyan:not(.disabled, .hide-focus):focus,
-.light * input.TextField.cyan:not(.disabled, .hide-focus):focus-visible {
+.light * input.TextField.cyan:not(.hide-focus):focus,
+.light * input.TextField.cyan:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--cyan-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * input.TextField.sky:not(.disabled, .hide-focus):focus,
-.light * input.TextField.sky:not(.disabled, .hide-focus):focus-visible {
+.light * input.TextField.sky:not(.hide-focus):focus,
+.light * input.TextField.sky:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--sky-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * input.TextField.blue:not(.disabled, .hide-focus):focus,
-.light * input.TextField.blue:not(.disabled, .hide-focus):focus-visible {
+.light * input.TextField.blue:not(.hide-focus):focus,
+.light * input.TextField.blue:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--blue-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * input.TextField.indigo:not(.disabled, .hide-focus):focus,
-.light * input.TextField.indigo:not(.disabled, .hide-focus):focus-visible {
+.light * input.TextField.indigo:not(.hide-focus):focus,
+.light * input.TextField.indigo:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--indigo-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * input.TextField.violet:not(.disabled, .hide-focus):focus,
-.light * input.TextField.violet:not(.disabled, .hide-focus):focus-visible {
+.light * input.TextField.violet:not(.hide-focus):focus,
+.light * input.TextField.violet:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--violet-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * input.TextField.purple:not(.disabled, .hide-focus):focus,
-.light * input.TextField.purple:not(.disabled, .hide-focus):focus-visible {
+.light * input.TextField.purple:not(.hide-focus):focus,
+.light * input.TextField.purple:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--purple-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * input.TextField.fuchsia:not(.disabled, .hide-focus):focus,
-.light * input.TextField.fuchsia:not(.disabled, .hide-focus):focus-visible {
+.light * input.TextField.fuchsia:not(.hide-focus):focus,
+.light * input.TextField.fuchsia:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--fuchsia-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * input.TextField.pink:not(.disabled, .hide-focus):focus,
-.light * input.TextField.pink:not(.disabled, .hide-focus):focus-visible {
+.light * input.TextField.pink:not(.hide-focus):focus,
+.light * input.TextField.pink:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--pink-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * input.TextField.rose:not(.disabled, .hide-focus):focus,
-.light * input.TextField.rose:not(.disabled, .hide-focus):focus-visible {
+.light * input.TextField.rose:not(.hide-focus):focus,
+.light * input.TextField.rose:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--rose-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * input.TextField.slate:not(.disabled, .hide-focus):focus,
-.light * input.TextField.slate:not(.disabled, .hide-focus):focus-visible {
+.light * input.TextField.slate:not(.hide-focus):focus,
+.light * input.TextField.slate:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--slate-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * input.TextField.gray:not(.disabled, .hide-focus):focus,
-.light * input.TextField.gray:not(.disabled, .hide-focus):focus-visible {
+.light * input.TextField.gray:not(.hide-focus):focus,
+.light * input.TextField.gray:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--gray-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * input.TextField.zinc:not(.disabled, .hide-focus):focus,
-.light * input.TextField.zinc:not(.disabled, .hide-focus):focus-visible {
+.light * input.TextField.zinc:not(.hide-focus):focus,
+.light * input.TextField.zinc:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--zinc-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * input.TextField.neutral:not(.disabled, .hide-focus):focus,
-.light * input.TextField.neutral:not(.disabled, .hide-focus):focus-visible {
+.light * input.TextField.neutral:not(.hide-focus):focus,
+.light * input.TextField.neutral:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--neutral-500);
   --focus-outline: var(--focus-outline-light);
 }
 
-.light * input.TextField.stone:not(.disabled, .hide-focus):focus,
-.light * input.TextField.stone:not(.disabled, .hide-focus):focus-visible {
+.light * input.TextField.stone:not(.hide-focus):focus,
+.light * input.TextField.stone:not(.hide-focus):focus-visible {
   --focus-outline-light: var(--stone-500);
   --focus-outline: var(--focus-outline-light);
 }

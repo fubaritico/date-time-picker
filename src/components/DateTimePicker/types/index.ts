@@ -66,6 +66,8 @@ export interface PickerProviderProps extends BasicPanelProps {
   locale?: string
   /* If true, the top position of the panel will be impacted */
   hasLabel?: boolean
+  /* Because the date range days panels can have a different offset due to daylight applied, both possible offsets are stored */
+  dateRangePickerOffsets?: { gmtMsOffset: number; msOffset: number }[]
 }
 
 export interface BasicPickerProps extends BasicPanelProps {

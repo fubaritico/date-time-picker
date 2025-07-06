@@ -56,7 +56,6 @@ const InputWithMask: FC<InputWithMaskProps> = ({
   pickerMode,
   required,
   value,
-  disabled,
   errors,
   onChange,
   onFocus,
@@ -70,7 +69,7 @@ const InputWithMask: FC<InputWithMaskProps> = ({
       maskPlaceholder="_"
       mask={mask}
       value={value ?? ''}
-      disabled={disabled}
+      disabled={rest.disabled}
       required={required}
       errors={errors}
       onChange={async (e: ChangeEvent<HTMLInputElement>) => {

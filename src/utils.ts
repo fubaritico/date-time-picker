@@ -671,7 +671,7 @@ export const getOffsetInMsFromTimezone = (
  * Formats a timestamp, according to the given format, and locale to be displayed in the field
  *
  * @param {number} ts - number representing a unix timestamp
- * @param {string} format - the desired format ('YYYY-MM-DD', 'hh:mm A', 'YYYY-MM-DD hh:mm A')
+ * @param {string} format - the desired format ('YYYY/MM/DD', 'hh:mm A', 'YYYY/MM/DD hh:mm A')
  * @param {number} offset - the msOffset in milliseconds from GMT time zone (daylight taken into account)
  *
  * @throws {Error} if the timestamp is invalid or format is not supported
@@ -681,13 +681,13 @@ export const getOffsetInMsFromTimezone = (
 export const formatTimestampForTextInput = (
   ts: number,
   format: string,
-  offset: number
+  offset?: number
 ): string => {
   if (!checkTsValidity(ts)) {
     throw new Error('[formatTimestampForTextInput] Invalid timestamp')
   }
 
-  const date = new Date(ts - offset)
+  const date = new Date(ts + (offset ?? 0))
 
   const year = date.getUTCFullYear().toString()
   const month = String(date.getUTCMonth() + 1).padStart(2, '0')
@@ -702,8 +702,8 @@ export const formatTimestampForTextInput = (
     case 'YYYY-MM-DD':
     case 'DD-MM-YYYY':
       return format === 'DD-MM-YYYY'
-        ? `${day}-${month}-${year}`
-        : `${year}-${month}-${day}`
+        ? `${day}/${month}/${year}`
+        : `${year}/${month}/${day}`
     case 'hh:mm A':
     case 'HH:mm':
       return format === 'HH:mm'
@@ -712,8 +712,8 @@ export const formatTimestampForTextInput = (
     case 'YYYY-MM-DD hh:mm A':
     case 'DD-MM-YYYY HH:mm':
       return format === 'DD-MM-YYYY HH:mm'
-        ? `${day}-${month}-${year} ${formatted24Hours}:${minutes}`
-        : `${year}-${month}-${day} ${formattedHours}:${minutes} ${ampm}`
+        ? `${day}/${month}/${year} ${formatted24Hours}:${minutes}`
+        : `${year}/${month}/${day} ${formattedHours}:${minutes} ${ampm}`
     default:
       throw new Error('[formatTimestampForTextInput] Unsupported format')
   }

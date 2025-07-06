@@ -29,6 +29,7 @@ const DateTimePickerProvider: FC<PropsWithChildren<PickerProviderProps>> = ({
   noDefaultDate,
   open,
   pickerMode = 'DATE',
+  dateRangePickerOffsets,
 }) => {
   const [panelView, setPanelView] = useState(
     pickerMode === 'TIME' ? PanelView.TIME : PanelView.DAYS
@@ -79,6 +80,7 @@ const DateTimePickerProvider: FC<PropsWithChildren<PickerProviderProps>> = ({
   const value = useMemo<PickerState>(() => {
     return {
       color,
+      dateRangePickerOffsets,
       gmtMsOffset,
       hasLabel,
       ignoreClickAwayRef,
@@ -101,6 +103,7 @@ const DateTimePickerProvider: FC<PropsWithChildren<PickerProviderProps>> = ({
     }
   }, [
     color,
+    dateRangePickerOffsets,
     gmtMsOffset,
     hasLabel,
     ignoreClickAwayRef,

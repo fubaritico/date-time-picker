@@ -99,6 +99,10 @@ const DateRangePanel: FC<DateRangePanelProps> = ({
    */
   const onEndDateChangeHandler = useCallback(
     (date: number) => {
+      if (date === innerDateRange?.[0]) {
+        // If the selected date is the same as the start date, do not update
+        return
+      }
       const newDateRange: DateRange = [innerDateRange?.[0], date]
       // Controlled component: call the onDateRangeChange callback
       if (onDateRangeChange) {
@@ -115,7 +119,7 @@ const DateRangePanel: FC<DateRangePanelProps> = ({
       className={clsx('DateRangePanel', size, className)}
       data-test="date-range-panel"
     >
-      <div className="start-date-panel" data-test="start-date-panel">
+      <div className="left-panel" data-test="left-panel">
         <PanelHeader
           size={size}
           nextButtonAriaLabel="Next Month"
@@ -145,7 +149,7 @@ const DateRangePanel: FC<DateRangePanelProps> = ({
         />
       </div>
       <div className="separator" />
-      <div className="end-date-panel" data-test="end-date-panel">
+      <div className="right-panel" data-test="right-panel">
         <PanelHeader
           size={size}
           nextButtonAriaLabel="Next Month"

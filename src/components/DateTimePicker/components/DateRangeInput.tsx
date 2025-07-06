@@ -22,7 +22,8 @@ const DateRangeInput: FC<DateInputProps> = ({
   // Value as a string formatted for display
   const clickAwayIgnoreRef = useRef<HTMLButtonElement>(null)
   // Shared state from the DateTimePicker context
-  const { color, pickerMode, setIgnoreClickAwayRef } = useDateTimePicker()
+  const { color, pickerMode, setIgnoreClickAwayRef, innerDateRange } =
+    useDateTimePicker()
   // Input state (left/start)
   const {
     inputValue: startInputValue,
@@ -65,6 +66,8 @@ const DateRangeInput: FC<DateInputProps> = ({
     required,
     size,
   })
+
+  const disabled = inputTextProps.disabled ?? innerDateRange?.[0] === undefined
 
   /**
    * On Icon click, calls the passed onIconClick function
@@ -109,6 +112,10 @@ const DateRangeInput: FC<DateInputProps> = ({
             severity={startInnerErrors ? 'error' : undefined}
             errors={startInnerErrors}
             onChange={async (e: ChangeEvent<HTMLInputElement>) => {
+              if (parseInt(e.target.value) === innerDateRange?.[0]) {
+                // If the value is the same as the inner date range, do not update
+                return
+              }
               await startHandleChange(e)
             }}
             hideFocus
@@ -128,7 +135,6 @@ const DateRangeInput: FC<DateInputProps> = ({
             hideFocus
             mask={endInputMaskInstance?.getMask()}
             value={endInputValue ?? ''}
-            disabled={inputTextProps.disabled}
             required={inputTextProps.required}
             severity={endInnerErrors ? 'error' : undefined}
             errors={endInnerErrors}
@@ -140,6 +146,7 @@ const DateRangeInput: FC<DateInputProps> = ({
             }}
             pickerMode={pickerMode}
             {...textInputOnlyProperties(inputTextProps)}
+            disabled={disabled}
           />
         </div>
       </div>

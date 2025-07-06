@@ -155,8 +155,8 @@ button.DaysGridCell.selectedStartDate:hover {
   width: 40px !important;
 }
 
-button.DaysGridCell.selectedEndDate,
-button.DaysGridCell.selectedEndDate:hover {
+button.DaysGridCell.selectedEndDate:not(.selectedStartDate),
+button.DaysGridCell.selectedEndDate:not(.selectedStartDate):hover {
   background: var(--selectedEndDate-bg);
   color: var(--selectedEndDate-text);
   margin: 0 -2px;

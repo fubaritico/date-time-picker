@@ -210,7 +210,6 @@ const TextField: FC<TextFieldProps> = forwardRef<
               size,
               `icon-${iconPosition}`,
               {
-                disabled: disabled,
                 'show-icon': Icon,
                 'show-cross': showCross,
                 'hide-focus': hideFocus,

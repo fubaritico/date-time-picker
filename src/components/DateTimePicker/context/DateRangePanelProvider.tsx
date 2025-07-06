@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 
 import { addMonths, getFirstInstantOfMonth } from '@utils'
 
@@ -28,12 +28,14 @@ const DateRangePanelProvider: FC<
   PropsWithChildren<Pick<PickerProviderProps, 'dateRange' | 'msOffset'>>
 > = ({ children, msOffset, dateRange = [undefined, undefined] }) => {
   // Date range state for UI: start and end dates being selected
-  const [tempStartDate, setTempStartDate] = useState<number>()
+  const [tempStartDate, setTempStartDate] = useState<number | undefined>(
+    !dateRange[1] ? dateRange[0] : undefined
+  )
   const [tempEndDate, setTempEndDate] = useState<number>()
   const [leftGridMonth, setLeftGridMonth] = useState<number>(() => {
     const currentMonth = Date.now() + msOffset
 
-    if (dateRange[0] && dateRange[1]) {
+    if (dateRange[0]) {
       return getFirstInstantOfMonth(dateRange[0])
     }
 
@@ -59,16 +61,6 @@ const DateRangePanelProvider: FC<
 
     return getFirstInstantOfMonth(nextMont)
   })
-
-  /**
-   * Will reset the local context when the panel unmounts
-   */
-  useEffect(() => {
-    return () => {
-      setTempStartDate(undefined)
-      setTempEndDate(undefined)
-    }
-  }, [])
 
   /**
    * Date range state: temporary state while selecting.

@@ -3,7 +3,6 @@ import { ChangeEvent, useCallback, useEffect, useMemo, useState } from 'react'
 import {
   convertFormattedDateToTimestamp,
   formatTimestampForTextInput,
-  formatTimestampToDate,
 } from '@utils'
 
 import { DATE_FORMAT } from '../formats'
@@ -31,15 +30,14 @@ export default function useDateRangeInput({
   onDateChange,
 }: DateRangeInputHookOptions) {
   const {
-    gmtMsOffset,
     innerDateRange,
     isControlled,
     locale,
     maxDate,
     minDate,
-    msOffset,
     pickerMode,
     setInnerDateRange,
+    dateRangePickerOffsets,
   } = useDateTimePicker()
   // INPUT STATE
   const [inputMaskInstance, setInputMaskInstance] =
@@ -50,6 +48,13 @@ export default function useDateRangeInput({
   const date = useMemo(
     () => (inputRole === 'start' ? innerDateRange?.[0] : innerDateRange?.[1]),
     [innerDateRange, inputRole]
+  )
+  const offset = useMemo(
+    () =>
+      inputRole === 'start'
+        ? dateRangePickerOffsets?.[0]
+        : dateRangePickerOffsets?.[1],
+    [dateRangePickerOffsets, inputRole]
   )
 
   /**
@@ -82,12 +87,17 @@ export default function useDateRangeInput({
    * Set the input value to the date when the date is updated.
    */
   useEffect(() => {
-    setInputValue(() => {
-      if (!date) return undefined
+    setInputValue((prevState) => {
+      //console.log(inputRole, 'prevState', prevState)
+      if (!date) return prevState
 
-      return formatTimestampForTextInput(date, DATE_FORMAT[locale], gmtMsOffset)
+      return formatTimestampForTextInput(
+        date,
+        DATE_FORMAT[locale],
+        offset?.msOffset
+      )
     })
-  }, [date, pickerMode, locale, msOffset, gmtMsOffset])
+  }, [date, pickerMode, locale, offset?.msOffset, inputRole])
 
   /**
    * Reformats the new input value to an unix timestamp.
@@ -111,7 +121,7 @@ export default function useDateRangeInput({
    */
   const handleChange = useCallback(
     async (e: ChangeEvent<HTMLInputElement>) => {
-      const rawInputValue = e.target.value
+      const rawInputValue = e.currentTarget.value
 
       // It never happens, just here for correct inference
       const instance = inputMaskInstance ?? (await loadMaskClass())
@@ -124,65 +134,61 @@ export default function useDateRangeInput({
       setInputValue(validatedInputValue)
 
       // Always attempt to parse, even with potentially invalid input
-      const formattedNewInputValue =
-        pickerMode === 'TIME' && !!date
-          ? formatNewInputValue(
-              formatTimestampToDate(date, locale) + ' ' + validatedInputValue
-            )
-          : formatNewInputValue(validatedInputValue)
+      const formattedNewInputValue = formatNewInputValue(validatedInputValue)
 
       // Check if the date is valid and within bounds
       if (formattedNewInputValue) {
         const isAfterMin = !minDate || formattedNewInputValue >= minDate
         const isBeforeMax = !maxDate || formattedNewInputValue <= maxDate
+        const newDate = formattedNewInputValue - (offset?.msOffset ?? 0)
+        const newStarDate =
+          inputRole === 'start'
+            ? innerDateRange?.[1] && newDate > innerDateRange[1]
+              ? innerDateRange[0]
+              : newDate
+            : innerDateRange?.[0]
+        const newEndDate =
+          inputRole === 'end'
+            ? innerDateRange?.[0] && newDate < innerDateRange[0]
+              ? innerDateRange[1]
+              : newDate
+            : innerDateRange?.[1]
+
+        const newDateRange: DateRange = [newStarDate, newEndDate]
+
+        setInputValue(() => {
+          const newDate = inputRole === 'start' ? newStarDate : newEndDate
+
+          if (!newDate) return undefined
+
+          return formatTimestampForTextInput(newDate, DATE_FORMAT[locale])
+        })
 
         if (isAfterMin && isBeforeMax) {
           setInnerErrors(undefined)
 
           if (isControlled) {
-            onDateChange?.(
-              inputRole === 'start'
-                ? [formattedNewInputValue - msOffset, innerDateRange?.[1]]
-                : [innerDateRange?.[0], formattedNewInputValue - msOffset]
-            )
+            onDateChange?.(newDateRange)
           } else {
-            setInnerDateRange(
-              inputRole === 'start'
-                ? [formattedNewInputValue - msOffset, innerDateRange?.[1]]
-                : [innerDateRange?.[0], formattedNewInputValue - msOffset]
-            )
+            setInnerDateRange(newDateRange)
           }
-        } else {
-          setInnerErrors(['Selected date is out of bounds.'])
-          onDateChange?.(
-            inputRole === 'start'
-              ? [undefined, innerDateRange?.[1]]
-              : [innerDateRange?.[0], undefined]
-          )
         }
       } else {
-        // Explicitly handle invalid input
-        onDateChange?.(
-          inputRole === 'start'
-            ? [undefined, innerDateRange?.[1]]
-            : [innerDateRange?.[0], undefined]
-        )
+        onDateChange?.([innerDateRange?.[0], innerDateRange?.[1]])
       }
     },
     [
-      innerDateRange,
       inputMaskInstance,
-      inputRole,
       loadMaskClass,
-      pickerMode,
       formatNewInputValue,
-      date,
-      locale,
       minDate,
       maxDate,
+      offset?.msOffset,
+      inputRole,
+      innerDateRange,
+      locale,
       isControlled,
       onDateChange,
-      msOffset,
       setInnerDateRange,
     ]
   )

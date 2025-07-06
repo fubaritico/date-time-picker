@@ -259,7 +259,6 @@ const DaysGrid: FC<DaysGridProps> = ({
   const dateIsInRange = useCallback(
     (ts: number) => {
       const inRangeOnInit =
-        tempStartDate === undefined &&
         dateRange[0] !== undefined &&
         dateRange[1] !== undefined &&
         ts >= dateRange[0] &&

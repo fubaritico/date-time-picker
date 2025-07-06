@@ -16,8 +16,8 @@
   gap: var(--spacing-2);
 }
 
-.DateRangePanel .start-date-panel,
-.DateRangePanel .end-date-panel {
+.DateRangePanel .left-panel,
+.DateRangePanel .right-panel {
   display: flex;
   flex-direction: column;
 }
@@ -28,18 +28,18 @@
 }
 
 /* Sizes */
-.DateRangePanel.sm .start-date-panel,
-.DateRangePanel.sm .end-date-panel {
+.DateRangePanel.sm .left-panel,
+.DateRangePanel.sm .right-panel {
   width: 270px;
 }
 
-.DateRangePanel.md .start-date-panel,
-.DateRangePanel.md .end-date-panel {
+.DateRangePanel.md .left-panel,
+.DateRangePanel.md .right-panel {
   width: 305px;
 }
 
-.DateRangePanel.lg .start-date-panel,
-.DateRangePanel.lg .end-date-panel {
+.DateRangePanel.lg .left-panel,
+.DateRangePanel.lg .right-panel {
   width: 345px;
 }
 
