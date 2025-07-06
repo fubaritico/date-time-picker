@@ -1,3 +1,24 @@
+## [2.1.10](https://github.com/fubaritico/date-time-picker/compare/v2.1.9...v2.1.10) (2025-07-06)
+
+
+
+## [2.1.9](https://github.com/fubaritico/date-time-picker/compare/v2.1.8...v2.1.9) (2025-07-06)
+
+
+### Bug Fixes
+
+* fixed multiple inconsistencies revealed in tests ([540474f](https://github.com/fubaritico/date-time-picker/commit/540474f5d3041a2afa9fa858ec7b3bc39d99c96b))
+
+
+
+## [2.1.8](https://github.com/fubaritico/date-time-picker/compare/v2.1.7...v2.1.8) (2025-07-06)
+
+
+
+## [2.1.7](https://github.com/fubaritico/date-time-picker/compare/v2.1.6...v2.1.7) (2025-07-06)
+
+
+
 ## [2.1.6](https://github.com/fubaritico/date-time-picker/compare/v2.1.5...v2.1.6) (2025-07-05)
 
 
