@@ -35,9 +35,9 @@ export interface DatePanelProps {
  *
  * FUCKING IMPORTANT:
  * ------------------
- * On input, the timestamp value gets the msOffset in milliseconds.
- * It keeps this msOffset throughout the edition of its value.
- * On output, the timestamp value gets its msOffset removed to come back to UTC..
+ * On input, the timestamp value gets the final offset in milliseconds.
+ * It keeps this final offset throughout the edition of its value.
+ * On output, the timestamp value gets its final offset removed to come back to UTC..
  *
  * @param className
  * @param onDateChange
@@ -48,7 +48,7 @@ export interface DatePanelProps {
  */
 const DatePanel: FC<DatePanelProps> = ({ className, onDateChange, size }) => {
   // SHARED STATE
-  const { color, locale, msOffset, innerDate, setInnerDate, setPanelView } =
+  const { color, locale, finalOffset, innerDate, setInnerDate, setPanelView } =
     useDateTimePicker()
 
   const panelRef = usePanelDomRect()
@@ -57,9 +57,9 @@ const DatePanel: FC<DatePanelProps> = ({ className, onDateChange, size }) => {
    * Store and refresh the date for the panel based on picker mode and provider state.
    */
   const panelDate = useMemo(() => {
-    const now = Date.now() + msOffset
+    const now = Date.now() + finalOffset
     return innerDate ?? now
-  }, [innerDate, msOffset])
+  }, [innerDate, finalOffset])
 
   /**
    * Function to go to the previous month.
@@ -72,10 +72,10 @@ const DatePanel: FC<DatePanelProps> = ({ className, onDateChange, size }) => {
   const gotoPrevMonth = useCallback(() => {
     setInnerDate((prev) => {
       // Fine for now, but should be improved later by having some temp value for browsing before first date selection
-      if (prev === undefined) return subtractMonths(Date.now() + msOffset, 1)
+      if (prev === undefined) return subtractMonths(Date.now() + finalOffset, 1)
       return subtractMonths(prev, 1)
     })
-  }, [setInnerDate, msOffset])
+  }, [setInnerDate, finalOffset])
 
   /**
    * A callback function that advances the date to the next month.
@@ -86,10 +86,10 @@ const DatePanel: FC<DatePanelProps> = ({ className, onDateChange, size }) => {
   const gotoNextMonth = useCallback(() => {
     setInnerDate((prev) => {
       // Fine for now, but should be improved later by having some temp value for browsing before first date selection
-      if (prev === undefined) return addMonths(Date.now() + msOffset, 1)
+      if (prev === undefined) return addMonths(Date.now() + finalOffset, 1)
       return addMonths(prev, 1)
     })
-  }, [setInnerDate, msOffset])
+  }, [setInnerDate, finalOffset])
 
   return (
     <div
@@ -106,10 +106,10 @@ const DatePanel: FC<DatePanelProps> = ({ className, onDateChange, size }) => {
         onPrevButtonClick={gotoPrevMonth}
       >
         <PanelHeaderButton
-          aria-label={getMonthNameFromTs(panelDate + msOffset, locale)}
+          aria-label={getMonthNameFromTs(panelDate + finalOffset, locale)}
           color={color}
           disabled
-          label={getMonthNameFromTs(panelDate + msOffset, locale)}
+          label={getMonthNameFromTs(panelDate + finalOffset, locale)}
           onClick={() => {
             setPanelView(PanelView.MONTHS)
           }}

@@ -40,6 +40,8 @@ const PanelHeader: FC<PropsWithChildren<PanelHeaderProps>> = ({
       aria-label={prevButtonAriaLabel}
       onClick={onPrevButtonClick}
       disabled={disablePrevButton}
+      aria-disabled={disablePrevButton ? 'true' : undefined}
+      tabIndex={disablePrevButton ? -1 : undefined}
     >
       <HiChevronLeft aria-hidden />
     </button>
@@ -48,6 +50,8 @@ const PanelHeader: FC<PropsWithChildren<PanelHeaderProps>> = ({
       aria-label={nextButtonAriaLabel}
       onClick={onNextButtonClick}
       disabled={disableNextButton}
+      aria-disabled={disableNextButton ? 'true' : undefined}
+      tabIndex={disableNextButton ? -1 : undefined}
     >
       <HiChevronRight aria-hidden />
     </button>

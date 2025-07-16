@@ -47,18 +47,19 @@ const TimePanel: FC<TimePanelProps> = ({ className, onDateChange, size }) => {
   // COMPONENT STATE
   const {
     color,
-    //gmtMsOffset,
     innerDate,
-    msOffset,
+    finalOffset,
     locale,
     pickerMode,
     //isControlled,
   } = useDateTimePicker()
-  const [date, setDate] = useState<number>(innerDate ?? Date.now() + msOffset)
+  const [date, setDate] = useState<number>(
+    innerDate ?? Date.now() + finalOffset
+  )
 
   useEffect(() => {
-    setDate(innerDate ?? Date.now() + msOffset)
-  }, [innerDate, msOffset])
+    setDate(innerDate ?? Date.now() + finalOffset)
+  }, [innerDate, finalOffset])
 
   // Use of an ante meridian/post meridian system
   const dateUsesAMPM = locale !== 'fr'

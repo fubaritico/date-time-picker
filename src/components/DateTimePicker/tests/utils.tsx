@@ -1,11 +1,17 @@
 import { render } from '@testing-library/react'
 
-import { getOffsetInMsFromTimezone } from '../../../utils'
+import {
+  addMonths,
+  computeOffsets,
+  getActualOffset,
+  getOffsetInMsFromTimezone,
+} from '../../../utils'
 import I18nDateLabel from '../../I18nDateLabel'
+import DateRangePicker from '../DateRangePicker'
 
 import Integration from './Picker.integration'
 
-import type { AnyPickerComponent, AnyPickerProps } from '../types'
+import type { AnyPickerComponent, AnyPickerProps, DateRange } from '../types'
 
 export const dateSpanTestId = 'current-value'
 export const localeAwareFormat: LocaleAwareFormat = 'L LT'
@@ -17,7 +23,7 @@ export const localeAwareFormat: LocaleAwareFormat = 'L LT'
  * @param {AnyPickerComponent} Component - The type of picker to be used in the test
  * @param {Number} pFixedDate - The fixed date to use for the tests. Here, 2025-03-15T15:28:13.000Z as a timestamp.
  *
- * @returns The todayTimestamp, the msOffset and the render function.
+ * @returns The todayTimestamp, the timezone offset and the render function.
  */
 export const setupUncontrolledPicker = (
   pFixedDate: number,
@@ -25,12 +31,31 @@ export const setupUncontrolledPicker = (
   props?: AnyPickerProps
 ) => {
   const today = new Date(pFixedDate)
-  const msOffset = getOffsetInMsFromTimezone(today, props?.timezone)
-  const todayTimestamp = today.getTime() + msOffset
+  const inOneMonthTime = new Date(addMonths(pFixedDate, 1))
+
+  const offsets = [
+    computeOffsets(today.getTime(), props?.timezone),
+    computeOffsets(inOneMonthTime.getTime(), props?.timezone),
+  ]
+
+  const finalOffset = getActualOffset(
+    offsets[0].timezoneMsOffset,
+    offsets[0].localeMsOffset
+  )
+
+  const oneMonthFinalOffset = getActualOffset(
+    offsets[1].timezoneMsOffset,
+    offsets[1].localeMsOffset
+  )
+
+  const todayTimestamp = today.getTime() + finalOffset
+  const oneMonthTimestamp = inOneMonthTime.getTime() + finalOffset
 
   return {
     todayTimestamp,
-    msOffset,
+    oneMonthTimestamp,
+    finalOffset,
+    oneMonthFinalOffset,
     render: render(<Component {...props} />),
   }
 }
@@ -43,7 +68,7 @@ export const setupUncontrolledPicker = (
  * @param {CommonPickerProps} props - The props to pass to the component.
  * @param spyOnDateChangeFn
  *
- * @returns {Object} - The todayTimestamp, the msOffset and the render function.
+ * @returns {Object} - The todayTimestamp, the timezone offset and the render function.
  */
 export const setupControlledDateTimePicker = (
   Component: AnyPickerComponent,
@@ -52,13 +77,16 @@ export const setupControlledDateTimePicker = (
   spyOnDateChangeFn = jest.fn()
 ) => {
   const today = new Date(pFixedDate)
-  const msOffset = getOffsetInMsFromTimezone(today, props?.timezone)
-
-  const dateTimestamp = today.getTime() + msOffset
+  const { localeMsOffset, timezoneMsOffset } = computeOffsets(
+    today.getTime(),
+    props?.timezone
+  )
+  const finalOffset = getActualOffset(timezoneMsOffset, localeMsOffset)
+  const dateTimestamp = today.getTime() + finalOffset
 
   return {
     todayTimestamp: dateTimestamp,
-    msOffset,
+    finalOffset,
     render: render(
       <Integration {...props} spyOnDateChange={spyOnDateChangeFn}>
         {({ props, currentValue, setCurrentValue }) => (
@@ -88,48 +116,75 @@ export const setupControlledDateTimePicker = (
 /**
  * Set up the DateRangePicker component for testing.
  *
- * @param {AnyPickerComponent} Component - The type of picker to be used in the test
  * @param {Number} pFixedDate - The fixed date to use for the tests. Here 2025-03-15T15:28:13.000Z as a timestamp.
- * @param {CommonPickerProps} props - The props to pass to the component.
- * @param {Mock} spyOnDateChangeFn
+ * @param {AnyPickerProps} props - The props to pass to the component.
+ * @param {jest.Mock} spyOnDateChangeFn - A mock function to spy on date changes.
+ * @param {Number} daysBeforeToday -
+ * @param {Number} daysAfterToday -
  *
- * @returns {Object} - The todayTimestamp, the msOffset and the render function.
+ * @returns {Object} - The todayTimestamp, the timezone offset and the render function.
  */
 export const setupControlledDateRangePicker = (
-  Component: AnyPickerComponent,
   pFixedDate: number,
   props?: AnyPickerProps,
-  spyOnDateChangeFn = jest.fn()
+  spyOnDateChangeFn = jest.fn(),
+  daysBeforeToday = 0,
+  daysAfterToday = 20
 ) => {
+  const oneDayInMs = 86400000
   const today = new Date(pFixedDate)
-  const msOffset = getOffsetInMsFromTimezone(today, props?.timezone)
+  const startDate = pFixedDate - daysBeforeToday * oneDayInMs
+  const endDate = pFixedDate + daysAfterToday * oneDayInMs
+  const { localeMsOffset, timezoneMsOffset } = computeOffsets(
+    today.getTime(),
+    props?.timezone
+  )
+  const finalOffset = getActualOffset(timezoneMsOffset, localeMsOffset)
+  const msOffsets = [
+    getOffsetInMsFromTimezone(new Date(startDate), props?.timezone),
+    getOffsetInMsFromTimezone(new Date(endDate), props?.timezone),
+  ]
 
-  const dateTimestamp = today.getTime() + msOffset
+  const properties = {
+    ...props,
+    dateRange: [startDate, endDate],
+  }
 
   return {
-    todayTimestamp: dateTimestamp,
-    msOffset,
+    todayTimestamp: today.getTime() + finalOffset,
+    finalOffset,
+    msOffsets,
+    startDate,
+    endDate,
     render: render(
-      <Integration {...props} spyOnDateChange={spyOnDateChangeFn}>
+      /* eslint-disable @typescript-eslint/ban-ts-comment */
+      // @ts-ignore
+      <Integration<'DATERANGE'>
+        {...properties}
+        spyOnDateChange={spyOnDateChangeFn}
+      >
         {({ props, currentValue, setCurrentValue }) => {
-          const range = currentValue as never[] | undefined
+          const range = currentValue as DateRange | undefined
+
           return (
             <>
-              <Component
+              <DateRangePicker
                 {...props}
-                dateRange={currentValue as never[] | undefined}
-                onChange={setCurrentValue}
+                dateRange={range}
+                onDateRangeChange={(v) => {
+                  setCurrentValue(v as DateRange | undefined)
+                }}
               />
               {!!currentValue && (
                 <span data-test={dateSpanTestId}>
                   <I18nDateLabel
-                    value={range?.[0] as number | undefined}
+                    value={range?.[0]}
                     localeAwareFormat={localeAwareFormat}
                     locale={props.locale}
                     timezone={props.timezone}
                   />
                   <I18nDateLabel
-                    value={range?.[1] as number | undefined}
+                    value={range?.[1]}
                     localeAwareFormat={localeAwareFormat}
                     locale={props.locale}
                     timezone={props.timezone}

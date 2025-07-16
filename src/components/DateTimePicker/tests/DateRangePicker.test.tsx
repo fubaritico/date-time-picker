@@ -2,16 +2,25 @@ import { fireEvent, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import MockDate from 'mockdate'
 
+import {
+  formatTimestampForTextInput,
+  getMillisecondsSinceMidnight,
+  getTimestampFromDateString,
+} from '@utils'
+import { DATE_FORMAT } from '@components'
+
 import DateRangePicker from '../DateRangePicker'
+import { AnyPickerComponent, AnyPickerProps } from '../types'
 
-import { setupUncontrolledPicker } from './utils'
+import {
+  setupControlledDateRangePicker,
+  setupUncontrolledPicker,
+} from './utils'
 
-import type { AnyPickerComponent } from '../types'
+const spyOnDateRangeChangeFn = jest.fn()
 
-const spyOnDateChangeFn = jest.fn()
-
-const runTests = () => {
-  const fixedDate = 1742052493000
+const runTests = (timezone?: Timezone) => {
+  const fixedDate = 1742052493000 // 2025-03-15T15:28:13.000Z
 
   beforeEach(() => {
     MockDate.set(fixedDate) // some arbitrary date
@@ -26,7 +35,8 @@ const runTests = () => {
       render: { container },
     } = setupUncontrolledPicker(
       fixedDate,
-      DateRangePicker as AnyPickerComponent
+      DateRangePicker as AnyPickerComponent,
+      { timezone }
     )
 
     await waitFor(() => {
@@ -41,7 +51,11 @@ const runTests = () => {
    */
   describe('Uncontrolled - init', () => {
     it('should not pass any value to the inputs on init', async () => {
-      setupUncontrolledPicker(fixedDate, DateRangePicker as AnyPickerComponent)
+      setupUncontrolledPicker(
+        fixedDate,
+        DateRangePicker as AnyPickerComponent,
+        { timezone }
+      )
 
       await waitFor(() => {
         expect(screen.getByTestId('start-input')).toHaveValue('____/__/__')
@@ -50,7 +64,11 @@ const runTests = () => {
     })
 
     it('should open the date range panel with the start date input only', async () => {
-      setupUncontrolledPicker(fixedDate, DateRangePicker as AnyPickerComponent)
+      setupUncontrolledPicker(
+        fixedDate,
+        DateRangePicker as AnyPickerComponent,
+        { timezone }
+      )
 
       await userEvent.click(
         within(screen.getByTestId('start-input-control')).getByRole('button')
@@ -72,7 +90,11 @@ const runTests = () => {
     })
 
     it('should give the opener button the "Choose Date Range" label', () => {
-      setupUncontrolledPicker(fixedDate, DateRangePicker as AnyPickerComponent)
+      setupUncontrolledPicker(
+        fixedDate,
+        DateRangePicker as AnyPickerComponent,
+        { timezone }
+      )
 
       expect(
         within(screen.getByTestId('start-input-control')).getByRole('button')
@@ -82,7 +104,8 @@ const runTests = () => {
     it('should show the current date in the left panel by default', async () => {
       const { todayTimestamp } = setupUncontrolledPicker(
         fixedDate,
-        DateRangePicker as AnyPickerComponent
+        DateRangePicker as AnyPickerComponent,
+        { timezone }
       )
 
       await userEvent.click(screen.getByLabelText('Choose Date Range'))
@@ -97,7 +120,11 @@ const runTests = () => {
     })
 
     it('should open the panel with proper state', async () => {
-      setupUncontrolledPicker(fixedDate, DateRangePicker as AnyPickerComponent)
+      setupUncontrolledPicker(
+        fixedDate,
+        DateRangePicker as AnyPickerComponent,
+        { timezone }
+      )
 
       await userEvent.click(screen.getByLabelText('Choose Date Range'))
 
@@ -148,7 +175,8 @@ const runTests = () => {
       async () => {
         setupUncontrolledPicker(
           fixedDate,
-          DateRangePicker as AnyPickerComponent
+          DateRangePicker as AnyPickerComponent,
+          { timezone }
         )
 
         await userEvent.click(screen.getByLabelText('Choose Date Range'))
@@ -188,7 +216,11 @@ const runTests = () => {
     )
 
     it('should update month in the panel header when click on previous or next button', async () => {
-      setupUncontrolledPicker(fixedDate, DateRangePicker as AnyPickerComponent)
+      setupUncontrolledPicker(
+        fixedDate,
+        DateRangePicker as AnyPickerComponent,
+        { timezone }
+      )
 
       await userEvent.click(screen.getByLabelText('Choose Date Range'))
 
@@ -212,7 +244,11 @@ const runTests = () => {
     })
 
     it('should select a date range when clicking on a first date and clicking on a second date', async () => {
-      setupUncontrolledPicker(fixedDate, DateRangePicker as AnyPickerComponent)
+      setupUncontrolledPicker(
+        fixedDate,
+        DateRangePicker as AnyPickerComponent,
+        { timezone }
+      )
 
       await userEvent.click(screen.getByLabelText('Choose Date Range'))
 
@@ -235,7 +271,11 @@ const runTests = () => {
     })
 
     it('should display start date in start date input as soon as the start date is selected', async () => {
-      setupUncontrolledPicker(fixedDate, DateRangePicker as AnyPickerComponent)
+      setupUncontrolledPicker(
+        fixedDate,
+        DateRangePicker as AnyPickerComponent,
+        { timezone }
+      )
 
       await userEvent.click(screen.getByLabelText('Choose Date Range'))
 
@@ -250,7 +290,11 @@ const runTests = () => {
     })
 
     it('should update start date when re-selecting a date range', async () => {
-      setupUncontrolledPicker(fixedDate, DateRangePicker as AnyPickerComponent)
+      setupUncontrolledPicker(
+        fixedDate,
+        DateRangePicker as AnyPickerComponent,
+        { timezone }
+      )
 
       await userEvent.click(screen.getByLabelText('Choose Date Range'))
 
@@ -280,7 +324,11 @@ const runTests = () => {
     })
 
     it('should not allow an end date to be selected when clicking on a previous selected start date', async () => {
-      setupUncontrolledPicker(fixedDate, DateRangePicker as AnyPickerComponent)
+      setupUncontrolledPicker(
+        fixedDate,
+        DateRangePicker as AnyPickerComponent,
+        { timezone }
+      )
 
       await userEvent.click(screen.getByLabelText('Choose Date Range'))
 
@@ -303,7 +351,11 @@ const runTests = () => {
     })
 
     it('should allow to continue selection after having selected start date only and closed panel', async () => {
-      setupUncontrolledPicker(fixedDate, DateRangePicker as AnyPickerComponent)
+      setupUncontrolledPicker(
+        fixedDate,
+        DateRangePicker as AnyPickerComponent,
+        { timezone }
+      )
 
       await userEvent.click(screen.getByLabelText('Choose Date Range'))
 
@@ -334,7 +386,11 @@ const runTests = () => {
     })
 
     it('should not allow to define an end date that is before a previously selected start date', async () => {
-      setupUncontrolledPicker(fixedDate, DateRangePicker as AnyPickerComponent)
+      setupUncontrolledPicker(
+        fixedDate,
+        DateRangePicker as AnyPickerComponent,
+        { timezone }
+      )
 
       const user = userEvent.setup()
 
@@ -345,14 +401,11 @@ const runTests = () => {
 
       expect(startDateInput).toHaveValue('2025/03/05')
 
-      // Events have to "simulated" like in the unit tests of the mask library
+      // Events have to be "simulated" like in the unit tests of the mask library
       fireEvent.change(endDateInput, { target: { value: '2025/03/03' } })
 
       expect(endDateInput).toHaveValue('____/__/__')
 
-      // Opted for this approach because it can't be done using userEvent.type
-      // as it removes chars with backspace, but it won't allow a partial replacement/update
-      // the field keeps returning "____/__/__"
       fireEvent.change(endDateInput, { target: { value: '2025/03/06' } })
 
       await waitFor(() => {
@@ -360,8 +413,24 @@ const runTests = () => {
       })
     })
 
-    it('should not allow to update a start date that is after a previously selected end date', async () => {
-      setupUncontrolledPicker(fixedDate, DateRangePicker as AnyPickerComponent)
+    // TODO: when populating dates in the days grid take time part into account don't flatten dates to midnight
+    it.only('should not allow to update a start date that is after a previously selected end date', async () => {
+      const { finalOffset, todayTimestamp } = setupUncontrolledPicker(
+        fixedDate,
+        DateRangePicker as AnyPickerComponent,
+        { timezone }
+      )
+
+      const startDate = '2025/03/05'
+      const endDate = '2025/03/08'
+
+      const millisecondsToAdd = getMillisecondsSinceMidnight(todayTimestamp)
+      const startDateTimestamp =
+        getTimestampFromDateString(startDate) + millisecondsToAdd
+      const endDateTimestamp =
+        getTimestampFromDateString(endDate) + millisecondsToAdd
+
+      // console.log(startDateTimestamp, fixedDate)
 
       const user = userEvent.setup()
       const startDateInput = screen.getByTestId('start-input')
@@ -369,14 +438,25 @@ const runTests = () => {
 
       await user.type(startDateInput, '20250305')
 
+      expect(startDateInput).toHaveValue(
+        formatTimestampForTextInput(startDateTimestamp, DATE_FORMAT.en)
+      )
+
       expect(startDateInput).toHaveValue('2025/03/05')
 
       await user.type(endDateInput, '20250308')
 
-      expect(endDateInput).toHaveValue('2025/03/08')
+      expect(endDateInput).toHaveValue(
+        formatTimestampForTextInput(
+          endDateTimestamp,
+          DATE_FORMAT.en,
+          finalOffset
+        )
+      )
 
       // Opted for this approach because it can't be done using userEvent.type
-      // as it removes chars with backspace, but it won't allow a partial replacement/update
+      // Events have to be "simulated" like in the unit tests of the mask library
+      // @see: https://github.com/mona-health/react-input-mask/blob/master/tests/input/input.test.js
       fireEvent.change(startDateInput, { target: { value: '2025/03/09' } })
 
       await waitFor(() => {
@@ -385,7 +465,11 @@ const runTests = () => {
     })
 
     it("should disable end date input as long as a valid start hasn't been set once", async () => {
-      setupUncontrolledPicker(fixedDate, DateRangePicker as AnyPickerComponent)
+      setupUncontrolledPicker(
+        fixedDate,
+        DateRangePicker as AnyPickerComponent,
+        { timezone }
+      )
 
       const user = userEvent.setup()
       const startDateInput = screen.getByTestId('start-input')
@@ -400,6 +484,7 @@ const runTests = () => {
       expect(endDateInput).toBeDisabled()
 
       // Can't continue the input, maybe the cursor position has to be set
+      // @see: https://github.com/mona-health/react-input-mask/blob/master/tests/input/input.test.js
       fireEvent.change(startDateInput, { target: { value: '2025/03/08' } })
 
       expect(startDateInput).toHaveValue('2025/03/08')
@@ -414,18 +499,105 @@ const runTests = () => {
 
   describe('Controlled', () => {
     beforeEach(() => {
-      spyOnDateChangeFn.mockReset()
+      spyOnDateRangeChangeFn.mockReset()
     })
 
-    // date used for this set of test: 2024-08-09T16:28:13.000Z
-    // const defaultProperties: AnyPickerProps = {
-    //   date: 1723220893000,
-    //   locale: 'en_US',
-    //   pickerMode: 'DATETIME',
-    //   timezone,
-    // }
+    // today: 2025-03-15T15:28:13.000Z
+    const defaultProperties: AnyPickerProps = {
+      locale: 'en_US',
+      timezone,
+    }
+    //const oneDayInMs = 86400000
 
-    it('should test', async () => {})
+    it('should render', async () => {
+      const {
+        render: { baseElement, container },
+      } = setupControlledDateRangePicker(
+        fixedDate,
+        defaultProperties,
+        spyOnDateRangeChangeFn,
+        0,
+        13
+      )
+
+      expect(container).toMatchSnapshot()
+
+      await userEvent.click(screen.getByLabelText('Choose Date Range'))
+
+      expect(baseElement).toMatchSnapshot()
+    })
+
+    describe('Init', () => {
+      it('should pass proper values to the inputs on init', () => {
+        const daysBeforeToday = 0
+        const daysAfterToday = 13
+
+        const { startDate, endDate, msOffsets } =
+          setupControlledDateRangePicker(
+            fixedDate,
+            defaultProperties,
+            spyOnDateRangeChangeFn,
+            daysBeforeToday,
+            daysAfterToday
+          )
+
+        const startDateInput = screen.getByTestId('start-input')
+        const endDateInput = screen.getByTestId('end-input')
+
+        expect(startDateInput).toHaveValue(
+          formatTimestampForTextInput(
+            startDate,
+            DATE_FORMAT[defaultProperties.locale?.split('_')[0] ?? 'en'],
+            msOffsets[0]
+          )
+        )
+
+        expect(endDateInput).toHaveValue(
+          formatTimestampForTextInput(
+            endDate,
+            DATE_FORMAT[defaultProperties.locale?.split('_')[0] ?? 'en'],
+            msOffsets[0]
+          )
+        )
+      })
+
+      it('should open the panel with the proper state', async () => {
+        const daysBeforeToday = 0
+        const daysAfterToday = 13
+
+        setupControlledDateRangePicker(
+          fixedDate,
+          defaultProperties,
+          spyOnDateRangeChangeFn,
+          daysBeforeToday,
+          daysAfterToday
+        )
+
+        await userEvent.click(screen.getByLabelText('Choose Date Range'))
+
+        expect(screen.getByTestId('date-range-panel')).toBeInTheDocument()
+      })
+
+      it('should allow to select a new range of dates', () => {})
+
+      it(
+        'should call start date selection callback on start date selection ' +
+          'and display the start date in the start date input',
+        () => {}
+      )
+
+      it(
+        'should call end date selection callback on end date selection ' +
+          'and display the end date in the end date input',
+        () => {}
+      )
+
+      it(
+        'should call end date selection callback on end date selection ' +
+          'and display the end date in the end date input',
+        () => {}
+      )
+    })
   })
 }
 
@@ -433,12 +605,23 @@ const runTests = () => {
  * The Date management of the component is not based on moment.js anymore.
  * JS Date object and Intl.DateTimeFormat are used instead.
  * The first set of tests will focus on the basic behavior of the component.
- * And the machine timezone is used (fr, GMT + 1:00)
+ * And the machine timezone is used (fr, GMT + 1:00 or anything else)
  *
  * For the sake of reliability, MockDate will be used in those tests to keep them deterministic.
  *
  * A few tests are added to ensure that a provided timezone is taken into account.
  */
-describe('DateRangePicker', () => {
-  runTests()
+// describe('DateRangePicker', () => {
+//   runTests()
+// })
+//
+// /**
+//  * The same set of test with a given timezone
+//  */
+// describe('DateRangePicker w/ "America/Argentina/La_Rioja" timezone', () => {
+//   runTests('America/Argentina/La_Rioja')
+// })
+
+describe('DateRangePicker w/ "Asia/Tokyo" timezone', () => {
+  runTests('Asia/Tokyo')
 })

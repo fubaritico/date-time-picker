@@ -1,5 +1,1258 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`DateRangePicker Controlled should render 1`] = `
+<div>
+  <div>
+    <div
+      style="position: relative;"
+    >
+      <div
+        style="position: relative;"
+      >
+        <div>
+          <div
+            class="DateRangeInput blue"
+          >
+            <div
+              data-focus="false"
+            >
+              <div
+                class="HelperText"
+              >
+                <div
+                  data-test="start-input-control"
+                  style="position: relative; width: 100%;"
+                >
+                  <input
+                    class="TextField blue md icon-left show-icon hide-focus"
+                    data-test="start-input"
+                    tabindex="0"
+                    type="text"
+                    value="2025/03/15"
+                  />
+                  <button
+                    aria-label="Choose Date Range"
+                    class="icon-button"
+                    tabindex="0"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="icon"
+                      data-jest-file-name="HiMiniCalendarDays.svg"
+                      data-jest-svg-name="HiMiniCalendarDays"
+                      data-testid="HiMiniCalendarDays"
+                    />
+                  </button>
+                </div>
+              </div>
+              <div
+                class="HelperText"
+              >
+                <div
+                  data-test="end-input-control"
+                  style="position: relative; width: 100%;"
+                >
+                  <input
+                    class="TextField blue md icon-left show-icon hide-focus"
+                    data-test="end-input"
+                    tabindex="0"
+                    type="text"
+                    value="2025/03/28"
+                  />
+                  <button
+                    class="icon-button"
+                    tabindex="-1"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="icon"
+                      data-jest-file-name="HiMiniCalendarDays.svg"
+                      data-jest-svg-name="HiMiniCalendarDays"
+                      data-testid="HiMiniCalendarDays"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span
+      data-test="current-value"
+    >
+      3/15/2025, 3:28 PM
+      3/28/2025, 3:28 PM
+    </span>
+  </div>
+</div>
+`;
+
+exports[`DateRangePicker Controlled should render 2`] = `
+<body>
+  <div>
+    <div>
+      <div
+        style="position: relative;"
+      >
+        <div
+          style="position: relative;"
+        >
+          <div>
+            <div
+              class="DateRangeInput blue"
+            >
+              <div
+                data-focus="false"
+              >
+                <div
+                  class="HelperText"
+                >
+                  <div
+                    data-test="start-input-control"
+                    style="position: relative; width: 100%;"
+                  >
+                    <input
+                      class="TextField blue md icon-left show-icon hide-focus"
+                      data-test="start-input"
+                      tabindex="0"
+                      type="text"
+                      value="2025/03/15"
+                    />
+                    <button
+                      aria-label="Choose Date Range"
+                      class="icon-button"
+                      tabindex="0"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="icon"
+                        data-jest-file-name="HiMiniCalendarDays.svg"
+                        data-jest-svg-name="HiMiniCalendarDays"
+                        data-testid="HiMiniCalendarDays"
+                      />
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="HelperText"
+                >
+                  <div
+                    data-test="end-input-control"
+                    style="position: relative; width: 100%;"
+                  >
+                    <input
+                      class="TextField blue md icon-left show-icon hide-focus"
+                      data-test="end-input"
+                      tabindex="0"
+                      type="text"
+                      value="2025/03/28"
+                    />
+                    <button
+                      class="icon-button"
+                      tabindex="-1"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="icon"
+                        data-jest-file-name="HiMiniCalendarDays.svg"
+                        data-jest-svg-name="HiMiniCalendarDays"
+                        data-testid="HiMiniCalendarDays"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            aria-label="Choose a date"
+            aria-modal="true"
+            class="Panel md dtp-enter dtp-enter-active"
+            role="dialog"
+            style="position: absolute; top: 5px; left: 0px;"
+          >
+            <div
+              class="DateRangePanel md"
+              data-test="date-range-panel"
+            >
+              <div
+                class="left-panel"
+                data-test="left-panel"
+              >
+                <div
+                  aria-live="polite"
+                  class="PanelHeader md"
+                >
+                  <button
+                    aria-label="Previous Month"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-jest-file-name="HiChevronLeft.svg"
+                      data-jest-svg-name="HiChevronLeft"
+                      data-testid="HiChevronLeft"
+                    />
+                  </button>
+                  <div
+                    class="PanelHeader-content"
+                  >
+                    <span>
+                      March
+                    </span>
+                    <span>
+                      2025
+                    </span>
+                  </div>
+                  <button
+                    aria-label="Next Month"
+                    disabled=""
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-jest-file-name="HiChevronRight.svg"
+                      data-jest-svg-name="HiChevronRight"
+                      data-testid="HiChevronRight"
+                    />
+                  </button>
+                </div>
+                <div
+                  class="DaysGrid md"
+                >
+                  <table
+                    data-test="days-grid"
+                    role="grid"
+                  >
+                    <thead>
+                      <tr>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Monday"
+                          >
+                            Mon
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Tuesday"
+                          >
+                            Tue
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Wednesday"
+                          >
+                            Wed
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Thursday"
+                          >
+                            Thu
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Friday"
+                          >
+                            Fri
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Saturday"
+                          >
+                            Sat
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Sunday"
+                          >
+                            Sun
+                          </abbr>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td />
+                        <td />
+                        <td />
+                        <td />
+                        <td />
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 1, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1740842893000"
+                            data-focus="false"
+                            data-test="1740842893000"
+                            tabindex="0"
+                          >
+                            1
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 2, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1740929293000"
+                            data-focus="false"
+                            data-test="1740929293000"
+                            tabindex="-1"
+                          >
+                            2
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 3, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741015693000"
+                            data-focus="false"
+                            data-test="1741015693000"
+                            tabindex="-1"
+                          >
+                            3
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 4, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741102093000"
+                            data-focus="false"
+                            data-test="1741102093000"
+                            tabindex="-1"
+                          >
+                            4
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 5, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741188493000"
+                            data-focus="false"
+                            data-test="1741188493000"
+                            tabindex="-1"
+                          >
+                            5
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 6, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741274893000"
+                            data-focus="false"
+                            data-test="1741274893000"
+                            tabindex="-1"
+                          >
+                            6
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 7, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741361293000"
+                            data-focus="false"
+                            data-test="1741361293000"
+                            tabindex="-1"
+                          >
+                            7
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 8, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741447693000"
+                            data-focus="false"
+                            data-test="1741447693000"
+                            tabindex="-1"
+                          >
+                            8
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 9, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741534093000"
+                            data-focus="false"
+                            data-test="1741534093000"
+                            tabindex="-1"
+                          >
+                            9
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 10, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741620493000"
+                            data-focus="false"
+                            data-test="1741620493000"
+                            tabindex="-1"
+                          >
+                            10
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 11, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741706893000"
+                            data-focus="false"
+                            data-test="1741706893000"
+                            tabindex="-1"
+                          >
+                            11
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 12, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741793293000"
+                            data-focus="false"
+                            data-test="1741793293000"
+                            tabindex="-1"
+                          >
+                            12
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 13, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741879693000"
+                            data-focus="false"
+                            data-test="1741879693000"
+                            tabindex="-1"
+                          >
+                            13
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 14, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741966093000"
+                            data-focus="false"
+                            data-test="1741966093000"
+                            tabindex="-1"
+                          >
+                            14
+                          </button>
+                        </td>
+                        <td
+                          aria-selected="true"
+                        >
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 15, 2025"
+                            class="DaysGridCell hasDateRangeMode selected inRange today selectedStartDate blue md"
+                            data-date="1742052493000"
+                            data-focus="false"
+                            data-test="1742052493000"
+                            tabindex="-1"
+                          >
+                            15
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 16, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1742138893000"
+                            data-focus="false"
+                            data-test="1742138893000"
+                            tabindex="-1"
+                          >
+                            16
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 17, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1742225293000"
+                            data-focus="false"
+                            data-test="1742225293000"
+                            tabindex="-1"
+                          >
+                            17
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 18, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1742311693000"
+                            data-focus="false"
+                            data-test="1742311693000"
+                            tabindex="-1"
+                          >
+                            18
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 19, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1742398093000"
+                            data-focus="false"
+                            data-test="1742398093000"
+                            tabindex="-1"
+                          >
+                            19
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 20, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1742484493000"
+                            data-focus="false"
+                            data-test="1742484493000"
+                            tabindex="-1"
+                          >
+                            20
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 21, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1742570893000"
+                            data-focus="false"
+                            data-test="1742570893000"
+                            tabindex="-1"
+                          >
+                            21
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 22, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1742657293000"
+                            data-focus="false"
+                            data-test="1742657293000"
+                            tabindex="-1"
+                          >
+                            22
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 23, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1742743693000"
+                            data-focus="false"
+                            data-test="1742743693000"
+                            tabindex="-1"
+                          >
+                            23
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 24, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1742830093000"
+                            data-focus="false"
+                            data-test="1742830093000"
+                            tabindex="-1"
+                          >
+                            24
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 25, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1742916493000"
+                            data-focus="false"
+                            data-test="1742916493000"
+                            tabindex="-1"
+                          >
+                            25
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 26, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1743002893000"
+                            data-focus="false"
+                            data-test="1743002893000"
+                            tabindex="-1"
+                          >
+                            26
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 27, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1743089293000"
+                            data-focus="false"
+                            data-test="1743089293000"
+                            tabindex="-1"
+                          >
+                            27
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 28, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange selectedEndDate blue md"
+                            data-date="1743175693000"
+                            data-focus="false"
+                            data-test="1743175693000"
+                            tabindex="-1"
+                          >
+                            28
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 29, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1743262093000"
+                            data-focus="false"
+                            data-test="1743262093000"
+                            tabindex="-1"
+                          >
+                            29
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 30, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1743348493000"
+                            data-focus="false"
+                            data-test="1743348493000"
+                            tabindex="-1"
+                          >
+                            30
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 31, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1743434893000"
+                            data-focus="false"
+                            data-test="1743434893000"
+                            tabindex="-1"
+                          >
+                            31
+                          </button>
+                        </td>
+                        <td />
+                        <td />
+                        <td />
+                        <td />
+                        <td />
+                        <td />
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div
+                class="separator"
+              />
+              <div
+                class="right-panel"
+                data-test="right-panel"
+              >
+                <div
+                  aria-live="polite"
+                  class="PanelHeader md"
+                >
+                  <button
+                    aria-label="Previous Month"
+                    disabled=""
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-jest-file-name="HiChevronLeft.svg"
+                      data-jest-svg-name="HiChevronLeft"
+                      data-testid="HiChevronLeft"
+                    />
+                  </button>
+                  <div
+                    class="PanelHeader-content"
+                  >
+                    <span>
+                      April
+                    </span>
+                    <span>
+                      2025
+                    </span>
+                  </div>
+                  <button
+                    aria-label="Next Month"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-jest-file-name="HiChevronRight.svg"
+                      data-jest-svg-name="HiChevronRight"
+                      data-testid="HiChevronRight"
+                    />
+                  </button>
+                </div>
+                <div
+                  class="DaysGrid md"
+                >
+                  <table
+                    data-test="days-grid"
+                    role="grid"
+                  >
+                    <thead>
+                      <tr>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Monday"
+                          >
+                            Mon
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Tuesday"
+                          >
+                            Tue
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Wednesday"
+                          >
+                            Wed
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Thursday"
+                          >
+                            Thu
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Friday"
+                          >
+                            Fri
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Saturday"
+                          >
+                            Sat
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Sunday"
+                          >
+                            Sun
+                          </abbr>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td />
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 1, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1743521293000"
+                            data-focus="false"
+                            data-test="1743521293000"
+                            tabindex="0"
+                          >
+                            1
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 2, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1743607693000"
+                            data-focus="false"
+                            data-test="1743607693000"
+                            tabindex="-1"
+                          >
+                            2
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 3, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1743694093000"
+                            data-focus="false"
+                            data-test="1743694093000"
+                            tabindex="-1"
+                          >
+                            3
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 4, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1743780493000"
+                            data-focus="false"
+                            data-test="1743780493000"
+                            tabindex="-1"
+                          >
+                            4
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 5, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1743866893000"
+                            data-focus="false"
+                            data-test="1743866893000"
+                            tabindex="-1"
+                          >
+                            5
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 6, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1743953293000"
+                            data-focus="false"
+                            data-test="1743953293000"
+                            tabindex="-1"
+                          >
+                            6
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 7, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744039693000"
+                            data-focus="false"
+                            data-test="1744039693000"
+                            tabindex="-1"
+                          >
+                            7
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 8, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744126093000"
+                            data-focus="false"
+                            data-test="1744126093000"
+                            tabindex="-1"
+                          >
+                            8
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 9, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744212493000"
+                            data-focus="false"
+                            data-test="1744212493000"
+                            tabindex="-1"
+                          >
+                            9
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 10, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744298893000"
+                            data-focus="false"
+                            data-test="1744298893000"
+                            tabindex="-1"
+                          >
+                            10
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 11, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744385293000"
+                            data-focus="false"
+                            data-test="1744385293000"
+                            tabindex="-1"
+                          >
+                            11
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 12, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744471693000"
+                            data-focus="false"
+                            data-test="1744471693000"
+                            tabindex="-1"
+                          >
+                            12
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 13, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744558093000"
+                            data-focus="false"
+                            data-test="1744558093000"
+                            tabindex="-1"
+                          >
+                            13
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 14, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744644493000"
+                            data-focus="false"
+                            data-test="1744644493000"
+                            tabindex="-1"
+                          >
+                            14
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 15, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744730893000"
+                            data-focus="false"
+                            data-test="1744730893000"
+                            tabindex="-1"
+                          >
+                            15
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 16, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744817293000"
+                            data-focus="false"
+                            data-test="1744817293000"
+                            tabindex="-1"
+                          >
+                            16
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 17, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744903693000"
+                            data-focus="false"
+                            data-test="1744903693000"
+                            tabindex="-1"
+                          >
+                            17
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 18, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744990093000"
+                            data-focus="false"
+                            data-test="1744990093000"
+                            tabindex="-1"
+                          >
+                            18
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 19, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745076493000"
+                            data-focus="false"
+                            data-test="1745076493000"
+                            tabindex="-1"
+                          >
+                            19
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 20, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745162893000"
+                            data-focus="false"
+                            data-test="1745162893000"
+                            tabindex="-1"
+                          >
+                            20
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 21, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745249293000"
+                            data-focus="false"
+                            data-test="1745249293000"
+                            tabindex="-1"
+                          >
+                            21
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 22, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745335693000"
+                            data-focus="false"
+                            data-test="1745335693000"
+                            tabindex="-1"
+                          >
+                            22
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 23, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745422093000"
+                            data-focus="false"
+                            data-test="1745422093000"
+                            tabindex="-1"
+                          >
+                            23
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 24, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745508493000"
+                            data-focus="false"
+                            data-test="1745508493000"
+                            tabindex="-1"
+                          >
+                            24
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 25, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745594893000"
+                            data-focus="false"
+                            data-test="1745594893000"
+                            tabindex="-1"
+                          >
+                            25
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 26, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745681293000"
+                            data-focus="false"
+                            data-test="1745681293000"
+                            tabindex="-1"
+                          >
+                            26
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 27, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745767693000"
+                            data-focus="false"
+                            data-test="1745767693000"
+                            tabindex="-1"
+                          >
+                            27
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 28, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745854093000"
+                            data-focus="false"
+                            data-test="1745854093000"
+                            tabindex="-1"
+                          >
+                            28
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 29, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745940493000"
+                            data-focus="false"
+                            data-test="1745940493000"
+                            tabindex="-1"
+                          >
+                            29
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 30, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1746026893000"
+                            data-focus="false"
+                            data-test="1746026893000"
+                            tabindex="-1"
+                          >
+                            30
+                          </button>
+                        </td>
+                        <td />
+                        <td />
+                        <td />
+                        <td />
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span
+        data-test="current-value"
+      >
+        3/15/2025, 3:28 PM
+        3/28/2025, 3:28 PM
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`DateRangePicker should render 1`] = `
 <div>
   <div
@@ -58,6 +1311,2676 @@ exports[`DateRangePicker should render 1`] = `
                   tabindex="0"
                   type="text"
                   value=""
+                />
+                <button
+                  class="icon-button"
+                  disabled=""
+                  tabindex="-1"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="icon"
+                    data-jest-file-name="HiMiniCalendarDays.svg"
+                    data-jest-svg-name="HiMiniCalendarDays"
+                    data-testid="HiMiniCalendarDays"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled should render 1`] = `
+<div>
+  <div>
+    <div
+      style="position: relative;"
+    >
+      <div
+        style="position: relative;"
+      >
+        <div>
+          <div
+            class="DateRangeInput blue"
+          >
+            <div
+              data-focus="false"
+            >
+              <div
+                class="HelperText"
+              >
+                <div
+                  data-test="start-input-control"
+                  style="position: relative; width: 100%;"
+                >
+                  <input
+                    class="TextField blue md icon-left show-icon hide-focus"
+                    data-test="start-input"
+                    tabindex="0"
+                    type="text"
+                    value="2025/03/15"
+                  />
+                  <button
+                    aria-label="Choose Date Range"
+                    class="icon-button"
+                    tabindex="0"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="icon"
+                      data-jest-file-name="HiMiniCalendarDays.svg"
+                      data-jest-svg-name="HiMiniCalendarDays"
+                      data-testid="HiMiniCalendarDays"
+                    />
+                  </button>
+                </div>
+              </div>
+              <div
+                class="HelperText"
+              >
+                <div
+                  data-test="end-input-control"
+                  style="position: relative; width: 100%;"
+                >
+                  <input
+                    class="TextField blue md icon-left show-icon hide-focus"
+                    data-test="end-input"
+                    tabindex="0"
+                    type="text"
+                    value="2025/03/28"
+                  />
+                  <button
+                    class="icon-button"
+                    tabindex="-1"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="icon"
+                      data-jest-file-name="HiMiniCalendarDays.svg"
+                      data-jest-svg-name="HiMiniCalendarDays"
+                      data-testid="HiMiniCalendarDays"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span
+      data-test="current-value"
+    >
+      3/15/2025, 12:28 PM
+      3/28/2025, 12:28 PM
+    </span>
+  </div>
+</div>
+`;
+
+exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled should render 2`] = `
+<body>
+  <div>
+    <div>
+      <div
+        style="position: relative;"
+      >
+        <div
+          style="position: relative;"
+        >
+          <div>
+            <div
+              class="DateRangeInput blue"
+            >
+              <div
+                data-focus="false"
+              >
+                <div
+                  class="HelperText"
+                >
+                  <div
+                    data-test="start-input-control"
+                    style="position: relative; width: 100%;"
+                  >
+                    <input
+                      class="TextField blue md icon-left show-icon hide-focus"
+                      data-test="start-input"
+                      tabindex="0"
+                      type="text"
+                      value="2025/03/15"
+                    />
+                    <button
+                      aria-label="Choose Date Range"
+                      class="icon-button"
+                      tabindex="0"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="icon"
+                        data-jest-file-name="HiMiniCalendarDays.svg"
+                        data-jest-svg-name="HiMiniCalendarDays"
+                        data-testid="HiMiniCalendarDays"
+                      />
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="HelperText"
+                >
+                  <div
+                    data-test="end-input-control"
+                    style="position: relative; width: 100%;"
+                  >
+                    <input
+                      class="TextField blue md icon-left show-icon hide-focus"
+                      data-test="end-input"
+                      tabindex="0"
+                      type="text"
+                      value="2025/03/28"
+                    />
+                    <button
+                      class="icon-button"
+                      tabindex="-1"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="icon"
+                        data-jest-file-name="HiMiniCalendarDays.svg"
+                        data-jest-svg-name="HiMiniCalendarDays"
+                        data-testid="HiMiniCalendarDays"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            aria-label="Choose a date"
+            aria-modal="true"
+            class="Panel md dtp-enter dtp-enter-active"
+            role="dialog"
+            style="position: absolute; top: 5px; left: 0px;"
+          >
+            <div
+              class="DateRangePanel md"
+              data-test="date-range-panel"
+            >
+              <div
+                class="left-panel"
+                data-test="left-panel"
+              >
+                <div
+                  aria-live="polite"
+                  class="PanelHeader md"
+                >
+                  <button
+                    aria-label="Previous Month"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-jest-file-name="HiChevronLeft.svg"
+                      data-jest-svg-name="HiChevronLeft"
+                      data-testid="HiChevronLeft"
+                    />
+                  </button>
+                  <div
+                    class="PanelHeader-content"
+                  >
+                    <span>
+                      March
+                    </span>
+                    <span>
+                      2025
+                    </span>
+                  </div>
+                  <button
+                    aria-label="Next Month"
+                    disabled=""
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-jest-file-name="HiChevronRight.svg"
+                      data-jest-svg-name="HiChevronRight"
+                      data-testid="HiChevronRight"
+                    />
+                  </button>
+                </div>
+                <div
+                  class="DaysGrid md"
+                >
+                  <table
+                    data-test="days-grid"
+                    role="grid"
+                  >
+                    <thead>
+                      <tr>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Monday"
+                          >
+                            Mon
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Tuesday"
+                          >
+                            Tue
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Wednesday"
+                          >
+                            Wed
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Thursday"
+                          >
+                            Thu
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Friday"
+                          >
+                            Fri
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Saturday"
+                          >
+                            Sat
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Sunday"
+                          >
+                            Sun
+                          </abbr>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td />
+                        <td />
+                        <td />
+                        <td />
+                        <td />
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 1, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1740832093000"
+                            data-focus="false"
+                            data-test="1740832093000"
+                            tabindex="0"
+                          >
+                            1
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 2, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1740918493000"
+                            data-focus="false"
+                            data-test="1740918493000"
+                            tabindex="-1"
+                          >
+                            2
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 3, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741004893000"
+                            data-focus="false"
+                            data-test="1741004893000"
+                            tabindex="-1"
+                          >
+                            3
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 4, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741091293000"
+                            data-focus="false"
+                            data-test="1741091293000"
+                            tabindex="-1"
+                          >
+                            4
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 5, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741177693000"
+                            data-focus="false"
+                            data-test="1741177693000"
+                            tabindex="-1"
+                          >
+                            5
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 6, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741264093000"
+                            data-focus="false"
+                            data-test="1741264093000"
+                            tabindex="-1"
+                          >
+                            6
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 7, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741350493000"
+                            data-focus="false"
+                            data-test="1741350493000"
+                            tabindex="-1"
+                          >
+                            7
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 8, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741436893000"
+                            data-focus="false"
+                            data-test="1741436893000"
+                            tabindex="-1"
+                          >
+                            8
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 9, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741523293000"
+                            data-focus="false"
+                            data-test="1741523293000"
+                            tabindex="-1"
+                          >
+                            9
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 10, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741609693000"
+                            data-focus="false"
+                            data-test="1741609693000"
+                            tabindex="-1"
+                          >
+                            10
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 11, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741696093000"
+                            data-focus="false"
+                            data-test="1741696093000"
+                            tabindex="-1"
+                          >
+                            11
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 12, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741782493000"
+                            data-focus="false"
+                            data-test="1741782493000"
+                            tabindex="-1"
+                          >
+                            12
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 13, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741868893000"
+                            data-focus="false"
+                            data-test="1741868893000"
+                            tabindex="-1"
+                          >
+                            13
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 14, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741955293000"
+                            data-focus="false"
+                            data-test="1741955293000"
+                            tabindex="-1"
+                          >
+                            14
+                          </button>
+                        </td>
+                        <td
+                          aria-selected="true"
+                        >
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 15, 2025"
+                            class="DaysGridCell hasDateRangeMode selected inRange today selectedStartDate blue md"
+                            data-date="1742041693000"
+                            data-focus="false"
+                            data-test="1742041693000"
+                            tabindex="-1"
+                          >
+                            15
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 16, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1742128093000"
+                            data-focus="false"
+                            data-test="1742128093000"
+                            tabindex="-1"
+                          >
+                            16
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 17, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1742214493000"
+                            data-focus="false"
+                            data-test="1742214493000"
+                            tabindex="-1"
+                          >
+                            17
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 18, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1742300893000"
+                            data-focus="false"
+                            data-test="1742300893000"
+                            tabindex="-1"
+                          >
+                            18
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 19, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1742387293000"
+                            data-focus="false"
+                            data-test="1742387293000"
+                            tabindex="-1"
+                          >
+                            19
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 20, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1742473693000"
+                            data-focus="false"
+                            data-test="1742473693000"
+                            tabindex="-1"
+                          >
+                            20
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 21, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1742560093000"
+                            data-focus="false"
+                            data-test="1742560093000"
+                            tabindex="-1"
+                          >
+                            21
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 22, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1742646493000"
+                            data-focus="false"
+                            data-test="1742646493000"
+                            tabindex="-1"
+                          >
+                            22
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 23, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1742732893000"
+                            data-focus="false"
+                            data-test="1742732893000"
+                            tabindex="-1"
+                          >
+                            23
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 24, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1742819293000"
+                            data-focus="false"
+                            data-test="1742819293000"
+                            tabindex="-1"
+                          >
+                            24
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 25, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1742905693000"
+                            data-focus="false"
+                            data-test="1742905693000"
+                            tabindex="-1"
+                          >
+                            25
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 26, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1742992093000"
+                            data-focus="false"
+                            data-test="1742992093000"
+                            tabindex="-1"
+                          >
+                            26
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 27, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1743078493000"
+                            data-focus="false"
+                            data-test="1743078493000"
+                            tabindex="-1"
+                          >
+                            27
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 28, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange selectedEndDate blue md"
+                            data-date="1743164893000"
+                            data-focus="false"
+                            data-test="1743164893000"
+                            tabindex="-1"
+                          >
+                            28
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 29, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1743251293000"
+                            data-focus="false"
+                            data-test="1743251293000"
+                            tabindex="-1"
+                          >
+                            29
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 30, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1743337693000"
+                            data-focus="false"
+                            data-test="1743337693000"
+                            tabindex="-1"
+                          >
+                            30
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 31, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1743424093000"
+                            data-focus="false"
+                            data-test="1743424093000"
+                            tabindex="-1"
+                          >
+                            31
+                          </button>
+                        </td>
+                        <td />
+                        <td />
+                        <td />
+                        <td />
+                        <td />
+                        <td />
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div
+                class="separator"
+              />
+              <div
+                class="right-panel"
+                data-test="right-panel"
+              >
+                <div
+                  aria-live="polite"
+                  class="PanelHeader md"
+                >
+                  <button
+                    aria-label="Previous Month"
+                    disabled=""
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-jest-file-name="HiChevronLeft.svg"
+                      data-jest-svg-name="HiChevronLeft"
+                      data-testid="HiChevronLeft"
+                    />
+                  </button>
+                  <div
+                    class="PanelHeader-content"
+                  >
+                    <span>
+                      April
+                    </span>
+                    <span>
+                      2025
+                    </span>
+                  </div>
+                  <button
+                    aria-label="Next Month"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-jest-file-name="HiChevronRight.svg"
+                      data-jest-svg-name="HiChevronRight"
+                      data-testid="HiChevronRight"
+                    />
+                  </button>
+                </div>
+                <div
+                  class="DaysGrid md"
+                >
+                  <table
+                    data-test="days-grid"
+                    role="grid"
+                  >
+                    <thead>
+                      <tr>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Monday"
+                          >
+                            Mon
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Tuesday"
+                          >
+                            Tue
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Wednesday"
+                          >
+                            Wed
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Thursday"
+                          >
+                            Thu
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Friday"
+                          >
+                            Fri
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Saturday"
+                          >
+                            Sat
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Sunday"
+                          >
+                            Sun
+                          </abbr>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td />
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 1, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1743510493000"
+                            data-focus="false"
+                            data-test="1743510493000"
+                            tabindex="0"
+                          >
+                            1
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 2, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1743596893000"
+                            data-focus="false"
+                            data-test="1743596893000"
+                            tabindex="-1"
+                          >
+                            2
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 3, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1743683293000"
+                            data-focus="false"
+                            data-test="1743683293000"
+                            tabindex="-1"
+                          >
+                            3
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 4, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1743769693000"
+                            data-focus="false"
+                            data-test="1743769693000"
+                            tabindex="-1"
+                          >
+                            4
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 5, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1743856093000"
+                            data-focus="false"
+                            data-test="1743856093000"
+                            tabindex="-1"
+                          >
+                            5
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 6, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1743942493000"
+                            data-focus="false"
+                            data-test="1743942493000"
+                            tabindex="-1"
+                          >
+                            6
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 7, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744028893000"
+                            data-focus="false"
+                            data-test="1744028893000"
+                            tabindex="-1"
+                          >
+                            7
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 8, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744115293000"
+                            data-focus="false"
+                            data-test="1744115293000"
+                            tabindex="-1"
+                          >
+                            8
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 9, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744201693000"
+                            data-focus="false"
+                            data-test="1744201693000"
+                            tabindex="-1"
+                          >
+                            9
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 10, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744288093000"
+                            data-focus="false"
+                            data-test="1744288093000"
+                            tabindex="-1"
+                          >
+                            10
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 11, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744374493000"
+                            data-focus="false"
+                            data-test="1744374493000"
+                            tabindex="-1"
+                          >
+                            11
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 12, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744460893000"
+                            data-focus="false"
+                            data-test="1744460893000"
+                            tabindex="-1"
+                          >
+                            12
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 13, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744547293000"
+                            data-focus="false"
+                            data-test="1744547293000"
+                            tabindex="-1"
+                          >
+                            13
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 14, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744633693000"
+                            data-focus="false"
+                            data-test="1744633693000"
+                            tabindex="-1"
+                          >
+                            14
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 15, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744720093000"
+                            data-focus="false"
+                            data-test="1744720093000"
+                            tabindex="-1"
+                          >
+                            15
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 16, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744806493000"
+                            data-focus="false"
+                            data-test="1744806493000"
+                            tabindex="-1"
+                          >
+                            16
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 17, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744892893000"
+                            data-focus="false"
+                            data-test="1744892893000"
+                            tabindex="-1"
+                          >
+                            17
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 18, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744979293000"
+                            data-focus="false"
+                            data-test="1744979293000"
+                            tabindex="-1"
+                          >
+                            18
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 19, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745065693000"
+                            data-focus="false"
+                            data-test="1745065693000"
+                            tabindex="-1"
+                          >
+                            19
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 20, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745152093000"
+                            data-focus="false"
+                            data-test="1745152093000"
+                            tabindex="-1"
+                          >
+                            20
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 21, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745238493000"
+                            data-focus="false"
+                            data-test="1745238493000"
+                            tabindex="-1"
+                          >
+                            21
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 22, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745324893000"
+                            data-focus="false"
+                            data-test="1745324893000"
+                            tabindex="-1"
+                          >
+                            22
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 23, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745411293000"
+                            data-focus="false"
+                            data-test="1745411293000"
+                            tabindex="-1"
+                          >
+                            23
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 24, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745497693000"
+                            data-focus="false"
+                            data-test="1745497693000"
+                            tabindex="-1"
+                          >
+                            24
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 25, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745584093000"
+                            data-focus="false"
+                            data-test="1745584093000"
+                            tabindex="-1"
+                          >
+                            25
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 26, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745670493000"
+                            data-focus="false"
+                            data-test="1745670493000"
+                            tabindex="-1"
+                          >
+                            26
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 27, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745756893000"
+                            data-focus="false"
+                            data-test="1745756893000"
+                            tabindex="-1"
+                          >
+                            27
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 28, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745843293000"
+                            data-focus="false"
+                            data-test="1745843293000"
+                            tabindex="-1"
+                          >
+                            28
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 29, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745929693000"
+                            data-focus="false"
+                            data-test="1745929693000"
+                            tabindex="-1"
+                          >
+                            29
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 30, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1746016093000"
+                            data-focus="false"
+                            data-test="1746016093000"
+                            tabindex="-1"
+                          >
+                            30
+                          </button>
+                        </td>
+                        <td />
+                        <td />
+                        <td />
+                        <td />
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span
+        data-test="current-value"
+      >
+        3/15/2025, 12:28 PM
+        3/28/2025, 12:28 PM
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone should render 1`] = `
+<div>
+  <div
+    style="position: relative;"
+  >
+    <div
+      style="position: relative;"
+    >
+      <div>
+        <div
+          class="DateRangeInput blue"
+        >
+          <div
+            data-focus="false"
+          >
+            <div
+              class="HelperText"
+            >
+              <div
+                data-test="start-input-control"
+                style="position: relative; width: 100%;"
+              >
+                <input
+                  class="TextField blue md icon-left show-icon hide-focus"
+                  data-test="start-input"
+                  tabindex="0"
+                  type="text"
+                  value="____/__/__"
+                />
+                <button
+                  aria-label="Choose Date Range"
+                  class="icon-button"
+                  tabindex="0"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="icon"
+                    data-jest-file-name="HiMiniCalendarDays.svg"
+                    data-jest-svg-name="HiMiniCalendarDays"
+                    data-testid="HiMiniCalendarDays"
+                  />
+                </button>
+              </div>
+            </div>
+            <div
+              class="HelperText"
+            >
+              <div
+                data-test="end-input-control"
+                style="position: relative; width: 100%;"
+              >
+                <input
+                  class="TextField blue md icon-left show-icon hide-focus"
+                  data-test="end-input"
+                  disabled=""
+                  tabindex="0"
+                  type="text"
+                  value="____/__/__"
+                />
+                <button
+                  class="icon-button"
+                  disabled=""
+                  tabindex="-1"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="icon"
+                    data-jest-file-name="HiMiniCalendarDays.svg"
+                    data-jest-svg-name="HiMiniCalendarDays"
+                    data-testid="HiMiniCalendarDays"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 1`] = `
+<div>
+  <div>
+    <div
+      style="position: relative;"
+    >
+      <div
+        style="position: relative;"
+      >
+        <div>
+          <div
+            class="DateRangeInput blue"
+          >
+            <div
+              data-focus="false"
+            >
+              <div
+                class="HelperText"
+              >
+                <div
+                  data-test="start-input-control"
+                  style="position: relative; width: 100%;"
+                >
+                  <input
+                    class="TextField blue md icon-left show-icon hide-focus"
+                    data-test="start-input"
+                    tabindex="0"
+                    type="text"
+                    value="2025/03/16"
+                  />
+                  <button
+                    aria-label="Choose Date Range"
+                    class="icon-button"
+                    tabindex="0"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="icon"
+                      data-jest-file-name="HiMiniCalendarDays.svg"
+                      data-jest-svg-name="HiMiniCalendarDays"
+                      data-testid="HiMiniCalendarDays"
+                    />
+                  </button>
+                </div>
+              </div>
+              <div
+                class="HelperText"
+              >
+                <div
+                  data-test="end-input-control"
+                  style="position: relative; width: 100%;"
+                >
+                  <input
+                    class="TextField blue md icon-left show-icon hide-focus"
+                    data-test="end-input"
+                    tabindex="0"
+                    type="text"
+                    value="2025/03/29"
+                  />
+                  <button
+                    class="icon-button"
+                    tabindex="-1"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="icon"
+                      data-jest-file-name="HiMiniCalendarDays.svg"
+                      data-jest-svg-name="HiMiniCalendarDays"
+                      data-testid="HiMiniCalendarDays"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span
+      data-test="current-value"
+    >
+      3/16/2025, 12:28 AM
+      3/29/2025, 12:28 AM
+    </span>
+  </div>
+</div>
+`;
+
+exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] = `
+<body>
+  <div>
+    <div>
+      <div
+        style="position: relative;"
+      >
+        <div
+          style="position: relative;"
+        >
+          <div>
+            <div
+              class="DateRangeInput blue"
+            >
+              <div
+                data-focus="false"
+              >
+                <div
+                  class="HelperText"
+                >
+                  <div
+                    data-test="start-input-control"
+                    style="position: relative; width: 100%;"
+                  >
+                    <input
+                      class="TextField blue md icon-left show-icon hide-focus"
+                      data-test="start-input"
+                      tabindex="0"
+                      type="text"
+                      value="2025/03/16"
+                    />
+                    <button
+                      aria-label="Choose Date Range"
+                      class="icon-button"
+                      tabindex="0"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="icon"
+                        data-jest-file-name="HiMiniCalendarDays.svg"
+                        data-jest-svg-name="HiMiniCalendarDays"
+                        data-testid="HiMiniCalendarDays"
+                      />
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="HelperText"
+                >
+                  <div
+                    data-test="end-input-control"
+                    style="position: relative; width: 100%;"
+                  >
+                    <input
+                      class="TextField blue md icon-left show-icon hide-focus"
+                      data-test="end-input"
+                      tabindex="0"
+                      type="text"
+                      value="2025/03/29"
+                    />
+                    <button
+                      class="icon-button"
+                      tabindex="-1"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="icon"
+                        data-jest-file-name="HiMiniCalendarDays.svg"
+                        data-jest-svg-name="HiMiniCalendarDays"
+                        data-testid="HiMiniCalendarDays"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            aria-label="Choose a date"
+            aria-modal="true"
+            class="Panel md dtp-enter dtp-enter-active"
+            role="dialog"
+            style="position: absolute; top: 5px; left: 0px;"
+          >
+            <div
+              class="DateRangePanel md"
+              data-test="date-range-panel"
+            >
+              <div
+                class="left-panel"
+                data-test="left-panel"
+              >
+                <div
+                  aria-live="polite"
+                  class="PanelHeader md"
+                >
+                  <button
+                    aria-label="Previous Month"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-jest-file-name="HiChevronLeft.svg"
+                      data-jest-svg-name="HiChevronLeft"
+                      data-testid="HiChevronLeft"
+                    />
+                  </button>
+                  <div
+                    class="PanelHeader-content"
+                  >
+                    <span>
+                      March
+                    </span>
+                    <span>
+                      2025
+                    </span>
+                  </div>
+                  <button
+                    aria-label="Next Month"
+                    disabled=""
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-jest-file-name="HiChevronRight.svg"
+                      data-jest-svg-name="HiChevronRight"
+                      data-testid="HiChevronRight"
+                    />
+                  </button>
+                </div>
+                <div
+                  class="DaysGrid md"
+                >
+                  <table
+                    data-test="days-grid"
+                    role="grid"
+                  >
+                    <thead>
+                      <tr>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Monday"
+                          >
+                            Mon
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Tuesday"
+                          >
+                            Tue
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Wednesday"
+                          >
+                            Wed
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Thursday"
+                          >
+                            Thu
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Friday"
+                          >
+                            Fri
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Saturday"
+                          >
+                            Sat
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Sunday"
+                          >
+                            Sun
+                          </abbr>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td />
+                        <td />
+                        <td />
+                        <td />
+                        <td />
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 1, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1740788893000"
+                            data-focus="false"
+                            data-test="1740788893000"
+                            tabindex="0"
+                          >
+                            1
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 2, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1740875293000"
+                            data-focus="false"
+                            data-test="1740875293000"
+                            tabindex="-1"
+                          >
+                            2
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 3, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1740961693000"
+                            data-focus="false"
+                            data-test="1740961693000"
+                            tabindex="-1"
+                          >
+                            3
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 4, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741048093000"
+                            data-focus="false"
+                            data-test="1741048093000"
+                            tabindex="-1"
+                          >
+                            4
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 5, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741134493000"
+                            data-focus="false"
+                            data-test="1741134493000"
+                            tabindex="-1"
+                          >
+                            5
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 6, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741220893000"
+                            data-focus="false"
+                            data-test="1741220893000"
+                            tabindex="-1"
+                          >
+                            6
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 7, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741307293000"
+                            data-focus="false"
+                            data-test="1741307293000"
+                            tabindex="-1"
+                          >
+                            7
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 8, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741393693000"
+                            data-focus="false"
+                            data-test="1741393693000"
+                            tabindex="-1"
+                          >
+                            8
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 9, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741480093000"
+                            data-focus="false"
+                            data-test="1741480093000"
+                            tabindex="-1"
+                          >
+                            9
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 10, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741566493000"
+                            data-focus="false"
+                            data-test="1741566493000"
+                            tabindex="-1"
+                          >
+                            10
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 11, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741652893000"
+                            data-focus="false"
+                            data-test="1741652893000"
+                            tabindex="-1"
+                          >
+                            11
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 12, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741739293000"
+                            data-focus="false"
+                            data-test="1741739293000"
+                            tabindex="-1"
+                          >
+                            12
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 13, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741825693000"
+                            data-focus="false"
+                            data-test="1741825693000"
+                            tabindex="-1"
+                          >
+                            13
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 14, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741912093000"
+                            data-focus="false"
+                            data-test="1741912093000"
+                            tabindex="-1"
+                          >
+                            14
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 15, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1741998493000"
+                            data-focus="false"
+                            data-test="1741998493000"
+                            tabindex="-1"
+                          >
+                            15
+                          </button>
+                        </td>
+                        <td
+                          aria-selected="true"
+                        >
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 16, 2025"
+                            class="DaysGridCell hasDateRangeMode selected inRange today selectedStartDate blue md"
+                            data-date="1742084893000"
+                            data-focus="false"
+                            data-test="1742084893000"
+                            tabindex="-1"
+                          >
+                            16
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 17, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1742171293000"
+                            data-focus="false"
+                            data-test="1742171293000"
+                            tabindex="-1"
+                          >
+                            17
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 18, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1742257693000"
+                            data-focus="false"
+                            data-test="1742257693000"
+                            tabindex="-1"
+                          >
+                            18
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 19, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1742344093000"
+                            data-focus="false"
+                            data-test="1742344093000"
+                            tabindex="-1"
+                          >
+                            19
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 20, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1742430493000"
+                            data-focus="false"
+                            data-test="1742430493000"
+                            tabindex="-1"
+                          >
+                            20
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 21, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1742516893000"
+                            data-focus="false"
+                            data-test="1742516893000"
+                            tabindex="-1"
+                          >
+                            21
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 22, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1742603293000"
+                            data-focus="false"
+                            data-test="1742603293000"
+                            tabindex="-1"
+                          >
+                            22
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 23, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1742689693000"
+                            data-focus="false"
+                            data-test="1742689693000"
+                            tabindex="-1"
+                          >
+                            23
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 24, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1742776093000"
+                            data-focus="false"
+                            data-test="1742776093000"
+                            tabindex="-1"
+                          >
+                            24
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 25, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1742862493000"
+                            data-focus="false"
+                            data-test="1742862493000"
+                            tabindex="-1"
+                          >
+                            25
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 26, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1742948893000"
+                            data-focus="false"
+                            data-test="1742948893000"
+                            tabindex="-1"
+                          >
+                            26
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 27, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1743035293000"
+                            data-focus="false"
+                            data-test="1743035293000"
+                            tabindex="-1"
+                          >
+                            27
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 28, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange blue md"
+                            data-date="1743121693000"
+                            data-focus="false"
+                            data-test="1743121693000"
+                            tabindex="-1"
+                          >
+                            28
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 29, 2025"
+                            class="DaysGridCell hasDateRangeMode inRange selectedEndDate blue md"
+                            data-date="1743208093000"
+                            data-focus="false"
+                            data-test="1743208093000"
+                            tabindex="-1"
+                          >
+                            29
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 30, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1743294493000"
+                            data-focus="false"
+                            data-test="1743294493000"
+                            tabindex="-1"
+                          >
+                            30
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="March 31, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1743380893000"
+                            data-focus="false"
+                            data-test="1743380893000"
+                            tabindex="-1"
+                          >
+                            31
+                          </button>
+                        </td>
+                        <td />
+                        <td />
+                        <td />
+                        <td />
+                        <td />
+                        <td />
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div
+                class="separator"
+              />
+              <div
+                class="right-panel"
+                data-test="right-panel"
+              >
+                <div
+                  aria-live="polite"
+                  class="PanelHeader md"
+                >
+                  <button
+                    aria-label="Previous Month"
+                    disabled=""
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-jest-file-name="HiChevronLeft.svg"
+                      data-jest-svg-name="HiChevronLeft"
+                      data-testid="HiChevronLeft"
+                    />
+                  </button>
+                  <div
+                    class="PanelHeader-content"
+                  >
+                    <span>
+                      April
+                    </span>
+                    <span>
+                      2025
+                    </span>
+                  </div>
+                  <button
+                    aria-label="Next Month"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-jest-file-name="HiChevronRight.svg"
+                      data-jest-svg-name="HiChevronRight"
+                      data-testid="HiChevronRight"
+                    />
+                  </button>
+                </div>
+                <div
+                  class="DaysGrid md"
+                >
+                  <table
+                    data-test="days-grid"
+                    role="grid"
+                  >
+                    <thead>
+                      <tr>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Monday"
+                          >
+                            Mon
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Tuesday"
+                          >
+                            Tue
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Wednesday"
+                          >
+                            Wed
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Thursday"
+                          >
+                            Thu
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Friday"
+                          >
+                            Fri
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Saturday"
+                          >
+                            Sat
+                          </abbr>
+                        </th>
+                        <th>
+                          <abbr
+                            class="week-day"
+                            title="Sunday"
+                          >
+                            Sun
+                          </abbr>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td />
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 1, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1743467293000"
+                            data-focus="false"
+                            data-test="1743467293000"
+                            tabindex="0"
+                          >
+                            1
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 2, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1743553693000"
+                            data-focus="false"
+                            data-test="1743553693000"
+                            tabindex="-1"
+                          >
+                            2
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 3, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1743640093000"
+                            data-focus="false"
+                            data-test="1743640093000"
+                            tabindex="-1"
+                          >
+                            3
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 4, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1743726493000"
+                            data-focus="false"
+                            data-test="1743726493000"
+                            tabindex="-1"
+                          >
+                            4
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 5, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1743812893000"
+                            data-focus="false"
+                            data-test="1743812893000"
+                            tabindex="-1"
+                          >
+                            5
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 6, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1743899293000"
+                            data-focus="false"
+                            data-test="1743899293000"
+                            tabindex="-1"
+                          >
+                            6
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 7, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1743985693000"
+                            data-focus="false"
+                            data-test="1743985693000"
+                            tabindex="-1"
+                          >
+                            7
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 8, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744072093000"
+                            data-focus="false"
+                            data-test="1744072093000"
+                            tabindex="-1"
+                          >
+                            8
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 9, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744158493000"
+                            data-focus="false"
+                            data-test="1744158493000"
+                            tabindex="-1"
+                          >
+                            9
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 10, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744244893000"
+                            data-focus="false"
+                            data-test="1744244893000"
+                            tabindex="-1"
+                          >
+                            10
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 11, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744331293000"
+                            data-focus="false"
+                            data-test="1744331293000"
+                            tabindex="-1"
+                          >
+                            11
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 12, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744417693000"
+                            data-focus="false"
+                            data-test="1744417693000"
+                            tabindex="-1"
+                          >
+                            12
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 13, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744504093000"
+                            data-focus="false"
+                            data-test="1744504093000"
+                            tabindex="-1"
+                          >
+                            13
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 14, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744590493000"
+                            data-focus="false"
+                            data-test="1744590493000"
+                            tabindex="-1"
+                          >
+                            14
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 15, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744676893000"
+                            data-focus="false"
+                            data-test="1744676893000"
+                            tabindex="-1"
+                          >
+                            15
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 16, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744763293000"
+                            data-focus="false"
+                            data-test="1744763293000"
+                            tabindex="-1"
+                          >
+                            16
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 17, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744849693000"
+                            data-focus="false"
+                            data-test="1744849693000"
+                            tabindex="-1"
+                          >
+                            17
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 18, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1744936093000"
+                            data-focus="false"
+                            data-test="1744936093000"
+                            tabindex="-1"
+                          >
+                            18
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 19, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745022493000"
+                            data-focus="false"
+                            data-test="1745022493000"
+                            tabindex="-1"
+                          >
+                            19
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 20, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745108893000"
+                            data-focus="false"
+                            data-test="1745108893000"
+                            tabindex="-1"
+                          >
+                            20
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 21, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745195293000"
+                            data-focus="false"
+                            data-test="1745195293000"
+                            tabindex="-1"
+                          >
+                            21
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 22, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745281693000"
+                            data-focus="false"
+                            data-test="1745281693000"
+                            tabindex="-1"
+                          >
+                            22
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 23, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745368093000"
+                            data-focus="false"
+                            data-test="1745368093000"
+                            tabindex="-1"
+                          >
+                            23
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 24, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745454493000"
+                            data-focus="false"
+                            data-test="1745454493000"
+                            tabindex="-1"
+                          >
+                            24
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 25, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745540893000"
+                            data-focus="false"
+                            data-test="1745540893000"
+                            tabindex="-1"
+                          >
+                            25
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 26, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745627293000"
+                            data-focus="false"
+                            data-test="1745627293000"
+                            tabindex="-1"
+                          >
+                            26
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 27, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745713693000"
+                            data-focus="false"
+                            data-test="1745713693000"
+                            tabindex="-1"
+                          >
+                            27
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 28, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745800093000"
+                            data-focus="false"
+                            data-test="1745800093000"
+                            tabindex="-1"
+                          >
+                            28
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 29, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745886493000"
+                            data-focus="false"
+                            data-test="1745886493000"
+                            tabindex="-1"
+                          >
+                            29
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            aria-disabled="false"
+                            aria-label="April 30, 2025"
+                            class="DaysGridCell hasDateRangeMode blue md"
+                            data-date="1745972893000"
+                            data-focus="false"
+                            data-test="1745972893000"
+                            tabindex="-1"
+                          >
+                            30
+                          </button>
+                        </td>
+                        <td />
+                        <td />
+                        <td />
+                        <td />
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span
+        data-test="current-value"
+      >
+        3/16/2025, 12:28 AM
+        3/29/2025, 12:28 AM
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`DateRangePicker w/ "Asia/Tokyo" timezone should render 1`] = `
+<div>
+  <div
+    style="position: relative;"
+  >
+    <div
+      style="position: relative;"
+    >
+      <div>
+        <div
+          class="DateRangeInput blue"
+        >
+          <div
+            data-focus="false"
+          >
+            <div
+              class="HelperText"
+            >
+              <div
+                data-test="start-input-control"
+                style="position: relative; width: 100%;"
+              >
+                <input
+                  class="TextField blue md icon-left show-icon hide-focus"
+                  data-test="start-input"
+                  tabindex="0"
+                  type="text"
+                  value="____/__/__"
+                />
+                <button
+                  aria-label="Choose Date Range"
+                  class="icon-button"
+                  tabindex="0"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="icon"
+                    data-jest-file-name="HiMiniCalendarDays.svg"
+                    data-jest-svg-name="HiMiniCalendarDays"
+                    data-testid="HiMiniCalendarDays"
+                  />
+                </button>
+              </div>
+            </div>
+            <div
+              class="HelperText"
+            >
+              <div
+                data-test="end-input-control"
+                style="position: relative; width: 100%;"
+              >
+                <input
+                  class="TextField blue md icon-left show-icon hide-focus"
+                  data-test="end-input"
+                  disabled=""
+                  tabindex="0"
+                  type="text"
+                  value="____/__/__"
                 />
                 <button
                   class="icon-button"

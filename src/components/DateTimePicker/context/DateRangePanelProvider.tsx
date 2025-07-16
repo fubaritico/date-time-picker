@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 
-import { addMonths, getFirstInstantOfMonth } from '@utils'
+import { addMonths, getActualOffset, getFirstInstantOfMonth } from '@utils'
 
 import DateTimePickerContext from './DateRangePanelContext'
 
@@ -21,19 +21,30 @@ const getMonthNameFromTimestamp = (
  * The setters are used when the component is uncontrolled (for preview).
  *
  * @param dateRange
- * @param msOffset
+ * @param dateRangePickerOffsets
  * @param children Component rendered in the provider scope
  */
 const DateRangePanelProvider: FC<
-  PropsWithChildren<Pick<PickerProviderProps, 'dateRange' | 'msOffset'>>
-> = ({ children, msOffset, dateRange = [undefined, undefined] }) => {
+  PropsWithChildren<
+    Pick<PickerProviderProps, 'dateRange' | 'dateRangePickerOffsets'>
+  >
+> = ({
+  children,
+  dateRangePickerOffsets,
+  dateRange = [undefined, undefined],
+}) => {
   // Date range state for UI: start and end dates being selected
   const [tempStartDate, setTempStartDate] = useState<number | undefined>(
     !dateRange[1] ? dateRange[0] : undefined
   )
   const [tempEndDate, setTempEndDate] = useState<number>()
   const [leftGridMonth, setLeftGridMonth] = useState<number>(() => {
-    const currentMonth = Date.now() + msOffset
+    const currentMonth =
+      Date.now() +
+      getActualOffset(
+        dateRangePickerOffsets[0].timezoneMsOffset,
+        dateRangePickerOffsets[0].localeMsOffset
+      )
 
     if (dateRange[0]) {
       return getFirstInstantOfMonth(dateRange[0])
@@ -42,7 +53,14 @@ const DateRangePanelProvider: FC<
     return getFirstInstantOfMonth(currentMonth)
   })
   const [rightGridMonth, setRightGridMonth] = useState<number>(() => {
-    const nextMont = addMonths(Date.now() + msOffset, 1)
+    const nextMont = addMonths(
+      Date.now() +
+        getActualOffset(
+          dateRangePickerOffsets[0].timezoneMsOffset,
+          dateRangePickerOffsets[0].localeMsOffset
+        ),
+      1
+    )
 
     if (dateRange[0] && dateRange[1]) {
       // Months to work with

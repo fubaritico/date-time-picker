@@ -1,4 +1,4 @@
-import type { ChangeEvent, KeyboardEvent } from 'react'
+import { ChangeEvent, KeyboardEvent } from 'react'
 
 /**
  * Checks if a given value is a timestamp is valid
@@ -615,14 +615,14 @@ export const getTimestampsForEachMonth = (ts: number): number[] => {
 }
 
 /**
- * Gets the msOffset in milliseconds from the given timezone.
+ * Gets the timezone offset in milliseconds from the given timezone.
  *
  * @see: https://stackoverflow.com/questions/1091372/getting-the-clients-time-zone-and-offset-in-javascript
  *
- * @param {Date} date - The local date for which to get the msOffset for display in the text input.
+ * @param {Date} date - The local date for which to get the timezone offset for display in the text input.
  * @param {string} timeZone - The IANA timezone string (e.g., 'America/New_York').
  *
- * @returns {number} - The msOffset in milliseconds from local timezone.
+ * @returns {number} - The timezone offset in milliseconds from local timezone.
  */
 export const getOffsetInMsFromTimezone = (
   date: Date,
@@ -657,7 +657,7 @@ export const getOffsetInMsFromTimezone = (
   const matches = /^(GMT|UTC)(-|−|\+)?(\d+)?/.exec(timeZoneName)
 
   if (!matches) {
-    throw new Error('Unable to parse timezone msOffset')
+    throw new Error('Unable to parse timezone timezone offset')
   }
 
   const sign = matches[2] === '-' ? -1 : 1
@@ -672,7 +672,7 @@ export const getOffsetInMsFromTimezone = (
  *
  * @param {number} ts - number representing a unix timestamp
  * @param {string} format - the desired format ('YYYY/MM/DD', 'hh:mm A', 'YYYY/MM/DD hh:mm A')
- * @param {number} offset - the msOffset in milliseconds from GMT time zone (daylight taken into account)
+ * @param {number} offset - the timezone offset in milliseconds from GMT time zone (daylight taken into account)
  *
  * @throws {Error} if the timestamp is invalid or format is not supported
  *
@@ -1063,7 +1063,7 @@ const getLocaleAwareFormat = (
  * @param {number} pValue - date under the shape of a unix timestamp UTC
  * @param {string} pLocale - locale as a string under the shape of 'fr_FR'
  * @param {string} pLocaleAwareFormat - format to apply to the date in a locale way
- * @param {string} pTimezone - time to add/substract the hour msOffset, default
+ * @param {string} pTimezone - time to add/substract the hour timezone offset, default
  */
 export const formatToLocaleAwareFormat = (
   pValue: number,
@@ -1072,9 +1072,9 @@ export const formatToLocaleAwareFormat = (
   pTimezone?: Timezone
 ): string => {
   const date = new Date(pValue)
-  const gmtMsOffset = getOffsetInMsFromTimezone(date)
+  const localeMsOffset = getOffsetInMsFromTimezone(date)
   const msOffset = getOffsetInMsFromTimezone(date, pTimezone)
-  const utc = new Date(date.getTime() + msOffset - gmtMsOffset)
+  const utc = new Date(date.getTime() + msOffset - localeMsOffset)
 
   return (
     new Intl.DateTimeFormat(pLocale.replace('_', '-'), {
@@ -1130,3 +1130,104 @@ export const formatHumanReadableDate = (
     new Date(ts)
   )
 }
+
+/**
+ * Computes the offsets for the date picker and date range picker.
+ *
+ * @param date
+ * @param timezone
+ *
+ * @return An object containing the locale and timezone offsets in milliseconds.
+ */
+export const computeOffsets = (date?: number, timezone?: Timezone) => {
+  const d = new Date(date ?? Date.now())
+  const utc = new Date(
+    Date.UTC(
+      d.getUTCFullYear(),
+      d.getUTCMonth(),
+      d.getUTCDate(),
+      d.getUTCHours(),
+      d.getUTCMinutes(),
+      d.getUTCSeconds(),
+      d.getUTCMilliseconds()
+    )
+  )
+
+  return {
+    localeMsOffset: getOffsetInMsFromTimezone(utc),
+    timezoneMsOffset: getOffsetInMsFromTimezone(utc, timezone),
+  }
+}
+
+/**
+ * Returns the actual offset to be used in the date picker or date range picker.
+ *
+ * @param timezoneMsOffset
+ * @param localeMsOffset
+ *
+ * @return The actual offset in milliseconds.
+ */
+export const getActualOffset = (
+  timezoneMsOffset: number,
+  localeMsOffset: number
+): number => {
+  if (timezoneMsOffset === localeMsOffset) return localeMsOffset
+  return timezoneMsOffset
+}
+
+/**
+ * Extracts the number of milliseconds since midnight for a given timestamp
+ * @param timestamp - The timestamp in milliseconds
+ * @returns The number of milliseconds since midnight
+ */
+export const getMillisecondsSinceMidnight = (timestamp: number): number => {
+  const date = new Date(timestamp)
+
+  const hours = date.getUTCHours() * 3600000 // 1 heure = 3600000 ms
+  const minutes = date.getUTCMinutes() * 60000 // 1 minute = 60000 ms
+  const seconds = date.getUTCSeconds() * 1000 // 1 seconde = 1000 ms
+  const milliseconds = date.getUTCMilliseconds()
+
+  return hours + minutes + seconds + milliseconds
+}
+
+/**
+ * Utility function to compute a timestamp from a date string with time set to midnight.
+ * The date string should be in the format "YYYY/MM/DD" or "DD/MM/YYYY" depending on the locale.
+ *
+ * @param dateString - The date string to convert.
+ * @param locale - The locale to determine the date format. Defaults to 'en'.
+ *
+ * @return The timestamp in milliseconds since the epoch (January 1, 1970).
+ */
+export const getTimestampFromDateString = (
+  dateString: string,
+  locale = 'en'
+): number => {
+  const dateParts = dateString.split('/')
+  const years =
+    locale === 'en' ? parseInt(dateParts[0]) : parseInt(dateParts[2])
+  const months = parseInt(dateParts[1]) - 1 // Months are 0-indexed in JavaScript
+  const days = locale === 'en' ? parseInt(dateParts[2]) : parseInt(dateParts[0])
+  const date = new Date(years, months, days, 0, 0, 0, 0) // Set time to midnight
+
+  return date.getTime()
+}
+
+// function millisecondsToTime(ms: number) {
+//   if (ms < 0) {
+//     throw new Error('Milliseconds value cannot be negative')
+//   }
+//
+//   // Calculate hours, minutes and seconds
+//   const hours = Math.floor(ms / 3600000)
+//   const minutes = Math.floor((ms % 3600000) / 60000)
+//   const seconds = Math.floor((ms % 60000) / 1000)
+//
+//   // Pad with zeros if needed
+//   const paddedHours = hours.toString().padStart(2, '0')
+//   const paddedMinutes = minutes.toString().padStart(2, '0')
+//   const paddedSeconds = seconds.toString().padStart(2, '0')
+//
+//   return `${paddedHours}:${paddedMinutes}:${paddedSeconds}`
+// }

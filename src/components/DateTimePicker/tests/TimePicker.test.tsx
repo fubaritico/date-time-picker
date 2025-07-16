@@ -59,11 +59,11 @@ const runTests = (timezone?: Timezone) => {
     })
 
     // note that the date is fixed to 2025-03-15T15:28:13.000Z
-    // according to the timezone - which in those cases has a small msOffset - results are quite deterministic
+    // according to the timezone - which in those cases has a small timezone offset - results are quite deterministic
     // some specific tests should be written for a greater timezone coverage
     it('should show time panel with the proper state on icon click (en_US, en)', async () => {
       const {
-        msOffset,
+        finalOffset,
         render: { container },
       } = setupUncontrolledPicker(fixedDate, TimePicker as AnyPickerComponent, {
         timezone,
@@ -78,12 +78,12 @@ const runTests = (timezone?: Timezone) => {
 
       expect(
         screen.getByText(
-          padNumber(convertTo12Hour(getHours(fixedDate + msOffset)))
+          padNumber(convertTo12Hour(getHours(fixedDate + finalOffset)))
         )
       ).toBeInTheDocument()
 
       expect(
-        screen.getByText(padNumber(getMinutes(fixedDate + msOffset)))
+        screen.getByText(padNumber(getMinutes(fixedDate + finalOffset)))
       ).toBeInTheDocument()
 
       expect(
@@ -101,7 +101,7 @@ const runTests = (timezone?: Timezone) => {
 
     it('should show time panel with the proper state on icon click (fr-FR, fr_FR, fr)', async () => {
       const {
-        msOffset,
+        finalOffset,
         render: { container },
       } = setupUncontrolledPicker(fixedDate, TimePicker as AnyPickerComponent, {
         timezone,
@@ -115,11 +115,11 @@ const runTests = (timezone?: Timezone) => {
       expect(screen.getByTestId('time-panel')).toBeInTheDocument()
 
       expect(
-        screen.getByText(padNumber(getHours(fixedDate + msOffset)))
+        screen.getByText(padNumber(getHours(fixedDate + finalOffset)))
       ).toBeInTheDocument()
 
       expect(
-        screen.getByText(padNumber(getMinutes(fixedDate + msOffset)))
+        screen.getByText(padNumber(getMinutes(fixedDate + finalOffset)))
       ).toBeInTheDocument()
 
       expect(
@@ -191,7 +191,7 @@ const runTests = (timezone?: Timezone) => {
     it('should update the state of AM/PM button when changing meridian on time selection', async () => {
       setupUncontrolledPicker(fixedDate, TimePicker as AnyPickerComponent)
 
-      const hoursToRemove = 8 // based on the time zone msOffset, this will change the time from PM to AM
+      const hoursToRemove = 8 // based on the time zone timezone offset, this will change the time from PM to AM
       const hoursToAdd = 4
 
       await userEvent.click(screen.getByLabelText('Choose Time'))
@@ -259,7 +259,7 @@ const runTests = (timezone?: Timezone) => {
 
     it('should render w/ the provided date in the text field', async () => {
       const {
-        msOffset,
+        finalOffset,
         render: { container },
       } = setupControlledDateTimePicker(
         TimePicker as AnyPickerComponent,
@@ -269,7 +269,7 @@ const runTests = (timezone?: Timezone) => {
       )
 
       const date = defaultProperties.date ?? Date.now()
-      const innerDate = date + msOffset
+      const innerDate = date + finalOffset
 
       if (timezone) {
         expect(container).toMatchSnapshot()
@@ -407,7 +407,7 @@ const runTests = (timezone?: Timezone) => {
 
     it('should render w/ the provided date in the text field', async () => {
       const {
-        msOffset,
+        finalOffset,
         render: { container },
       } = setupControlledDateTimePicker(
         TimePicker as AnyPickerComponent,
@@ -423,7 +423,7 @@ const runTests = (timezone?: Timezone) => {
 
       await waitFor(() => {
         expect(screen.getByRole('textbox')).toHaveValue(
-          formatTimestampForTextInput(date, TIME_FORMAT.en, msOffset)
+          formatTimestampForTextInput(date, TIME_FORMAT.en, finalOffset)
         )
       })
     })
@@ -438,7 +438,7 @@ const runTests = (timezone?: Timezone) => {
 
     it('should render w/ the provided date in the text field', async () => {
       const {
-        msOffset,
+        finalOffset,
         render: { container },
       } = setupControlledDateTimePicker(
         TimePicker as AnyPickerComponent,
@@ -454,7 +454,7 @@ const runTests = (timezone?: Timezone) => {
 
       await waitFor(() => {
         expect(screen.getByRole('textbox')).toHaveValue(
-          formatTimestampForTextInput(date, TIME_FORMAT.fr, msOffset)
+          formatTimestampForTextInput(date, TIME_FORMAT.fr, finalOffset)
         )
       })
     })

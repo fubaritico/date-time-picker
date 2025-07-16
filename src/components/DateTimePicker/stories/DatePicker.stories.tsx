@@ -42,6 +42,9 @@ type IntegrationStory = StoryObj<typeof PickerIntegration>
 export const Uncontrolled: Story = {
   render: (args: DatePickerProps) => <DatePicker {...args} />,
   name: 'Uncontrolled',
+  args: {
+    timezone: 'Asia/Tokyo',
+  },
 }
 
 export const Controlled: IntegrationStory = {

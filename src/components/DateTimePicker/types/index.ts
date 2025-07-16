@@ -51,9 +51,9 @@ export interface PickerProviderProps extends BasicPanelProps {
   dateRange?: DateRange
   /* Offset in milliseconds to be added to the date value (as a timestamp) on input
   and to be removed from the resulting date on output. */
-  msOffset: number
+  timezoneMsOffset: number
   /* Offset in milliseconds from the GMT time zone */
-  gmtMsOffset: number
+  localeMsOffset: number
   /* If true, the input text is disabled and a loading animation is displayed on the right */
   loading?: boolean
   /* When defining a valid/enabled range of dates, it will be the min/start date */
@@ -67,7 +67,9 @@ export interface PickerProviderProps extends BasicPanelProps {
   /* If true, the top position of the panel will be impacted */
   hasLabel?: boolean
   /* Because the date range days panels can have a different offset due to daylight applied, both possible offsets are stored */
-  dateRangePickerOffsets?: { gmtMsOffset: number; msOffset: number }[]
+  dateRangePickerOffsets: { localeMsOffset: number; timezoneMsOffset: number }[]
+  /* Timezone list member based on moment.js - for debug purposes only */
+  timezone?: Timezone
 }
 
 export interface BasicPickerProps extends BasicPanelProps {
@@ -99,7 +101,12 @@ interface InternalDateTimePickerProps
 /**
  * Picker state properties passed to children component through context
  */
-export interface PickerState extends PickerProviderProps {
+export interface PickerState
+  extends Omit<PickerProviderProps, 'localeMsOffset' | 'timezoneMsOffset'> {
+  /* Offset in milliseconds to be added to the date value (as a timestamp) on input
+  and to be removed from the resulting date on output.
+  The difference between the locale offset and the timezone offset */
+  finalOffset: number
   /* Date used for component inner mechanics as a Unix timestamp */
   innerDate?: number
   /* Range date as a tuple of two Unix timestamps */

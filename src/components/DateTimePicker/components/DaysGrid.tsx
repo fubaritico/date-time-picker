@@ -67,8 +67,15 @@ const DaysGrid: FC<DaysGridProps> = ({
   const gridRef = useRef<HTMLTableElement>(null)
   const dateFocusedOnInit = useRef<boolean>(false)
   // Shared state from the DateTimePicker context
-  const { color, innerDate, minDate, maxDate, msOffset, locale, pickerMode } =
-    useDateTimePicker()
+  const {
+    color,
+    innerDate,
+    minDate,
+    maxDate,
+    finalOffset,
+    locale,
+    pickerMode,
+  } = useDateTimePicker()
   // Shared state from the DateRangePanel context
   const {
     dateRange,
@@ -287,7 +294,7 @@ const DaysGrid: FC<DaysGridProps> = ({
     (ts: number) => {
       const disabled = !isDateClickable(ts)
       const isToday =
-        getStartOfDayTs(Date.now() + msOffset) === getStartOfDayTs(ts)
+        getStartOfDayTs(Date.now() + finalOffset) === getStartOfDayTs(ts)
       const startDateIsSelected = tempStartDate === ts || dateRange[0] === ts
       const endDateIsSelected = tempEndDate === ts || dateRange[1] === ts
       const isSelected = innerDate === ts
@@ -304,7 +311,7 @@ const DaysGrid: FC<DaysGridProps> = ({
     },
     [
       innerDate,
-      msOffset,
+      finalOffset,
       isDateClickable,
       tempStartDate,
       tempEndDate,
@@ -455,7 +462,7 @@ const DaysGrid: FC<DaysGridProps> = ({
                       }}
                       onMouseEnter={handleDateMouseEnter}
                       onFocus={() => {
-                        if (new Date(value + msOffset).getDate() === 1) {
+                        if (new Date(value + finalOffset).getDate() === 1) {
                           setKeyboardFocusedIndex(0)
                         }
                       }}
@@ -471,7 +478,7 @@ const DaysGrid: FC<DaysGridProps> = ({
                       size={size}
                       value={value}
                     >
-                      {new Date(value + msOffset).getDate()}
+                      {new Date(value + finalOffset).getDate()}
                     </DaysGridCell>
                   </td>
                 )

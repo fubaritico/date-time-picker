@@ -5,8 +5,7 @@ import { PanelView } from '../types'
 import type { PickerState } from '../types'
 
 const DateTimePickerContext = createContext<PickerState>({
-  gmtMsOffset: 0,
-  msOffset: 0,
+  finalOffset: 0,
   ignoreClickAwayRef: { current: null },
   innerDate: new Date().getTime(),
   innerDateRange: undefined,
@@ -19,6 +18,7 @@ const DateTimePickerContext = createContext<PickerState>({
   setPanelRect: () => {},
   setPanelView: () => {},
   setInnerDateRange: () => {},
+  dateRangePickerOffsets: [],
 })
 
 export default DateTimePickerContext

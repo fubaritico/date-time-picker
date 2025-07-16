@@ -1,8 +1,9 @@
 import clsx from 'clsx'
-import { useCallback } from 'react'
+import { useCallback, useMemo } from 'react'
 
 import {
   addMonths,
+  getActualOffset,
   getMonthNameFromTs,
   getYearFromTs,
   subtractMonths,
@@ -35,8 +36,29 @@ const DateRangePanel: FC<DateRangePanelProps> = ({
   const { leftGridMonth, rightGridMonth, setLeftGridMonth, setRightGridMonth } =
     useDateRangePanel()
   // SHARED STATE FROM DATE TIME PICKER CONTEXT
-  const { color, msOffset, innerDateRange, locale, setInnerDateRange } =
-    useDateTimePicker()
+  const {
+    color,
+    dateRangePickerOffsets,
+    innerDateRange,
+    locale,
+    setInnerDateRange,
+  } = useDateTimePicker()
+
+  /**
+   * Gets the actual offset combining the local offset and the GMT offset.
+   */
+  const finalOffsets = useMemo(() => {
+    return [
+      getActualOffset(
+        dateRangePickerOffsets[0].timezoneMsOffset,
+        dateRangePickerOffsets[0].localeMsOffset
+      ),
+      getActualOffset(
+        dateRangePickerOffsets[1].timezoneMsOffset,
+        dateRangePickerOffsets[1].localeMsOffset
+      ),
+    ]
+  }, [dateRangePickerOffsets])
 
   /**
    * Function to set the left grid month to the previous month when possible.
@@ -129,9 +151,12 @@ const DateRangePanel: FC<DateRangePanelProps> = ({
           prevButtonAriaLabel="Previous Month"
         >
           <PanelHeaderButton
-            aria-label={getMonthNameFromTs(leftGridMonth + msOffset, locale)}
+            aria-label={getMonthNameFromTs(
+              leftGridMonth + finalOffsets[0],
+              locale
+            )}
             color={color}
-            label={getMonthNameFromTs(leftGridMonth + msOffset, locale)}
+            label={getMonthNameFromTs(leftGridMonth + finalOffsets[0], locale)}
           />
           <PanelHeaderButton
             aria-label={getYearFromTs(leftGridMonth).toString()}
@@ -159,9 +184,9 @@ const DateRangePanel: FC<DateRangePanelProps> = ({
           prevButtonAriaLabel="Previous Month"
         >
           <PanelHeaderButton
-            aria-label={getMonthNameFromTs(rightGridMonth + msOffset, locale)}
+            aria-label={getMonthNameFromTs(rightGridMonth, locale)}
             color={color}
-            label={getMonthNameFromTs(rightGridMonth + msOffset, locale)}
+            label={getMonthNameFromTs(rightGridMonth, locale)}
           />
           <PanelHeaderButton
             aria-label={getYearFromTs(rightGridMonth).toString()}

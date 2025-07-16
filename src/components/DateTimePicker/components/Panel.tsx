@@ -71,7 +71,8 @@ const Panel: FC<PanelProps> = ({
   triggerRef,
 }) => {
   const {
-    msOffset,
+    dateRangePickerOffsets,
+    finalOffset,
     pickerMode,
     isControlled,
     hasLabel,
@@ -222,7 +223,7 @@ const Panel: FC<PanelProps> = ({
     if (from !== PanelView.TIME) setPanelView(PanelView.DAYS)
 
     if (isControlled) {
-      onChange?.(date - msOffset)
+      onChange?.(date - finalOffset)
     } else {
       setInnerDate(date)
     }
@@ -297,7 +298,7 @@ const Panel: FC<PanelProps> = ({
             {pickerMode === 'DATERANGE' && (
               <DateRangePanelProvider
                 dateRange={innerDateRange}
-                msOffset={msOffset}
+                dateRangePickerOffsets={dateRangePickerOffsets}
               >
                 <DateRangePanel
                   size={size}

@@ -1,29 +1,32 @@
 import { useState } from 'react'
 
-import { AnyPickerProps } from '../types'
+import { CommonPickerProps, DateRange, PickerMode } from '../types'
 
-import type { Dispatch, FC, ReactNode, SetStateAction } from 'react'
+import type { Dispatch, ReactNode, SetStateAction } from 'react'
 
-type IntegrationProps = AnyPickerProps & {
-  spyOnDateChange?: (date: number | never[] | undefined) => void
+type IntegrationProps<T extends PickerMode> = CommonPickerProps<T> & {
+  spyOnDateChange?: (date: number | DateRange | undefined) => void
   children: (props: {
-    props: AnyPickerProps
-    currentValue?: number | never[] | undefined
-    setCurrentValue: Dispatch<SetStateAction<number | never[] | undefined>>
+    props: CommonPickerProps<T>
+    currentValue?: number | DateRange | undefined
+    setCurrentValue: Dispatch<SetStateAction<number | DateRange | undefined>>
   }) => ReactNode
 }
 
-const Integration: FC<IntegrationProps> = (props) => {
+const Integration = <T extends PickerMode>(props: IntegrationProps<T>) => {
   const [currentValue, setCurrentValue] = useState(
     props.date ?? props.dateRange
   )
 
   const extendedSetCurrentValue: Dispatch<
-    SetStateAction<number | never[] | undefined>
+    SetStateAction<number | DateRange | undefined>
   > = (value) => {
     setCurrentValue(value)
-    if (props.spyOnDateChange && typeof value === 'number') {
-      props.spyOnDateChange(value)
+    if (
+      (props.spyOnDateChange && typeof value === 'number') ||
+      Array.isArray(value)
+    ) {
+      props.spyOnDateChange?.(value)
     }
   }
 

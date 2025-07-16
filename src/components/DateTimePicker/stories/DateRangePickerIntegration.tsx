@@ -41,7 +41,7 @@ const DateRangePickerIntegration: FC<DateRangePickerIntegrationProps> = ({
     props.dateRange
   )
   const [timezone, setTimezone] = useState<Timezone | undefined>(
-    'America/New_York' as Timezone
+    props.timezone ?? ('America/New_York' as Timezone)
   )
   const [locale, setLocale] = useState(props.locale ?? 'fr_FR')
   const [localeAwareFormat, setLocaleAwareFormat] = useState<LocaleAwareFormat>(

@@ -89,9 +89,9 @@ export const ControlledForTest: IntegrationStory = {
   ),
   name: 'Controlled for tests',
   args: {
-    timezone: 'Europe/Paris',
+    timezone: 'Asia/Tokyo',
     pickerMode: 'DATERANGE',
-    dateRange: [1741011177000, 1743171177000],
+    dateRange: [1742052493000, 1742398093000],
   },
   argTypes: disabledControls,
 }

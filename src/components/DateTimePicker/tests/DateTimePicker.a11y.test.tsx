@@ -119,7 +119,7 @@ describe('DateTimePicker: accessibility', () => {
   })
 
   it("should focus on the current date if there's no selected date when calendar panel is open", async () => {
-    const { msOffset } = setupUncontrolledPicker(
+    const { finalOffset } = setupUncontrolledPicker(
       fixedDate,
       DateTimePicker as AnyPickerComponent
     )
@@ -133,7 +133,7 @@ describe('DateTimePicker: accessibility', () => {
     expect(screen.getByRole('dialog')).toBeInTheDocument()
 
     expect(
-      screen.getByText(new Date(fixedDate + msOffset).getDate())
+      screen.getByText(new Date(fixedDate + finalOffset).getDate())
     ).toHaveFocus() // Assuming 15 is the current date in the mocked date
   })
 
@@ -174,7 +174,7 @@ describe('DateTimePicker: accessibility', () => {
   })
 
   it('should move the selection to the previous element when "shift + tab" keys are pressed', async () => {
-    const { msOffset } = setupUncontrolledPicker(
+    const { finalOffset } = setupUncontrolledPicker(
       fixedDate,
       DateTimePicker as AnyPickerComponent
     )
@@ -204,13 +204,13 @@ describe('DateTimePicker: accessibility', () => {
     await user.tab({ shift: true })
 
     expect(
-      screen.getByLabelText(getYearFromTs(fixedDate + msOffset).toString())
+      screen.getByLabelText(getYearFromTs(fixedDate + finalOffset).toString())
     ).toHaveFocus()
 
     await user.tab({ shift: true })
 
     expect(
-      screen.getByLabelText(getMonthNameFromTs(fixedDate + msOffset))
+      screen.getByLabelText(getMonthNameFromTs(fixedDate + finalOffset))
     ).toHaveFocus()
 
     await user.tab({ shift: true })
@@ -231,12 +231,12 @@ describe('DateTimePicker: accessibility', () => {
   })
 
   it('should be possible to focus date using arrows keys in the date grid', async () => {
-    const { msOffset } = setupUncontrolledPicker(
+    const { finalOffset } = setupUncontrolledPicker(
       fixedDate,
       DateTimePicker as AnyPickerComponent
     )
 
-    const startDate = new Date(fixedDate + msOffset).getDate()
+    const startDate = new Date(fixedDate + finalOffset).getDate()
 
     const user = userEvent.setup()
 
@@ -263,7 +263,7 @@ describe('DateTimePicker: accessibility', () => {
   })
 
   it('should focus on the selected date when calendar panel is open', async () => {
-    const { msOffset } = setupUncontrolledPicker(
+    const { finalOffset } = setupUncontrolledPicker(
       fixedDate,
       DateTimePicker as AnyPickerComponent
     )
@@ -287,7 +287,7 @@ describe('DateTimePicker: accessibility', () => {
     })
 
     expect(
-      screen.getByText(new Date(fixedDate + msOffset).getDate())
+      screen.getByText(new Date(fixedDate + finalOffset).getDate())
     ).toHaveFocus()
 
     await user.tab({ shift: true })
@@ -301,7 +301,9 @@ describe('DateTimePicker: accessibility', () => {
     await user.keyboard('{Enter}')
 
     expect(
-      screen.getByText(new Date(addMonths(fixedDate, 1) + msOffset).getDate())
+      screen.getByText(
+        new Date(addMonths(fixedDate, 1) + finalOffset).getDate()
+      )
     ).toHaveFocus()
 
     await user.keyboard('{ArrowRight}')
@@ -309,7 +311,9 @@ describe('DateTimePicker: accessibility', () => {
 
     expect(
       screen.getByText(
-        new Date(addMonths(fixedDate, 1) + oneDayInMs * 2 + msOffset).getDate()
+        new Date(
+          addMonths(fixedDate, 1) + oneDayInMs * 2 + finalOffset
+        ).getDate()
       )
     ).toHaveFocus()
 
@@ -327,13 +331,15 @@ describe('DateTimePicker: accessibility', () => {
 
     expect(
       screen.getByText(
-        new Date(addMonths(fixedDate, 1) + oneDayInMs * 2 + msOffset).getDate()
+        new Date(
+          addMonths(fixedDate, 1) + oneDayInMs * 2 + finalOffset
+        ).getDate()
       )
     ).toHaveFocus()
   })
 
   it('should change the grid of dates to the previous month when "Page down" key is pressed', async () => {
-    const { msOffset } = setupUncontrolledPicker(
+    const { finalOffset } = setupUncontrolledPicker(
       fixedDate,
       DateTimePicker as AnyPickerComponent
     )
@@ -347,7 +353,7 @@ describe('DateTimePicker: accessibility', () => {
     expect(screen.getByRole('dialog')).toBeInTheDocument()
 
     expect(
-      screen.getByText(new Date(fixedDate + msOffset).getDate())
+      screen.getByText(new Date(fixedDate + finalOffset).getDate())
     ).toHaveFocus()
 
     await user.keyboard('{PageDown}')
@@ -355,7 +361,7 @@ describe('DateTimePicker: accessibility', () => {
 
     expect(
       screen.getByText(
-        new Date(subtractMonths(fixedDate, 2) + msOffset).getDate()
+        new Date(subtractMonths(fixedDate, 2) + finalOffset).getDate()
       )
     ).toHaveFocus()
   })
@@ -364,7 +370,7 @@ describe('DateTimePicker: accessibility', () => {
     'should move focus to the day of the month that has the same number, and if that day does not exist,' +
       'move focus to the last day of the month when "Page down" key is pressed',
     async () => {
-      const { msOffset } = setupUncontrolledPicker(
+      const { finalOffset } = setupUncontrolledPicker(
         fixedDate,
         DateTimePicker as AnyPickerComponent
       )
@@ -379,7 +385,7 @@ describe('DateTimePicker: accessibility', () => {
       expect(screen.getByRole('dialog')).toBeInTheDocument()
 
       expect(
-        screen.getByText(new Date(fixedDate + msOffset).getDate())
+        screen.getByText(new Date(fixedDate + finalOffset).getDate())
       ).toHaveFocus()
 
       await user.keyboard('{ArrowDown}')
@@ -387,7 +393,7 @@ describe('DateTimePicker: accessibility', () => {
 
       expect(
         screen.getByText(
-          new Date(fixedDate + 14 * oneDayInMs + msOffset).getDate() // Le 29 mars 2025
+          new Date(fixedDate + 14 * oneDayInMs + finalOffset).getDate() // Le 29 mars 2025
         )
       ).toHaveFocus()
 
@@ -406,7 +412,7 @@ describe('DateTimePicker: accessibility', () => {
   )
 
   it('should changes the grid of dates to the next month when "Page Up" key is pressed', async () => {
-    const { msOffset } = setupUncontrolledPicker(
+    const { finalOffset } = setupUncontrolledPicker(
       fixedDate,
       DateTimePicker as AnyPickerComponent
     )
@@ -420,19 +426,21 @@ describe('DateTimePicker: accessibility', () => {
     expect(screen.getByRole('dialog')).toBeInTheDocument()
 
     expect(
-      screen.getByText(new Date(fixedDate + msOffset).getDate())
+      screen.getByText(new Date(fixedDate + finalOffset).getDate())
     ).toHaveFocus()
 
     await user.keyboard('{PageUp}')
     await user.keyboard('{PageUp}')
 
     expect(
-      screen.getByText(new Date(addMonths(fixedDate, 2) + msOffset).getDate())
+      screen.getByText(
+        new Date(addMonths(fixedDate, 2) + finalOffset).getDate()
+      )
     ).toHaveFocus()
   })
 
   it('should move focus to the day of the month that has the same number, and if that day does not exist, move focus to the last day of the month when "Page up" key is pressed', async () => {
-    const { msOffset } = setupUncontrolledPicker(
+    const { finalOffset } = setupUncontrolledPicker(
       fixedDate,
       DateTimePicker as AnyPickerComponent
     )
@@ -447,7 +455,7 @@ describe('DateTimePicker: accessibility', () => {
     expect(screen.getByRole('dialog')).toBeInTheDocument()
 
     expect(
-      screen.getByText(new Date(fixedDate + msOffset).getDate())
+      screen.getByText(new Date(fixedDate + finalOffset).getDate())
     ).toHaveFocus()
 
     await user.keyboard('{ArrowDown}')
@@ -457,7 +465,7 @@ describe('DateTimePicker: accessibility', () => {
 
     expect(
       screen.getByText(
-        new Date(fixedDate + 16 * oneDayInMs + msOffset).getDate() // Le 31 mars 2025
+        new Date(fixedDate + 16 * oneDayInMs + finalOffset).getDate() // Le 31 mars 2025
       )
     ).toHaveFocus()
 
@@ -475,7 +483,7 @@ describe('DateTimePicker: accessibility', () => {
   })
 
   it('should be possible to access months panel and select a month using "tab" and "enter" keys', async () => {
-    const { msOffset } = setupUncontrolledPicker(
+    const { finalOffset } = setupUncontrolledPicker(
       fixedDate,
       DateTimePicker as AnyPickerComponent
     )
@@ -494,14 +502,14 @@ describe('DateTimePicker: accessibility', () => {
     await user.tab({ shift: true })
 
     expect(
-      screen.getByLabelText(getMonthNameFromTs(fixedDate + msOffset))
+      screen.getByLabelText(getMonthNameFromTs(fixedDate + finalOffset))
     ).toHaveFocus()
 
     await user.keyboard('{Enter}')
 
     expect(
       screen.getByLabelText(
-        'Choose ' + getMonthNameFromTs(fixedDate + msOffset)
+        'Choose ' + getMonthNameFromTs(fixedDate + finalOffset)
       )
     ).toHaveFocus()
 
@@ -514,20 +522,20 @@ describe('DateTimePicker: accessibility', () => {
 
     expect(
       screen.getByLabelText(
-        getMonthNameFromTs(addMonths(fixedDate + msOffset, 2))
+        getMonthNameFromTs(addMonths(fixedDate + finalOffset, 2))
       )
     ).toBeInTheDocument()
 
     expect(screen.getByRole('textbox')).toHaveValue(
       formatTimestampForTextInput(
-        addMonths(fixedDate + msOffset, 2),
+        addMonths(fixedDate + finalOffset, 2),
         DATE_TIME_FORMAT.en
       )
     )
   })
 
   it('should be possible to access years panel and select a year using "tab" and "enter" keys', async () => {
-    const { msOffset } = setupUncontrolledPicker(
+    const { finalOffset } = setupUncontrolledPicker(
       fixedDate,
       DateTimePicker as AnyPickerComponent
     )
@@ -545,14 +553,14 @@ describe('DateTimePicker: accessibility', () => {
     await user.tab({ shift: true })
 
     expect(
-      screen.getByLabelText(getYearFromTs(fixedDate + msOffset))
+      screen.getByLabelText(getYearFromTs(fixedDate + finalOffset))
     ).toHaveFocus()
 
     await user.keyboard('{Enter}')
 
     expect(
       screen.getByLabelText(
-        'Choose ' + getYearFromTs(fixedDate + msOffset).toString()
+        'Choose ' + getYearFromTs(fixedDate + finalOffset).toString()
       )
     ).toHaveFocus()
 
@@ -564,19 +572,19 @@ describe('DateTimePicker: accessibility', () => {
     expect(screen.getByTestId('date-panel')).toBeInTheDocument()
 
     expect(
-      screen.getByLabelText(getYearFromTs(addYears(fixedDate + msOffset, 2)))
+      screen.getByLabelText(getYearFromTs(addYears(fixedDate + finalOffset, 2)))
     ).toBeInTheDocument()
 
     expect(screen.getByRole('textbox')).toHaveValue(
       formatTimestampForTextInput(
-        addYears(fixedDate + msOffset, 2),
+        addYears(fixedDate + finalOffset, 2),
         DATE_TIME_FORMAT.en
       )
     )
   })
 
   it('should be possible to access time panel and select a time using "tab" and "enter" keys', async () => {
-    const { msOffset } = setupUncontrolledPicker(
+    const { finalOffset } = setupUncontrolledPicker(
       fixedDate,
       DateTimePicker as AnyPickerComponent
     )
@@ -612,7 +620,7 @@ describe('DateTimePicker: accessibility', () => {
 
     expect(screen.getByRole('textbox')).toHaveValue(
       formatTimestampForTextInput(
-        addHours(fixedDate + msOffset, 3),
+        addHours(fixedDate + finalOffset, 3),
         DATE_TIME_FORMAT.en
       )
     )

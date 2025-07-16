@@ -1,7 +1,6 @@
 import { useMemo, useRef, useState } from 'react'
 
-import { getOffsetInMsFromTimezone } from '@utils'
-
+import { computeOffsets } from '../../../utils'
 import { DateTimePickerProvider } from '../context'
 
 import DateRangeInput from './DateRangeInput'
@@ -63,28 +62,8 @@ const Picker = <T extends PickerMode>({
     setIsOpen(false)
   }
 
-  const computeOffsets = (date: number | undefined, timezone?: Timezone) => {
-    const d = new Date(date ?? Date.now())
-    const utc = new Date(
-      Date.UTC(
-        d.getUTCFullYear(),
-        d.getUTCMonth(),
-        d.getUTCDate(),
-        d.getUTCHours(),
-        d.getUTCMinutes(),
-        d.getUTCSeconds(),
-        d.getUTCMilliseconds()
-      )
-    )
-
-    return {
-      gmtMsOffset: getOffsetInMsFromTimezone(utc),
-      msOffset: getOffsetInMsFromTimezone(utc, timezone),
-    }
-  }
-
   /**
-   * Will pass the proper time msOffset from the timezone (in milliseconds)
+   * Will pass the proper time timezone offset from the timezone (in milliseconds)
    */
   const datePickerOffsets = useMemo(
     () => computeOffsets(date, timezone),
@@ -92,7 +71,7 @@ const Picker = <T extends PickerMode>({
   )
 
   /**
-   * Will pass the proper time msOffset from the timezone (in milliseconds)
+   * Will pass the proper time timezone offset from the timezone (in milliseconds)
    */
   const dateRangePickerOffsets = useMemo(() => {
     return [
@@ -107,17 +86,18 @@ const Picker = <T extends PickerMode>({
       date={date}
       dateRange={dateRange}
       dateRangePickerOffsets={dateRangePickerOffsets}
-      gmtMsOffset={datePickerOffsets.gmtMsOffset}
+      localeMsOffset={datePickerOffsets.localeMsOffset}
       hasLabel={!!textInputProps.label}
       isControlled={!!onChange || !!onDateRangeChange}
       loading={loading}
       locale={locale}
       maxDate={maxDate}
       minDate={minDate}
-      msOffset={datePickerOffsets.msOffset}
+      timezoneMsOffset={datePickerOffsets.timezoneMsOffset}
       noDefaultDate={noDefaultDate}
       open={isOpen}
       pickerMode={pickerMode}
+      timezone={timezone}
     >
       <div style={{ position: 'relative' }}>
         <div ref={triggerRef} style={{ position: 'relative' }}>

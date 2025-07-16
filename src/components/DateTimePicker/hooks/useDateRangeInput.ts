@@ -3,6 +3,8 @@ import { ChangeEvent, useCallback, useEffect, useMemo, useState } from 'react'
 import {
   convertFormattedDateToTimestamp,
   formatTimestampForTextInput,
+  getActualOffset,
+  getMillisecondsSinceMidnight,
 } from '@utils'
 
 import { DATE_FORMAT } from '../formats'
@@ -49,13 +51,32 @@ export default function useDateRangeInput({
     () => (inputRole === 'start' ? innerDateRange?.[0] : innerDateRange?.[1]),
     [innerDateRange, inputRole]
   )
+  //console.log('date', date, 'innerDateRange', innerDateRange)
+  /**
+   * Gets the right set of offset according to the month date
+   */
   const offset = useMemo(
     () =>
       inputRole === 'start'
-        ? dateRangePickerOffsets?.[0]
-        : dateRangePickerOffsets?.[1],
+        ? dateRangePickerOffsets[0]
+        : dateRangePickerOffsets[1],
     [dateRangePickerOffsets, inputRole]
   )
+
+  /**
+   * Calculates the milliseconds since midnight for the given date.
+   * This will be added to the typed date once it's valid to get the correct timestamp.
+   */
+  const millisecondsSinceMidnight = useMemo(() => {
+    return date ? getMillisecondsSinceMidnight(date) : 0
+  }, [date])
+
+  /**
+   * Gets the actual offset combining the local offset and the GMT offset.
+   */
+  const finalOffset = useMemo(() => {
+    return getActualOffset(offset.timezoneMsOffset, offset.localeMsOffset)
+  }, [offset.localeMsOffset, offset.timezoneMsOffset])
 
   /**
    * Dynamically import the appropriate mask class based on the locale.
@@ -88,16 +109,11 @@ export default function useDateRangeInput({
    */
   useEffect(() => {
     setInputValue((prevState) => {
-      //console.log(inputRole, 'prevState', prevState)
       if (!date) return prevState
 
-      return formatTimestampForTextInput(
-        date,
-        DATE_FORMAT[locale],
-        offset?.msOffset
-      )
+      return formatTimestampForTextInput(date, DATE_FORMAT[locale])
     })
-  }, [date, pickerMode, locale, offset?.msOffset, inputRole])
+  }, [date, locale])
 
   /**
    * Reformats the new input value to an unix timestamp.
@@ -106,13 +122,18 @@ export default function useDateRangeInput({
    *
    * @param newInputValue
    */
-  const formatNewInputValue = useCallback(
+  const toTimestamp = useCallback(
     (newInputValue: string): number | undefined =>
       !newInputValue.includes('_')
         ? convertFormattedDateToTimestamp(newInputValue)
         : undefined,
     []
   )
+
+  // if (inputRole === 'start') {
+  //   console.log('inputValue', inputValue)
+  //   console.log('millisecondsSinceMidnight', millisecondsSinceMidnight)
+  // }
 
   /**
    * Handles the input change event (performed on the InputMask component).
@@ -134,25 +155,42 @@ export default function useDateRangeInput({
       setInputValue(validatedInputValue)
 
       // Always attempt to parse, even with potentially invalid input
-      const formattedNewInputValue = formatNewInputValue(validatedInputValue)
+      const timestampValue = toTimestamp(validatedInputValue)
 
       // Check if the date is valid and within bounds
-      if (formattedNewInputValue) {
-        const isAfterMin = !minDate || formattedNewInputValue >= minDate
-        const isBeforeMax = !maxDate || formattedNewInputValue <= maxDate
-        const newDate = formattedNewInputValue - (offset?.msOffset ?? 0)
+      if (timestampValue) {
+        const timestampValueWithTime =
+          timestampValue + millisecondsSinceMidnight
+        const isAfterMin = !minDate || timestampValueWithTime >= minDate
+        const isBeforeMax = !maxDate || timestampValueWithTime <= maxDate
+        const newDate = timestampValueWithTime - finalOffset
+        // Preparing the new start date to be emitted, also re-adapt the end date to get the correct time offset
         const newStarDate =
           inputRole === 'start'
-            ? innerDateRange?.[1] && newDate > innerDateRange[1]
+            ? innerDateRange?.[1] && newDate > innerDateRange[1] - finalOffset
               ? innerDateRange[0]
+                ? innerDateRange[0] - finalOffset
+                : undefined
               : newDate
             : innerDateRange?.[0]
+              ? innerDateRange[0] - finalOffset
+              : undefined
+
+        // if (inputRole === 'start') {
+        //   console.log('newDate', newDate)
+        //   console.log('newStarDate', newStarDate)
+        // }
+        // Preparing the new end date to be emitted, also re-adapt the start date to get the correct time offset
         const newEndDate =
           inputRole === 'end'
-            ? innerDateRange?.[0] && newDate < innerDateRange[0]
+            ? innerDateRange?.[0] && newDate < innerDateRange[0] - finalOffset
               ? innerDateRange[1]
+                ? innerDateRange[1] - finalOffset
+                : undefined
               : newDate
             : innerDateRange?.[1]
+              ? innerDateRange[1] - finalOffset
+              : undefined
 
         const newDateRange: DateRange = [newStarDate, newEndDate]
 
@@ -173,17 +211,16 @@ export default function useDateRangeInput({
             setInnerDateRange(newDateRange)
           }
         }
-      } else {
-        onDateChange?.([innerDateRange?.[0], innerDateRange?.[1]])
       }
     },
     [
       inputMaskInstance,
       loadMaskClass,
-      formatNewInputValue,
+      toTimestamp,
+      millisecondsSinceMidnight,
       minDate,
       maxDate,
-      offset?.msOffset,
+      finalOffset,
       inputRole,
       innerDateRange,
       locale,
@@ -192,6 +229,7 @@ export default function useDateRangeInput({
       setInnerDateRange,
     ]
   )
+  //console.log('inputValue', inputValue)
 
   return {
     inputValue,

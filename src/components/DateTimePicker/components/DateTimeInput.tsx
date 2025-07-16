@@ -52,13 +52,12 @@ const DateTimeInput: FC<DateInputProps> = ({
 }) => {
   const {
     color,
-    gmtMsOffset,
+    finalOffset,
     innerDate,
     isControlled,
     locale,
     maxDate,
     minDate,
-    msOffset,
     open,
     pickerMode,
     setInnerDate,
@@ -110,7 +109,7 @@ const DateTimeInput: FC<DateInputProps> = ({
           return undefined
       }
     })
-  }, [pickerMode, innerDate, locale, errors, gmtMsOffset])
+  }, [pickerMode, innerDate, locale, errors, finalOffset])
 
   /**
    * Set the input errors when anything from upper components happens
@@ -203,7 +202,7 @@ const DateTimeInput: FC<DateInputProps> = ({
 
         if (isAfterMin && isBeforeMax) {
           setInnerErrors(undefined)
-          const newDate = formattedNewInputValue - msOffset
+          const newDate = formattedNewInputValue - finalOffset
 
           if (isControlled) {
             onDateChange?.(newDate)
@@ -217,7 +216,7 @@ const DateTimeInput: FC<DateInputProps> = ({
       }
     },
     [
-      msOffset,
+      finalOffset,
       inputMaskInstance,
       loadMaskClass,
       pickerMode,

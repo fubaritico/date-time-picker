@@ -28,18 +28,20 @@ export interface YearsPanelProps {
  * @constructor
  */
 const YearsPanel: FC<YearsPanelProps> = ({ className, onDateChange, size }) => {
-  const { color, innerDate, locale, msOffset } = useDateTimePicker()
+  const { color, innerDate, locale, finalOffset } = useDateTimePicker()
   const panelRef = usePanelDomRect()
   // State: Focus managed using arrows
   const [keyboardFocusedIndex, setKeyboardFocusedIndex] = useState<number>(-1)
   // State: Inner date
-  const [date, setDate] = useState<number>(innerDate ?? Date.now() + msOffset)
+  const [date, setDate] = useState<number>(
+    innerDate ?? Date.now() + finalOffset
+  )
 
   const gridRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    setDate(innerDate ?? Date.now() + msOffset)
-  }, [innerDate, msOffset])
+    setDate(innerDate ?? Date.now() + finalOffset)
+  }, [innerDate, finalOffset])
 
   /**
    * Function to go to the previous years range.
@@ -217,7 +219,9 @@ const YearsPanel: FC<YearsPanelProps> = ({ className, onDateChange, size }) => {
         {Array.from({ length: 12 }, (_, i) => i).map((offset) => {
           const yearWithOffset = getYearFromTs(addYears(date, offset))
 
-          const selectedYear = getYearFromTs(innerDate ?? Date.now() + msOffset)
+          const selectedYear = getYearFromTs(
+            innerDate ?? Date.now() + finalOffset
+          )
 
           return (
             <button

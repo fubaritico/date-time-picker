@@ -472,7 +472,7 @@ const runTests = (timezone?: Timezone) => {
 
     it('should render w/ the provided date in the text field', async () => {
       const {
-        msOffset,
+        finalOffset,
         render: { container },
       } = setupControlledDateTimePicker(
         DateTimePicker as AnyPickerComponent,
@@ -482,7 +482,7 @@ const runTests = (timezone?: Timezone) => {
       )
 
       const date = defaultProperties.date ?? Date.now()
-      const innerDate = date + msOffset
+      const innerDate = date + finalOffset
 
       if (timezone) {
         expect(container).toMatchSnapshot()
@@ -569,7 +569,7 @@ const runTests = (timezone?: Timezone) => {
     })
 
     it('should call the onDateChange component method with proper value when selecting a month', async () => {
-      const { msOffset } = setupControlledDateTimePicker(
+      const { finalOffset } = setupControlledDateTimePicker(
         DateTimePicker as AnyPickerComponent,
         fixedDate,
         defaultProperties,
@@ -577,7 +577,7 @@ const runTests = (timezone?: Timezone) => {
       )
 
       const date = defaultProperties.date ?? Date.now()
-      const innerDate = date + msOffset
+      const innerDate = date + finalOffset
 
       const currentMonth = getLongMonthNameFromTs(innerDate).toString()
       const monthToBeClicked = getLongMonthNameFromTs(
@@ -601,7 +601,7 @@ const runTests = (timezone?: Timezone) => {
 
     it('should call the onDateChange component method with proper value when selecting a month after browsing months panel', async () => {
       const {
-        msOffset,
+        finalOffset,
         render: { baseElement },
       } = setupControlledDateTimePicker(
         DateTimePicker as AnyPickerComponent,
@@ -611,7 +611,7 @@ const runTests = (timezone?: Timezone) => {
       )
 
       const date = defaultProperties.date ?? Date.now()
-      const innerDate = date + msOffset
+      const innerDate = date + finalOffset
 
       const currentMonth = getLongMonthNameFromTs(innerDate).toString()
       const monthIndex = 1
@@ -652,7 +652,7 @@ const runTests = (timezone?: Timezone) => {
     })
 
     it('should call the onDateChange component method with proper value when selecting a year', async () => {
-      const { msOffset } = setupControlledDateTimePicker(
+      const { finalOffset } = setupControlledDateTimePicker(
         DateTimePicker as AnyPickerComponent,
         fixedDate,
         defaultProperties,
@@ -660,7 +660,7 @@ const runTests = (timezone?: Timezone) => {
       )
 
       const date = defaultProperties.date ?? Date.now()
-      const innerDate = date + msOffset
+      const innerDate = date + finalOffset
 
       const currentYear = getYearFromTs(innerDate).toString()
       const yearToBeClicked = getYearFromTs(addYears(innerDate, 1)).toString()
@@ -681,7 +681,7 @@ const runTests = (timezone?: Timezone) => {
     })
 
     it('should call the onDateChange component method with proper value when selecting a year after browsing year panel', async () => {
-      const { msOffset } = setupControlledDateTimePicker(
+      const { finalOffset } = setupControlledDateTimePicker(
         DateTimePicker as AnyPickerComponent,
         fixedDate,
         defaultProperties,
@@ -689,7 +689,7 @@ const runTests = (timezone?: Timezone) => {
       )
 
       const date = defaultProperties.date ?? Date.now()
-      const innerDate = date + msOffset
+      const innerDate = date + finalOffset
 
       const currentYear = getYearFromTs(innerDate).toString()
       const yearToBeClicked = '2038'
@@ -744,7 +744,7 @@ const runTests = (timezone?: Timezone) => {
     })
 
     it('should properly update input value and displayed value with proper value when changing hours', async () => {
-      const { msOffset } = setupControlledDateTimePicker(
+      const { finalOffset } = setupControlledDateTimePicker(
         DateTimePicker as AnyPickerComponent,
         fixedDate,
         defaultProperties,
@@ -785,7 +785,7 @@ const runTests = (timezone?: Timezone) => {
           formatTimestampForTextInput(
             addHours(date, hoursToBeAdded),
             DATE_TIME_FORMAT[defaultProperties.locale?.split('_')[0] ?? 'en'],
-            msOffset
+            finalOffset
           )
         )
       })
@@ -835,7 +835,7 @@ const runTests = (timezone?: Timezone) => {
     })
 
     it('should properly update input value and displayed value with proper value when changing minutes', async () => {
-      const { msOffset } = setupControlledDateTimePicker(
+      const { finalOffset } = setupControlledDateTimePicker(
         DateTimePicker as AnyPickerComponent,
         fixedDate,
         defaultProperties,
@@ -887,9 +887,9 @@ const runTests = (timezone?: Timezone) => {
             subtractMinutes(
               addMinutes(date, minutesToBeAdded),
               minutesToBeRemoved
-            ), // Reproducing the addition of msOffset in the component
+            ), // Reproducing the addition of timezone offset in the component
             DATE_TIME_FORMAT[defaultProperties.locale?.split('_')[0] ?? 'en'],
-            msOffset
+            finalOffset
           )
         )
       })
@@ -985,13 +985,13 @@ const runTests = (timezone?: Timezone) => {
       async (pLocale: string) => {
         defaultProperties.locale = pLocale
 
-        const { msOffset } = setupControlledDateTimePicker(
+        const { finalOffset } = setupControlledDateTimePicker(
           DateTimePicker as AnyPickerComponent,
           fixedDate,
           defaultProperties
         )
 
-        const innerDate = date + msOffset
+        const innerDate = date + finalOffset
 
         const selectedDay = 1
 
@@ -1062,7 +1062,7 @@ const runTests = (timezone?: Timezone) => {
 
     it('does not allow clicking on a disabled date', async () => {
       const {
-        msOffset,
+        finalOffset,
         render: { baseElement },
       } = setupControlledDateTimePicker(
         DateTimePicker as AnyPickerComponent,
@@ -1070,7 +1070,7 @@ const runTests = (timezone?: Timezone) => {
         defaultProperties
       )
 
-      const disabledDate = fixedDate - 1000 * 60 * 60 * 24 + msOffset
+      const disabledDate = fixedDate - 1000 * 60 * 60 * 24 + finalOffset
       defaultProperties.date = disabledDate
 
       await userEvent.click(screen.getByLabelText('Choose Date'))
@@ -1110,17 +1110,17 @@ const runTests = (timezone?: Timezone) => {
       defaultProperties.minDate = minDate
       defaultProperties.maxDate = maxDate
       defaultProperties.date = setNewUtcTimestamp(2025, 2, 15, 0, 0)
-      const { msOffset } = setupControlledDateTimePicker(
+      const { finalOffset } = setupControlledDateTimePicker(
         DateTimePicker as AnyPickerComponent,
         fixedDate,
         defaultProperties
       )
       await userEvent.click(screen.getByLabelText('Choose Date'))
 
-      const minDateElement = screen.getByTestId(minDate + msOffset)
+      const minDateElement = screen.getByTestId(minDate + finalOffset)
       expect(minDateElement).not.toHaveClass('cursor-not-allowed')
 
-      const maxDateElement = screen.getByTestId(maxDate + msOffset)
+      const maxDateElement = screen.getByTestId(maxDate + finalOffset)
       expect(maxDateElement).not.toHaveClass('cursor-not-allowed')
     })
   })
