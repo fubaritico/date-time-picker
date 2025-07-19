@@ -20,10 +20,10 @@ import {
 const spyOnDateRangeChangeFn = jest.fn()
 
 const runTests = (timezone?: Timezone) => {
-  const fixedDate = 1742052493000 // 2025-03-15T15:28:13.000Z
+  const mockedNow = 1742052493000 // 2025-03-15T15:28:13.000Z
 
   beforeEach(() => {
-    MockDate.set(fixedDate) // some arbitrary date
+    MockDate.set(mockedNow)
   })
 
   afterEach(() => {
@@ -34,7 +34,7 @@ const runTests = (timezone?: Timezone) => {
     const {
       render: { container },
     } = setupUncontrolledPicker(
-      fixedDate,
+      mockedNow,
       DateRangePicker as AnyPickerComponent,
       { timezone }
     )
@@ -52,7 +52,7 @@ const runTests = (timezone?: Timezone) => {
   describe('Uncontrolled - init', () => {
     it('should not pass any value to the inputs on init', async () => {
       setupUncontrolledPicker(
-        fixedDate,
+        mockedNow,
         DateRangePicker as AnyPickerComponent,
         { timezone }
       )
@@ -65,7 +65,7 @@ const runTests = (timezone?: Timezone) => {
 
     it('should open the date range panel with the start date input only', async () => {
       setupUncontrolledPicker(
-        fixedDate,
+        mockedNow,
         DateRangePicker as AnyPickerComponent,
         { timezone }
       )
@@ -91,7 +91,7 @@ const runTests = (timezone?: Timezone) => {
 
     it('should give the opener button the "Choose Date Range" label', () => {
       setupUncontrolledPicker(
-        fixedDate,
+        mockedNow,
         DateRangePicker as AnyPickerComponent,
         { timezone }
       )
@@ -103,7 +103,7 @@ const runTests = (timezone?: Timezone) => {
 
     it('should show the current date in the left panel by default', async () => {
       const { todayTimestamp } = setupUncontrolledPicker(
-        fixedDate,
+        mockedNow,
         DateRangePicker as AnyPickerComponent,
         { timezone }
       )
@@ -121,7 +121,7 @@ const runTests = (timezone?: Timezone) => {
 
     it('should open the panel with proper state', async () => {
       setupUncontrolledPicker(
-        fixedDate,
+        mockedNow,
         DateRangePicker as AnyPickerComponent,
         { timezone }
       )
@@ -174,7 +174,7 @@ const runTests = (timezone?: Timezone) => {
         'if months in panels are not successive',
       async () => {
         setupUncontrolledPicker(
-          fixedDate,
+          mockedNow,
           DateRangePicker as AnyPickerComponent,
           { timezone }
         )
@@ -217,7 +217,7 @@ const runTests = (timezone?: Timezone) => {
 
     it('should update month in the panel header when click on previous or next button', async () => {
       setupUncontrolledPicker(
-        fixedDate,
+        mockedNow,
         DateRangePicker as AnyPickerComponent,
         { timezone }
       )
@@ -245,7 +245,7 @@ const runTests = (timezone?: Timezone) => {
 
     it('should select a date range when clicking on a first date and clicking on a second date', async () => {
       setupUncontrolledPicker(
-        fixedDate,
+        mockedNow,
         DateRangePicker as AnyPickerComponent,
         { timezone }
       )
@@ -272,7 +272,7 @@ const runTests = (timezone?: Timezone) => {
 
     it('should display start date in start date input as soon as the start date is selected', async () => {
       setupUncontrolledPicker(
-        fixedDate,
+        mockedNow,
         DateRangePicker as AnyPickerComponent,
         { timezone }
       )
@@ -291,7 +291,7 @@ const runTests = (timezone?: Timezone) => {
 
     it('should update start date when re-selecting a date range', async () => {
       setupUncontrolledPicker(
-        fixedDate,
+        mockedNow,
         DateRangePicker as AnyPickerComponent,
         { timezone }
       )
@@ -325,7 +325,7 @@ const runTests = (timezone?: Timezone) => {
 
     it('should not allow an end date to be selected when clicking on a previous selected start date', async () => {
       setupUncontrolledPicker(
-        fixedDate,
+        mockedNow,
         DateRangePicker as AnyPickerComponent,
         { timezone }
       )
@@ -352,7 +352,7 @@ const runTests = (timezone?: Timezone) => {
 
     it('should allow to continue selection after having selected start date only and closed panel', async () => {
       setupUncontrolledPicker(
-        fixedDate,
+        mockedNow,
         DateRangePicker as AnyPickerComponent,
         { timezone }
       )
@@ -387,7 +387,7 @@ const runTests = (timezone?: Timezone) => {
 
     it('should not allow to define an end date that is before a previously selected start date', async () => {
       setupUncontrolledPicker(
-        fixedDate,
+        mockedNow,
         DateRangePicker as AnyPickerComponent,
         { timezone }
       )
@@ -413,10 +413,9 @@ const runTests = (timezone?: Timezone) => {
       })
     })
 
-    // TODO: when populating dates in the days grid take time part into account don't flatten dates to midnight
-    it.only('should not allow to update a start date that is after a previously selected end date', async () => {
+    it('should not allow to update a start date that is after a previously selected end date', async () => {
       const { finalOffset, todayTimestamp } = setupUncontrolledPicker(
-        fixedDate,
+        mockedNow,
         DateRangePicker as AnyPickerComponent,
         { timezone }
       )
@@ -430,19 +429,17 @@ const runTests = (timezone?: Timezone) => {
       const endDateTimestamp =
         getTimestampFromDateString(endDate) + millisecondsToAdd
 
-      // console.log(startDateTimestamp, fixedDate)
-
       const user = userEvent.setup()
       const startDateInput = screen.getByTestId('start-input')
       const endDateInput = screen.getByTestId('end-input')
 
       await user.type(startDateInput, '20250305')
 
+      expect(startDateInput).toHaveValue('2025/03/05')
+
       expect(startDateInput).toHaveValue(
         formatTimestampForTextInput(startDateTimestamp, DATE_FORMAT.en)
       )
-
-      expect(startDateInput).toHaveValue('2025/03/05')
 
       await user.type(endDateInput, '20250308')
 
@@ -466,7 +463,7 @@ const runTests = (timezone?: Timezone) => {
 
     it("should disable end date input as long as a valid start hasn't been set once", async () => {
       setupUncontrolledPicker(
-        fixedDate,
+        mockedNow,
         DateRangePicker as AnyPickerComponent,
         { timezone }
       )
@@ -513,7 +510,7 @@ const runTests = (timezone?: Timezone) => {
       const {
         render: { baseElement, container },
       } = setupControlledDateRangePicker(
-        fixedDate,
+        mockedNow,
         defaultProperties,
         spyOnDateRangeChangeFn,
         0,
@@ -534,7 +531,7 @@ const runTests = (timezone?: Timezone) => {
 
         const { startDate, endDate, msOffsets } =
           setupControlledDateRangePicker(
-            fixedDate,
+            mockedNow,
             defaultProperties,
             spyOnDateRangeChangeFn,
             daysBeforeToday,
@@ -566,7 +563,7 @@ const runTests = (timezone?: Timezone) => {
         const daysAfterToday = 13
 
         setupControlledDateRangePicker(
-          fixedDate,
+          mockedNow,
           defaultProperties,
           spyOnDateRangeChangeFn,
           daysBeforeToday,
@@ -611,16 +608,16 @@ const runTests = (timezone?: Timezone) => {
  *
  * A few tests are added to ensure that a provided timezone is taken into account.
  */
-// describe('DateRangePicker', () => {
-//   runTests()
-// })
-//
-// /**
-//  * The same set of test with a given timezone
-//  */
-// describe('DateRangePicker w/ "America/Argentina/La_Rioja" timezone', () => {
-//   runTests('America/Argentina/La_Rioja')
-// })
+describe('DateRangePicker', () => {
+  runTests()
+})
+
+/**
+ * The same set of test with a given timezone
+ */
+describe('DateRangePicker w/ "America/Argentina/La_Rioja" timezone', () => {
+  runTests('America/Argentina/La_Rioja')
+})
 
 describe('DateRangePicker w/ "Asia/Tokyo" timezone', () => {
   runTests('Asia/Tokyo')

@@ -1214,20 +1214,26 @@ export const getTimestampFromDateString = (
   return date.getTime()
 }
 
-// function millisecondsToTime(ms: number) {
-//   if (ms < 0) {
-//     throw new Error('Milliseconds value cannot be negative')
-//   }
-//
-//   // Calculate hours, minutes and seconds
-//   const hours = Math.floor(ms / 3600000)
-//   const minutes = Math.floor((ms % 3600000) / 60000)
-//   const seconds = Math.floor((ms % 60000) / 1000)
-//
-//   // Pad with zeros if needed
-//   const paddedHours = hours.toString().padStart(2, '0')
-//   const paddedMinutes = minutes.toString().padStart(2, '0')
-//   const paddedSeconds = seconds.toString().padStart(2, '0')
-//
-//   return `${paddedHours}:${paddedMinutes}:${paddedSeconds}`
-// }
+/**
+ * Will transform milliseconds to a time string in the format 'HH:MM:SS'
+ * @param ms
+ */
+export const millisecondsToTime = (ms: number) => {
+  if (ms < 0) {
+    throw new Error(
+      '[millisecondsToTime] Milliseconds value cannot be negative'
+    )
+  }
+
+  // Calculate hours, minutes and seconds
+  const hours = Math.floor(ms / 3600000)
+  const minutes = Math.floor((ms % 3600000) / 60000)
+  const seconds = Math.floor((ms % 60000) / 1000)
+
+  // Pad with zeros if needed
+  const paddedHours = hours.toString().padStart(2, '0')
+  const paddedMinutes = minutes.toString().padStart(2, '0')
+  const paddedSeconds = seconds.toString().padStart(2, '0')
+
+  return `${paddedHours}:${paddedMinutes}:${paddedSeconds}`
+}

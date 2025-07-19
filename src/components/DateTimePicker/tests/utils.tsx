@@ -49,7 +49,7 @@ export const setupUncontrolledPicker = (
   )
 
   const todayTimestamp = today.getTime() + finalOffset
-  const oneMonthTimestamp = inOneMonthTime.getTime() + finalOffset
+  const oneMonthTimestamp = inOneMonthTime.getTime() + oneMonthFinalOffset
 
   return {
     todayTimestamp,

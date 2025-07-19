@@ -51,7 +51,7 @@ export default function useDateRangeInput({
     () => (inputRole === 'start' ? innerDateRange?.[0] : innerDateRange?.[1]),
     [innerDateRange, inputRole]
   )
-  //console.log('date', date, 'innerDateRange', innerDateRange)
+
   /**
    * Gets the right set of offset according to the month date
    */
@@ -64,19 +64,22 @@ export default function useDateRangeInput({
   )
 
   /**
+   * Gets the actual offset combining the local offset and the GMT offset.
+   */
+  const dateMsOffset = useMemo(() => {
+    return getActualOffset(offset.timezoneMsOffset, offset.localeMsOffset)
+  }, [offset.localeMsOffset, offset.timezoneMsOffset])
+
+  /**
    * Calculates the milliseconds since midnight for the given date.
    * This will be added to the typed date once it's valid to get the correct timestamp.
    */
   const millisecondsSinceMidnight = useMemo(() => {
-    return date ? getMillisecondsSinceMidnight(date) : 0
-  }, [date])
-
-  /**
-   * Gets the actual offset combining the local offset and the GMT offset.
-   */
-  const finalOffset = useMemo(() => {
-    return getActualOffset(offset.timezoneMsOffset, offset.localeMsOffset)
-  }, [offset.localeMsOffset, offset.timezoneMsOffset])
+    const localeNow = Date.now() + dateMsOffset
+    return date
+      ? getMillisecondsSinceMidnight(date)
+      : getMillisecondsSinceMidnight(localeNow) // no offset because it's supposed to be the locale time in this very case
+  }, [date, dateMsOffset])
 
   /**
    * Dynamically import the appropriate mask class based on the locale.
@@ -130,11 +133,6 @@ export default function useDateRangeInput({
     []
   )
 
-  // if (inputRole === 'start') {
-  //   console.log('inputValue', inputValue)
-  //   console.log('millisecondsSinceMidnight', millisecondsSinceMidnight)
-  // }
-
   /**
    * Handles the input change event (performed on the InputMask component).
    *
@@ -163,33 +161,32 @@ export default function useDateRangeInput({
           timestampValue + millisecondsSinceMidnight
         const isAfterMin = !minDate || timestampValueWithTime >= minDate
         const isBeforeMax = !maxDate || timestampValueWithTime <= maxDate
-        const newDate = timestampValueWithTime - finalOffset
+        // no offset if not controlled, the value is received from the inner values
+        const msOffset = isControlled ? dateMsOffset : 0
+        const newDate = timestampValueWithTime - msOffset
+
         // Preparing the new start date to be emitted, also re-adapt the end date to get the correct time offset
         const newStarDate =
           inputRole === 'start'
-            ? innerDateRange?.[1] && newDate > innerDateRange[1] - finalOffset
+            ? innerDateRange?.[1] && newDate > innerDateRange[1] - msOffset
               ? innerDateRange[0]
-                ? innerDateRange[0] - finalOffset
+                ? innerDateRange[0] - msOffset
                 : undefined
               : newDate
             : innerDateRange?.[0]
-              ? innerDateRange[0] - finalOffset
+              ? innerDateRange[0] - msOffset
               : undefined
 
-        // if (inputRole === 'start') {
-        //   console.log('newDate', newDate)
-        //   console.log('newStarDate', newStarDate)
-        // }
         // Preparing the new end date to be emitted, also re-adapt the start date to get the correct time offset
         const newEndDate =
           inputRole === 'end'
-            ? innerDateRange?.[0] && newDate < innerDateRange[0] - finalOffset
+            ? innerDateRange?.[0] && newDate < innerDateRange[0] - msOffset
               ? innerDateRange[1]
-                ? innerDateRange[1] - finalOffset
+                ? innerDateRange[1] - msOffset
                 : undefined
               : newDate
             : innerDateRange?.[1]
-              ? innerDateRange[1] - finalOffset
+              ? innerDateRange[1] - msOffset
               : undefined
 
         const newDateRange: DateRange = [newStarDate, newEndDate]
@@ -220,7 +217,7 @@ export default function useDateRangeInput({
       millisecondsSinceMidnight,
       minDate,
       maxDate,
-      finalOffset,
+      dateMsOffset,
       inputRole,
       innerDateRange,
       locale,
@@ -229,7 +226,6 @@ export default function useDateRangeInput({
       setInnerDateRange,
     ]
   )
-  //console.log('inputValue', inputValue)
 
   return {
     inputValue,
