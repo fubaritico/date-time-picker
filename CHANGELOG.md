@@ -1,3 +1,13 @@
+# [2.2.0](https://github.com/fubaritico/date-time-picker/compare/v2.1.10...v2.2.0) (2025-07-19)
+
+
+### Bug Fixes
+
+* **date-range:** fixed wrong inner date management with timezone ([60fe891](https://github.com/fubaritico/date-time-picker/commit/60fe8915d4e85ca5dd308e286ae280dfeb50a7d0))
+* **roll-up:** fixed warning when building with rollup ([02b4eb6](https://github.com/fubaritico/date-time-picker/commit/02b4eb6426b9ce50e15dc562c6e207aafa9248e3))
+
+
+
 ## [2.1.10](https://github.com/fubaritico/date-time-picker/compare/v2.1.9...v2.1.10) (2025-07-06)
 
 
