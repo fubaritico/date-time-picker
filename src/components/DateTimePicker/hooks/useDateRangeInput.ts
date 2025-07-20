@@ -111,10 +111,8 @@ export default function useDateRangeInput({
    * Set the input value to the date when the date is updated.
    */
   useEffect(() => {
-    setInputValue((prevState) => {
-      if (!date) return prevState
-
-      return formatTimestampForTextInput(date, DATE_FORMAT[locale])
+    setInputValue(() => {
+      return date ? formatTimestampForTextInput(date, DATE_FORMAT[locale]) : ''
     })
   }, [date, locale])
 

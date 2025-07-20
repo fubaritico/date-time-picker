@@ -112,6 +112,10 @@ const DateRangePanel: FC<DateRangePanelProps> = ({
     const newDateRange: DateRange = [date, undefined]
     // Setting the inner date range in the main context (new date range)
     setInnerDateRange(newDateRange)
+    // Controlled component: call the onDateRangeChange callback
+    if (onDateRangeChange) {
+      onDateRangeChange(newDateRange)
+    }
   }
 
   /**
