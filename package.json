@@ -1,6 +1,6 @@
 {
   "name": "@fubar-it-co/date-time-picker",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "A React 19 date and time picker component",
   "type": "module",
   "main": "./dist/datetime-picker.cjs.js",
