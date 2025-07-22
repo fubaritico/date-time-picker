@@ -10,6 +10,8 @@ A React 19.x date-time picker component, using TypeScript 5.x, styled using nati
 
 ✅ tested accessibility for `DatePicker`, `DateTimePicker`, and `TimePicker` components
 
+✅ tests for  `DatePicker`, `DateTimePicker`, `TimePicker`, and  `DateRangePicker` components
+
 ❌ `DateRangePicker` component is not yet fully tested for accessibility
 
 The package is available on NPM as `@fubar-it-co/date-time-picker`, [go to NPM](https://www.npmjs.com/package/@fubar-it-co/date-time-picker).
@@ -28,15 +30,13 @@ A Storybook instance is available to preview the components and their features [
 
 ## Work in progress
 
-Tests have to be written for `DateRangePicker`.
-
-Tests have to be written for the accessibility features.
-
-Some integration tests are still currently performed in real projects.
+Tests have to be written for the accessibility features for `DateRangePicker`.
 
 ## Issues
 
-Some work has to be done with peer dependencies.
+Some issues can rise on edge cases like timezone offsets, although they've been tested.
+
+Feel free to send me a mail [here](mailto:s_cottereau@yahoo.fr) or open an issue on the [GitHub repository](https://github.com/fubaritico/date-time-picker/issues)
 
 ## Styling
 
