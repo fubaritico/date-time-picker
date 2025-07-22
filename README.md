@@ -36,7 +36,7 @@ Tests have to be written for the accessibility features for `DateRangePicker`.
 
 Some issues can rise on edge cases like timezone offsets, although they've been tested.
 
-Feel free to send me a mail [here](mailto:s_cottereau@yahoo.fr) or open an issue on the [GitHub repository](https://github.com/fubaritico/date-time-picker/issues)
+Feel free to send me a mail [here](mailto:fubaritico@gmail.com) or open an issue on the [GitHub repository](https://github.com/fubaritico/date-time-picker/issues)
 
 ## Styling
 
