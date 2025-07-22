@@ -33,8 +33,14 @@ const DateRangePanel: FC<DateRangePanelProps> = ({
   size,
 }) => {
   // SHARED STATE FROM DATE RANGE PANEL CONTEXT
-  const { leftGridMonth, rightGridMonth, setLeftGridMonth, setRightGridMonth } =
-    useDateRangePanel()
+  const {
+    endDateOrigin,
+    leftGridMonth,
+    rightGridMonth,
+    setLeftGridMonth,
+    setRightGridMonth,
+    startDateOrigin,
+  } = useDateRangePanel()
   // SHARED STATE FROM DATE TIME PICKER CONTEXT
   const {
     color,
@@ -47,7 +53,7 @@ const DateRangePanel: FC<DateRangePanelProps> = ({
   /**
    * Gets the actual offset combining the local offset and the GMT offset.
    */
-  const finalOffsets = useMemo(() => {
+  const daysGridsMsOffsets = useMemo(() => {
     return [
       getActualOffset(
         dateRangePickerOffsets[0].timezoneMsOffset,
@@ -105,23 +111,35 @@ const DateRangePanel: FC<DateRangePanelProps> = ({
   /**
    * Function to select the start date of the date range.
    * On selecting the start date, the end date is set to undefined.
+   * Here only the controlled date Range is set,
+   * the innerDateRange is updated from the DaysGrid component.
    *
-   * @param date
+   * @param date - The selected start date in milliseconds with the offset applied
+   * @param panelRole - The role of the panel ('left' or 'right')
    */
-  const onStartDateChangeHandler = (date: number) => {
-    const newDateRange: DateRange = [date, undefined]
-    // Setting the inner date range in the main context (new date range)
-    setInnerDateRange(newDateRange)
-    // Controlled component: call the onDateRangeChange callback
-    if (onDateRangeChange) {
-      onDateRangeChange(newDateRange)
-    }
-  }
+  const onStartDateChangeHandler = useCallback(
+    (date: number) => {
+      const newDateRange: DateRange = [
+        date - daysGridsMsOffsets[startDateOrigin === 'left' ? 0 : 1], // removing offset
+        undefined,
+      ]
+      // Controlled component: call the onDateRangeChange callback
+      if (onDateRangeChange) {
+        onDateRangeChange(newDateRange)
+      } else {
+        setInnerDateRange([date, undefined])
+      }
+    },
+    [daysGridsMsOffsets, onDateRangeChange, setInnerDateRange, startDateOrigin]
+  )
 
   /**
    * Function to select the end date of the date range.
+   * Here only the external controlled date Range is set,
+   * the innerDateRange is updated from the DaysGrid component.
    *
-   * @param date
+   * @param date - The selected end date in milliseconds with the offset applied
+   * @param panelRole - The role of the panel ('left' or 'right')
    */
   const onEndDateChangeHandler = useCallback(
     (date: number) => {
@@ -129,15 +147,29 @@ const DateRangePanel: FC<DateRangePanelProps> = ({
         // If the selected date is the same as the start date, do not update
         return
       }
-      const newDateRange: DateRange = [innerDateRange?.[0], date]
+      const newDateRange: DateRange = [
+        innerDateRange?.[0]
+          ? innerDateRange[0] -
+            daysGridsMsOffsets[startDateOrigin === 'left' ? 0 : 1]
+          : undefined,
+        date - daysGridsMsOffsets[endDateOrigin === 'left' ? 0 : 1],
+      ]
+
       // Controlled component: call the onDateRangeChange callback
       if (onDateRangeChange) {
         onDateRangeChange(newDateRange)
+      } else {
+        setInnerDateRange([innerDateRange?.[0], date])
       }
-      // Setting the inner date range in the main context
-      setInnerDateRange(newDateRange)
     },
-    [innerDateRange, onDateRangeChange, setInnerDateRange]
+    [
+      daysGridsMsOffsets,
+      endDateOrigin,
+      innerDateRange,
+      onDateRangeChange,
+      setInnerDateRange,
+      startDateOrigin,
+    ]
   )
 
   return (
@@ -156,11 +188,11 @@ const DateRangePanel: FC<DateRangePanelProps> = ({
         >
           <PanelHeaderButton
             aria-label={getMonthNameFromTs(
-              leftGridMonth + finalOffsets[0],
+              leftGridMonth + daysGridsMsOffsets[0],
               locale
             )}
             color={color}
-            label={getMonthNameFromTs(leftGridMonth + finalOffsets[0], locale)}
+            label={getMonthNameFromTs(leftGridMonth, locale)}
           />
           <PanelHeaderButton
             aria-label={getYearFromTs(leftGridMonth).toString()}
@@ -175,17 +207,18 @@ const DateRangePanel: FC<DateRangePanelProps> = ({
           onPrevMonthKeyPress={onPrevMonthClickFromLeftGrid}
           onStartDateChangeHandler={onStartDateChangeHandler}
           onEndDateChangeHandler={onEndDateChangeHandler}
+          panelRole="left"
         />
       </div>
       <div className="separator" />
       <div className="right-panel" data-test="right-panel">
         <PanelHeader
-          size={size}
           nextButtonAriaLabel="Next Month"
           onNextButtonClick={onNextMonthClickFromRightGrid}
           onPrevButtonClick={onPrevMonthClickFromRightGrid}
           disablePrevButton={subtractMonths(rightGridMonth, 1) <= leftGridMonth}
           prevButtonAriaLabel="Previous Month"
+          size={size}
         >
           <PanelHeaderButton
             aria-label={getMonthNameFromTs(rightGridMonth, locale)}
@@ -200,11 +233,12 @@ const DateRangePanel: FC<DateRangePanelProps> = ({
         </PanelHeader>
         <DaysGrid
           date={rightGridMonth}
-          size={size}
           onNextMonthKeyPress={onNextMonthClickFromRightGrid}
           onPrevMonthKeyPress={onPrevMonthClickFromRightGrid}
           onStartDateChangeHandler={onStartDateChangeHandler}
           onEndDateChangeHandler={onEndDateChangeHandler}
+          panelRole="right"
+          size={size}
         />
       </div>
     </div>

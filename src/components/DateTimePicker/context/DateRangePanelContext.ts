@@ -1,6 +1,7 @@
 import { createContext } from 'react'
 
-import type { DateRange } from '../types'
+import { DateOrigin, DateRange } from '../types'
+
 import type { Dispatch, SetStateAction } from 'react'
 
 export interface DateRangePanelState {
@@ -24,10 +25,19 @@ export interface DateRangePanelState {
   tempEndDate?: number
   /* The temp value of the start date used while defining a date range */
   tempStartDate?: number
+  /* Setter for 'startDateOrigin' */
+  setStartDateOrigin: Dispatch<SetStateAction<DateOrigin>>
+  /* From where the start date has been clicked (will help to apply the right offset based on the month) */
+  startDateOrigin: DateOrigin
+  /* Setter for 'endDateOrigin' */
+  setEndDateOrigin: Dispatch<SetStateAction<DateOrigin>>
+  /* From where the end date has been clicked (will help to apply the right offset based on the month) */
+  endDateOrigin: DateOrigin
 }
 
 export const initialState: DateRangePanelState = {
   dateRange: [undefined, undefined],
+  endDateOrigin: 'left',
   isSelectingRange: false,
   leftGridMonth: Date.now(),
   rightGridMonth: Date.now(),
@@ -35,6 +45,9 @@ export const initialState: DateRangePanelState = {
   setRightGridMonth: () => {},
   setTempEndDate: () => {},
   setTempStartDate: () => {},
+  setStartDateOrigin: () => {},
+  setEndDateOrigin: () => {},
+  startDateOrigin: 'left',
 }
 
 const DateRangePanelContext = createContext<DateRangePanelState>(initialState)

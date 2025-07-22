@@ -23,7 +23,7 @@ export const localeAwareFormat: LocaleAwareFormat = 'L LT'
  * @param {AnyPickerComponent} Component - The type of picker to be used in the test
  * @param {Number} pFixedDate - The fixed date to use for the tests. Here, 2025-03-15T15:28:13.000Z as a timestamp.
  *
- * @returns The todayTimestamp, the timezone offset and the render function.
+ * @returns The localeTodayTimestamp, the timezone offset and the render function.
  */
 export const setupUncontrolledPicker = (
   pFixedDate: number,
@@ -48,11 +48,11 @@ export const setupUncontrolledPicker = (
     offsets[1].localeMsOffset
   )
 
-  const todayTimestamp = today.getTime() + finalOffset
+  const localeTodayTimestamp = today.getTime() + finalOffset
   const oneMonthTimestamp = inOneMonthTime.getTime() + oneMonthFinalOffset
 
   return {
-    todayTimestamp,
+    localeTodayTimestamp,
     oneMonthTimestamp,
     finalOffset,
     oneMonthFinalOffset,
@@ -68,7 +68,7 @@ export const setupUncontrolledPicker = (
  * @param {CommonPickerProps} props - The props to pass to the component.
  * @param spyOnDateChangeFn
  *
- * @returns {Object} - The todayTimestamp, the timezone offset and the render function.
+ * @returns {Object} - The localeTodayTimestamp, the timezone offset and the render function.
  */
 export const setupControlledDateTimePicker = (
   Component: AnyPickerComponent,
@@ -85,7 +85,7 @@ export const setupControlledDateTimePicker = (
   const dateTimestamp = today.getTime() + finalOffset
 
   return {
-    todayTimestamp: dateTimestamp,
+    localeTodayTimestamp: dateTimestamp,
     finalOffset,
     render: render(
       <Integration {...props} spyOnDateChange={spyOnDateChangeFn}>
@@ -122,7 +122,7 @@ export const setupControlledDateTimePicker = (
  * @param {Number} daysBeforeToday -
  * @param {Number} daysAfterToday -
  *
- * @returns {Object} - The todayTimestamp, the timezone offset and the render function.
+ * @returns {Object} - The localeTodayTimestamp, the timezone offset and the render function.
  */
 export const setupControlledDateRangePicker = (
   pFixedDate: number,
@@ -151,7 +151,7 @@ export const setupControlledDateRangePicker = (
   }
 
   return {
-    todayTimestamp: today.getTime() + finalOffset,
+    localeTodayTimestamp: today.getTime() + finalOffset,
     finalOffset,
     msOffsets,
     startDate,

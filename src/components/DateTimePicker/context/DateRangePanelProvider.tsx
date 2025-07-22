@@ -1,11 +1,17 @@
 import { useMemo, useState } from 'react'
 
-import { addMonths, getActualOffset, getFirstInstantOfMonth } from '@utils'
+import {
+  addMonths,
+  getActualOffset,
+  getFirstInstantOfMonth,
+  isSameMonth,
+} from '@utils'
+
+import { DateOrigin, PickerProviderProps } from '../types'
 
 import DateTimePickerContext from './DateRangePanelContext'
 
 import type { DateRangePanelState } from './DateRangePanelContext'
-import type { PickerProviderProps } from '../types'
 import type { FC, PropsWithChildren } from 'react'
 
 const getMonthNameFromTimestamp = (
@@ -89,31 +95,40 @@ const DateRangePanelProvider: FC<
     return tempStartDate !== undefined
   }, [tempStartDate])
 
+  const [startDateOrigin, setStartDateOrigin] = useState<DateOrigin>('left')
+  const [endDateOrigin, setEndDateOrigin] = useState<DateOrigin>(() =>
+    dateRange[0] && dateRange[1] && !isSameMonth(dateRange[0], dateRange[1])
+      ? 'right'
+      : 'left'
+  )
+
   /**
    * State of the date range panel, shared by the two day-grid components.
    */
   const state = useMemo<DateRangePanelState>(() => {
     return {
       dateRange,
+      endDateOrigin,
       isSelectingRange,
       leftGridMonth,
       rightGridMonth,
+      setEndDateOrigin,
       setLeftGridMonth,
       setRightGridMonth,
+      setStartDateOrigin,
       setTempEndDate,
       setTempStartDate,
       tempEndDate,
       tempStartDate,
+      startDateOrigin,
     }
   }, [
     dateRange,
+    endDateOrigin,
     isSelectingRange,
     leftGridMonth,
     rightGridMonth,
-    setLeftGridMonth,
-    setRightGridMonth,
-    setTempEndDate,
-    setTempStartDate,
+    startDateOrigin,
     tempEndDate,
     tempStartDate,
   ])

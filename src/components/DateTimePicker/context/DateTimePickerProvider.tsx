@@ -44,6 +44,8 @@ const DateTimePickerProvider: FC<PropsWithChildren<PickerProviderProps>> = ({
     return 'en'
   }, [locale])
 
+  // console.log('DateTimePickerProvider p_dateRange:', p_dateRange)
+
   /**
    * Gets the actual offset combining the local offset and the GMT offset.
    */
@@ -125,6 +127,8 @@ const DateTimePickerProvider: FC<PropsWithChildren<PickerProviderProps>> = ({
     dateRangePickerOffsets,
     finalOffset,
   ])
+
+  //console.log('DateTimePickerProvider innerDateRange:', innerDateRange)
 
   const value = useMemo<PickerState>(() => {
     return {

@@ -164,28 +164,35 @@ export default function useDateRangeInput({
         const newDate = timestampValueWithTime - msOffset
 
         // Preparing the new start date to be emitted, also re-adapt the end date to get the correct time offset
-        const newStarDate =
-          inputRole === 'start'
-            ? innerDateRange?.[1] && newDate > innerDateRange[1] - msOffset
+        const newStarDate = (() => {
+          if (innerDateRange?.[0] && newDate === innerDateRange[0] - msOffset)
+            return innerDateRange[0] - msOffset
+          if (inputRole === 'start') {
+            // If the input is 'start', we need to ensure the end date is not before the start date
+            return innerDateRange?.[1] && newDate > innerDateRange[1] - msOffset
               ? innerDateRange[0]
                 ? innerDateRange[0] - msOffset
                 : undefined
               : newDate
-            : innerDateRange?.[0]
-              ? innerDateRange[0] - msOffset
-              : undefined
+          }
+          // If the input is 'end', we need to ensure the start date is not after the end date
+          return innerDateRange?.[0] ? innerDateRange[0] - msOffset : undefined
+        })()
 
         // Preparing the new end date to be emitted, also re-adapt the start date to get the correct time offset
-        const newEndDate =
-          inputRole === 'end'
-            ? innerDateRange?.[0] && newDate < innerDateRange[0] - msOffset
+        const newEndDate = (() => {
+          if (innerDateRange?.[1] && newDate === innerDateRange[1] - msOffset)
+            return innerDateRange[1] - msOffset
+          if (inputRole === 'end') {
+            return innerDateRange?.[0] && newDate < innerDateRange[0] - msOffset
               ? innerDateRange[1]
                 ? innerDateRange[1] - msOffset
                 : undefined
               : newDate
-            : innerDateRange?.[1]
-              ? innerDateRange[1] - msOffset
-              : undefined
+          }
+
+          return innerDateRange?.[1] ? innerDateRange[1] - msOffset : undefined
+        })()
 
         const newDateRange: DateRange = [newStarDate, newEndDate]
 
@@ -194,7 +201,10 @@ export default function useDateRangeInput({
 
           if (!newDate) return undefined
 
-          return formatTimestampForTextInput(newDate, DATE_FORMAT[locale])
+          return formatTimestampForTextInput(
+            newDate + msOffset,
+            DATE_FORMAT[locale]
+          )
         })
 
         if (isAfterMin && isBeforeMax) {

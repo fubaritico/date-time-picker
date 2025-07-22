@@ -8,6 +8,7 @@ import type {
   SetStateAction,
 } from 'react'
 
+export type DateOrigin = 'left' | 'right'
 /**
  * Represents a range of dates, consisting of a start and end UNIX timestamp in milliseconds, or undefined.
  *

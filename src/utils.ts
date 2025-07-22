@@ -1177,7 +1177,9 @@ export const getActualOffset = (
 
 /**
  * Extracts the number of milliseconds since midnight for a given timestamp
+ *
  * @param timestamp - The timestamp in milliseconds
+ *
  * @returns The number of milliseconds since midnight
  */
 export const getMillisecondsSinceMidnight = (timestamp: number): number => {
@@ -1236,4 +1238,28 @@ export const millisecondsToTime = (ms: number) => {
   const paddedSeconds = seconds.toString().padStart(2, '0')
 
   return `${paddedHours}:${paddedMinutes}:${paddedSeconds}`
+}
+
+/**
+ * Checks if two timestamps are in the same month and year
+ * @param timestamp1 - First timestamp in milliseconds
+ * @param timestamp2 - Second timestamp in milliseconds
+ * @returns True if both timestamps are in the same month and year, false otherwise
+ * @throws Error if either timestamp is invalid
+ */
+export const isSameMonth = (
+  timestamp1: number,
+  timestamp2: number
+): boolean => {
+  if (!timestamp1 || !timestamp2 || isNaN(timestamp1) || isNaN(timestamp2)) {
+    throw new Error('Invalid timestamp provided')
+  }
+
+  const date1 = new Date(timestamp1)
+  const date2 = new Date(timestamp2)
+
+  return (
+    date1.getFullYear() === date2.getFullYear() &&
+    date1.getMonth() === date2.getMonth()
+  )
 }

@@ -13,7 +13,7 @@ import { useDateRangePanel, useDateTimePicker } from '../hooks'
 
 import DaysGridCell from './DaysGridCell'
 
-import type { BasicPickerProps } from '../types'
+import type { BasicPickerProps, DateOrigin } from '../types'
 import type { FC, KeyboardEvent, MouseEvent } from 'react'
 
 export type DaysGridProps = Omit<BasicPickerProps, 'onChange'> & {
@@ -29,8 +29,8 @@ export type DaysGridProps = Omit<BasicPickerProps, 'onChange'> & {
   onPrevMonthKeyPress: () => void
   /* Keyboard handler that allows navigating to the next month from a focused date */
   onNextMonthKeyPress: () => void
-  /* In DATE_RANGE .... */
-  panelRole?: 'left' | 'right'
+  /* In DATE_RANGE From where a date will be selected, left panel or right panel */
+  panelRole?: DateOrigin
   /* Panel size: 'sm' | 'md' | 'lg' */
   size?: UISize
 }
@@ -44,6 +44,7 @@ export type DaysGridProps = Omit<BasicPickerProps, 'onChange'> & {
  * @param onEndDateChangeHandler - In DATE_RANGE picker mode, called on end date change.
  * @param onNextMonthKeyPress
  * @param onPrevMonthKeyPress
+ * @param panelRole - The role of the panel, either 'left' or 'right'.
  * @param size - Panel size: 'sm' | 'md' | 'lg'.
  *
  * @constructor
@@ -55,6 +56,7 @@ const DaysGrid: FC<DaysGridProps> = ({
   onEndDateChangeHandler,
   onNextMonthKeyPress,
   onPrevMonthKeyPress,
+  panelRole,
   size = 'md',
 }) => {
   // State: Focus managed using arrows
@@ -84,6 +86,8 @@ const DaysGrid: FC<DaysGridProps> = ({
     setTempStartDate,
     setTempEndDate,
     isSelectingRange,
+    setStartDateOrigin,
+    setEndDateOrigin,
   } = useDateRangePanel()
 
   /**
@@ -108,21 +112,26 @@ const DaysGrid: FC<DaysGridProps> = ({
       }
 
       if (tempStartDate === undefined) {
+        if (panelRole) setStartDateOrigin(panelRole)
         setTempStartDate(clickedTs)
         onStartDateChangeHandler?.(clickedTs)
         return
       }
 
       if (clickedTs >= tempStartDate) {
+        if (panelRole) setEndDateOrigin(panelRole)
         onEndDateChangeHandler?.(clickedTs)
       }
     },
     [
-      onDateChange,
-      setTempStartDate,
-      tempStartDate,
       pickerMode,
+      tempStartDate,
+      onDateChange,
+      setStartDateOrigin,
+      panelRole,
+      setTempStartDate,
       onStartDateChangeHandler,
+      setEndDateOrigin,
       onEndDateChangeHandler,
     ]
   )
@@ -478,7 +487,7 @@ const DaysGrid: FC<DaysGridProps> = ({
                       size={size}
                       value={value}
                     >
-                      {new Date(value + finalOffset).getDate()}
+                      {new Date(value).getDate()}
                     </DaysGridCell>
                   </td>
                 )

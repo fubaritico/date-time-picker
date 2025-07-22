@@ -75,7 +75,7 @@ const runTests = (timezone?: Timezone) => {
 
     it('should show days panel content on icon click', async () => {
       const {
-        todayTimestamp,
+        localeTodayTimestamp,
         render: { container },
       } = setupUncontrolledPicker(
         fixedDate,
@@ -86,8 +86,9 @@ const runTests = (timezone?: Timezone) => {
       )
       if (timezone) expect(container).toMatchSnapshot()
 
-      const currentMonth = getLongMonthNameFromTs(todayTimestamp).toString()
-      const currentYear = getYearFromTs(todayTimestamp).toString()
+      const currentMonth =
+        getLongMonthNameFromTs(localeTodayTimestamp).toString()
+      const currentYear = getYearFromTs(localeTodayTimestamp).toString()
 
       await userEvent.click(screen.getByLabelText('Choose Date'))
 
@@ -111,7 +112,7 @@ const runTests = (timezone?: Timezone) => {
 
     it("should display today's date as an highlighted grid cell (selected on init)", async () => {
       const {
-        todayTimestamp,
+        localeTodayTimestamp,
         render: { baseElement },
       } = setupUncontrolledPicker(
         fixedDate,
@@ -127,9 +128,9 @@ const runTests = (timezone?: Timezone) => {
         expect(baseElement).toMatchSnapshot()
       }
 
-      expect(await screen.findByTestId(todayTimestamp.toString())).toHaveClass(
-        'DaysGridCell today blue md'
-      )
+      expect(
+        await screen.findByTestId(localeTodayTimestamp.toString())
+      ).toHaveClass('DaysGridCell today blue md')
     })
 
     it('should close the days panel on date selection', async () => {
@@ -154,7 +155,7 @@ const runTests = (timezone?: Timezone) => {
 
     it('should display a previously selected date as an slightly highlighted grid cell', async () => {
       const {
-        todayTimestamp,
+        localeTodayTimestamp,
         render: { baseElement },
       } = setupUncontrolledPicker(
         fixedDate,
@@ -163,7 +164,7 @@ const runTests = (timezone?: Timezone) => {
       )
 
       const clickableDate = getFirstDayOfCurrentMonthTs(
-        addMonths(todayTimestamp, 1)
+        addMonths(localeTodayTimestamp, 1)
       )
 
       await userEvent.click(screen.getByLabelText('Choose Date'))
@@ -188,7 +189,7 @@ const runTests = (timezone?: Timezone) => {
     })
 
     it('should show month panel contents on month button click', async () => {
-      const { todayTimestamp } = setupUncontrolledPicker(
+      const { localeTodayTimestamp } = setupUncontrolledPicker(
         fixedDate,
         DateTimePicker as AnyPickerComponent,
         {
@@ -196,8 +197,9 @@ const runTests = (timezone?: Timezone) => {
         }
       )
 
-      const currentMonth = getLongMonthNameFromTs(todayTimestamp).toString()
-      const currentYear = getYearFromTs(todayTimestamp).toString()
+      const currentMonth =
+        getLongMonthNameFromTs(localeTodayTimestamp).toString()
+      const currentYear = getYearFromTs(localeTodayTimestamp).toString()
 
       await userEvent.click(screen.getByLabelText('Choose Date'))
       await userEvent.click(
@@ -216,7 +218,7 @@ const runTests = (timezone?: Timezone) => {
     })
 
     it('should show years panel contents on year button click', async () => {
-      const { todayTimestamp } = setupUncontrolledPicker(
+      const { localeTodayTimestamp } = setupUncontrolledPicker(
         fixedDate,
         DateTimePicker as AnyPickerComponent,
         {
@@ -224,7 +226,7 @@ const runTests = (timezone?: Timezone) => {
         }
       )
 
-      const currentYear = getYearFromTs(todayTimestamp).toString()
+      const currentYear = getYearFromTs(localeTodayTimestamp).toString()
       const years = Array.from({ length: 12 }, (_, i) =>
         (i + parseInt(currentYear, 10)).toString()
       )
@@ -254,14 +256,15 @@ const runTests = (timezone?: Timezone) => {
     })
 
     it('should display selected month on init', async () => {
-      const { todayTimestamp } = setupUncontrolledPicker(
+      const { localeTodayTimestamp } = setupUncontrolledPicker(
         fixedDate,
         DateTimePicker as AnyPickerComponent,
         {
           timezone,
         }
       )
-      const currentMonth = getLongMonthNameFromTs(todayTimestamp).toString()
+      const currentMonth =
+        getLongMonthNameFromTs(localeTodayTimestamp).toString()
 
       await userEvent.click(screen.getByLabelText('Choose Date'))
 
@@ -278,7 +281,7 @@ const runTests = (timezone?: Timezone) => {
     })
 
     it('should display the proper month as selected after selection', async () => {
-      const { todayTimestamp } = setupUncontrolledPicker(
+      const { localeTodayTimestamp } = setupUncontrolledPicker(
         fixedDate,
         DateTimePicker as AnyPickerComponent,
         {
@@ -286,9 +289,10 @@ const runTests = (timezone?: Timezone) => {
         }
       )
 
-      const currentMonth = getLongMonthNameFromTs(todayTimestamp).toString()
+      const currentMonth =
+        getLongMonthNameFromTs(localeTodayTimestamp).toString()
       const monthToBeClicked = getLongMonthNameFromTs(
-        addMonths(todayTimestamp, 1)
+        addMonths(localeTodayTimestamp, 1)
       ).toString()
 
       await userEvent.click(screen.getByLabelText('Choose Date'))
@@ -316,7 +320,7 @@ const runTests = (timezone?: Timezone) => {
     })
 
     it('should display selected year on init', async () => {
-      const { todayTimestamp } = setupUncontrolledPicker(
+      const { localeTodayTimestamp } = setupUncontrolledPicker(
         fixedDate,
         DateTimePicker as AnyPickerComponent,
         {
@@ -324,7 +328,7 @@ const runTests = (timezone?: Timezone) => {
         }
       )
 
-      const currentYear = getYearFromTs(todayTimestamp).toString()
+      const currentYear = getYearFromTs(localeTodayTimestamp).toString()
 
       await userEvent.click(screen.getByLabelText('Choose Date'))
 
@@ -339,7 +343,7 @@ const runTests = (timezone?: Timezone) => {
     })
 
     it('should display the proper year as selected after selection', async () => {
-      const { todayTimestamp } = setupUncontrolledPicker(
+      const { localeTodayTimestamp } = setupUncontrolledPicker(
         fixedDate,
         DateTimePicker as AnyPickerComponent,
         {
@@ -347,9 +351,9 @@ const runTests = (timezone?: Timezone) => {
         }
       )
 
-      const currentYear = getYearFromTs(todayTimestamp).toString()
+      const currentYear = getYearFromTs(localeTodayTimestamp).toString()
       const yearToBeClicked = getYearFromTs(
-        addYears(todayTimestamp, 1)
+        addYears(localeTodayTimestamp, 1)
       ).toString()
 
       await userEvent.click(screen.getByLabelText('Choose Date'))
@@ -378,7 +382,7 @@ const runTests = (timezone?: Timezone) => {
 
     it('should show 12 previous years in panel on previous button click', async () => {
       const {
-        todayTimestamp,
+        localeTodayTimestamp,
         render: { baseElement },
       } = setupUncontrolledPicker(
         fixedDate,
@@ -386,9 +390,9 @@ const runTests = (timezone?: Timezone) => {
         { timezone }
       )
 
-      const currentYear = getYearFromTs(todayTimestamp).toString()
+      const currentYear = getYearFromTs(localeTodayTimestamp).toString()
       const twelveYearAgo = getYearFromTs(
-        subtractYears(todayTimestamp, 12)
+        subtractYears(localeTodayTimestamp, 12)
       ).toString() // 2013
       const years = Array.from(
         { length: 12 },
@@ -420,7 +424,7 @@ const runTests = (timezone?: Timezone) => {
     })
 
     it('should show 12 next years in panel on next button click', async () => {
-      const { todayTimestamp } = setupUncontrolledPicker(
+      const { localeTodayTimestamp } = setupUncontrolledPicker(
         fixedDate,
         DateTimePicker as AnyPickerComponent,
         {
@@ -428,9 +432,9 @@ const runTests = (timezone?: Timezone) => {
         }
       )
 
-      const currentYear = getYearFromTs(todayTimestamp).toString()
+      const currentYear = getYearFromTs(localeTodayTimestamp).toString()
       const yearsFromNow = getYearFromTs(
-        addYears(todayTimestamp, 12)
+        addYears(localeTodayTimestamp, 12)
       ).toString()
       const years = Array.from({ length: 12 }, (_, i) =>
         (i + parseInt(currentYear, 10) + 12).toString()
