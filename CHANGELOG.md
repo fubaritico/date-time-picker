@@ -1,3 +1,13 @@
+## [2.2.1](https://github.com/fubaritico/date-time-picker/compare/v2.2.0...v2.2.1) (2025-07-22)
+
+
+### Bug Fixes
+
+* **input-date:** fix end date input not empty when reselecting start date from panel ([a3ab3bc](https://github.com/fubaritico/date-time-picker/commit/a3ab3bcab432f7f4e746879cfed2cd7edb7bd23c))
+* **input-date:** fix inputs not showing expected date after typing other date ([0f63fab](https://github.com/fubaritico/date-time-picker/commit/0f63fab763675e6837a7a887f644772377be019a))
+
+
+
 # [2.2.0](https://github.com/fubaritico/date-time-picker/compare/v2.1.10...v2.2.0) (2025-07-19)
 
 
