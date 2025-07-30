@@ -1,3 +1,12 @@
+## [2.2.4](https://github.com/fubaritico/date-time-picker/compare/v2.2.3...v2.2.4) (2025-07-30)
+
+
+### Bug Fixes
+
+* **date-range:** fixed unwanted time offset when uncontrolled ([9da891e](https://github.com/fubaritico/date-time-picker/commit/9da891eb12d5c7e205297c5128ffc110d8e0eb69))
+
+
+
 ## [2.2.3](https://github.com/fubaritico/date-time-picker/compare/v2.2.2...v2.2.3) (2025-07-22)
 
 
