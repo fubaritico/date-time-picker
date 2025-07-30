@@ -1,3 +1,7 @@
+## [2.2.5](https://github.com/fubaritico/date-time-picker/compare/v2.2.4...v2.2.5) (2025-07-30)
+
+
+
 ## [2.2.4](https://github.com/fubaritico/date-time-picker/compare/v2.2.3...v2.2.4) (2025-07-30)
 
 
