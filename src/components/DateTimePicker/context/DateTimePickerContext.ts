@@ -7,18 +7,18 @@ import type { PickerState } from '../types'
 const DateTimePickerContext = createContext<PickerState>({
   finalOffset: 0,
   ignoreClickAwayRef: { current: null },
-  innerDate: new Date().getTime(),
-  innerDateRange: undefined,
+  localeDate: new Date().getTime(),
+  localeDateRange: undefined,
   isControlled: false,
   locale: 'en',
   panelRect: new DOMRectReadOnly(),
   panelView: PanelView.DAYS,
   setIgnoreClickAwayRef: () => {},
-  setInnerDate: () => {},
+  setLocaleDate: () => {},
   setPanelRect: () => {},
   setPanelView: () => {},
-  setInnerDateRange: () => {},
-  dateRangePickerOffsets: [],
+  setLocaleDateRange: () => {},
+  dateRangePickerTimeOffsets: [],
 })
 
 export default DateTimePickerContext

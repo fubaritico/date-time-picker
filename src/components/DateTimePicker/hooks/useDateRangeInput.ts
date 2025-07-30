@@ -3,8 +3,8 @@ import { ChangeEvent, useCallback, useEffect, useMemo, useState } from 'react'
 import {
   convertFormattedDateToTimestamp,
   formatTimestampForTextInput,
-  getActualOffset,
   getMillisecondsSinceMidnight,
+  getTimeOffset,
 } from '@utils'
 
 import { DATE_FORMAT } from '../formats'
@@ -32,14 +32,14 @@ export default function useDateRangeInput({
   onDateChange,
 }: DateRangeInputHookOptions) {
   const {
-    innerDateRange,
+    localeDateRange,
     isControlled,
     locale,
     maxDate,
     minDate,
     pickerMode,
-    setInnerDateRange,
-    dateRangePickerOffsets,
+    setLocaleDateRange,
+    dateRangePickerTimeOffsets,
   } = useDateTimePicker()
   // INPUT STATE
   const [inputMaskInstance, setInputMaskInstance] =
@@ -48,8 +48,8 @@ export default function useDateRangeInput({
   const [innerErrors, setInnerErrors] = useState<string[]>()
   // DERIVED STATE TO EXTRACT THE RIGHT DATE FROM THE RANGE
   const date = useMemo(
-    () => (inputRole === 'start' ? innerDateRange?.[0] : innerDateRange?.[1]),
-    [innerDateRange, inputRole]
+    () => (inputRole === 'start' ? localeDateRange?.[0] : localeDateRange?.[1]),
+    [localeDateRange, inputRole]
   )
 
   /**
@@ -58,16 +58,16 @@ export default function useDateRangeInput({
   const offset = useMemo(
     () =>
       inputRole === 'start'
-        ? dateRangePickerOffsets[0]
-        : dateRangePickerOffsets[1],
-    [dateRangePickerOffsets, inputRole]
+        ? dateRangePickerTimeOffsets[0]
+        : dateRangePickerTimeOffsets[1],
+    [dateRangePickerTimeOffsets, inputRole]
   )
 
   /**
    * Gets the actual offset combining the local offset and the GMT offset.
    */
   const dateMsOffset = useMemo(() => {
-    return getActualOffset(offset.timezoneMsOffset, offset.localeMsOffset)
+    return getTimeOffset(offset.timezoneMsOffset, offset.localeMsOffset)
   }, [offset.localeMsOffset, offset.timezoneMsOffset])
 
   /**
@@ -165,33 +165,39 @@ export default function useDateRangeInput({
 
         // Preparing the new start date to be emitted, also re-adapt the end date to get the correct time offset
         const newStarDate = (() => {
-          if (innerDateRange?.[0] && newDate === innerDateRange[0] - msOffset)
-            return innerDateRange[0] - msOffset
+          if (localeDateRange?.[0] && newDate === localeDateRange[0] - msOffset)
+            return localeDateRange[0] - msOffset
           if (inputRole === 'start') {
             // If the input is 'start', we need to ensure the end date is not before the start date
-            return innerDateRange?.[1] && newDate > innerDateRange[1] - msOffset
-              ? innerDateRange[0]
-                ? innerDateRange[0] - msOffset
+            return localeDateRange?.[1] &&
+              newDate > localeDateRange[1] - msOffset
+              ? localeDateRange[0]
+                ? localeDateRange[0] - msOffset
                 : undefined
               : newDate
           }
           // If the input is 'end', we need to ensure the start date is not after the end date
-          return innerDateRange?.[0] ? innerDateRange[0] - msOffset : undefined
+          return localeDateRange?.[0]
+            ? localeDateRange[0] - msOffset
+            : undefined
         })()
 
         // Preparing the new end date to be emitted, also re-adapt the start date to get the correct time offset
         const newEndDate = (() => {
-          if (innerDateRange?.[1] && newDate === innerDateRange[1] - msOffset)
-            return innerDateRange[1] - msOffset
+          if (localeDateRange?.[1] && newDate === localeDateRange[1] - msOffset)
+            return localeDateRange[1] - msOffset
           if (inputRole === 'end') {
-            return innerDateRange?.[0] && newDate < innerDateRange[0] - msOffset
-              ? innerDateRange[1]
-                ? innerDateRange[1] - msOffset
+            return localeDateRange?.[0] &&
+              newDate < localeDateRange[0] - msOffset
+              ? localeDateRange[1]
+                ? localeDateRange[1] - msOffset
                 : undefined
               : newDate
           }
 
-          return innerDateRange?.[1] ? innerDateRange[1] - msOffset : undefined
+          return localeDateRange?.[1]
+            ? localeDateRange[1] - msOffset
+            : undefined
         })()
 
         const newDateRange: DateRange = [newStarDate, newEndDate]
@@ -213,7 +219,7 @@ export default function useDateRangeInput({
           if (isControlled) {
             onDateChange?.(newDateRange)
           } else {
-            setInnerDateRange(newDateRange)
+            setLocaleDateRange(newDateRange)
           }
         }
       }
@@ -227,11 +233,11 @@ export default function useDateRangeInput({
       maxDate,
       dateMsOffset,
       inputRole,
-      innerDateRange,
+      localeDateRange,
       locale,
       isControlled,
       onDateChange,
-      setInnerDateRange,
+      setLocaleDateRange,
     ]
   )
 

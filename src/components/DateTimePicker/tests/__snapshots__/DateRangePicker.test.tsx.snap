@@ -315,7 +315,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1740929293000"
                             data-focus="false"
                             data-test="1740929293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             2
                           </button>
@@ -330,7 +330,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1741015693000"
                             data-focus="false"
                             data-test="1741015693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             3
                           </button>
@@ -343,7 +343,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1741102093000"
                             data-focus="false"
                             data-test="1741102093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             4
                           </button>
@@ -356,7 +356,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1741188493000"
                             data-focus="false"
                             data-test="1741188493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             5
                           </button>
@@ -369,7 +369,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1741274893000"
                             data-focus="false"
                             data-test="1741274893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             6
                           </button>
@@ -382,7 +382,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1741361293000"
                             data-focus="false"
                             data-test="1741361293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             7
                           </button>
@@ -395,7 +395,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1741447693000"
                             data-focus="false"
                             data-test="1741447693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             8
                           </button>
@@ -408,7 +408,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1741534093000"
                             data-focus="false"
                             data-test="1741534093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             9
                           </button>
@@ -423,7 +423,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1741620493000"
                             data-focus="false"
                             data-test="1741620493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             10
                           </button>
@@ -436,7 +436,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1741706893000"
                             data-focus="false"
                             data-test="1741706893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             11
                           </button>
@@ -449,7 +449,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1741793293000"
                             data-focus="false"
                             data-test="1741793293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             12
                           </button>
@@ -462,7 +462,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1741879693000"
                             data-focus="false"
                             data-test="1741879693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             13
                           </button>
@@ -475,7 +475,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1741966093000"
                             data-focus="false"
                             data-test="1741966093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             14
                           </button>
@@ -490,7 +490,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1742052493000"
                             data-focus="false"
                             data-test="1742052493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             15
                           </button>
@@ -503,7 +503,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1742138893000"
                             data-focus="false"
                             data-test="1742138893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             16
                           </button>
@@ -518,7 +518,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1742225293000"
                             data-focus="false"
                             data-test="1742225293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             17
                           </button>
@@ -531,7 +531,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1742311693000"
                             data-focus="false"
                             data-test="1742311693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             18
                           </button>
@@ -544,7 +544,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1742398093000"
                             data-focus="false"
                             data-test="1742398093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             19
                           </button>
@@ -557,7 +557,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1742484493000"
                             data-focus="false"
                             data-test="1742484493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             20
                           </button>
@@ -570,7 +570,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1742570893000"
                             data-focus="false"
                             data-test="1742570893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             21
                           </button>
@@ -583,7 +583,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1742657293000"
                             data-focus="false"
                             data-test="1742657293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             22
                           </button>
@@ -596,7 +596,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1742743693000"
                             data-focus="false"
                             data-test="1742743693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             23
                           </button>
@@ -611,7 +611,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1742830093000"
                             data-focus="false"
                             data-test="1742830093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             24
                           </button>
@@ -624,7 +624,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1742916493000"
                             data-focus="false"
                             data-test="1742916493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             25
                           </button>
@@ -637,7 +637,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1743002893000"
                             data-focus="false"
                             data-test="1743002893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             26
                           </button>
@@ -650,7 +650,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1743089293000"
                             data-focus="false"
                             data-test="1743089293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             27
                           </button>
@@ -663,7 +663,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1743175693000"
                             data-focus="false"
                             data-test="1743175693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             28
                           </button>
@@ -676,7 +676,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1743262093000"
                             data-focus="false"
                             data-test="1743262093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             29
                           </button>
@@ -689,7 +689,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1743348493000"
                             data-focus="false"
                             data-test="1743348493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             30
                           </button>
@@ -704,7 +704,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1743434893000"
                             data-focus="false"
                             data-test="1743434893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             31
                           </button>
@@ -856,7 +856,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1743607693000"
                             data-focus="false"
                             data-test="1743607693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             2
                           </button>
@@ -869,7 +869,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1743694093000"
                             data-focus="false"
                             data-test="1743694093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             3
                           </button>
@@ -882,7 +882,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1743780493000"
                             data-focus="false"
                             data-test="1743780493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             4
                           </button>
@@ -895,7 +895,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1743866893000"
                             data-focus="false"
                             data-test="1743866893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             5
                           </button>
@@ -908,7 +908,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1743953293000"
                             data-focus="false"
                             data-test="1743953293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             6
                           </button>
@@ -923,7 +923,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1744039693000"
                             data-focus="false"
                             data-test="1744039693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             7
                           </button>
@@ -936,7 +936,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1744126093000"
                             data-focus="false"
                             data-test="1744126093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             8
                           </button>
@@ -949,7 +949,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1744212493000"
                             data-focus="false"
                             data-test="1744212493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             9
                           </button>
@@ -962,7 +962,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1744298893000"
                             data-focus="false"
                             data-test="1744298893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             10
                           </button>
@@ -975,7 +975,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1744385293000"
                             data-focus="false"
                             data-test="1744385293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             11
                           </button>
@@ -988,7 +988,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1744471693000"
                             data-focus="false"
                             data-test="1744471693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             12
                           </button>
@@ -1001,7 +1001,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1744558093000"
                             data-focus="false"
                             data-test="1744558093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             13
                           </button>
@@ -1016,7 +1016,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1744644493000"
                             data-focus="false"
                             data-test="1744644493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             14
                           </button>
@@ -1029,7 +1029,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1744730893000"
                             data-focus="false"
                             data-test="1744730893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             15
                           </button>
@@ -1042,7 +1042,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1744817293000"
                             data-focus="false"
                             data-test="1744817293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             16
                           </button>
@@ -1055,7 +1055,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1744903693000"
                             data-focus="false"
                             data-test="1744903693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             17
                           </button>
@@ -1068,7 +1068,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1744990093000"
                             data-focus="false"
                             data-test="1744990093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             18
                           </button>
@@ -1081,7 +1081,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1745076493000"
                             data-focus="false"
                             data-test="1745076493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             19
                           </button>
@@ -1094,7 +1094,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1745162893000"
                             data-focus="false"
                             data-test="1745162893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             20
                           </button>
@@ -1109,7 +1109,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1745249293000"
                             data-focus="false"
                             data-test="1745249293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             21
                           </button>
@@ -1122,7 +1122,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1745335693000"
                             data-focus="false"
                             data-test="1745335693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             22
                           </button>
@@ -1135,7 +1135,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1745422093000"
                             data-focus="false"
                             data-test="1745422093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             23
                           </button>
@@ -1148,7 +1148,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1745508493000"
                             data-focus="false"
                             data-test="1745508493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             24
                           </button>
@@ -1161,7 +1161,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1745594893000"
                             data-focus="false"
                             data-test="1745594893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             25
                           </button>
@@ -1174,7 +1174,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1745681293000"
                             data-focus="false"
                             data-test="1745681293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             26
                           </button>
@@ -1187,7 +1187,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1745767693000"
                             data-focus="false"
                             data-test="1745767693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             27
                           </button>
@@ -1202,7 +1202,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1745854093000"
                             data-focus="false"
                             data-test="1745854093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             28
                           </button>
@@ -1215,7 +1215,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1745940493000"
                             data-focus="false"
                             data-test="1745940493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             29
                           </button>
@@ -1228,7 +1228,7 @@ exports[`DateRangePicker Controlled should render 2`] = `
                             data-date="1746026893000"
                             data-focus="false"
                             data-test="1746026893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             30
                           </button>
@@ -1654,7 +1654,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1740918493000"
                             data-focus="false"
                             data-test="1740918493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             2
                           </button>
@@ -1669,7 +1669,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1741004893000"
                             data-focus="false"
                             data-test="1741004893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             3
                           </button>
@@ -1682,7 +1682,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1741091293000"
                             data-focus="false"
                             data-test="1741091293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             4
                           </button>
@@ -1695,7 +1695,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1741177693000"
                             data-focus="false"
                             data-test="1741177693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             5
                           </button>
@@ -1708,7 +1708,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1741264093000"
                             data-focus="false"
                             data-test="1741264093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             6
                           </button>
@@ -1721,7 +1721,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1741350493000"
                             data-focus="false"
                             data-test="1741350493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             7
                           </button>
@@ -1734,7 +1734,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1741436893000"
                             data-focus="false"
                             data-test="1741436893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             8
                           </button>
@@ -1747,7 +1747,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1741523293000"
                             data-focus="false"
                             data-test="1741523293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             9
                           </button>
@@ -1762,7 +1762,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1741609693000"
                             data-focus="false"
                             data-test="1741609693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             10
                           </button>
@@ -1775,7 +1775,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1741696093000"
                             data-focus="false"
                             data-test="1741696093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             11
                           </button>
@@ -1788,7 +1788,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1741782493000"
                             data-focus="false"
                             data-test="1741782493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             12
                           </button>
@@ -1801,7 +1801,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1741868893000"
                             data-focus="false"
                             data-test="1741868893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             13
                           </button>
@@ -1814,7 +1814,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1741955293000"
                             data-focus="false"
                             data-test="1741955293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             14
                           </button>
@@ -1829,7 +1829,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1742041693000"
                             data-focus="false"
                             data-test="1742041693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             15
                           </button>
@@ -1842,7 +1842,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1742128093000"
                             data-focus="false"
                             data-test="1742128093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             16
                           </button>
@@ -1857,7 +1857,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1742214493000"
                             data-focus="false"
                             data-test="1742214493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             17
                           </button>
@@ -1870,7 +1870,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1742300893000"
                             data-focus="false"
                             data-test="1742300893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             18
                           </button>
@@ -1883,7 +1883,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1742387293000"
                             data-focus="false"
                             data-test="1742387293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             19
                           </button>
@@ -1896,7 +1896,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1742473693000"
                             data-focus="false"
                             data-test="1742473693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             20
                           </button>
@@ -1909,7 +1909,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1742560093000"
                             data-focus="false"
                             data-test="1742560093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             21
                           </button>
@@ -1922,7 +1922,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1742646493000"
                             data-focus="false"
                             data-test="1742646493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             22
                           </button>
@@ -1935,7 +1935,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1742732893000"
                             data-focus="false"
                             data-test="1742732893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             23
                           </button>
@@ -1950,7 +1950,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1742819293000"
                             data-focus="false"
                             data-test="1742819293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             24
                           </button>
@@ -1963,7 +1963,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1742905693000"
                             data-focus="false"
                             data-test="1742905693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             25
                           </button>
@@ -1976,7 +1976,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1742992093000"
                             data-focus="false"
                             data-test="1742992093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             26
                           </button>
@@ -1989,7 +1989,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1743078493000"
                             data-focus="false"
                             data-test="1743078493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             27
                           </button>
@@ -2002,7 +2002,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1743164893000"
                             data-focus="false"
                             data-test="1743164893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             28
                           </button>
@@ -2015,7 +2015,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1743251293000"
                             data-focus="false"
                             data-test="1743251293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             29
                           </button>
@@ -2028,7 +2028,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1743337693000"
                             data-focus="false"
                             data-test="1743337693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             30
                           </button>
@@ -2043,7 +2043,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1743424093000"
                             data-focus="false"
                             data-test="1743424093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             31
                           </button>
@@ -2195,7 +2195,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1743596893000"
                             data-focus="false"
                             data-test="1743596893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             2
                           </button>
@@ -2208,7 +2208,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1743683293000"
                             data-focus="false"
                             data-test="1743683293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             3
                           </button>
@@ -2221,7 +2221,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1743769693000"
                             data-focus="false"
                             data-test="1743769693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             4
                           </button>
@@ -2234,7 +2234,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1743856093000"
                             data-focus="false"
                             data-test="1743856093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             5
                           </button>
@@ -2247,7 +2247,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1743942493000"
                             data-focus="false"
                             data-test="1743942493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             6
                           </button>
@@ -2262,7 +2262,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1744028893000"
                             data-focus="false"
                             data-test="1744028893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             7
                           </button>
@@ -2275,7 +2275,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1744115293000"
                             data-focus="false"
                             data-test="1744115293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             8
                           </button>
@@ -2288,7 +2288,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1744201693000"
                             data-focus="false"
                             data-test="1744201693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             9
                           </button>
@@ -2301,7 +2301,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1744288093000"
                             data-focus="false"
                             data-test="1744288093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             10
                           </button>
@@ -2314,7 +2314,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1744374493000"
                             data-focus="false"
                             data-test="1744374493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             11
                           </button>
@@ -2327,7 +2327,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1744460893000"
                             data-focus="false"
                             data-test="1744460893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             12
                           </button>
@@ -2340,7 +2340,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1744547293000"
                             data-focus="false"
                             data-test="1744547293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             13
                           </button>
@@ -2355,7 +2355,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1744633693000"
                             data-focus="false"
                             data-test="1744633693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             14
                           </button>
@@ -2368,7 +2368,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1744720093000"
                             data-focus="false"
                             data-test="1744720093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             15
                           </button>
@@ -2381,7 +2381,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1744806493000"
                             data-focus="false"
                             data-test="1744806493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             16
                           </button>
@@ -2394,7 +2394,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1744892893000"
                             data-focus="false"
                             data-test="1744892893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             17
                           </button>
@@ -2407,7 +2407,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1744979293000"
                             data-focus="false"
                             data-test="1744979293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             18
                           </button>
@@ -2420,7 +2420,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1745065693000"
                             data-focus="false"
                             data-test="1745065693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             19
                           </button>
@@ -2433,7 +2433,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1745152093000"
                             data-focus="false"
                             data-test="1745152093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             20
                           </button>
@@ -2448,7 +2448,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1745238493000"
                             data-focus="false"
                             data-test="1745238493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             21
                           </button>
@@ -2461,7 +2461,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1745324893000"
                             data-focus="false"
                             data-test="1745324893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             22
                           </button>
@@ -2474,7 +2474,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1745411293000"
                             data-focus="false"
                             data-test="1745411293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             23
                           </button>
@@ -2487,7 +2487,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1745497693000"
                             data-focus="false"
                             data-test="1745497693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             24
                           </button>
@@ -2500,7 +2500,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1745584093000"
                             data-focus="false"
                             data-test="1745584093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             25
                           </button>
@@ -2513,7 +2513,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1745670493000"
                             data-focus="false"
                             data-test="1745670493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             26
                           </button>
@@ -2526,7 +2526,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1745756893000"
                             data-focus="false"
                             data-test="1745756893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             27
                           </button>
@@ -2541,7 +2541,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1745843293000"
                             data-focus="false"
                             data-test="1745843293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             28
                           </button>
@@ -2554,7 +2554,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1745929693000"
                             data-focus="false"
                             data-test="1745929693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             29
                           </button>
@@ -2567,7 +2567,7 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             data-date="1746016093000"
                             data-focus="false"
                             data-test="1746016093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             30
                           </button>
@@ -2993,7 +2993,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1740875293000"
                             data-focus="false"
                             data-test="1740875293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             2
                           </button>
@@ -3008,7 +3008,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1740961693000"
                             data-focus="false"
                             data-test="1740961693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             3
                           </button>
@@ -3021,7 +3021,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1741048093000"
                             data-focus="false"
                             data-test="1741048093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             4
                           </button>
@@ -3034,7 +3034,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1741134493000"
                             data-focus="false"
                             data-test="1741134493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             5
                           </button>
@@ -3047,7 +3047,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1741220893000"
                             data-focus="false"
                             data-test="1741220893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             6
                           </button>
@@ -3060,7 +3060,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1741307293000"
                             data-focus="false"
                             data-test="1741307293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             7
                           </button>
@@ -3073,7 +3073,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1741393693000"
                             data-focus="false"
                             data-test="1741393693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             8
                           </button>
@@ -3086,7 +3086,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1741480093000"
                             data-focus="false"
                             data-test="1741480093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             9
                           </button>
@@ -3101,7 +3101,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1741566493000"
                             data-focus="false"
                             data-test="1741566493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             10
                           </button>
@@ -3114,7 +3114,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1741652893000"
                             data-focus="false"
                             data-test="1741652893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             11
                           </button>
@@ -3127,7 +3127,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1741739293000"
                             data-focus="false"
                             data-test="1741739293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             12
                           </button>
@@ -3140,7 +3140,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1741825693000"
                             data-focus="false"
                             data-test="1741825693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             13
                           </button>
@@ -3153,7 +3153,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1741912093000"
                             data-focus="false"
                             data-test="1741912093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             14
                           </button>
@@ -3166,7 +3166,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1741998493000"
                             data-focus="false"
                             data-test="1741998493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             15
                           </button>
@@ -3181,7 +3181,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1742084893000"
                             data-focus="false"
                             data-test="1742084893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             16
                           </button>
@@ -3196,7 +3196,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1742171293000"
                             data-focus="false"
                             data-test="1742171293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             17
                           </button>
@@ -3209,7 +3209,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1742257693000"
                             data-focus="false"
                             data-test="1742257693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             18
                           </button>
@@ -3222,7 +3222,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1742344093000"
                             data-focus="false"
                             data-test="1742344093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             19
                           </button>
@@ -3235,7 +3235,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1742430493000"
                             data-focus="false"
                             data-test="1742430493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             20
                           </button>
@@ -3248,7 +3248,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1742516893000"
                             data-focus="false"
                             data-test="1742516893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             21
                           </button>
@@ -3261,7 +3261,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1742603293000"
                             data-focus="false"
                             data-test="1742603293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             22
                           </button>
@@ -3274,7 +3274,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1742689693000"
                             data-focus="false"
                             data-test="1742689693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             23
                           </button>
@@ -3289,7 +3289,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1742776093000"
                             data-focus="false"
                             data-test="1742776093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             24
                           </button>
@@ -3302,7 +3302,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1742862493000"
                             data-focus="false"
                             data-test="1742862493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             25
                           </button>
@@ -3315,7 +3315,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1742948893000"
                             data-focus="false"
                             data-test="1742948893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             26
                           </button>
@@ -3328,7 +3328,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1743035293000"
                             data-focus="false"
                             data-test="1743035293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             27
                           </button>
@@ -3341,7 +3341,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1743121693000"
                             data-focus="false"
                             data-test="1743121693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             28
                           </button>
@@ -3354,7 +3354,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1743208093000"
                             data-focus="false"
                             data-test="1743208093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             29
                           </button>
@@ -3367,7 +3367,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1743294493000"
                             data-focus="false"
                             data-test="1743294493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             30
                           </button>
@@ -3382,7 +3382,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1743380893000"
                             data-focus="false"
                             data-test="1743380893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             31
                           </button>
@@ -3534,7 +3534,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1743553693000"
                             data-focus="false"
                             data-test="1743553693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             2
                           </button>
@@ -3547,7 +3547,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1743640093000"
                             data-focus="false"
                             data-test="1743640093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             3
                           </button>
@@ -3560,7 +3560,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1743726493000"
                             data-focus="false"
                             data-test="1743726493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             4
                           </button>
@@ -3573,7 +3573,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1743812893000"
                             data-focus="false"
                             data-test="1743812893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             5
                           </button>
@@ -3586,7 +3586,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1743899293000"
                             data-focus="false"
                             data-test="1743899293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             6
                           </button>
@@ -3601,7 +3601,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1743985693000"
                             data-focus="false"
                             data-test="1743985693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             7
                           </button>
@@ -3614,7 +3614,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1744072093000"
                             data-focus="false"
                             data-test="1744072093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             8
                           </button>
@@ -3627,7 +3627,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1744158493000"
                             data-focus="false"
                             data-test="1744158493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             9
                           </button>
@@ -3640,7 +3640,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1744244893000"
                             data-focus="false"
                             data-test="1744244893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             10
                           </button>
@@ -3653,7 +3653,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1744331293000"
                             data-focus="false"
                             data-test="1744331293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             11
                           </button>
@@ -3666,7 +3666,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1744417693000"
                             data-focus="false"
                             data-test="1744417693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             12
                           </button>
@@ -3679,7 +3679,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1744504093000"
                             data-focus="false"
                             data-test="1744504093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             13
                           </button>
@@ -3694,7 +3694,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1744590493000"
                             data-focus="false"
                             data-test="1744590493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             14
                           </button>
@@ -3707,7 +3707,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1744676893000"
                             data-focus="false"
                             data-test="1744676893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             15
                           </button>
@@ -3720,7 +3720,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1744763293000"
                             data-focus="false"
                             data-test="1744763293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             16
                           </button>
@@ -3733,7 +3733,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1744849693000"
                             data-focus="false"
                             data-test="1744849693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             17
                           </button>
@@ -3746,7 +3746,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1744936093000"
                             data-focus="false"
                             data-test="1744936093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             18
                           </button>
@@ -3759,7 +3759,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1745022493000"
                             data-focus="false"
                             data-test="1745022493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             19
                           </button>
@@ -3772,7 +3772,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1745108893000"
                             data-focus="false"
                             data-test="1745108893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             20
                           </button>
@@ -3787,7 +3787,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1745195293000"
                             data-focus="false"
                             data-test="1745195293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             21
                           </button>
@@ -3800,7 +3800,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1745281693000"
                             data-focus="false"
                             data-test="1745281693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             22
                           </button>
@@ -3813,7 +3813,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1745368093000"
                             data-focus="false"
                             data-test="1745368093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             23
                           </button>
@@ -3826,7 +3826,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1745454493000"
                             data-focus="false"
                             data-test="1745454493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             24
                           </button>
@@ -3839,7 +3839,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1745540893000"
                             data-focus="false"
                             data-test="1745540893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             25
                           </button>
@@ -3852,7 +3852,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1745627293000"
                             data-focus="false"
                             data-test="1745627293000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             26
                           </button>
@@ -3865,7 +3865,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1745713693000"
                             data-focus="false"
                             data-test="1745713693000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             27
                           </button>
@@ -3880,7 +3880,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1745800093000"
                             data-focus="false"
                             data-test="1745800093000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             28
                           </button>
@@ -3893,7 +3893,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1745886493000"
                             data-focus="false"
                             data-test="1745886493000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             29
                           </button>
@@ -3906,7 +3906,7 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             data-date="1745972893000"
                             data-focus="false"
                             data-test="1745972893000"
-                            tabindex="-1"
+                            tabindex="0"
                           >
                             30
                           </button>

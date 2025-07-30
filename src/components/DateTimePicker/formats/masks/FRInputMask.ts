@@ -15,8 +15,8 @@ export default class FRInputMask extends AbstractInputMask {
 
   private months31DaysLong = ['01', '03', '05', '07', '08', '10', '12']
 
-  constructor(innerDate: number, pickerMode: PickerMode) {
-    super(innerDate, pickerMode)
+  constructor(localeDate: number, pickerMode: PickerMode) {
+    super(localeDate, pickerMode)
 
     // Date input mask - default shape DD/MM/YYYY
     const digit = /[0-9]/

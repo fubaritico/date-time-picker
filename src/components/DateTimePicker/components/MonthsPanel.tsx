@@ -40,20 +40,20 @@ const MonthsPanel: FC<MonthsPanelProps> = ({
   onDateChange,
   size,
 }) => {
-  const { color, innerDate, finalOffset, locale } = useDateTimePicker()
+  const { color, localeDate, finalOffset, locale } = useDateTimePicker()
   const panelRef = usePanelDomRect()
   // State: Focus managed using arrows
   const [keyboardFocusedIndex, setKeyboardFocusedIndex] = useState<number>(-1)
   // State: Inner date
   const [date, setDate] = useState<number>(
-    innerDate ?? Date.now() + finalOffset
+    localeDate ?? Date.now() + finalOffset
   )
 
   const gridRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    setDate(innerDate ?? Date.now() + finalOffset)
-  }, [innerDate, finalOffset])
+    setDate(localeDate ?? Date.now() + finalOffset)
+  }, [localeDate, finalOffset])
 
   /**
    * Memoized array of Unix timestamps for each month of the year.

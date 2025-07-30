@@ -71,17 +71,16 @@ const Panel: FC<PanelProps> = ({
   triggerRef,
 }) => {
   const {
-    dateRangePickerOffsets,
+    dateRangePickerTimeOffsets,
     finalOffset,
     pickerMode,
     isControlled,
     hasLabel,
-    innerDateRange,
+    localeDateRange,
     panelRect,
     panelView,
     setPanelView,
-    setInnerDate,
-    setInnerDateRange,
+    setLocaleDate,
     ignoreClickAwayRef,
   } = useDateTimePicker()
 
@@ -216,7 +215,7 @@ const Panel: FC<PanelProps> = ({
    * If the component is controlled, the passed callback is called. Otherwise, the date is set in the context.
    * IMPORTANT: See if the controlled mechanism is needed. (for now, it's only used in storybook)
    *
-   * @param date Date as formatted string in ISO 8601: "YYYY-MM-DD" depending on calendar mode, defaults to today
+   * @param date Date as a timestamp in milliseconds (offset is not removed)
    * @param from The panel view from which the date is selected
    */
   const handleOnDateChange = (date: number, from?: PanelView) => {
@@ -225,7 +224,7 @@ const Panel: FC<PanelProps> = ({
     if (isControlled) {
       onChange?.(date - finalOffset)
     } else {
-      setInnerDate(date)
+      setLocaleDate(date)
     }
     if (panelView === PanelView.DAYS) onClose?.()
   }
@@ -234,17 +233,13 @@ const Panel: FC<PanelProps> = ({
    * On date range selection, the calendar is closed when conditions are met:
    * the end date is greater than the start date.
    *
-   * If the component is controlled, the passed callback is called.
-   * Otherwise, the date range will be updated in the state.
+   * If the component is controlled, the passed callback is called and emits the dates in UTC time.
    *
-   * @param dateRange
-   *   onDateRangeChange?: (date: DateRange) => void
+   * @param dateRange - Array of two dates representing the start and end date of the range in UTC time
    */
   const handleOnDateRangeChange = (dateRange: DateRange) => {
     if (isControlled) {
       onDateRangeChange?.(dateRange)
-    } else {
-      setInnerDateRange(dateRange)
     }
 
     // Close the panel only if the date range is valid
@@ -297,8 +292,8 @@ const Panel: FC<PanelProps> = ({
           >
             {pickerMode === 'DATERANGE' && (
               <DateRangePanelProvider
-                dateRange={innerDateRange}
-                dateRangePickerOffsets={dateRangePickerOffsets}
+                dateRange={localeDateRange}
+                dateRangePickerTimeOffsets={dateRangePickerTimeOffsets}
               >
                 <DateRangePanel
                   size={size}

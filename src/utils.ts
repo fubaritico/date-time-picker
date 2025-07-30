@@ -158,15 +158,24 @@ export const addHours = (ts?: number, hours = 1): number => {
 
 /**
  * Will return the timestamp corresponding to the first instant of the month
- * @param ts
+ *
+ * @param {number} ts - number representing a unix timestamp
+ * @param {number} offset - number representing the offset from UTC in milliseconds
+ * @throws {Error} if the timestamp is invalid
+ *
+ * @returns {number} timestamp of the first instant of the month
+ *
  */
-export const getFirstInstantOfMonth = (ts?: number): number => {
+export const getFirstInstantOfMonth = (
+  ts?: number,
+  offset?: number
+): number => {
   if (!ts || !checkTsValidity(ts)) {
     throw new Error('[getFirstInstantOfMonth] Invalid timestamp')
   }
 
-  const date = new Date(ts)
-  date.setDate(1) // Set to the first day of the month
+  const date = new Date(ts + (offset ?? 0))
+  date.setDate(1)
 
   return date.getTime()
 }
@@ -234,16 +243,20 @@ export const getMaxTimeOfDayLessOneHour = (ts?: number): number => {
  * Will return the timestamp corresponding to the first day of the previous month
  *
  * @param {number} ts - number representing a unix timestamp
+ * @param {number} offset - number representing the offset from UTC in milliseconds
  * @throws {Error} if the timestamp is invalid
  *
  * @returns {number} timestamp of the first day of the previous month
  */
-export const getFirstDayOfCurrentMonthTs = (ts: number): number => {
+export const getFirstDayOfCurrentMonthTs = (
+  ts: number,
+  offset?: number
+): number => {
   if (!checkTsValidity(ts)) {
     throw new Error('[getFirstDayOfCurrentMonthTs] Invalid timestamp')
   }
 
-  const date = new Date(ts)
+  const date = new Date(ts + (offset ?? 0))
   date.setDate(1)
 
   return date.getTime()
@@ -348,16 +361,20 @@ export const getDayOfCurrentMonthTs = (ts: number, day: number): number => {
  * Will return the timestamp corresponding to the end of the current month
  *
  * @param {number} ts - number representing a unix timestamp
+ * @param {number} offset - number representing the offset from UTC in milliseconds
  * @throws {Error} if the timestamp is invalid
  *
  * @returns {number} timestamp of the last day of the current month
  */
-export const getLastDayOfCurrentMonthTs = (ts: number): number => {
+export const getLastDayOfCurrentMonthTs = (
+  ts: number,
+  offset?: number
+): number => {
   if (!checkTsValidity(ts)) {
     throw new Error('[getLastDayOfCurrentMonthTs] Invalid timestamp')
   }
 
-  const date = new Date(ts)
+  const date = new Date(ts + (offset ?? 0))
   date.setMonth(date.getMonth() + 1) // Move to the next month
   date.setDate(0) // Set to the last day of the previous month (current month)
 
@@ -478,16 +495,20 @@ export const formatToYYYYMMDD = (ts: number): string => {
  * Will return the day of the week by its number for the starting day of the current month
  *
  * @param ts - number representing a unix timestamp
+ * @param {number} offset - number representing the offset from UTC in milliseconds
  * @throws {Error} if the timestamp is invalid
  *
  * @returns {number} day of the week (0 for Sunday, 1 for Monday, etc.)
  */
-export const getStartDayOfWeekOfCurrentMonth = (ts: number): number => {
+export const getStartDayOfWeekOfCurrentMonth = (
+  ts: number,
+  offset?: number
+): number => {
   if (!checkTsValidity(ts)) {
     throw new Error('[getStartDayOfWeekOfCurrentMonth] Invalid timestamp')
   }
 
-  const date = new Date(ts)
+  const date = new Date(ts + (offset ?? 0))
   date.setDate(1) // Set to the first day of the current month
 
   return date.getDay() // Return the day of the week (0 for Sunday, 1 for Monday, etc.)
@@ -689,11 +710,11 @@ export const formatTimestampForTextInput = (
 
   const date = new Date(ts + (offset ?? 0))
 
-  const year = date.getUTCFullYear().toString()
-  const month = String(date.getUTCMonth() + 1).padStart(2, '0')
-  const day = String(date.getUTCDate()).padStart(2, '0')
-  const hours = date.getUTCHours()
-  const minutes = String(date.getUTCMinutes()).padStart(2, '0')
+  const year = date.getFullYear().toString()
+  const month = String(date.getMonth() + 1).padStart(2, '0')
+  const day = String(date.getDate()).padStart(2, '0')
+  const hours = date.getHours()
+  const minutes = String(date.getMinutes()).padStart(2, '0')
   const ampm = hours >= 12 ? 'PM' : 'AM'
   const formattedHours = String(hours % 12 || 12).padStart(2, '0')
   const formatted24Hours = String(hours).padStart(2, '0')
@@ -1139,7 +1160,10 @@ export const formatHumanReadableDate = (
  *
  * @return An object containing the locale and timezone offsets in milliseconds.
  */
-export const computeOffsets = (date?: number, timezone?: Timezone) => {
+export const getLocaleAndTzTimeOffsets = (
+  date?: number,
+  timezone?: Timezone
+) => {
   const d = new Date(date ?? Date.now())
   const utc = new Date(
     Date.UTC(
@@ -1167,7 +1191,7 @@ export const computeOffsets = (date?: number, timezone?: Timezone) => {
  *
  * @return The actual offset in milliseconds.
  */
-export const getActualOffset = (
+export const getTimeOffset = (
   timezoneMsOffset: number,
   localeMsOffset: number
 ): number => {

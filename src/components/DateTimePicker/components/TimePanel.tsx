@@ -28,7 +28,7 @@ export interface TimePanelProps {
   /* Tailwind CSS classes overrides or extensions for more flexibility */
   className?: string
   /* Callback function called when a date is selected */
-  onDateChange?: (innerDate: number, from: PanelView) => void
+  onDateChange?: (localeDate: number, from: PanelView) => void
   /* Panel size: 'sm' | 'md' | 'lg' */
   size?: UISize
 }
@@ -38,7 +38,7 @@ export interface TimePanelProps {
  * Only two cases are handled there either the time is in 12-hour format or 24-hour format (FR).
  *
  * @param className Tailwind CSS classes overrides or extensions for more flexibility
- * @param onDateChange Callback function called when a innerDate is selected
+ * @param onDateChange Callback function called when a localeDate is selected
  * @param size
  *
  * @constructor
@@ -47,19 +47,19 @@ const TimePanel: FC<TimePanelProps> = ({ className, onDateChange, size }) => {
   // COMPONENT STATE
   const {
     color,
-    innerDate,
+    localeDate,
     finalOffset,
     locale,
     pickerMode,
     //isControlled,
   } = useDateTimePicker()
   const [date, setDate] = useState<number>(
-    innerDate ?? Date.now() + finalOffset
+    localeDate ?? Date.now() + finalOffset
   )
 
   useEffect(() => {
-    setDate(innerDate ?? Date.now() + finalOffset)
-  }, [innerDate, finalOffset])
+    setDate(localeDate ?? Date.now() + finalOffset)
+  }, [localeDate, finalOffset])
 
   // Use of an ante meridian/post meridian system
   const dateUsesAMPM = locale !== 'fr'
@@ -69,14 +69,14 @@ const TimePanel: FC<TimePanelProps> = ({ className, onDateChange, size }) => {
   /**
    * Function to go to the previous hour.
    *
-   * If the DateTime Picker is used as a time picker, the innerDate is not taken into account.
-   * Here, the goal is to avoid changing innerDate when the expected time will change the innerDate time, keeping it in a loop
+   * If the DateTime Picker is used as a time picker, the localeDate is not taken into account.
+   * Here, the goal is to avoid changing localeDate when the expected time will change the localeDate time, keeping it in a loop
    *
    * @function gotoPrevHour
    * @returns {void}
    */
   const gotoPrevHour = useCallback((): void => {
-    // In DATETIME mode, the entire innerDate is taken into account
+    // In DATETIME mode, the entire localeDate is taken into account
     if (pickerMode === 'DATETIME') {
       onDateChange?.(subtractHours(date, 1), PanelView.TIME)
     } else if (pickerMode === 'TIME') {

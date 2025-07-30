@@ -486,7 +486,7 @@ const runTests = (timezone?: Timezone) => {
       )
 
       const date = defaultProperties.date ?? Date.now()
-      const innerDate = date + finalOffset
+      const localeDate = date + finalOffset
 
       if (timezone) {
         expect(container).toMatchSnapshot()
@@ -495,7 +495,7 @@ const runTests = (timezone?: Timezone) => {
       await waitFor(() => {
         expect(screen.getByRole('textbox')).toHaveValue(
           formatTimestampForTextInput(
-            innerDate,
+            localeDate,
             DATE_TIME_FORMAT[defaultProperties.locale?.split('_')[0] ?? 'en']
           )
         )
@@ -581,11 +581,11 @@ const runTests = (timezone?: Timezone) => {
       )
 
       const date = defaultProperties.date ?? Date.now()
-      const innerDate = date + finalOffset
+      const localeDate = date + finalOffset
 
-      const currentMonth = getLongMonthNameFromTs(innerDate).toString()
+      const currentMonth = getLongMonthNameFromTs(localeDate).toString()
       const monthToBeClicked = getLongMonthNameFromTs(
-        addMonths(innerDate, 2)
+        addMonths(localeDate, 2)
       ).toString()
       const expectedValue = addMonths(date, 2)
 
@@ -615,13 +615,13 @@ const runTests = (timezone?: Timezone) => {
       )
 
       const date = defaultProperties.date ?? Date.now()
-      const innerDate = date + finalOffset
+      const localeDate = date + finalOffset
 
-      const currentMonth = getLongMonthNameFromTs(innerDate).toString()
+      const currentMonth = getLongMonthNameFromTs(localeDate).toString()
       const monthIndex = 1
 
       const monthToBeClicked = getAllMonthNames('long')[monthIndex]
-      const monthDiff = monthIndex - new Date(innerDate).getMonth()
+      const monthDiff = monthIndex - new Date(localeDate).getMonth()
       const nextYearClicks = 3
       const expectedValue = addMonths(addYears(date, nextYearClicks), monthDiff)
 
@@ -664,10 +664,10 @@ const runTests = (timezone?: Timezone) => {
       )
 
       const date = defaultProperties.date ?? Date.now()
-      const innerDate = date + finalOffset
+      const localeDate = date + finalOffset
 
-      const currentYear = getYearFromTs(innerDate).toString()
-      const yearToBeClicked = getYearFromTs(addYears(innerDate, 1)).toString()
+      const currentYear = getYearFromTs(localeDate).toString()
+      const yearToBeClicked = getYearFromTs(addYears(localeDate, 1)).toString()
       const expectedValue = addYears(date, 1)
 
       await userEvent.click(screen.getByLabelText('Choose Date'))
@@ -693,9 +693,9 @@ const runTests = (timezone?: Timezone) => {
       )
 
       const date = defaultProperties.date ?? Date.now()
-      const innerDate = date + finalOffset
+      const localeDate = date + finalOffset
 
-      const currentYear = getYearFromTs(innerDate).toString()
+      const currentYear = getYearFromTs(localeDate).toString()
       const yearToBeClicked = '2038'
       const yearDiff = parseInt(yearToBeClicked) - parseInt(currentYear)
       const expectedValue = addYears(date, yearDiff)
@@ -995,7 +995,7 @@ const runTests = (timezone?: Timezone) => {
           defaultProperties
         )
 
-        const innerDate = date + finalOffset
+        const localeDate = date + finalOffset
 
         const selectedDay = 1
 
@@ -1013,7 +1013,7 @@ const runTests = (timezone?: Timezone) => {
           screen.getByRole('button', { name: buttonAriaLabel })
         ) // Pass to the 1st day of the current month
 
-        const firstDayOfCurrentMonthTs = getFirstDayOfCurrentMonthTs(innerDate)
+        const firstDayOfCurrentMonthTs = getFirstDayOfCurrentMonthTs(localeDate)
 
         await waitFor(() => {
           expect(screen.getByRole('textbox')).toHaveValue(

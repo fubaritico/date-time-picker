@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import {
   getAllWeekDaysNamesFromTs,
@@ -7,6 +7,7 @@ import {
   getLastDayOfCurrentMonthTs,
   getStartDayOfWeekOfCurrentMonth,
   getStartOfDayTs,
+  getTimeOffset,
 } from '@utils'
 
 import { useDateRangePanel, useDateTimePicker } from '../hooks'
@@ -59,7 +60,7 @@ const DaysGrid: FC<DaysGridProps> = ({
   panelRole,
   size = 'md',
 }) => {
-  // State: Focus managed using arrows
+  // State: Focus managed by using arrows
   const [keyboardFocusedIndex, setKeyboardFocusedIndex] = useState<number>(-1)
   // State: From where iteration starts in the grid
   const [startIndex, setStartIndex] = useState(0)
@@ -71,10 +72,11 @@ const DaysGrid: FC<DaysGridProps> = ({
   // Shared state from the DateTimePicker context
   const {
     color,
-    innerDate,
+    localeDate,
     minDate,
     maxDate,
     finalOffset,
+    dateRangePickerTimeOffsets,
     locale,
     pickerMode,
   } = useDateTimePicker()
@@ -89,6 +91,20 @@ const DaysGrid: FC<DaysGridProps> = ({
     setStartDateOrigin,
     setEndDateOrigin,
   } = useDateRangePanel()
+
+  const offset = useMemo(() => {
+    return panelRole
+      ? panelRole === 'left'
+        ? getTimeOffset(
+            dateRangePickerTimeOffsets[0].timezoneMsOffset,
+            dateRangePickerTimeOffsets[0].localeMsOffset
+          )
+        : getTimeOffset(
+            dateRangePickerTimeOffsets[1].timezoneMsOffset,
+            dateRangePickerTimeOffsets[1].localeMsOffset
+          )
+      : finalOffset
+  }, [dateRangePickerTimeOffsets, finalOffset, panelRole])
 
   /**
    * Callback function for handling date clicks.
@@ -107,7 +123,6 @@ const DaysGrid: FC<DaysGridProps> = ({
 
       if (pickerMode !== 'DATERANGE') {
         onDateChange?.(clickedTs)
-
         return
       }
 
@@ -118,7 +133,7 @@ const DaysGrid: FC<DaysGridProps> = ({
         return
       }
 
-      if (clickedTs >= tempStartDate) {
+      if (clickedTs > tempStartDate) {
         if (panelRole) setEndDateOrigin(panelRole)
         onEndDateChangeHandler?.(clickedTs)
       }
@@ -170,8 +185,7 @@ const DaysGrid: FC<DaysGridProps> = ({
       const DAYS_IN_WEEK = 7
       const TOTAL_CELLS = arrayOfDates.length
 
-      // Pour les flèches, on empêche le comportement par défaut
-
+      // Default behavior is prevented for arrow keys
       e.preventDefault()
 
       const cells = gridRef.current?.querySelectorAll('button')
@@ -306,7 +320,7 @@ const DaysGrid: FC<DaysGridProps> = ({
         getStartOfDayTs(Date.now() + finalOffset) === getStartOfDayTs(ts)
       const startDateIsSelected = tempStartDate === ts || dateRange[0] === ts
       const endDateIsSelected = tempEndDate === ts || dateRange[1] === ts
-      const isSelected = innerDate === ts
+      const isSelected = localeDate === ts
       const isInRange = dateIsInRange(ts)
 
       return {
@@ -319,7 +333,7 @@ const DaysGrid: FC<DaysGridProps> = ({
       }
     },
     [
-      innerDate,
+      localeDate,
       finalOffset,
       isDateClickable,
       tempStartDate,
@@ -367,6 +381,30 @@ const DaysGrid: FC<DaysGridProps> = ({
   }
 
   /**
+   * Checks if a date cell is accessible based on the picker mode and the current state.
+   *
+   * @param {number} weekIndex - The index of the week in the grid.
+   * @param {number} dayIndex - The index of the day in the week.
+   * @param {number} value - The date value as a Unix timestamp.
+   *
+   * @return {number} - Returns 0 if the cell is accessible, -1 if not.
+   */
+  const isAccessible = (
+    weekIndex: number,
+    dayIndex: number,
+    value: number
+  ): number => {
+    if (pickerMode !== 'DATERANGE')
+      return weekIndex === 0 && dayIndex === startIndex
+        ? setDaysGridState(value).disabled
+          ? -1
+          : 0
+        : -1
+
+    return 0
+  }
+
+  /**
    * Will set all the necessary math to display the grid of dates.
    */
   useEffect(() => {
@@ -381,9 +419,10 @@ const DaysGrid: FC<DaysGridProps> = ({
       for (let day = startOfMonth; day <= endOfMonth; day += oneDayInMs) {
         arr.push(day)
       }
+
       return arr
     })
-  }, [date])
+  }, [date, offset])
 
   /**
    * Will set the initial keyboard focus index to the first date of the month.
@@ -455,6 +494,7 @@ const DaysGrid: FC<DaysGridProps> = ({
                     />
                   )
                 }
+
                 return (
                   <td
                     key={`day-${value.toString()}`}
@@ -477,13 +517,7 @@ const DaysGrid: FC<DaysGridProps> = ({
                       }}
                       hasDateRangeMode={pickerMode === 'DATERANGE'}
                       isSelectingRange={isSelectingRange}
-                      tabIndex={
-                        weekIndex === 0 && dayIndex === startIndex
-                          ? setDaysGridState(value).disabled
-                            ? -1
-                            : 0
-                          : -1
-                      }
+                      tabIndex={isAccessible(weekIndex, dayIndex, value)}
                       size={size}
                       value={value}
                     >

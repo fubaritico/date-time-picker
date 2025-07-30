@@ -103,6 +103,7 @@ export const WithPortal: Story = {
     enablePortal: true,
     pickerMode: 'DATERANGE',
     dateRange: [1744137767000, 1745520167000],
+    // 18:42,
   },
 }
 

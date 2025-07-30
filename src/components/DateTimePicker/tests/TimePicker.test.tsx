@@ -269,7 +269,7 @@ const runTests = (timezone?: Timezone) => {
       )
 
       const date = defaultProperties.date ?? Date.now()
-      const innerDate = date + finalOffset
+      const localeDate = date + finalOffset
 
       if (timezone) {
         expect(container).toMatchSnapshot()
@@ -278,7 +278,7 @@ const runTests = (timezone?: Timezone) => {
       await waitFor(() => {
         expect(screen.getByRole('textbox')).toHaveValue(
           formatTimestampForTextInput(
-            innerDate,
+            localeDate,
             TIME_FORMAT[defaultProperties.locale?.split('_')[0] ?? 'en']
           )
         )

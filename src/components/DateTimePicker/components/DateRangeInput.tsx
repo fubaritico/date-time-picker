@@ -22,7 +22,7 @@ const DateRangeInput: FC<DateInputProps> = ({
   // Value as a string formatted for display
   const clickAwayIgnoreRef = useRef<HTMLButtonElement>(null)
   // Shared state from the DateTimePicker context
-  const { color, pickerMode, setIgnoreClickAwayRef, innerDateRange } =
+  const { color, pickerMode, setIgnoreClickAwayRef, localeDateRange } =
     useDateTimePicker()
   // Input state (left/start)
   const {
@@ -67,7 +67,7 @@ const DateRangeInput: FC<DateInputProps> = ({
     size,
   })
 
-  const disabled = inputTextProps.disabled ?? innerDateRange?.[0] === undefined
+  const disabled = inputTextProps.disabled ?? localeDateRange?.[0] === undefined
 
   /**
    * On Icon click, calls the passed onIconClick function
@@ -112,7 +112,7 @@ const DateRangeInput: FC<DateInputProps> = ({
             severity={startInnerErrors ? 'error' : undefined}
             errors={startInnerErrors}
             onChange={async (e: ChangeEvent<HTMLInputElement>) => {
-              if (parseInt(e.target.value) === innerDateRange?.[0]) {
+              if (parseInt(e.target.value) === localeDateRange?.[0]) {
                 // If the value is the same as the inner date range, do not update
                 return
               }

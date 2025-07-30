@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 
-import { getActualOffset } from '@utils'
+import { getTimeOffset } from '@utils'
 
 import { PanelView } from '../types'
 
@@ -19,8 +19,8 @@ import type { FC, PropsWithChildren, RefObject } from 'react'
 const DateTimePickerProvider: FC<PropsWithChildren<PickerProviderProps>> = ({
   children,
   color = 'blue',
-  dateRange: p_dateRange,
-  date: p_date,
+  dateRange: p_utcDateRange,
+  date: p_utcDate,
   timezoneMsOffset = 0,
   localeMsOffset = 0,
   minDate: p_minDate,
@@ -31,7 +31,7 @@ const DateTimePickerProvider: FC<PropsWithChildren<PickerProviderProps>> = ({
   noDefaultDate,
   open,
   pickerMode = 'DATE',
-  dateRangePickerOffsets,
+  dateRangePickerTimeOffsets,
   timezone,
 }) => {
   const [panelView, setPanelView] = useState(
@@ -44,44 +44,42 @@ const DateTimePickerProvider: FC<PropsWithChildren<PickerProviderProps>> = ({
     return 'en'
   }, [locale])
 
-  // console.log('DateTimePickerProvider p_dateRange:', p_dateRange)
-
   /**
    * Gets the actual offset combining the local offset and the GMT offset.
    */
   const finalOffset = useMemo(() => {
-    return getActualOffset(timezoneMsOffset, localeMsOffset)
+    return getTimeOffset(timezoneMsOffset, localeMsOffset)
   }, [localeMsOffset, timezoneMsOffset])
 
   // DATE_TIME_FORMAT also includes time to be extracted
-  const [innerDate, setInnerDate] = useState<number | undefined>(() => {
-    if (!p_date && !noDefaultDate) {
+  const [localeDate, setLocaleDate] = useState<number | undefined>(() => {
+    if (!p_utcDate && !noDefaultDate) {
       return Date.now() + finalOffset
     }
 
-    if (p_date && !noDefaultDate) {
-      return p_date + finalOffset
+    if (p_utcDate && !noDefaultDate) {
+      return p_utcDate + finalOffset
     }
 
     return undefined
   })
 
   // DATE_RANGE_FORMAT
-  const [innerDateRange, setInnerDateRange] = useState<DateRange>(
-    p_dateRange
+  const [localeDateRange, setLocaleDateRange] = useState<DateRange>(
+    p_utcDateRange
       ? [
-          p_dateRange[0]
-            ? p_dateRange[0] +
-              getActualOffset(
-                dateRangePickerOffsets[0].timezoneMsOffset,
-                dateRangePickerOffsets[0].localeMsOffset
+          p_utcDateRange[0]
+            ? p_utcDateRange[0] +
+              getTimeOffset(
+                dateRangePickerTimeOffsets[0].timezoneMsOffset,
+                dateRangePickerTimeOffsets[0].localeMsOffset
               )
             : undefined,
-          p_dateRange[1]
-            ? p_dateRange[1] +
-              getActualOffset(
-                dateRangePickerOffsets[1].timezoneMsOffset,
-                dateRangePickerOffsets[1].localeMsOffset
+          p_utcDateRange[1]
+            ? p_utcDateRange[1] +
+              getTimeOffset(
+                dateRangePickerTimeOffsets[1].timezoneMsOffset,
+                dateRangePickerTimeOffsets[1].localeMsOffset
               )
             : undefined,
         ]
@@ -96,49 +94,51 @@ const DateTimePickerProvider: FC<PropsWithChildren<PickerProviderProps>> = ({
     RefObject<HTMLButtonElement | null>
   >({ current: null })
 
+  const start = p_utcDateRange?.[0]
+  const end = p_utcDateRange?.[1]
+
   useEffect(() => {
-    if (isControlled && p_date) {
-      setInnerDate(p_date + finalOffset)
+    if (p_utcDate) {
+      setLocaleDate(p_utcDate + finalOffset)
     }
 
-    if (isControlled && p_dateRange) {
-      setInnerDateRange([
-        p_dateRange[0]
-          ? p_dateRange[0] +
-            getActualOffset(
-              dateRangePickerOffsets[0].timezoneMsOffset,
-              dateRangePickerOffsets[0].localeMsOffset
+    if (p_utcDateRange) {
+      setLocaleDateRange([
+        start
+          ? start +
+            getTimeOffset(
+              dateRangePickerTimeOffsets[0].timezoneMsOffset,
+              dateRangePickerTimeOffsets[0].localeMsOffset
             )
           : undefined,
-        p_dateRange[1]
-          ? p_dateRange[1] +
-            getActualOffset(
-              dateRangePickerOffsets[1].timezoneMsOffset,
-              dateRangePickerOffsets[1].localeMsOffset
+        end
+          ? end +
+            getTimeOffset(
+              dateRangePickerTimeOffsets[1].timezoneMsOffset,
+              dateRangePickerTimeOffsets[1].localeMsOffset
             )
           : undefined,
       ])
     }
   }, [
     timezoneMsOffset,
-    isControlled,
-    p_date,
-    p_dateRange,
-    dateRangePickerOffsets,
+    p_utcDate,
+    start,
+    end,
+    dateRangePickerTimeOffsets,
     finalOffset,
+    p_utcDateRange,
   ])
-
-  //console.log('DateTimePickerProvider innerDateRange:', innerDateRange)
 
   const value = useMemo<PickerState>(() => {
     return {
       color,
-      dateRangePickerOffsets,
+      dateRangePickerTimeOffsets,
       finalOffset,
       hasLabel,
       ignoreClickAwayRef,
-      innerDate,
-      innerDateRange,
+      localeDate,
+      localeDateRange,
       isControlled,
       locale: innerLocale,
       maxDate: p_maxDate ? p_maxDate + finalOffset : undefined,
@@ -148,20 +148,20 @@ const DateTimePickerProvider: FC<PropsWithChildren<PickerProviderProps>> = ({
       panelView,
       pickerMode,
       setIgnoreClickAwayRef,
-      setInnerDate,
-      setInnerDateRange,
+      setLocaleDate,
+      setLocaleDateRange,
       setPanelRect,
       setPanelView,
       timezone,
     }
   }, [
     color,
-    dateRangePickerOffsets,
+    dateRangePickerTimeOffsets,
     finalOffset,
     hasLabel,
     ignoreClickAwayRef,
-    innerDate,
-    innerDateRange,
+    localeDate,
+    localeDateRange,
     isControlled,
     innerLocale,
     p_maxDate,

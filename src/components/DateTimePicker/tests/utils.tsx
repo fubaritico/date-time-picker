@@ -2,9 +2,9 @@ import { render } from '@testing-library/react'
 
 import {
   addMonths,
-  computeOffsets,
-  getActualOffset,
+  getLocaleAndTzTimeOffsets,
   getOffsetInMsFromTimezone,
+  getTimeOffset,
 } from '../../../utils'
 import I18nDateLabel from '../../I18nDateLabel'
 import DateRangePicker from '../DateRangePicker'
@@ -34,16 +34,16 @@ export const setupUncontrolledPicker = (
   const inOneMonthTime = new Date(addMonths(pFixedDate, 1))
 
   const offsets = [
-    computeOffsets(today.getTime(), props?.timezone),
-    computeOffsets(inOneMonthTime.getTime(), props?.timezone),
+    getLocaleAndTzTimeOffsets(today.getTime(), props?.timezone),
+    getLocaleAndTzTimeOffsets(inOneMonthTime.getTime(), props?.timezone),
   ]
 
-  const finalOffset = getActualOffset(
+  const finalOffset = getTimeOffset(
     offsets[0].timezoneMsOffset,
     offsets[0].localeMsOffset
   )
 
-  const oneMonthFinalOffset = getActualOffset(
+  const oneMonthFinalOffset = getTimeOffset(
     offsets[1].timezoneMsOffset,
     offsets[1].localeMsOffset
   )
@@ -77,11 +77,11 @@ export const setupControlledDateTimePicker = (
   spyOnDateChangeFn = jest.fn()
 ) => {
   const today = new Date(pFixedDate)
-  const { localeMsOffset, timezoneMsOffset } = computeOffsets(
+  const { localeMsOffset, timezoneMsOffset } = getLocaleAndTzTimeOffsets(
     today.getTime(),
     props?.timezone
   )
-  const finalOffset = getActualOffset(timezoneMsOffset, localeMsOffset)
+  const finalOffset = getTimeOffset(timezoneMsOffset, localeMsOffset)
   const dateTimestamp = today.getTime() + finalOffset
 
   return {
@@ -135,11 +135,11 @@ export const setupControlledDateRangePicker = (
   const today = new Date(pFixedDate)
   const startDate = pFixedDate - daysBeforeToday * oneDayInMs
   const endDate = pFixedDate + daysAfterToday * oneDayInMs
-  const { localeMsOffset, timezoneMsOffset } = computeOffsets(
+  const { localeMsOffset, timezoneMsOffset } = getLocaleAndTzTimeOffsets(
     today.getTime(),
     props?.timezone
   )
-  const finalOffset = getActualOffset(timezoneMsOffset, localeMsOffset)
+  const finalOffset = getTimeOffset(timezoneMsOffset, localeMsOffset)
   const msOffsets = [
     getOffsetInMsFromTimezone(new Date(startDate), props?.timezone),
     getOffsetInMsFromTimezone(new Date(endDate), props?.timezone),

@@ -48,8 +48,14 @@ export interface DatePanelProps {
  */
 const DatePanel: FC<DatePanelProps> = ({ className, onDateChange, size }) => {
   // SHARED STATE
-  const { color, locale, finalOffset, innerDate, setInnerDate, setPanelView } =
-    useDateTimePicker()
+  const {
+    color,
+    locale,
+    finalOffset,
+    localeDate,
+    setLocaleDate,
+    setPanelView,
+  } = useDateTimePicker()
 
   const panelRef = usePanelDomRect()
 
@@ -58,8 +64,8 @@ const DatePanel: FC<DatePanelProps> = ({ className, onDateChange, size }) => {
    */
   const panelDate = useMemo(() => {
     const now = Date.now() + finalOffset
-    return innerDate ?? now
-  }, [innerDate, finalOffset])
+    return localeDate ?? now
+  }, [localeDate, finalOffset])
 
   /**
    * Function to go to the previous month.
@@ -70,12 +76,12 @@ const DatePanel: FC<DatePanelProps> = ({ className, onDateChange, size }) => {
    * @returns {void}
    */
   const gotoPrevMonth = useCallback(() => {
-    setInnerDate((prev) => {
+    setLocaleDate((prev) => {
       // Fine for now, but should be improved later by having some temp value for browsing before first date selection
       if (prev === undefined) return subtractMonths(Date.now() + finalOffset, 1)
       return subtractMonths(prev, 1)
     })
-  }, [setInnerDate, finalOffset])
+  }, [setLocaleDate, finalOffset])
 
   /**
    * A callback function that advances the date to the next month.
@@ -84,12 +90,12 @@ const DatePanel: FC<DatePanelProps> = ({ className, onDateChange, size }) => {
    * @returns {void}
    */
   const gotoNextMonth = useCallback(() => {
-    setInnerDate((prev) => {
+    setLocaleDate((prev) => {
       // Fine for now, but should be improved later by having some temp value for browsing before first date selection
       if (prev === undefined) return addMonths(Date.now() + finalOffset, 1)
       return addMonths(prev, 1)
     })
-  }, [setInnerDate, finalOffset])
+  }, [setLocaleDate, finalOffset])
 
   return (
     <div

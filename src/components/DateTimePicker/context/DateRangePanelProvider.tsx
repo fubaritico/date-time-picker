@@ -2,8 +2,8 @@ import { useMemo, useState } from 'react'
 
 import {
   addMonths,
-  getActualOffset,
   getFirstInstantOfMonth,
+  getTimeOffset,
   isSameMonth,
 } from '@utils'
 
@@ -26,17 +26,17 @@ const getMonthNameFromTimestamp = (
  * Provides simple state with essential data as date, panel mode, calendar mode and date, panel mode setters.
  * The setters are used when the component is uncontrolled (for preview).
  *
- * @param dateRange
- * @param dateRangePickerOffsets
+ * @param dateRange - Value from "localeDateRange" exposed value from the main provider (offset already applied
+ * @param dateRangePickerTimeOffsets - Offsets for the date range picker, used to be applied for each panel
  * @param children Component rendered in the provider scope
  */
 const DateRangePanelProvider: FC<
   PropsWithChildren<
-    Pick<PickerProviderProps, 'dateRange' | 'dateRangePickerOffsets'>
+    Pick<PickerProviderProps, 'dateRange' | 'dateRangePickerTimeOffsets'>
   >
 > = ({
   children,
-  dateRangePickerOffsets,
+  dateRangePickerTimeOffsets,
   dateRange = [undefined, undefined],
 }) => {
   // Date range state for UI: start and end dates being selected
@@ -45,12 +45,11 @@ const DateRangePanelProvider: FC<
   )
   const [tempEndDate, setTempEndDate] = useState<number>()
   const [leftGridMonth, setLeftGridMonth] = useState<number>(() => {
-    const currentMonth =
-      Date.now() +
-      getActualOffset(
-        dateRangePickerOffsets[0].timezoneMsOffset,
-        dateRangePickerOffsets[0].localeMsOffset
-      )
+    const offset = getTimeOffset(
+      dateRangePickerTimeOffsets[0].timezoneMsOffset,
+      dateRangePickerTimeOffsets[0].localeMsOffset
+    )
+    const currentMonth = Date.now() + offset
 
     if (dateRange[0]) {
       return getFirstInstantOfMonth(dateRange[0])
@@ -59,14 +58,11 @@ const DateRangePanelProvider: FC<
     return getFirstInstantOfMonth(currentMonth)
   })
   const [rightGridMonth, setRightGridMonth] = useState<number>(() => {
-    const nextMont = addMonths(
-      Date.now() +
-        getActualOffset(
-          dateRangePickerOffsets[0].timezoneMsOffset,
-          dateRangePickerOffsets[0].localeMsOffset
-        ),
-      1
+    const offset = getTimeOffset(
+      dateRangePickerTimeOffsets[1].timezoneMsOffset,
+      dateRangePickerTimeOffsets[1].localeMsOffset
     )
+    const nextMont = addMonths(Date.now() + offset, 1)
 
     if (dateRange[0] && dateRange[1]) {
       // Months to work with
@@ -85,6 +81,12 @@ const DateRangePanelProvider: FC<
 
     return getFirstInstantOfMonth(nextMont)
   })
+  const [startDateOrigin, setStartDateOrigin] = useState<DateOrigin>('left')
+  const [endDateOrigin, setEndDateOrigin] = useState<DateOrigin>(() =>
+    dateRange[0] && dateRange[1] && !isSameMonth(dateRange[0], dateRange[1])
+      ? 'right'
+      : 'left'
+  )
 
   /**
    * Date range state: temporary state while selecting.
@@ -94,13 +96,6 @@ const DateRangePanelProvider: FC<
   const isSelectingRange = useMemo(() => {
     return tempStartDate !== undefined
   }, [tempStartDate])
-
-  const [startDateOrigin, setStartDateOrigin] = useState<DateOrigin>('left')
-  const [endDateOrigin, setEndDateOrigin] = useState<DateOrigin>(() =>
-    dateRange[0] && dateRange[1] && !isSameMonth(dateRange[0], dateRange[1])
-      ? 'right'
-      : 'left'
-  )
 
   /**
    * State of the date range panel, shared by the two day-grid components.

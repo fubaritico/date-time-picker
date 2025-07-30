@@ -3,8 +3,8 @@ import { useCallback, useMemo } from 'react'
 
 import {
   addMonths,
-  getActualOffset,
   getMonthNameFromTs,
+  getTimeOffset,
   getYearFromTs,
   subtractMonths,
 } from '@utils'
@@ -44,10 +44,11 @@ const DateRangePanel: FC<DateRangePanelProps> = ({
   // SHARED STATE FROM DATE TIME PICKER CONTEXT
   const {
     color,
-    dateRangePickerOffsets,
-    innerDateRange,
+    dateRangePickerTimeOffsets,
+    localeDateRange,
+    isControlled,
     locale,
-    setInnerDateRange,
+    setLocaleDateRange,
   } = useDateTimePicker()
 
   /**
@@ -55,16 +56,16 @@ const DateRangePanel: FC<DateRangePanelProps> = ({
    */
   const daysGridsMsOffsets = useMemo(() => {
     return [
-      getActualOffset(
-        dateRangePickerOffsets[0].timezoneMsOffset,
-        dateRangePickerOffsets[0].localeMsOffset
+      getTimeOffset(
+        dateRangePickerTimeOffsets[0].timezoneMsOffset,
+        dateRangePickerTimeOffsets[0].localeMsOffset
       ),
-      getActualOffset(
-        dateRangePickerOffsets[1].timezoneMsOffset,
-        dateRangePickerOffsets[1].localeMsOffset
+      getTimeOffset(
+        dateRangePickerTimeOffsets[1].timezoneMsOffset,
+        dateRangePickerTimeOffsets[1].localeMsOffset
       ),
     ]
-  }, [dateRangePickerOffsets])
+  }, [dateRangePickerTimeOffsets])
 
   /**
    * Function to set the left grid month to the previous month when possible.
@@ -112,62 +113,68 @@ const DateRangePanel: FC<DateRangePanelProps> = ({
    * Function to select the start date of the date range.
    * On selecting the start date, the end date is set to undefined.
    * Here only the controlled date Range is set,
-   * the innerDateRange is updated from the DaysGrid component.
+   * the localeDateRange is updated from the DaysGrid component.
    *
-   * @param date - The selected start date in milliseconds with the offset applied
-   * @param panelRole - The role of the panel ('left' or 'right')
+   * @param {number} date - The selected start date in milliseconds with the offset applied
    */
   const onStartDateChangeHandler = useCallback(
     (date: number) => {
-      const newDateRange: DateRange = [
+      const utcDateRange: DateRange = [
         date - daysGridsMsOffsets[startDateOrigin === 'left' ? 0 : 1], // removing offset
         undefined,
       ]
-      // Controlled component: call the onDateRangeChange callback
-      if (onDateRangeChange) {
-        onDateRangeChange(newDateRange)
-      } else {
-        setInnerDateRange([date, undefined])
+      // If uncontrolled, we just set the date at the locale time.
+      if (!isControlled) {
+        setLocaleDateRange([date, undefined])
       }
+      // We pass the date on UTC time, if uncontrolled the value will not be emitted by 'onDateRangeChange'.
+      onDateRangeChange?.(isControlled ? utcDateRange : [date, undefined])
     },
-    [daysGridsMsOffsets, onDateRangeChange, setInnerDateRange, startDateOrigin]
+    [
+      daysGridsMsOffsets,
+      isControlled,
+      onDateRangeChange,
+      setLocaleDateRange,
+      startDateOrigin,
+    ]
   )
 
   /**
    * Function to select the end date of the date range.
    * Here only the external controlled date Range is set,
-   * the innerDateRange is updated from the DaysGrid component.
+   * the localeDateRange is updated from the DaysGrid component.
    *
-   * @param date - The selected end date in milliseconds with the offset applied
-   * @param panelRole - The role of the panel ('left' or 'right')
+   * @param {number} date - The selected end date in milliseconds with the offset applied
    */
   const onEndDateChangeHandler = useCallback(
     (date: number) => {
-      if (date === innerDateRange?.[0]) {
+      if (date === localeDateRange?.[0]) {
         // If the selected date is the same as the start date, do not update
         return
       }
-      const newDateRange: DateRange = [
-        innerDateRange?.[0]
-          ? innerDateRange[0] -
+      const utcDateRange: DateRange = [
+        localeDateRange?.[0]
+          ? localeDateRange[0] -
             daysGridsMsOffsets[startDateOrigin === 'left' ? 0 : 1]
           : undefined,
         date - daysGridsMsOffsets[endDateOrigin === 'left' ? 0 : 1],
       ]
-
-      // Controlled component: call the onDateRangeChange callback
-      if (onDateRangeChange) {
-        onDateRangeChange(newDateRange)
-      } else {
-        setInnerDateRange([innerDateRange?.[0], date])
+      // If uncontrolled, we just set the date at the locale time.
+      if (!isControlled) {
+        setLocaleDateRange([localeDateRange?.[0], date])
       }
+      // We pass the date on UTC time, if uncontrolled the value will not be emitted by 'onDateRangeChange'.
+      onDateRangeChange?.(
+        isControlled ? utcDateRange : [localeDateRange?.[0], date]
+      )
     },
     [
       daysGridsMsOffsets,
       endDateOrigin,
-      innerDateRange,
+      localeDateRange,
+      isControlled,
       onDateRangeChange,
-      setInnerDateRange,
+      setLocaleDateRange,
       startDateOrigin,
     ]
   )

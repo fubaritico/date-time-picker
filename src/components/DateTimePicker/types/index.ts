@@ -68,7 +68,10 @@ export interface PickerProviderProps extends BasicPanelProps {
   /* If true, the top position of the panel will be impacted */
   hasLabel?: boolean
   /* Because the date range days panels can have a different offset due to daylight applied, both possible offsets are stored */
-  dateRangePickerOffsets: { localeMsOffset: number; timezoneMsOffset: number }[]
+  dateRangePickerTimeOffsets: {
+    localeMsOffset: number
+    timezoneMsOffset: number
+  }[]
   /* Timezone list member based on moment.js - for debug purposes only */
   timezone?: Timezone
 }
@@ -109,17 +112,17 @@ export interface PickerState
   The difference between the locale offset and the timezone offset */
   finalOffset: number
   /* Date used for component inner mechanics as a Unix timestamp */
-  innerDate?: number
+  localeDate?: number
   /* Range date as a tuple of two Unix timestamps */
-  innerDateRange?: DateRange
+  localeDateRange?: DateRange
   /* Ignored element by the click outside component */
   ignoreClickAwayRef: RefObject<HTMLButtonElement | null>
   /* Locale language in international ISO-8601  */
   locale: string
   /* Setter for the date (provider state) */
-  setInnerDate: Dispatch<SetStateAction<number | undefined>>
+  setLocaleDate: Dispatch<SetStateAction<number | undefined>>
   /* Setter for the date range as a tuple of two Unix timestamps */
-  setInnerDateRange: Dispatch<SetStateAction<DateRange>>
+  setLocaleDateRange: Dispatch<SetStateAction<DateRange>>
   /* View mode for the calendar panel (provider state) */
   panelView: PanelView
   /* Setter for the ignored element by the click outside component */

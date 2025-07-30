@@ -58,7 +58,7 @@ abstract class AbstractInputMask {
   public abstract validate(value: string): string
 
   protected constructor(
-    public innerDate: number,
+    public localeDate: number,
     protected pickerMode: PickerMode
   ) {}
 

@@ -53,14 +53,14 @@ const DateTimeInput: FC<DateInputProps> = ({
   const {
     color,
     finalOffset,
-    innerDate,
+    localeDate,
     isControlled,
     locale,
     maxDate,
     minDate,
     open,
     pickerMode,
-    setInnerDate,
+    setLocaleDate,
     setIgnoreClickAwayRef,
   } = useDateTimePicker()
 
@@ -91,25 +91,25 @@ const DateTimeInput: FC<DateInputProps> = ({
    */
   useEffect(() => {
     setInputValue(() => {
-      if (!innerDate) return undefined
+      if (!localeDate) return undefined
 
       if (!errors) setInnerErrors(undefined)
 
       switch (pickerMode) {
         case 'TIME':
-          return formatTimestampForTextInput(innerDate, TIME_FORMAT[locale])
+          return formatTimestampForTextInput(localeDate, TIME_FORMAT[locale])
         case 'DATE':
-          return formatTimestampForTextInput(innerDate, DATE_FORMAT[locale])
+          return formatTimestampForTextInput(localeDate, DATE_FORMAT[locale])
         case 'DATETIME':
           return formatTimestampForTextInput(
-            innerDate,
+            localeDate,
             DATE_TIME_FORMAT[locale]
           )
         default:
           return undefined
       }
     })
-  }, [pickerMode, innerDate, locale, errors, finalOffset])
+  }, [pickerMode, localeDate, locale, errors, finalOffset])
 
   /**
    * Set the input errors when anything from upper components happens
@@ -134,8 +134,8 @@ const DateTimeInput: FC<DateInputProps> = ({
       `../formats/masks/${locale.toUpperCase()}InputMask.ts`
     )) as MaskClassType
 
-    return new maskClass.default(innerDate, pickerMode)
-  }, [innerDate, locale, pickerMode])
+    return new maskClass.default(localeDate, pickerMode)
+  }, [localeDate, locale, pickerMode])
 
   /**
    * Will dynamically import the appropriate mask class based on the locale on init
@@ -187,9 +187,9 @@ const DateTimeInput: FC<DateInputProps> = ({
 
       // Always attempt to parse, even with potentially invalid input
       const formattedNewInputValue =
-        pickerMode === 'TIME' && !!innerDate
+        pickerMode === 'TIME' && !!localeDate
           ? toUtcTimestamp(
-              formatTimestampToDate(innerDate, locale) +
+              formatTimestampToDate(localeDate, locale) +
                 ' ' +
                 validatedInputValue
             )
@@ -207,7 +207,7 @@ const DateTimeInput: FC<DateInputProps> = ({
           if (isControlled) {
             onDateChange?.(newDate)
           } else {
-            setInnerDate(formattedNewInputValue)
+            setLocaleDate(formattedNewInputValue)
           }
         } else {
           setInnerErrors(['Selected date is out of bounds.'])
@@ -220,14 +220,14 @@ const DateTimeInput: FC<DateInputProps> = ({
       inputMaskInstance,
       loadMaskClass,
       pickerMode,
-      innerDate,
+      localeDate,
       toUtcTimestamp,
       locale,
       minDate,
       maxDate,
       isControlled,
       onDateChange,
-      setInnerDate,
+      setLocaleDate,
     ]
   )
 
@@ -252,9 +252,9 @@ const DateTimeInput: FC<DateInputProps> = ({
         pickerMode={pickerMode}
         {...textInputOnlyProperties(inputTextProps)}
       />
-      {innerDate && (
+      {localeDate && (
         <span id="human-readable-date" style={{ display: 'none' }}>
-          {formatHumanReadableDate(innerDate, locale, pickerMode)}
+          {formatHumanReadableDate(localeDate, locale, pickerMode)}
         </span>
       )}
     </>

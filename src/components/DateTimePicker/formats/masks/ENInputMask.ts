@@ -8,8 +8,8 @@ import type { PickerMode } from '../../types'
  * The mask for the English input
  */
 export default class ENInputMask extends AbstractInputMask {
-  constructor(innerDate: number, pickerMode: PickerMode) {
-    super(innerDate, pickerMode)
+  constructor(localeDate: number, pickerMode: PickerMode) {
+    super(localeDate, pickerMode)
 
     // Date input mask - default shape YYYY/MM/DD
     const digit = /[0-9]/
@@ -38,7 +38,7 @@ export default class ENInputMask extends AbstractInputMask {
       minute1,
       digit,
       ' ',
-      getCurrentAMPM(innerDate),
+      getCurrentAMPM(localeDate),
     ]
 
     this.dateTimeMask = [...this.dateMask, ' ', ...this.timeMask]

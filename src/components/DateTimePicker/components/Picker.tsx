@@ -1,6 +1,6 @@
 import { useMemo, useRef, useState } from 'react'
 
-import { computeOffsets } from '../../../utils'
+import { getLocaleAndTzTimeOffsets } from '../../../utils'
 import { DateTimePickerProvider } from '../context'
 
 import DateRangeInput from './DateRangeInput'
@@ -63,20 +63,22 @@ const Picker = <T extends PickerMode>({
   }
 
   /**
-   * Will pass the proper time timezone offset from the timezone (in milliseconds)
+   * Passes pass the proper time timezone offset based on the timezone (in milliseconds).
+   * It will adapt the offset only if the Picker is controlled.
    */
   const datePickerOffsets = useMemo(
-    () => computeOffsets(date, timezone),
+    () => getLocaleAndTzTimeOffsets(date, timezone),
     [date, timezone]
   )
 
   /**
-   * Will pass the proper time timezone offset from the timezone (in milliseconds)
+   * Passes the proper time timezone offsets for both panels based on the timezone (in milliseconds).
+   * It will adapt the offsets only if the Picker is controlled.
    */
-  const dateRangePickerOffsets = useMemo(() => {
+  const dateRangePickerTimeOffsets = useMemo(() => {
     return [
-      computeOffsets(dateRange?.[0], timezone),
-      computeOffsets(dateRange?.[1], timezone),
+      getLocaleAndTzTimeOffsets(dateRange?.[0], timezone),
+      getLocaleAndTzTimeOffsets(dateRange?.[1], timezone),
     ]
   }, [dateRange, timezone])
 
@@ -85,7 +87,7 @@ const Picker = <T extends PickerMode>({
       color={color}
       date={date}
       dateRange={dateRange}
-      dateRangePickerOffsets={dateRangePickerOffsets}
+      dateRangePickerTimeOffsets={dateRangePickerTimeOffsets}
       localeMsOffset={datePickerOffsets.localeMsOffset}
       hasLabel={!!textInputProps.label}
       isControlled={!!onChange || !!onDateRangeChange}
