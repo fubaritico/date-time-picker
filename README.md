@@ -14,6 +14,8 @@ A React 19.x date-time picker component, using TypeScript 5.x, styled using nati
 
 ❌ `DateRangePicker` component is not yet fully tested for accessibility
 
+❌ Mobile version of `DatePicker`, `DateTimePicker`, `TimePicker`, and  `DateRangePicker` components
+
 The package is available on NPM as `@fubar-it-co/date-time-picker`, [go to NPM](https://www.npmjs.com/package/@fubar-it-co/date-time-picker).
 
 A Storybook instance is available to preview the components and their features [here](https://fubaritico-pickers.tiiny.site/?path=/story/datepicker--uncontrolled).
@@ -30,7 +32,9 @@ A Storybook instance is available to preview the components and their features [
 
 ## Work in progress
 
-Tests have to be written for the accessibility features for `DateRangePicker`.
+Tests are being written for the accessibility features of `DateRangePicker`.
+
+A mobile version of the components is planned, but not yet implemented.
 
 ## Issues
 
@@ -58,6 +62,7 @@ You can then use the component in your React application like this:
 
 ```tsx
 import { DateTimePicker } from '@fubar-it-co/date-time-picker';
+import '@fubar-it-co/date-time-picker/styles.css'
 
 function App() {
   const handleDateChange = (date?: number) => {
