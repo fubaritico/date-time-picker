@@ -682,9 +682,10 @@ export const getOffsetInMsFromTimezone = (
   }
 
   const sign = matches[2] === '-' ? -1 : 1
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+  const offset = matches?.[3] ?? '0'
 
-  const hourOffset = parseInt(matches[3], 10)
-
+  const hourOffset = parseInt(offset, 10)
   return hourOffset * 60 * 60 * 1000 * sign
 }
 
@@ -1093,9 +1094,8 @@ export const formatToLocaleAwareFormat = (
   pTimezone?: Timezone
 ): string => {
   const date = new Date(pValue)
-  const localeMsOffset = getOffsetInMsFromTimezone(date)
   const msOffset = getOffsetInMsFromTimezone(date, pTimezone)
-  const utc = new Date(date.getTime() + msOffset - localeMsOffset)
+  const utc = new Date(date.getTime() + msOffset)
 
   return (
     new Intl.DateTimeFormat(pLocale.replace('_', '-'), {

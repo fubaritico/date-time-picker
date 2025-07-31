@@ -244,8 +244,7 @@ const runTests = (timezone?: Timezone) => {
       ).toBeInTheDocument()
     })
 
-    // TODO: fix "Asia/Tokyo" timezone getting 2025/03/02 instead of 2025/03/03
-    it.skip('should select a date range when clicking on a first date and clicking on a second date', async () => {
+    it('should select a date range when clicking on a first date and clicking on a second date', async () => {
       setupUncontrolledPicker(
         mockedNow,
         DateRangePicker as AnyPickerComponent,
@@ -272,8 +271,7 @@ const runTests = (timezone?: Timezone) => {
       expect(screen.getByTestId('end-input')).toHaveValue('2025/03/28')
     })
 
-    // TODO: fix "Asia/Tokyo" timezone getting 2025/03/05 instead of 2025/03/06
-    it.skip('should display start date in start date input as soon as the start date is selected', async () => {
+    it('should display start date in start date input as soon as the start date is selected', async () => {
       setupUncontrolledPicker(
         mockedNow,
         DateRangePicker as AnyPickerComponent,
@@ -292,8 +290,7 @@ const runTests = (timezone?: Timezone) => {
       expect(screen.getByTestId('end-input')).toHaveValue('____/__/__')
     })
 
-    // TODO: fix "Asia/Tokyo" timezone getting 2025/03/03 instead of 2025/03/04
-    it.skip('should update start date when re-selecting a date range', async () => {
+    it('should update start date when re-selecting a date range', async () => {
       setupUncontrolledPicker(
         mockedNow,
         DateRangePicker as AnyPickerComponent,
@@ -333,9 +330,7 @@ const runTests = (timezone?: Timezone) => {
       expect(screen.getByTestId('end-input')).toHaveValue('2025/03/18')
     })
 
-    // TODO: fix "Asia/Tokyo" timezone getting 2025/03/04 instead of 2025/03/05
-    // TODO: fix "America/Argentina/La_Rioja" timezone getting 2025/03/05 instead of ____/__/__
-    it.skip('should not allow an end date to be selected when clicking on a previous selected start date', async () => {
+    it('should not allow an end date to be selected when clicking on a previous selected start date', async () => {
       setupUncontrolledPicker(
         mockedNow,
         DateRangePicker as AnyPickerComponent,
@@ -362,8 +357,7 @@ const runTests = (timezone?: Timezone) => {
       expect(screen.getByTestId('date-range-panel')).toBeInTheDocument()
     })
 
-    // TODO: fix "Asia/Tokyo" timezone getting 2025/03/04 instead of 2025/03/05
-    it.skip('should allow to continue selection after having selected start date only and closed panel', async () => {
+    it('should allow to continue selection after having selected start date only and closed panel', async () => {
       setupUncontrolledPicker(
         mockedNow,
         DateRangePicker as AnyPickerComponent,

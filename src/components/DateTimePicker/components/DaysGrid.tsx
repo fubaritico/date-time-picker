@@ -163,10 +163,6 @@ const DaysGrid: FC<DaysGridProps> = ({
     }
   }, [])
 
-  /**
-   * [a11y] Handles keyboard navigation within the grid.
-   * @param {KeyboardEvent} e
-   */
   const handleKeyDown = useCallback(
     (e: KeyboardEvent<HTMLDivElement>) => {
       if (
@@ -182,53 +178,86 @@ const DaysGrid: FC<DaysGridProps> = ({
         ].includes(e.key)
       )
         return
-      const DAYS_IN_WEEK = 7
-      const TOTAL_CELLS = arrayOfDates.length
 
-      // Default behavior is prevented for arrow keys
       e.preventDefault()
 
       const cells = gridRef.current?.querySelectorAll('button')
-      let newIndex = keyboardFocusedIndex
+      if (!cells || cells.length === 0) return
+
+      // Get the current focused index from the actual focused element
+      const currentFocusedElement = document.activeElement as HTMLButtonElement
+      const currentIndex = Array.from(cells).indexOf(currentFocusedElement)
+      const focusedIndex =
+        currentIndex >= 0 ? currentIndex : keyboardFocusedIndex
+
+      let newIndex = focusedIndex
+      const DAYS_IN_WEEK = 7
+
+      // Work with the actual available buttons
+      const firstButtonIndex = 0 // First available button
+      const lastButtonIndex = cells.length - 1 // Last available button
 
       switch (e.key) {
         case 'ArrowLeft':
-          newIndex = Math.max(0, keyboardFocusedIndex - 1)
+          // If we're at the first button, go to the last button
+          if (focusedIndex === firstButtonIndex) {
+            newIndex = lastButtonIndex
+          } else {
+            // Otherwise go back one button
+            newIndex = focusedIndex - 1
+          }
           break
-        case 'Tab':
+
         case 'ArrowRight':
-          newIndex = Math.min(TOTAL_CELLS - 1, keyboardFocusedIndex + 1)
+          // If we're at the last button, go to the first button
+          if (focusedIndex === lastButtonIndex) {
+            newIndex = firstButtonIndex
+          } else {
+            // Otherwise go forward one button
+            newIndex = focusedIndex + 1
+          }
           break
-        case 'ArrowUp':
-          newIndex = Math.max(0, keyboardFocusedIndex - DAYS_IN_WEEK)
+
+        case 'ArrowUp': {
+          const previousWeekIndex = focusedIndex - DAYS_IN_WEEK
+          // Stop if we go out of valid buttons
+          if (previousWeekIndex >= firstButtonIndex) {
+            newIndex = previousWeekIndex
+          }
+          // Otherwise don't move
           break
-        case 'ArrowDown':
-          newIndex = Math.min(
-            TOTAL_CELLS - 1,
-            keyboardFocusedIndex + DAYS_IN_WEEK
-          )
+        }
+
+        case 'ArrowDown': {
+          const nextWeekIndex = focusedIndex + DAYS_IN_WEEK
+          // Stop if we go out of valid buttons
+          if (nextWeekIndex <= lastButtonIndex) {
+            newIndex = nextWeekIndex
+          }
+          // Otherwise don't move
           break
+        }
+
         case 'PageDown':
           onPrevMonthKeyPress()
           break
+
         case 'PageUp':
           onNextMonthKeyPress()
           break
+
         case 'Enter':
         case ' ':
-          if (cells?.[keyboardFocusedIndex]) {
-            ;(cells[keyboardFocusedIndex] as HTMLElement).focus()
-            handleDateClick(cells[keyboardFocusedIndex])
-          }
+          ;(cells[focusedIndex] as HTMLElement).focus()
+          handleDateClick(cells[focusedIndex])
           break
       }
 
-      if (newIndex !== keyboardFocusedIndex) {
+      if (newIndex !== focusedIndex) {
         setFocusOnDate(newIndex)
       }
     },
     [
-      arrayOfDates.length,
       handleDateClick,
       keyboardFocusedIndex,
       onNextMonthKeyPress,
@@ -431,7 +460,7 @@ const DaysGrid: FC<DaysGridProps> = ({
   useEffect(() => {
     let index = 0
 
-    if (!arrayOfDates.length) return
+    if (!arrayOfDates.length || panelRole === 'right') return
 
     if (!date) {
       setFocusOnDate(index)
@@ -454,7 +483,7 @@ const DaysGrid: FC<DaysGridProps> = ({
 
     setFocusOnDate(index)
     dateFocusedOnInit.current = true
-  }, [arrayOfDates, date, setFocusOnDate])
+  }, [arrayOfDates, date, panelRole, setFocusOnDate])
 
   return (
     <div className={clsx('DaysGrid', size)}>
