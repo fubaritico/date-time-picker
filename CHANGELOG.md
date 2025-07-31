@@ -1,9 +1,9 @@
-## [2.2.6](https://github.com/fubaritico/date-time-picker/compare/v2.2.5...v2.2.6) (2025-07-31)
+## [2.2.7](https://github.com/fubaritico/date-time-picker/compare/v2.2.5...v2.2.7) (2025-07-31)
 
 
 ### Bug Fixes
 
-* **date-range:** fixed a11y interaction on grid and uncontrolled offset ([d2c4a01](https://github.com/fubaritico/date-time-picker/commit/d2c4a01bc626c204b1513e66e7dcfbb672115fdb))
+* **date-range:** fixed a11y interaction on grid and uncontrolled offset ([d2d25fa](https://github.com/fubaritico/date-time-picker/commit/d2d25fadf33d45e26aa030fa87521f247f85db23))
 
 
 
