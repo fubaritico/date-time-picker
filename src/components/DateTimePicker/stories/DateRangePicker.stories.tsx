@@ -68,6 +68,28 @@ export const Uncontrolled: Story = {
     pickerMode: 'DATERANGE',
     timezone: 'Europe/Paris',
   },
+  argTypes: {
+    date: {
+      table: {
+        disable: true,
+      },
+    },
+    dateRange: {
+      table: {
+        disable: true,
+      },
+    },
+    onChange: {
+      table: {
+        disable: true,
+      },
+    },
+    onDateRangeChange: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 }
 
 export const Controlled: IntegrationStory = {

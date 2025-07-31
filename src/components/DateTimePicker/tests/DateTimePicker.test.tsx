@@ -1066,7 +1066,6 @@ const runTests = (timezone?: Timezone) => {
 
     it('does not allow clicking on a disabled date', async () => {
       const {
-        finalOffset,
         render: { baseElement },
       } = setupControlledDateTimePicker(
         DateTimePicker as AnyPickerComponent,
@@ -1074,7 +1073,7 @@ const runTests = (timezone?: Timezone) => {
         defaultProperties
       )
 
-      const disabledDate = fixedDate - 1000 * 60 * 60 * 24 + finalOffset
+      const disabledDate = fixedDate - 1000 * 60 * 60 * 24
       defaultProperties.date = disabledDate
 
       await userEvent.click(screen.getByLabelText('Choose Date'))

@@ -1,11 +1,6 @@
 import { useMemo, useState } from 'react'
 
-import {
-  addMonths,
-  getFirstInstantOfMonth,
-  getTimeOffset,
-  isSameMonth,
-} from '@utils'
+import { addMonths, getFirstInstantOfMonth, isSameMonth } from '@utils'
 
 import { DateOrigin, PickerProviderProps } from '../types'
 
@@ -17,10 +12,8 @@ import type { FC, PropsWithChildren } from 'react'
 const getMonthNameFromTimestamp = (
   timestamp: number,
   locale = 'en-US'
-): string => {
-  const date = new Date(timestamp)
-  return new Intl.DateTimeFormat(locale, { month: 'long' }).format(date)
-}
+): string =>
+  new Intl.DateTimeFormat(locale, { month: 'long' }).format(new Date(timestamp))
 
 /**
  * Provides simple state with essential data as date, panel mode, calendar mode and date, panel mode setters.
@@ -34,22 +27,14 @@ const DateRangePanelProvider: FC<
   PropsWithChildren<
     Pick<PickerProviderProps, 'dateRange' | 'dateRangePickerTimeOffsets'>
   >
-> = ({
-  children,
-  dateRangePickerTimeOffsets,
-  dateRange = [undefined, undefined],
-}) => {
+> = ({ children, dateRange = [undefined, undefined] }) => {
   // Date range state for UI: start and end dates being selected
   const [tempStartDate, setTempStartDate] = useState<number | undefined>(
     !dateRange[1] ? dateRange[0] : undefined
   )
   const [tempEndDate, setTempEndDate] = useState<number>()
   const [leftGridMonth, setLeftGridMonth] = useState<number>(() => {
-    const offset = getTimeOffset(
-      dateRangePickerTimeOffsets[0].timezoneMsOffset,
-      dateRangePickerTimeOffsets[0].localeMsOffset
-    )
-    const currentMonth = Date.now() + offset
+    const currentMonth = Date.now()
 
     if (dateRange[0]) {
       return getFirstInstantOfMonth(dateRange[0])
@@ -58,11 +43,7 @@ const DateRangePanelProvider: FC<
     return getFirstInstantOfMonth(currentMonth)
   })
   const [rightGridMonth, setRightGridMonth] = useState<number>(() => {
-    const offset = getTimeOffset(
-      dateRangePickerTimeOffsets[1].timezoneMsOffset,
-      dateRangePickerTimeOffsets[1].localeMsOffset
-    )
-    const nextMont = addMonths(Date.now() + offset, 1)
+    const nextMont = addMonths(Date.now(), 1)
 
     if (dateRange[0] && dateRange[1]) {
       // Months to work with

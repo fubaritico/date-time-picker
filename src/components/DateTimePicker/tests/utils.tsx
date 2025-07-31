@@ -48,8 +48,8 @@ export const setupUncontrolledPicker = (
     offsets[1].localeMsOffset
   )
 
-  const localeTodayTimestamp = today.getTime() + finalOffset
-  const oneMonthTimestamp = inOneMonthTime.getTime() + oneMonthFinalOffset
+  const localeTodayTimestamp = today.getTime()
+  const oneMonthTimestamp = inOneMonthTime.getTime()
 
   return {
     localeTodayTimestamp,

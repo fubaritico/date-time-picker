@@ -20,7 +20,7 @@ exports[`TimePicker with timezone Basic behavior should close time panel when cl
             placeholder="Choose Date"
             tabindex="0"
             type="text"
-            value="12:28 PM"
+            value="03:28 PM"
           />
           <button
             aria-label="Choose Time"
@@ -41,7 +41,7 @@ exports[`TimePicker with timezone Basic behavior should close time panel when cl
         id="human-readable-date"
         style="display: none;"
       >
-        March 15, 2025 at 12:28 PM
+        March 15, 2025 at 03:28 PM
       </span>
     </div>
   </div>
@@ -68,7 +68,7 @@ exports[`TimePicker with timezone Basic behavior should show time panel with the
             placeholder="Choose Date"
             tabindex="0"
             type="text"
-            value="12:28 PM"
+            value="03:28 PM"
           />
           <button
             aria-label="Choose Time"
@@ -89,7 +89,7 @@ exports[`TimePicker with timezone Basic behavior should show time panel with the
         id="human-readable-date"
         style="display: none;"
       >
-        March 15, 2025 at 12:28 PM
+        March 15, 2025 at 03:28 PM
       </span>
     </div>
   </div>
@@ -116,7 +116,7 @@ exports[`TimePicker with timezone Basic behavior should show time panel with the
             placeholder="Choose Date"
             tabindex="0"
             type="text"
-            value="12:28"
+            value="15:28"
           />
           <button
             aria-label="Choose Time"
@@ -137,7 +137,7 @@ exports[`TimePicker with timezone Basic behavior should show time panel with the
         id="human-readable-date"
         style="display: none;"
       >
-        15 mars 2025 à 12:28
+        15 mars 2025 à 15:28
       </span>
     </div>
   </div>

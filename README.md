@@ -34,7 +34,7 @@ A Storybook instance is available to preview the components and their features [
 
 Tests are being written for the accessibility features of `DateRangePicker`.
 
-A mobile version of the components is planned, but not yet implemented.
+A mobile version of the components is planned but not yet implemented.
 
 ## Issues
 

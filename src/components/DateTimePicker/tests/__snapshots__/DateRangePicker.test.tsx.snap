@@ -1819,13 +1819,11 @@ exports[`DateRangePicker w/ "America/Argentina/La_Rioja" timezone Controlled sho
                             14
                           </button>
                         </td>
-                        <td
-                          aria-selected="true"
-                        >
+                        <td>
                           <button
                             aria-disabled="false"
                             aria-label="March 15, 2025"
-                            class="DaysGridCell hasDateRangeMode selected inRange today selectedStartDate blue md"
+                            class="DaysGridCell hasDateRangeMode inRange today selectedStartDate blue md"
                             data-date="1742041693000"
                             data-focus="false"
                             data-test="1742041693000"
@@ -3171,13 +3169,11 @@ exports[`DateRangePicker w/ "Asia/Tokyo" timezone Controlled should render 2`] =
                             15
                           </button>
                         </td>
-                        <td
-                          aria-selected="true"
-                        >
+                        <td>
                           <button
                             aria-disabled="false"
                             aria-label="March 16, 2025"
-                            class="DaysGridCell hasDateRangeMode selected inRange today selectedStartDate blue md"
+                            class="DaysGridCell hasDateRangeMode inRange today selectedStartDate blue md"
                             data-date="1742084893000"
                             data-focus="false"
                             data-test="1742084893000"

@@ -63,7 +63,6 @@ const runTests = (timezone?: Timezone) => {
     // some specific tests should be written for a greater timezone coverage
     it('should show time panel with the proper state on icon click (en_US, en)', async () => {
       const {
-        finalOffset,
         render: { container },
       } = setupUncontrolledPicker(fixedDate, TimePicker as AnyPickerComponent, {
         timezone,
@@ -77,13 +76,11 @@ const runTests = (timezone?: Timezone) => {
       expect(screen.getByTestId('time-panel')).toBeInTheDocument()
 
       expect(
-        screen.getByText(
-          padNumber(convertTo12Hour(getHours(fixedDate + finalOffset)))
-        )
+        screen.getByText(padNumber(convertTo12Hour(getHours(fixedDate))))
       ).toBeInTheDocument()
 
       expect(
-        screen.getByText(padNumber(getMinutes(fixedDate + finalOffset)))
+        screen.getByText(padNumber(getMinutes(fixedDate)))
       ).toBeInTheDocument()
 
       expect(
@@ -101,7 +98,6 @@ const runTests = (timezone?: Timezone) => {
 
     it('should show time panel with the proper state on icon click (fr-FR, fr_FR, fr)', async () => {
       const {
-        finalOffset,
         render: { container },
       } = setupUncontrolledPicker(fixedDate, TimePicker as AnyPickerComponent, {
         timezone,
@@ -115,11 +111,11 @@ const runTests = (timezone?: Timezone) => {
       expect(screen.getByTestId('time-panel')).toBeInTheDocument()
 
       expect(
-        screen.getByText(padNumber(getHours(fixedDate + finalOffset)))
+        screen.getByText(padNumber(getHours(fixedDate)))
       ).toBeInTheDocument()
 
       expect(
-        screen.getByText(padNumber(getMinutes(fixedDate + finalOffset)))
+        screen.getByText(padNumber(getMinutes(fixedDate)))
       ).toBeInTheDocument()
 
       expect(

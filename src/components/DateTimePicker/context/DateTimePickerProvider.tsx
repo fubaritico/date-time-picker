@@ -54,7 +54,7 @@ const DateTimePickerProvider: FC<PropsWithChildren<PickerProviderProps>> = ({
   // DATE_TIME_FORMAT also includes time to be extracted
   const [localeDate, setLocaleDate] = useState<number | undefined>(() => {
     if (!p_utcDate && !noDefaultDate) {
-      return Date.now() + finalOffset
+      return Date.now()
     }
 
     if (p_utcDate && !noDefaultDate) {
