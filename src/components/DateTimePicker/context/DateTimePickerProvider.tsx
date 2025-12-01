@@ -86,6 +86,9 @@ const DateTimePickerProvider: FC<PropsWithChildren<PickerProviderProps>> = ({
       : [undefined, undefined]
   )
 
+  // console.log('DateTimePickerProvider - p_utcDateRange: ', p_utcDateRange)
+  // console.log('DateTimePickerProvider - localeDateRange: ', localeDateRange)
+
   const [panelRect, setPanelRect] = useState<DOMRectReadOnly>(
     new DOMRectReadOnly()
   )

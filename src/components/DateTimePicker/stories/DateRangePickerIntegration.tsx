@@ -57,6 +57,7 @@ const DateRangePickerIntegration: FC<DateRangePickerIntegrationProps> = ({
   }
 
   const handleDateRangeChange = (p_dateRange?: DateRange) => {
+    // console.log('Date range changed:', p_dateRange)
     setDateRange(p_dateRange)
   }
 

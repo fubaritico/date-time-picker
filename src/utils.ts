@@ -1093,15 +1093,16 @@ export const formatToLocaleAwareFormat = (
   pLocaleAwareFormat: LocaleAwareFormat,
   pTimezone?: Timezone
 ): string => {
-  const date = new Date(pValue)
-  const msOffset = getOffsetInMsFromTimezone(date, pTimezone)
-  const utc = new Date(date.getTime() + msOffset)
+  // const date = new Date(pValue)
+  // console.log(date)
+  // const msOffset = getOffsetInMsFromTimezone(date, pTimezone)
+  // console.log(msOffset)
 
   return (
     new Intl.DateTimeFormat(pLocale.replace('_', '-'), {
       ...getLocaleAwareFormat(pLocaleAwareFormat, pTimezone),
     })
-      .format(utc)
+      .format(pValue)
       // Removing à/at from the formatted date
       .replace(/\s(at|à)/, () => {
         return pLocaleAwareFormat === 'lll • t' ? ' •' : ''
