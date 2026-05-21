@@ -2,6 +2,12 @@
 
 A React 19.x date-time picker component, using TypeScript 5.x, styled using native CSS.
 
+Live demo on Storybook: [fubaritico-date-picker.netlify.app](https://fubaritico-date-picker.netlify.app/)
+
+The package is available on NPM as `@fubar-it-co/date-time-picker`, [go to NPM](https://www.npmjs.com/package/@fubar-it-co/date-time-picker).
+
+## Work advancement
+
 `DatePicker`, `DateTimePicker`, `TimePicker` and `DateRangePicker` are distinct components.
 
 ✅ tested locally with [yalc](https://github.com/wclr/yalc) on a real project (types, styles, functionality)
@@ -15,10 +21,6 @@ A React 19.x date-time picker component, using TypeScript 5.x, styled using nati
 ❌ `DateRangePicker` component is not yet fully tested for accessibility
 
 ❌ Mobile version of `DatePicker`, `DateTimePicker`, `TimePicker`, and  `DateRangePicker` components
-
-The package is available on NPM as `@fubar-it-co/date-time-picker`, [go to NPM](https://www.npmjs.com/package/@fubar-it-co/date-time-picker).
-
-A Storybook instance is available to preview the components and their features [here](https://fubaritico-pickers.tiiny.site/?path=/story/datepicker--uncontrolled).
 
 ## Dependencies
 
